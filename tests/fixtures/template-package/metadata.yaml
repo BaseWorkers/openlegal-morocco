@@ -1,0 +1,17 @@
+{
+  "id": "validator-fixture",
+  "slug": "validator-fixture",
+  "title": { "en": "Validator fixture", "fr": "Fixture de validation", "ar": "عينة للتحقق" },
+  "jurisdiction": ["MA"],
+  "category": ["test-fixture"],
+  "discovery": { "document_type": "agreement", "business_types": ["businesses"], "use_cases": ["validation_fixture"] },
+  "languages": ["en", "fr", "ar"],
+  "version": "0.0.1",
+  "status": "DRAFT",
+  "legal_review": { "status": "pending", "reviewer": null, "reviewed_at": null, "version": null, "review_record_id": null },
+  "language_review": { "en": "pending", "fr": "pending", "ar": "pending" },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-07",
+  "language_review_records": {"en":null,"fr":null,"ar":null}
+}

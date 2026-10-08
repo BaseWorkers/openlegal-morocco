@@ -1,0 +1,72 @@
+{
+  "source_ids": [
+    "cndp-loi-09-08",
+    "sgg-bo-5714-2009",
+    "cndp-decret-2-09-165",
+    "cndp-notifier-un-traitement",
+    "cndp-conformite-des-sites-web",
+    "cndp-guide-conformite-sites-web-pdf",
+    "cndp-deliberation-d-939-2025-cookie-data",
+    "cndp-procedures-de-notification-process",
+    "cndp-demande-accompagnement-form-categories",
+    "cndp-form-f214-20250724"
+  ],
+  "source_uses": [
+    {
+      "source_id": "cndp-loi-09-08",
+      "use": "research-reference",
+      "claim_ids": ["law-09-08-consent-and-exceptions", "law-09-08-collection-information"]
+    },
+    {
+      "source_id": "sgg-bo-5714-2009",
+      "use": "research-reference",
+      "claim_ids": ["law-09-08-consent-and-exceptions", "law-09-08-collection-information"]
+    },
+    {
+      "source_id": "cndp-decret-2-09-165",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "cndp-notifier-un-traitement",
+      "use": "research-reference",
+      "claim_ids": ["cndp-guidance-states-prior-declaration-default-with-exceptions"]
+    },
+    {
+      "source_id": "cndp-conformite-des-sites-web",
+      "use": "research-reference",
+      "claim_ids": ["cndp-website-guidance-notification-and-consent"]
+    },
+    {
+      "source_id": "cndp-guide-conformite-sites-web-pdf",
+      "use": "research-reference",
+      "claim_ids": ["cndp-website-guidance-notification-and-consent"]
+    },
+    {
+      "source_id": "cndp-deliberation-d-939-2025-cookie-data",
+      "use": "research-reference",
+      "claim_ids": [
+        "cndp-deliberation-d-939-2025-cookie-scope-notification-and-purposes",
+        "cndp-deliberation-d-939-2025-cookie-consent-and-retention",
+        "cndp-deliberation-d-939-2025-cookie-transfer-and-interconnection",
+        "cndp-deliberation-d-939-2025-cookie-information-and-change-notice",
+        "cndp-deliberation-d-939-2025-cookie-security-and-subcontractors",
+        "cndp-cookie-procedure-page-form-f214"
+      ]
+    },
+    {
+      "source_id": "cndp-procedures-de-notification-process",
+      "use": "research-reference",
+      "claim_ids": ["cndp-cookie-procedure-page-form-f214"]
+    },
+    {
+      "source_id": "cndp-demande-accompagnement-form-categories",
+      "use": "research-reference",
+      "claim_ids": ["cndp-cookie-procedure-page-form-f214", "cndp-form-page-labels-f214-simplified-f211-normal"]
+    },
+    {
+      "source_id": "cndp-form-f214-20250724",
+      "use": "research-reference",
+      "claim_ids": ["cndp-cookie-procedure-page-form-f214", "cndp-form-page-labels-f214-simplified-f211-normal"]
+    }
+  ]
+}

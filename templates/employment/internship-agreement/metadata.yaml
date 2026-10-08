@@ -1,0 +1,55 @@
+{
+  "id": "internship-agreement",
+  "slug": "internship-agreement",
+  "title": {
+    "en": "Internship / Training Placement Agreement — discussion draft",
+    "fr": "Convention de stage / formation pratique — projet de discussion",
+    "ar": "اتفاقية تدريب عملي — مسودة للنقاش"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "employment",
+    "training",
+    "people"
+  ],
+  "discovery": {
+    "document_type": "agreement",
+    "business_types": [
+      "employers",
+      "small_and_medium_enterprises",
+      "startups"
+    ],
+    "use_cases": [
+      "document_a_training_or_internship_placement"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.2",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

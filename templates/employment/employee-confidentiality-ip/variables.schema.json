@@ -1,0 +1,82 @@
+{
+  "variables": [
+    {
+      "name": "employer_name",
+      "type": "string",
+      "required": true,
+      "description": "Factual legal name",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "employee_name",
+      "type": "string",
+      "required": true,
+      "description": "Factual employee name",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "position_title",
+      "type": "string",
+      "required": true,
+      "description": "Factual role or team description",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "effective_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed effective date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "confidentiality_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-approved confidentiality provisions",
+      "generator_input": "blocked",
+      "maxLength": 1000
+    },
+    {
+      "name": "ip_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-approved intellectual-property provisions",
+      "generator_input": "blocked",
+      "maxLength": 1000
+    },
+    {
+      "name": "employer_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Employer representative and capacity",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "employee_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Employee name for signature",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "signing_place",
+      "type": "string",
+      "required": true,
+      "description": "Proposed signing place",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "signing_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed signing date",
+      "generator_input": "factual"
+    }
+  ]
+}

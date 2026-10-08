@@ -1,0 +1,37 @@
+name: Template or translation defect
+description: Report a template structure, variable, language, or rendering issue
+title: "[Template]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not post a completed agreement, personal data, or confidential business information. A reported defect does not change legal-review status until reviewed and recorded.
+  - type: input
+    id: template
+    attributes:
+      label: Template ID and version
+      placeholder: nda-mutual 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      multiple: true
+      options: [English, French, Arabic]
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Section or variable
+      description: Identify the heading or declared variable without including private filled-in values.
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong?
+      description: For legal concerns, include a primary-source citation and mark interpretation as unresolved if uncertain.
+    validations:
+      required: true

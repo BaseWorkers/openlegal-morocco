@@ -1,0 +1,16 @@
+{
+  "source_ids": [
+    "general-legal-templates",
+    "adala-portal-code-obligations"
+  ],
+  "source_uses": [
+    {
+      "source_id": "general-legal-templates",
+      "use": "comparative-reference"
+    },
+    {
+      "source_id": "adala-portal-code-obligations",
+      "use": "research-reference"
+    }
+  ]
+}

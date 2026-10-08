@@ -1,0 +1,37 @@
+name: Offer a contribution
+description: Offer help with legal review, research, translation, accessibility, or software
+title: "[Contribution]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in Open Legal Morocco. Do not include confidential client information, personal data, or completed agreements. An offer to review does not authorize a legal-review status; reviewer authorization and review records follow the project governance policy.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area you can help with
+      multiple: true
+      options:
+        - Moroccan legal review
+        - Legal research and official sources
+        - Source, authorship, and license provenance review
+        - Arabic, French, or English translation review
+        - Template adaptation
+        - Accessibility
+        - Software and repository improvements
+        - Project maintenance and governance
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: offer
+    attributes:
+      label: What would you like to contribute?
+      description: Share relevant experience and the scope you have in mind. Avoid posting private credentials or sensitive personal details.
+    validations:
+      required: true
+  - type: input
+    id: template
+    attributes:
+      label: Template or topic, if applicable
+      placeholder: e.g. privacy policy, electronic transactions

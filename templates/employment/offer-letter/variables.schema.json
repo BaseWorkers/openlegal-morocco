@@ -1,0 +1,98 @@
+{
+  "variables": [
+    {
+      "name": "employer_name",
+      "type": "string",
+      "required": true,
+      "description": "Factual name of the employer",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "candidate_name",
+      "type": "string",
+      "required": true,
+      "description": "Factual name of the candidate",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "position_title",
+      "type": "string",
+      "required": true,
+      "description": "Factual proposed role title",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "work_location",
+      "type": "string",
+      "required": true,
+      "description": "Factual proposed work location",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "start_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed start date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "contract_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-approved employment category and duration wording",
+      "generator_input": "blocked",
+      "maxLength": 1000
+    },
+    {
+      "name": "remuneration_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-approved remuneration wording",
+      "generator_input": "blocked",
+      "maxLength": 1000
+    },
+    {
+      "name": "schedule_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-approved schedule wording",
+      "generator_input": "blocked",
+      "maxLength": 1000
+    },
+    {
+      "name": "other_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-approved terms, conditions and benefits",
+      "generator_input": "blocked",
+      "maxLength": 1000
+    },
+    {
+      "name": "response_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-approved response/deadline wording and legal effect",
+      "generator_input": "blocked",
+      "maxLength": 1000
+    },
+    {
+      "name": "employer_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Authorized representative name and capacity",
+      "generator_input": "factual",
+      "maxLength": 1000
+    },
+    {
+      "name": "offer_date",
+      "type": "date",
+      "required": true,
+      "description": "Date shown on the offer",
+      "generator_input": "factual"
+    }
+  ]
+}

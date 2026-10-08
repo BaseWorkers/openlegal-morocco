@@ -1,0 +1,56 @@
+{
+  "id": "master-services-agreement",
+  "slug": "master-services-agreement",
+  "title": {
+    "en": "Master Services Agreement — discussion draft",
+    "fr": "Contrat-cadre de prestations de services — projet de discussion",
+    "ar": "اتفاقية إطار للخدمات — مسودة للنقاش"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "business",
+    "services"
+  ],
+  "discovery": {
+    "document_type": "agreement",
+    "business_types": [
+      "businesses",
+      "startups",
+      "small_and_medium_enterprises",
+      "software_companies",
+      "digital_service_operators"
+    ],
+    "use_cases": [
+      "set_terms_for_ongoing_services_and_statements_of_work"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.1",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

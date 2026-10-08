@@ -1,0 +1,54 @@
+{
+  "id": "privacy-policy",
+  "slug": "privacy-policy",
+  "title": {
+    "en": "Privacy Policy — discussion draft",
+    "fr": "Politique de confidentialité — projet de discussion",
+    "ar": "سياسة الخصوصية — مسودة للنقاش"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "privacy",
+    "business"
+  ],
+  "discovery": {
+    "document_type": "policy",
+    "business_types": [
+      "businesses",
+      "digital_service_operators",
+      "data_controllers"
+    ],
+    "use_cases": [
+      "describe_verified_personal_data_practices"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.3",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

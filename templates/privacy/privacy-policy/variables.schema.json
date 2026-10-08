@@ -1,0 +1,131 @@
+{
+  "variables": [
+    {
+      "name": "service_name",
+      "type": "string",
+      "required": true,
+      "description": "Public name of the service covered by this notice",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "controller_name",
+      "type": "string",
+      "required": true,
+      "description": "Name of the organization or person responsible for this notice, as confirmed by counsel",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "controller_details",
+      "type": "string",
+      "required": true,
+      "description": "Organization identity and address details to publish",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "privacy_contact",
+      "type": "string",
+      "required": true,
+      "description": "Verified channel for privacy questions and requests",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "notice_date",
+      "type": "date",
+      "required": true,
+      "description": "Date this notice is intended to take effect",
+      "generator_input": "factual"
+    },
+    {
+      "name": "data_categories",
+      "type": "string",
+      "required": true,
+      "description": "Accurate categories of personal data handled by the service",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "data_sources",
+      "type": "string",
+      "required": true,
+      "description": "Accurate description of where the data comes from",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "processing_purposes",
+      "type": "string",
+      "required": true,
+      "description": "Specific actual purposes for which data is used",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "legal_basis_summary",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed explanation of the legal grounds applicable to the described processing",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "recipients",
+      "type": "string",
+      "required": true,
+      "description": "Actual recipient categories and service providers, if any",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "transfer_description",
+      "type": "string",
+      "required": true,
+      "description": "Verified description of any access or transfer outside Morocco, or a reviewed no-transfer statement",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "retention_description",
+      "type": "string",
+      "required": true,
+      "description": "Actual retention periods or criteria approved for publication",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "security_description",
+      "type": "string",
+      "required": true,
+      "description": "Accurate high-level description of safeguards approved for publication",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "rights_process",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed description of applicable rights and the verified request channel",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "cookie_description",
+      "type": "string",
+      "required": true,
+      "description": "Actual cookie and similar-technology practices for the service",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "change_contact",
+      "type": "string",
+      "required": true,
+      "description": "Contact or location where updates to this notice will be announced",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

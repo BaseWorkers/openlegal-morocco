@@ -1,0 +1,91 @@
+{
+  "variables": [
+    {
+      "name": "client_name",
+      "type": "string",
+      "required": true,
+      "description": "Client legal name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "client_address",
+      "type": "address",
+      "required": true,
+      "description": "Client address",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "provider_name",
+      "type": "string",
+      "required": true,
+      "description": "Developer or provider legal name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "provider_address",
+      "type": "address",
+      "required": true,
+      "description": "Provider address",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "effective_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed agreement date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "project_name",
+      "type": "string",
+      "required": true,
+      "description": "Project name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "project_scope",
+      "type": "string",
+      "required": true,
+      "description": "Short factual description of the requested software work",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "deliverables",
+      "type": "string",
+      "required": true,
+      "description": "List of expected deliverables by reference to the attached SOW",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "repository_location",
+      "type": "string",
+      "required": false,
+      "description": "Location of the project repository, if agreed",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "client_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Client signatory name and capacity",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "provider_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Provider signatory name and capacity",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

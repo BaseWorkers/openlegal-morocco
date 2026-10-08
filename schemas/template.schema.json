@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-legal-morocco.example/schemas/template.schema.json",
+  "title": "Open Legal Morocco template metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "slug", "title", "jurisdiction", "category", "discovery", "languages", "version", "status", "legal_review", "language_review", "language_review_records", "generator_enabled", "license", "last_updated"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "title": { "$ref": "#/$defs/translations" },
+    "jurisdiction": { "type": "array", "items": { "type": "string", "minLength": 2 }, "minItems": 1, "uniqueItems": true },
+    "category": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
+    "discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_type", "business_types", "use_cases"],
+      "properties": {
+        "document_type": { "enum": ["agreement", "notice", "policy", "statement_of_work"] },
+        "business_types": {
+          "type": "array",
+          "items": { "enum": ["businesses", "startups", "small_and_medium_enterprises", "freelancers", "software_companies", "employers", "digital_service_operators", "marketplace_operators", "data_controllers", "data_processors"] },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "use_cases": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "languages": { "type": "array", "items": { "enum": ["en", "fr", "ar"] }, "minItems": 1, "uniqueItems": true },
+    "version": { "type": "string", "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" },
+    "status": { "enum": ["DRAFT", "RESEARCHED", "COMMUNITY_REVIEWED", "LANGUAGE_REVIEWED", "LEGAL_REVIEW_PENDING", "LEGAL_REVIEWED", "RELEASED", "DEPRECATED"] },
+    "legal_review": { "$ref": "#/$defs/legalReview" },
+    "language_review": { "type": "object", "additionalProperties": { "enum": ["pending", "reviewed"] } },
+    "language_review_records": { "type": "object", "additionalProperties": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } },
+    "generator_enabled": { "type": "boolean" },
+    "license": { "type": "string", "minLength": 1 },
+    "last_updated": { "type": "string", "format": "date" }
+  },
+  "$defs": {
+    "translations": { "type": "object", "properties": { "en": { "type": "string", "minLength": 1 }, "fr": { "type": "string", "minLength": 1 }, "ar": { "type": "string", "minLength": 1 } }, "additionalProperties": false, "minProperties": 1 },
+    "legalReview": { "type": "object", "additionalProperties": false, "required": ["status", "reviewer", "reviewed_at", "version", "review_record_id"], "properties": { "status": { "enum": ["pending", "reviewed"] }, "reviewer": { "type": ["string", "null"] }, "reviewed_at": { "type": ["string", "null"], "format": "date" }, "version": { "type": ["string", "null"] }, "review_record_id": { "type": ["string", "null"] } } }
+  }
+}

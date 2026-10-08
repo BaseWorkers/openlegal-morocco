@@ -1,0 +1,203 @@
+{
+  "variables": [
+    {
+      "name": "controller_name",
+      "type": "string",
+      "required": true,
+      "description": "Full name of the party proposed to act as controller, subject to factual verification",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "controller_details",
+      "type": "string",
+      "required": true,
+      "description": "Controller identity and address",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "processor_name",
+      "type": "string",
+      "required": true,
+      "description": "Full name of the party proposed to act as processor, subject to factual verification",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "processor_details",
+      "type": "string",
+      "required": true,
+      "description": "Processor identity and address",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "effective_date",
+      "type": "date",
+      "required": true,
+      "description": "Intended effective date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "main_agreement_reference",
+      "type": "string",
+      "required": true,
+      "description": "Reference to the main services or commercial agreement",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "processing_subject",
+      "type": "string",
+      "required": true,
+      "description": "Subject matter of the processing",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "processing_purpose",
+      "type": "string",
+      "required": true,
+      "description": "Specific purposes of processing",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "processing_operations",
+      "type": "string",
+      "required": true,
+      "description": "Operations the processor is actually instructed to perform",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "data_subject_categories",
+      "type": "string",
+      "required": true,
+      "description": "Actual categories of affected people",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "personal_data_categories",
+      "type": "string",
+      "required": true,
+      "description": "Actual categories of personal data involved",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "sensitive_data_description",
+      "type": "string",
+      "required": true,
+      "description": "Confirm whether sensitive or otherwise restricted data is involved; describe only after counsel review",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "processing_duration",
+      "type": "string",
+      "required": true,
+      "description": "Duration or termination criterion for processing",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "documented_instructions",
+      "type": "string",
+      "required": true,
+      "description": "Complete and counsel-reviewed processing instructions",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "security_measures",
+      "type": "string",
+      "required": true,
+      "description": "Specific organizational and technical measures actually agreed and implemented",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "subprocessor_list",
+      "type": "string",
+      "required": true,
+      "description": "Current approved subprocessor list and relevant services/locations",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "transfer_description",
+      "type": "string",
+      "required": true,
+      "description": "Verified description of any cross-border data access or transfers",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "incident_notification_period",
+      "type": "string",
+      "required": true,
+      "description": "Negotiated contractual notification period; not a statement of statutory deadline",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "incident_contact",
+      "type": "string",
+      "required": true,
+      "description": "Operational incident contact and verified notification channel",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "assistance_terms",
+      "type": "string",
+      "required": true,
+      "description": "Agreed assistance scope and operational limits",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "audit_terms",
+      "type": "string",
+      "required": true,
+      "description": "Agreed verification and audit process",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "return_deletion_terms",
+      "type": "string",
+      "required": true,
+      "description": "Agreed return, deletion, backup, and evidence process",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "confidentiality_terms",
+      "type": "string",
+      "required": true,
+      "description": "Agreed confidentiality obligations for authorized personnel",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "governing_law",
+      "type": "string",
+      "required": true,
+      "description": "Proposed governing law, subject to advice",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "dispute_forum",
+      "type": "string",
+      "required": true,
+      "description": "Proposed dispute process or forum, subject to advice",
+      "generator_input": "blocked",
+      "maxLength": 500
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "nda-mutual",
+  "slug": "mutual-nda",
+  "title": {
+    "en": "Mutual Non-Disclosure Agreement",
+    "fr": "Accord de confidentialité réciproque",
+    "ar": "اتفاقية سرية متبادلة"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "business",
+    "confidentiality"
+  ],
+  "discovery": {
+    "document_type": "agreement",
+    "business_types": [
+      "businesses",
+      "startups",
+      "small_and_medium_enterprises",
+      "freelancers",
+      "software_companies"
+    ],
+    "use_cases": [
+      "confidentiality_in_mutual_business_discussions"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.3",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

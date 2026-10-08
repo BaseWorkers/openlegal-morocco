@@ -1,0 +1,195 @@
+{
+  "variables": [
+    {
+      "name": "client_name",
+      "type": "string",
+      "required": true,
+      "description": "Full legal name of the customer receiving services",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "client_details",
+      "type": "string",
+      "required": false,
+      "description": "Optional legal form and any identifiers applicable to this party, verified from its records; do not presume RC, ICE, or IF applies.",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "client_address",
+      "type": "address",
+      "required": true,
+      "description": "Client address for notices",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "provider_name",
+      "type": "string",
+      "required": true,
+      "description": "Full legal name of the service provider",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "provider_details",
+      "type": "string",
+      "required": false,
+      "description": "Optional legal form and any identifiers applicable to this party, verified from its records; do not presume RC, ICE, or IF applies.",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "provider_address",
+      "type": "address",
+      "required": true,
+      "description": "Provider address for notices",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "effective_date",
+      "type": "date",
+      "required": true,
+      "description": "Date the parties intend the framework to take effect",
+      "generator_input": "factual"
+    },
+    {
+      "name": "service_description",
+      "type": "string",
+      "required": true,
+      "description": "High-level description of the services contemplated",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "sow_reference",
+      "type": "string",
+      "required": true,
+      "description": "Identifier or title of the initial statement of work",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "fee_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed pricing and fee structure",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "payment_schedule",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed invoicing and payment schedule",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "expense_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed treatment of expenses",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "service_term",
+      "type": "string",
+      "required": true,
+      "description": "Proposed framework term",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "termination_notice",
+      "type": "string",
+      "required": true,
+      "description": "Proposed ordinary termination notice and process",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "confidentiality_period",
+      "type": "string",
+      "required": true,
+      "description": "Proposed survival period to be reviewed",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "ip_terms",
+      "type": "string",
+      "required": true,
+      "description": "Complete counsel-reviewed treatment of background materials and deliverables",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "data_terms",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed data roles, instructions, safeguards, and additional terms",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "liability_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed liability and remedy provisions",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "governing_law",
+      "type": "string",
+      "required": true,
+      "description": "Proposed governing law, subject to advice",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "dispute_forum",
+      "type": "string",
+      "required": true,
+      "description": "Proposed dispute process or forum, subject to advice",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "notice_email_client",
+      "type": "email",
+      "required": false,
+      "description": "Optional client notice email",
+      "generator_input": "factual",
+      "maxLength": 254
+    },
+    {
+      "name": "notice_email_provider",
+      "type": "email",
+      "required": false,
+      "description": "Optional provider notice email",
+      "generator_input": "factual",
+      "maxLength": 254
+    },
+    {
+      "name": "client_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Name and capacity of the client signatory",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "provider_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Name and capacity of the provider signatory",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

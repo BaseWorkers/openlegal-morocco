@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-legal-morocco.example/schemas/authorized-reviewers.schema.json",
+  "title": "Authorized reviewer registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "authorized_legal_reviewers", "authorized_language_reviewers"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "authorized_legal_reviewers": { "$ref": "#/$defs/reviewers" },
+    "authorized_language_reviewers": { "$ref": "#/$defs/reviewers" }
+  },
+  "$defs": {
+    "reviewers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "display_name", "authorized_at", "authorization_record", "active", "signing_keys"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "display_name": { "type": "string", "minLength": 1 },
+          "authorized_at": { "type": "string", "format": "date" },
+          "authorization_record": { "type": "string", "minLength": 1 },
+          "active": { "type": "boolean" },
+          "signing_keys": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "public_key_pem", "active"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+                "public_key_pem": { "type": "string", "pattern": "^-----BEGIN PUBLIC KEY-----\\n[A-Za-z0-9+/=\\n]+-----END PUBLIC KEY-----\\n?$" },
+                "active": { "type": "boolean" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "offer-letter",
+  "slug": "offer-letter",
+  "title": {
+    "en": "Employment Offer Letter — discussion draft",
+    "fr": "Lettre de proposition d’emploi — projet de discussion",
+    "ar": "خطاب عرض عمل — مسودة للنقاش"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "employment",
+    "people"
+  ],
+  "discovery": {
+    "document_type": "agreement",
+    "business_types": [
+      "employers",
+      "small_and_medium_enterprises",
+      "startups"
+    ],
+    "use_cases": [
+      "communicate_proposed_employment_terms"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

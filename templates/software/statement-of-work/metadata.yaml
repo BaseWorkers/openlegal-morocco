@@ -1,0 +1,57 @@
+{
+  "id": "statement-of-work",
+  "slug": "statement-of-work",
+  "title": {
+    "en": "Statement of Work — discussion draft",
+    "fr": "Énoncé des travaux — projet de discussion",
+    "ar": "بيان عمل — مسودة للنقاش"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "software",
+    "technology",
+    "services"
+  ],
+  "discovery": {
+    "document_type": "statement_of_work",
+    "business_types": [
+      "businesses",
+      "startups",
+      "small_and_medium_enterprises",
+      "software_companies",
+      "freelancers"
+    ],
+    "use_cases": [
+      "define_project_scope_deliverables_and_acceptance"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

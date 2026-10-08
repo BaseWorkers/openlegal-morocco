@@ -1,0 +1,179 @@
+{
+  "variables": [
+    {
+      "name": "client_name",
+      "type": "string",
+      "required": true,
+      "description": "Full legal name of the client",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "client_details",
+      "type": "string",
+      "required": false,
+      "description": "Optional legal form and any identifiers applicable to this party, verified from its records; do not presume RC, ICE, or IF applies.",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "client_address",
+      "type": "address",
+      "required": true,
+      "description": "Address for notices to the client",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "contractor_name",
+      "type": "string",
+      "required": true,
+      "description": "Full legal name of the service provider",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "contractor_details",
+      "type": "string",
+      "required": false,
+      "description": "Optional legal form and any identifiers applicable to this party, verified from its records; do not presume RC, ICE, or IF applies.",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "contractor_address",
+      "type": "address",
+      "required": true,
+      "description": "Address for notices to the service provider",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "effective_date",
+      "type": "date",
+      "required": true,
+      "description": "Date the parties intend this draft to take effect",
+      "generator_input": "factual"
+    },
+    {
+      "name": "service_description",
+      "type": "string",
+      "required": true,
+      "description": "Description of proposed services",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "deliverables",
+      "type": "string",
+      "required": true,
+      "description": "Deliverables and any acceptance process to be reviewed",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "fee_description",
+      "type": "string",
+      "required": true,
+      "description": "Proposed fee and currency, subject to professional review",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "payment_timing",
+      "type": "string",
+      "required": true,
+      "description": "Proposed invoice and payment timing, subject to professional review",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "term_description",
+      "type": "string",
+      "required": true,
+      "description": "Proposed duration or project term",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "termination_description",
+      "type": "string",
+      "required": true,
+      "description": "Proposed termination process, subject to professional review",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "ip_treatment",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-approved description of the selected intellectual-property treatment",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "confidentiality_period",
+      "type": "string",
+      "required": true,
+      "description": "Proposed confidentiality period, subject to professional review",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "data_handling",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed instructions for any personal or confidential data",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "governing_law",
+      "type": "string",
+      "required": true,
+      "description": "Proposed governing law selection, subject to counsel review",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "dispute_process",
+      "type": "string",
+      "required": true,
+      "description": "Proposed dispute process or forum, subject to counsel review",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "notice_email_client",
+      "type": "email",
+      "required": false,
+      "description": "Optional notice email for the client",
+      "generator_input": "factual",
+      "maxLength": 254
+    },
+    {
+      "name": "notice_email_contractor",
+      "type": "email",
+      "required": false,
+      "description": "Optional notice email for the service provider",
+      "generator_input": "factual",
+      "maxLength": 254
+    },
+    {
+      "name": "client_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Name and capacity of the client signatory",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "contractor_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Name and capacity of the service-provider signatory",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

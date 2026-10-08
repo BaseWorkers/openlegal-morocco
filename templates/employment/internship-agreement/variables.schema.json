@@ -1,0 +1,185 @@
+{
+  "variables": [
+    {
+      "name": "host_organization",
+      "type": "string",
+      "required": true,
+      "description": "Host organization full name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "host_address",
+      "type": "address",
+      "required": true,
+      "description": "Host organization address",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "trainee_name",
+      "type": "string",
+      "required": true,
+      "description": "Trainee full name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "institution_name",
+      "type": "string",
+      "required": true,
+      "description": "Educational or training institution name, if any",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "supervisor_name",
+      "type": "string",
+      "required": true,
+      "description": "Named placement supervisor",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "placement_location",
+      "type": "string",
+      "required": true,
+      "description": "Proposed placement location",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "start_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed placement start date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "end_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed placement end date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "placement_regime",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-confirmed legal regime and document form for this specific placement",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "eligibility_basis",
+      "type": "string",
+      "required": true,
+      "description": "Counsel and institution-confirmed eligibility basis, if any",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "learning_plan",
+      "type": "string",
+      "required": true,
+      "description": "Institution- and counsel-reviewed learning objectives and permitted activities",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "schedule_and_attendance",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed schedule, attendance, absence, and supervision wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "compensation_and_expenses",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed stipend, expense, tax, and payment wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "health_safety_protection",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed health, safety, insurance, and social-protection wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "confidentiality_and_data",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed confidentiality and personal-data wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "intellectual_property_terms",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed intellectual-property wording for work created during the placement",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "evaluation_and_end",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed evaluation, certificate, and ending wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "approvals_and_records",
+      "type": "string",
+      "required": true,
+      "description": "Required institution, guardian, authority, and record approvals as confirmed by counsel",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "signing_place",
+      "type": "string",
+      "required": true,
+      "description": "Proposed place of signature",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "signing_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed signature date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "host_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Host signatory name and capacity",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "institution_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Institution signatory name and capacity, if applicable",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "trainee_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Trainee name for signature",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

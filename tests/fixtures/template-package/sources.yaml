@@ -1,0 +1,11 @@
+{
+  "source_ids": [
+    "spdx-mit"
+  ],
+  "source_uses": [
+    {
+      "source_id": "spdx-mit",
+      "use": "research-reference"
+    }
+  ]
+}

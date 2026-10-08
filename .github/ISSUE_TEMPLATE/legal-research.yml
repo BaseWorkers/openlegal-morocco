@@ -1,0 +1,40 @@
+name: Legal research or source correction
+description: Report a source, citation, legal research question, or correction
+title: "[Research]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include confidential client information or personal data. This issue is for research tracking, not legal advice.
+        Self-reported review background is not verified and does not establish authorization or legal approval in this project. Do not post a reviewer's name, contact details, or credentials without their consent.
+  - type: input
+    id: topic
+    attributes:
+      label: Topic or template
+      placeholder: e.g. employment, Loi 09-08, mutual NDA
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Official or primary source
+      description: Add a direct URL and exact article/page pinpoint where possible.
+    validations:
+      required: true
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Proposition or correction
+      description: Separate what the source text says from your interpretation and note whether current-law status is verified.
+    validations:
+      required: true
+  - type: dropdown
+    id: review
+    attributes:
+      label: Self-reported review background (not verified)
+      options:
+        - No professional review
+        - Reviewed by a qualified legal professional
+        - Unsure
+    validations:
+      required: true

@@ -1,0 +1,33 @@
+{
+  "source_ids": [
+    "cndp-loi-09-08",
+    "sgg-bo-5714-2009",
+    "cndp-decret-2-09-165",
+    "cndp-notifier-un-traitement",
+    "cndp-conformite-des-sites-web"
+  ],
+  "source_uses": [
+    {
+      "source_id": "cndp-loi-09-08",
+      "use": "research-reference",
+      "claim_ids": ["law-09-08-collection-information"]
+    },
+    {
+      "source_id": "sgg-bo-5714-2009",
+      "use": "research-reference",
+      "claim_ids": ["law-09-08-collection-information"]
+    },
+    {
+      "source_id": "cndp-decret-2-09-165",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "cndp-notifier-un-traitement",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "cndp-conformite-des-sites-web",
+      "use": "research-reference"
+    }
+  ]
+}

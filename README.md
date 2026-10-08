@@ -27,7 +27,7 @@ The files are working drafts. They may be incomplete, outdated, or unsuitable fo
 ### Employment
 
 - [Employee Confidentiality and Intellectual Property Agreement — discussion draft](templates/employment/employee-confidentiality-ip/en.md) · [FR](templates/employment/employee-confidentiality-ip/fr.md) · [AR](templates/employment/employee-confidentiality-ip/ar.md) — DRAFT; v0.1.0
-- [Employment Agreement — discussion draft](templates/employment/employment-agreement/en.md) · [FR](templates/employment/employment-agreement/fr.md) · [AR](templates/employment/employment-agreement/fr.md) · [AR](templates/employment/employment-agreement/ar.md) — DRAFT; v0.1.0
+- [Employment Agreement — discussion draft](templates/employment/employment-agreement/en.md) · [FR](templates/employment/employment-agreement/fr.md) · [AR](templates/employment/employment-agreement/ar.md) — DRAFT; v0.1.0
 - [Internship / Training Placement Agreement — discussion draft](templates/employment/internship-agreement/en.md) · [FR](templates/employment/internship-agreement/fr.md) · [AR](templates/employment/internship-agreement/ar.md) — DRAFT; v0.1.2
 - [Employment Offer Letter — discussion draft](templates/employment/offer-letter/en.md) · [FR](templates/employment/offer-letter/fr.md) · [AR](templates/employment/offer-letter/ar.md) — DRAFT; v0.1.0
 

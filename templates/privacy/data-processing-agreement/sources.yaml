@@ -1,0 +1,28 @@
+{
+  "source_ids": [
+    "cndp-loi-09-08",
+    "sgg-bo-5714-2009",
+    "cndp-decret-2-09-165",
+    "cndp-notifier-un-traitement"
+  ],
+  "source_uses": [
+    {
+      "source_id": "cndp-loi-09-08",
+      "use": "research-reference",
+      "claim_ids": ["law-09-08-processor-security-contract", "law-09-08-cross-border-transfer-articles-43-44"]
+    },
+    {
+      "source_id": "sgg-bo-5714-2009",
+      "use": "research-reference",
+      "claim_ids": ["law-09-08-processor-security-contract", "law-09-08-cross-border-transfer-articles-43-44"]
+    },
+    {
+      "source_id": "cndp-decret-2-09-165",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "cndp-notifier-un-traitement",
+      "use": "research-reference"
+    }
+  ]
+}

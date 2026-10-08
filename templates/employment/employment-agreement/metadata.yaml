@@ -1,0 +1,54 @@
+{
+  "id": "employment-agreement",
+  "slug": "employment-agreement",
+  "title": {
+    "en": "Employment Agreement — discussion draft",
+    "fr": "Contrat de travail — projet de discussion",
+    "ar": "عقد عمل — مسودة للنقاش"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "employment",
+    "people"
+  ],
+  "discovery": {
+    "document_type": "agreement",
+    "business_types": [
+      "employers",
+      "small_and_medium_enterprises",
+      "startups"
+    ],
+    "use_cases": [
+      "document_proposed_employment_terms"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

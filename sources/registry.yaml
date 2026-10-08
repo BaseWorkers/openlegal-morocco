@@ -1,0 +1,2725 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "spdx-cc0-1-0",
+      "title": "Creative Commons Zero v1.0 Universal",
+      "publisher": "SPDX",
+      "jurisdiction": "International",
+      "source_type": "license-text",
+      "url": "https://spdx.org/licenses/CC0-1.0.html",
+      "license_basis": "License identification reference; not incorporated legal content",
+      "date_accessed": "2026-10-07",
+      "verification_date": "2026-10-07",
+      "used_for": [
+        "Identifying the intended legal-content license"
+      ],
+      "notes": "SPDX links to the canonical Creative Commons legal code. The local text is retained at LICENSES/CC0-1.0.txt.",
+      "verification_status": "verified",
+      "reuse_status": "license-reference",
+      "reuse_license": "CC0-1.0",
+      "reuse_review_date": "2026-10-07",
+      "reuse_scope": "License identifier and standard text reference only; no template wording is sourced from this record."
+    },
+    {
+      "id": "spdx-mit",
+      "title": "MIT License",
+      "publisher": "SPDX",
+      "jurisdiction": "International",
+      "source_type": "license-text",
+      "url": "https://spdx.org/licenses/MIT.html",
+      "license_basis": "License identification reference",
+      "date_accessed": "2026-10-07",
+      "verification_date": "2026-10-07",
+      "used_for": [
+        "Verifying the MIT license identifier and standard text"
+      ],
+      "notes": "Copyright attribution is a project placeholder pending maintainer and ownership confirmation.",
+      "verification_status": "verified",
+      "reuse_status": "license-reference",
+      "reuse_license": "MIT",
+      "reuse_review_date": "2026-10-07",
+      "reuse_scope": "License identifier and standard text reference only; no template wording is sourced from this record."
+    },
+    {
+      "id": "general-legal-templates",
+      "title": "General-Legal/legal-templates repository",
+      "publisher": "General Legal",
+      "jurisdiction": "United States and multi-jurisdictional, varies by template",
+      "source_type": "reusable-template",
+      "url": "https://github.com/General-Legal/legal-templates",
+      "license_basis": "Repository LICENSE at inspected commit 6d6805425eabd41bed86fc1e2ec51612760f716c states CC0 1.0 Universal; README describes templates as CC0. This repository-level signal does not establish file-level rights clearance.",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Repository-level license and template-index audit; comparative issue spotting only; no wording incorporated"
+      ],
+      "notes": "On 2026-10-08, a direct GitHub API lookup of commits/main returned 6d6805425eabd41bed86fc1e2ec51612760f716c (commit date 2026-09-22), matching the previously inspected immutable pin; GitHub reports its signature verified. The Contents API was queried at that exact SHA for LICENSE, README.md, and templates/mutual-nda/template.md. At this pin, LICENSE blob 0e259d42c996742e9e3cba14c677129b2c1b6311 states CC0 1.0 Universal; README blob 1b055181fcd34c72370dab6909f1ad0aa41fa0a7 describes the templates as CC0 and requests retaining its credit footnote though not legally required; selected template blob 321ae7f4baeae2a5b002ce18e5fb534fe58cdf35 is Delaware-context and includes a General Legal disclaimer. The direct lookup verifies the inspected files against main at that timestamp only. No wording is copied or adapted. The repository-level license signal and selected-file inspection do not establish title to every contribution, file-level rights clearance, or reuse authorization. Recheck branch tip, license coverage, target file, and notices immediately before any future incorporation. Foreign-law material remains comparative context only.",
+      "verification_status": "verified",
+      "reuse_status": "file-level-review-required",
+      "reuse_license": "CC0-1.0 repository-level signal; target-file rights not cleared",
+      "reuse_review_date": "2026-10-08",
+      "reuse_scope": "Pinned repository LICENSE and README plus one Mutual NDA file inspected for comparative context; no wording used and no file-level reuse authorization."
+    },
+    {
+      "id": "dinacon-foss-legal-templates",
+      "title": "DINAcon — Model agreements for open source software",
+      "publisher": "DINAcon",
+      "jurisdiction": "Switzerland-focused; scope varies by template",
+      "source_type": "reusable-template",
+      "url": "https://github.com/DINAcon/foss-legal-templates",
+      "license_basis": "Repository page identifies a CC0-1.0 license; exact target file and its notices must be checked before any reuse.",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Candidate-source inventory and repository-level license signal; no wording incorporated"
+      ],
+      "notes": "The repository describes a prototype of openly licensed contracts primarily for use among and by the open source community in Switzerland. The visible repository-level license is CC0-1.0. This does not establish authorship, license coverage, or permitted reuse for any individual file, attachment, or contribution. No file or revision has been selected or reviewed. Comparative lead only; not evidence of Moroccan legal suitability.",
+      "verification_status": "verified",
+      "reuse_status": "file-level-review-required",
+      "reuse_license": "CC0-1.0 repository-level signal only; no file-level determination",
+      "reuse_review_date": "2026-10-08",
+      "reuse_scope": "Repository license and README signal only; no individual template file, attachment, or revision reviewed."
+    },
+    {
+      "id": "dinacon-standard-software-contract-draft-de-ch",
+      "title": "DINAcon — Standard software contract terms draft (German, Switzerland)",
+      "publisher": "DINAcon / CH-Open; file identifies an OSB Alliance source",
+      "jurisdiction": "Switzerland; draft is written in Swiss German",
+      "source_type": "reusable-template",
+      "url": "https://github.com/DINAcon/foss-legal-templates/blob/e0617d5554215bd77e4c55955c8bc5ea15603d9f/contract-software.de-CH.md",
+      "license_basis": "At the pinned file revision, the file says CC BY 4.0 and identifies its base as OSB Alliance Standard-Vertragsbedingungen under CC BY 3.0 DE. The repository page separately signals CC0-1.0. The OSB Alliance publisher page states CC BY 3.0 DE and specifies an attribution. Layered rights and provenance require resolution before reuse.",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Exact-file license/provenance review only; no wording incorporated"
+      ],
+      "notes": "The pinned file revision is commit e0617d5554215bd77e4c55955c8bc5ea15603d9f (2024-11-15), whose message is 'Update contract-software.de-CH.md'; GitHub's file history shows its parent revision 23286e5bce23061eff1b1629106eca40c75df8bf (2024-09-25), 'Initial contract from OSB Alliance'. GitHub's commit metadata identifies account 'loleg' as author and committer of the parent; this account-level record does not establish legal authorship, assignment, title, or reuse permission. The parent file at that commit has a standard-software title but its opening clauses describe SaaS/cloud use. The text extraction for the OSB Alliance's separately linked SaaS/cloud PDF shows clauses 1.1–1.2 with matching wording; this supports a likely direct source relationship but not an exact edition or complete identity. The pinned update identifies itself as Entwurf 0.1 — noch nicht freigegeben (draft 0.1, not yet released), states CC BY 4.0, and cites OSB Alliance standard software terms as its base under CC BY 3.0 DE. The 2024 update changes the earlier SaaS/cloud-oriented text into standard-software transfer terms (178 additions and 173 deletions in GitHub's commit record). Direct retrieval on 2026-10-08 of the OSB Alliance's currently linked 12-page standard-software PDF succeeded. Comparing the pinned update with that PDF shows differences, including a four-week cure period in DINAcon clause 5.7 versus two weeks in OSB clause 5.7 and 'Schriftform' in DINAcon clause 12.1 versus 'Textform' in the OSB PDF; these are examples, not an exhaustive comparison. The OSB Alliance's 16 March 2015 publisher page and announcement state CC BY 3.0 DE and specify the attribution Copyright OSB Alliance e.V., Version 1/2015. The currently linked standard-software PDF is at https://osb-alliance.de/wp-content/uploads/2020/04/OSBA_Standard-Vertragsbedingungen_%C3%9Cberlassung_von_Standardsoftware.pdf but has no revision marker; its exact relationship to Version 1/2015 and the DINAcon update remains unverified. The DINAcon repository page separately signals CC0-1.0. Authorship, contribution provenance, and compatibility of layered license/attribution obligations remain unresolved. Do not reuse. The file is Swiss-context comparison only; no Moroccan legal suitability inferred.",
+      "verification_status": "verified",
+      "reuse_status": "file-level-review-required",
+      "reuse_license": "Conflicting/layered signals: repository CC0-1.0; file CC BY 4.0; identified upstream OSB Alliance source CC BY 3.0 DE",
+      "reuse_review_date": "2026-10-08",
+      "reuse_scope": "Exact file contract-software.de-CH.md at DINAcon commit e0617d5554215bd77e4c55955c8bc5ea15603d9f; OSB Alliance source revision, contribution provenance, rights layering, and file-level reuse permission remain unresolved."
+    },
+    {
+      "id": "common-paper-standard-contracts",
+      "title": "Common Paper — Standard Contracts",
+      "publisher": "Common Paper, Inc.",
+      "jurisdiction": "United States and multi-jurisdictional; varies by agreement",
+      "source_type": "reusable-template",
+      "url": "https://commonpaper.com/standards",
+      "license_basis": "Common Paper states its standard agreements are released under CC BY 4.0; confirm the license and notices on the exact agreement/version before reuse.",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Candidate-source inventory and standards-page license signal; no wording incorporated"
+      ],
+      "notes": "The official standards page lists agreement types and states that Common Paper standard agreements are available under CC BY 4.0. No specific agreement, version, downloadable file, or accompanying notice has been selected or reviewed. Any later reuse review must confirm attribution and other license conditions for the exact item. Comparative lead only; the page does not establish Moroccan legal suitability.",
+      "verification_status": "verified",
+      "reuse_status": "file-level-review-required",
+      "reuse_license": "CC-BY-4.0 standards-page signal; no exact agreement/version determination",
+      "reuse_review_date": "2026-10-08",
+      "reuse_scope": "Standards page license statement only; no individual agreement, downloadable file, or revision reviewed."
+    },
+    {
+      "id": "osba-standard-saas-cloud-terms",
+      "title": "OSB Alliance — Standard terms for SaaS and cloud software",
+      "publisher": "Open Source Business Alliance e.V.",
+      "jurisdiction": "Germany; source page publishes German-language templates",
+      "source_type": "reusable-template",
+      "url": "https://osb-alliance.de/wp-content/uploads/2020/04/OSBA_Standard-Vertragsbedingungen_SaaS-_und_Cloudsoftware.pdf",
+      "license_basis": "The OSB Alliance publication page states CC BY 3.0 DE for the contract texts and specifies the attribution Copyright OSB Alliance e.V., Version 1/2015; no wording reused.",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Comparing the SaaS/cloud opening of DINAcon's 2024-09-25 parent revision with the publisher's separately linked SaaS/cloud contract; no wording incorporated"
+      ],
+      "notes": "GitHub's DINAcon commit 23286e5bce23061eff1b1629106eca40c75df8bf (2024-09-25) contains a file whose heading says standard software but whose clauses 1.1–1.2 describe SaaS/cloud use. GitHub's commit metadata identifies account 'loleg' as author and committer; this does not establish legal authorship, assignment, title, or reuse permission. On 2026-10-08, the publisher-hosted PDF was directly retrieved in Chrome and visually reviewed: it is 11 pages; its filename and cover identify SaaS/cloud, while the inner contract title identifies standard software and clauses 1.1–1.2 describe SaaS/cloud use. The PDF's indexed text extraction shows clauses 1.1–1.2 with wording matching the DINAcon parent; this supports a likely direct source relationship but not the exact edition or complete textual identity. The inspected cover, inner title page, and final contact page show no version marker; the 2020/04 upload path does not prove version. The OSB Alliance's 16 March 2015 publication page states CC BY 3.0 DE and requires the attribution Copyright OSB Alliance e.V., Version 1/2015, but does not establish that this internally inconsistent PDF is the exact 2015 edition cited by DINAcon. The file and contribution provenance, attribution chain, and applicability of the layered license notices remain unresolved. No wording incorporated; no German-law suitability inferred for Morocco.",
+      "verification_status": "verified",
+      "reuse_status": "file-level-review-required",
+      "reuse_license": "CC-BY-3.0-DE publisher-page signal; exact PDF revision and match remain unverified",
+      "reuse_review_date": "2026-10-08",
+      "reuse_scope": "Publisher-hosted, visually reviewed 11-page PDF and its relationship to DINAcon parent revision 23286e5bce23061eff1b1629106eca40c75df8bf; no reuse authorized."
+    },
+    {
+      "id": "osba-standard-software-terms",
+      "title": "OSB Alliance — Standard terms for transfer of standard software",
+      "publisher": "Open Source Business Alliance e.V.",
+      "jurisdiction": "Germany; source page publishes German-language templates",
+      "source_type": "reusable-template",
+      "url": "https://osb-alliance.de/wp-content/uploads/2020/04/OSBA_Standard-Vertragsbedingungen_%C3%9Cberlassung_von_Standardsoftware.pdf",
+      "license_basis": "The publisher states that its template texts are licensed under CC BY 3.0 DE and specifies the attribution Copyright OSB Alliance e.V., Version 1/2015. The individual target PDF/file still needs review before reuse.",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Comparing the publisher's currently linked standard-software PDF with the DINAcon standard-software contract draft; no wording incorporated"
+      ],
+      "notes": "The OSB Alliance's 16 March 2015 publisher page links to the standard terms for transfer of standard software and states that contract texts are licensed CC BY 3.0 DE with attribution Copyright OSB Alliance e.V., Version 1/2015; see source osba-standard-terms-publication-page. The same-day announcement says JBB Rechtsanwälte formulated the contracts with practical experience contributed by OSBA member companies, without naming individual contributors. The currently linked 12-page PDF bears the matching title and is hosted at a 2020/04 upload path; its extracted text contains the observed two-week cure period and Textform wording, but it does not display a revision number or Version 1/2015 marker. The publisher's 2015 materials do not establish that the current PDF is the exact Version 1/2015 cited by DINAcon or the precise upstream source used. Text comparison confirms modifications in the DINAcon draft, including differing cure-period and form clauses; the comparison is not exhaustive. The exact revision used by DINAcon remains unresolved, as do all changes between the announced 2015 version and linked copy and complete provenance. No wording incorporated and no German-law suitability inferred for Morocco. See https://osb-alliance.de/pressemitteilungen/open-source-business-alliance-vereinfacht-geschaeftsbeziehungen-drei-standardvertraege-fuer-open-source for the dated announcement and license statement.",
+      "verification_status": "verified",
+      "reuse_status": "file-level-review-required",
+      "reuse_license": "CC-BY-3.0-DE publisher-page signal; no exact PDF/revision determination",
+      "reuse_review_date": "2026-10-08",
+      "reuse_scope": "The currently linked 12-page standard-software PDF and the OSB Alliance 16 March 2015 announcement; exact revision and applicability to the DINAcon adaptation remain unresolved."
+    },
+    {
+      "id": "osba-standard-terms-publication-page",
+      "title": "OSB Alliance — Standard contractual terms publication page",
+      "publisher": "Open Source Business Alliance e.V.",
+      "jurisdiction": "Germany; publisher page for German-language templates",
+      "source_type": "reusable-template",
+      "url": "https://osb-alliance.de/publikationen/veroeffentlichungen/standard-vertragsbedingungen",
+      "license_basis": "Publisher page states CC BY 3.0 DE for its contract texts and names the attribution Copyright OSB Alliance e.V., Version 1/2015; no wording reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the publisher's publication date, stated license, required attribution, and link to the standard-software terms"
+      ],
+      "notes": "The OSB Alliance page is dated 16 March 2015, lists the standard-software transfer terms, states that the contract texts are licensed under CC BY 3.0 DE, and specifies the attribution Copyright OSB Alliance e.V., Version 1/2015. The linked PDF has the matching title but no revision number, so the page does not by itself prove that the current PDF is the exact revision cited by DINAcon. No wording incorporated; this source does not establish Moroccan legal suitability.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "common-paper-mutual-nda-v1-0",
+      "title": "Common Paper Mutual Non-Disclosure Agreement — Standard Terms Version 1.0",
+      "publisher": "Common Paper, Inc.",
+      "jurisdiction": "United States; source states its standard agreements were created with U.S. law in mind",
+      "source_type": "reusable-template",
+      "url": "https://commonpaper.com/standards/mutual-nda/1.0",
+      "license_basis": "The version-specific standard-terms page identifies Version 1.0, states it is released under CC BY 4.0, and provides its license link. The publisher requires its attribution and license information to remain with the standard terms.",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Exact-version source and reuse-license review only; no wording incorporated"
+      ],
+      "notes": "The publisher dates Version 1.0 to 2021-07-19 and says this version remains at this URL while changes are issued as new versions. Reuse authorization is limited to the Standard Terms text on this version page. Preserve Common Paper attribution and license information/link; provide a link to the source; indicate modifications; do not imply endorsement or impose additional restrictions. Excludes the cover page, annotations, explanations, benchmark data, and other page material. This is a U.S.-law-oriented comparative source, not evidence of Moroccan legal suitability. Any reused material must retain this separate third-party attribution and must not be represented as CC0 project content.",
+      "verification_status": "verified",
+      "reuse_status": "authorized-for-reuse",
+      "reuse_license": "CC-BY-4.0",
+      "reuse_license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "reuse_review_date": "2026-10-08",
+      "reuse_revision": "Common Paper Mutual NDA Standard Terms Version 1.0, released 2021-07-19, at the version-specific URL ending /mutual-nda/1.0; publisher states this version remains at that URL.",
+      "reuse_scope": "Standard Terms text labeled Mutual Non-Disclosure Agreement Version 1.0 at the version-specific URL only; the publisher says this version remains at this URL. Excludes cover page, annotations, explanatory text, benchmark data, and other page material. Attribution, license/link, and modification notices must be preserved."
+    },
+    {
+      "id": "cndp-loi-09-08",
+      "title": "Loi n° 09-08 — CNDP-hosted French text",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.cndp.ma/wp-content/uploads/2023/11/Loi-09-08-Fr.pdf",
+      "license_basis": "Official authority-hosted law text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the promulgated wording of Loi 09-08 Articles 23 and 43-44 for DPA research",
+        "Reading the text of Loi 09-08, including initial definitions, scope, data-quality principles, and collection notice provisions",
+        "Checking promulgation-text wording of Articles 24–26 for sensitive-data security, processor instructions, and professional-secrecy research"
+      ],
+      "notes": "CNDP-hosted copy of the French text also identified in Official Bulletin n° 5714. The current amendment/consolidation status and interpretation remain unresolved; this access confirms the promulgation text only.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-law-09-08-pdf-2024",
+      "title": "Loi n° 09-08 — Ministry of Justice (Adala) portal PDF",
+      "publisher": "Ministry of Justice, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/04/30/Protection%20des%20personnes%20physiques-1714464099884.pdf",
+      "license_basis": "Official Ministry portal copy used as a source locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the Ministry of Justice portal's PDF copy of the law as a comparison lead for the promulgation text"
+      ],
+      "notes": "The official portal search index identifies a PDF titled Loi n° 09-08 and exposes its opening text. Full document comparison against Official Bulletin n° 5714 and the CNDP-hosted promulgation text has not been completed. The 2024 upload path does not establish consolidation, amendment history, or current legal effect; use this as a locator only.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-loi-09-08-page",
+      "title": "Loi 09-08 — CNDP regulatory framework page",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.cndp.ma/loi-09-08/",
+      "license_basis": "Official authority source used for research; no text reproduced",
+      "date_accessed": "2026-10-07",
+      "verification_date": "2026-10-07",
+      "used_for": [
+        "Finding CNDP regulatory navigation and related procedures for future verification"
+      ],
+      "notes": "Navigation links to the law, implementing decree, declarations, prior-authorization requests, and foreign-transfer requests. The links are leads, not proof that any procedure applies to a particular processing activity.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-textes-et-lois-index",
+      "title": "CNDP — Textes et lois index",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.cndp.ma/textes-et-lois/",
+      "license_basis": "Official authority index used as a source locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the CNDP index entries for the promulgating dahir/Loi 09-08 and Decree 2-09-165"
+      ],
+      "notes": "The index displays these instruments under its national personal-data legislation section. This is a locator record only; it does not establish amendment history, current consolidation, legal effect, or applicability.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-imprimerie-officielle-catalogue",
+      "title": "SGG — Imprimerie Officielle and publications catalogue",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/imprimerieofficielle.aspx",
+      "license_basis": "Official government page used as a source locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Confirming the SGG page describes the Official Bulletin publication role and lists a Loi 09-08 publication in its catalogue"
+      ],
+      "notes": "The page describes the Imprimerie Officielle's role in printing and publishing the Official Bulletin, and lists a Loi 09-08 publication among books offered for sale. It does not provide an amendment history or establish that the listed publication is a current consolidated text. Treat as a locator only.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "bdj-ministry-law-09-08-record",
+      "title": "Banque de Données Juridiques — Loi n° 09-08 record",
+      "publisher": "Ministère de la Transition Numérique et de la Réforme de l'Administration, Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://bdj.mmsp.gov.ma/Fr/Document/8974-Loi-n-09-08-promulgu%C3%A9e-par-le-dahir-n-1-09-15-du.aspx",
+      "license_basis": "Official government legal-database entry used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the government legal-database record for Loi 09-08, its publication metadata, full text, and displayed modification status",
+        "Text-level checks of selected provisions in Articles 7-10 for the Morocco privacy research layer"
+      ],
+      "notes": "The Ministry-hosted record displays the complete promulgation text and metadata including 'Date de dernière modification: Aucune modification'. This is direct official-register evidence of the database's reported status, but the project's amendment audit still requires comparison against the Gazette and tracing known amendment proposals. The page lists BO 5711 (Arabic general edition); the French promulgation is in BO 5714.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "bdj-ministry-user-guide",
+      "title": "Banque de Données Juridiques — user guide",
+      "publisher": "Ministère de la Transition Numérique et de la Réforme de l'Administration, Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://bdj.mmsp.gov.ma/Front/fr/Help.aspx",
+      "license_basis": "Official government user guide used to describe the database's own scope and features; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the BDJ guide's indexed description of in-force texts, successive consolidations, and document-history features"
+      ],
+      "notes": "The official page's search-indexed text describes the BDJ as providing legislation and regulatory texts in force as published in the Official Bulletin and subsequent consolidations, and says individual records provide modification histories. Direct retrieval timed out on 2026-10-08. Treat this as the database's own methodological description, not independent proof that every amendment is captured or that a specific legal proposition is current.",
+      "verification_status": "unverified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-rapport-activite-2010-2013",
+      "title": "CNDP — Rapport d'activité 2010–2013",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.cndp.ma/wp-content/uploads/2023/01/Rapport-activite-CNDP-2010-2013-fr.pdf",
+      "license_basis": "Official authority report used for legislative-history research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Tracing CNDP-proposed amendments to Loi 09-08 as a historical legislative lead"
+      ],
+      "notes": "The report states that the CNDP submitted amendment projects to the Head of Government in 2013 as a first step of the legislative procedure. This does not establish that a bill was tabled, enacted, promulgated, or commenced; the outcome remains to be reconciled with official legislative records and the Ministry legal database.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-refonte-law-09-08-press-release",
+      "title": "CNDP — Transformation into a service-oriented institution",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.cndp.ma/communique-de-presse-transformation-de-la-cndp-en-une-institution-orientee-services-2/",
+      "license_basis": "Official institutional announcement used as a legislative-history lead; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the CNDP announcement that its institutional transformation included a project to reform Law 09-08, with a stated target date for completing the transformation"
+      ],
+      "notes": "The official page’s search-indexed content says the CNDP was pursuing a project to reform Law 09-08 and gives 30 June 2023 as the target for finalizing its transformation. Direct browser retrieval timed out on 8 October 2026. This is an institutional announcement and discovery lead, not a formal bill, draft text, enacted amendment, or proof that the target was met. Trace any resulting text through official legislative and Official Bulletin records.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "bdj-ministry-decree-2-09-165-record",
+      "title": "Banque de Données Juridiques — Decree n° 2-09-165 record",
+      "publisher": "Ministère de la Transition Numérique et de la Réforme de l'Administration, Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://bdj.mmsp.gov.ma/Fr/Document/10503-D%C3%A9cret-n-2-09-165-du-25-joumada-I-1430-21-mai-20.aspx",
+      "license_basis": "Official government legal-database entry used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the government legal-database metadata and text locator for Decree 2-09-165"
+      ],
+      "notes": "The record lists BO 5744 and 'Date de dernière modification: 08/06/2009', a date before the decree's 18/06/2009 Official Bulletin publication. Its title says the decree applies Law 08-09, while the CNDP-hosted BO text says Law 09-08. These apparent metadata/title inconsistencies are recorded as observed; do not interpret the metadata date as a legal amendment or rely on the title's law number without checking the promulgated text.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-veilledigitalx0-media-clip-2025-11-03",
+      "title": "SGG legal-monitoring PDF reproducing a Digital X.0 news report",
+      "publisher": "WeAreTech Africa article reproduced in an SGG-hosted legal-monitoring PDF",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://www.sgg.gov.ma/Portals/1/veille_juridique/actualite_numerique/aj_03112025.pdf",
+      "license_basis": "Secondary news report used only as a legislative research lead; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Identifying a reported Digital X.0 framework under SGG examination as a possible adjacent reform lead"
+      ],
+      "notes": "The PDF is an SGG-hosted clipping/monitoring document, not a bill or official status notice. Its own footnote identifies the reproduced article as published by WeAreTech Africa on 03/11/2025. That article reports a future loi-cadre Digital X.0 under SGG examination and says it is aligned with Law 09-08; it does not identify an amendment to Law 09-08, provide a draft text or bill number, or connect the proposal to the later CESE recommendation. Do not infer enactment, legal effect, or current status from this record.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "parliament-written-question-26284-ai-framework",
+      "title": "House of Representatives — Written Question 26284 on a national AI legal framework",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/ar/%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%80%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D9%8A%D8%A9/alhajt-aly-atar-qanwny-wtny-khas-btqnyn-aldhka-alastnay",
+      "license_basis": "Official parliamentary record used for legislative research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Tracing parliamentary discussion of an AI framework and a 2025–2026 question mentioning Law 09-08"
+      ],
+      "notes": "The House search-indexed detail record identifies written question 26284, subject 'need for a national legal framework specific to AI', and displays a 'Date Answer' field of 30/01/2026. The indexed detail text provides the question but no ministerial response text; direct page opening returned 403/cache errors. This is a question, not a bill or amendment to Law 09-08. The member's statement that Law 09-08 is insufficient is attributed to the questioner, not treated as a statement of law or government position.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "justice-ministry-ai-framework-statement-2024-10-30",
+      "title": "Ministry of Justice — Ministerial statement on AI and intellectual property framework",
+      "publisher": "Ministry of Justice, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://justice.gov.ma/2024/10/30/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%B9%D8%AF%D9%84-%D9%8A%D9%81%D8%AA%D8%AA%D8%AD-%D8%A3%D8%B4%D8%BA%D8%A7%D9%84-%D8%A7%D9%84%D9%85%D8%A4%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A/",
+      "license_basis": "Official Ministry statement used for legislative-policy research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Tracing public Ministry of Justice statements about a possible AI legal framework and training-data rights"
+      ],
+      "notes": "The Ministry's 30 October 2024 announcement reports a speech made on behalf of the Minister of Justice at an intellectual-property/AI conference. It says the ministry was considering a legal framework regulating AI use and discusses possible policy topics, including use of data to train AI systems. This records a ministry statement of intent, not an official draft, bill, legislative stage, or amendment to Law 09-08.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7460-bis-cese-report-2024",
+      "title": "Official Bulletin No. 7460 bis — CESE Annual Report 2024",
+      "publisher": "Secrétariat Général du Gouvernement / Conseil Économique, Social et Environnemental",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/BO/FR/2873/2025/BO_7460-bis%20fr.pdf",
+      "license_basis": "Official Bulletin publication used as a policy-recommendation source; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the CESE recommendation to revise Loi 09-08 concerning AI-related data as a legislative research lead"
+      ],
+      "notes": "The cited CESE annual report recommends revising Loi 09-08. A recommendation is not an amendment, promulgation, commencement rule, or evidence of a completed legislative process.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7501-cese-report-health-data-54-23",
+      "title": "Official Bulletin No. 7501 — CESE report on draft Law 54.23 and unified health-insurance administration",
+      "publisher": "Secrétariat Général du Gouvernement / Conseil Économique, Social et Environnemental",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/BO/AR/3111/2026/BO_7501_Ar.pdf",
+      "license_basis": "Official Bulletin source used to record the text of a published CESE report; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the CESE report's health-data observations and recommendation to seek CNDP input on draft regulations in the context of proposed Law 54.23"
+      ],
+      "notes": "Official Bulletin No. 7501, dated 20 April 2026, reproduces a CESE report about draft Law 54.23 and unified administration of health insurance. Point VI.3, paragraph 13, describes individuals' health data as sensitive under Law 09-08 and recommends requesting CNDP input on draft regulatory texts concerning insured persons' health-data processing. This is a report observation and recommendation; it is not an amendment to Law 09-08, a binding CNDP procedure, or a current-law determination.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-5714-2009",
+      "title": "Bulletin Officiel n° 5714 (French edition, 2009)",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_fr/2009/bo_5714_fr.pdf",
+      "license_basis": "Official publication used as legal research source; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Primary-source lookup for Loi 09-08 Articles 23 and 43-44",
+        "Primary-source lookup for Loi 09-08; verify relevant provisions before any template claim"
+      ],
+      "notes": "Official Bulletin PDF containing the original promulgation text of Law 09-08. The SGG-hosted PDF's indexed text exposes Article 23 on printed pages 350-351, including paragraphs 1-4; direct PDF text extraction has encoding defects. The current amendment/consolidation status and interpretation remain unresolved.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-portal-code-obligations",
+      "title": "Code des obligations et des contrats — Ministry of Justice Adala portal entry",
+      "publisher": "Ministry of Justice, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://adala.justice.gov.ma/fr",
+      "license_basis": "Official legal portal used as a source locator; no text reproduced",
+      "date_accessed": "2026-10-07",
+      "verification_date": "2026-10-07",
+      "used_for": [
+        "Locating the current official Code des obligations et des contrats text"
+      ],
+      "notes": "The Adala portal's civil-material index lists the Code des obligations et des contrats, but the French current/consolidated document URL and amendment history are not yet confirmed. Do not cite the portal alone for a substantive proposition.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "ministry-doc-french-text-article-230",
+      "title": "Code des obligations et des contrats — Ministry of Justice French text",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Directorate of Legislation",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://rnesm.justice.gov.ma/Documentation/MA/4_ONC_Law_fr-FR.pdf",
+      "license_basis": "Official Ministry legal text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the Ministry-hosted French DOC text indexed for Articles 230 and 231; current-law status remains unresolved"
+      ],
+      "notes": "The Ministry search result identifies a French Code des obligations et des contrats PDF and exposes text for Articles 230 and 231. Direct PDF retrieval timed out, so this is a source-text locator and the document's version/cut-off was not established. Do not rely on it alone for a current-law or legal-effect conclusion; reconcile with the Ministry's August 2024 Arabic consolidation and Official Bulletin texts.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "wipo-lex-doc-amended-through-law-53-05",
+      "title": "Code of Obligations and Contracts — WIPO Lex reproduction, amended through Law 53-05",
+      "publisher": "World Intellectual Property Organization, WIPO Lex",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.wipo.int/wipolex/en/legislation/details/2964",
+      "license_basis": "Legislation reproduction used for research only; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the reproduced wording of DOC Articles 230 and 231 and recording the WIPO Lex version's stated amendment cutoff"
+      ],
+      "notes": "WIPO Lex identifies this reproduction as the Code of Obligations and Contracts amended up to Law No. 53-05 and displays Articles 230–231. It provides a readable text cross-check, not an official Moroccan Gazette publication or proof of current law. The amendment history after Law 53-05 and any later changes to these provisions remain to be reconciled against Official Bulletin texts and current official sources. No legal interpretation or template wording is derived from this record.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cncp-avis-15-25-doc-article-230",
+      "title": "Commission Nationale de la Commande Publique — Avis n° 15, quotation of DOC Article 230",
+      "publisher": "Commission Nationale de la Commande Publique, Secrétariat Général du Gouvernement",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.sgg.gov.ma/Portals/0/commissions-marches/Avis_15.25_Fr.pdf",
+      "license_basis": "Official commission opinion used as a corroborating quotation source; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Cross-checking the Commission's quotation of DOC Article 230 in an opinion about a public contract; not as an Official Bulletin law text"
+      ],
+      "notes": "Page 3 quotes Article 230 as stating that validly formed contractual obligations have the force of law between the parties and may be revoked only by mutual consent or in cases provided by law. This is a Commission opinion applying the quoted rule in a public-procurement dispute, not the promulgated DOC text and not proof of general legal effect or current law. The PDF heading identifies Avis n° 15 dated 21 January 2025, while its opening recital gives a deliberation date of 21/01/2024; retain that date discrepancy rather than inferring a corrected date.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cncp-avis-31-20-good-faith-performance",
+      "title": "Commission Nationale de la Commande Publique — Avis n° 31/2020, good-faith performance statement",
+      "publisher": "Commission Nationale de la Commande Publique, Secrétariat Général du Gouvernement",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.sgg.gov.ma/Portals/0/commissions-marches/Avis_31.20_Fr.pdf?ver=2021-03-11-154523-357",
+      "license_basis": "Official commission opinion used as a bounded corroborating source; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the Commission's statement that undertakings must be performed in good faith and its separate reference to DOC Article 477; not as the promulgated text of Article 231"
+      ],
+      "notes": "The five-page opinion is titled Avis n° 31/2020, dated 21 July 2020. Page 4 states that any undertaking must be performed in good faith, then separately cites DOC Article 477 for the presumption that good faith is presumed until the contrary is proved. It does not attribute the first statement to Article 231. This is official commission guidance in a public-procurement dispute, not the promulgated DOC text or a determination of general current-law effect. Preserve the distinction between the Commission's statement and the Article 231 wording found in the historical WIPO Lex reproduction.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-doc-consolidated-2024-ar",
+      "title": "Code des obligations et des contrats — Arabic Ministry consolidation, August 2024",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal, Directorate of Legislation and Studies",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/09/04/%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D8%B9%D9%82%D9%88%D8%AF%20%D8%BA%D8%B4%D8%AA%202024%201-1725443715659.pdf",
+      "license_basis": "Official Ministry legal text used as a historical consolidation locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Identifying the Ministry-hosted Arabic DOC consolidation and its stated amendment-history cutoff"
+      ],
+      "notes": "The Ministry-hosted PDF is titled as the DOC as amended through August 2024 and its indexed text lists Law 40.24 among the amendments. The browser could not retrieve the full PDF directly; this record is based on the Ministry URL and its indexed text extract. Treat it as a dated historical consolidation, not a current 2026 text. Compare provisions and amendment history with Official Bulletins before relying on them.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-doc-consolidated-2026-07-ar",
+      "title": "Code des obligations et des contrats — Ministry of Justice Arabic consolidation dated 16 July 2026",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal, Directorate of Legislation and Studies",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2026/07/29/%D8%B8%D9%87%D9%8A%D8%B1%20%D8%A8%D9%85%D8%AB%D8%A7%D8%A8%D8%A9%20%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%85%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D8%B9%D9%82%D9%88%D8%AF%20%D8%B5%D9%8A%D8%BA%D8%A9%20%D9%85%D8%AD%D9%8A%D9%86%D8%A9-1785316295256.pdf",
+      "license_basis": "Official Ministry legal text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the Ministry consolidation cover date and listed amendment history, including Law 041.25",
+        "Directly checking the Arabic consolidation text of DOC Articles 230–231 and 618-3/618-17; this is not a current-law or legal-interpretation conclusion"
+      ],
+      "notes": "The 282-page Arabic PDF cover says it is an updated DOC text dated 16 July 2026; its opening amendment list includes Laws 041.25 and 40.24 among other listed instruments. PDF page 57 contains Articles 230–231. Pages 135 and 141 contain the amended Article 618-3 and repealed Article 618-17 with footnotes to Law 041.25. This is a direct check of the Ministry consolidation, not the underlying Official Bulletin publications, a guarantee of complete amendment history, or a qualified legal interpretation. Reconcile each proposition against Gazette texts and commencement rules before treating it as current law or applying it to a transaction.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-code-travail",
+      "title": "Code du travail — Ministry of Justice Adala portal copy",
+      "publisher": "Ministry of Justice, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/04/30/code%20du%20travail-1714463246806.pdf",
+      "license_basis": "Official legal portal text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Cross-checking Ministry-copy text for Labour Code Articles 1, 6, and 193; recording its footnote 11 amendment citation for Article 32(1); comparing Article 193 with the 2026 gazetted amendment without a current-law conclusion"
+      ],
+      "notes": "The linked Ministry PDF is titled as Law 65-99 relative to the Labour Code and its URL path records an upload on 2024-04-30. Its cover expressly labels the text 'Version consolidée en date du 26 octobre 2011'. Indexed text for Articles 1 and 6 matches the corresponding wording in SGG Official Bulletin n° 5210, printed page 603. Article 193 on PDF page 77 provides the pre-2026 text, including guardians among examples of intermittent work; it was compared narrowly with the ellipsis-marked 2026 amendment in Official Bulletin n° 7526. This does not establish the complete amended wording, legal effect, later amendment history, or current law. Footnote 11 under Article 32 states that paragraph 1 was abrogated by the sole article of Law 48-06 and cites Official Bulletin n° 5522, p. 581. The footnote gives 3 April 2007 in its parenthetical date; the SGG official French translation identifies issue n° 5522 as dated 3 May 2007. This date discrepancy is recorded, and the operative amendment text has not been directly verified from the issue PDF because its text extraction is unreliable. Compare relevant provisions with later Official Bulletins before relying on this copy.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-5522-law-48-06",
+      "title": "Official Bulletin n° 5522 — official French translation, Law 48-06",
+      "publisher": "General Secretariat of the Government, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_fr/2007/bo_5522_fr.pdf",
+      "license_basis": "SGG-hosted official French translation of the Official Bulletin, used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Cross-checking the Official Bulletin's Article unique of Law 48-06 against the Ministry of Justice Adala Code du travail footnote 11"
+      ],
+      "notes": "The SGG-hosted official French translation identifies Official Bulletin n° 5522 dated 15 Rabii II 1428 (3 May 2007); its contents index lists Dahir n° 1-06-233 promulgating Law 48-06 on printed pages 581–582. Printed page 581's Article unique says military service is suppressed from 4 August 2006, abrogates legislative provisions on that subject, and expressly lists paragraph 1 of Article 32 and Article 256 of Law 65-99 among the affected provisions; it preserves a transitional rule for conscripts already serving when the law took effect. The Ministry's Article 32 footnote cites the same issue/page but gives 3 April 2007, a date discrepancy against the SGG issue's 3 May date. The retrieved text has legacy character mapping but the French text of the pinpoint is decipherable. The Arabic issue PDF is https://www.sgg.gov.ma/BO/bo_ar/2007/BO_5522_Ar.pdf. This text-level check does not establish later amendments, current-law status, or the Ministry PDF's consolidation cutoff.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-social-law-catalog-labor-code-snapshot-2026",
+      "title": "Ministry of Justice Adala social-law catalog — Labour Code listing snapshot",
+      "publisher": "Ministry of Justice, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://adala.justice.gov.ma/fr/resources/420",
+      "license_basis": "Official catalog used as a source-discovery locator; no legal text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the live Ministry social-law catalog's Labour Code listing and its linked Ministry PDF; catalog metadata is locator evidence only"
+      ],
+      "notes": "Directly opened the live Ministry social-law catalog on 2026-10-08. It lists 'Code du travail' with the label 'Nouveau' and links to the PDF recorded as adala-code-travail. Direct inspection of that 201-page PDF confirms its cover states 'Version consolidée en date du 26 octobre 2011'; its listed amendment history ends with the 2011 entry. The catalog label and link are verified locator facts only. Neither the catalog nor this 2011 consolidation establishes the full later amendment history or current law; relevant Official Bulletins must still be reconciled provision by provision.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-consumer-protection",
+      "title": "Protection du consommateur — Ministry of Justice Adala portal copy",
+      "publisher": "Ministry of Justice, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/03/01/protection%20de%20consommateur-1709283839988.pdf",
+      "license_basis": "Official legal portal text used for research; no text reproduced",
+      "date_accessed": "2026-10-07",
+      "verification_date": "2026-10-07",
+      "used_for": [
+        "Locating consumer-protection text relevant to terms and marketplace research"
+      ],
+      "notes": "Version history, amendments, implementing decrees, and relevance to a particular business model remain to be verified before any consumer-facing template claim.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-electronic-transactions",
+      "title": "Échange électronique des données juridiques — Ministry of Justice Adala portal copy",
+      "publisher": "Ministry of Justice, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/03/26/%C3%89change%20%C3%A9lectronique%20des%20donn%C3%A9es%20juridiques-1711452342909.pdf",
+      "license_basis": "Official legal portal text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Locating a Ministry of Justice consolidated copy of Law 53-05 marked consolidated to 18 March 2021",
+        "Checking the text of Articles 65-4 and 65-5 for electronic offers and contract conclusion as a dated source-text check"
+      ],
+      "notes": "The accessed Adala PDF labels itself a consolidated version dated 18 March 2021 and records changes under Law 43-20. This source does not establish changes after that consolidation date. Current-law status and application remain unresolved.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "ompic-law-23-13",
+      "title": "Loi n° 23-13 modifiant et complétant la loi 17-97 relative à la protection de la propriété industrielle",
+      "publisher": "Office Marocain de la Propriété Industrielle et Commerciale (OMPIC)",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.ompic.ma/sites/default/files/loi23-13FR.pdf",
+      "license_basis": "Official authority-hosted legislation used for research; no text reproduced",
+      "date_accessed": "2026-10-07",
+      "verification_date": "2026-10-07",
+      "used_for": [
+        "Locating an official amendment to the industrial-property law for later IP-template research"
+      ],
+      "notes": "This is an amendment text, not a complete current consolidation of Law 17-97. Do not use it alone to state the current law.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-legislation-portal-bill-31-18-history",
+      "title": "SGG legislative portal listing for draft Law 31-18",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/Legislation.aspx",
+      "license_basis": "Official legislative portal used as a historical status locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording that the SGG legislative portal lists draft Law 31-18 with a 6 September 2018 date entry"
+      ],
+      "notes": "The portal index lists Projet de loi n° 31-18 and displays 06/09/2018 in its date columns. This is a historical index entry only; the date field's procedural meaning was not established, and the entry does not establish later parliamentary steps, enactment, commencement, or current DOC text. The promulgation/publication source is recorded separately as sgg-bo-6880-law-31-18-doc.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-6880-law-31-18-doc",
+      "title": "Official Bulletin No. 6880 — Law 31-18 amending the Code des obligations et des contrats",
+      "publisher": "Secrétariat Général du Gouvernement / Official Printing Directorate",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/Portals/0/BO/2020/BO_6880_Fr.pdf",
+      "license_basis": "Official Bulletin text used for historical amendment research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the promulgation and publication text of Law 31-18 and its stated amendments to the Code des obligations et des contrats"
+      ],
+      "notes": "SGG Official Bulletin No. 6880, dated 7 May 2020, contains Dahir 1-19-114 promulgating Law 31-18. Articles 1–2 state amendments concerning DOC Articles 987, 889-1, 889-2, 987-1 through 987-3, and 1014-1. This records the promulgated text only; it is not a current consolidated DOC or legal interpretation. Verify later amendments and applicability before relying on these provisions.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-law-21-18-suretes-mobilieres",
+      "title": "Loi n° 21-18 relative aux sûretés mobilières",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/02/29/Sur%C3%AAtes%20mobili%C3%A8res-1709211797900.pdf",
+      "license_basis": "Official legal portal text used for research; no text reproduced",
+      "date_accessed": "2026-10-07",
+      "verification_date": "2026-10-07",
+      "used_for": [
+        "Identifying enacted amendments to the Code des obligations et des contrats that make a current consolidated text necessary"
+      ],
+      "notes": "The accessed text's Articles 2–6 expressly list DOC provisions that it abrogates, replaces, modifies, completes, or supplements. This is an amendment instrument, not the consolidated DOC; verify current text and scope before relying on any affected provision.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bill-041-25-doc-text",
+      "title": "Government Bill 041.25 — official SGG text as filed",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/Portals/1/PL/projet_loi_041.25.pdf",
+      "license_basis": "Official government bill text used for legislative research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the text of the government proposal affecting DOC Articles 618-3 and 618-17"
+      ],
+      "notes": "The SGG-hosted PDF identifies Bill 041.25 and its text proposes changes to the DOC, including Article 618-3; official parliamentary records identify Article 618-17 among the provisions considered. The final Law 041.25 publication is now verified in Official Bulletin 7526; use that source for enacted wording. This filed bill remains proposal-history evidence and does not establish entry into force or current-law effect.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "house-representatives-bill-041-25-status",
+      "title": "House of Representatives legislative record for Bill 041.25",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/en/node/448922",
+      "license_basis": "Official parliamentary record used for procedural status; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording Bill 041.25 filing and House of Representatives first-reading adoption"
+      ],
+      "notes": "The House record states that the government bill was filed on 15 May 2026, referred to committee on 18 May, and adopted in plenary on 15 June 2026. This is parliamentary status only; it does not establish promulgation, Official Bulletin publication, commencement, or the bill's final legal effect.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "house-councillors-bill-041-25-status",
+      "title": "House of Councillors legislative record for Bill 041.25",
+      "publisher": "House of Councillors, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesconseillers.ma/en/node/98?field_resume_value=&field_secteurs_tid=All&field_trimestre_tid_1=All&page=6&qt-projetloi1_tabs=2",
+      "license_basis": "Official parliamentary record used for procedural status; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording House of Councillors receipt, committee consideration, and plenary adoption of Bill 041.25"
+      ],
+      "notes": "The House of Councillors record states that the bill arrived from the House of Representatives on 16 June 2026, was referred to committee on 18 June, approved by committee without amendment on 22 June, and adopted in plenary on 23 June 2026. Parliamentary adoption does not alone establish promulgation, Official Bulletin publication, commencement, or current legal effect.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-proposed-doc-amendment-lead",
+      "title": "SGG legislative portal search lead for proposed Bill 041.25 (superseded)",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/arabe/Legislation.aspx",
+      "license_basis": "Official legislative portal search lead; no text reproduced",
+      "date_accessed": "2026-10-07",
+      "verification_date": null,
+      "used_for": [
+        "Follow-up lead to check for later proposed DOC amendments"
+      ],
+      "notes": "This generic search lead is superseded by the specific SGG-hosted Bill 041.25 text and official parliamentary status records now registered separately. It remains unverified as a standalone portal search result and should not be cited for bill content or current legal status.",
+      "verification_status": "unverified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7526-2026-ar",
+      "title": "Official Bulletin No. 7526 (Arabic edition, 2026)",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/AR/3111/2026/BO_7526_Ar.pdf",
+      "license_basis": "Official Bulletin publication source; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying publication of Dahir 1.26.30 and Law 041.25 and the issue date",
+        "Checking the published text of Law 041.25 Articles 3 and 5 affecting DOC Articles 618-3 and 618-17; not a complete current-law review",
+        "Verifying publication of Dahir 1.26.27 and Law 032.26, its Article 2 commencement and transition text, and its relationship to Labour Code Article 193"
+      ],
+      "notes": "The official Arabic general-edition PDF was opened and checked on 2026-10-08. Its running headers identify Official Bulletin No. 7526 and repeat 16 July 2026, resolving the secondary date conflict in favor of 16 July; an external issue index says 27 July. The contents and Dahir heading identify Dahir 1.26.30, dated 3 July 2026, promulgating Law 041.25 (printed p. 4426). Articles 3 and 5 appear on printed pp. 4426-4427. Article 3 changes DOC Article 618-3; Article 5 repeals DOC Article 618-17 and preserves its implementing regulation until replacement. This verifies publication text and date only. A complete amendment history, entry-into-force analysis, interpretation, and current-law application remain unresolved; do not represent this source-text check as a current legal opinion.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "anfanews-law-41-25-bo-7526-report",
+      "title": "AnfaNews report on Law 41.25 and Official Bulletin No. 7526",
+      "publisher": "AnfaNews",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://anfanews.com/41-25/",
+      "license_basis": "Secondary reporting used only as a locator for primary publication verification; no text reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording a secondary report that Law 41.25 was promulgated on 3 July 2026 and published in Official Bulletin No. 7526 on 16 July 2026"
+      ],
+      "notes": "This report is a lead only. The SGG-hosted Official Bulletin PDF URL is separately registered, but direct retrieval failed and the final law text, promulgation details, and commencement have not been verified from the primary publication. Do not rely on this report for legal interpretation or a current-law conclusion.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "propertynews-africa-law-41-25-bo-7526-report",
+      "title": "Property News Africa report citing Law 41.25 and Official Bulletin No. 7526",
+      "publisher": "Property News Africa",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://propertynews.africa/buying-property-morocco-title-permits-boundaries-seller-authority/",
+      "license_basis": "Secondary reporting used only as a locator for primary publication verification; no text reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Corroborating a secondary report that Law 41.25 is associated with Official Bulletin No. 7526 and identifying its cited SGG PDF"
+      ],
+      "notes": "This report cites a purported SGG PDF of the Arabic Official Bulletin. The direct SGG PDF request failed in this environment; the cited issue and law text remain unverified from the primary publication. No interpretation or legal-effect claim is based on this secondary source.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "lexmaghreb-bo-7526-publication-date-locator",
+      "title": "LexMaghreb Official Bulletin No. 7526 index page",
+      "publisher": "LexMaghreb",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://lexmaghreb.com/bo-7526/",
+      "license_basis": "Third-party bulletin index used only to record an issue-date discrepancy and locate the official SGG PDF; no text reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording that a third-party Official Bulletin index dates issue 7526 to 27 July 2026 and links the SGG-hosted Arabic PDF; not as proof of the issue contents or law text"
+      ],
+      "notes": "The page identifies itself as an index to Official Bulletin No. 7526 and gives the issue date as 27 July 2026, then links to the SGG-hosted Arabic PDF. The primary SGG issue's running headers instead give 16 July 2026, so the third-party date is not supported by the official publication. Treat this as a record of a secondary locator/date discrepancy only; it does not establish the law number, text, commencement, or current legal effect.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "democratic-arab-center-offplan-bo-7526-law-number-conflict",
+      "title": "Democratic Arab Center — off-plan property study citing Official Bulletin No. 7526",
+      "publisher": "Democratic Arab Center; article author identified as a researcher at Moulay Ismail University",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://democraticac.de/?p=111624",
+      "license_basis": "Secondary scholarly article used only to identify a conflicting Official Bulletin/law-number lead; no text reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording an internal inconsistency in secondary identification of the law published in Official Bulletin No. 7526"
+      ],
+      "notes": "The article's footnote 4 identifies Dahir 1.26.30 of 3 July 2026 as promulgating Law 014.25 and cites Official Bulletin No. 7526 of 16 July 2026, page 4420; footnote 13 in the same article labels the measure Law 41.25. The primary SGG issue identifies the promulgated instrument as Law 041.25, so the footnote 4 number mismatch is internal to this secondary article. The SGG issue verifies publication and the bounded text of Articles 3 and 5; commencement, complete amendment history, interpretation, and current effect remain unresolved. Use this source only to document the secondary reporting discrepancy.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-5210-2004-labor-code",
+      "title": "Bulletin Officiel n° 5210 (French edition, 2004) — Loi n° 65-99 relative au Code du travail",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_fr/2004/BO_5210_Fr.pdf",
+      "license_basis": "Official Bulletin promulgation text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-07",
+      "verification_date": "2026-10-07",
+      "used_for": [
+        "Checking the promulgated wording of Code du travail Articles 1 and 6 against an official Bulletin source"
+      ],
+      "notes": "The accessed Bulletin text is the original promulgation text. It does not establish the current consolidated law or the effect of later amendments. Article 6 wording alone is not a complete worker-classification analysis.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-projet-labor-amendment-032-26",
+      "title": "Projet de loi n° 032.26 amending Law n° 65.99 relative to the Code du travail",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/Portals/1/PL/projet_loi_032.26.pdf",
+      "license_basis": "Official legislative proposal used as a legislative-status research lead; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking that Bill 032.26 is a proposal to supplement Article 193 of Law 65-99 and identifying provisions requiring current-status verification"
+      ],
+      "notes": "The accessed two-page government bill is a proposal to supplement Article 193 of Law 65-99. Its Article 2 proposes a twelve-month transition for specified pre-publication guarding-services contracts. The subsequently published Law 032.26 in Official Bulletin No. 7526 instead sets that transition at nine months. Use the gazetted text for the enacted period; this filed bill remains proposal-history evidence and does not establish current-law application.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-personal-data-resource-index",
+      "title": "Protection des personnes physiques à l’égard du traitement des données à caractère personnel — Adala resource listing",
+      "publisher": "Ministry of Justice, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://adala.justice.gov.ma/fr/resources/781",
+      "license_basis": "Official legal portal used as a source locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the Ministry legal portal's listing of a personal-data protection resource"
+      ],
+      "notes": "The Adala page lists the title under ‘Matière des transactions électroniques’ and marks it ‘Nouveau’. Initial automated retrieval of its linked PDF timed out; a direct browser open on 2026-10-08 succeeded. The 46-page PDF begins with Dahir 1-09-15/Loi 09-08 and includes selective quoted/cited provisions of Decree 2-09-165 and the CNDP internal regulation. Treat the listing as a locator; see separate PDF record for content scope.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-decret-2-09-165",
+      "title": "Décret n° 2-09-165 pris pour l’application de la loi n° 09-08",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP), hosting official text",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.cndp.ma/wp-content/uploads/2023/06/Decret-2-09-165-FR.pdf",
+      "license_basis": "Official legal text hosted by the CNDP and presented as Bulletin Officiel text; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Identifying the implementing decree published by the CNDP and mapping provisions for future research"
+      ],
+      "notes": "The accessed PDF identifies Decree 2-09-165 dated 21 May 2009. This confirms the promulgation text as published, not its current amendment status or application to a specific processing activity.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-notifier-un-traitement",
+      "title": "Notifier un traitement — CNDP procedure guidance",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.cndp.ma/notifier-un-traitement/",
+      "license_basis": "Official regulator guidance used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording CNDP-published guidance navigation for declarations, prior authorizations, and transfers; identifying provision-level questions for counsel"
+      ],
+      "notes": "The page was accessed on 2026-10-08 and describes CNDP procedure categories and exceptions. It is administrative guidance, not the enacted text; its summaries, forms, timelines, and applicability must be checked against current legislation, implementing texts, and the facts before any legal claim is made.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-procedures-de-notification-process",
+      "title": "Procédures de notification — CNDP procedure page",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.cndp.ma/procedures-de-notification-process/",
+      "license_basis": "Official CNDP procedure page used as an unresolved administrative locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the live CNDP procedure page's cookie-specific association of Deliberation D-939-2025 with F-214, including the displayed form label"
+      ],
+      "notes": "The live page was directly opened on 2026-10-08. Under ‘Gestion des cookies pour site web’, it identifies Deliberation D-939-2025 and displays ‘Formulaire de déclaration normale conformément à une décision (F-214)’; it also lists consent-or-other-legal-basis documentation, an information notice, a processor contract where applicable, and proof of signing authority. This records the live CNDP page's text only. The label differs from section 8 of D-939-2025, which says ‘déclaration simplifiée’, and the CNDP accompaniment page's generic F214 label as a simplified declaration. The mismatch remains unresolved; the live page does not by itself establish the legal classification, applicability to a specific controller, current filing workflow, or which form the CNDP accepts in practice. Do not state or implement filing advice from this source alone.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-demande-accompagnement-form-categories",
+      "title": "CNDP form for requesting guidance — notification regimes",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.cndp.ma/demande-daccompagnement/",
+      "license_basis": "Official CNDP form page used for source-text research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the CNDP page's displayed mapping of F214 to a simplified-declaration category and F211 to a normal-declaration category"
+      ],
+      "notes": "The directly opened CNDP page displays a regime option labelled 'Demande concernant une DS (Déclaration Simplifiée conformément à une décision) - Formulaire F214' and another labelled 'Demande concernant une DN (Déclaration Normale) - Formulaire F211'. This records the form-page labels only, not which form applies to a particular processing activity or how the labels relate to D-939-2025 and the separate procedures page.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-form-f214-20250724",
+      "title": "CNDP F214 form, version 20250724 — declaration pursuant to a decision",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.cndp.ma/wp-content/uploads/2025/07/CNDP-Declaration-Normale-Conformement-Decision_F214_20250724_Fr.pdf",
+      "license_basis": "Official CNDP form used for source-text research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Identifying the exact F-214 PDF linked from the live CNDP cookie-procedure entry and recording its displayed title, version, and statutory reference"
+      ],
+      "notes": "The live CNDP procedures page's cookie entry directly links to this exact 5-page PDF as F-214 (link followed on 2026-10-08). Page 1 titles it 'Déclaration de traitement — Conformément à la Décision N°', displays version 20250724, and cites Article 15 of Law 09-08; the hosted filename also identifies F214 and describes a normal declaration pursuant to a decision. This verifies which PDF the live page links. It does not establish why D-939-2025 section 8 describes simplified declaration, the legal classification of this filing route, the form's applicability to particular facts, or what CNDP currently accepts in practice.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-conformite-des-sites-web",
+      "title": "CNDP — Lignes directrices relatives à la conformité des sites web",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.cndp.ma/conformite-des-sites-web/",
+      "license_basis": "Official regulator guidance used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the CNDP website-compliance guidance's assertions about notification, authorization/declaration, foreign hosting, collection notices, consent, and cookies for statutory reconciliation"
+      ],
+      "notes": "The accessed guidance page states broad website-specific procedures and consent directions. Treat it as the CNDP's guidance text, not as a current consolidated statute. Its scope and instructions must be reconciled with Loi 09-08, its decree, amendments, exceptions, and the actual processing facts before use; this project does not adopt them as general legal requirements.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-guide-conformite-sites-web-pdf",
+      "title": "CNDP — Guidelines on website compliance with Law 09-08",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.cndp.ma/wp-content/uploads/2023/01/CNDP-guide-conformite-sites-web-fr.pdf",
+      "license_basis": "Official CNDP guidance used for source-text research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the exact guidance text on website notification, collection information and consent, and cookies, for comparison with Loi 09-08 and later CNDP decisions"
+      ],
+      "notes": "The 11-page publisher-hosted French PDF was directly opened on 2026-10-08. It describes itself as a practical, non-exhaustive guide based on Loi 09-08 and its implementing texts. Sections 2–4 discuss CNDP notification, authorization/declaration, foreign transfers, information at collection, and consent; section 10 says a website using cookies that call on personal data must obtain consent before deposit and explain purposes and objection means. The PDF shows no edition date in the retrieved text; the upload path does not establish its adoption date or legal status. Compare its cookie-consent wording with later CNDP Deliberation D-939-2025, which states a more differentiated rule for the purposes listed there. This difference is recorded as unresolved; it does not establish repeal, priority, or current legal interpretation. No Moroccan legal conclusion or template requirement is drawn from this guidance alone.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cndp-deliberation-d-939-2025-cookie-data",
+      "title": "CNDP Deliberation No. D-939-2025 — simplified declaration model for personal data from cookies",
+      "publisher": "Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.cndp.ma/wp-content/uploads/2025/12/Deliberation-N%C2%B0-D-939-2025-du-28112025-relative-au-modele-de-declaration-simplifiee-relative-au-traitement-des-donnees-a-caractere-personnel-de-cookies-sur-un-terminal.pdf",
+      "license_basis": "Official CNDP decision used for source-text research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording scoped CNDP decision text on personal data processed through cookies, notification, purposes, retention, consent, transfers, and interconnections; no template wording incorporated"
+      ],
+      "notes": "The 5-page PDF is titled Deliberation No. D-939-2025 dated 28 November 2025 and is signed by the CNDP President. It cites Article 28 of Law 09-08 and Decree 2-09-165. Sections 1–8 address processing personal data by installing, recording, or storing cookies on a user's terminal; they provide a simplified-declaration model, list purposes, require prior authorization for personal profiling, set a six-month maximum retention period, distinguish consent for personalized advertising and social-network sharing from the other listed purposes, state information to communicate before the first cookie deposit and a duty to communicate changes, and state security/confidentiality and subcontractor guarantees. Sections 9–10 state prior-CNDP-authorization requirements for foreign transfers of cookie data and interconnections with different purposes. The record verifies what this official PDF states only. Its formal publication, legal effect, current status, scope beyond the decision's text, and reconciliation with the 2009 statute, the older CNDP website guide, and other CNDP decisions remain unresolved. Do not infer that the decision resolves all cookies, similar technologies, or every processing scenario.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7162-decree-2-22-687",
+      "title": "Bulletin Officiel n° 7162 (2023) — Décret n° 2-22-687 applying Law 43-20",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/FR/2873/2023/BO_7162_fr.pdf",
+      "license_basis": "Official Bulletin publication used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Confirming that an implementing decree for Law 43-20 was published in Official Bulletin n° 7162; current application remains to be researched"
+      ],
+      "notes": "The Bulletin text identifies Decree 2-22-687 as applying Law 43-20 on trust services for electronic transactions. This decree is not a general determination that a particular clickwrap, e-signature method, or service is legally sufficient.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-law-43-20-trust-services",
+      "title": "Services de confiance pour les transactions électroniques — Adala legal portal entry",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/03/20/Service%20de%20Confiance%20pour%20les%20transactions%20%C3%A9l%C3%A9ctroniques-1710937527202.pdf",
+      "license_basis": "Official legal portal locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": null,
+      "used_for": [
+        "Locating the Law 43-20 text for future electronic-transactions research"
+      ],
+      "notes": "The Ministry portal entry for this PDF was reached, but retrieval timed out on 2026-10-08. Treat as an unverified locator; no proposition is based on this file.",
+      "verification_status": "unverified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-consolidated-texts-index",
+      "title": "SGG Textes consolidés index",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/textesconsolides.aspx",
+      "license_basis": "Official index locator inspected; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Locating the SGG consolidated Law 31-08 edition dated 22 May 2025"
+      ],
+      "notes": "The index was retrieved on 2026-10-08 and its Law 31-08 link was followed to the consolidated PDF. The linked PDF and its scope are recorded separately; index reachability alone does not establish legal currency or amendment completeness.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-legislation-portal-032-26-status",
+      "title": "SGG legislative portal listing for Bill 032.26",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/arabe/Legislation.aspx",
+      "license_basis": "Official legislative-status portal used as a status locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the portal's listing that Bill 032.26 was deposited on 15 May 2026 at the House of Councillors"
+      ],
+      "notes": "This is the SGG deposit listing. Separate House of Councillors and House of Representatives records document later approvals. On 2026-10-08, a fresh check of the current portal page found no matching 032.26 entry in its current draft-project list; this absence did not establish promulgation or publication. A separate browser inspection subsequently verified Dahir 1.26.27, Law 032.26, and Article 2 in Official Bulletin No. 7526. The portal listing remains proposal-history evidence; full amendment history, application, and current-law effect require further review.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-6344-law-101-14-insertion-training",
+      "title": "Bulletin Officiel n° 6344 (French edition, 2015) — Law 101-14 amending the formation-insertion training regime",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_fr/2015/BO_6344_Fr.pdf",
+      "license_basis": "Official Bulletin promulgation text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Identifying a special formation-insertion training regime for holders of certain diplomas and avoiding treating it as a generic internship template"
+      ],
+      "notes": "The Bulletin promulgates Law 101-14 amending Dahir-Law 1-93-16, whose stated subject is employer-organized placements for holders of certain diplomas for formation-insertion. This source does not establish whether a particular placement falls within that regime or the current amended text; no requirements from it are built into the draft template.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-legislation-portal-51-25-status",
+      "title": "SGG legislative portal listing for Bill 51.25 concerning formation-insertion placements",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/arabe/Legislation.aspx",
+      "license_basis": "Official legislative-status portal used as a status locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the portal listing that Bill 51.25 was deposited on 18 February 2026 at the House of Representatives"
+      ],
+      "notes": "The SGG search index surfaced a historical deposit listing concerning Dahir-Law 1-93-16. On 2026-10-08, the current page at this URL did not show Bill 51.25 among its listed projects. Treat the index result as a historical procedural locator, not the current stage of the bill. Separate House and Council records document later approvals, and Dahir 1.26.54 and Law 51.25 are published in Official Bulletin No. 7533. These portal observations do not establish whether the law requires or has received implementing instruments. Use the Official Bulletin for enacted text and qualified review for effect or application.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "councillors-bill-032-26-status",
+      "title": "House of Councillors legislative record for Bill 032.26",
+      "publisher": "House of Councillors, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesconseillers.ma/ar/%D8%A7%D9%84%D9%86%D8%B5%D9%88%D8%B5-0?field_resume_value=&field_secteurs_tid=All&field_trimestre_tid_1=&page=7&qt-projetloi1_tabs=2",
+      "license_basis": "Official parliamentary legislative-status record used as a procedural locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the House of Councillors' 16 June 2026 approval of Bill 032.26"
+      ],
+      "notes": "The record identifies Bill 032.26 and reports approval by the House of Councillors on 16 June 2026. This source establishes chamber procedure only. Dahir 1.26.27, Law 032.26, and its Article 2 commencement text were later verified in Official Bulletin No. 7526; use that publication source for the enacted text. Full amendment history and legal application remain open.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "representatives-session-329-2026-06-22",
+      "title": "House of Representatives plenary session 329 record, 22 June 2026",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/ar/seance-pleiniere/jlst-mkhsst-lldrast-waltswyt-ly-alnsws-altshryyt-altalyt-mshrw-qanwn-rqm-3425-yqdy",
+      "license_basis": "Official parliamentary plenary-session record used as a procedural locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording House of Representatives approval of Bills 032.26 and 51.25 on 22 June 2026"
+      ],
+      "notes": "The session record lists votes on Bills 032.26 and 51.25 on 22 June 2026. This source establishes House votes only. Law 032.26 and Law 51.25 were later verified in Official Bulletins No. 7526 and 7533, respectively; use those publications for enacted text. Full effect and application remain outside this procedural record.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "councillors-bill-51-25-status",
+      "title": "House of Councillors legislative record for Bill 51.25",
+      "publisher": "House of Councillors, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesconseillers.ma/ar/loi-approuvee-content",
+      "license_basis": "Official parliamentary legislative-status record used as a procedural locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the House of Councillors' 7 July 2026 approval of Bill 51.25"
+      ],
+      "notes": "The record states that Bill 51.25 arrived from the House of Representatives on 23 June 2026 and was approved by the House of Councillors on 7 July 2026. This establishes a chamber vote only. Dahir 1.26.54 and Law 51.25 were subsequently verified in Official Bulletin No. 7533; use that publication for enacted text and transitions. Full legal effect and application remain open.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-law-2-00-copyright",
+      "title": "Droits d’auteur et droits voisins — Adala portal copy of Law 2-00",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/12/13/Droits%20d%27auteur%20et%20droits%20voisins-1734085207226.pdf",
+      "license_basis": "Official legal portal copy used as a research locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the portal-hosted text of Law 2-00 Articles 31 and 35 and its listed amendment references"
+      ],
+      "notes": "The PDF text includes Law 2-00 and footnotes citing Laws 34-05, 79-12, and 66-19, with Official Bulletin references. Articles 31 and 35 were checked as text-level evidence only. Completeness/currentness of the consolidation, application, relevant formalities, and later legislative status remain unresolved; no user-specific ownership conclusion is based on this record.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "haca-law-2-00-through-34-05",
+      "title": "Law 2-00 as amended by Law 34-05 — HACA reference text",
+      "publisher": "Haute Autorité de la Communication Audiovisuelle (HACA), Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.haca.ma/fr/dahir-n%C2%B0-1-00-20-du-15-f%C3%A9vrier-2000",
+      "license_basis": "Official authority-hosted legal text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Cross-checking the text of Law 2-00 Articles 31 and 35 in a government authority page labelled as a consolidated version and showing Law 34-05"
+      ],
+      "notes": "The HACA page labels the text as consolidated, reproduces Dahir 1-00-20 and Law 2-00 as amended and supplemented by Law 34-05, and displays Articles 31 and 35. It is an official authority-hosted cross-check, not the underlying Official Bulletin publication; it predates Laws 79-12, 66-19, and 013.26 and cannot establish current law, completeness, interpretation, or application.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-consolidated-copyright-law-2-00",
+      "title": "SGG consolidated Law 2-00 — September 2026 edition",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/Portals/1/textesconsolides/2_00.pdf",
+      "license_basis": "Official consolidated text published for ease of reference; underlying Official Bulletin texts control; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the SGG consolidated edition dated September 2026, which includes Law 013.26 and cites Official Bulletin No. 7533",
+        "Checking the September 2026 consolidated wording of Law 2-00 Articles 31, 35, and inserted Article 1.7",
+        "Recording the consolidation's citation to the original Law 2-00 promulgation in Official Bulletin No. 4796, dated 18 May 2000, printed p. 1112"
+      ],
+      "notes": "The title page identifies this as a consolidated version dated September 2026; its amendment notes cite Law 013.26 and Official Bulletin No. 7533. The opening publication note identifies the original Law 2-00 publication as Official Bulletin No. 4796, dated 18 May 2000, printed p. 1112. Attempts to retrieve the underlying SGG-hosted 2000 issue PDF through the SGG archive were unsuccessful; this record verifies the SGG locator, not the original Gazette page image or text. The SGG preface says the edition is prepared for readability and only the versions published in the Official Bulletin are authoritative. Use as an official consolidation locator and cross-check; cite gazetted text for legal authority. Current legal interpretation, commencement questions, and fact-specific application remain open.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7158-fr-law-66-19-copyright",
+      "title": "Official Bulletin No. 7158 — French translation of Law 66-19 amending Law 2-00",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/FR/2873/2023/BO_7158_Fr.pdf",
+      "license_basis": "Official Bulletin publication used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the enumerated amendments to Law 2-00 made by Law 66-19 against Articles 31 and 35"
+      ],
+      "notes": "This SGG-hosted French translation is retained as a translation cross-check. The original Arabic enactment appears in Official Bulletin No. 7101. Do not treat this translated-edition issue number as the original publication issue. The scoped amendment enumeration is taken from the Arabic Official Bulletin No. 7101 source record.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7101-law-66-19-copyright",
+      "title": "Official Bulletin No. 7101 — Law 66-19 amending Law 2-00 (Arabic original)",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/AR/3111/2022/BO_7101_Ar.pdf",
+      "license_basis": "Official Bulletin publication used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying the original Arabic Official Bulletin publication and enumerated amendments in Law 66-19 Article 1"
+      ],
+      "notes": "Official Bulletin No. 7101, dated 20 June 2022, identifies Dahir 1.22.35 promulgating Law 66-19. At printed p. 3726, Article 1 enumerates amendments to Articles 1, 3, 44, 45(1), 47(2), 48, and 64 of Law 2-00; Articles 31 and 35 do not appear in that enumeration. This is a scoped amendment check only, not proof that no other legislation affects those provisions or a current-law determination.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-6266-law-79-12-copyright",
+      "title": "Official Bulletin No. 6266 — French translation of Law 79-12 supplementing Law 2-00",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_fr/2014/BO_6266_Fr.pdf",
+      "license_basis": "Official Bulletin publication used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Cross-checking the French translation edition of Law 79-12 against the original Arabic Official Bulletin No. 6263"
+      ],
+      "notes": "This is the SGG-hosted official French translation edition, Official Bulletin No. 6266 dated 19 June 2014. The original Arabic publication is Official Bulletin No. 6263 dated 9 June 2014, printed p. 4849; that primary issue is separately registered. Keep the translated-edition issue number distinct from the original publication issue.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-6263-law-79-12-copyright",
+      "title": "Official Bulletin No. 6263 — Law 79-12 supplementing Law 2-00 (Arabic original)",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_ar/2014/BO_6263_Ar.pdf",
+      "license_basis": "Official Bulletin publication used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying the original Arabic promulgation and the single-article addition made by Law 79-12 to Law 2-00"
+      ],
+      "notes": "Official Bulletin No. 6263 is dated 9 June 2014. Its table of contents and printed p. 4849 identify Dahir 1.14.97 promulgating Law 79.12; the single article adds the private-copy remuneration chapter to Law 2.00. This is a scoped amendment check only and does not establish complete amendment history, current-law status, interpretation, or application to Articles 31 or 35.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "wipo-law-79-12-private-copying-amendment",
+      "title": "Law 79-12 supplementing Law 2-00 — WIPO Lex text and amendment note",
+      "publisher": "World Intellectual Property Organization — WIPO Lex",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://www.wipo.int/wipolex/fr/text/589517",
+      "license_basis": "International organization legal-research reference; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking WIPO Lex's identification of the single-article addition made by Law 79-12 to Law 2-00"
+      ],
+      "notes": "WIPO Lex is retained as a secondary locator and cross-check. The original Arabic Law 79-12 publication is now verified in SGG Official Bulletin No. 6263; No. 6266 is the French translation edition. The available issue text does not establish complete amendment history or current-law status.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-5400-fr-law-34-05-copyright",
+      "title": "Official Bulletin No. 5400 — French translation of Law 34-05 amending Law 2-00",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_fr/2006/bo_5400_fr.pdf",
+      "license_basis": "Official Bulletin publication used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the official French translation of Law 34-05 as a cross-check for the scoped Articles 31 and 35 audit"
+      ],
+      "notes": "This is the SGG-hosted French translation edition. The original Arabic publication appears in Official Bulletin No. 5397, dated 20 February 2006; that issue is separately registered. The translation is retained as a cross-check, and its text extraction is imperfect. Keep the translated-edition number distinct from the original publication issue.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-5397-law-34-05-copyright",
+      "title": "Official Bulletin No. 5397 — Law 34-05 amending Law 2-00 (Arabic original)",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_ar/2006/BO_5397_ar.pdf",
+      "license_basis": "Official Bulletin publication used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying the original Arabic Official Bulletin issue containing Law 34-05"
+      ],
+      "notes": "The SGG-hosted Arabic issue is Official Bulletin No. 5397, dated 20 February 2006. The table of contents identifies Dahir 1.05.192 promulgating Law 34-05 amending and supplementing Law 2-00; the SGG consolidated text cites printed p. 458. The issue's text extraction is unreliable, so this record verifies publication identity and locator only. The separate Official Bulletin No. 5400 record is the French translation edition used as a text cross-check. Do not treat this source alone as confirmation of the amendment list or current law.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bill-013-26-copyright-status",
+      "title": "SGG legislative portal listing for proposed Bill 013.26 concerning Law 2-00",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/arabe/Legislation.aspx",
+      "license_basis": "Official legislative-status portal used as a status locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the portal listing that Bill 013.26 modifying Law 2-00 was deposited on 23 June 2026 at the House of Representatives"
+      ],
+      "notes": "This record preserves the SGG portal's original deposit listing only. Later chamber records document passage; Official Bulletin No. 7533 verifies promulgation/publication; and the SGG September 2026 consolidated Law 2-00 edition is recorded separately. This deposit listing does not establish commencement or current legal effect.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "representatives-bill-013-26-status",
+      "title": "House of Representatives legislative record for Bill 013.26",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/ar/%D8%A7%D9%84%D9%86%D8%B5%D9%88%D8%B5-%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9%D9%8A%D8%A9/mshrw-qanwn-rqm-01326-btghyyr-wttmym-alqanwn-rqm-200-almtlq-bhqwq-almwlf-walhqwq",
+      "license_basis": "Official parliamentary legislative-status record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the House of Representatives vote approving Bill 013.26 on 6 July 2026"
+      ],
+      "notes": "This chamber record documents legislative action only. Official Bulletin No. 7533 separately verifies promulgation/publication, and the SGG September 2026 consolidated text includes Law 013.26. This record does not establish commencement, current interpretation, or application.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "councillors-bill-013-26-status",
+      "title": "House of Councillors legislative record for Bill 013.26",
+      "publisher": "House of Councillors, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesconseillers.ma/fr/node/98?qt-projetloi1_tabs=0",
+      "license_basis": "Official parliamentary legislative-status record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the House of Councillors vote approving Bill 013.26 on 13 July 2026"
+      ],
+      "notes": "The chamber's public record states Bill 013.26 was referred from the House of Representatives on 7 July 2026, considered by committee on 8 and 13 July without amendment, and approved in plenary on 13 July by 46 votes to zero with one abstention. This chamber record is legislative history only; promulgation/publication are separately verified from Official Bulletin No. 7533, while commencement and the current consolidated Law 2-00 remain unresolved.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "councillors-approved-bill-013-26-text",
+      "title": "House of Councillors text of Bill 013.26 as approved",
+      "publisher": "House of Councillors, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.chambredesconseillers.ma/docs/%D9%86%D8%B5%D9%88%D8%B5%20%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9%D9%8A%D8%A9/lois_approuv%C3%A9es/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%B1%D9%82%D9%85%20013.26%20%D8%A8%D8%AA%D8%BA%D9%8A%D9%8A%D8%B1%20%D9%88%D8%AA%D8%AA%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%B1%D9%82%D9%85%202.00%20%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D9%84%D9%82%20%D8%A8%D8%AD%D9%82%D9%88%D9%82%20%D8%A7%D9%84%D9%85%D8%A4%D9%84%D9%81%20%D9%88%D8%A7%D9%84%D8%AD%D9%82%D9%88%D9%82%20%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%88%D8%B1%D8%A9.pdf",
+      "license_basis": "Official parliamentary bill text published for legislative-status research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Locating the four-page House of Councillors PDF titled as Bill 013.26 approved by the chamber"
+      ],
+      "notes": "This is the legislature's approved bill text, not itself the promulgated Official Bulletin. It can support comparison of bill language; promulgation/publication are verified separately in Official Bulletin No. 7533, while commencement and any final editorial differences require reconciliation.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7533-law-013-26",
+      "title": "Official Bulletin No. 7533 (Arabic general edition), including Laws 013.26 and 51.25",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/AR/3111/2026/BO_7533_Ar.pdf",
+      "license_basis": "Official Bulletin promulgation text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying Dahir 1.26.68 dated 28 July 2026 promulgating Law 013.26",
+        "Verifying Official Bulletin publication dated 10 August 2026 and text-level provisions of Law 013.26 on printed pages 5140–5143",
+        "Verifying Dahir 1.26.54 and Law 51.25 Article 4 publication and transitional text on printed pages 5144–5146"
+      ],
+      "notes": "Arabic official general edition dated 10 August 2026. The issue publishes Law 013.26 on printed pages 5140–5143 and Law 51.25 on pages 5144–5146. It supports bounded text-level summaries of both instruments. For Law 013.26, it does not supply a separate commencement clause or a complete current consolidated Law 2-00. For Law 51.25, Article 4 states differentiated treatment for training contracts by trainee qualification and contract date; the relationship to Law 60.24, full implementation conditions, later amendments, and application to an individual placement remain for review.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-4197-ar-decree-2-91-517",
+      "title": "Official Bulletin No. 4197 (Arabic edition), candidate issue containing Decree 2-91-517",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_ar/1993/BO_4197_ar.PDF",
+      "license_basis": "Official Bulletin source locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Primary-source locator for Decree 2-91-517 implementing Dahir-Law 1-93-16"
+      ],
+      "notes": "The official PDF opened but yielded no extractable text to the research browser. A secondary Official Bulletin index identifies Decree 2-91-517 in issue 4197, but the decree's page, contents, annex, and current effect have not been verified against the official scan. Use the separate ILO NATLEX reproduction only as a text locator pending visual or official-text verification.",
+      "verification_status": "unverified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "ilo-natlex-decree-2-91-517-reproduction",
+      "title": "ILO NATLEX reproduction of Morocco Decree 2-91-517",
+      "publisher": "International Labour Organization, NATLEX",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://natlex.ilo.org/dyn/natlex2/natlex2/files/download/33227/MAR-33227.pdf",
+      "license_basis": "Non-primary reproduction of legal text used for research only; no wording reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Text locator for Decree 2-91-517 Articles 1–3 and its historical model convention; not a current-law determination"
+      ],
+      "notes": "The directly accessed three-page reproduction states that Article 1 refers to an annexed formation-insertion agreement model and Article 2 assigns visa of the agreement to provincial or prefectural employment-ministry services. The annex includes historical terms such as an 18-month duration and MAD 1,600 minimum compensation. Those annex terms predate Law 101-14 and Law 51.25 and are not current requirements established by this record. Cross-check every text detail against the SGG Official Bulletin issue before relying on it; the official issue PDF was accessible but not text-extractable in this review.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7362-law-60-24-finance-2025",
+      "title": "Official Bulletin No. 7362 (Arabic general edition), Law 60.24 for fiscal year 2025",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/AR/3111/2024/BO_7362_Ar.pdf",
+      "license_basis": "Official Bulletin promulgation text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the Law 60.24 Article 14 cross-reference in Law 51.25 Article 4 against the promulgated Finance Law text"
+      ],
+      "notes": "Official Bulletin No. 7362 publishes Dahir 1.24.65 and Law 60.24 for fiscal year 2025, dated 13 December 2024. Article 14 amends the expenditure items of the special Treasury account 'Fonds de promotion de l'emploi des jeunes'; paragraph 13 covers State assumption of benefits under Dahir-Law 1.93.16 for training of trainees without diplomas, for a period not exceeding twelve months, and in case of permanent employment. This describes a public-account expenditure provision and should not be restated as an individual trainee entitlement without further legal analysis. Later amendments and application remain unreviewed.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "house-constitution-article-50",
+      "title": "Constitution of Morocco, Article 50 — House of Representatives text",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/fr/titre-iii-de-la-royaute",
+      "license_basis": "Official constitutional text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the Constitution Article 50 text on promulgation and Official Bulletin publication deadlines"
+      ],
+      "notes": "Article 50 addresses promulgation and publication timing. It does not itself specify when an enacted law enters into force; do not infer an effective date from this provision alone.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "bdj-constitution-article-6",
+      "title": "Constitution of Morocco — Article 6, Ministry of Justice legal database",
+      "publisher": "Ministry of Justice, Documentation juridique marocaine",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://bdj.mmsp.gov.ma/Fr/Document/5601-Dahir.aspx",
+      "license_basis": "Official constitutional text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking Constitution Article 6 on publication of legal norms and non-retroactivity"
+      ],
+      "notes": "The Ministry legal database identifies Dahir 1-11-91 promulgating the Constitution and publication in Official Bulletin No. 5964 bis on 30 July 2011. Article 6 states the obligation to publish legal norms and that laws may not have retroactive effect; it does not state a default commencement date for a newly published law. No general entry-into-force rule is inferred from this record.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "bo-5932-law-31-08",
+      "title": "Official Bulletin No. 5932 — Dahir 1.11.03 promulgating Law 31-08",
+      "publisher": "Kingdom of Morocco, Official Bulletin No. 5932 (government-hosted reproduction via DGSSI)",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/legislative/brochure/2023-03/%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%B1%D9%82%D9%85%2008-31%20%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D9%84%D9%83.pdf",
+      "license_basis": "Official Bulletin reproduction used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Cross-checking Law 31-08 Articles 43–50 against the reproduced Official Bulletin text on page 1080; no text reproduced"
+      ],
+      "notes": "The 32-page government-hosted PDF identifies the reproduced publication as Official Bulletin No. 5932 dated 7 April 2011 and begins the Dahir promulgating Law 31-08 on printed page 1072. Indexed text for printed page 1080 includes Articles 43–50. This is a government-hosted reproduction rather than an SGG-hosted Bulletin file; preserve the SGG statement that Official Bulletin publications are authoritative and seek an SGG-hosted issue copy where available. This source establishes the original publication text only, not later amendments or current law.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-consolidated-law-31-08",
+      "title": "Law 31-08 consolidated edition dated 22 May 2025",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/Portals/1/textesconsolides/31_08.pdf",
+      "license_basis": "Official consolidated readability copy used for legal research; SGG states Official Bulletin versions are authoritative; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the edition date and SGG preface caveat",
+        "Text-level research on Law 31-08 Articles 1–2, distance-contract provisions in Articles 25–44, off-premises-sale provisions in Articles 45–52, discount-sale provisions in Articles 53–54, and the Article 202 amendment note and text"
+      ],
+      "notes": "The cover identifies the text as consolidated through 22 May 2025. SGG states the consolidation facilitates readability and only versions published in the Official Bulletin are authoritative. Cross-check relevant provisions against the Gazette and later instruments; this copy does not establish interpretation or application to a particular service.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-6945-law-78-20-amends-31-08-article-202",
+      "title": "Official Bulletin No. 6945 — Law 78.20 amending Law 31-08 Article 202",
+      "publisher": "Kingdom of Morocco, Official Bulletin No. 6945, General Edition",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_ar/2020/BO_6945_Ar.pdf",
+      "license_basis": "Official Bulletin text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying promulgation, publication, Article 202 replacement, venue rule, and stated commencement of Law 78.20"
+      ],
+      "notes": "The SGG-hosted Arabic Official Bulletin No. 6945, dated 21 December 2020, prints Law 78.20 and Dahir 1.20.85 on printed page 8465. Article 1 replaces Law 31-08 Article 202 with a consumer-supplier dispute venue provision; Article 2 states that Law 78.20 takes effect from publication. The SGG consolidation dated 22 May 2025 separately records the amendment. Later amendment status, procedural interpretation, and transaction-specific applicability remain unreviewed.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "acaps-bo-5932-law-31-08",
+      "title": "Law 31-08 as published in Official Bulletin No. 5932 — ACAPS-hosted reproduction",
+      "publisher": "Autorité de Contrôle des Assurances et de la Prévoyance Sociale (ACAPS)",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.acaps.ma/sites/default/files/publication_documents/loi_ndeg31-08_edictant_des_mesures_de_protection_du_consommateur.pdf",
+      "license_basis": "Authority-hosted reproduction of published legislation used for text cross-checking; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Cross-checking the published wording of Law 31-08 Articles 53–54 against printed page 354 of Official Bulletin No. 5932"
+      ],
+      "notes": "The PDF displays Official Bulletin No. 5932 and the 2011 publication date, and its text reproduces Articles 53–54 on printed page 354. This is a regulator-hosted reproduction of publication wording, not evidence of later amendments or current law. The SGG 2025 consolidation remains a separate readable comparison source; verify amendment instruments and authoritative Gazette records before applying a proposition.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-decree-2-22-687-electronic-trust-services",
+      "title": "Décret n° 2-22-687 pris pour l’application de la loi 43-20 — Adala copy",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2025/02/24/D%C3%A9cret%20%20confiance%20pour%20les%20transactions%20%C3%A9lectroniques-1740412902700.pdf",
+      "license_basis": "Official legal portal copy used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the decree title, date, Official Bulletin citation, Article 1 and Article 37 as text-level evidence"
+      ],
+      "notes": "The 24-page Ministry portal copy identifies Decree 2-22-687 dated 16 November 2022 and cites Official Bulletin n° 7162, page 145. Articles 1 and 37 were checked. This is not a full current-law analysis; verify later amendments, referenced standards, and application before stating requirements for a particular service or signature.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "bdj-law-43-20-metadata",
+      "title": "Law 43-20 legal-database entry — Ministry of Digital Transition and Administrative Reform",
+      "publisher": "Ministry of Digital Transition and Administrative Reform, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://bdj.mmsp.gov.ma/Fr/Document/10454-loi-n-4320-relative-aux-services-de-confiance-co.aspx",
+      "license_basis": "Official legal-database record used as a locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Locating Law 43-20 and checking its listed Bulletin Officiel number against the SGG Arabic Official Bulletin edition"
+      ],
+      "notes": "The entry identifies Law 43-20 and Bulletin Officiel No. 6951. Its displayed 31 December 2020 date matches the promulgation date in the law title; the SGG Arabic general edition No. 6951 is dated 11 January 2021. Use the SGG gazette edition as the authoritative text; this database entry remains a locator, not a full-text or current-law determination.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-6951-law-43-20",
+      "title": "Official Bulletin No. 6951 (Arabic general edition), Law 43-20",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_ar/2021/BO_6951_Ar.pdf",
+      "license_basis": "Official Bulletin promulgation text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying the promulgated Arabic text of Law 43-20, including Articles 7, 83, and 84",
+        "Reconciling the Arabic publication date with the Ministry legal-database entry"
+      ],
+      "notes": "The official SGG PDF identifies Official Bulletin No. 6951 dated 11 January 2021 and contains Dahir 1-20-100 and Law 43-20. Articles 7, 83, and 84 were checked as text-level evidence. These checks do not establish a complete current framework, later changes, interpretation, or application to any transaction.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dgssi-faq-law-43-20-v1-1",
+      "title": "Law 43-20 relative to trust services for electronic transactions — DGSSI FAQ, version 1.1",
+      "publisher": "Direction Générale de la Sécurité des Systèmes d'Information (DGSSI), National Defence Administration, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/publications/pdf/2024-11/%D8%A3%D8%B3%D8%A6%D9%84%D8%A9%20%D9%85%D8%AA%D8%AF%D8%A7%D9%88%D9%84%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%2020-43%20%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D9%84%D9%82%20%D8%A8%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AB%D9%82%D8%A9%20%D8%A8%D8%B4%D8%A3%D9%86%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9.pdf",
+      "license_basis": "Official DGSSI explanatory guidance used as a source-text record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the DGSSI FAQ's version history concerning entry into force and publication of technical requirements for Law 43-20",
+        "Recording the FAQ's date discrepancy and its time-bounded statement about published implementing texts"
+      ],
+      "notes": "The 15-page FAQ is identified as DGSSI-authored, version 1.1; its evolution table dates that version 13 July 2023 and lists entry into force of Law 43-20 and publication of requirement frameworks as changes. Its introduction separately says the law has applied since 13 July 2013. The FAQ also says the only published application text for trust services at the time of writing was Decree 2-22-687, while requirement frameworks were published on the national authority's website. Preserve the 2013/2023 date conflict and time-bound scope; this explanatory FAQ is not legislation and does not itself prove a commencement date, completeness of implementing texts, or current legal status.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dgssi-ref-psco-ag-v1-0",
+      "title": "Trust-services requirements framework — general provider baseline (Ref_PSCo_AG), v1.0",
+      "publisher": "Direction Générale de la Sécurité des Systèmes d'Information (DGSSI), National Defence Administration, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/2023-09/Ref1.pdf",
+      "license_basis": "Official DGSSI technical/compliance framework used as a source-text record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the general scope, version 1.0 date, and named service-specific companion frameworks"
+      ],
+      "notes": "The cover and update history identify version 1.0 dated 13 July 2023. The framework describes a compliance baseline for providers of qualified trust services and refers to Law 43-20, Decree 2.22.687, and five service-specific frameworks. It is technical/compliance guidance, not an Official Bulletin text; its existence/date do not determine Article 84 commencement or current legal effect.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dgssi-ref-deliv-cert-qual-v1-0",
+      "title": "Trust-services requirements framework — qualified certificate issuance (Ref_Deliv_Cert_Qual), v1.0",
+      "publisher": "Direction Générale de la Sécurité des Systèmes d'Information (DGSSI), National Defence Administration, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/2023-09/Ref2.pdf",
+      "license_basis": "Official DGSSI technical/compliance framework used as a source-text record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the title and version 1.0 date of the service-specific framework"
+      ],
+      "notes": "The cover and update history identify version 1.0 dated 13 July 2023 and requirements for qualified certificate issuance. Technical/compliance guidance, not an Official Bulletin text; no Article 84 or current-law conclusion is made.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dgssi-ref-horo-qual-v1-0",
+      "title": "Trust-services requirements framework — qualified timestamp (Ref_Horo_Qual), v1.0",
+      "publisher": "Direction Générale de la Sécurité des Systèmes d'Information (DGSSI), National Defence Administration, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/2023-09/Ref3.pdf",
+      "license_basis": "Official DGSSI technical/compliance framework used as a source-text record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the title and version 1.0 date of the service-specific framework"
+      ],
+      "notes": "The cover and update history identify version 1.0 dated 13 July 2023 and requirements for qualified timestamp services. Technical/compliance guidance, not an Official Bulletin text; no Article 84 or current-law conclusion is made.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dgssi-ref-env-reco-qual-v1-0",
+      "title": "Trust-services requirements framework — qualified electronic registered delivery (Ref_Env_reco_Qual), v1.0",
+      "publisher": "Direction Générale de la Sécurité des Systèmes d'Information (DGSSI), National Defence Administration, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/2023-09/Ref4.pdf",
+      "license_basis": "Official DGSSI technical/compliance framework used as a source-text record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the title and version 1.0 date of the service-specific framework"
+      ],
+      "notes": "The cover and update history identify version 1.0 dated 13 July 2023 and requirements for qualified electronic registered delivery. Technical/compliance guidance, not an Official Bulletin text; no Article 84 or current-law conclusion is made.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dgssi-ref-valid-qual-v1-0",
+      "title": "Trust-services requirements framework — qualified validation (Ref_Valid_Qual), v1.0",
+      "publisher": "Direction Générale de la Sécurité des Systèmes d'Information (DGSSI), National Defence Administration, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/2023-09/Ref5.pdf",
+      "license_basis": "Official DGSSI technical/compliance framework used as a source-text record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the title and version 1.0 date of the service-specific framework"
+      ],
+      "notes": "The cover and update history identify version 1.0 dated 13 July 2023 and requirements for qualified validation services. Technical/compliance guidance, not an Official Bulletin text; no Article 84 or current-law conclusion is made.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dgssi-ref-conserv-qual-v1-0",
+      "title": "Trust-services requirements framework — qualified preservation (Ref_Conserv_Qual), v1.0",
+      "publisher": "Direction Générale de la Sécurité des Systèmes d'Information (DGSSI), National Defence Administration, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "regulatory-guidance",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/2023-09/Ref_Conserv_Qual_v1.0.pdf",
+      "license_basis": "Official DGSSI technical/compliance framework used as a source-text record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the title, version 1.0 date, and scope of the service-specific framework"
+      ],
+      "notes": "The cover and update history identify version 1.0 dated 13 July 2023. The framework describes requirements for qualified signature/electronic-seal preservation providers and refers to Law 43-20 and Decree 2.22.687. Technical/compliance guidance, not an Official Bulletin text; no Article 84 or current-law conclusion is made.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7500-fr-decision-1-psco-2026",
+      "title": "Official Bulletin No. 7500 (French translation) — DGSSI trust-service-provider accreditation decision 1/PSCo/2026",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/BO/FR/2873/2026/BO_7500_Fr.pdf",
+      "license_basis": "Official Bulletin text used as a source-text record; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording a post-FAQ Official Bulletin publication of a DGSSI individual accreditation decision under Law 43-20",
+        "Cross-checking Official Bulletin No. 7499 Arabic general-edition publication metadata stated in the French translation"
+      ],
+      "notes": "The French translation edition of Official Bulletin No. 7500, dated 16 April 2026, prints an Avis et communications entry on p. 818: DGSSI decision 1/PSCo/2026 dated 12 March 2026 accredits Barid Al-Maghrib for 36 months as a trust-service provider for qualified electronic timestamping, under Law 43-20. The notice states that its Arabic text was published in general-edition Official Bulletin No. 7499 on 13 April 2026. This is evidence of a later individual accreditation publication; it does not establish whether this notice is an implementing text for Article 84, the law's commencement date, or the current status of every trust service.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dgssi-law-43-20-french-bo-6970",
+      "title": "Law 43-20 — DGSSI-hosted French Official Bulletin No. 6970 text",
+      "publisher": "Direction Générale de la Sécurité des Systèmes d'Information (DGSSI), National Defence Administration, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.dgssi.gov.ma/sites/default/files/legislative/brochure/2023-03/loi%2043-20.pdf",
+      "license_basis": "Government-hosted reproduction of the French Official Bulletin text, used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Cross-checking the French Official Bulletin No. 6970 text of Law 43-20 Articles 7 and 84 against the Arabic text in SGG Official Bulletin No. 6951",
+        "Confirming the French reproduction's issue number/date and its statement identifying the Arabic general-edition publication"
+      ],
+      "notes": "This 10-page French PDF is hosted on the DGSSI government domain and its page headers identify Official Bulletin No. 6970 dated 18 March 2021; its Article 7 is on printed page 536 and Article 84 on printed page 544. It says the Arabic text appeared in general-edition Official Bulletin No. 6951 dated 11 January 2021. The PDF is a government-hosted reproduction rather than a directly retrieved SGG-hosted file; check against the SGG French edition where available. The text comparison confirms the bounded wording of Articles 7 and 84 only; it does not resolve Article 84 commencement or current legal application.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-law-5-96-companies",
+      "title": "Law 5-96 on SNC, SCS, SCA, SARL and partnership companies — consolidated edition",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/03/26/LA%20SOCIETE%20EN%20NOM%20COLLECTIF-1711463631100.pdf",
+      "license_basis": "Official Ministry legal text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the consolidation date and Articles 2 and 44 as source-text evidence for covered company forms, legal personality and SARL structure"
+      ],
+      "notes": "The cover dates this consolidation to 19 August 2021 and lists Laws 19-20, 21-19, 24-10 and 21-05. It is a dated official portal copy, not a confirmation of all later changes or legal application. Cross-check relevant Gazette texts before relying on it.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-law-17-95-sa",
+      "title": "Law 17-95 on sociétés anonymes — consolidated edition",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/12/12/Soci%C3%A9t%C3%A9s%20Anonymes-1734015032558.pdf",
+      "license_basis": "Official Ministry legal text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the stated consolidation cutoff and text of Articles 1 and 4 on the SA form and documents intended for third parties"
+      ],
+      "notes": "The cover dates this consolidation to 19 August 2021 and lists amendments including Law 19-20, 20-19, 78-12, 23-01, 20-05 and 81-99. It does not establish changes after that cutoff or application to a specific entity.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-code-commerce-15-95",
+      "title": "Law 15-95 forming the Commercial Code — consolidated edition",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/03/01/Code%20de%20commerce_compressed-1709282723074.pdf",
+      "license_basis": "Official Ministry legal text used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the stated consolidation cutoff and Commercial Code Articles 37 and 38 on commercial-register coverage and who may request registration"
+      ],
+      "notes": "The cover dates this consolidation to 19 December 2019 and lists Law 89-17 among amendments. It predates later electronic-registry provisions noted in the text and does not establish the complete current register framework or contract-signing authority for a particular entity.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "directentreprise-company-creation-workflow",
+      "title": "DirectEntreprise — company creation workflow",
+      "publisher": "DirectEntreprise, Kingdom of Morocco (government business-creation platform)",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.directentreprise.ma/page-interne.jsf?nid=62",
+      "license_basis": "Official process-information page used as an administrative workflow locator; no content reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the platform description of choosing a legal form and collecting business identity, registered-office, activity, tax and social-security information according to that form"
+      ],
+      "notes": "This describes the platform’s workflow, not a complete statement of legal requirements for every party or transaction. Confirm fields and required documents in the current workflow for the selected legal form and facts.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "directentreprise-negative-certificate-guide",
+      "title": "DirectEntreprise — Guide Certificat Négatif",
+      "publisher": "DirectEntreprise / OMPIC, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://nc.directentreprise.ma/assets/pdf/guide_CN.PDF",
+      "license_basis": "Official administrative workflow guide used for research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Locating the platform’s certificate-negative/name-reservation step and ICE-related workflow material"
+      ],
+      "notes": "Operational guidance only. It does not establish a universal requirement to request ICE, RC, IF or any identifier in every private contract.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "ompic-negative-certificate-platform-note-2021",
+      "title": "OMPIC — Note d’information on the new negative-certificate platform",
+      "publisher": "Office Marocain de la Propriété Industrielle et Commerciale (OMPIC), Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.ompic.ma/sites/default/files/Note_information_plateforme_NC.pdf",
+      "license_basis": "Official OMPIC platform announcement used for historical process research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording OMPIC’s 2021 announcement of a digital platform for trade-name applications and negative certificates"
+      ],
+      "notes": "The official OMPIC PDF is surfaced in search-indexed text as a note dated 15 February 2021 announcing a platform for trade-name requests and describing digitization through issuance of the negative certificate. Direct retrieval returned HTTP 502 on 8 October 2026. This is a historical platform announcement, not proof of current workflow, statutory requirements, or the legal effect of a certificate. Verify current procedures and legal requirements separately.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "cnea-common-company-identifier-overview",
+      "title": "Identifiant Commun de l’Entreprise (ICE) — CNEA overview",
+      "publisher": "Comité National de l’Environnement des Affaires, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.cnea.ma/fr/realisations/lidentifiant-commun-de-lentreprise-ice",
+      "license_basis": "Official government overview used as a secondary locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Corroborating the decree reference and institutional context for ICE source discovery"
+      ],
+      "notes": "This is an official explanatory page, not the decree text. Verify the decree and current administration-specific requirements before stating a mandatory use or applicability rule.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-decree-2-11-63-ice",
+      "title": "Decree 2.11.63 establishing the Common Company Identifier system — Adala Arabic text",
+      "publisher": "Ministry of Justice, Kingdom of Morocco — Adala portal",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/07/10/%D9%85%D8%B1%D8%B3%D9%88%D9%85%20%D8%B1%D9%82%D9%85%202.11.63%20%D9%8A%D8%AA%D8%B9%D9%84%D9%82%20%D8%A8%D8%A5%D8%AD%D8%AF%D8%A7%D8%AB%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%82%D8%A7%D9%88%D9%84%D8%A9-1720597825734.pdf",
+      "license_basis": "Official Ministry of Justice legal-portal copy used for source-text research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking Decree 2.11.63 Articles 1–3 and 5 on the ICE system, administrative use, issuance, and data requested for identifiers"
+      ],
+      "notes": "This is an Arabic Ministry of Justice portal copy of Decree 2.11.63 dated 20 May 2011. Its footnote identifies Official Bulletin No. 5952 of 16 June 2011, p. 2873; this PDF is not the Official Bulletin itself. The text-level checks do not establish subsequent amendments, current implementation, who must obtain an ICE in a specific situation, or any general requirement to include ICE in contracts. No text reproduced.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "gazettes-africa-bo-5952-ice-decree-copy",
+      "title": "Morocco Official Bulletin No. 5952, official French translation edition — external archive copy",
+      "publisher": "Gazettes.Africa third-party archive; relationship to an official scan not independently verified",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://archive.gazettes.africa/archive/ma/2011/ma-bulletin-officiel-dated-2011-06-16-no-5952.pdf",
+      "license_basis": "Third-party archive lead to an Official Bulletin scan; no text reused and no reuse rights inferred",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Locating a possible scan of Official Bulletin No. 5952 for a future cross-check of Decree 2.11.63; not used to support a legal claim"
+      ],
+      "notes": "Search indexing identifies this third-party hosted PDF as the French official-translation edition of Official Bulletin No. 5952 dated 16 June 2011 and lists Decree 2.11.63. Direct retrieval returned 403, so the PDF content and its correspondence to the official publisher's copy have not been verified. This is a research lead, not an authoritative publisher-hosted source or a basis for legal claims.",
+      "verification_status": "unavailable",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-5952-arabic-url-candidate",
+      "title": "SGG-hosted Arabic Official Bulletin PDF at the BO 5952 path — issue identity unconfirmed",
+      "publisher": "Secrétariat Général du Gouvernement / Official Printing Directorate",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/BO/bo_ar/2011/BO_5952_Ar.pdf",
+      "license_basis": "Official Bulletin URL candidate for source discovery only; no text reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Testing a publisher-hosted URL candidate for the Official Bulletin issue cited by the Adala decree copy; not used as text evidence"
+      ],
+      "notes": "Direct navigation on the SGG domain opened a PDF viewer whose title was 'vendredi 24 juin 2011'. The archive index identifies Official Bulletin No. 5952 as dated 16 June 2011, so the file at this URL may be mismatched or the viewer title may refer to something else. A contemporaneous 2011 reference also points to SGG-hosted Arabic and French paths (https://www.sgg.gov.ma/BO5952A.pdf?cle=69 and https://www.sgg.gov.ma/BO/bulletin/FR/2011/bo5952F.pdf), but those endpoints and the current candidate could not be opened by the research browser. The issue number and decree text were not independently inspected; do not rely on any of these candidates until the contents are inspected and matched to an official catalogue record.",
+      "verification_status": "unavailable",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-5952-contemporaneous-url-leads",
+      "title": "Contemporaneous mailing-list post citing SGG Official Bulletin No. 5952 PDF URLs",
+      "publisher": "Google Groups mailing-list archive; post dated 2 July 2011",
+      "jurisdiction": "MA",
+      "source_type": "secondary-commentary",
+      "url": "https://groups.google.com/g/gcrp/c/jOnI1xJSUAU",
+      "license_basis": "Locator for historical publisher URLs only; no document text retrieved or reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Locating contemporaneous SGG-hosted Arabic and French Official Bulletin No. 5952 PDF URL candidates; not used as text evidence"
+      ],
+      "notes": "The post cites the SGG-hosted Arabic PDF URL https://www.sgg.gov.ma/BO5952A.pdf?cle=69 and French PDF URL https://www.sgg.gov.ma/BO/bulletin/FR/2011/bo5952F.pdf as the Official Bulletin publication of the 2011 Constitution. The PDFs could not be retrieved with the research browser, and this post is only a locator. Neither endpoint verifies the issue contents, the printing of Decree 2.11.63, or page 2873. Keep issue 5952 and the decree's Official Bulletin text unresolved pending direct inspection of an official copy.",
+      "verification_status": "unavailable",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "dio-catalogue-bo-5952-2011",
+      "title": "Official Printing Directorate catalogue entry for Official Bulletin No. 5952",
+      "publisher": "Direction de l'Imprimerie Officielle (DIO), Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://documentationjuridiquemarocaine.gov.ma/ar/bo-en-ligne/view/20373",
+      "license_basis": "Official catalogue metadata used only to verify issue identity, date, and document availability; no Bulletin text reused",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying that the DIO catalogue lists Official Bulletin No. 5952 dated 16 June 2011 and that its online document is unavailable; not used to verify the decree text"
+      ],
+      "notes": "The official DIO search for number 5952 returned two general-edition records: No. 5952 dated 16 June 2011 and No. 5952-bis dated 17 June 2011. The linked No. 5952 viewer displays a one-page placeholder reading 'BO N°5952 - Document non disponible'; it is not the Gazette scan. This verifies the catalogue's issue-number/date metadata and confirms that the issue text is not available through this viewer. It does not verify whether Decree 2.11.63 appears at printed page 2873. Keep the Official Bulletin comparison unresolved.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-consumer-amendment-13-23-matrix",
+      "title": "Matrix of responses to public comments on draft Law 13-23 amending Law 31-08",
+      "publisher": "Secrétariat Général du Gouvernement / Ministry of Industry, Trade and New Technologies",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/portals/0/AvantProjet/239/Matrice_Avp-loi_13-23.pdf",
+      "license_basis": "Official government consultation material used for legislative-status research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording an SGG-hosted legislative-status lead for draft Law 13-23 concerning Law 31-08; not evidence of enactment"
+      ],
+      "notes": "The matrix title and contents identify a public-comment process for draft Law 13-23. It is consultation material, not a promulgated law, Official Bulletin text, or evidence of subsequent parliamentary status, enactment, or commencement.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-legislation-portal-law-13-23-search-2026",
+      "title": "SGG public legislative and draft-project indexes — Law 13-23 status locator",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/Legislation.aspx",
+      "license_basis": "Official public legislative indexes used as dated status locators; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Locating the SGG public draft-project list entry and linked Law 13-23 proposal; not proof of adoption, enactment, or current law"
+      ],
+      "notes": "On 8 October 2026, the SGG draft-project list showed an Arabic entry titled 'Modification et complément de la loi n° 31-08 édictant des mesures de protection du consommateur' and linked the draft PDF at https://www.sgg.gov.ma/portals/0/AvantProjet/239/avp_loi_13.23.PDF. This corrects an earlier text-search note that said there was no matching index entry. The entry locates a public avant-projet; it does not establish later parliamentary status, adoption, promulgation, commencement, or current law.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-draft-law-13-23-amending-law-31-08",
+      "title": "SGG — Arabic draft Law 13-23 amending and supplementing Law 31-08",
+      "publisher": "Secrétariat Général du Gouvernement / Ministry of Industry and Trade",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/portals/0/AvantProjet/239/avp_loi_13.23.PDF",
+      "license_basis": "Official draft text used for legislative-status research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the existence and linked text of the SGG-listed Law 13-23 draft proposal; not evidence of enactment or current law"
+      ],
+      "notes": "The SGG public draft-project list links this 11-page Arabic proposal under a title identifying amendments to Law 31-08. The filename and document identify draft Law 13-23. Treat it as an avant-projet only; its parliamentary progress, final text, enactment, promulgation, and commencement remain unverified.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "house-written-question-24323-law-31-08-amendment-delay",
+      "title": "House of Representatives — Written question 24323 on delay in amending Law 31-08",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/ar/%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%80%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D9%8A%D8%A9/altakhr-fy-akhraj-mshrw-tdyl-alqanwn-rqm-3108-almtlq-0",
+      "license_basis": "Official parliamentary record used as a legislative-status locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the subject, responsible ministry, answer-date field, and indexed text for written question 24323 concerning delay in bringing a Law 31-08 amendment forward"
+      ],
+      "notes": "The House record identifies written question 24323, attributed to Latifa Aabout, as concerning delay in bringing forward a Law 31-08 amendment; it names Industry and Trade and displays 10 December 2025 as the answer date. The retrieved index text exposes the question but not the ministerial answer. The questioner's premise is not treated as an official lifecycle finding. This record is not evidence of a bill's text, adoption, enactment, promulgation, commencement, or current law.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "parliament-law-09-08-amendment-proposal-2024",
+      "title": "House of Representatives — Bill proposal no. 272 to amend Law 09-08",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/ar/%D8%A7%D9%84%D9%86%D8%B5%D9%88%D8%B5-%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9%D9%8A%D8%A9/%D9%85%D9%82%D8%AA%D8%B1%D8%AD-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D9%8A%D9%82%D8%B6%D9%8A-%D8%A8%D8%AA%D8%BA%D9%8A%D9%8A%D8%B1-%D9%88%D8%AA%D8%AA%D9%85%D9%8A%D9%85-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-0908-%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D8%B4%D8%AE%D8%A7%D8%B5-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D9%8A%D9%86",
+      "license_basis": "Official parliamentary record used for legislative-status research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Confirming the House listing, authorship, first referral, and 22 November 2024 committee transfer for the proposal to amend Law 09-08"
+      ],
+      "notes": "The House listing labels this proposal no. 272 and first reading. It records receipt on 2 February 2024, initial referral to the Justice and Legislation Committee on 19 February 2024, and transfer to the Interior, Territorial Communities, Housing, and Administrative Affairs Committee on 22 November 2024 after a jurisdiction objection and Constitutional Court decision 243/24 concerning the House rules. On 8 October 2026, the House's official search-indexed listing continued to display the status 'قيد الدرس - القراءة الأولى - أحيل على اللجنة' (under study, first reading, referred to committee). This is a procedural status reported by the listing, not an enacted amendment or proof of substantive committee consideration. Direct page retrieval returned 403; status text is recorded from the official search-indexed result.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "house-committee-list-law-09-08-proposal-272-2026",
+      "title": "House of Representatives — current committee-list locator for Law 09-08 proposal no. 272",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/ar/%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9/%D8%A7%D9%84%D9%86%D8%B5%D9%88%D8%B5-%D9%82%D9%8A%D8%AF-%D8%A7%D9%84%D8%AF%D8%B1%D8%B3-%D8%A8%D8%A7%D9%84%D9%84%D8%AC%D8%A7%D9%86?page=9&q=ar%2F%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9%2F%D8%A7%D9%84%D9%86%D8%B5%D9%88%D8%B5-%D9%82%D9%8A%D8%AF-%D8%A7%D9%84%D8%AF%D8%B1%D8%B3-%D8%A8%D8%A7%D9%84%D9%84%D8%AC%D8%A7%D9%86",
+      "license_basis": "Official parliamentary committee-list locator used for time-bounded procedural status; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Rechecking the House's displayed status of proposal no. 272 to amend Law 09-08; not evidence of enactment or current law"
+      ],
+      "notes": "On 8 October 2026, the official House committee-list search index displayed Law 09-08 proposal no. 272 as under study, first reading, and referred to the Interior, Territorial Communities, Housing, and Administrative Affairs Committee. The proposal's detail page and this list page returned 403 on direct browser access; the official search-indexed text was available. This records a displayed procedural locator only and does not prove substantive committee consideration, adoption, promulgation, commencement, or current law.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "government-parliament-relations-report-2024-2025-law-09-08-proposal",
+      "title": "Final report on the fourth legislative year 2024–2025 — House legislative proposals",
+      "publisher": "Ministry Delegate in charge of Relations with Parliament, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.mcrpsc.gov.ma/media/4293/%D8%A7%D9%84%D8%AD%D8%B5%D9%8A%D9%84%D8%A9-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D9%8A-%D9%8A%D8%A9-%D9%84%D9%84%D8%B3%D9%86%D8%A9-%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D8%B1%D8%A8%D8%B9%D8%A9-2024-2025pdf.pdf",
+      "license_basis": "Official government report used for legislative-status research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording the report's 2024–2025 entry for proposal no. 200 to amend Law 09-08",
+        "Recording a separate Mouvement group proposal to amend Articles 1 and 43 of Law 09-08, registered 15 October 2024"
+      ],
+      "notes": "The report's indexed Arabic tables list proposal no. 200 to amend Law 09-08, deposited 2024/02/02 by the PJD parliamentary group, with status لم يشرع في دراسته (study had not begun), and a separate Mouvement group proposal to amend Articles 1 and 43 registered 2024/10/15. The latter is assigned to the House's Interior, Territorial Communities, Housing, and Administrative Affairs Committee. The report file is too large for direct retrieval in this environment; these details are recorded from its official indexed contents and bounded to the 2024–2025 reporting period. It does not establish later status or enactment/abandonment.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "house-committee-list-law-09-08-articles-1-43-proposal",
+      "title": "House of Representatives — committee list entry for proposal to amend Articles 1 and 43 of Law 09-08",
+      "publisher": "House of Representatives, Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.chambredesrepresentants.ma/ar/%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9/%D8%A7%D9%84%D9%86%D8%B5%D9%88%D8%B5-%D9%82%D9%8A%D8%AF-%D8%A7%D9%84%D8%AF%D8%B1%D8%B3-%D8%A8%D8%A7%D9%84%D9%84%D8%AC%D8%A7%D9%86?page=6&q=ar%2F%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9%2F%D8%A7%D9%84%D9%86%D8%B5%D9%88%D8%B5-%D9%82%D9%8A%D8%AF-%D8%A7%D9%84%D8%AF%D8%B1%D8%B3-%D8%A8%D8%A7%D9%84%D9%84%D8%AC%D8%A7%D9%86",
+      "license_basis": "Official parliamentary listing used for legislative-status research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the House listing's displayed status and committee referral for the separate 2024 proposal concerning Articles 1 and 43 of Law 09-08"
+      ],
+      "notes": "The official House committee-list search index labels the separate Mouvement group proposal as under study, first reading, and referred to committee. It identifies the Interior, Territorial Communities, Housing, and Administrative Affairs Committee. This is a time-bounded procedural listing, not substantive consideration or enacted law. Direct page access returned 403; the indexed text was available on 2026-10-08.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "constitutional-court-decision-243-24",
+      "title": "Constitutional Court decision 243/24 on the House of Representatives' internal rules",
+      "publisher": "Constitutional Court of the Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.cour-constitutionnelle.ma/Decision?Page=Decision&id=2107",
+      "license_basis": "Official constitutional decision used for legislative-procedure research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the decision cited in the House legislative record concerning committee jurisdiction over proposal no. 272"
+      ],
+      "notes": "The Court page identifies decision 243/24, dated 7 August 2024, reviewing the House's internal rules, including Article 113. This source is procedural context only and does not adjudicate the Law 09-08 proposal's merits or enactment.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7443-order-1314-25-cnss-base",
+      "title": "Official Bulletin No. 7443 (Arabic general edition), Finance Minister Order No. 1314.25",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/AR/3111/2025/BO_7443_Ar.pdf",
+      "license_basis": "Official Bulletin text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording item 24 of the annex to Order 1314.25 as a contribution-base source and comparing its stated duration with Law 51.25"
+      ],
+      "notes": "Official Bulletin No. 7443 (Arabic general edition), dated 29 September 2025, publishes Finance Minister Order No. 1314.25 dated 19 May 2025. The order implements provisions of Decree 2.25.266 concerning the social-security contribution base. Annex item 24 describes an exemption from that base for formation-insertion training compensation subject to listed conditions, including a 24-month duration extendible by 12 months on permanent hiring. Law 51.25 was published later and states a different duration for its amended training regime. This record does not resolve legal hierarchy, transition, the effect on CNSS treatment, or application to an individual placement. Official Bulletin No. 7464, dated 11 December 2025, corrects part of the first trainee-qualification condition in item 24; its corrigendum does not replace the separate duration paragraph. See source sgg-bo-7464-erratum-order-1314-25. Decree 2.25.266 Article 3 is the order’s cited delegation; see source sgg-bo-7399-decree-2-25-266-cnss.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-6342-ar-law-101-14-insertion-training",
+      "title": "Official Bulletin No. 6342 (Arabic general edition), Dahir 1.15.27 promulgating Law 101.14",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/bo_ar/2015/BO_6342_Ar.pdf",
+      "license_basis": "Official Bulletin promulgation text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the original Arabic publication and the 2015 amendment of the formation-insertion training regime, including its then-stated duration cap"
+      ],
+      "notes": "The Arabic general edition of Official Bulletin No. 6342, dated 12 March 2015, prints Dahir 1.15.27 dated 19 February 2015 promulgating Law 101.14. The published Arabic text amends Dahir-Law 1.93.16 and replaces its Article 4, stating that the training period may not exceed 24 months and is non-renewable, with a narrow provision allowing a trainee whose agreement ends within the first year to undertake another training with another employer within the aggregate 24-month cap. This records historical amendment wording only; Law 51.25 and its Article 4 transitions were published later, and the current consolidated text, implementing rules, and application remain unresolved. The French Official Bulletin No. 6344 record is retained separately as the translation edition.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7464-erratum-order-1314-25",
+      "title": "Official Bulletin No. 7464 (Arabic general edition), corrigendum to Order 1314.25",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/AR/3111/2025/BO_7464_Ar.pdf",
+      "license_basis": "Official Bulletin corrigendum used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the official corrigendum to Order 1314.25, including whether it changed the duration clause in annex item 24"
+      ],
+      "notes": "Official Bulletin No. 7464, dated 11 December 2025, printed p. 9245, identifies a correction to text printed in Official Bulletin No. 7443, pp. 7329–7330. In item 24, the corrigendum replaces the first trainee-qualification condition paragraph with corrected wording; it does not replace the separate duration condition paragraph. The duration text recorded in BO 7443 (24 months, extendible by 12 months in the stated permanent-employment case) is therefore not changed by this specific corrigendum. This observation does not determine how that contribution-base rule interacts with Law 51.25 or applies to any contract.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-bo-7399-decree-2-25-266-cnss",
+      "title": "Official Bulletin No. 7399 (Arabic general edition), Decree 2.25.266 on the Social Security system",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "legislation",
+      "url": "https://www.sgg.gov.ma/BO/AR/3111/2025/BO_7399_Ar.pdf",
+      "license_basis": "Official Bulletin promulgation text used for legal research; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Verifying Decree 2.25.266 Article 3 delegation for determining contribution-base exclusions and connecting Order 1314.25 to its statutory authority"
+      ],
+      "notes": "The SGG Arabic Official Bulletin No. 7399 publishes Decree 2.25.266 dated 24 April 2025, applying provisions of Dahir-Law 1.72.184 on the Social Security system. Article 3 provides for a ministerial order to determine specified wage elements, allowances and payments excluded from the social-security contribution base and their exemption conditions/caps, as well as separate fishing-sector contribution-day rules. Order 1314.25 expressly cites Article 3(1) and sets those elements and conditions. This source establishes the published delegation and textual cross-reference only; it does not resolve later amendments, current application, or the effect of Law 51.25 on its training-specific provisions.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "anrt-decree-2-09-165-official-bulletin-listing",
+      "title": "ANRT regulatory decrees page — Decree 2-09-165 listing",
+      "publisher": "Agence Nationale de Réglementation des Télécommunications (ANRT), Kingdom of Morocco",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://anrt.ma/reglementation/decrets-reglementaires/autres-decrets",
+      "license_basis": "Official agency page used as a legislative source locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Recording ANRT's listing of Decree 2-09-165 with a link identified as the Official Bulletin version"
+      ],
+      "notes": "The accessed ANRT page lists Decree 2-09-165 and labels its linked PDF as the version published in the Official Bulletin. This independently corroborates a government-agency locator for the promulgation text; the page does not state amendment history, consolidation, or current legal effect.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "adala-law-09-08-pdf-resource-2024",
+      "title": "Protection des personnes physiques à l’égard du traitement des données à caractère personnel — Adala PDF",
+      "publisher": "Ministry of Justice, Kingdom of Morocco (Adala legal portal)",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://adala.justice.gov.ma/api/uploads/2024/04/30/Protection%20des%20personnes%20physiques-1714464099884.pdf",
+      "license_basis": "Official ministry-hosted legal research resource; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Checking the content and citation structure of the Adala personal-data legal resource and identifying source cross-references"
+      ],
+      "notes": "Directly opened as a 46-page PDF on 2026-10-08. It begins with Dahir 1-09-15 promulgating Loi 09-08 and cites that publication as Official Bulletin n° 5714, p. 345. The PDF contains the law text, selected quoted/cited passages from Decree 2-09-165 in notes, and references to Decision 3-33-11 approving the CNDP internal regulation (Official Bulletin n° 5932). It is not the complete decree text or the underlying Gazette issue. No consolidation date or amendment-history statement is established by the PDF; use the Gazette and exact instrument publications for legal status.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
+      "id": "sgg-arabic-legislation-portal-law-13-23-search-2026",
+      "title": "SGG Arabic public draft-project list — Law 31-08 amendment locator",
+      "publisher": "Secrétariat Général du Gouvernement du Royaume du Maroc",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.sgg.gov.ma/arabe/Legislation/ListeAvantProjets.aspx",
+      "license_basis": "Official public draft-project index used as a dated status locator; no text reproduced",
+      "date_accessed": "2026-10-08",
+      "verification_date": "2026-10-08",
+      "used_for": [
+        "Corroborating the Arabic SGG draft-list entry for a proposed amendment to Law 31-08; not evidence of enactment or current law"
+      ],
+      "notes": "On 8 October 2026, the Arabic SGG list of draft projects displayed the entry تغيير وتتميم القانون رقم 31.08 القاضي بتحديد تدابير لحماية المستهلك. This supports only the presence of a draft-project locator in the SGG list; it does not establish later parliamentary status, adoption, promulgation, commencement, or current law.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    }
+  ]
+}

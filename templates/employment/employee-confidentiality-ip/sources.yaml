@@ -1,0 +1,41 @@
+{
+  "source_ids": [
+    "sgg-bo-5210-2004-labor-code",
+    "adala-code-travail",
+    "sgg-projet-labor-amendment-032-26",
+    "adala-law-2-00-copyright",
+    "sgg-consolidated-copyright-law-2-00",
+    "sgg-bill-013-26-copyright-status",
+    "ompic-law-23-13"
+  ],
+  "source_uses": [
+    {
+      "source_id": "sgg-bo-5210-2004-labor-code",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "adala-code-travail",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-projet-labor-amendment-032-26",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "adala-law-2-00-copyright",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-consolidated-copyright-law-2-00",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bill-013-26-copyright-status",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "ompic-law-23-13",
+      "use": "research-reference"
+    }
+  ]
+}

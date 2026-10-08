@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-legal-morocco.example/schemas/template-sources.schema.json",
+  "title": "Template source references",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_ids", "source_uses"],
+  "properties": {
+    "source_ids": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
+    "source_uses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "use"],
+        "properties": {
+          "source_id": { "type": "string", "minLength": 1 },
+          "use": { "enum": ["research-reference", "comparative-reference", "reused-wording"] },
+          "claim_ids": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true, "description": "Research propositions supported by this source in the context of this template; claim linkage does not imply legal approval or current-law verification." },
+          "scope": { "type": "string", "minLength": 1, "description": "For reused-wording, must exactly match the source registry's reviewed reuse_scope." },
+          "attribution": { "type": "string", "minLength": 1, "description": "Source credit that must be carried into generated-document notices." },
+          "license_url": { "type": "string", "format": "uri", "description": "HTTPS link to the source license terms." },
+          "modifications": { "type": "string", "minLength": 1, "description": "Disclose modifications or explicitly state that none were made." }
+        }
+      },
+      "minItems": 1
+    }
+  }
+}

@@ -1,0 +1,49 @@
+name: Foundation CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - run: npm run check:syntax
+      - run: npm run validate
+      - name: Enforce review status transitions
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: npm run audit:review-transitions
+      - name: Audit external source links on trusted pushes
+        if: github.event_name == 'push'
+        run: npm run audit:links
+        env:
+          OLM_LINK_AUDIT_TIMEOUT_MS: 5000
+          OLM_LINK_AUDIT_RETRIES: 0
+      - run: npm run audit:internal-links
+      - run: npm run audit:accessibility
+      - run: npm run audit:privacy
+      - run: npm test
+      - run: npm run build:review-packets
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.sha }}
+      - name: Upload prepared review packets
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: legal-language-review-packets
+          path: dist/review-packets/
+          if-no-files-found: error
+          retention-days: 90

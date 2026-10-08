@@ -1,0 +1,1991 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "labor-law-48-06-amends-labor-code-article-32-and-256",
+      "text": "Article unique of Law 48-06, as printed in the SGG official French translation of Official Bulletin n° 5522, lists paragraph 1 of Article 32 and Article 256 of Law 65-99 among the provisions abrogated, and preserves a transitional rule for conscripts already serving when the law took effect.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-5522-law-48-06"
+      ],
+      "pinpoint": "Article unique, printed page 581",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is a bounded report of the text in the official French translation, not a conclusion on interpretation or current law. Later amendments and the Ministry Labour Code PDF's consolidation cutoff remain unverified."
+    },
+    {
+      "id": "labor-code-article-32-amendment-footnote-48-06",
+      "text": "Footnote 11 in the Ministry of Justice Adala Code du travail PDF under Article 32 states that paragraph 1 was abrogated by the sole article of Law 48-06 and cites Official Bulletin n° 5522, page 581.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-code-travail"
+      ],
+      "pinpoint": "Footnote 11 to Article 32(1)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This claim reports the Ministry PDF's footnote and citation. The SGG-hosted official French translation identifies BO n° 5522 as dated 3 May 2007 and its printed page 581 expressly lists Labour Code Article 32(1) in Article 48-06's abrogation provision; the Ministry footnote instead says 3 April 2007. This cross-check confirms the source-text proposition but does not establish the Ministry PDF's consolidation cutoff, present wording of Article 32, or current-law status."
+    },
+    {
+      "id": "cndp-index-lists-law-and-decree",
+      "text": "The CNDP Textes et lois page lists Dahir n° 1-09-15 promulgating Loi 09-08 and Decree 2-09-165 under its national personal-data legislation section.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-textes-et-lois-index"
+      ],
+      "pinpoint": "Section ‘Législation relative à la protection des données personnelles’, national subsection",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the contents of the CNDP locator page as accessed 2026-10-08. It does not establish whether other instruments amend, supersede, interpret, or currently apply to the listed texts."
+    },
+    {
+      "id": "cndp-guidance-states-prior-declaration-default-with-exceptions",
+      "text": "On its page ‘Notifier un traitement’, the CNDP states that all processing must be subject to prior declaration except processing outside the scope of Law 09-08, processing dispensed from CNDP declaration, or processing subject to prior authorization.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-notifier-un-traitement"
+      ],
+      "pinpoint": "Section ‘Déclaration’, opening paragraph",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the wording of CNDP administrative guidance accessed on 2026-10-08. It does not establish the current legal effect, completeness, or application of the statement to a specific processing activity. Reconcile the guidance with the Official Bulletin text of Law 09-08, Decree 2-09-165, later legal texts, current forms, and the actual facts before stating any filing or authorization requirement. It is not adopted as a template instruction."
+    },
+    {
+      "id": "bdj-records-no-amendment-for-law-09-08",
+      "text": "As accessed on 2026-10-08, the Ministry of Digital Transition and Administrative Reform's Banque de Données Juridiques record for Law 09-08 displays 'Date de dernière modification: Aucune modification' and provides the promulgation text.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "bdj-ministry-law-09-08-record"
+      ],
+      "pinpoint": "Record metadata, 'Date de dernière modification'; full-text record",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This claim reports the official database's displayed metadata, not an independent conclusion that no amending enactment exists. The CNDP reports submitting amendment projects in 2013, and later Official Bulletins still need to be checked against this database entry before resolving current-law status."
+    },
+    {
+      "id": "bdj-describes-consolidation-and-history-features",
+      "text": "The Ministry's BDJ user guide describes the database as providing legislation and regulatory texts in force as published in the Official Bulletin and later consolidations; it also says document records provide modification-history information.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "bdj-ministry-user-guide"
+      ],
+      "pinpoint": "Introduction and section ‘Contenu documents’, ‘Historiques’",
+      "evidence_status": "unverified",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This reports the official user guide's search-indexed description. Direct retrieval timed out on 2026-10-08. It describes the database's stated methodology and features, not independent proof that every amendment is captured or that a particular law is current. Compare the relevant Official Bulletins and retain qualified review before making a current-law conclusion."
+    },
+    {
+      "id": "cndp-announced-law-09-08-refonte-project",
+      "text": "The CNDP’s institutional-transformation announcement identifies a project to reform Law 09-08 and states 30 June 2023 as the target for finalizing the transformation.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-refonte-law-09-08-press-release"
+      ],
+      "pinpoint": "Section describing the transformation’s workstreams and target completion date",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Recorded from the official CNDP page’s search-indexed content accessed on 8 October 2026; direct page retrieval timed out. The statement describes an institutional project and target date, not a formal bill, draft text, amendment, or enactment. The elapsed target does not establish that the project was completed, abandoned, or enacted. Follow any resulting text through official legislative records and the Official Bulletin."
+    },
+    {
+      "id": "cndp-reports-submitting-law-09-08-amendment-projects-2013",
+      "text": "The CNDP's 2010–2013 activity report states that in 2013 it submitted draft projects amending Law 09-08 to the Head of Government as a first step of the legislative procedure.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-rapport-activite-2010-2013"
+      ],
+      "pinpoint": "Section 'Amendement de la loi 09-08', report pp. 71–72",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the report's account of a proposal handoff, not proof that a bill was tabled, adopted, promulgated, commenced, or abandoned. The official Ministry legal-database entry currently displays no modification; the precise legislative history remains to be traced."
+    },
+    {
+      "id": "bdj-decree-metadata-has-prepublication-modification-date",
+      "text": "As accessed on 2026-10-08, the Ministry's Banque de Données Juridiques record for Decree 2-09-165 displays 'Date de dernière modification: 08/06/2009' and BO 5744, while its title refers to Law 08-09.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "bdj-ministry-decree-2-09-165-record"
+      ],
+      "pinpoint": "Record metadata and title",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The decree was published in BO 5744 on 18/06/2009 and the official CNDP-hosted Gazette text identifies Law 09-08. The displayed 08/06/2009 date predates publication and may be a database metadata artifact; this claim records the page as displayed and does not treat the date as proof of an amendment. Reconcile against the original Official Bulletin and official amendment history."
+    },
+    {
+      "id": "media-report-identifies-digital-x0-as-adjacent-reform-lead",
+      "text": "An SGG-hosted legal-monitoring PDF reproduces a WeAreTech Africa article published 3 November 2025 that reports a future Digital X.0 framework under examination at the SGG and says it would regulate data consistently with Law 09-08.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-veilledigitalx0-media-clip-2025-11-03"
+      ],
+      "pinpoint": "PDF pp. 4–5; footnote identifies the source article and publication date",
+      "evidence_status": "secondary-only",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is secondary reporting embedded in an SGG-hosted press-monitoring PDF, not an official bill record. It does not show that Digital X.0 amends Law 09-08, establish a bill number or parliamentary stage, or connect it to the CESE's 27 November 2025 recommendation. Locate an official draft/status source before drawing any legislative conclusion."
+    },
+    {
+      "id": "parliament-records-question-26284-ai-framework",
+      "text": "The House of Representatives record identifies written question 26284 on the need for a national legal framework for AI; its detail page displays a 'Date Answer' of 30 January 2026 and the question asks the Minister of Justice about planned measures and timing.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "parliament-written-question-26284-ai-framework"
+      ],
+      "pinpoint": "Question 26284; subject and date fields; question text",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The indexed record exposes the question and a date-answer field, but the retrieved page text did not include a ministerial response; direct page opening failed. The questioner's assertion that Law 09-08 is insufficient is attributed opinion, not law or government position. This is parliamentary oversight activity, not a bill or amendment to Law 09-08; retrieve the response before inferring any government action."
+    },
+    {
+      "id": "justice-ministry-states-considering-ai-framework-2024",
+      "text": "A Ministry of Justice announcement dated 30 October 2024 reports that, speaking on behalf of the Minister, a ministry official said the ministry was considering a legal framework regulating AI use and discussed possible rules for AI-assisted creation and use of training data.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "justice-ministry-ai-framework-statement-2024-10-30"
+      ],
+      "pinpoint": "Announcement dated 30 October 2024, paragraphs 4–8",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is the Ministry's account of a policy statement and records consideration/intention only. It provides no bill text, bill number, formal legislative stage, or indication that the contemplated framework amends Law 09-08. Do not characterize it as current law or a formal proposal."
+    },
+    {
+      "id": "cndp-website-guidance-notification-and-consent",
+      "text": "The CNDP website-compliance guidance says website controllers collecting and processing personal data must notify the CNDP, describes prior authorization for CNI or sensitive data and prior declaration in other cases, describes a foreign-transfer request for hosting abroad, and instructs sites to request consent when collecting personal data.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-conformite-des-sites-web",
+        "cndp-guide-conformite-sites-web-pdf"
+      ],
+      "pinpoint": "Sections 2–4, ‘Obligation de notification’, ‘Modalité de notification’, and ‘Collecte des données’",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records what the official CNDP page and its directly reviewed 11-page PDF guide say, not a conclusion that every instruction applies as stated or is the current legal rule. The PDF says cookies using personal data require consent before deposit. Deliberation D-939-2025, dated 28 November 2025, later states that cookie processing for certain listed purposes does not require prior consent but identifies personalized advertising and social-network sharing as exceptions requiring consent before deposit. Article 4 of Law 09-08 states a general consent rule with listed necessity grounds. This does not prove inconsistency; reconcile their scope and procedures with Law 09-08, the decree, other CNDP decisions, and actual facts. No conclusion about repeal, priority, or current legal interpretation is drawn. Not incorporated as a template requirement. Accessed 2026-10-08."
+    },
+    {
+      "id": "cndp-deliberation-d-939-2025-cookie-scope-notification-and-purposes",
+      "text": "CNDP Deliberation D-939-2025 states that it applies to declarations by controllers wishing to process personal data through installing, recording, or storing cookies on a user's terminal; it provides a simplified-declaration model before implementation, lists specified purposes, and states that profiling the user's personal profile requires prior CNDP authorization.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-deliberation-d-939-2025-cookie-data"
+      ],
+      "pinpoint": "Sections 1–3 and 8, PDF pp. 1–4",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded summary of the CNDP PDF text, not an independent conclusion about formal publication, legal effect, current status, the full categories of covered cookies, or application to other tracking technologies. Reconcile with Law 09-08, the implementing decree, and other CNDP decisions before use. No template procedure or legal conclusion is based on this claim."
+    },
+    {
+      "id": "cndp-deliberation-d-939-2025-cookie-consent-and-retention",
+      "text": "CNDP Deliberation D-939-2025 states that prior consent is not required for cookie-data processing for the listed purposes except personalized advertising and social-network sharing; for those two exceptions it requires consent before the first cookie deposit through a clear and explicit action and means allowing refusal. It sets a six-month maximum for cookie data retention and for retaining the recorded user choice.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-deliberation-d-939-2025-cookie-data"
+      ],
+      "pinpoint": "Sections 5–6, PDF pp. 2–4",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This reports the text of D-939-2025 and does not resolve its relationship to the 2023 CNDP website guide, Article 4 of Law 09-08, or later/other CNDP decisions. Do not generalize it beyond its wording or treat it as an operational recommendation without qualified review of the actual technology and processing."
+    },
+    {
+      "id": "cndp-deliberation-d-939-2025-cookie-transfer-and-interconnection",
+      "text": "Sections 9–10 of CNDP Deliberation D-939-2025 state that foreign transfers of data collected through the covered cookie processing require prior CNDP authorization and that interconnection or cross-reference with files having different purposes requires prior authorization.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-deliberation-d-939-2025-cookie-data"
+      ],
+      "pinpoint": "Sections 9–10, PDF p. 5",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records what the decision says; its relationship to Articles 12, 20, and 43–44 of Law 09-08, including the transfer conditions, has not been legally reconciled. Do not conclude that the decision changes or supersedes those provisions, or that every cookie-related transfer requires authorization, without qualified review."
+    },
+    {
+      "id": "cndp-deliberation-d-939-2025-cookie-information-and-change-notice",
+      "text": "Section 6 of CNDP Deliberation D-939-2025 states that, before the first cookie deposit, the controller must provide its identity, purposes, categories of data, recipients including duly authorized foreign transfers, contact details for exercising access/rectification/objection rights, and CNDP receipt references; it also states that changes to this information must be communicated.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-deliberation-d-939-2025-cookie-data"
+      ],
+      "pinpoint": "Section 6, PDF pp. 3–4",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded paraphrase of the decision text, not a conclusion about its formal publication, legal effect, current status, or interaction with Law 09-08 and other CNDP guidance. Do not copy this list into a privacy notice without checking the actual processing facts and qualified legal review."
+    },
+    {
+      "id": "cndp-deliberation-d-939-2025-cookie-security-and-subcontractors",
+      "text": "Section 7 of CNDP Deliberation D-939-2025 states that controllers must take measures to ensure security and confidentiality of the covered cookie data and, when using a subcontractor, ensure sufficient technical and organizational security guarantees, including through contractual clauses.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-deliberation-d-939-2025-cookie-data"
+      ],
+      "pinpoint": "Section 7, PDF p. 4",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the decision's statements only. It does not define an adequate security standard, establish the roles of parties in a particular service, or determine the current legal requirements for a processor agreement. Reconcile with Law 09-08 and the actual processing facts before use."
+    },
+    {
+      "id": "cndp-cookie-procedure-page-form-f214",
+      "text": "On 8 October 2026, the live CNDP procedures page's ‘Gestion des cookies pour site web’ section associated Deliberation D-939-2025 with ‘Formulaire de déclaration normale conformément à une décision (F-214)’ and linked the five-page F-214 PDF, version 20250724. Page 1 of the linked form is titled ‘Déclaration de traitement — Conformément à la Décision N°’ and cites Article 15 of Law 09-08. The page also listed consent-or-other-legal-basis documentation, an information notice, a processor contract where applicable, and proof of signing authority.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-procedures-de-notification-process",
+        "cndp-demande-accompagnement-form-categories",
+        "cndp-form-f214-20250724",
+        "cndp-deliberation-d-939-2025-cookie-data"
+      ],
+      "pinpoint": "CNDP procedures page, ‘Gestion des cookies pour site web’, ‘Délibération’, ‘Formulaire de notification’, and ‘Pièce à fournir’ sections; linked F-214 PDF page 1; directly accessed 2026-10-08",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is a bounded report of the live CNDP procedure page and the exact PDF to which its cookie entry links, directly retrieved on 2026-10-08. The page and form title label F-214 a normal declaration in accordance with a decision; the form is version 20250724 and cites Article 15. Section 8 of signed D-939-2025 describes simplified declaration, and the CNDP accompaniment page generically labels F214 as DS. These sources establish the displayed page and file contents, not which filing category legally governs, whether it applies to a particular processing setup, or what form CNDP currently accepts in practice. Do not state or implement a filing requirement until qualified review reconciles these materials."
+    },
+    {
+      "id": "cndp-form-page-labels-f214-simplified-f211-normal",
+      "text": "The CNDP form-for-guidance page displays F214 as a simplified declaration pursuant to a decision (DS) and F211 as a normal declaration (DN); a separate CNDP-hosted PDF identified as F214 is titled as a declaration pursuant to a decision and marked version 20250724.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-demande-accompagnement-form-categories",
+        "cndp-form-f214-20250724"
+      ],
+      "pinpoint": "CNDP accompaniment form page, regime fields; CNDP F214-hosted PDF, cover and version marker",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This reports labels and title information displayed in two official CNDP form resources accessed on 2026-10-08. The accompanying page classifies F214 under the simplified-declaration option, while the separate F214 PDF title calls it a declaration pursuant to a decision; it does not resolve whether these are different labels for a decision-specific procedure or which form applies to D-939-2025 cookie processing."
+    },
+    {
+      "id": "cese-recommends-revision-law-09-08",
+      "text": "The CESE Annual Report 2024 recommends revising Loi 09-08 to account for data used and generated by artificial intelligence and to align with international standards.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7460-bis-cese-report-2024"
+      ],
+      "pinpoint": "Official Bulletin No. 7460 bis, 27 November 2025, pp. 3126–3127; CESE Annual Report 2024, AI recommendations",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is a CESE policy recommendation printed in the Official Bulletin, not a bill or enacted amendment. Formal legislative status and any later legal effect require separate primary-source verification."
+    },
+    {
+      "id": "law-09-08-personal-data-definition",
+      "text": "In Article 1(1) of the accessed Loi 09-08 text, personal data is defined as information, regardless of form or support and including sound and image, relating to an identified or identifiable natural person.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 1(1)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase only. The current consolidated/amended status, legal interpretation, and applicability to any particular data are not verified."
+    },
+    {
+      "id": "law-09-08-processing-definition",
+      "text": "Article 1(2) of the accessed Loi 09-08 text defines processing broadly as operations performed on personal data, whether automated or not, and lists operations including collection, recording, organization, storage, adaptation, retrieval, consultation, use, communication, interconnection, blocking, erasure, and destruction.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 1(2)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase. No conclusion is made about whether a specific product operation is covered."
+    },
+    {
+      "id": "law-09-08-controller-processor-definitions",
+      "text": "Article 1(5) of the accessed Loi 09-08 text defines the controller by reference to determining purposes and means of processing; Article 1(6) defines a subcontractor as an entity that processes personal data on behalf of the controller.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 1(5)-(6)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The French statute uses « responsable du traitement » and « sous-traitant ». English labels here are descriptive translations, not a conclusion that foreign-law role tests apply unchanged."
+    },
+    {
+      "id": "law-09-08-processing-scope",
+      "text": "Article 2(1) of the accessed Loi 09-08 text describes its scope as automated processing, wholly or partly, and non-automated processing of personal data contained or intended to be contained in manual files.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 2(1)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase. Territorial scope and exceptions in Article 2 are not covered by this proposition."
+    },
+    {
+      "id": "law-09-08-data-quality-principles",
+      "text": "Article 3(1) of the accessed Loi 09-08 text lists principles concerning fair and lawful processing, specified explicit and legitimate purposes, data adequacy and non-excessiveness, accuracy/updating, and retention no longer than necessary for the stated purposes.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 3(1)(a)-(e)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase. Exceptions and interpretation require separate research and qualified review."
+    },
+    {
+      "id": "law-09-08-consent-and-exceptions",
+      "text": "Article 4 of the accessed Loi 09-08 promulgation text states a general consent rule for processing, then says consent is not required where processing is necessary for listed grounds: legal obligation, contract or requested pre-contractual measures, vital interests when the person cannot consent, a public-interest or public-authority mission, or the controller's or recipient's legitimate interest subject to the person's interests or fundamental rights and freedoms.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 4(a)-(e)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level summary of the 2009 promulgation text, not a complete legal-basis analysis or current-law determination. The listed necessity grounds qualify the general consent rule in the text; interpretation, amendment status, and application to any specific processing remain unresolved. No template should state a universal consent requirement or select a ground without case-specific review."
+    },
+    {
+      "id": "law-09-08-collection-information",
+      "text": "Article 5(1) of the accessed Loi 09-08 text describes information to be given before direct collection, including controller identity and processing purposes, and additional information such as recipients and whether answers are mandatory or optional where necessary in context.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 5(1)(a)-(c)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "notes": "Text-level paraphrase. Other collection channels, exceptions, and the full information set require separate provision-level review."
+    },
+    {
+      "id": "law-09-08-access-right-article-7",
+      "text": "Article 7 of the accessed Loi 09-08 promulgation text describes an identified person's right, at reasonable intervals and without charge or delay, to obtain confirmation and specified information about processing, receive intelligible data and available information about its origin, and know the logic underlying automated processing concerning them.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "bdj-ministry-law-09-08-record",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 7(a)-(c)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records selected wording from the 2009 promulgation text, not a complete account of scope, exceptions, request handling, or current enforceability. The text also addresses manifestly abusive requests and a possible response period authorized by the Commission; those details and their application are not summarized here. Do not promise a process or response time until counsel verifies current law and operational ability."
+    },
+    {
+      "id": "law-09-08-rectification-right-article-8",
+      "text": "Article 8 of the accessed Loi 09-08 promulgation text describes a right to request updating, correction, erasure, or blocking of personal data processed contrary to the law, including because it is incomplete or inaccurate, and addresses notifying recipients of changes where that is not impossible.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "bdj-ministry-law-09-08-record",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 8(a)-(b)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Partial paraphrase of the 2009 promulgation text. The article states a response period and follow-on mechanism that are intentionally not summarized or adopted as a current deadline here. Verify current law, scope, and an organization's actual request-handling capacity before promising a right, process, or timing in a notice."
+    },
+    {
+      "id": "law-09-08-objection-right-article-9",
+      "text": "Article 9 of the accessed Loi 09-08 promulgation text describes an identified person's right to object on legitimate grounds to processing of data concerning them and a separate right to object without charge to use of their data for direct marketing.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "bdj-ministry-law-09-08-record",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 9, paragraphs 1-2",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Partial summary of the 2009 promulgation text; the article states conditions and exceptions that are not reproduced here. Article 10 separately addresses direct marketing by certain electronic means. Verify current law, applicability, and the actual communication channels with qualified counsel before describing rights or controls in a notice."
+    },
+    {
+      "id": "law-09-08-rectification-period-article-8",
+      "text": "Article 8(a) of the accessed Loi 09-08 promulgation text states that the controller must make necessary corrections without charge to the requester and uses the phrase «dans un délai franc de dix jours».",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "bdj-ministry-law-09-08-record",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 8(a), sentence following the listed rectification actions",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the wording in the 2009 promulgation text only. No start point, day-counting method, exceptions, or present applicability is inferred from the quoted phrase. Do not turn it into a service deadline or promise in a template until current law, interpretation, and the organization's operational capacity are reviewed by qualified counsel."
+    },
+    {
+      "id": "law-09-08-direct-marketing-article-10",
+      "text": "Article 10 of the accessed Loi 09-08 promulgation text prohibits direct marketing by automated call, fax, email, or similar technology using a natural person's contact details without prior consent for that medium. It states a conditional exception for email marketing after a sale or service where the contact was collected directly and lawfully, the promoted goods or services are similar and offered by the same entity, and an express, unambiguous, simple way to object is offered when the contact is collected and with each marketing email, without charges other than those related to transmitting the refusal. For messages by automated call, fax, or email, it also requires valid contact details through which the recipient can request cessation without charges other than transmitting the request, and prohibits concealing the identity of the person on whose behalf the message is sent or using an unrelated subject.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "bdj-ministry-law-09-08-record",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 10, paragraphs 1-5",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level summary of the 2009 promulgation text, not a conclusion about current status, interpretation, a particular campaign, other marketing channels, or the full interaction with Article 9. Check each actual channel, collection context, product/service relationship, notice, and opt-out workflow with qualified counsel before stating a rule in a template or launching marketing."
+    },
+    {
+      "id": "law-31-18-doc-amendments-articles-1-2",
+      "text": "The Official Bulletin text of Law 31-18 states in Article 1 that DOC Article 987 is replaced, and in Article 2 that new Articles 889-1, 889-2, 987-1, 987-2, 987-3, and 1014-1 are added. These provisions concern real-property mandates and civil real-estate companies; this is a description of the published amendment text, not a statement of current applicability.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-6880-law-31-18-doc"
+      ],
+      "pinpoint": "Official Bulletin No. 6880, 7 May 2020, Dahir 1-19-114 and Law 31-18 Articles 1–2",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records what the Official Bulletin text says. The SGG PDF is the French official-translation edition; compare with the original Arabic publication, verify later amendments and legal effect, and obtain qualified legal review before making an applicability claim. The subject is narrow and does not establish requirements for ordinary service, NDA, employment, or software contracts."
+    },
+    {
+      "id": "law-21-18-amends-doc-provisions",
+      "text": "Articles 2–6 of the accessed Law 21-18 text state that specified Code des obligations et des contrats provisions are abrogated and replaced, modified or completed, supplemented, or have their headings changed.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-law-21-18-suretes-mobilieres"
+      ],
+      "pinpoint": "Articles 2–6",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This establishes only what the amendment instrument says. It does not identify the current consolidated wording or whether any amendment has further changed these provisions. A current DOC text is needed before substantive template drafting."
+    },
+    {
+      "id": "labor-code-65-99-article-1-scope",
+      "text": "Article 1 of the accessed promulgation text of Law 65-99 states that the Labour Code applies to persons bound by an employment contract regardless of its mode of performance, the nature or method of payment, or the nature of the enterprise, and describes additional covered enterprise and service contexts.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-5210-2004-labor-code",
+        "adala-code-travail"
+      ],
+      "pinpoint": "Article 1",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase of the promulgated text, cross-checked against a Ministry of Justice portal copy. Current amendments, consolidation cut-off, exceptions, and application to any particular working relationship are unresolved."
+    },
+    {
+      "id": "labor-code-65-99-article-6-definition",
+      "text": "Article 6 of the accessed promulgation text of Law 65-99 describes an employee as a person who undertakes to perform professional activity under the direction of one or more employers in return for remuneration, whatever its nature or method of payment; it describes an employer as a natural or legal person, public or private, that hires the services of one or more natural persons.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-5210-2004-labor-code",
+        "adala-code-travail"
+      ],
+      "pinpoint": "Article 6",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase only. It is not a complete classification test or advice that contract labels control. Verify current consolidated wording, related statutory provisions, and judicial interpretation before using this in an Independent Contractor Agreement."
+    },
+    {
+      "id": "labor-bill-032-26-proposed-article-193-amendment",
+      "text": "The accessed text of proposed Bill 032.26 is titled as a proposal to supplement Article 193 of Law 65-99 concerning the Labour Code.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-projet-labor-amendment-032-26"
+      ],
+      "pinpoint": "PDF pages 1–2, title and Article 1",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This describes proposed text only. It does not establish enactment, commencement, or current Article 193 wording."
+    },
+    {
+      "id": "labor-bill-032-26-deposit-listing",
+      "text": "The SGG legislative portal listing accessed on 2026-10-08 identifies proposed Bill 032.26 as deposited on 15 May 2026 at the House of Councillors.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-legislation-portal-032-26-status"
+      ],
+      "pinpoint": "Legislative portal listing for Bill 032.26",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the SGG portal's displayed deposit listing. Later chamber approvals are documented in a separate claim. A fresh check of the current SGG legislative-project list on 2026-10-08 found no matching entry; absence from that list does not establish promulgation or publication, and no corresponding Official Bulletin instrument was identified in that check. Current Article 193 wording and legal effect remain unresolved."
+    },
+    {
+      "id": "labor-bill-032-26-parliamentary-approvals",
+      "text": "Official records state that the House of Councillors approved Bill 032.26 on 16 June 2026 and the House of Representatives approved it on 22 June 2026.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "councillors-bill-032-26-status",
+        "representatives-session-329-2026-06-22"
+      ],
+      "pinpoint": "House of Councillors legislative record; House of Representatives plenary session 329 record",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records chamber approvals only. Dahir 1.26.27 and Law 032.26 were subsequently verified in Official Bulletin No. 7526; use the published source for promulgation, text, and commencement claims. This chamber record does not establish the law’s full amendment history, interpretation, current status, or application."
+    },
+    {
+      "id": "labor-law-101-14-formation-insertion-scope",
+      "text": "The title and promulgation passage in Official Bulletin n° 6344 describe Law 101-14 as amending Dahir-Law 1-93-16 on employer-organized placements for holders of certain diplomas for formation-insertion.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-6344-law-101-14-insertion-training",
+        "sgg-bo-6342-ar-law-101-14-insertion-training"
+      ],
+      "pinpoint": "Law 101.14, promulgation/title and Article 1, Arabic original BO n° 6342, printed p. 1630; French translation BO n° 6344",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the stated scope of the accessed amendment only. It does not establish the current regime, whether a placement qualifies, or the treatment of other internships; no rule is incorporated into a generic internship draft."
+    },
+    {
+      "id": "labor-bill-51-25-deposit-listing",
+      "text": "An SGG search-index result for the legislative portal identifies Bill 51.25 concerning Dahir-Law 1-93-16 as deposited on 18 February 2026 at the House of Representatives; the current portal page checked on 2026-10-08 did not show the bill in its listed projects.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-legislation-portal-51-25-status"
+      ],
+      "pinpoint": "SGG legislative portal listing for Bill 51.25",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This claim records a historical deposit listing surfaced by the SGG search index, alongside a direct check of the current page that did not show the bill among its listed projects on 2026-10-08. The index result is a historical procedural locator, not evidence of current bill status. Promulgation and publication are separately verified in Official Bulletin No. 7533 by the claim labor-law-51-25-publication-and-article-4-transitions. Neither portal observation establishes whether the law requires or has received implementing instruments, or its full effect or application."
+    },
+    {
+      "id": "labor-bill-51-25-parliamentary-approvals",
+      "text": "Official records state that the House of Representatives approved Bill 51.25 on 22 June 2026 and the House of Councillors approved it on 7 July 2026.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "representatives-session-329-2026-06-22",
+        "councillors-bill-51-25-status"
+      ],
+      "pinpoint": "House of Representatives plenary session 329 record; House of Councillors legislative record for approved bills",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records chamber actions only, as accessed on 2026-10-08. Promulgation and publication were later verified separately in Official Bulletin No. 7533 by the claim labor-law-51-25-publication-and-article-4-transitions. The chamber-vote record does not establish full legal effect or application."
+    },
+    {
+      "id": "labor-law-51-25-publication-and-article-4-transitions",
+      "text": "Official Bulletin No. 7533 publishes Dahir 1.26.54, dated 28 July 2026, promulgating Law 51.25 amending Dahir-Law 1-93-16 on training for insertion. Article 4 states that the amended provisions apply to training contracts concluded from publication; it also applies the law to contracts for trainees without diplomas concluded from 1 January 2025 through publication, referring to Article 14 of Finance Law 60.24, while contracts for diploma-holding trainees concluded before publication remain subject to Dahir-Law 1-93-16 as it stood before this amendment.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7533-law-013-26"
+      ],
+      "pinpoint": "Dahir 1.26.54 and Law 51.25, Article 4, Official Bulletin No. 7533, printed pp. 5144–5146",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records promulgation, publication, and the expressly differentiated transitional text in Article 4. It does not characterize the full commencement/effect of every provision, resolve the relationship with Finance Law 60.24, identify all eligibility or implementation requirements, establish the treatment of a particular placement, or determine current law after later instruments. The full amendment history and qualified legal review remain open."
+    },
+    {
+      "id": "labor-law-51-25-article-2-trainee-cap-regulatory-text",
+      "text": "Law 51.25, as published in Official Bulletin No. 7533, replaces Article 2 of Dahir-Law 1-93-16 with a rule that the number of formation-insertion trainees at each covered establishment must not exceed a percentage of that establishment's total employees, with the percentage to be determined by regulatory text.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7533-law-013-26"
+      ],
+      "pinpoint": "Law 51.25, Article 3 replacing Dahir-Law 1-93-16 Article 2, Official Bulletin No. 7533, printed p. 5146",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The promulgated statute expressly delegates the establishment-level trainee percentage to a regulatory text. Focused SGG Official Bulletin searches on 8 October 2026 using the law number and Arabic/French terms for formation-insertion and the establishment-level employee percentage did not surface a separate implementing instrument in indexed results. This is an incomplete search, not evidence that no instrument exists; an unindexed or differently titled text may apply. Search results for COVID-era employee/trainee-retention percentages concern a distinct measure and are not treated as this cap. The applicable instrument, percentage, commencement, and relationship to prior rules remain unresolved. Do not conflate this trainee-count cap with the separate historical 60% post-training hiring threshold in Law 101-14. Qualified legal review remains required."
+    },
+    {
+      "id": "labor-decree-2-91-517-articles-1-2-natlex-reproduction",
+      "text": "The ILO NATLEX reproduction of Moroccan Decree 2-91-517 states that Article 1 refers to an annexed formation-insertion agreement model and Article 2 assigns visa of that agreement to provincial or prefectural services of the ministry responsible for employment.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "ilo-natlex-decree-2-91-517-reproduction",
+        "sgg-bo-4197-ar-decree-2-91-517"
+      ],
+      "pinpoint": "Decree 2-91-517, Articles 1–2, ILO NATLEX PDF pp. 1–2; official issue locator: SGG Official Bulletin No. 4197",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The provisions were read in ILO NATLEX's reproduction, not independently verified against the SGG Official Bulletin scan, which was accessible but not text-extractable in this review. This is a historical text locator only; it does not establish that the 1993 visa process or annex model remains current after Law 101-14 and Law 51.25, or applies to a particular placement. Qualified legal review and official-text comparison remain open."
+    },
+    {
+      "id": "finance-law-60-24-article-14-non-degree-training-account-expenditures",
+      "text": "Article 14 of Finance Law 60.24, effective from 1 January 2025 as stated in that article, adds to the expenditure items of the special Treasury account named the Youth Employment Promotion Fund the State's assumption of benefits under Dahir-Law 1.93.16 for training of trainees without diplomas, for a period not exceeding twelve months, and in case of permanent employment.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7362-law-60-24-finance-2025"
+      ],
+      "pinpoint": "Finance Law 60.24, Article 14, Official Bulletin No. 7362, printed p. 9800",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The provision amends expenditures from a special Treasury account; it is not, by itself, a determination of an individual trainee's direct entitlement, eligibility, application process, or employer obligations. Law 51.25 Article 4 expressly refers to Article 14 for specified pre-publication contracts of trainees without diplomas. The relationship between the texts, any later amendments, and case-specific application require review."
+    },
+    {
+      "id": "law-09-08-processor-security-contract",
+      "text": "Article 23(1)-(4) of the accessed Loi 09-08 promulgation text addresses appropriate technical and organizational security measures; selection and oversight of a subcontractor with sufficient security guarantees when processing is performed on behalf of the controller; a contract or other legal act under which the subcontractor acts only on the controller’s instructions and specified security obligations apply; and recording the relevant contract terms and security requirements in writing or an equivalent form.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 23(1)-(4); Official Bulletin n° 5714 (French edition), printed pp. 350-351",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level summary of the 2009 promulgation text, corroborated against the SGG-hosted Official Bulletin PDF's indexed text (printed pp. 350-351) and the Ministry of Justice BDJ transcription. The SGG PDF's direct text extraction has encoding defects; the indexed extract displays paragraphs 1-4. This does not establish current consolidated law, the complete contract required for a specific arrangement, or that parties labelled controller/processor hold those roles in fact."
+    },
+    {
+      "id": "law-09-08-cross-border-transfer-articles-43-44",
+      "text": "Articles 43 and 44 of the accessed Loi 09-08 promulgation text state a protection-level condition for transfers to a foreign state and list specified exceptions or conditions for transfers to states not meeting that level.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Articles 43-44",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "High-level paraphrase only. Do not infer that a destination qualifies, a transfer is allowed, consent is sufficient, or any CNDP authorization is or is not needed. Verify current law, official country lists/guidance, actual data flows, and the relevant exceptions with qualified counsel."
+    },
+    {
+      "id": "law-31-08-objectives-consumer-contracts-distance-sales",
+      "text": "Article 1 of the accessed Law 31-08 text states objectives including appropriate and clear consumer information and protection in consumer contracts, including clauses concerning distance sales and solicitation.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-consumer-protection",
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 1, first paragraph and first two bullets; checked against SGG consolidated edition, cover dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase checked against the Adala portal copy and the SGG consolidated edition dated 22 May 2025. SGG says its consolidated copy is for readability and Official Bulletin versions are authoritative. This does not determine later changes, current interpretation, consumer status for a particular service, or whether specific Terms of Service fall within scope."
+    },
+    {
+      "id": "law-31-08-distance-contract-chapter-exceptions-article-28",
+      "text": "Article 28 of the SGG consolidated Law 31-08 text says the distance-contract chapter does not apply to contracts concluded through automatic distribution machines or automated commercial premises; with telecommunications operators for use of public telephone booths; for construction or sale of immovable property or other real rights in immovables, except leases; or at public auction.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 28, items 1–4; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative. This records the listed exceptions only; it does not determine whether a particular transaction, service, or other Law 31-08 protection is covered. Cross-check the underlying Gazette text and any amendments before applying it."
+    },
+    {
+      "id": "law-31-08-distance-offer-information-and-order-review-article-29",
+      "text": "Article 29 of the SGG consolidated Law 31-08 text lists information for distance-sale offers, including essential product or service characteristics; supplier and, where applicable, responsible-offeror identification and contact details; delivery timing and cost where applicable; the right of withdrawal subject to exceptions; payment, delivery, or performance methods; offer validity and price; communication-technology costs; and minimum duration for continuous or periodic supply where applicable. It also says the offer information must be clear and understandable with its commercial nature unambiguous, and the supplier must present the consumer's choices before contracting and enable confirmation or modification of the order.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 29, items 1–8 and final paragraphs; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. Article 29's supplier-identification item includes additional details for cyber-merchants depending on registration, VAT, licensing, or regulated-profession status; those subitems are not exhaustively reproduced here. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative. This does not determine whether a specific offer is a distance sale, whether a person qualifies as a consumer, or how the requirements apply to a particular service. Verify the underlying Gazette text and amendment history before applying it."
+    },
+    {
+      "id": "law-31-08-distance-contract-terms-access-and-acceptance-article-30",
+      "text": "Article 30 of the SGG consolidated Law 31-08 text says a supplier must make the contractual terms for remote supply of products, goods, or services easily accessible and viewable on the supplier's website home page or another communication medium carrying the supplier's offer, and those terms must receive the consumer's express acceptance before the offer is accepted.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 30; SGG consolidation dated 22 May 2025, PDF p. 12 (printed p. 12)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative. This text-level claim does not establish whether a particular offer, service, or customer qualifies, nor the technical or legal sufficiency of any interface or acceptance mechanism. Cross-check the underlying Gazette text and amendments before applying it."
+    },
+    {
+      "id": "law-31-08-distance-sale-written-confirmation-article-32",
+      "text": "Article 32 of the SGG consolidated Law 31-08 text says the consumer must receive, in writing or another durable medium at their disposal, in time and no later than delivery, confirmation of specified information under Articles 3, 5, and 29 unless already supplied before contracting; the supplier's complaint address; information on withdrawal conditions and process; after-sales service and commercial guarantees; and termination terms for indefinite contracts or contracts longer than one year. It also addresses no-extra-charge communications for tracking performance, withdrawal, or warranty, with a stated exception for one-off services delivered by distance technology and billed by that technology provider, except the supplier-address item.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 32, items 1–5 and following paragraphs; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative. This does not determine whether a specific offer or customer qualifies, or how any exception applies. Verify the underlying Gazette text, amendments, and implementation before applying it."
+    },
+    {
+      "id": "law-31-08-unsolicited-paid-supply-no-silence-as-acceptance-article-33",
+      "text": "Article 33 of the SGG consolidated Law 31-08 text prohibits supplying products, goods, or services to a consumer without a prior order when payment is requested, says consumer silence is not acceptance, and says the consumer owes no payment for an unrequested supply.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 33, paragraphs 1–2; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. This records the provision's stated rule only; it does not determine whether a particular communication, renewal, or supply is legally 'unrequested' or how another provision affects it. Verify the underlying Gazette text and amendments before applying it."
+    },
+    {
+      "id": "law-31-08-supplier-burden-of-proof-distance-sale-article-34",
+      "text": "Article 34 of the SGG consolidated Law 31-08 text places the burden of proof on the supplier in a dispute, particularly for prior provision and confirmation of Article 29 information, observance of time limits, and consumer acceptance; it states that any contrary agreement is void and without effect.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 34, paragraphs 1–2; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. This does not establish how evidentiary rules apply to a specific dispute or service. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text and amendments before applying it."
+    },
+    {
+      "id": "law-31-08-distance-contract-withdrawal-period-article-36",
+      "text": "Article 36 of the SGG consolidated Law 31-08 text provides a seven-full-day period to exercise withdrawal, extended to 30 days where the supplier fails to comply with the written-confirmation obligation for information under Articles 29 and 32. The provision says these periods run from receipt of the goods or, for services, acceptance of the offer. The surrounding provisions make this rule subject to Articles 38 and 42; it is not a universal withdrawal entitlement.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Articles 36, 38, and 42; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The start point is paraphrased as stated in the provision: receipt of goods or acceptance of the offer for services. Article 42 excludes some contracts from Articles 29, 32, 36, and 37, while Article 38 lists exceptions to withdrawal. This claim does not enumerate or classify those categories or determine applicability. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify the Gazette text, amendments, and facts before applying it."
+    },
+    {
+      "id": "law-31-08-distance-contract-withdrawal-refund-article-37",
+      "text": "Article 37 of the SGG consolidated Law 31-08 text says that when withdrawal is exercised, the supplier must refund the full amount paid immediately and no later than 15 days after exercise; after that period, the amount due accrues interest at the applicable legal rate.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 37; subject to Articles 38 and 42; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. Article 37 is subject to Articles 38 and 42, including listed withdrawal exceptions and excluded contract categories; this claim does not determine whether they apply in a particular case or calculate interest. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify the Gazette text and amendments before applying it."
+    },
+    {
+      "id": "law-31-08-withdrawal-exceptions-article-38",
+      "text": "Article 38 of the SGG consolidated Law 31-08 text lists contracts for which withdrawal may not be exercised unless the parties agree otherwise: services begun with consumer consent before the seven-full-day period ends; supplies whose price or tariff depends on financial-market fluctuations; custom-made goods, goods that by nature cannot be returned, or goods liable to deteriorate or perish quickly; audio/video recordings or software once accessed by the consumer; and newspapers, periodicals, or magazines.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 38, items 1–5; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The exact reach of each category and the effect of any contrary party agreement are not analyzed. Article 42 also excludes certain contract categories from Articles 29, 32, 36, and 37; this claim does not address those exclusions. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text, amendments, and facts before applying it."
+    },
+    {
+      "id": "law-31-08-distance-contract-scope-exclusions-article-42",
+      "text": "Article 42 of the SGG consolidated Law 31-08 text says Articles 29, 32, 36, and 37 do not apply to contracts for regular doorstep delivery of ordinary consumer goods by distributors on frequent and regular rounds, or for accommodation, transport, restaurant, or leisure services to be provided on a specific date or during a specific period. It separately says Articles 29 and 32 still apply to electronic contracts for those listed services.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 42, items 1–2 and final paragraph; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The claim records only listed scope exclusions and the express electronic-contract qualification; it does not determine whether a particular seller, service, delivery arrangement, or booking meets those categories. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text and amendments before applying it."
+    },
+    {
+      "id": "law-31-08-order-fulfilment-deadline-article-39",
+      "text": "Article 39 of the SGG consolidated Law 31-08 text says fulfilment of the order may not exceed 30 days from the day the supplier confirms receipt of the consumer's order, unless the parties agree otherwise.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 39; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The statutory text includes an express qualification for contrary party agreement. This does not establish whether a particular transaction is covered by the relevant chapter, how order receipt is confirmed, or what other provisions apply. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text and amendments before applying it."
+    },
+    {
+      "id": "law-31-08-unavailable-order-notice-and-refund-article-40",
+      "text": "Article 40 of the SGG consolidated Law 31-08 text says that if the supplier cannot perform the contract because the requested product, goods, or service is unavailable, the supplier must inform the consumer and, where applicable, refund amounts paid immediately and no later than 15 days after payment. After that deadline, the amounts accrue interest at the legal rate.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 40; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The text qualifies refunds with 'where appropriate'; this claim does not determine when refund is applicable, how unavailability or non-performance is established, or calculate interest. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text and amendments before applying it."
+    },
+    {
+      "id": "law-31-08-equivalent-substitute-and-return-costs-article-41",
+      "text": "Article 41 of the SGG consolidated Law 31-08 text permits a supplier to provide a product, good, or service of the same quality and price if that option was disclosed before contracting or stated clearly and understandably in the contract. In that case, the supplier bears return costs arising from exercise of the withdrawal right and must inform the consumer of that allocation.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 41; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. This does not determine what qualifies as the same quality and price, whether the option was adequately disclosed, or when return costs arise. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text and amendments before applying it."
+    },
+    {
+      "id": "law-31-08-supplier-ip-dispute-responsibility-article-43",
+      "text": "Article 43 of the SGG consolidated Law 31-08 text states, notwithstanding any contrary legislation, that the supplier alone bears responsibility in the event of a dispute concerning intellectual property.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 43; Official Bulletin No. 5932, printed p. 1080; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. Article 43 appears in the distance-contract chapter; this text-level record does not resolve its scope, interaction with intellectual-property statutes, or application to a particular dispute. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text, amendments, and qualified legal interpretation before applying it."
+    },
+    {
+      "id": "law-31-08-distance-contract-chapter-public-order-article-44",
+      "text": "Article 44 of the SGG consolidated Law 31-08 text states that the provisions of this chapter are matters of public order.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 44; Official Bulletin No. 5932, printed p. 1080; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. This records the statutory classification only and does not analyze its legal consequences, scope, or effect on any particular contractual term. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text and qualified legal interpretation before applying it."
+    },
+    {
+      "id": "law-31-08-off-premises-sales-scope-article-45",
+      "text": "Article 45 of the SGG consolidated Law 31-08 text applies the chapter on sales outside commercial premises to persons who conduct or seek to conduct sales at a natural person's home, residence, or workplace, even at that person's request, to propose purchasing, selling, renting, depositing, deposit-for-sale, rent-to-own, or services. It also covers sales outside commercial premises in places not intended for shopping for the offered product, good, or service, including meetings or trips organized by or for the supplier for those purposes.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 45, paragraphs 1–2; Official Bulletin No. 5932, printed p. 1080; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. This describes the article's scope text only; it does not determine whether a particular venue, solicitation, transaction, or person is covered or how this chapter interacts with other protections. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text, amendments, and facts before applying it."
+    },
+    {
+      "id": "law-31-08-off-premises-sales-exclusions-article-46",
+      "text": "Article 46 of the SGG consolidated Law 31-08 text excludes from the off-premises-sales chapter: activities governed by special legislation; door-to-door sales of ordinary consumer goods by a supplier or agent on recurring or periodic rounds within or near the urban area where the supplier is established; and goods made or produced exclusively by the supplier or the supplier's family outside commercial premises, together with related services they perform immediately.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 46, items 1–3; Official Bulletin No. 5932, printed p. 1080; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. This records the listed chapter exclusions only and does not determine whether an activity, product, supplier, or route meets their terms or whether other consumer protections apply. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text, amendments, and facts before applying it."
+    },
+    {
+      "id": "law-31-08-off-premises-written-contract-article-47",
+      "text": "Article 47 of the SGG consolidated Law 31-08 text requires a written contract for off-premises sales described in Article 45, a counterpart delivered to the consumer when the contract is concluded, and a detachable form intended to facilitate the Article 49 withdrawal right. It also requires the consumer to sign by hand and complete all counterparts; a regulation specifies the information to appear on the withdrawal form.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 47, paragraphs 1–3; Official Bulletin No. 5932, printed p. 1080; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The implementing regulation and the exact operation of the handwritten-signature/completion language have not been checked here. This does not determine scope, validity, or sufficiency for a specific transaction. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text, implementing rules, amendments, and facts before applying it."
+    },
+    {
+      "id": "law-31-08-off-premises-contract-content-article-48",
+      "text": "Article 48 of the SGG consolidated Law 31-08 text states, under penalty of nullity, that an Article 45 off-premises contract must include the supplier and off-premises seller names or trade names; supplier address; place of contracting; precise description and characteristics of the products, goods, or services; performance terms including delivery or service timing and total price; payment methods; and the Article 49 withdrawal right, its conditions, and the full text of Articles 47–50 prominently. It also prohibits a jurisdiction-assignment clause in the contract.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 48, items (a)–(g) and final paragraph; Official Bulletin No. 5932, printed p. 1080; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. Article 48 expressly states the listed contents apply under penalty of nullity, but this claim does not interpret nullity, assess a particular contract, or determine the scope of the prohibited clause. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text, implementing rules, amendments, and qualified legal interpretation before applying it."
+    },
+    {
+      "id": "law-31-08-off-premises-withdrawal-right-article-49",
+      "text": "Article 49 of the SGG consolidated Law 31-08 text gives a consumer up to seven days from the order or commitment to purchase to withdraw by sending the detachable contract form through any means that proves receipt. A contract term waiving this right is void and without effect. Article 49 does not apply to contracts concluded under Article 51.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 49, paragraphs 1–3; Official Bulletin No. 5932, printed p. 1080; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. Article 47 refers to regulatory particulars for the detachable form, and Article 51 contracts are expressly excluded from Article 49. This does not determine the deadline calculation, receipt proof, implementing-form requirements, or transaction coverage. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text, implementing rules, amendments, and facts before applying it."
+    },
+    {
+      "id": "law-31-08-off-premises-payment-restriction-article-50",
+      "text": "Article 50 of the SGG consolidated Law 31-08 text prohibits anyone, before expiry of the Article 49 withdrawal period, from demanding or obtaining from the consumer any payment, undertaking, or service. It says obligations and payment orders may not be executed until that period expires and must be returned to the consumer within 15 days after withdrawal.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 50, paragraphs 1–2; Official Bulletin No. 5932, printed p. 1080; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. This distinguishes return of obligations/payment orders from a cash-refund claim and does not determine the interaction with Article 51 contracts, transaction coverage, or procedural effects. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text and qualified legal interpretation before applying it."
+    },
+    {
+      "id": "law-31-08-off-premises-phone-sale-article-51",
+      "text": "Article 51 of the SGG consolidated Law 31-08 text requires a supplier in every off-premises sale by telephone or similar technology to state its identity and the transaction's commercial nature expressly, and to send the consumer confirmation of the offer; the offer binds the consumer only upon signature.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 51; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. Article 49 expressly excludes contracts concluded under Article 51; this claim does not resolve how the signature requirement operates in a particular communication channel or how other requirements apply. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text, amendments, and qualified interpretation before applying it."
+    },
+    {
+      "id": "law-31-08-off-premises-chapter-public-order-article-52",
+      "text": "Article 52 of the SGG consolidated Law 31-08 text states that the provisions of the off-premises-sales chapter are matters of public order.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Article 52; SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. This records the statutory classification only and does not analyze its consequences or effect on a particular term. The SGG preface says the consolidation is for readability and Official Bulletin texts are authoritative; verify Gazette text and qualified legal interpretation before applying it."
+    },
+    {
+      "id": "law-31-08-discount-sale-definition-article-53",
+      "text": "Article 53 of the SGG consolidated Law 31-08 text defines a discount sale as a sale preceded or accompanied by advertising and announced as aiming to rapidly clear stocked products or goods through a price reduction.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "acaps-bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 53; Official Bulletin No. 5932, printed p. 354 (ACAPS-hosted reproduction); SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The ACAPS-hosted Official Bulletin reproduction cross-checks the published wording for Article 53, but does not establish later amendments or current law. This records the statutory definition only; it does not determine whether a particular promotion is a discount sale or how other advertising and pricing rules apply. Verify amendments and facts before applying it."
+    },
+    {
+      "id": "law-31-08-discount-advertising-and-reference-price-article-54",
+      "text": "Article 54 of the SGG consolidated Law 31-08 text requires a discount sale to be accompanied by a clear and readable announcement using the word 'discount'. At points of sale, the supplier must identify covered products or goods, the new price and crossed-out old price, and the discount period's start and end. The crossed-out old price may not exceed the lowest actual price the supplier charged at the same establishment for a similar item during the 30 days before the discount began. The supplier may also state the discount percentages.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08",
+        "acaps-bo-5932-law-31-08"
+      ],
+      "pinpoint": "Article 54, paragraphs 1–4; Official Bulletin No. 5932, printed p. 354 (ACAPS-hosted reproduction); SGG consolidation dated 22 May 2025",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic consolidation, not an authoritative translation. The ACAPS-hosted Official Bulletin reproduction cross-checks the published wording for Article 54, but does not establish later amendments or current law. Product, channel, and promotion-specific application and the effect of amendments remain unresolved; verify amendments and qualified interpretation before applying it."
+    },
+    {
+      "id": "law-53-05-electronic-offer-terms-article-65-4",
+      "text": "Article 65-4 of the Adala copy labelled a consolidated version of Law 53-05 dated 18 March 2021 addresses professional electronic offers for goods or services, including making applicable contract terms available for retention and reproduction and listing information about the offer, contract steps, error correction, and available contract languages.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-electronic-transactions"
+      ],
+      "pinpoint": "Article 65-4",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The source itself states its consolidation date is 2021-03-18 and records Law 43-20 amendments. Verify subsequent amendments, scope, exceptions, and application to the actual online service before relying on this proposition."
+    },
+    {
+      "id": "law-53-05-electronic-order-review-article-65-5",
+      "text": "Article 65-5 of the Adala copy labelled a consolidated version of Law 53-05 dated 18 March 2021 describes an opportunity before confirmation for the offer recipient to review order details and total price and correct errors, and an electronic acknowledgement of receipt by the offer author.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-electronic-transactions"
+      ],
+      "pinpoint": "Article 65-5",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level summary only. The source consolidation is dated 2021-03-18; verify current law, scope, exceptions, and applicability before implementing a checkout flow."
+    },
+    {
+      "id": "copyright-bill-013-26-deposit-listing",
+      "text": "The SGG legislative portal listing accessed on 2026-10-08 identifies proposed Bill 013.26 modifying Law 2-00 as deposited on 23 June 2026 at the House of Representatives.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bill-013-26-copyright-status"
+      ],
+      "pinpoint": "SGG legislative portal listing for Bill 013.26",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Historical status record: the SGG portal displayed this deposit listing. Later official chamber records document passage by both houses. This claim does not establish promulgation, Official Bulletin publication, commencement, or current law."
+    },
+    {
+      "id": "law-2-00-authorship-article-31",
+      "text": "Article 31 of the SGG September 2026 consolidated Law 2-00 text states that the author is the first holder of moral and economic rights in the work.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-copyright-law-2-00",
+        "adala-law-2-00-copyright",
+        "haca-law-2-00-through-34-05",
+        "sgg-bo-7533-law-013-26",
+        "sgg-bo-5397-law-34-05-copyright",
+        "sgg-bo-5400-fr-law-34-05-copyright",
+        "wipo-law-79-12-private-copying-amendment",
+        "sgg-bo-6266-law-79-12-copyright",
+        "sgg-bo-6263-law-79-12-copyright",
+        "sgg-bo-7101-law-66-19-copyright",
+        "sgg-bo-7158-fr-law-66-19-copyright"
+      ],
+      "pinpoint": "Article 31, SGG consolidated edition dated September 2026, printed p. 18; Law 013.26, Article 1, Official Bulletin No. 7533, pp. 5141–5143 (enumerated amendment list)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The HACA reference page labelled as consolidated through Law 34-05 and the SGG September 2026 consolidated edition both display the Article 31 proposition. The latter includes Law 013.26 and shows Article 31 unchanged by that amendment. The Law 34-05 original Arabic publication is SGG Official Bulletin No. 5397 (printed p. 458 per the SGG consolidation); No. 5400 is the French translation edition used for the scoped text cross-check. The scoped checks of Laws 34-05 and 66-19 do not enumerate Article 31 among amended articles; the original Arabic text of Law 66-19 is in SGG Official Bulletin No. 7101, printed p. 3726, with the SGG French translation cross-check in No. 7158. The original Arabic Law 79-12 publication is SGG Official Bulletin No. 6263, printed p. 4849; its single article adds the private-copy remuneration chapter. No. 6266 is the French translation edition. These are scoped amendment checks only; the SGG preface says Official Bulletin versions are authoritative and the complete amendment history remains unreconciled. This is not a legal interpretation or an ownership conclusion for a particular work."
+    },
+    {
+      "id": "law-2-00-employee-work-article-35",
+      "text": "Article 35 of the SGG September 2026 consolidated Law 2-00 text states that, for a work produced by an author for an employer under an employment contract and within employment, unless the contract provides otherwise, the author is first holder of moral and economic rights, while economic rights are considered transferred to the employer to the extent justified by the employer's usual activities when the work was created.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-copyright-law-2-00",
+        "adala-law-2-00-copyright",
+        "haca-law-2-00-through-34-05",
+        "sgg-bo-7533-law-013-26",
+        "sgg-bo-5397-law-34-05-copyright",
+        "sgg-bo-5400-fr-law-34-05-copyright",
+        "wipo-law-79-12-private-copying-amendment",
+        "sgg-bo-6266-law-79-12-copyright",
+        "sgg-bo-6263-law-79-12-copyright",
+        "sgg-bo-7101-law-66-19-copyright",
+        "sgg-bo-7158-fr-law-66-19-copyright"
+      ],
+      "pinpoint": "Article 35, SGG consolidated edition dated September 2026, printed p. 19; Law 013.26, Article 1, Official Bulletin No. 7533, pp. 5141–5143 (enumerated amendment list)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The HACA reference page labelled as consolidated through Law 34-05 and the SGG September 2026 consolidated edition both display the Article 35 proposition. The latter includes Law 013.26 and does not list Article 35 among its amendments. The Law 34-05 original Arabic publication is SGG Official Bulletin No. 5397 (printed p. 458 per the SGG consolidation); No. 5400 is the French translation edition used for the scoped text cross-check. Scoped checks of Laws 34-05 and 66-19 do not enumerate Article 35 among amended articles; the original Arabic text of Law 66-19 is in SGG Official Bulletin No. 7101, printed p. 3726, with the SGG French translation cross-check in No. 7158. The original Arabic Law 79-12 publication is SGG Official Bulletin No. 6263, printed p. 4849; its single article adds the private-copy remuneration chapter. No. 6266 is the French translation edition. These are scoped amendment checks only. The SGG preface says Official Bulletin versions are authoritative; complete amendment history, interpretation, and application to a particular employment relationship or work remain open and require qualified legal review."
+    },
+    {
+      "id": "bill-013-26-adopted-by-both-chambers",
+      "text": "Official public records of the House of Representatives and House of Councillors state that Bill 013.26 amending Law 2-00 was approved by the House of Representatives on 6 July 2026 and by the House of Councillors on 13 July 2026.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "representatives-bill-013-26-status",
+        "councillors-bill-013-26-status"
+      ],
+      "pinpoint": "Legislative status records for Bill 013.26; chamber plenary votes dated 6 and 13 July 2026",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Procedural history claim. Official Bulletin No. 7533 separately verifies promulgation/publication through Dahir 1.26.68; the SGG September 2026 consolidation includes Law 013.26. This chamber history does not determine commencement."
+    },
+    {
+      "id": "law-013-26-promulgated-and-published",
+      "text": "Dahir 1.26.68 dated 28 July 2026 promulgates Law 013.26 amending Law 2-00; the Arabic General Official Bulletin No. 7533 containing the dahir and law is dated 10 August 2026.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7533-law-013-26"
+      ],
+      "pinpoint": "Official Bulletin No. 7533, pp. 5140–5143; Dahir 1.26.68 and Law 013.26",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Promulgation and publication are verified in the official Arabic general edition. Law 013.26 has no separate commencement clause, and Constitution Article 50 addresses publication timing but does not itself state when the law enters into force. The applicable general rule and any legal effect remain unverified."
+    },
+    {
+      "id": "law-013-26-amendment-scope",
+      "text": "Article 1 of Law 013.26 amends provisions of Law 2-00 identified as Articles 1, 7, 10, 24(2), 43(1), 44, 59.1, 59.6, 60.2, 61, 61.2, and 64; Article 2 adds Article 1.7; Article 3 makes terminology substitutions in Articles 38, 51, and 65 and the Part II heading.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7533-law-013-26"
+      ],
+      "pinpoint": "Law 013.26, Articles 1–3, Official Bulletin No. 7533, pp. 5141–5143",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level inventory of the amending provisions. Article 35 is not among the provisions listed in Article 1 of Law 013.26. The SGG September 2026 consolidation includes the amendment; its preface says Official Bulletin versions are authoritative. Commencement, interpretation, and application remain open."
+    },
+    {
+      "id": "law-013-26-new-article-1-7-commercial-exploitation",
+      "text": "Article 2 of Law 013.26 adds Article 1.7 to Law 2-00. The added provision addresses commercial exploitation of works whose protection term has expired, assigns licensing and collection functions to the Moroccan Copyright Office, provides for remuneration on a lump-sum basis under applicable legislative and regulatory texts, and directs net collections after management costs to support cultural industries; it also assigns the Office an integrity/authenticity oversight role and authority to refuse harmful exploitation.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7533-law-013-26"
+      ],
+      "pinpoint": "Law 013.26, Article 2; inserted Law 2-00 Article 1.7, Official Bulletin No. 7533, p. 5142",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Close paraphrase of the Arabic official publication, not a legal interpretation. The SGG September 2026 consolidated edition includes the inserted Article 1.7; the SGG preface says the Official Bulletin text is authoritative. Commencement, implementation, scope, and fact-specific application require qualified review."
+    },
+    {
+      "id": "sgg-law-2-00-consolidated-september-2026",
+      "text": "The SGG consolidated-text index links a Law 2-00 edition whose title page dates the consolidated text to September 2026; the edition cites Law 013.26 and Official Bulletin No. 7533.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-copyright-law-2-00",
+        "sgg-bo-7533-law-013-26"
+      ],
+      "pinpoint": "SGG Law 2-00 consolidated PDF cover and amendment notes, including printed pp. 18–19",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The SGG preface states that the consolidation is for readability and only the Official Bulletin-published versions are authoritative. This records the date/content of the consolidation, not legal interpretation or applicability."
+    },
+    {
+      "id": "law-013-26-no-express-commencement-clause",
+      "text": "Law 013.26, as published in Official Bulletin No. 7533, consists of Articles 1–3 and contains no separate clause stating an entry-into-force date. Constitution Article 50 sets promulgation and Official Bulletin publication deadlines but does not itself specify the law’s entry-into-force date. Constitution Article 6 affirms the obligation to publish legal norms and states that laws may not have retroactive effect, but it does not state a default commencement date.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7533-law-013-26",
+        "house-constitution-article-50",
+        "bdj-constitution-article-6"
+      ],
+      "pinpoint": "Law 013.26, Articles 1–3, Official Bulletin No. 7533, pp. 5141–5143; Constitution Articles 6 and 50",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records what the cited primary texts expressly say. Article 6's publication and non-retroactivity principles do not identify a default commencement rule. This claim does not determine when Law 013.26 became enforceable; that question remains open pending authoritative legal research."
+    },
+    {
+      "id": "law-31-08-sgg-consolidation-date-and-authority-caveat",
+      "text": "The SGG Law 31-08 PDF identifies itself as a consolidated edition dated 22 May 2025 and states that it was prepared to facilitate readability; the preface says only versions published in the Official Bulletin are authoritative.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Cover and SGG preface, unnumbered first page",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This establishes the edition date and the publisher’s caveat only. It does not certify that the consolidation includes every later amendment or establish interpretation, commencement, or application."
+    },
+    {
+      "id": "law-78-20-amends-law-31-08-article-202",
+      "text": "Law 78.20, promulgated by Dahir 1.20.85 and published in Official Bulletin No. 6945 on 21 December 2020, amended Law 31-08 Article 202. As published, Article 202 assigns subject-matter jurisdiction in supplier-consumer disputes exclusively to the court of first instance despite a contrary clause, and gives the consumer the choice of territorial venue between the consumer’s domicile or residence and the place of the act causing damage. Article 2 states that Law 78.20 takes effect from its publication in the Official Bulletin.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-6945-law-78-20-amends-31-08-article-202",
+        "sgg-consolidated-law-31-08"
+      ],
+      "pinpoint": "Law 78.20, Articles 1–2; Official Bulletin No. 6945, printed p. 8465 (21 December 2020); SGG consolidation, Article 202 amendment note and text",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded English paraphrase of the Arabic Gazette text, cross-checked against the SGG consolidation. This verifies the promulgated 2020 amendment and its stated commencement, not the applicability or procedural effect in a particular contract, and not whether Article 202 has been amended again after the 22 May 2025 SGG consolidation. The 2023 SGG-listed draft Law 13-23 is a separate proposal; do not conflate it with enacted Law 78.20. Qualified Moroccan legal interpretation remains outstanding."
+    },
+    {
+      "id": "decree-2-22-687-national-trust-authority-article-1",
+      "text": "Article 1 of Decree 2-22-687 identifies the General Directorate for Information Systems Security (DGSSI), under the National Defence Administration, as the national authority for trust services for electronic transactions under Law 43-20.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-decree-2-22-687-electronic-trust-services",
+        "sgg-bo-7162-decree-2-22-687"
+      ],
+      "pinpoint": "Article 1; Official Bulletin n° 7162, p. 145",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level description of the decree’s stated designation, corroborated against the Official Bulletin citation. Later changes to authority, institutional structure, and application remain to be checked."
+    },
+    {
+      "id": "decree-2-22-687-entry-into-effect-article-37",
+      "text": "Article 37 of Decree 2-22-687 states that the decree is published in the Official Bulletin and takes effect six months after its publication.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-decree-2-22-687-electronic-trust-services",
+        "sgg-bo-7162-decree-2-22-687"
+      ],
+      "pinpoint": "Article 37; Official Bulletin n° 7162",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the text of the provision and does not calculate an effective date or establish whether later instruments altered its operation."
+    },
+    {
+      "id": "law-43-20-simple-advanced-signature-evidence-article-7",
+      "text": "Article 7 of Law 43-20 states that the legal effect of a simple or advanced electronic signature as evidence before a court cannot be rejected solely because it is electronic or does not satisfy the law’s requirements for a qualified electronic signature.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-6951-law-43-20",
+        "dgssi-law-43-20-french-bo-6970"
+      ],
+      "pinpoint": "Article 7, Official Bulletin n° 6951, printed p. 272",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Narrow paraphrase of statutory text only. It is not a conclusion that any particular signature is valid, reliable, attributable, admissible, or sufficient for a transaction; verify current text, scope, proof, exceptions, and related rules with qualified counsel."
+    },
+    {
+      "id": "law-43-20-commencement-trigger-article-84",
+      "text": "Article 84 of Law 43-20 states that the law enters into force from the date the texts adopted for its implementation are published in the Official Bulletin.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-6951-law-43-20",
+        "dgssi-law-43-20-french-bo-6970",
+        "dgssi-faq-law-43-20-v1-1"
+      ],
+      "pinpoint": "Article 84, Official Bulletin n° 6951, printed p. 282",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the provision’s stated commencement trigger only. The same wording was checked in the Arabic SGG Official Bulletin and the French Law 43-20 reproduction hosted by DGSSI, which identifies Official Bulletin No. 6970. DGSSI's FAQ version history dates version 1.1 to 13 July 2023 and lists Law 43-20's entry into force and publication of requirement frameworks as changes, but its introduction separately says the law has applied since 13 July 2013. This conflict and the full implementing-text trigger remain unresolved; the FAQ does not itself establish the statutory commencement date or current application."
+    },
+    {
+      "id": "dgssi-faq-law-43-20-commencement-metadata-and-date-discrepancy",
+      "text": "The DGSSI FAQ's evolution table identifies version 1.1 dated 13 July 2023 and lists the law's entry into force and publication of requirement frameworks among the changes; the introduction separately says Law 43-20 has applied since 13 July 2013. The FAQ also states that, at the time of writing, Decree 2-22-687 was the only published application text relating to trust services and that technical requirement frameworks were published on the national authority's website.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "dgssi-faq-law-43-20-v1-1"
+      ],
+      "pinpoint": "FAQ pp. 2 and 4–5: version history, introduction, and answer 2",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the FAQ's text and metadata, including its internal date conflict. The version history does not expressly state an effective date, and the introduction's 2013 year conflicts with version 1.1's 2023 date and change description. The inventory is explicitly time-bounded to the FAQ's authoring context; it does not establish the present implementing framework or the Article 84 trigger. Verify the identified Gazette publications and requirements frameworks before drawing any commencement or current-law conclusion."
+    },
+    {
+      "id": "dgssi-trust-requirements-frameworks-publication-metadata",
+      "text": "The DGSSI-published [Ref_PSCo_AG] general trust-service-provider requirements framework and five service-specific frameworks [Ref_Deliv_Cert_Qual], [Ref_Horo_Qual], [Ref_Env_reco_Qual], [Ref_Valid_Qual], and [Ref_Conserv_Qual] identify version 1.0 dated 13 July 2023 in their version histories. The general framework describes itself as a compliance baseline for providers and refers to Law 43-20 and Decree 2.22.687.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "dgssi-ref-psco-ag-v1-0",
+        "dgssi-ref-deliv-cert-qual-v1-0",
+        "dgssi-ref-horo-qual-v1-0",
+        "dgssi-ref-env-reco-qual-v1-0",
+        "dgssi-ref-valid-qual-v1-0",
+        "dgssi-ref-conserv-qual-v1-0"
+      ],
+      "pinpoint": "Each framework cover and version-history page; Ref_PSCo_AG, scope and reference-framework sections",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "These are authority-published technical/compliance frameworks, not Official Bulletin legislation. The general framework says it operationalizes the national legal and normative framework and identifies related service-specific references. Their dates and existence are evidence relevant to research, but this source-text check does not determine whether their publication satisfies Article 84, the law's commencement date, or present legal effect."
+    },
+    {
+      "id": "sgg-bo-7500-dgssi-trust-provider-accreditation-2026",
+      "text": "The French translation edition of Official Bulletin No. 7500 records DGSSI decision 1/PSCo/2026 dated 12 March 2026, accrediting Barid Al-Maghrib for 36 months as a trust-service provider for qualified electronic timestamping; the notice states the Arabic text was published in general-edition Official Bulletin No. 7499 on 13 April 2026.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7500-fr-decision-1-psco-2026"
+      ],
+      "pinpoint": "Official Bulletin No. 7500, French translation, p. 818",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is a bounded report of an individual accreditation notice published after the DGSSI FAQ v1.1 date. It demonstrates a later Official Bulletin publication under Law 43-20, but does not establish whether this type of individual notice is an implementing text for Article 84, when the law entered into force, or the current status of all trust-service requirements. The Arabic general-edition file was identified by the French notice but not directly retrieved in this check."
+    },
+    {
+      "id": "law-5-96-company-personality-registration-article-2",
+      "text": "Article 2 of the Ministry’s Law 5-96 consolidation states that the companies covered by Titles II, III, III bis and IV acquire legal personality upon registration in the commercial register.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-law-5-96-companies"
+      ],
+      "pinpoint": "Article 2; consolidation cover dated 19 August 2021",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This paraphrases the dated Ministry consolidation only. Verify subsequent amendments, the form-specific scope, and consequences in context before relying on it."
+    },
+    {
+      "id": "law-5-96-sarl-formation-article-44",
+      "text": "Article 44 of the Ministry’s Law 5-96 consolidation states that an SARL may be constituted by one or more persons whose losses are limited to their contributions, subject to the article’s stated exceptions and the rest of the law.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-law-5-96-companies"
+      ],
+      "pinpoint": "Article 44; consolidation cover dated 19 August 2021",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level description only; do not treat it as entity-formation advice or a conclusion about current application to a particular business."
+    },
+    {
+      "id": "law-17-95-sa-documents-to-third-parties-article-4",
+      "text": "Article 4 of the Ministry’s Law 17-95 consolidation specifies information to appear on SA documents issued to third parties, including the company name, SA designation, stated capital, registered office and commercial-register number.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-law-17-95-sa"
+      ],
+      "pinpoint": "Article 4; consolidation cover dated 19 August 2021",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is specific to the SA provision and dated consolidation. Do not generalize the list to other forms or use it as advice about any specific contract or entity."
+    },
+    {
+      "id": "law-15-95-commercial-register-persons-article-37",
+      "text": "Article 37 of the Ministry’s Law 15-95 consolidation lists natural and legal persons, Moroccan or foreign, exercising commercial activity in Morocco among those required to register in the commercial register, and lists additional categories.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-code-commerce-15-95"
+      ],
+      "pinpoint": "Article 37; consolidation cover dated 19 December 2019",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The consolidation predates later electronic-registry provisions and is not a complete current-law assessment. Verify scope, exceptions, subsequent amendments and application to the specific party."
+    },
+    {
+      "id": "law-15-95-commercial-register-filing-authority-article-38",
+      "text": "Article 38 of the Ministry’s Law 15-95 consolidation describes who may request commercial-register registration: the merchant or a written-proxy representative for a merchant, and specified company managers or management-body members for a company.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-code-commerce-15-95"
+      ],
+      "pinpoint": "Article 38; consolidation cover dated 19 December 2019",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This concerns registration requests, not a general rule about who may sign contracts for an entity. Verify current amendments and the actual entity’s governing documents and authority records."
+    },
+    {
+      "id": "decree-2-11-63-ice-system-and-issuance-articles-1-3",
+      "text": "Articles 1–3 of Decree 2.11.63 establish the Common Company Identifier system, state that administrations use it in forms and information systems relating to company identification and data processing, and describe issuance during the first stages of company creation through the administration handling the first creation procedure.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-decree-2-11-63-ice"
+      ],
+      "pinpoint": "Articles 1–3; Ministry of Justice Arabic portal copy, with footnote citing Official Bulletin No. 5952, 16 June 2011, p. 2873",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "English paraphrase of Arabic text for research navigation only. The source is a Ministry portal copy, not the referenced Gazette issue. This does not establish later amendments, current issuance workflow, a party's individual identifier status, or a general contract-field requirement. Do not infer legal effect from a platform process description."
+    },
+    {
+      "id": "decree-2-11-63-ice-data-requested-article-5",
+      "text": "Article 5 of Decree 2.11.63 enumerates information requested for issuance of an ICE by category, including different fields for legal persons, branches, and natural persons.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-decree-2-11-63-ice"
+      ],
+      "pinpoint": "Article 5; Ministry of Justice Arabic portal copy, with footnote citing Official Bulletin No. 5952, 16 June 2011, p. 2873",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records a list in the 2011 decree text only. It is not a checklist of information to collect for a contract, does not establish current identifier rules, and should not be used to request personal information without a separate purpose and legal basis assessment."
+    },
+    {
+      "id": "directentreprise-company-creation-workflow-description",
+      "text": "DirectEntreprise describes its company-creation workflow as beginning with selection of a legal form and then gathering identity, registered-office, activity, tax and social-security information, with later information depending on that form.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "directentreprise-company-creation-workflow"
+      ],
+      "pinpoint": "“Démarrer la création” workflow description",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the platform’s public workflow description, not a universal requirement or statement of the law for every party."
+    },
+    {
+      "id": "ompic-announced-negative-certificate-platform-2021",
+      "text": "An OMPIC information note dated 15 February 2021 announces a digital platform for trade-name applications and describes digitization of the process through issuance of the negative certificate.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "ompic-negative-certificate-platform-note-2021"
+      ],
+      "pinpoint": "Title, date, and opening description of the platform",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Recorded from search-indexed text of the official OMPIC PDF; direct retrieval returned HTTP 502 on 8 October 2026. This is a historical statement about a platform, not a description of current procedures or a legal requirement to obtain a certificate in every situation. Confirm current administrative practice from a directly accessible official source before operational use."
+    },
+    {
+      "id": "law-09-08-sensitive-data-security-article-24",
+      "text": "Article 24 of the accessed Loi 09-08 promulgation text requires controllers processing sensitive or health-related data to adopt specified security controls, including controls over premises, media, data entry, system use, access, transmission, logging and transport; it also allows the CNDP to dispense with some measures under the stated conditions.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 24(1)-(2)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Specific to sensitive or health-related data under the cited text; do not apply this detailed list to all processing or claim current applicability without amendment and fact-specific review."
+    },
+    {
+      "id": "law-09-08-processor-instructions-article-25",
+      "text": "Article 25 of the accessed Loi 09-08 promulgation text states that a person acting under the authority of the controller or processor, and a processor accessing personal data, may process it only on the controller’s instructions except where required by law.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 25",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase of the 2009 promulgation text. Verify current law and actual party roles; do not assume contract labels establish those roles."
+    },
+    {
+      "id": "law-09-08-professional-secrecy-article-26",
+      "text": "Article 26 of the accessed Loi 09-08 promulgation text states that controllers and persons who learn of processed personal data through their functions must respect professional secrecy even after those functions end, subject to the terms provided by criminal law; it also preserves information duties under applicable law.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "cndp-loi-09-08",
+        "sgg-bo-5714-2009"
+      ],
+      "pinpoint": "Article 26, paragraphs 1-2",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Text-level paraphrase of the 2009 promulgation text, not a complete or universally applicable contractual confidentiality rule. Verify current law and context."
+    },
+    {
+      "id": "law-31-08-draft-amendment-13-23-public-comment-matrix",
+      "text": "An SGG-hosted Ministry response matrix identifies a draft Law 13-23 as a proposal to amend and supplement Law 31-08 and responds to public comments on that draft.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-consumer-amendment-13-23-matrix"
+      ],
+      "pinpoint": "Matrix title and ministry response referencing draft Article 172-1",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This proves only what the consultation matrix describes. It does not establish the proposal’s later parliamentary status, enactment, promulgation, commencement, or final text. Verify these from official legislative and Official Bulletin sources before treating it as law."
+    },
+    {
+      "id": "law-31-08-draft-amendment-13-23-sgg-list-and-proposal",
+      "text": "The SGG public list of draft legislative and regulatory texts includes an Arabic draft titled as amending and supplementing Law 31-08; its linked proposal PDF identifies draft Law 13-23.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-legislation-portal-law-13-23-search-2026",
+        "sgg-draft-law-13-23-amending-law-31-08",
+        "sgg-arabic-legislation-portal-law-13-23-search-2026"
+      ],
+      "pinpoint": "French SGG public draft-project list entry titled ‘Modification et complément de la loi n° 31-08… (version arabe)’ and Arabic SGG list entry تغيير وتتميم القانون رقم 31.08 القاضي بتحديد تدابير لحماية المستهلك; linked 11-page proposal PDF avp_loi_13.23.PDF; accessed 8 October 2026",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The French and Arabic SGG draft-project lists display matching entries for a proposed amendment to Law 31-08, and the linked proposal PDF is identified as draft Law 13-23. This corrects an earlier no-match text-search note: the matching entry was present but was not surfaced by that query. The records establish that the draft is publicly listed by the SGG as an avant-projet, not its later parliamentary stage, final wording, adoption, promulgation, commencement, or current legal effect. Verify those from official legislative and Official Bulletin records before treating any proposal text as law."
+    },
+    {
+      "id": "house-written-question-24323-law-31-08-amendment-delay",
+      "text": "The House of Representatives' record for written question 24323 identifies its subject as delay in bringing forward a draft amendment to Law 31-08, names Industry and Trade as the responsible ministry, and gives an answer date of 10 December 2025. The indexed record exposes the question text but not the ministerial answer.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "house-written-question-24323-law-31-08-amendment-delay"
+      ],
+      "pinpoint": "House written question 24323; subject, ministry, answer-date field, and indexed question text",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records a parliamentary question and its portal metadata, not the truth of the questioner's premise or the contents of a government response. The indexed page labels 10 December 2025 as the answer date but does not expose an answer in the retrieved text. It does not establish whether draft Law 13-23 or another proposal was withdrawn, replaced, enacted, promulgated, or brought into force."
+    },
+    {
+      "id": "house-records-law-09-08-amendment-proposal-deposited-2024",
+      "text": "The House of Representatives' official legislative record lists proposal no. 272 to amend Law 09-08, received on 2 February 2024, initially referred to the Justice and Legislation Committee on 19 February, and transferred to the Interior, Territorial Communities, Housing, and Administrative Affairs Committee on 22 November 2024 after a jurisdiction objection. Its official indexed listing, rechecked on 8 October 2026, displays the status 'under study, first reading, referred to committee'.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "parliament-law-09-08-amendment-proposal-2024",
+        "house-committee-list-law-09-08-proposal-272-2026"
+      ],
+      "pinpoint": "House proposal no. 272, first-reading status and committee-history fields; official indexed status display checked 8 October 2026",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The House page cites the committee's jurisdiction objection and House President letter 24/2559 dated 22 November 2024, following Constitutional Court decision 243/24 on the House's internal rules. On 8 October 2026, both the proposal detail search result and the official committee-list search index still displayed the proposal under study, first reading, and referred to committee. This records the site's displayed procedural status only; it does not prove substantive consideration, adoption, promulgation, commencement, or current law. Direct page access returned 403."
+    },
+    {
+      "id": "government-reports-law-09-08-proposal-not-yet-studied-2024-2025",
+      "text": "The government report on relations with Parliament for 2024–2025 lists proposal no. 200 to amend Law 09-08, deposited on 2 February 2024 by the PJD parliamentary group, with the status 'لم يشرع في دراسته' (study had not begun).",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "government-parliament-relations-report-2024-2025-law-09-08-proposal"
+      ],
+      "pinpoint": "Legislative-year 2024–2025 report, annex table, proposal no. 200",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the report's status for its 2024–2025 reporting period only. The report does not establish what happened afterward, and it does not establish enactment or abandonment. Direct PDF retrieval exceeded the browser's content-size limit; the official indexed Arabic table was available."
+    },
+    {
+      "id": "house-records-separate-law-09-08-articles-1-43-proposal-2024",
+      "text": "The official report on the House's fourth legislative year 2024–2025 lists a separate Mouvement group proposal, registered on 15 October 2024, to amend Articles 1 and 43 of Law 09-08 and assigns it to the Interior, Territorial Communities, Housing, and Administrative Affairs Committee. The House's committee list displays that proposal as under study, first reading, and referred to committee in the listing accessed on 8 October 2026.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "government-parliament-relations-report-2024-2025-law-09-08-proposal",
+        "house-committee-list-law-09-08-articles-1-43-proposal"
+      ],
+      "pinpoint": "Fourth legislative year 2024–2025 report, appendix 3, proposal 1; House committee list entry for the proposal to amend Articles 1 and 43",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is a distinct legislative proposal from the PJD group's February 2024 proposal recorded separately in this registry. The report and House listing establish proposal and procedural metadata only; they do not establish substantive review, adoption, promulgation, commencement, or a change to current law. The report PDF exceeded the browser's direct retrieval limit and the House page returned 403; official indexed contents were available on 2026-10-08."
+    },
+    {
+      "id": "ministry-doc-arabic-consolidation-through-law-40-24",
+      "text": "The Ministry of Justice's Arabic DOC PDF is titled as an August 2024 consolidation and its indexed amendment list includes Law 40.24, Law 43.20, Law 31.18, and Law 21.18.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-doc-consolidated-2024-ar"
+      ],
+      "pinpoint": "PDF title and amendment-history list at the beginning of the indexed document text",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the dated Ministry consolidation and its displayed amendment list. Direct PDF retrieval timed out, so the indexed text extract is the available evidence. It does not establish completeness after August 2024 or the current legal status in 2026."
+    },
+    {
+      "id": "bill-041-25-proposes-doc-changes-to-articles-618-3-and-618-17",
+      "text": "Government Bill 041.25 proposes changes to DOC Articles 618-3 and 618-17; the SGG-hosted bill text proposes that the preliminary sale contract for a property under construction be made in an authentic instrument under penalty of nullity.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bill-041-25-doc-text",
+        "house-representatives-bill-041-25-status"
+      ],
+      "pinpoint": "SGG-hosted Bill 041.25, Article 3 amending DOC Article 618-3; House record description of the bill's amendments",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is the filed bill text and legislative proposal, not a statement of current law. The Houses' June 2026 adoption and promulgation/publication of Law 041.25 in Official Bulletin No. 7526 are separately recorded and verified. The enacted text's bounded Articles 3 and 5 checks are recorded in law-041-25-amends-doc-article-618-3 and law-041-25-repeals-doc-article-618-17; entry into force, complete amendment history, interpretation, and application remain unresolved. The subject is off-plan real-estate sale, not ordinary NDA, contractor, or services agreements."
+    },
+    {
+      "id": "bill-041-25-adopted-by-both-chambers-june-2026",
+      "text": "Official records state that Bill 041.25 was adopted by the House of Representatives on 15 June 2026 and by the House of Councillors on 23 June 2026.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "house-representatives-bill-041-25-status",
+        "house-councillors-bill-041-25-status"
+      ],
+      "pinpoint": "House of Representatives first-reading record; House of Councillors legislative record and procedural history",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This claim records parliamentary adoption only. Royal promulgation of Law 041.25 and its publication in Official Bulletin No. 7526 have since been verified in the separate primary-source record law-041-25-promulgated-in-official-bulletin-7526. The chamber records do not establish commencement, complete amendment history, interpretation, or current-law application; those remain unresolved."
+    },
+    {
+      "id": "secondary-reports-link-law-41-25-to-bo-7526",
+      "text": "Secondary sources accessed on 8 October 2026 identify the measure associated with Dahir 1.26.30 and Official Bulletin No. 7526 as Law 41.25; one article has an internal footnote inconsistency, identifying Law 014.25 in footnote 4 and Law 41.25 in footnote 13. Secondary sources also conflict on the issue date: several say 16 July 2026, while a third-party issue index says 27 July 2026.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "anfanews-law-41-25-bo-7526-report",
+        "propertynews-africa-law-41-25-bo-7526-report",
+        "lexmaghreb-bo-7526-publication-date-locator",
+        "democratic-arab-center-offplan-bo-7526-law-number-conflict"
+      ],
+      "pinpoint": "AnfaNews report dated 10 August 2026; Property News Africa report citation; LexMaghreb issue 7526 index page; Democratic Arab Center article footnotes 4 and 13",
+      "evidence_status": "secondary-only",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records secondary identification as a follow-up locator, not the legal status or text of an enacted law. The official SGG Bulletin No. 7526 has since been checked: it identifies Dahir 1.26.30 and Law 041.25, and its running headers give 16 July 2026, resolving the date conflict against the secondary issue index that says 27 July. One secondary article still has an internal number mismatch (014.25 in footnote 4 versus 41.25 in footnote 13); the primary issue prints 041.25. The separate source-text claims record the primary publication and bounded Articles 3 and 5 text. Complete amendment history, commencement, interpretation, and current legal effect remain unresolved."
+    },
+    {
+      "id": "constitutional-court-decision-243-24-house-rules",
+      "text": "Constitutional Court decision 243/24, dated 7 August 2024, reviewed provisions of the House of Representatives' internal rules, including Article 113, which the House's legislative record later cites in the committee-jurisdiction dispute concerning proposal no. 272.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "constitutional-court-decision-243-24"
+      ],
+      "pinpoint": "Decision 243/24, dated 7 August 2024; House internal-rules review",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the decision's subject and its later citation by the House legislative record. It does not itself decide the merits of the Law 09-08 amendment proposal or establish that any amendment was enacted."
+    },
+    {
+      "id": "cese-health-data-law-09-08-report-2026",
+      "text": "The CESE report published in Official Bulletin No. 7501, in its discussion of draft Law 54.23 and health-system digital transition, describes individuals' health data as sensitive under Law 09-08 and recommends requesting the CNDP's opinion on draft regulatory texts concerning processing insured persons' health data.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7501-cese-report-health-data-54-23"
+      ],
+      "pinpoint": "Point VI.3, paragraph 13, Official Bulletin No. 7501, Arabic edition, printed page 2284",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This claim records the contents of a published CESE report and its recommendation, not an amendment to Law 09-08, a binding CNDP procedure, or a conclusion about current legal duties. The report concerns proposed Law 54.23; its observations must not be generalized to all data processing or used as a template requirement without legal review."
+    },
+    {
+      "id": "ministry-doc-articles-230-231-indexed-text",
+      "text": "The Ministry of Justice's Arabic DOC consolidation dated 16 July 2026 contains Article 230 stating that validly created contractual obligations have the force of law between their creators and may be revoked only by mutual consent or in cases provided by law; Article 231 states that each undertaking must be performed in good faith and includes consequences supplied by law, usage, or equity according to its nature. WIPO Lex's reproduction, identified as amended through Law No. 53-05, displays corresponding Articles 230–231. SGG-published CNCP opinions separately quote Article 230's wording and state that undertakings must be performed in good faith; the latter opinion cites Article 477 for the presumption of good faith and does not attribute its performance statement to Article 231.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-doc-consolidated-2026-07-ar",
+        "ministry-doc-french-text-article-230",
+        "wipo-lex-doc-amended-through-law-53-05",
+        "cncp-avis-15-25-doc-article-230",
+        "cncp-avis-31-20-good-faith-performance"
+      ],
+      "pinpoint": "Ministry Adala Arabic DOC consolidation dated 16 July 2026, PDF page 57, Articles 230–231; WIPO Lex DOC reproduction identified as amended through Law No. 53-05, Articles 230–231; CNCP Avis n° 15, page 3 (Article 230 quotation); CNCP Avis n° 31/2020, page 4 (good-faith performance statement and separate Article 477 citation)",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The directly inspected Ministry Arabic consolidation is titled as updated 16 July 2026 and provides a current-dated official Ministry text check, but it is not an Official Bulletin publication and does not establish complete amendment history, commencement, current legal effect, interpretation, enforceability, exceptions, or application to a specific clause. The WIPO Lex text supplies a readable historical reproduction with a stated cutoff at Law No. 53-05. Direct retrieval of the older Ministry-hosted French PDF timed out and its cutoff is unknown. CNCP Avis n° 15 quotes Article 230 but is non-legislative guidance; its heading date and stated deliberation date conflict. CNCP Avis n° 31/2020 states that undertakings must be performed in good faith and separately cites Article 477, but does not identify Article 231 as the source of that statement. No template wording was derived from these sources."
+    },
+    {
+      "id": "adala-doc-consolidated-2026-07-amendment-list",
+      "text": "The Ministry of Justice Adala Arabic DOC PDF is titled as an updated text dated 16 July 2026; its opening amendment list includes Laws 041.25 and 40.24 among the instruments listed as having amended the DOC.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-doc-consolidated-2026-07-ar"
+      ],
+      "pinpoint": "PDF cover and opening amendment list, PDF pages 0–2",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the Ministry PDF's title/date and contents of its amendment list, not proof that the consolidation is exhaustive, that each listed amendment is in force, or that every relevant amendment is included. Verify specific provisions, commencement, and amendment history against Official Bulletins before determining current law."
+    },
+    {
+      "id": "law-041-25-promulgated-in-official-bulletin-7526",
+      "text": "The Arabic general edition of Official Bulletin No. 7526 publishes Dahir 1.26.30, dated 3 July 2026, promulgating Law 041.25, which amends laws including the Code of Obligations and Contracts.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7526-2026-ar"
+      ],
+      "pinpoint": "Official Bulletin No. 7526 running header (16 July 2026); Dahir 1.26.30 and Law 041.25 heading, printed page 4426",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the identity and publication details printed in the official Arabic issue. It does not resolve the commencement or current legal effect of any provision. The issue's running headers give 16 July 2026, while the Dahir itself is dated 3 July 2026."
+    },
+    {
+      "id": "law-041-25-amends-doc-article-618-3",
+      "text": "Article 3 of published Law 041.25 changes DOC Article 618-3 to require a preliminary sale contract for property under construction to be made in an authentic instrument under penalty of nullity.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7526-2026-ar",
+        "adala-doc-consolidated-2026-07-ar"
+      ],
+      "pinpoint": "Law 041.25, Article 3, Official Bulletin No. 7526, printed page 4427",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is a bounded paraphrase of the Official Bulletin text; the Ministry's 16 July 2026 Arabic consolidation also shows the amended Article 618-3 with a footnote to Law 041.25. The scope of 'authentic instrument', commencement, interpretation, affected transactions, and complete current-law status require qualified legal analysis and amendment-history reconciliation. This off-plan real-estate rule does not establish requirements for ordinary commercial contracts."
+    },
+    {
+      "id": "law-041-25-repeals-doc-article-618-17",
+      "text": "Article 5 of published Law 041.25 repeals DOC Article 618-17 and provides that the implementing regulation adopted for that article remains in force until it is replaced.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7526-2026-ar",
+        "adala-doc-consolidated-2026-07-ar"
+      ],
+      "pinpoint": "Law 041.25, Article 5, Official Bulletin No. 7526, printed page 4427",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the repeal and transitional regulation sentence printed in the Arabic issue. The Ministry's 16 July 2026 Arabic consolidation displays Article 618-17 as repealed and cites Law 041.25, Article 5. This does not identify the implementing regulation, resolve commencement, or establish the current effect or scope of Article 618-17 or its regulation. Qualified legal review and amendment-history reconciliation remain required."
+    },
+    {
+      "id": "labor-law-032-26-promulgated-in-official-bulletin-7526",
+      "text": "The Arabic general edition of Official Bulletin No. 7526 publishes Dahir 1.26.27, dated 3 July 2026, promulgating Law 032.26 supplementing Article 193 of Law 65-99, the Labour Code.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7526-2026-ar"
+      ],
+      "pinpoint": "Official Bulletin No. 7526 running header (16 July 2026); Dahir 1.26.27 and Law 032.26 heading, printed page 4422",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the promulgation and publication details printed in the official Arabic issue. It does not state whether the amendment remains current after later instruments or determine its application to a particular employment relationship."
+    },
+    {
+      "id": "labor-law-032-26-article-2-commencement-and-transition",
+      "text": "Article 2 of Law 032.26 states that, subject to its second paragraph, the law takes effect from publication in the Official Bulletin. It gives companies providing guarding services up to nine months from publication to comply for employment contracts arising from guarding-services contracts concluded before publication.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7526-2026-ar"
+      ],
+      "pinpoint": "Law 032.26, Article 2, Official Bulletin No. 7526, printed page 4422",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "Bounded paraphrase of the Arabic text as published. It records the express commencement clause and a limited transitional period tied to employment contracts arising from guarding-services contracts concluded before publication. The exact scope, covered firms and workers, later amendments, and application to any placement or employment agreement require full legal review; do not generalize this rule to other sectors."
+    },
+    {
+      "id": "labor-law-032-26-article-193-published-amendment-excerpt",
+      "text": "In its amendment to Labour Code Article 193, Law 032.26 prints an ellipsis-marked passage that includes the words referring to guards other than those linked by employment contracts with companies carrying out guarding work under applicable legislation, and to workers in the company [following text omitted in the Gazette's ellipsis-marked passage].",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7526-2026-ar"
+      ],
+      "pinpoint": "Law 032.26, Article 1, Official Bulletin No. 7526, printed page 4422",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The published amendment uses ellipses within the quoted Article 193 text and does not reproduce a consolidated version of the whole article. This claim records only a bounded visible fragment; it does not reconstruct omitted wording, determine the provision's legal effect, identify all affected worker categories, or establish the current text after later instruments. Full amendment-history and qualified legal review remain open."
+    },
+    {
+      "id": "labor-law-032-26-article-193-compared-with-ministry-2011-copy",
+      "text": "The Ministry of Justice Adala copy labels itself consolidated through 26 October 2011 and its Article 193 lists guardians among examples of work whose intermittent character may correspond to presence rather than effective work. Law 032.26 as published in Official Bulletin No. 7526 inserts an ellipsis-marked qualification referring to guards other than those linked by employment contracts to companies performing guarding work under applicable legislation.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-code-travail",
+        "sgg-bo-7526-2026-ar"
+      ],
+      "pinpoint": "Adala Code du travail, cover/version statement and Article 193, PDF pp. 2 and 77; Law 032.26, Article 1, Official Bulletin No. 7526, printed p. 4422",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is a limited comparison of two published texts, not a complete redline or a conclusion on legal effect. The Ministry copy expressly dates its consolidation to 26 October 2011 and does not incorporate the 2026 amendment. The Gazette's amendment passage is ellipsis-marked. Later instruments, the complete amended text, scope, and application remain to be reviewed."
+    },
+    {
+      "id": "labor-law-032-26-final-transition-differs-from-bill",
+      "text": "Article 2 of the filed Government Bill 032.26 proposed a twelve-month transition for specified pre-publication guarding-services contracts; Article 2 of promulgated Law 032.26 as published in Official Bulletin No. 7526 states a nine-month period for that transition.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-projet-labor-amendment-032-26",
+        "sgg-bo-7526-2026-ar"
+      ],
+      "pinpoint": "Bill 032.26, Article 2, pages 1–2; Law 032.26, Article 2, Official Bulletin No. 7526, printed page 4422",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records a text difference between the filed proposal and the promulgated text for the limited transitional period. The Official Bulletin is the enacted text for this comparison. No claim is made that this is the only difference between the bill and law or that the provision applies to a particular employment relationship; full amendment-history and legal-application review remain open."
+    },
+    {
+      "id": "cnss-order-1314-25-item-24-formation-insertion-contribution-base",
+      "text": "Annex item 24 to Finance Minister Order 1314.25, as published in Official Bulletin No. 7443, describes conditions for exempting formation-insertion training compensation from the social-security contribution base, including an ANAPEC registration condition, an endorsed training contract, monthly compensation of MAD 1,600–6,000, and a 24-month duration extendible by 12 months in case of permanent employment.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7443-order-1314-25-cnss-base",
+        "sgg-bo-7533-law-013-26",
+        "sgg-bo-7464-erratum-order-1314-25",
+        "sgg-bo-7399-decree-2-25-266-cnss"
+      ],
+      "pinpoint": "Order 1314.25, annex, item 24, Official Bulletins No. 7443, printed pp. 7329–7330, and No. 7464 corrigendum, printed p. 9245; Law 51.25, Articles 2 and 4, Official Bulletin No. 7533, printed pp. 5144–5146",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The BO 7464 corrigendum replaces wording in the first trainee-qualification condition but does not replace the separate duration condition; Order 1314.25 item 24 therefore still states 24 months plus a possible 12-month extension as a condition for excluding compensation from the social-security contribution base. Law 51.25 Article 2 separately states a 12-month non-renewable statutory training limit for the amended regime. These provisions address different questions; the numerical difference alone does not establish a direct conflict, and the contribution-base condition must not be read here as authorization to exceed the statutory training limit. Article 4 applies the amended law to contracts concluded from publication, preserves the previous text for diploma-holder contracts concluded before publication, and separately addresses specified non-degree contracts. The effect of Order 1314.25 under the amended statute, applicable contribution treatment, regulatory implementation, and any individual placement remain for qualified review."
+    },
+    {
+      "id": "labor-law-101-14-amended-training-duration",
+      "text": "Law 101.14 as published in Official Bulletin No. 6342 replaces Article 4 of Dahir-Law 1.93.16 with a 24-month maximum training duration that is non-renewable, while permitting a trainee whose agreement ends within the first year to undertake training with another employer subject to the same aggregate 24-month maximum.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-6342-ar-law-101-14-insertion-training",
+        "sgg-bo-7533-law-013-26"
+      ],
+      "pinpoint": "Law 101.14, Article 1, replacing Dahir-Law 1.93.16 Article 4, Official Bulletin No. 6342, printed p. 1630; compare Law 51.25, Articles 2 and 4, Official Bulletin No. 7533, printed pp. 5144–5146",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the 2015 amendment text and contrasts it with the later Law 51.25 publication. Article 4 of Law 51.25 applies the amended provisions to contracts concluded from publication and preserves the previous text for diploma-holder contracts concluded before publication; it separately addresses specified non-degree contracts. This does not determine which version applies to a particular contract, the effect of Order 1314.25 item 24 on the contribution base, or the complete current consolidated regime. Qualified legal analysis remains required."
+    },
+    {
+      "id": "cnss-order-1314-25-item-24-corrigendum-scope",
+      "text": "The Official Bulletin No. 7464 corrigendum to Order 1314.25 replaces wording in the first trainee-qualification condition under annex item 24 as printed in Official Bulletin No. 7443; it does not replace the separate duration condition paragraph in that item.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7443-order-1314-25-cnss-base",
+        "sgg-bo-7464-erratum-order-1314-25"
+      ],
+      "pinpoint": "Official Bulletin No. 7464 corrigendum, printed p. 9245; Order 1314.25, annex item 24, Official Bulletin No. 7443, printed pp. 7329–7330",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "not-applicable",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This is a narrow comparison of the expressly replaced and replacement passages in the Official Bulletin corrigendum. It does not state that Order 1314.25 remains applicable to any specific training contract, or resolve the separate interaction with Law 51.25."
+    },
+    {
+      "id": "cnss-decree-2-25-266-article-3-order-1314-25-authority",
+      "text": "Article 3 of Decree 2.25.266 provides for an order by the authority responsible for finance to determine specified wage elements, allowances, and employer-paid amounts excluded from the social-security contribution base, together with exemption conditions and caps. Order 1314.25 cites this Article 3(1) as its authority and sets such elements and conditions.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "sgg-bo-7399-decree-2-25-266-cnss",
+        "sgg-bo-7443-order-1314-25-cnss-base"
+      ],
+      "pinpoint": "Decree 2.25.266, Article 3, Official Bulletin No. 7399, printed p. 2390; Order 1314.25, Article 1, Official Bulletin No. 7443, printed p. 7324",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This records the decree’s published delegation and the order’s express citation of that authority. It does not resolve later amendment, current application, the validity or effect of the order, or the interaction of its training-specific item with Law 51.25 and Article 4 transitions. Qualified legal review remains required."
+    },
+    {
+      "id": "anrt-lists-decree-2-09-165-as-official-bulletin-version",
+      "text": "The ANRT regulatory-decrees page lists Decree 2-09-165 and links a PDF labeled as the version published in the Official Bulletin.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "anrt-decree-2-09-165-official-bulletin-listing"
+      ],
+      "pinpoint": "“Autres Décrets” entry for Décret n° 2-09-165",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "This corroborates an agency locator for the promulgated text only. It does not establish whether the decree was amended, consolidated, or remains currently applicable."
+    },
+    {
+      "id": "adala-pdf-contains-law-09-08-and-selected-cross-references",
+      "text": "The Ministry of Justice Adala 46-page PDF begins with Dahir 1-09-15/Loi 09-08, cites Official Bulletin n° 5714 p. 345, includes selected quoted or cited passages from Decree 2-09-165, and references Decision 3-33-11 approving the CNDP internal regulation.",
+      "jurisdiction": "MA",
+      "source_ids": [
+        "adala-law-09-08-pdf-resource-2024"
+      ],
+      "pinpoint": "PDF pp. 2–3, 10–11, 15–16, 30–35; PDF pp. 10–11 cite Decree articles 35–40 and pp. 15–16 cite decree articles 24, 26, and 29",
+      "evidence_status": "source-text-checked",
+      "current_law_status": "unresolved",
+      "legal_review_status": "not-reviewed",
+      "review_record_id": null,
+      "notes": "The PDF is a Ministry-hosted research copy, not the underlying Official Bulletin issue. It does not include the complete text of Decree 2-09-165, state a consolidation cutoff, or establish amendments/current legal effect. Verify any proposition against the exact Gazette and later instruments; this claim concerns only the PDF contents and its cited locator."
+    }
+  ]
+}

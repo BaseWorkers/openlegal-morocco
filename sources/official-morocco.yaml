@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "source_id": "cndp-loi-09-08",
+      "topic": "personal-data",
+      "next_step": "Reconcile the promulgation text with amendments and current official consolidation; analyze only provisions relevant to a specific notice or agreement."
+    },
+    {
+      "source_id": "adala-law-09-08-pdf-2024",
+      "topic": "personal-data",
+      "next_step": "Compare this Ministry-hosted PDF against BO 5714 and the CNDP-hosted text; do not treat the 2024 upload path or portal indexing as proof of consolidation or current law."
+    },
+    {
+      "source_id": "cndp-loi-09-08-page",
+      "topic": "personal-data",
+      "next_step": "Use the CNDP source index to locate official materials; verify procedure pages against primary legislation and implementing texts before stating applicability."
+    },
+    {
+      "source_id": "cndp-textes-et-lois-index",
+      "topic": "personal-data",
+      "next_step": "Use the displayed Loi 09-08 and Decree 2-09-165 entries as source locators; independently establish amendments, consolidation, and current legal effect from authoritative publications."
+    },
+    {
+      "source_id": "sgg-imprimerie-officielle-catalogue",
+      "topic": "personal-data",
+      "next_step": "Use the Loi 09-08 catalogue entry as a locator only; obtain and compare any publication against later Official Bulletins to establish amendment history and consolidation."
+    },
+    {
+      "source_id": "bdj-ministry-law-09-08-record",
+      "topic": "personal-data",
+      "next_step": "Reconcile the Ministry database's 'Aucune modification' metadata with the Official Bulletin amendment record and the CNDP's 2013 draft-amendment project before finalizing current-law status."
+    },
+    {
+      "source_id": "bdj-ministry-user-guide",
+      "topic": "personal-data",
+      "next_step": "Use the guide only to describe the BDJ's stated scope and history feature; the page timed out on direct retrieval, so retain the indexed-content limitation and verify each legal status against Gazette records and qualified review."
+    },
+    {
+      "source_id": "cndp-rapport-activite-2010-2013",
+      "topic": "personal-data",
+      "next_step": "Trace the 2013 amendment projects from submission to the Head of Government through any formal bill, parliamentary steps, Official Bulletin publication, or abandonment; do not infer enactment from the report."
+    },
+    {
+      "source_id": "bdj-ministry-decree-2-09-165-record",
+      "topic": "personal-data",
+      "next_step": "Compare the database's 08/06/2009 metadata and Law 08-09 title against the original decree text in BO 5744; trace any later amendments only from Official Bulletins."
+    },
+    {
+      "source_id": "sgg-veilledigitalx0-media-clip-2025-11-03",
+      "topic": "personal-data",
+      "next_step": "Locate an official Digital X.0 draft, bill number, or government/parliament record and determine whether it amends Law 09-08; keep this media report as a lead only and do not tie it to the subsequent CESE recommendation without evidence."
+    },
+    {
+      "source_id": "parliament-written-question-26284-ai-framework",
+      "topic": "personal-data",
+      "next_step": "Retrieve the full ministerial response associated with Question 26284 and determine whether it identifies an official bill or planned amendment; do not treat the questioner's legal assessment as law."
+    },
+    {
+      "source_id": "justice-ministry-ai-framework-statement-2024-10-30",
+      "topic": "personal-data",
+      "next_step": "Locate any formal draft, government approval record, bill number, or parliamentary action following this statement; distinguish a general AI framework from a proposed amendment to Law 09-08."
+    },
+    {
+      "source_id": "sgg-bo-7460-bis-cese-report-2024",
+      "topic": "personal-data",
+      "next_step": "Trace the CESE recommendation for any formal bill, parliamentary record, enacted text, Official Bulletin publication, and commencement rule; do not represent the recommendation as law."
+    },
+    {
+      "source_id": "sgg-bo-5714-2009",
+      "topic": "personal-data",
+      "next_step": "Use as the original promulgation text and reconcile against later amendments and an authoritative current consolidation."
+    },
+    {
+      "source_id": "house-committee-list-law-09-08-proposal-272-2026",
+      "topic": "personal-data",
+      "next_step": "Use the search-indexed committee status as a dated procedural locator only; confirm later parliamentary action and any enacted amendment from official records and the Official Bulletin."
+    },
+    {
+      "source_id": "adala-portal-code-obligations",
+      "topic": "contracts",
+      "next_step": "The Ministry portal's Arabic DOC consolidation through August 2024 is now recorded; compare relevant provisions against the Official Bulletins and verify all post-August 2024 changes before making current-law claims."
+    },
+    {
+      "source_id": "ministry-doc-french-text-article-230",
+      "topic": "contracts",
+      "next_step": "Use the WIPO Lex reproduction (amended through Law 53-05), the SGG-published CNCP quotation of Article 230, and CNCP Avis n° 31/2020's good-faith statement as bounded cross-checks; Avis n° 31/2020 cites Article 477 and does not attribute that statement to Article 231. None substitutes for Official Bulletin text. Retrieve the Ministry PDF if possible and reconcile later Official Bulletin amendments before any current-law conclusion."
+    },
+    {
+      "source_id": "adala-doc-consolidated-2024-ar",
+      "topic": "contracts",
+      "next_step": "Retain as a dated historical consolidation. The Ministry now lists a 16 July 2026 Arabic consolidation; use that newer text as a research aid and compare each relevant proposition against Official Bulletins and commencement rules."
+    },
+    {
+      "source_id": "adala-doc-consolidated-2026-07-ar",
+      "topic": "contracts",
+      "next_step": "Use the direct Article 230–231 and 618-3/618-17 text checks as Ministry-consolidation evidence only. Compare the 2026 edition's amendment list and each relied-on provision against Gazette publications, confirm commencement, and obtain qualified review before stating current law or applying it to contract wording."
+    },
+    {
+      "source_id": "sgg-bill-041-25-doc-text",
+      "topic": "contracts",
+      "next_step": "Compare the bill's DOC amendments with the enacted Official Bulletin text and determine commencement before describing Articles 618-3 or 618-17 as current law."
+    },
+    {
+      "source_id": "house-representatives-bill-041-25-status",
+      "topic": "contracts",
+      "next_step": "Use as House procedural history only; confirm promulgation, Official Bulletin publication, and commencement from primary publication sources."
+    },
+    {
+      "source_id": "house-councillors-bill-041-25-status",
+      "topic": "contracts",
+      "next_step": "Use as second-chamber procedural history only; confirm promulgation, Official Bulletin publication, and commencement from primary publication sources."
+    },
+    {
+      "source_id": "adala-law-21-18-suretes-mobilieres",
+      "topic": "contracts",
+      "next_step": "Use Articles 2-6 as an amendment lead, then reconcile affected provisions against a current consolidated DOC text."
+    },
+    {
+      "source_id": "sgg-proposed-doc-amendment-lead",
+      "topic": "contracts",
+      "next_step": "This generic search lead is superseded by the specific Bill 041.25 text, chamber records, and published Law 041.25 in Official Bulletin 7526. Keep it as historical discovery context only."
+    },
+    {
+      "source_id": "sgg-bo-7526-2026-ar",
+      "topic": "contracts",
+      "next_step": "Publication of Dahir 1.26.30 and Law 041.25, the 16 July 2026 issue date, and Articles 3 and 5 were checked against this Arabic Official Bulletin. Reconcile the amended DOC provisions with their complete amendment history and qualified legal analysis before describing their current effect."
+    },
+    {
+      "source_id": "sgg-bo-7526-2026-ar",
+      "topic": "employment",
+      "next_step": "The issue also publishes Dahir 1.26.27 and Law 032.26 supplementing Labour Code Article 193. Article 2's publication commencement and nine-month transitional text were checked. Reconcile the enacted text with the full Labour Code amendment history and obtain qualified review before applying it to a security-services employment relationship."
+    },
+    {
+      "source_id": "anfanews-law-41-25-bo-7526-report",
+      "topic": "contracts",
+      "next_step": "Use only as secondary reporting. The SGG issue independently confirms the promulgated number, publication, and bounded text; retain this source only to document secondary reporting and its internal footnote mismatch."
+    },
+    {
+      "source_id": "propertynews-africa-law-41-25-bo-7526-report",
+      "topic": "contracts",
+      "next_step": "Use only as a secondary locator. The SGG issue independently confirms the primary publication and bounded text; do not use this report as legal authority."
+    },
+    {
+      "source_id": "lexmaghreb-bo-7526-publication-date-locator",
+      "topic": "contracts",
+      "next_step": "Use only to preserve the third-party 27 July date claim as a discrepancy. The SGG issue's running headers give 16 July 2026; rely on the primary issue for its date."
+    },
+    {
+      "source_id": "sgg-bo-5210-2004-labor-code",
+      "topic": "employment",
+      "next_step": "Reconcile the promulgated Code du travail text with later amendments and an authoritative current consolidation; analyze only relevant provisions."
+    },
+    {
+      "source_id": "adala-code-travail",
+      "topic": "employment",
+      "next_step": "The Ministry PDF footnote 11 under Article 32 says paragraph 1 was abrogated under Law 48-06 and cites BO 5522 p. 581. Verify the cited instrument directly, then continue comparing relevant provisions with later Official Bulletins; the PDF's consolidation cutoff remains unknown."
+    },
+    {
+      "source_id": "sgg-bo-5522-law-48-06",
+      "topic": "employment",
+      "next_step": "Law 48-06 Article unique was cross-checked on printed page 581 of the SGG official French translation, including its express list of Labour Code Article 32(1) and Article 256. Preserve the Ministry footnote's 3 April versus SGG issue's 3 May 2007 date discrepancy; check later amendments and establish the Ministry PDF's consolidation cutoff before making any current-law claim."
+    },
+    {
+      "source_id": "adala-social-law-catalog-labor-code-snapshot-2026",
+      "topic": "employment",
+      "next_step": "The live catalog and linked Ministry PDF have now been directly checked: the PDF states its consolidation date is 26 October 2011. Compare each relevant provision with later Official Bulletins and obtain qualified legal review; the catalog's 'Nouveau' label is not currentness evidence."
+    },
+    {
+      "source_id": "sgg-projet-labor-amendment-032-26",
+      "topic": "employment",
+      "next_step": "The filed bill proposed a twelve-month transition, while published Law 032.26 Article 2 sets nine months. Use the gazetted text as the enacted wording, and continue comparing the Article 193 amendment against the current Labour Code and full amendment history."
+    },
+    {
+      "source_id": "sgg-legislation-portal-032-26-status",
+      "topic": "employment",
+      "next_step": "The portal record is proposal-history evidence only. Dahir 1.26.27 and Law 032.26, including the Article 2 commencement text, were subsequently verified in Official Bulletin 7526. Use the gazette for enacted text and continue full amendment-history and application review."
+    },
+    {
+      "source_id": "councillors-bill-032-26-status",
+      "topic": "employment",
+      "next_step": "The Council approved Bill 032.26 on 16 June 2026 and the House approved it on 22 June 2026. Dahir 1.26.27 and Law 032.26 were subsequently published in Official Bulletin 7526; use the published text for enactment and commencement claims, not this chamber record."
+    },
+    {
+      "source_id": "representatives-session-329-2026-06-22",
+      "topic": "employment",
+      "next_step": "Use the session record only for the 22 June 2026 House votes on Bills 032.26 and 51.25. Law 032.26 is published in Official Bulletin 7526 and Law 51.25 in Bulletin 7533; use those issues for enacted-text and transition claims."
+    },
+    {
+      "source_id": "councillors-bill-51-25-status",
+      "topic": "employment",
+      "next_step": "This source establishes the Council's 7 July 2026 approval only. Dahir 1.26.54 and Law 51.25 are subsequently published in Official Bulletin 7533; use that publication for enacted text and Article 4 transitions."
+    },
+    {
+      "source_id": "sgg-legislation-portal-51-25-status",
+      "topic": "employment",
+      "next_step": "This is a historical procedural-status source. Promulgation and publication of Law 51.25 are separately verified in Official Bulletin 7533; full legal effect and application remain open."
+    },
+    {
+      "source_id": "adala-consumer-protection",
+      "topic": "consumer-ecommerce",
+      "next_step": "Use the Ministry portal law copy for text-level Article 1 research; confirm current consolidated version, implementing rules, amendments, and consumer applicability before any terms claim."
+    },
+    {
+      "source_id": "adala-electronic-transactions",
+      "topic": "electronic-transactions",
+      "next_step": "The PDF labels itself consolidated to 2021-03-18 and records Law 43-20 changes. Verify later amendments/current framework and Article 65-4/65-5 applicability before terms or e-signature claims."
+    },
+    {
+      "source_id": "ompic-law-23-13",
+      "topic": "intellectual-property",
+      "next_step": "Find the current complete text of Law 17-97 with all amendments before analyzing IP clauses."
+    },
+    {
+      "source_id": "adala-law-2-00-copyright",
+      "topic": "intellectual-property",
+      "next_step": "Verify the portal copy against amendments and current consolidated text; inspect provisions on authorship, employee/contractor work, software, rights, assignments, and licenses before drafting."
+    },
+    {
+      "source_id": "sgg-consolidated-copyright-law-2-00",
+      "topic": "intellectual-property",
+      "next_step": "Use the September 2026 edition for navigation, cross-check relevant provisions against their underlying Official Bulletin texts, and verify legal commencement, interpretation, and application before relying on an IP clause."
+    },
+    {
+      "source_id": "haca-law-2-00-through-34-05",
+      "topic": "intellectual-property",
+      "next_step": "Use as an official agency cross-check of Articles 31 and 35 through Law 34-05 only; prefer Official Bulletin publications for legal authority and verify later amendments/current status before reliance."
+    },
+    {
+      "source_id": "sgg-bo-6266-law-79-12-copyright",
+      "topic": "intellectual-property",
+      "next_step": "Use the printed p. 3588 text as a scoped cross-check of Law 79-12; it does not close the complete amendment-history or current-law review for Law 2-00 Articles 31 and 35."
+    },
+    {
+      "source_id": "sgg-bill-013-26-copyright-status",
+      "topic": "intellectual-property",
+      "next_step": "Retain as a historical deposit listing. Promulgation/publication and the September 2026 consolidation are documented separately; verify the default commencement rule before stating legal effect."
+    },
+    {
+      "source_id": "representatives-bill-013-26-status",
+      "topic": "intellectual-property",
+      "next_step": "Use the 6 July 2026 chamber vote as legislative history; promulgation/publication are verified separately in Official Bulletin No. 7533, while commencement and current consolidated law remain open."
+    },
+    {
+      "source_id": "councillors-bill-013-26-status",
+      "topic": "intellectual-property",
+      "next_step": "Use the 13 July 2026 chamber vote as legislative history; promulgation/publication are verified separately in Official Bulletin No. 7533, while commencement and current consolidated Law 2-00 remain open."
+    },
+    {
+      "source_id": "councillors-approved-bill-013-26-text",
+      "topic": "intellectual-property",
+      "next_step": "Compare this chamber-approved bill text with the Adala Law 2-00 copy and the published Official Bulletin text; do not treat the bill PDF alone as proof of promulgation or commencement."
+    },
+    {
+      "source_id": "sgg-bo-7533-law-013-26",
+      "topic": "intellectual-property",
+      "next_step": "This publication is linked to the Article 31 and 35 claims for the scoped check that Law 013.26 does not amend those articles. Continue reconciling other amendments in the SGG consolidated Law 2-00 text and establish commencement and review provisions relevant to templates."
+    },
+    {
+      "source_id": "sgg-bo-7533-law-013-26",
+      "topic": "employment-and-internships",
+      "next_step": "Official Bulletin No. 7533 also publishes Law 51.25 and its Article 4 transition terms. Compare the promulgated text with the original Dahir-Law and Law 60.24, identify implementing instruments and amendment history, and obtain qualified review before applying any training-contract rule."
+    },
+    {
+      "source_id": "sgg-bo-4197-ar-decree-2-91-517",
+      "topic": "employment-and-internships",
+      "next_step": "The official issue PDF is a locator only because its text could not be extracted in this review. Verify the decree and annex against the scan and compare with Law 101-14, Law 51.25, and any later regulation before using its historical agreement model or visa procedure."
+    },
+    {
+      "source_id": "sgg-bo-7362-law-60-24-finance-2025",
+      "topic": "employment-and-internships",
+      "next_step": "Use Article 14 only to contextualize Law 51.25 Article 4's cross-reference: it addresses State assumption of specified benefits through a special Treasury account for training non-degree holders for up to twelve months. Verify the full conditions and any later amendment before explaining benefits or eligibility."
+    },
+    {
+      "source_id": "house-constitution-article-50",
+      "topic": "intellectual-property",
+      "next_step": "Use Article 50 only for its stated promulgation/publication deadlines; research a separate authoritative rule before stating when Law 013.26 entered into force."
+    },
+    {
+      "source_id": "adala-personal-data-resource-index",
+      "topic": "personal-data",
+      "next_step": "Retry the linked Ministry-hosted PDF and inspect its title page, cited publications, version date, and amendment notes; until retrieved, use the Adala page only as a locator and do not infer consolidation or current-law status."
+    },
+    {
+      "source_id": "cndp-decret-2-09-165",
+      "topic": "personal-data",
+      "next_step": "Map decree provisions relevant to notices, declarations, security, and data subjects; verify amendments and how each applies before template drafting."
+    },
+    {
+      "source_id": "cndp-notifier-un-traitement",
+      "topic": "personal-data",
+      "next_step": "Cross-check current CNDP guidance against Loi 09-08, Decree 2-09-165, and later legal texts; do not generalize deadlines or procedures without case-specific verification."
+    },
+    {
+      "source_id": "cndp-procedures-de-notification-process",
+      "topic": "personal-data",
+      "next_step": "The live page was directly accessed on 2026-10-08 and its cookie entry links to the identified F-214 PDF, version 20250724, which cites Article 15. Reconcile its normal-declaration label with the decision's simplified-declaration wording and the accompaniment page's DS label; do not state a filing instruction until qualified review resolves the conflict and confirms current practice."
+    },
+    {
+      "source_id": "cndp-demande-accompagnement-form-categories",
+      "topic": "personal-data",
+      "next_step": "Compare the page's generic F214 simplified-declaration label and F211 normal-declaration label to the cookie-specific procedure listing, the signed D-939-2025 text, and the form actually accepted by the CNDP."
+    },
+    {
+      "source_id": "cndp-form-f214-20250724",
+      "topic": "personal-data",
+      "next_step": "Confirm the form's relationship to the CNDP procedure-page entry for D-939-2025 and determine whether the title and generic F214 category are deliberately distinct or reflect a stale/mislabeled procedure entry."
+    },
+    {
+      "source_id": "cndp-conformite-des-sites-web",
+      "topic": "personal-data",
+      "next_step": "Reconcile the website-guidance assertions on prior notification, CNI/sensitive-data authorization, overseas hosting, and consent with current Loi 09-08/Decree 2-09-165 texts and their scope/exceptions; do not import these procedures into a generic notice without qualified review."
+    },
+    {
+      "source_id": "cndp-guide-conformite-sites-web-pdf",
+      "topic": "personal-data",
+      "next_step": "Compare the directly reviewed website guide's notification, consent, and cookie statements with Law 09-08 and CNDP Deliberation D-939-2025; resolve their scope and legal relationship before any template relies on them."
+    },
+    {
+      "source_id": "cndp-deliberation-d-939-2025-cookie-data",
+      "topic": "personal-data",
+      "next_step": "Confirm formal publication, current status, scope, implementation, and relationship to the 2023 website guide and Law 09-08 Articles 12, 20, and 43–44; retain all consent, retention, notification, and transfer statements as source-text only until qualified review."
+    },
+    {
+      "source_id": "sgg-bo-7162-decree-2-22-687",
+      "topic": "electronic-transactions",
+      "next_step": "Read Decree 2-22-687 and verify its scope against Law 43-20 before describing trust-service or signature requirements."
+    },
+    {
+      "source_id": "adala-law-43-20-trust-services",
+      "topic": "electronic-transactions",
+      "next_step": "Use SGG Official Bulletin No. 6951 for the promulgated Arabic text and No. 6970 for its French translation; reconcile relevant provisions with Law 53-05, Decree 2-22-687, later implementing texts, and current authority-published standards before any transaction-specific claim."
+    },
+    {
+      "source_id": "sgg-consolidated-texts-index",
+      "topic": "consumer-ecommerce",
+      "next_step": "Use the directly retrieved Law 31-08 consolidated edition dated 22 May 2025 as a research aid; cross-check relevant provisions against Official Bulletin texts and later instruments, then assess scope before any terms claim."
+    },
+    {
+      "source_id": "sgg-consolidated-law-31-08",
+      "topic": "consumer-ecommerce",
+      "next_step": "Cross-check relevant provisions against Official Bulletin texts and later instruments. Article 202's 2020 replacement by Law 78.20 is verified in Official Bulletin No. 6945; determine whether any later amendment, procedural interpretation, or fact-specific issue changes its application."
+    },
+    {
+      "source_id": "sgg-bo-6945-law-78-20-amends-31-08-article-202",
+      "topic": "consumer-ecommerce",
+      "next_step": "Confirm the Arabic Gazette transcription and compare with the official consolidated text; research later amendments and qualified interpretation of consumer dispute venue before using it in contract language."
+    },
+    {
+      "source_id": "adala-decree-2-22-687-electronic-trust-services",
+      "topic": "electronic-transactions",
+      "next_step": "Cross-check the decree against its Official Bulletin publication, identify later implementing orders and current authority-published standards, and assess scope before describing any trust service or signature requirement."
+    },
+    {
+      "source_id": "bdj-law-43-20-metadata",
+      "topic": "electronic-transactions",
+      "next_step": "Obtain the original Official Bulletin text and reconcile this record’s publication metadata before relying on the Law 43-20 text or amendment status."
+    },
+    {
+      "source_id": "sgg-bo-6951-law-43-20",
+      "topic": "electronic-transactions",
+      "next_step": "Review relevant provisions against the French official translation in Official Bulletin No. 6970, implementing texts and later orders; assess transaction scope before drafting any signature or evidence statement."
+    },
+    {
+      "source_id": "dgssi-faq-law-43-20-v1-1",
+      "topic": "electronic-transactions",
+      "next_step": "Use only as DGSSI's dated explanatory account: record the v1.1 13 July 2023 metadata, the 2013/2023 introduction discrepancy, and the FAQ's time-bounded implementing-text inventory. Locate and compare each underlying Official Bulletin and technical-requirements publication before resolving Article 84 commencement; do not treat the FAQ as legislation."
+    },
+    {
+      "source_id": "dgssi-law-43-20-french-bo-6970",
+      "topic": "electronic-transactions",
+      "next_step": "Use as a DGSSI-hosted reproduction of the French Official Bulletin text for bounded comparison of Articles 7 and 84 with Arabic BO 6951. Prefer the SGG-hosted French edition where retrievable; the comparison does not establish Article 84 commencement or current application."
+    },
+    {
+      "source_id": "dgssi-ref-psco-ag-v1-0",
+      "topic": "electronic-transactions",
+      "next_step": "Use as DGSSI's general trust-service-provider requirements framework dated 2023-07-13. It is technical/compliance guidance grounded in Law 43-20 and Decree 2-22-687, not legislation; do not infer Article 84 commencement without qualified legal analysis."
+    },
+    {
+      "source_id": "dgssi-ref-deliv-cert-qual-v1-0",
+      "topic": "electronic-transactions",
+      "next_step": "Use only for the dated certificate-issuance requirements it states; verify current version, scope, and legal status before service-specific claims. It does not by itself resolve Article 84 commencement."
+    },
+    {
+      "source_id": "dgssi-ref-horo-qual-v1-0",
+      "topic": "electronic-transactions",
+      "next_step": "Use only for the dated qualified-timestamp requirements it states; verify current version, scope, and legal status before service-specific claims. It does not by itself resolve Article 84 commencement."
+    },
+    {
+      "source_id": "dgssi-ref-env-reco-qual-v1-0",
+      "topic": "electronic-transactions",
+      "next_step": "Use only for the dated qualified registered-delivery requirements it states; verify current version, scope, and legal status before service-specific claims. It does not by itself resolve Article 84 commencement."
+    },
+    {
+      "source_id": "dgssi-ref-valid-qual-v1-0",
+      "topic": "electronic-transactions",
+      "next_step": "Use only for the dated qualified-validation requirements it states; verify current version, scope, and legal status before service-specific claims. It does not by itself resolve Article 84 commencement."
+    },
+    {
+      "source_id": "dgssi-ref-conserv-qual-v1-0",
+      "topic": "electronic-transactions",
+      "next_step": "Use only for the dated qualified-preservation requirements it states; verify current version, scope, and legal status before service-specific claims. It does not by itself resolve Article 84 commencement."
+    },
+    {
+      "source_id": "sgg-bo-7500-fr-decision-1-psco-2026",
+      "topic": "electronic-transactions",
+      "next_step": "Use as a post-FAQ Official Bulletin record of DGSSI's individual accreditation decision under Law 43-20. It evidences an individual qualified-timestamp approval publication, not a general implementing instrument or a determination under Article 84; reconcile with Arabic BO 7499 and the complete current trust-services framework before legal conclusions."
+    },
+    {
+      "source_id": "sgg-legislation-portal-bill-31-18-history",
+      "topic": "contracts",
+      "next_step": "Use only as historical discovery context for Law 31-18; consult the separate promulgation text and verify later instruments/current consolidation before stating any present legal effect."
+    },
+    {
+      "source_id": "sgg-bo-6880-law-31-18-doc",
+      "topic": "companies",
+      "next_step": "Cross-check the original Arabic Official Bulletin and determine subsequent amendments/current status for the new real-estate-company and real-property-mandate provisions; do not generalize them to ordinary commercial services or contracts."
+    },
+    {
+      "source_id": "adala-law-5-96-companies",
+      "topic": "companies",
+      "next_step": "Compare the 19 August 2021 consolidation, including Articles 2 and 44, against its listed Official Bulletin amendments and later texts; verify the form and facts before using any company-law statement."
+    },
+    {
+      "source_id": "adala-law-17-95-sa",
+      "topic": "companies",
+      "next_step": "Compare relevant provisions, including Articles 1 and 4, with the cited Official Bulletin amendments after the 19 August 2021 cutoff; do not generalize SA-specific document requirements to other forms."
+    },
+    {
+      "source_id": "adala-code-commerce-15-95",
+      "topic": "companies",
+      "next_step": "Reconcile the 19 December 2019 consolidation with later electronic-registry rules and relevant gazetted amendments; distinguish registration procedure from authority to sign a private contract."
+    },
+    {
+      "source_id": "directentreprise-company-creation-workflow",
+      "topic": "companies",
+      "next_step": "Confirm the current fields and documents for the party’s selected legal form and facts; use this as process guidance, not a universal legal-requirements list."
+    },
+    {
+      "source_id": "directentreprise-negative-certificate-guide",
+      "topic": "companies",
+      "next_step": "Check current platform workflow for name reservation and entity identifiers; verify any legal requirement against statutes and implementing texts."
+    },
+    {
+      "source_id": "cnea-common-company-identifier-overview",
+      "topic": "companies",
+      "next_step": "Use only as an official explanatory locator; compare the Adala decree copy with Official Bulletin No. 5952 and verify current amendments and identifier rules before making an applicability statement."
+    },
+    {
+      "source_id": "adala-decree-2-11-63-ice",
+      "topic": "companies",
+      "next_step": "The DIO catalogue verifies No. 5952 is dated 16 June 2011, but its viewer says the document is unavailable. Obtain a verifiable official scan and compare Articles 1–3 and 5 with this Ministry copy; then establish subsequent amendments and current administration-specific practice. Do not infer a universal contract-field requirement."
+    },
+    {
+      "source_id": "gazettes-africa-bo-5952-ice-decree-copy",
+      "topic": "companies",
+      "next_step": "Retrieve from an official publisher or obtain a verifiable scan of the Official Bulletin, compare the decree text with the Ministry portal copy, and retain this third-party archive only as a locator unless its contents are independently verified."
+    },
+    {
+      "source_id": "sgg-bo-5952-arabic-url-candidate",
+      "topic": "companies",
+      "next_step": "The DIO catalogue confirms No. 5952 is dated 16 June 2011, while this SGG URL's viewer title shows 24 June 2011. The DIO viewer's issue PDF is unavailable, so this candidate's issue identity and text remain unverified; do not cite it as Gazette evidence."
+    },
+    {
+      "source_id": "dio-catalogue-bo-5952-2011",
+      "topic": "companies",
+      "next_step": "Use this DIO entry only for issue-number/date metadata and document availability. Obtain an official copy through an alternate DIO service or archive before comparing any decree text; the catalogue page itself contains no Gazette text."
+    },
+    {
+      "source_id": "sgg-consumer-amendment-13-23-matrix",
+      "topic": "consumer-ecommerce",
+      "next_step": "The SGG public draft-project list links the Arabic Law 13-23 draft amending Law 31-08. Trace its later parliamentary and Official Bulletin records; the draft listing does not establish enactment or current law."
+    },
+    {
+      "source_id": "sgg-legislation-portal-law-13-23-search-2026",
+      "topic": "consumer-ecommerce",
+      "next_step": "Use the SGG list entry and linked draft PDF as proposal evidence only; trace parliamentary progression and verify any resulting instrument in the Official Bulletin before updating legal-status conclusions."
+    },
+    {
+      "source_id": "sgg-draft-law-13-23-amending-law-31-08",
+      "topic": "consumer-ecommerce",
+      "next_step": "Trace this SGG-listed avant-projet through parliamentary records and Official Bulletins; do not treat its proposal text as enacted law or infer current-law effect."
+    },
+    {
+      "source_id": "house-written-question-24323-law-31-08-amendment-delay",
+      "topic": "consumer-ecommerce",
+      "next_step": "Retrieve the answer document associated with the 10 December 2025 answer-date field and trace the referenced draft by official title or identifier; verify any adopted text in the Official Bulletin. Do not treat the questioner's premise as a government finding."
+    },
+    {
+      "source_id": "parliament-law-09-08-amendment-proposal-2024",
+      "topic": "personal-data",
+      "next_step": "Check committee minutes, later House legislative records and Official Bulletins after the 22 November 2024 transfer; distinguish procedural referral from substantive consideration and enactment."
+    },
+    {
+      "source_id": "government-parliament-relations-report-2024-2025-law-09-08-proposal",
+      "topic": "personal-data",
+      "next_step": "Keep proposal no. 200 distinct from the separate October 2024 Mouvement group proposal to amend Articles 1 and 43; verify later parliamentary records and Official Bulletins before stating subsequent status or enactment."
+    },
+    {
+      "source_id": "house-committee-list-law-09-08-articles-1-43-proposal",
+      "topic": "personal-data",
+      "next_step": "Obtain the proposal text and check updated House records and Official Bulletins for later status, withdrawal, successor filing, or enactment; do not treat its committee listing as law."
+    },
+    {
+      "source_id": "constitutional-court-decision-243-24",
+      "topic": "personal-data",
+      "next_step": "Use this only to interpret the House procedural reference to Article 113; do not infer any decision on the merits or status of the Law 09-08 proposal."
+    },
+    {
+      "source_id": "sgg-bo-7443-order-1314-25-cnss-base",
+      "topic": "employment",
+      "next_step": "Read with the item 24 corrigendum in Official Bulletin 7464, then reconcile the corrected order with Law 51.25 Articles 2 and 4 and Decree 2.25.266; verify current CNSS implementation from primary texts before using any condition in a template."
+    },
+    {
+      "source_id": "sgg-bo-6342-ar-law-101-14-insertion-training",
+      "topic": "employment",
+      "next_step": "Compare the Arabic original publication against the French translation in Official Bulletin 6344 and Law 51.25 Articles 2 and 4; reconcile the former 24-month cap with later statute and transition rules before legal reliance."
+    },
+    {
+      "source_id": "sgg-bo-7464-erratum-order-1314-25",
+      "topic": "employment",
+      "next_step": "Use together with Order 1314.25 as printed in BO 7443: the erratum corrects the first qualification condition of item 24 but does not replace its separate duration paragraph. Reconcile both with Law 51.25 Articles 2 and 4 before legal reliance."
+    },
+    {
+      "source_id": "sgg-bo-7399-decree-2-25-266-cnss",
+      "topic": "employment",
+      "next_step": "Use Article 3 only to establish the text-level delegation cited by Order 1314.25; trace the order and its correction, then reconcile their current application with Law 51.25 and relevant transition provisions."
+    },
+    {
+      "source_id": "sgg-arabic-legislation-portal-law-13-23-search-2026",
+      "topic": "consumer-ecommerce",
+      "next_step": "Use the Arabic SGG list as a status locator only; trace parliamentary progression and verify any resulting instrument in the Official Bulletin before updating legal-status conclusions."
+    }
+  ]
+}

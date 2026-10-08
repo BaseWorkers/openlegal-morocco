@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.next/
+.DS_Store
+*.log
+
+graphify-out/cache/
+graphify-out/20??-??-??/
+
+graphify-out/

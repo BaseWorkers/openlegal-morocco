@@ -1,0 +1,5 @@
+{
+  "variables": [
+    { "name": "party_a_name", "type": "string", "required": true, "description": "Test fixture value", "generator_input": "factual", "maxLength": 100 }
+  ]
+}

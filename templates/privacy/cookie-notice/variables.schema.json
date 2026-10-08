@@ -1,0 +1,99 @@
+{
+  "variables": [
+    {
+      "name": "service_name",
+      "type": "string",
+      "required": true,
+      "description": "Name of the website or service covered",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "operator_name",
+      "type": "string",
+      "required": true,
+      "description": "Name of the verified service operator",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "notice_date",
+      "type": "date",
+      "required": true,
+      "description": "Date this notice is intended to take effect",
+      "generator_input": "factual"
+    },
+    {
+      "name": "technology_description",
+      "type": "string",
+      "required": true,
+      "description": "Accurate description of cookies and similar technologies used",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "inventory_description",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed inventory of technologies, providers, purposes, and durations",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "first_party_uses",
+      "type": "string",
+      "required": true,
+      "description": "Actual first-party purposes and features",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "third_party_uses",
+      "type": "string",
+      "required": true,
+      "description": "Actual third-party providers and functions, if any",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "controls_description",
+      "type": "string",
+      "required": true,
+      "description": "Verified user controls and how they work",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "storage_description",
+      "type": "string",
+      "required": true,
+      "description": "Actual storage duration or criteria for each technology",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "transfer_description",
+      "type": "string",
+      "required": true,
+      "description": "Verified description of related data access or transfers",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "contact_channel",
+      "type": "string",
+      "required": true,
+      "description": "Verified contact or support channel for questions",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "privacy_notice_location",
+      "type": "string",
+      "required": true,
+      "description": "Location of the related privacy notice, if one exists",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

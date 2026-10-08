@@ -1,0 +1,187 @@
+{
+  "variables": [
+    {
+      "name": "service_name",
+      "type": "string",
+      "required": true,
+      "description": "Public name of the website, application, or service",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "operator_name",
+      "type": "string",
+      "required": true,
+      "description": "Verified legal name of the service operator",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "operator_details",
+      "type": "string",
+      "required": true,
+      "description": "Operator legal form, address, and identifying details approved for publication",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "support_contact",
+      "type": "string",
+      "required": true,
+      "description": "Verified customer support contact",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "audience_scope",
+      "type": "string",
+      "required": true,
+      "description": "Intended users and any business/consumer audience assumptions reviewed by counsel",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "service_description",
+      "type": "string",
+      "required": true,
+      "description": "Accurate description of the service and included features",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "account_terms",
+      "type": "string",
+      "required": true,
+      "description": "Actual account creation, security, and user responsibilities",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "age_scope",
+      "type": "string",
+      "required": true,
+      "description": "Verified age and eligibility rules for the product",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "acceptable_use",
+      "type": "string",
+      "required": true,
+      "description": "Specific permitted and prohibited uses reviewed for the service",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "user_content_terms",
+      "type": "string",
+      "required": true,
+      "description": "Reviewed terms for user-provided content and rights",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "price_payment_terms",
+      "type": "string",
+      "required": true,
+      "description": "Actual prices, billing, payment, renewal, and tax display terms",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "order_flow",
+      "type": "string",
+      "required": true,
+      "description": "Actual offer, order, correction, confirmation, and record process",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "cancellation_refund_terms",
+      "type": "string",
+      "required": true,
+      "description": "Accurate cancellation and refund terms reviewed against current law and business operations",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "third_party_services",
+      "type": "string",
+      "required": true,
+      "description": "Actual third-party services and links, if any",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "privacy_notice_url",
+      "type": "string",
+      "required": true,
+      "description": "Location of the privacy notice for this service",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "service_change_terms",
+      "type": "string",
+      "required": true,
+      "description": "Actual process for service and terms changes",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "suspension_termination_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed suspension and termination terms",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "warranty_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed service commitments and warranty terms",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "liability_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed liability and remedy provisions",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "governing_law",
+      "type": "string",
+      "required": true,
+      "description": "Proposed governing-law selection, subject to advice",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "dispute_process",
+      "type": "string",
+      "required": true,
+      "description": "Proposed dispute process or forum, subject to advice",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "notice_date",
+      "type": "date",
+      "required": true,
+      "description": "Date these terms are intended to take effect",
+      "generator_input": "factual"
+    },
+    {
+      "name": "change_notification",
+      "type": "string",
+      "required": true,
+      "description": "Actual method for notifying users about changes",
+      "generator_input": "blocked",
+      "maxLength": 500
+    }
+  ]
+}

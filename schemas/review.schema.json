@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-legal-morocco.example/schemas/review.schema.json",
+  "title": "Review record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "template_id", "template_version", "review_type", "reviewer_id", "reviewed_at", "languages", "scope", "outcome", "content_digest"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "template_id": { "type": "string" },
+    "template_version": { "type": "string", "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" },
+    "review_type": { "enum": ["legal", "language", "community", "policy"] },
+    "reviewer_id": { "type": "string", "minLength": 1 },
+    "reviewed_at": { "type": "string", "format": "date" },
+    "languages": { "type": "array", "items": { "enum": ["en", "fr", "ar"] }, "uniqueItems": true },
+    "scope": { "type": "string", "minLength": 1 },
+    "outcome": { "enum": ["approved", "changes-requested", "informational"] },
+    "content_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "key_id", "value"],
+      "properties": {
+        "algorithm": { "const": "Ed25519" },
+        "key_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "value": { "type": "string", "pattern": "^[A-Za-z0-9+/]+={0,2}$" }
+      }
+    }
+  }
+}

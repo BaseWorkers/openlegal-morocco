@@ -1,0 +1,54 @@
+{
+  "id": "cookie-notice",
+  "slug": "cookie-notice",
+  "title": {
+    "en": "Cookie and Similar Technology Notice — discussion draft",
+    "fr": "Notice relative aux cookies et technologies similaires — projet de discussion",
+    "ar": "إشعار ملفات تعريف الارتباط والتقنيات المشابهة — مسودة للنقاش"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "privacy",
+    "website"
+  ],
+  "discovery": {
+    "document_type": "notice",
+    "business_types": [
+      "digital_service_operators",
+      "marketplace_operators",
+      "data_controllers"
+    ],
+    "use_cases": [
+      "describe_verified_site_or_app_technologies"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.3",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

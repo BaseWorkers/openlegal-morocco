@@ -1,0 +1,66 @@
+{
+  "source_ids": [
+    "sgg-bo-5210-2004-labor-code",
+    "adala-code-travail",
+    "sgg-bo-6344-law-101-14-insertion-training",
+    "sgg-legislation-portal-51-25-status",
+    "sgg-bo-7533-law-013-26",
+    "sgg-bo-7362-law-60-24-finance-2025",
+    "sgg-bo-7443-order-1314-25-cnss-base",
+    "sgg-bo-6342-ar-law-101-14-insertion-training",
+    "sgg-bo-7464-erratum-order-1314-25",
+    "sgg-bo-7399-decree-2-25-266-cnss",
+    "sgg-bo-4197-ar-decree-2-91-517",
+    "ilo-natlex-decree-2-91-517-reproduction"
+  ],
+  "source_uses": [
+    {
+      "source_id": "sgg-bo-5210-2004-labor-code",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "adala-code-travail",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-6344-law-101-14-insertion-training",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-legislation-portal-51-25-status",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-7533-law-013-26",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-7362-law-60-24-finance-2025",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-7443-order-1314-25-cnss-base",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-6342-ar-law-101-14-insertion-training",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-7464-erratum-order-1314-25",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-7399-decree-2-25-266-cnss",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-4197-ar-decree-2-91-517",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "ilo-natlex-decree-2-91-517-reproduction",
+      "use": "research-reference"
+    }
+  ]
+}

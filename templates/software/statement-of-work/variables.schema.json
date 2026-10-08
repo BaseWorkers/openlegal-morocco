@@ -1,0 +1,131 @@
+{
+  "variables": [
+    {
+      "name": "client_name",
+      "type": "string",
+      "required": true,
+      "description": "Client legal name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "provider_name",
+      "type": "string",
+      "required": true,
+      "description": "Provider legal name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "effective_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed SOW date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "sow_reference",
+      "type": "string",
+      "required": true,
+      "description": "SOW identifier",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "project_name",
+      "type": "string",
+      "required": true,
+      "description": "Project name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "project_objective",
+      "type": "string",
+      "required": true,
+      "description": "Factual description of intended project outcome",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "scope_included",
+      "type": "string",
+      "required": true,
+      "description": "List of work included in this SOW",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "scope_excluded",
+      "type": "string",
+      "required": true,
+      "description": "List of known exclusions",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "deliverables",
+      "type": "string",
+      "required": true,
+      "description": "List of deliverables and formats",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "milestones",
+      "type": "string",
+      "required": true,
+      "description": "Milestone names and proposed target dates",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "client_dependencies",
+      "type": "string",
+      "required": true,
+      "description": "Client inputs, access, and decision dependencies",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "technical_environment",
+      "type": "string",
+      "required": true,
+      "description": "Agreed platforms, environments, and constraints",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "testing_approach",
+      "type": "string",
+      "required": true,
+      "description": "Proposed test approach and evidence",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "fee_summary",
+      "type": "string",
+      "required": true,
+      "description": "Commercial amount, currency, and basis for counsel/accounting review",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "billing_schedule",
+      "type": "string",
+      "required": true,
+      "description": "Proposed invoice events and dates for review",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "project_contacts",
+      "type": "string",
+      "required": true,
+      "description": "Named delivery and decision contacts",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

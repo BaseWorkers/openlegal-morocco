@@ -1,0 +1,56 @@
+{
+  "id": "software-development-agreement",
+  "slug": "software-development-agreement",
+  "title": {
+    "en": "Software Development Agreement — discussion draft",
+    "fr": "Contrat de développement de logiciel — projet de discussion",
+    "ar": "اتفاقية تطوير البرمجيات — مسودة للنقاش"
+  },
+  "jurisdiction": [
+    "MA"
+  ],
+  "category": [
+    "software",
+    "technology",
+    "services"
+  ],
+  "discovery": {
+    "document_type": "agreement",
+    "business_types": [
+      "businesses",
+      "startups",
+      "small_and_medium_enterprises",
+      "software_companies"
+    ],
+    "use_cases": [
+      "commission_custom_software_development"
+    ]
+  },
+  "languages": [
+    "en",
+    "fr",
+    "ar"
+  ],
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "legal_review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "version": null,
+    "review_record_id": null
+  },
+  "language_review": {
+    "en": "pending",
+    "fr": "pending",
+    "ar": "pending"
+  },
+  "generator_enabled": false,
+  "license": "CC0-1.0",
+  "last_updated": "2026-10-08",
+  "language_review_records": {
+    "en": null,
+    "fr": null,
+    "ar": null
+  }
+}

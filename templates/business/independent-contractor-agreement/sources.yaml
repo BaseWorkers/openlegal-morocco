@@ -1,0 +1,26 @@
+{
+  "source_ids": [
+    "sgg-bo-5210-2004-labor-code",
+    "adala-code-travail",
+    "sgg-projet-labor-amendment-032-26",
+    "adala-portal-code-obligations"
+  ],
+  "source_uses": [
+    {
+      "source_id": "sgg-bo-5210-2004-labor-code",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "adala-code-travail",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-projet-labor-amendment-032-26",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "adala-portal-code-obligations",
+      "use": "research-reference"
+    }
+  ]
+}

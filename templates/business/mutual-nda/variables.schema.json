@@ -1,0 +1,131 @@
+{
+  "variables": [
+    {
+      "name": "party_a_name",
+      "type": "string",
+      "required": true,
+      "description": "Full legal name of the first party",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "party_a_form",
+      "type": "string",
+      "required": false,
+      "description": "Optional legal form and any identifiers applicable to this party, verified from its records; do not presume RC, ICE, or IF applies.",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "party_a_address",
+      "type": "address",
+      "required": true,
+      "description": "Address for notices to the first party",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "party_a_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Name and stated capacity of the first party signatory; verify actual authority separately.",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "party_b_name",
+      "type": "string",
+      "required": true,
+      "description": "Full legal name of the second party",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "party_b_form",
+      "type": "string",
+      "required": false,
+      "description": "Optional legal form and any identifiers applicable to this party, verified from its records; do not presume RC, ICE, or IF applies.",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "party_b_address",
+      "type": "address",
+      "required": true,
+      "description": "Address for notices to the second party",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "party_b_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Name and stated capacity of the second party signatory; verify actual authority separately.",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "effective_date",
+      "type": "date",
+      "required": true,
+      "description": "Date the parties intend this agreement to take effect",
+      "generator_input": "factual"
+    },
+    {
+      "name": "purpose",
+      "type": "string",
+      "required": true,
+      "description": "Specific permitted evaluation or collaboration purpose",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "agreement_term",
+      "type": "string",
+      "required": true,
+      "description": "Chosen period during which disclosures may be made",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "confidentiality_period",
+      "type": "string",
+      "required": true,
+      "description": "Chosen duration of confidentiality obligations after the agreement ends",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "governing_law",
+      "type": "string",
+      "required": true,
+      "description": "Law selected by the parties after advice on validity and conflicts",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "dispute_forum",
+      "type": "string",
+      "required": true,
+      "description": "Chosen dispute forum or process after advice on validity and suitability",
+      "generator_input": "blocked",
+      "maxLength": 500
+    },
+    {
+      "name": "notice_email_a",
+      "type": "string",
+      "required": false,
+      "description": "Optional notice email for the first party",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "notice_email_b",
+      "type": "string",
+      "required": false,
+      "description": "Optional notice email for the second party",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

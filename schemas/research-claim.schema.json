@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-legal-morocco.example/schemas/research-claim.schema.json",
+  "title": "Legal research proposition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "text", "jurisdiction", "source_ids", "pinpoint", "evidence_status", "current_law_status", "legal_review_status", "notes"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "text": { "type": "string", "minLength": 1 },
+    "jurisdiction": { "type": "string", "minLength": 1 },
+    "source_ids": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
+    "pinpoint": { "type": "string", "minLength": 1 },
+    "evidence_status": { "enum": ["source-text-checked", "secondary-only", "unverified"] },
+    "current_law_status": { "enum": ["verified-current", "unresolved", "not-applicable"] },
+    "legal_review_status": { "enum": ["not-reviewed", "review-pending", "reviewed"] },
+    "review_record_id": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "notes": { "type": "string" }
+  }
+}

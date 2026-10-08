@@ -1,0 +1,21 @@
+{
+  "source_ids": [
+    "general-legal-templates",
+    "adala-portal-code-obligations",
+    "ompic-law-23-13"
+  ],
+  "source_uses": [
+    {
+      "source_id": "general-legal-templates",
+      "use": "comparative-reference"
+    },
+    {
+      "source_id": "adala-portal-code-obligations",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "ompic-law-23-13",
+      "use": "research-reference"
+    }
+  ]
+}

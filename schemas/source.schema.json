@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-legal-morocco.example/schemas/source.schema.json",
+  "title": "Source registry entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "publisher", "jurisdiction", "source_type", "url", "license_basis", "reuse_status", "reuse_license", "reuse_scope", "reuse_review_date", "date_accessed", "verification_date", "used_for", "notes", "verification_status"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "publisher": { "type": "string", "minLength": 1 },
+    "jurisdiction": { "type": "string", "minLength": 1 },
+    "source_type": { "enum": ["official", "legislation", "regulatory-guidance", "reusable-template", "secondary-commentary", "project-policy", "license-text"] },
+    "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "license_basis": { "type": "string", "minLength": 1 },
+    "reuse_status": { "enum": ["research-only", "file-level-review-required", "license-reference", "authorized-for-reuse"] },
+    "reuse_license": { "type": ["string", "null"] },
+    "reuse_license_url": { "type": "string", "format": "uri", "pattern": "^https://", "description": "HTTPS URL to the exact license terms reviewed for this reuse authorization." },
+    "reuse_scope": { "type": ["string", "null"] },
+    "reuse_revision": { "type": ["string", "null"], "description": "Immutable version, edition, commit, or content identifier reviewed for any reuse authorization." },
+    "reuse_review_date": { "type": ["string", "null"], "format": "date" },
+    "date_accessed": { "type": ["string", "null"], "format": "date" },
+    "verification_date": { "type": ["string", "null"], "format": "date" },
+    "used_for": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" },
+    "verification_status": { "enum": ["unverified", "verified", "license-unclear", "unavailable"] }
+  }
+}

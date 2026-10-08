@@ -1,0 +1,178 @@
+{
+  "variables": [
+    {
+      "name": "employer_name",
+      "type": "string",
+      "required": true,
+      "description": "Employer full legal name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "employer_address",
+      "type": "address",
+      "required": true,
+      "description": "Employer notice address",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "employee_name",
+      "type": "string",
+      "required": true,
+      "description": "Employee full name",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "employee_address",
+      "type": "address",
+      "required": true,
+      "description": "Employee notice address",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "position_title",
+      "type": "string",
+      "required": true,
+      "description": "Position title stated by the parties",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "work_location",
+      "type": "string",
+      "required": true,
+      "description": "Proposed primary work location",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "reporting_person",
+      "type": "string",
+      "required": true,
+      "description": "Named reporting contact",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "start_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed start date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "contract_duration_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed contract category, duration, and any end-date wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "work_schedule_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed working-time, rest, and schedule wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "remuneration_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed remuneration, payment, and deductions wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "probation_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed probation wording or an explicit decision to omit it",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "leave_benefit_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed leave and benefit wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "social_protection_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed social-protection and registration wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "confidentiality_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed confidentiality wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "intellectual_property_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed intellectual-property wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "termination_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed suspension and termination wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "dispute_terms",
+      "type": "string",
+      "required": true,
+      "description": "Counsel-reviewed dispute and forum wording",
+      "generator_input": "blocked",
+      "maxLength": 800
+    },
+    {
+      "name": "signing_place",
+      "type": "string",
+      "required": true,
+      "description": "Proposed place of signature",
+      "generator_input": "factual",
+      "maxLength": 300
+    },
+    {
+      "name": "signing_date",
+      "type": "date",
+      "required": true,
+      "description": "Proposed signature date",
+      "generator_input": "factual"
+    },
+    {
+      "name": "employer_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Employer signatory name and capacity",
+      "generator_input": "factual",
+      "maxLength": 500
+    },
+    {
+      "name": "employee_signatory",
+      "type": "string",
+      "required": true,
+      "description": "Employee signatory name",
+      "generator_input": "factual",
+      "maxLength": 500
+    }
+  ]
+}

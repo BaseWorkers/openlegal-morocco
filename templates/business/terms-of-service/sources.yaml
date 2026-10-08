@@ -1,0 +1,55 @@
+{
+  "source_ids": [
+    "adala-consumer-protection",
+    "sgg-consolidated-texts-index",
+    "adala-electronic-transactions",
+    "sgg-bo-7162-decree-2-22-687",
+    "sgg-consolidated-law-31-08",
+    "sgg-bo-6945-law-78-20-amends-31-08-article-202",
+    "adala-decree-2-22-687-electronic-trust-services",
+    "bdj-law-43-20-metadata",
+    "sgg-bo-6951-law-43-20"
+  ],
+  "source_uses": [
+    {
+      "source_id": "adala-consumer-protection",
+      "use": "research-reference",
+      "claim_ids": ["law-31-08-objectives-consumer-contracts-distance-sales"]
+    },
+    {
+      "source_id": "sgg-consolidated-texts-index",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "adala-electronic-transactions",
+      "use": "research-reference",
+      "claim_ids": ["law-53-05-electronic-offer-terms-article-65-4", "law-53-05-electronic-order-review-article-65-5"]
+    },
+    {
+      "source_id": "sgg-bo-7162-decree-2-22-687",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-consolidated-law-31-08",
+      "use": "research-reference",
+      "claim_ids": ["law-31-08-objectives-consumer-contracts-distance-sales", "law-78-20-amends-law-31-08-article-202"]
+    },
+    {
+      "source_id": "sgg-bo-6945-law-78-20-amends-31-08-article-202",
+      "use": "research-reference",
+      "claim_ids": ["law-78-20-amends-law-31-08-article-202"]
+    },
+    {
+      "source_id": "adala-decree-2-22-687-electronic-trust-services",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "bdj-law-43-20-metadata",
+      "use": "research-reference"
+    },
+    {
+      "source_id": "sgg-bo-6951-law-43-20",
+      "use": "research-reference"
+    }
+  ]
+}
