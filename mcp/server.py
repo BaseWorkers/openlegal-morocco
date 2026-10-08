@@ -18,8 +18,24 @@ LANGUAGES = ("en", "fr", "ar")
 def packages():
     """Yield valid packages in deterministic order; report malformed records to stderr."""
     for metadata_path in sorted(TEMPLATES.glob("*/*/metadata.yaml")):
+        package_path = metadata_path.parent
+        try:
+            package_path.resolve().relative_to(TEMPLATES.resolve())
+        except (OSError, ValueError):
+            print(f"Skipping template outside repository: {metadata_path}", file=sys.stderr)
+            continue
+        current = package_path
         if metadata_path.is_symlink():
             print(f"Skipping symlinked template metadata: {metadata_path}", file=sys.stderr)
+            continue
+        while current != TEMPLATES:
+            if current.is_symlink():
+                print(f"Skipping symlinked template package: {metadata_path}", file=sys.stderr)
+                break
+            current = current.parent
+        else:
+            current = None
+        if current is not None:
             continue
         try:
             metadata = json.loads(metadata_path.read_text(encoding="utf-8"))

@@ -30,7 +30,7 @@ The server exposes `list_templates` (optional category and language filters), `g
 
 - Stdio only; it opens no network listener and makes no external requests.
 - The tools read files under this repository's `templates/` directory. They do not write files, invoke shell commands, or accept arbitrary paths.
-- Symbolic-link content and source files are rejected.
+- Symbolic-link package directories, content files, and source files are rejected.
 - Responses do not grant or infer legal or language approval, and never certify compliance.
 - Never include personal, client, or confidential data in tool arguments.
 

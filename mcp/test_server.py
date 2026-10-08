@@ -83,6 +83,23 @@ class MCPTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "symbolic link"):
                     server.call("get_template", {"template_id": "privacy-policy"})
 
+    def test_symlinked_package_directory_is_not_read(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "templates"
+            root.mkdir()
+            external = Path(tmp) / "external-package"
+            external.mkdir()
+            (external / "metadata.yaml").write_text(json.dumps({"id": "external-template", "languages": [], "category": []}), encoding="utf-8")
+            category = root / "privacy"
+            category.mkdir()
+            try:
+                (category / "linked-package").symlink_to(external, target_is_directory=True)
+            except (OSError, NotImplementedError):
+                self.skipTest("symlinks are unavailable on this platform")
+            with mock.patch.object(server, "TEMPLATES", root), contextlib.redirect_stderr(io.StringIO()):
+                templates = server.call("list_templates", {})["templates"]
+            self.assertEqual(templates, [])
+
     def test_protocol_handshake_methods_errors_and_notifications(self):
         requests = [
             {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}},
