@@ -20,6 +20,10 @@ jobs:
         with:
           node-version: 24
           package-manager-cache: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s mcp -p 'test_*.py'
       - run: npm run check:syntax
       - run: npm run validate
       - name: Enforce review status transitions

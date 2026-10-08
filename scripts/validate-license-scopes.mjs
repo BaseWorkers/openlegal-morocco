@@ -49,7 +49,7 @@ export function selectLicenseScope(rules, path) {
   return best[0].rule;
 }
 
-const ignoredDirectories = new Set(['.git', 'node_modules', 'dist', 'coverage', '.next', 'graphify-out']);
+const ignoredDirectories = new Set(['.git', 'node_modules', 'dist', 'coverage', '.next', 'graphify-out', '__pycache__']);
 async function collectPaths(directory, prefix = '') {
   const entries = await readdir(directory, { withFileTypes: true });
   const paths = [];
