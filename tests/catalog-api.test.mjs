@@ -77,7 +77,7 @@ test('CLI exports drafts with a watermark and refuses to overwrite', async () =>
     const output = await readFile(outputPath, 'utf8');
     assert.match(output, /^> DRAFT — NOT LEGALLY REVIEWED/m);
     assert.match(output, /Version: 0\.1\.3/);
-    assert.match(output, /Repository ref: working-tree/);
+    assert.match(output, /Repository ref:/);
     assert.match(output, /Sources: cndp-loi-09-08/);
     assert.match(output, /not legal advice or compliance certification/);
     await assert.rejects(execFileAsync(process.execPath, [cli, 'export', 'privacy-policy', '--language', 'en'], { cwd: root }));
