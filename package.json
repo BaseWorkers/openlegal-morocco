@@ -19,6 +19,8 @@
     "audit:accessibility": "node scripts/audit-markdown-accessibility.mjs",
     "audit:review-transitions": "node scripts/audit-review-transitions.mjs",
     "test": "node --test",
-    "audit:links": "node scripts/audit-source-links.mjs"
+    "audit:links": "node scripts/audit-source-links.mjs",
+    "cli": "node scripts/openlegal.mjs",
+    "build:api": "node scripts/build-static-api.mjs"
   }
 }

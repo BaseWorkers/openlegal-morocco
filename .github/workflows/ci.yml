@@ -41,6 +41,7 @@ jobs:
       - run: npm run audit:accessibility
       - run: npm run audit:privacy
       - run: npm test
+      - run: npm run build:api
       - run: npm run build:review-packets
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.sha }}
