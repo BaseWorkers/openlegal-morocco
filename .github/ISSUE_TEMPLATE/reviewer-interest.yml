@@ -1,13 +1,17 @@
 name: Join the reviewer or moderator program
-description: Register public interest in a volunteer role. This issue and all answers are public.
+description: Apply in English, French, or Arabic. This issue and all answers are public.
 title: "[Reviewer interest]: "
 body:
   - type: markdown
     attributes:
       value: |
-        This is a public expression of interest, not confidential intake or automatic authorization. The issue and your answers will be visible to everyone.
+        This is a public expression of interest, not confidential intake or automatic authorization. The issue and your answers will be visible to everyone. You may answer in English, French, or Arabic.
 
         Do not include CVs, identity documents, private contact details, client names, confidential work, or sensitive personal data. Share only experience and links you are comfortable making public. A maintainer may ask for public clarifications. No role or review authority is granted until qualification, scope, conflicts, and governance requirements are checked.
+
+        Cette demande est publique et les réponses sont visibles par tous. Vous pouvez répondre en anglais, français ou arabe. Ne publiez pas de CV, pièce d'identité, coordonnées privées, nom de client, document confidentiel ou donnée personnelle sensible. Le formulaire ne confère aucune autorisation de révision ou d'approbation.
+
+        هذا الطلب علني، وستكون الإجابات مرئية للجميع. يمكنك الإجابة بالعربية أو الفرنسية أو الإنجليزية. لا تنشر سيرة ذاتية أو وثائق هوية أو بيانات اتصال خاصة أو أسماء عملاء أو معلومات سرية أو بيانات شخصية حساسة. تقديم الطلب لا يمنح صلاحية مراجعة المحتوى أو اعتماده.
   - type: dropdown
     id: roles
     attributes:
