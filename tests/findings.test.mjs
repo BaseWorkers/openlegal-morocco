@@ -1,5 +1,8 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { copyFile, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { test } from 'node:test';
 import { renderFindingsMarkdown, validateFindings } from '../scripts/findings.mjs';
 
@@ -67,5 +70,44 @@ test('CLI validator conforms to the shared cross-runtime findings contract cases
     Object.assign(invalid.findings[0], testCase.finding_patch ?? {});
     if (testCase.duplicate_first_finding) invalid.findings.push(structuredClone(invalid.findings[0]));
     assert.ok((await validateFindings(invalid)).length > 0, testCase.id);
+  }
+});
+
+test('standalone adapter consumes exports using only caller-supplied JSON files', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'olm-independent-adapter-'));
+  try {
+    const document = {
+      ...conformance.valid_documents[0],
+      findings: conformance.valid_documents.flatMap(({ findings }) => findings),
+    };
+    const taxonomy = JSON.parse(await readFile(new URL('../schemas/control-taxonomy.json', import.meta.url), 'utf8'));
+    await writeFile(join(directory, 'findings.json'), JSON.stringify(document));
+    await writeFile(join(directory, 'control-taxonomy.json'), JSON.stringify(taxonomy));
+    await copyFile(new URL('../examples/findings-adapter/control-mapping.example.json', import.meta.url), join(directory, 'mapping.json'));
+    await copyFile(new URL('../examples/findings-adapter/consume.mjs', import.meta.url), join(directory, 'consume.mjs'));
+
+    const adapter = await import(pathToFileURL(join(directory, 'consume.mjs')).href);
+    const imported = await adapter.consumeFindings(
+      join(directory, 'findings.json'), join(directory, 'control-taxonomy.json'), join(directory, 'mapping.json'),
+    );
+    assert.equal(imported.schema_version, document.schema_version);
+    assert.equal(imported.repository_revision, document.repository.revision);
+    assert.equal(imported.findings.length, 2);
+    assert.equal(imported.findings[0].technical_priority.basis, 'technical_remediation');
+    assert.equal(imported.findings[0].suggested_controls[1].adapter_capabilities[0], 'organization.safe_output_filter');
+    assert.equal(imported.findings[1].finding_type, 'potential_legal_question');
+    assert.match(imported.findings[1].legal_question, /qualified counsel/);
+    assert.equal(imported.findings[1].review_status.human_review, 'pending');
+    assert.match(imported.disclaimer, /does not approve legal findings/);
+    assert.match(imported.validation_note, /full contract validation/);
+
+    const invalid = structuredClone(document);
+    invalid.findings[0].suggested_controls = ['vendor_product'];
+    await writeFile(join(directory, 'invalid.json'), JSON.stringify(invalid));
+    await assert.rejects(adapter.consumeFindings(
+      join(directory, 'invalid.json'), join(directory, 'control-taxonomy.json'), join(directory, 'mapping.json'),
+    ), /unknown control/);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
   }
 });
