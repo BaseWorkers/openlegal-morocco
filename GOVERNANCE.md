@@ -1,6 +1,6 @@
 # Governance
 
-This project is a v0.0.1 public contribution preview. Base Workers is the founding project owner and technical maintainer, responsible for software, workflow, policy, and release stewardship. This role does not authorize legal or language review. The [`CODEOWNERS`](.github/CODEOWNERS) file assigns technical review coverage for software paths only and does not grant legal or language review authority. No legal or language reviewers are currently authorized; no contributor or agent may mark material `LEGAL_REVIEWED` or `LANGUAGE_REVIEWED`.
+This project is a v0.0.1 public contribution preview. Base Workers is the founding project owner and technical maintainer, responsible for software, workflow, policy, and release stewardship. This role does not authorize legal or language review. Repository code ownership assigns technical review coverage for software paths only and does not grant legal or language review authority. No legal or language reviewers are currently authorized; no contributor or agent may mark material `LEGAL_REVIEWED` or `LANGUAGE_REVIEWED`.
 
 ## Review authority
 
