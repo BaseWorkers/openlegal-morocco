@@ -79,7 +79,10 @@
         "path": { "type": ["string", "null"], "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).*$", "description": "Repository-relative path using forward slashes only; absolute paths, backslashes, and parent-directory traversal are forbidden." }, "line_start": { "type": ["integer", "null"], "minimum": 1 },
         "line_end": { "type": ["integer", "null"], "minimum": 1 },
         "content_digest": { "type": ["string", "null"], "pattern": "^(sha256:)?[a-fA-F0-9]{64}$" }
-      }
+      },
+      "allOf": [
+        { "if": { "properties": { "kind": { "const": "repository_file" } }, "required": ["kind"] }, "then": { "properties": { "path": { "type": "string", "minLength": 1 } } } }
+      ]
     },
     "resource": {
       "type": "object", "additionalProperties": false, "required": ["type", "identifier"],
