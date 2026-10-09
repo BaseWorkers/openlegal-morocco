@@ -64,3 +64,7 @@ Read [DISCLAIMER.md](DISCLAIMER.md) before using any material. Original legal co
 ## Developer interoperability
 
 The project publishes a vendor-neutral, versioned findings schema and read-only export interfaces. See [the interoperability specification](docs/INTEROPERABILITY.md) for JSON and Markdown CLI exports, MCP validation, the generic control taxonomy, privacy limits, and compatibility policy.
+
+## Static catalog preview
+
+Build the local multilingual, read-only catalog with `npm run build:site`. See [site documentation](docs/SITE.md) for preview instructions and the owner-confirmed public URL requirement.

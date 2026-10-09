@@ -22,19 +22,21 @@
         "README.md",
         "README.fr.md",
         "README.ar.md",
+        "skills/**",
+        "docs/**",
         "RELEASE_NOTES.md",
+        "CHANGELOG.md",
         "CODE_OF_CONDUCT.md",
         "CONTRIBUTING.md",
         "REVIEWING.md",
         "DISCLAIMER.md",
         "GOVERNANCE.md",
+        "ROADMAP.md",
         "SECURITY.md",
         "LICENSES/README.md",
         "LICENSES/scopes.json",
         ".github/ISSUE_TEMPLATE/**",
-        ".github/PULL_REQUEST_TEMPLATE.md",
-        "skills/**",
-        "docs/**"
+        ".github/PULL_REQUEST_TEMPLATE.md"
       ],
       "exceptions": "Referenced third-party material is excluded."
     },
@@ -43,30 +45,26 @@
       "spdx": "MIT",
       "patterns": [
         "scripts/**",
+        "site/**",
+        "mcp/**",
         "schemas/**",
         "tests/**",
         ".github/workflows/**",
         "package.json",
-        ".gitignore",
-        "mcp/**"
+        ".gitignore"
       ],
       "exceptions": "More specific path rules override this rule."
     },
     {
       "id": "synthetic-template-fixture",
       "spdx": "CC0-1.0",
-      "patterns": [
-        "tests/fixtures/template-package/**"
-      ],
+      "patterns": ["tests/fixtures/template-package/**"],
       "exceptions": "Synthetic test-only package declared CC0-1.0 by its fixture metadata; not a released legal template."
     },
     {
       "id": "upstream-license-texts",
       "spdx": null,
-      "patterns": [
-        "LICENSES/CC0-1.0.txt",
-        "LICENSES/MIT.txt"
-      ],
+      "patterns": ["LICENSES/CC0-1.0.txt", "LICENSES/MIT.txt"],
       "exceptions": "Keep upstream license text, copyright, and notices intact; do not apply the project license to these files."
     }
   ]

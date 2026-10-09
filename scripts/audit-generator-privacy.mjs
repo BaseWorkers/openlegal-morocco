@@ -19,7 +19,10 @@ const sourceFiles = [
   'scripts/translation-parity.mjs',
   'scripts/changelog-policy.mjs',
   'scripts/template-source-use-policy.mjs',
-  'scripts/source-reuse-policy.mjs'
+  'scripts/source-reuse-policy.mjs',
+  'scripts/build-site.mjs',
+  'scripts/catalog.mjs',
+  'scripts/markdown-renderer.mjs'
 ];
 const reviewedNodeModules = new Set([
   'node:assert/strict',
@@ -53,7 +56,7 @@ for (const path of sourceFiles) {
     }
   }
 
-  if (path !== 'scripts/export-template.mjs') {
+  if (!['scripts/export-template.mjs', 'scripts/build-site.mjs'].includes(path)) {
     assert.doesNotMatch(source, writeApis, `${path} must not write or persist generator values`);
   }
 }
@@ -70,4 +73,10 @@ assert.match(exporter, /finally\s*\{\s*await rm\(temporaryDirectory, \{ recursiv
 assert.match(exporter, /`-env:UserInstallation=\$\{officeProfile\}`/, 'LibreOffice must use a temporary profile');
 assert.doesNotMatch(exporter, /shell:\s*true/, 'PDF conversion must not invoke a shell');
 
-console.log(`Generator privacy audit passed: ${sourceFiles.length} exporter and validator modules are covered; imports are local or allowlisted Node built-ins; no network/browser-storage APIs or writes outside the export entry point; stdin JSON is capped at 1 MiB and malformed UTF-8 is rejected; PDF conversion uses and removes isolated temporary files.`);
+const siteBuilder = await readFile(join(root, 'scripts/build-site.mjs'), 'utf8');
+assert.match(siteBuilder, /outputDirectory = resolve\(root, 'dist\/site'\)/, 'static site output must default to ignored local build artifacts');
+assert.match(siteBuilder, /writeFile\(resolve\(outputDirectory, 'robots\.txt'\)/, 'site metadata must be written inside the configured output directory');
+assert.match(siteBuilder, /copyFile\(resolve\(root, 'site\/assets\/site\.css'\), resolve\(outputDirectory, 'assets\/site\.css'\)/, 'only repository-owned static assets may be copied to site output');
+assert.doesNotMatch(siteBuilder, /\b(?:fetch|XMLHttpRequest|WebSocket|EventSource|localStorage|sessionStorage|document\.cookie)\b/, 'site generation and local search must not send or persist user search data');
+
+console.log(`Generator privacy audit passed: ${sourceFiles.length} exporter, validator, and static-site modules are covered; imports are local or allowlisted Node built-ins; static builds write local repository-derived artifacts only; no network/browser-storage APIs; stdin JSON is capped at 1 MiB and malformed UTF-8 is rejected; PDF conversion uses and removes isolated temporary files.`);

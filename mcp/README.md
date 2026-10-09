@@ -14,15 +14,25 @@ This experimental MCP server exposes the repository's existing template catalogu
 python3 mcp/server.py
 ```
 
-Configure an MCP client to start `python3` with the absolute path to `mcp/server.py`. For Codex CLI, add this to `~/.codex/config.toml`:
+Configure an MCP client to start the Python server with an absolute script path. Codex CLI and IDE share their MCP configuration. From the repository root, register the server with the Codex CLI:
+
+```sh
+# macOS / Linux
+codex mcp add open_legal_morocco -- python3 "/absolute/path/to/open-legal-morocco/mcp/server.py"
+
+# Windows PowerShell, with the Python launcher installed
+codex mcp add open_legal_morocco -- py -3 "C:\absolute\path\to\open-legal-morocco\mcp\server.py"
+```
+
+If the `py` launcher is unavailable on Windows, use `python` in its place. These commands store local paths in the Codex user configuration. For a manual setup, add this TOML to `~/.codex/config.toml` (macOS/Linux) or `%USERPROFILE%\\.codex\\config.toml` (Windows):
 
 ```toml
 [mcp_servers.open_legal_morocco]
-command = "python3"
-args = ["/absolute/path/to/open-legal-morocco/mcp/server.py"]
+command = "python3" # use "py" on Windows
+args = ["/absolute/path/to/open-legal-morocco/mcp/server.py"] # Windows: "C:\\absolute\\path\\to\\open-legal-morocco\\mcp\\server.py"
 ```
 
-On Windows, use `python` and an absolute Windows path. Restart the client after changing its configuration.
+Use the absolute checkout path that exists on your machine; do not copy the sample path literally. Confirm registration with `codex mcp list`, then restart Codex if the tools do not appear. The MCP configuration format and command are documented in the [Codex MCP guide](https://developers.openai.com/learn/docs-mcp); `codex mcp add --help` shows the local stdio command form.
 
 The server exposes `list_templates` (optional category and language filters), `get_template` (template ID and optional language), and `get_template_sources` (template ID). All calls return recorded status and the draft disclaimer. Source declarations are references, not proof that a rule is current or applies to a particular user.
 

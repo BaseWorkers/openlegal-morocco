@@ -13,14 +13,15 @@
     "validate:templates": "node scripts/validate-template-packages.mjs",
     "build:review-packets": "node scripts/build-review-packets.mjs",
     "export:project-preview": "node scripts/export-project-preview.mjs",
+    "cli": "node scripts/openlegal.mjs",
+    "build:api": "node scripts/build-static-api.mjs",
+    "build:site": "node scripts/build-site.mjs",
     "export": "node scripts/export-template.mjs",
     "audit:privacy": "node scripts/audit-generator-privacy.mjs",
     "audit:internal-links": "node scripts/audit-internal-links.mjs",
     "audit:accessibility": "node scripts/audit-markdown-accessibility.mjs",
     "audit:review-transitions": "node scripts/audit-review-transitions.mjs",
     "test": "node --test",
-    "audit:links": "node scripts/audit-source-links.mjs",
-    "cli": "node scripts/openlegal.mjs",
-    "build:api": "node scripts/build-static-api.mjs"
+    "audit:links": "node scripts/audit-source-links.mjs"
   }
 }

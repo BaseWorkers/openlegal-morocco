@@ -30,3 +30,7 @@ The output is written under ignored `dist/api/v1/` and includes `manifest.json`,
 The artifacts are local build outputs. Hosting, public endpoints, and legal approval are separate decisions and are not implied by generating them.
 
 See [Interoperability and structured findings](INTEROPERABILITY.md) for the versioned findings schema, vendor-neutral control taxonomy, CLI/MCP export and validation, privacy boundaries, and compatibility policy. The static API build publishes the v1 schema and taxonomy alongside catalogue artifacts.
+
+## Static catalog preview
+
+Build and serve the local multilingual read-only catalog with `npm run build:site` and `python3 -m http.server 8000 --directory dist/site`. See [the site build and publishing boundary](SITE.md) for language routes, accessibility scope, and owner-confirmed canonical URL requirements.
