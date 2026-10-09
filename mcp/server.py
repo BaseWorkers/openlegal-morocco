@@ -28,6 +28,7 @@ DISCLAIMER = (
     "Seek qualified Moroccan legal counsel before relying on a document."
 )
 LANGUAGES = ("en", "fr", "ar")
+MAX_MESSAGE_CHARS = 1024 * 1024
 CHECKLIST_QUESTIONS = {
     "website": [
         {"id": "operator-and-audience", "topic": "business-context", "question": "Which entity operates the site, and where are the operator and intended users located?"},
@@ -837,8 +838,41 @@ def response(request):
     raise KeyError("Method not found")
 
 
+def bounded_input_lines(stream):
+    """Read newline-delimited messages without buffering an unbounded input line."""
+    while True:
+        chunks = []
+        total_chars = 0
+        oversized = False
+        saw_input = False
+        ended_with_newline = False
+        while True:
+            chunk = stream.readline(MAX_MESSAGE_CHARS + 1)
+            if not chunk:
+                break
+            saw_input = True
+            ended_with_newline = chunk.endswith("\n")
+            if not oversized:
+                total_chars += len(chunk)
+                if total_chars > MAX_MESSAGE_CHARS:
+                    oversized = True
+                    chunks.clear()
+                else:
+                    chunks.append(chunk)
+            if ended_with_newline:
+                break
+        if not saw_input:
+            return
+        yield None if oversized else "".join(chunks)
+        if not ended_with_newline:
+            return
+
+
 def main():
-    for line in sys.stdin:
+    for line in bounded_input_lines(sys.stdin):
+        if line is None:
+            print(json.dumps({"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": f"Request exceeds {MAX_MESSAGE_CHARS} characters"}}), flush=True)
+            continue
         try:
             request = json.loads(line)
         except (ValueError, TypeError):
