@@ -433,6 +433,10 @@ def validate_findings(document):
     schema = json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8"))
     taxonomy = json.loads(CONTROL_TAXONOMY.read_text(encoding="utf-8"))
     errors = []
+    schema_controls = schema.get("$defs", {}).get("finding", {}).get("properties", {}).get("suggested_controls", {}).get("items", {}).get("enum", [])
+    taxonomy_controls = [control.get("id") for control in taxonomy.get("controls", []) if isinstance(control, dict)]
+    if schema_controls != taxonomy_controls:
+        errors.append("Findings schema control identifiers do not match the published taxonomy")
     _validate_schema_node(document, schema, schema, "$", errors)
     known_controls = {control["id"] for control in taxonomy["controls"]}
     sensitive = re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
