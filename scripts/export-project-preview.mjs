@@ -67,7 +67,7 @@ async function writeProjectLicenseFiles(outputPath) {
     'README.md', 'README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'DISCLAIMER.md', 'GOVERNANCE.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md',
     'SECURITY.md', 'CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/**',
     '.github/PULL_REQUEST_TEMPLATE.md', 'LICENSES/README.md', 'LICENSES/scopes.json',
-    'scripts/**', 'schemas/**', 'tests/**', '.github/workflows/**',
+    'scripts/**', 'schemas/**', 'tests/**', 'docs/**', '.github/workflows/**',
     'package.json', '.gitignore', 'tests/fixtures/template-package/**',
     'LICENSES/CC0-1.0.txt', 'LICENSES/MIT.txt'
   ]);
