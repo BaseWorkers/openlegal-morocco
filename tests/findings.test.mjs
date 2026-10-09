@@ -46,6 +46,15 @@ test('published JSON Schema enforces finding type and legal-question semantics f
   assert.ok(validateJsonSchemaValue(invalidLegalQuestion, schema).some((item) => item.includes('legal_question')));
 });
 
+test('finding IDs have a stable, opaque producer contract for remediation tracking', async () => {
+  const schema = JSON.parse(await readFile(new URL('../schemas/findings.schema.json', import.meta.url), 'utf8'));
+  const description = schema.$defs.finding.properties.finding_id.description;
+  assert.match(description, /opaque producer-assigned identifier/i);
+  assert.match(description, /stable when the same finding is carried into later exports/i);
+  assert.match(description, /unique within each export/i);
+  assert.match(description, /secrets or personal data/i);
+});
+
 test('priority values have shared technical-urgency meanings and disclaim legal-risk interpretation', async () => {
   const schema = JSON.parse(await readFile(new URL('../schemas/findings.schema.json', import.meta.url), 'utf8'));
   const properties = schema.$defs.finding.properties;
