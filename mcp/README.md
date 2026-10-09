@@ -40,6 +40,7 @@ The server exposes `list_templates` (optional category and language filters), `g
 ## Safety boundaries
 
 - Stdio only; it opens no network listener and makes no external requests.
+- JSON-RPC input is newline-delimited and each message is limited to 1 Mi characters; oversized messages receive a parse error without buffering the remainder as one string.
 - The tools read fixed catalogue, source, schema, changelog, and review files under this repository. They do not write files, execute a shell, or accept arbitrary paths. Review verification uses a fixed local OpenSSL argument list without shell evaluation.
 - Symbolic-link package directories, content files, and source files are rejected.
 - Responses do not grant or infer legal or language approval, and never certify compliance.
