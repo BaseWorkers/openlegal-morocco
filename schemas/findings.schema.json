@@ -69,7 +69,7 @@
       },
       "allOf": [
         { "if": { "properties": { "finding_type": { "const": "technical_observation" } }, "required": ["finding_type"] }, "then": { "properties": { "legal_question": { "type": "null" } } } },
-        { "if": { "properties": { "finding_type": { "const": "potential_legal_question" } }, "required": ["finding_type"] }, "then": { "properties": { "legal_question": { "type": "string", "minLength": 1, "pattern": "\\\\S" } } } }
+        { "if": { "properties": { "finding_type": { "const": "potential_legal_question" } }, "required": ["finding_type"] }, "then": { "properties": { "legal_question": { "type": "string", "minLength": 1, "pattern": "\\S" } } } }
       ]
     },
     "sourceReference": {
