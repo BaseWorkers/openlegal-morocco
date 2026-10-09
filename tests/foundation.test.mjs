@@ -309,6 +309,14 @@ test('CI uses a supported Node runtime and immutable GitHub Action references', 
   const packageJson = await readJson('../package.json');
   const workflow = await readFile(new URL('../.github/workflows/ci.yml', import.meta.url), 'utf8');
   assert.equal(packageJson.engines.node, '>=22');
+  const actionReferences = [...workflow.matchAll(/^[ \t]*uses:[ \t]*([^\s#]+)(?:[ \t]+#[ \t]*(\S+))?[ \t]*$/gm)];
+  assert.ok(actionReferences.length > 0, 'CI must declare its third-party actions');
+  for (const [, reference, version] of actionReferences) {
+    assert.match(reference, /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+@[a-f0-9]{40}$/, `Action must use an immutable commit SHA: ${reference}`);
+    assert.match(version ?? '', /^v\d/, `Pinned action must retain a human-readable version comment: ${reference}`);
+  }
+  const permissions = workflow.match(/^permissions:\r?\n((?:[ \t]+[^\r\n]*\r?\n)+)/m)?.[1];
+  assert.equal(permissions?.trim(), 'contents: read', 'CI must retain read-only repository permissions');
   assert.match(workflow, /actions\/checkout@[a-f0-9]{40}\s+# v\d/);
   assert.match(workflow, /actions\/setup-node@[a-f0-9]{40}\s+# v\d/);
   assert.match(workflow, /actions\/upload-artifact@[a-f0-9]{40}\s+# v\d/);
