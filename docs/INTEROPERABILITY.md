@@ -97,3 +97,17 @@ curl --fail --silent --show-error http://127.0.0.1:8000/api/v1/templates/privacy
 ```
 
 The generator embeds the source repository revision and content digests so clients can associate records with a build and detect language-content changes. Static hosts may provide HTTP caching and validators such as ETags; the project does not require a specific host or claim a production API is deployed. Public artifacts retain their source licensing and attribution notices, report recorded review states without elevating them, and contain no private reviewer records. Consumers should cache by URL and content digest, check the API/schema version, and treat missing or unverified legal source information as unresolved.
+
+### Independent consumer example
+
+[`examples/findings-adapter/`](../examples/findings-adapter/) contains a dependency-free Node.js example that can be copied outside this repository. It reads only a findings JSON export, the published control taxonomy, and an optional mapping file owned by the consuming application. The example mapping uses an `organization.*` namespace to show that adapters can connect generic control IDs to their own capability names without changing this project or choosing a vendor.
+
+After producing a findings export and building the static API, run:
+
+```sh
+npm run build:api
+npm run cli -- findings render /path/to/findings.json --format json > findings.json
+node examples/findings-adapter/consume.mjs findings.json dist/api/v1/control-taxonomy.json examples/findings-adapter/control-mapping.example.json
+```
+
+The adapter preserves source revision, evidence references, verification and human-review states, and unresolved legal questions. It never executes a mapped capability or changes a review state. It performs basic consistency checks only; consumers must use an independent JSON Schema 2020-12 validator with `dist/api/v1/findings.schema.json` for full contract validation. Mapping a control does not establish that the control is implemented, sufficient, or legally required.
