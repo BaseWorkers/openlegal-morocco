@@ -33,7 +33,7 @@
         "description": { "type": "string", "minLength": 1, "description": "Concise, sanitized statement. Do not include personal data, credentials, or confidential payloads." },
         "legal_question": { "type": ["string", "null"], "description": "Required as a non-empty string for potential_legal_question; null for technical_observation. An unresolved question, never a legal conclusion." },
         "evidence": {
-          "type": "array", "items": {
+          "type": "array", "minItems": 1, "items": {
             "type": "object", "additionalProperties": false, "required": ["summary", "source_reference", "verification_status"],
             "properties": {
               "summary": { "type": "string", "minLength": 1, "description": "Sanitized factual summary; no raw payload excerpts." },
