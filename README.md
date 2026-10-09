@@ -1,93 +1,85 @@
 # OpenLegal
 
-OpenLegal is an independent, public-interest open-source legal information project. Its first jurisdiction pack focuses on Morocco and helps startups and teams operating online recognize common legal questions and prepare drafts to discuss with qualified counsel. The OpenLegal brand is intended to support future jurisdiction packs; this release contains Morocco-focused materials only. It does not certify legal compliance. There is no hosted legal service or document generator.
+[English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)
 
-We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**.
+**v0.0.3 · OpenLegal npm package preview**
 
-## Status
+OpenLegal is an independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
 
-- v0.0.3 introduces the public `openlegal` npm package with a CLI and local MCP launcher. The package's first jurisdiction pack is Morocco-focused.
-- 14 structured template packages are present; all are drafts in English, French, and Arabic.
-- Install the public CLI package with `npm install openlegal`, then run `npx openlegal --help`. For a global command, use `npm install --global openlegal`.
-- The MCP server can be started from the package with `openlegal-mcp`; it requires Python 3.10 or later.
-- No template is marked `LEGAL_REVIEWED` or `RELEASED`. Drafts may be incomplete, outdated, or unsuitable for a particular situation.
-- No government or professional endorsement is claimed.
-- Software license target: MIT. See [`LICENSES/MIT.txt`](LICENSES/MIT.txt).
-- Original legal-content license target: CC0-1.0. See [`LICENSES/CC0-1.0.txt`](LICENSES/CC0-1.0.txt).
-- Provisional path-to-license mapping: [`LICENSES/README.md`](LICENSES/README.md) and [`LICENSES/scopes.json`](LICENSES/scopes.json); this does not establish ownership or clear third-party rights.
-- Third-party material keeps its own rights and license. A project license target does not authorize reuse of material the project does not own.
+We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [release notes](RELEASE_NOTES.md).
 
-This is an informational project, not legal advice. Read [`DISCLAIMER.md`](DISCLAIMER.md) before using any material.
+## Install the public CLI
 
-## Template catalog
+Requires Node.js 22 or later.
 
-Each package includes metadata, a variable schema, source declarations, review notes, a changelog, and the EN/FR/AR Markdown texts. Open the linked language file; the adjacent files in that folder contain the rest of the package. Package metadata includes document type, intended business types, use-case tags, and review status for repository search. These tags help locate drafts and do not determine legal suitability.
+```sh
+npm install openlegal
+npx openlegal --help
+```
 
-| Template | Area | EN / FR / AR |
-|---|---|---|
-| Mutual NDA | [Business](templates/business/README.md) | [EN](templates/business/mutual-nda/en.md) · [FR](templates/business/mutual-nda/fr.md) · [AR](templates/business/mutual-nda/ar.md) |
-| One-Way NDA | [Business](templates/business/README.md) | [EN](templates/business/one-way-nda/en.md) · [FR](templates/business/one-way-nda/fr.md) · [AR](templates/business/one-way-nda/ar.md) |
-| Independent Contractor Agreement | [Business](templates/business/README.md) | [EN](templates/business/independent-contractor-agreement/en.md) · [FR](templates/business/independent-contractor-agreement/fr.md) · [AR](templates/business/independent-contractor-agreement/ar.md) |
-| Master Services Agreement | [Business](templates/business/README.md) | [EN](templates/business/master-services-agreement/en.md) · [FR](templates/business/master-services-agreement/fr.md) · [AR](templates/business/master-services-agreement/ar.md) |
-| Terms of Service | [Business](templates/business/README.md) | [EN](templates/business/terms-of-service/en.md) · [FR](templates/business/terms-of-service/fr.md) · [AR](templates/business/terms-of-service/ar.md) |
-| Employment Agreement | [Employment](templates/employment/README.md) | [EN](templates/employment/employment-agreement/en.md) · [FR](templates/employment/employment-agreement/fr.md) · [AR](templates/employment/employment-agreement/ar.md) |
-| Internship / Training Placement Agreement | [Employment](templates/employment/README.md) | [EN](templates/employment/internship-agreement/en.md) · [FR](templates/employment/internship-agreement/fr.md) · [AR](templates/employment/internship-agreement/ar.md) |
-| Employment Offer Letter | [Employment](templates/employment/README.md) | [EN](templates/employment/offer-letter/en.md) · [FR](templates/employment/offer-letter/fr.md) · [AR](templates/employment/offer-letter/ar.md) |
-| Employee Confidentiality and IP Agreement | [Employment](templates/employment/README.md) | [EN](templates/employment/employee-confidentiality-ip/en.md) · [FR](templates/employment/employee-confidentiality-ip/fr.md) · [AR](templates/employment/employee-confidentiality-ip/ar.md) |
-| Privacy Policy | [Privacy](templates/privacy/README.md) | [EN](templates/privacy/privacy-policy/en.md) · [FR](templates/privacy/privacy-policy/fr.md) · [AR](templates/privacy/privacy-policy/ar.md) |
-| Cookie and Similar Technology Notice | [Privacy](templates/privacy/README.md) | [EN](templates/privacy/cookie-notice/en.md) · [FR](templates/privacy/cookie-notice/fr.md) · [AR](templates/privacy/cookie-notice/ar.md) |
-| Data Processing Agreement | [Privacy](templates/privacy/README.md) | [EN](templates/privacy/data-processing-agreement/en.md) · [FR](templates/privacy/data-processing-agreement/fr.md) · [AR](templates/privacy/data-processing-agreement/ar.md) |
-| Software Development Agreement | [Software](templates/software/README.md) | [EN](templates/software/software-development-agreement/en.md) · [FR](templates/software/software-development-agreement/fr.md) · [AR](templates/software/software-development-agreement/ar.md) |
-| Statement of Work | [Software](templates/software/README.md) | [EN](templates/software/statement-of-work/en.md) · [FR](templates/software/statement-of-work/fr.md) · [AR](templates/software/statement-of-work/ar.md) |
+For a global command, use `npm install --global openlegal`. The optional `openlegal-mcp` command requires Python 3.10 or later. This release contains Morocco-focused materials only.
 
-## Repository map
+## Current status
 
-- [`templates/`](templates/): versioned, structured multilingual template packages.
-- [`clauses/`](clauses/): clause taxonomy with source/template reference checks; concepts cannot be assigned to templates or advanced beyond taxonomy-only until clause-level human review is supported.
-- [`research/morocco/`](research/morocco/): topic research notes and machine-readable claims.
-- [`sources/`](sources/): source registry, official-source map, and reuse decisions.
-- [`schemas/`](schemas/): metadata, variables, sources, claims, and review schemas.
-- [`reviews/`](reviews/): review policy, reviewer authorization records, and generated review packets.
-- [`scripts/`](scripts/): validation, source-link audit, review-packet, and offline rendering tools.
-- [`.github/`](.github/): contribution forms, pull-request checklist, and CI.
-- [`ROADMAP.md`](ROADMAP.md): staged implementation plan and open work.
+This v0.0.3 preview contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
 
-## Contributing
+The files are working drafts. They may be incomplete, outdated, or unsuitable for a specific person, transaction, or business. The project does not certify that a business or document is legally compliant. Do not sign or rely on them without qualified Moroccan legal advice.
 
-Contributions are welcome from Moroccan legal professionals, researchers, translators, developers, founders, and teams adapting the project. Read [`CONTRIBUTING.md`](CONTRIBUTING.md), [`REVIEWING.md`](REVIEWING.md), and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) before contributing. Every important Moroccan legal claim needs traceable support or an explicit unresolved status. Legal and language review requires an authorized human's independently authenticated approval of the exact version. No template is currently approved, and public feedback or automated checks do not count as professional review. The v0.0.3 package release invites technical testing; it does not represent legal approval.
+## Browse templates
+
+### Business
+
+- [Independent Contractor Agreement — discussion draft](templates/business/independent-contractor-agreement/en.md) · [FR](templates/business/independent-contractor-agreement/fr.md) · [AR](templates/business/independent-contractor-agreement/ar.md) — DRAFT; v0.1.1
+- [Master Services Agreement — discussion draft](templates/business/master-services-agreement/en.md) · [FR](templates/business/master-services-agreement/fr.md) · [AR](templates/business/master-services-agreement/ar.md) — DRAFT; v0.1.1
+- [Mutual Non-Disclosure Agreement](templates/business/mutual-nda/en.md) · [FR](templates/business/mutual-nda/fr.md) · [AR](templates/business/mutual-nda/ar.md) — DRAFT; v0.1.3
+- [One-Way Non-Disclosure Agreement](templates/business/one-way-nda/en.md) · [FR](templates/business/one-way-nda/fr.md) · [AR](templates/business/one-way-nda/ar.md) — DRAFT; v0.1.1
+- [Terms of Service — discussion draft](templates/business/terms-of-service/en.md) · [FR](templates/business/terms-of-service/fr.md) · [AR](templates/business/terms-of-service/ar.md) — DRAFT; v0.1.1
+
+### Employment
+
+- [Employee Confidentiality and Intellectual Property Agreement — discussion draft](templates/employment/employee-confidentiality-ip/en.md) · [FR](templates/employment/employee-confidentiality-ip/fr.md) · [AR](templates/employment/employee-confidentiality-ip/ar.md) — DRAFT; v0.1.0
+- [Employment Agreement — discussion draft](templates/employment/employment-agreement/en.md) · [FR](templates/employment/employment-agreement/fr.md) · [AR](templates/employment/employment-agreement/ar.md) — DRAFT; v0.1.0
+- [Internship / Training Placement Agreement — discussion draft](templates/employment/internship-agreement/en.md) · [FR](templates/employment/internship-agreement/fr.md) · [AR](templates/employment/internship-agreement/ar.md) — DRAFT; v0.1.2
+- [Employment Offer Letter — discussion draft](templates/employment/offer-letter/en.md) · [FR](templates/employment/offer-letter/fr.md) · [AR](templates/employment/offer-letter/ar.md) — DRAFT; v0.1.0
+
+### Privacy
+
+- [Cookie and Similar Technology Notice — discussion draft](templates/privacy/cookie-notice/en.md) · [FR](templates/privacy/cookie-notice/fr.md) · [AR](templates/privacy/cookie-notice/ar.md) — DRAFT; v0.1.3
+- [Data Processing Agreement — discussion draft](templates/privacy/data-processing-agreement/en.md) · [FR](templates/privacy/data-processing-agreement/fr.md) · [AR](templates/privacy/data-processing-agreement/ar.md) — DRAFT; v0.1.2
+- [Privacy Policy — discussion draft](templates/privacy/privacy-policy/en.md) · [FR](templates/privacy/privacy-policy/fr.md) · [AR](templates/privacy/privacy-policy/ar.md) — DRAFT; v0.1.3
+
+### Software
+
+- [Software Development Agreement — discussion draft](templates/software/software-development-agreement/en.md) · [FR](templates/software/software-development-agreement/fr.md) · [AR](templates/software/software-development-agreement/ar.md) — DRAFT; v0.1.0
+- [Statement of Work — discussion draft](templates/software/statement-of-work/en.md) · [FR](templates/software/statement-of-work/fr.md) · [AR](templates/software/statement-of-work/ar.md) — DRAFT; v0.1.0
+
+## Sources and limitations
+
+Each package includes its own source declarations, assumptions, and review notes. The source registry and Morocco research folder provide additional provenance. Source references do not mean that a template has been legally approved or that a cited rule is current.
+
+Machine-readable review ledgers and the reviewer authorization registry are included for provenance. Their current empty state means no human review approval is recorded. The included schemas describe the project data formats.
+
+This repository also includes the project validation and export tools, automated GitHub checks, and test fixtures that support the template and provenance system.
+
+## Project policies
+
+- [Governance](GOVERNANCE.md)
+- [Contributing](CONTRIBUTING.md)
+- [Reviewing and feedback](REVIEWING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security policy](SECURITY.md)
+- [License policy](LICENSES/README.md)
+
+Read [DISCLAIMER.md](DISCLAIMER.md) before using any material. Original legal content, research prose, and template packages are intended for CC0-1.0 ([license text](LICENSES/CC0-1.0.txt)); included schemas and tooling are intended for MIT ([license text](LICENSES/MIT.txt)). The scope map is provisional and does not clear third-party material or reviewer submissions, which remain subject to their own rights and notices. Only contribute material you have the right to share under the applicable license.
 
 ## Local tools
 
-See [Local CLI, MCP, and Codex plugin](INTEGRATIONS.md) for package installation and read-only tool setup.
+Try the [CLI and MCP smoke tests](INTEGRATIONS.md) against this checkout. Both tools are read-only; their output does not count as professional review.
 
-## Development
+## Developer interoperability
 
-Requires Node.js 22 or later. CI uses Node.js 24. The project uses Node built-ins and has no runtime dependencies.
+The project publishes a vendor-neutral, versioned findings schema and read-only export interfaces. See [the interoperability specification](docs/INTEROPERABILITY.md) for JSON and Markdown CLI exports, MCP validation, the generic control taxonomy, privacy limits, and compatibility policy.
 
-```sh
-npm run validate
-npm run audit:links
-npm run audit:internal-links
-npm run audit:privacy
-npm test
-npm run build:review-packets
-```
+## Static catalog preview
 
-The review-packet command writes generated materials under ignored `dist/review-packets/`; it prepares review documents but does not approve them.
-
-The offline renderer/exporter reads up to 1 MiB of UTF-8 JSON values from standard input and refuses generation unless the selected template and language have passed the legal, language, release, and input-safety gates. It rejects larger inputs, malformed UTF-8, control characters, line separators, and bidirectional formatting controls in text values. No current package meets those gates. Export supports Markdown, plain text, standalone HTML, DOCX, and PDF; PDF conversion requires LibreOffice or `soffice` on the local machine. Inputs are not sent over the network or persisted by the tool. Select an explicit output path; the command will not overwrite an existing file.
-
-```sh
-# Illustrative only: all current packages are drafts and fail the release/review gate.
-npm run export -- templates/business/mutual-nda en md ./mutual-nda.md < values.json
-npm run export -- templates/business/mutual-nda ar txt ./mutual-nda.txt < values.json
-npm run export -- templates/business/mutual-nda ar docx ./mutual-nda.docx < values.json
-npm run export -- templates/business/mutual-nda ar pdf ./mutual-nda.pdf < values.json
-```
-
-## Project plan
-
-The staged roadmap maps the supplied project plan and records the current repository-only scope in [`ROADMAP.md`](ROADMAP.md). The project uses other template repositories for research and comparison only; it is not a fork and does not copy their branding or Git history.
-# Developer interoperability
-
-The project publishes a vendor-neutral, versioned findings schema and read-only export interfaces. See [the interoperability specification](docs/INTEROPERABILITY.md) for JSON/Markdown CLI exports, MCP validation, the generic control taxonomy, privacy limits, and compatibility policy.
+Build the local multilingual, read-only catalog with `npm run build:site`. See [site documentation](docs/SITE.md) for preview instructions and the owner-confirmed public URL requirement.

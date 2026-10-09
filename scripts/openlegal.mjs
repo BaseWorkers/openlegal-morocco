@@ -9,19 +9,15 @@ import { renderFindingsMarkdown, validateFindings } from './findings.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const usage = `Usage:
-  openlegal --help
-  openlegal --version
-  openlegal list [--category CATEGORY] [--language en|fr|ar]
-  openlegal show TEMPLATE_ID [--language en|fr|ar]
-  openlegal sources TEMPLATE_ID
-  openlegal status TEMPLATE_ID
-  openlegal export TEMPLATE_ID [--language en|fr|ar] [--format md|json]
-  openlegal check
-  openlegal findings validate <file|->
-  openlegal findings render <file|-> [--format json|md]
-  openlegal changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]
-
-Run openlegal --help to show this message.`;
+  node scripts/openlegal.mjs --help
+  node scripts/openlegal.mjs --version
+  node scripts/openlegal.mjs list [--category CATEGORY] [--language en|fr|ar]
+  node scripts/openlegal.mjs show TEMPLATE_ID [--language en|fr|ar]
+  node scripts/openlegal.mjs sources TEMPLATE_ID
+  node scripts/openlegal.mjs status TEMPLATE_ID
+  node scripts/openlegal.mjs export TEMPLATE_ID [--language en|fr|ar] [--format md|json]
+  node scripts/openlegal.mjs check
+  node scripts/openlegal.mjs changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]`;
 const findingsUsage = `Usage:\n  node scripts/openlegal.mjs findings validate <file|->\n  node scripts/openlegal.mjs findings render <file|-> [--format json|md]`;
 const changesUsage = `Usage:\n  node scripts/openlegal.mjs changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]`;
 
@@ -51,7 +47,7 @@ async function main(args) {
   if (!command) throw new Error(usage);
   if (command === '--help' || command === '-h' || command === 'help') {
     if (rest.length) throw new Error('help accepts no arguments');
-    process.stdout.write(`${usage}\n`);
+    process.stdout.write(`${usage}\\n`);
     return;
   }
   if (command === '--version' || command === 'version') {

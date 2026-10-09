@@ -338,6 +338,10 @@ console.log(JSON.stringify(digests));
         spec = server.call("get_findings_spec", {})
         self.assertEqual(spec["schema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0")
         self.assertEqual(len(spec["taxonomy"]["controls"]), 10)
+        self.assertEqual(
+            spec["schema"]["$defs"]["finding"]["properties"]["suggested_controls"]["items"]["enum"],
+            [control["id"] for control in spec["taxonomy"]["controls"]],
+        )
         document = {
             "schema_version": "1.0.0", "generated_at": "2026-10-09T10:00:00Z",
             "source": {"tool": "test", "version": "1"}, "repository": {"revision": None},
@@ -356,6 +360,8 @@ console.log(JSON.stringify(digests));
             }],
         }
         self.assertEqual(server.validate_findings(document), [])
+        incomplete_export = {**document, "verification_limitations": []}
+        self.assertTrue(any("verification_limitations" in error for error in server.validate_findings(incomplete_export)))
         self.assertEqual(server.call("export_findings", {"document": document}), document)
         session = {}
         initialized = server.response({

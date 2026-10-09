@@ -1,7 +1,30 @@
 {
   "name": "openlegal",
   "version": "0.0.3",
-  "description": "OpenLegal CLI and read-only MCP tools for legal information and document drafts",
+  "description": "OpenLegal CLI and local MCP tools for Morocco-focused legal discussion drafts",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "node scripts/validate-license-scopes.mjs && node scripts/validate-foundation.mjs && node scripts/validate-template-packages.mjs",
+    "validate:license-scopes": "node scripts/validate-license-scopes.mjs",
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "validate:templates": "node scripts/validate-template-packages.mjs",
+    "build:review-packets": "node scripts/build-review-packets.mjs",
+    "export:project-preview": "node scripts/export-project-preview.mjs",
+    "cli": "node scripts/openlegal.mjs",
+    "build:api": "node scripts/build-static-api.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "export": "node scripts/export-template.mjs",
+    "audit:privacy": "node scripts/audit-generator-privacy.mjs",
+    "audit:secrets": "node scripts/audit-secrets.mjs",
+    "audit:internal-links": "node scripts/audit-internal-links.mjs",
+    "audit:accessibility": "node scripts/audit-markdown-accessibility.mjs",
+    "audit:review-transitions": "node scripts/audit-review-transitions.mjs",
+    "test": "node --test",
+    "audit:links": "node scripts/audit-source-links.mjs",
+    "prepublishOnly": "npm run validate && npm test"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/BaseWorkers/openlegal-morocco.git"
@@ -12,11 +35,10 @@
   },
   "keywords": [
     "openlegal",
-    "legal",
+    "legal-templates",
     "morocco",
-    "mcp",
     "cli",
-    "templates"
+    "mcp"
   ],
   "bin": {
     "openlegal": "scripts/openlegal.mjs",
@@ -35,32 +57,10 @@
     "LICENSES/README.md",
     "LICENSES/scopes.json",
     "README.md",
+    "README.fr.md",
+    "README.ar.md",
     "DISCLAIMER.md",
     "INTEGRATIONS.md",
     "RELEASE_NOTES.md"
-  ],
-  "engines": {
-    "node": ">=22"
-  },
-  "scripts": {
-    "prepublishOnly": "npm run validate && npm test",
-    "validate": "node scripts/validate-license-scopes.mjs && node scripts/validate-foundation.mjs && node scripts/validate-template-packages.mjs",
-    "validate:license-scopes": "node scripts/validate-license-scopes.mjs",
-    "check:syntax": "node scripts/check-syntax.mjs",
-    "validate:templates": "node scripts/validate-template-packages.mjs",
-    "validate:codex-plugin": "node scripts/validate-codex-plugin.mjs",
-    "build:review-packets": "node scripts/build-review-packets.mjs",
-    "export:project-preview": "node scripts/export-project-preview.mjs",
-    "cli": "node scripts/openlegal.mjs",
-    "build:api": "node scripts/build-static-api.mjs",
-    "build:site": "node scripts/build-site.mjs",
-    "export": "node scripts/export-template.mjs",
-    "audit:privacy": "node scripts/audit-generator-privacy.mjs",
-    "audit:secrets": "node scripts/audit-secrets.mjs",
-    "audit:internal-links": "node scripts/audit-internal-links.mjs",
-    "audit:accessibility": "node scripts/audit-markdown-accessibility.mjs",
-    "audit:review-transitions": "node scripts/audit-review-transitions.mjs",
-    "test": "node --test",
-    "audit:links": "node scripts/audit-source-links.mjs"
-  }
+  ]
 }

@@ -1,29 +1,28 @@
-# v0.0.3 — OpenLegal npm package preview
+# v0.0.3 — OpenLegal npm package
 
-This release establishes OpenLegal as the public product brand and publishes an installable CLI package named `openlegal`. It adds `openlegal` and `openlegal-mcp` commands for local, read-only use. The package contains the Morocco jurisdiction pack only; additional jurisdictions are not included or implied.
+The public `openlegal` npm package provides a local CLI and MCP launcher. Install it with `npm install openlegal`; run `npx openlegal --help` to see commands. `openlegal-mcp` starts the local stdio server and requires Python 3.10 or later. This package contains the Morocco-focused jurisdiction pack only. All 14 template packages remain `DRAFT`; this release does not record legal or language approval.
 
-Install into a project with `npm install openlegal` and run `npx openlegal --help`. For global use, install with `npm install --global openlegal`. MCP clients can launch `openlegal-mcp`; Python 3.10 or newer is required. All fourteen template packages remain `DRAFT`, and no professional review is recorded.
-
-The tools do not make network requests, edit files, or approve legal content. Read [the integration guide](INTEGRATIONS.md) and [disclaimer](DISCLAIMER.md) before use.
+Follow [npm and source-checkout setup](INTEGRATIONS.md) to test it. Reviewer applications remain open through the public [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml).
 
 ---
 
 # v0.0.2 — Local tooling test preview
 
-This preview makes the local command-line interface and read-only MCP server easier for people to configure, try, and report feedback on. It is intended for technical evaluation and community feedback; it does not represent legal or language approval.
+This preview makes the local CLI and read-only MCP server easier to configure, test, and report feedback on. It is for technical evaluation and community feedback; it does not represent legal or language approval.
 
-## Test the local tools
+## Test the tools
 
-- CLI and MCP: follow the [integration guide](INTEGRATIONS.md) to configure the local tools and make sample read-only calls.
-- The command-line tool requires Node.js 22 or newer; the MCP server requires Python 3.10 or newer. Neither tool requires third-party runtime packages.
+Follow [Local CLI and MCP testing](INTEGRATIONS.md). The CLI requires Node.js 22 or newer. The MCP server requires Python 3.10 or newer; neither tool needs third-party runtime packages. Automated checks are run on this release candidate before publication.
 
-The CLI and MCP server read only the local checkout. They do not access a tester's private repository, make network requests, edit files, or approve any material. Please use synthetic or public examples only; do not send personal, client, confidential, or secret data to the tools or in public issues.
+The tools read the repository's local catalogue only. They do not inspect a tester's private repositories, make network requests, write files, or approve content. Use synthetic or public inputs only. Report the command, operating system, runtime versions, expected result, and actual result in a public issue; do not include personal, client, confidential, or secret data.
 
 ## Content and review status
 
-All fourteen template packages remain `DRAFT`. The legal and language reviewer registries remain empty, and no maintainers have been appointed. The tooling does not turn source records, passing checks, or tester feedback into professional review.
+All 14 template packages remain `DRAFT`. No authorized legal or language reviewer has been recorded. The review-status and reviewer-interest workflows remain available, but tool checks and community feedback do not count as professional review.
 
-The public contribution, license-scope, and source-rights limitations stated in v0.0.1 remain in force. This tooling preview does not clear third-party rights, settle contribution terms, or establish a staffed confidential reporting service.
+The source-rights and license-scope limitations described in v0.0.1 remain in force. This tooling preview does not clear third-party rights or settle contributor terms.
+
+---
 
 # v0.0.1 — Early public contribution release
 
