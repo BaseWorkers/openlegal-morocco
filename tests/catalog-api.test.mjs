@@ -29,6 +29,10 @@ test('static API generation is traceable and never asserts verification', async 
     const manifest = JSON.parse(await readFile(join(outputDirectory, 'manifest.json'), 'utf8'));
     const findingsSchema = JSON.parse(await readFile(join(outputDirectory, 'findings.schema.json'), 'utf8'));
     const controlTaxonomy = JSON.parse(await readFile(join(outputDirectory, 'control-taxonomy.json'), 'utf8'));
+    const sourceFindingsSchema = JSON.parse(await readFile(join(root, 'schemas/findings.schema.json'), 'utf8'));
+    const sourceControlTaxonomy = JSON.parse(await readFile(join(root, 'schemas/control-taxonomy.json'), 'utf8'));
+    assert.deepEqual(findingsSchema, sourceFindingsSchema);
+    assert.deepEqual(controlTaxonomy, sourceControlTaxonomy);
     const catalog = JSON.parse(await readFile(join(outputDirectory, 'templates.json'), 'utf8'));
     const template = JSON.parse(await readFile(join(outputDirectory, 'templates/privacy-policy.json'), 'utf8'));
     const sources = JSON.parse(await readFile(join(outputDirectory, 'templates/privacy-policy/sources.json'), 'utf8'));
