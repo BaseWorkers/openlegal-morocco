@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { test } from 'node:test';
 import { renderFindingsMarkdown, validateFindings } from '../scripts/findings.mjs';
+import { validateJsonSchemaValue } from '../scripts/schema-validator.mjs';
 
 const conformance = JSON.parse(await readFile(new URL('./fixtures/findings-contract.json', import.meta.url), 'utf8'));
 
@@ -30,6 +31,19 @@ test('findings export validates against the published schema and renders the dis
   assert.match(markdown, /Technical priority describes remediation sequencing only/);
   assert.match(markdown, /technical_observation/);
   assert.match(markdown, /src\/handler\.js:42/);
+});
+
+test('published JSON Schema enforces finding type and legal-question semantics for independent consumers', async () => {
+  const schema = JSON.parse(await readFile(new URL('../schemas/findings.schema.json', import.meta.url), 'utf8'));
+  const invalidTechnical = structuredClone(document);
+  invalidTechnical.findings[0].legal_question = 'This remains unresolved.';
+  assert.ok(validateJsonSchemaValue(invalidTechnical, schema).some((item) => item.includes('legal_question')));
+  const invalidLegalQuestion = structuredClone(document);
+  invalidLegalQuestion.findings[0].finding_type = 'potential_legal_question';
+  invalidLegalQuestion.findings[0].legal_question = null;
+  assert.ok(validateJsonSchemaValue(invalidLegalQuestion, schema).some((item) => item.includes('legal_question')));
+  invalidLegalQuestion.findings[0].legal_question = '   ';
+  assert.ok(validateJsonSchemaValue(invalidLegalQuestion, schema).some((item) => item.includes('legal_question')));
 });
 
 test('priority values have shared technical-urgency meanings and disclaim legal-risk interpretation', async () => {
