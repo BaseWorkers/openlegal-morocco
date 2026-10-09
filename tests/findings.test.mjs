@@ -39,7 +39,8 @@ test('Markdown rendering keeps caller-supplied findings text inert', () => {
   const markdown = renderFindingsMarkdown(unsafe);
   assert.doesNotMatch(markdown, /\n## Injected heading/);
   assert.doesNotMatch(markdown, /<script\b/i);
-  assert.match(markdown, /&lt;script&gt;/);\n  assert.match(markdown, /&lt;SCRIPT&gt;/);
+  assert.match(markdown, /&lt;script&gt;/);
+  assert.match(markdown, /&lt;SCRIPT&gt;/);
   assert.ok(markdown.includes('\\[click\\]\\(https://example\\.invalid\\)'));
 });
 
