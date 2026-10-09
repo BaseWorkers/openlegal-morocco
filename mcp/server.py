@@ -377,6 +377,13 @@ def _matches_type(value, expected):
 
 
 def _validate_schema_node(value, schema, root_schema, path, errors):
+    for branch in schema.get("allOf", []):
+        _validate_schema_node(value, branch, root_schema, path, errors)
+    if "if" in schema:
+        condition_errors = []
+        _validate_schema_node(value, schema["if"], root_schema, path, condition_errors)
+        if not condition_errors and "then" in schema:
+            _validate_schema_node(value, schema["then"], root_schema, path, errors)
     if "$ref" in schema:
         target = root_schema
         for part in schema["$ref"].removeprefix("#/ ").replace("#/", "").split("/"):
@@ -457,8 +464,6 @@ def validate_findings(document):
             if isinstance(finding_id, str):
                 if finding_id in finding_ids: errors.append(f"$.findings[{index}].finding_id is a duplicate finding_id")
                 finding_ids.add(finding_id)
-            if finding.get("finding_type") == "potential_legal_question" and (not isinstance(finding.get("legal_question"), str) or not finding["legal_question"].strip()): errors.append(f"$.findings[{index}].legal_question is required for a potential legal question")
-            if finding.get("finding_type") == "technical_observation" and finding.get("legal_question") is not None: errors.append(f"$.findings[{index}].legal_question must be null for a technical observation")
             for control in finding.get("suggested_controls", []):
                 if control not in known_controls: errors.append(f"$.findings[{index}] uses unknown control: {control}")
     return errors
