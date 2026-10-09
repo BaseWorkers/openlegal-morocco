@@ -125,7 +125,7 @@ const resourcePages = {
       "sections": [
         {
           "heading": "Candidate only",
-          "text": "The current change tracker compares a locally supplied source copy with a prior SHA-256 digest for a small allowlist. It does not fetch sources, retain their text, or declare that legislation changed."
+          "text": "The current change tracker compares a locally supplied source copy with a prior SHA-256 digest for a small allowlist. It retrieves no sources, retains no source text, and does not declare that legislation changed."
         },
         {
           "heading": "Human triage",
