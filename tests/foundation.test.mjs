@@ -982,7 +982,7 @@ test('project-only export includes project policies and excludes planning and de
     assert.ok(exportedPatterns.includes('scripts/**'));
     assert.ok(exportedPatterns.includes('CONTRIBUTING.md'));
     assert.ok(exportedPatterns.includes('REVIEWING.md'));
-    assert.ok(exportedPatterns.includes('docs/REVIEWER_ONBOARDING.md'));
+    assert.ok(exportedPatterns.includes('docs/**'));
     assert.ok(exportedPatterns.includes('RELEASE_NOTES.md'));
     assert.ok(exportedPatterns.includes('README.fr.md'));
     assert.ok(exportedPatterns.includes('README.ar.md'));
