@@ -174,6 +174,12 @@ test('standalone adapter consumes exports using only caller-supplied JSON files'
         join(directory, `sensitive-${name}.json`), join(directory, 'control-taxonomy.json'), join(directory, 'mapping.json'),
       ), /credential, token, or direct email identifier/);
     }
+
+    const sensitiveMapping = { data_minimization: 'Authorization: ' + 'Bearer ' + 'synthetic-mapping-secret===' };
+    await writeFile(join(directory, 'sensitive-mapping.json'), JSON.stringify(sensitiveMapping));
+    await assert.rejects(adapter.consumeFindings(
+      join(directory, 'findings.json'), join(directory, 'control-taxonomy.json'), join(directory, 'sensitive-mapping.json'),
+    ), /credential, token, or direct email identifier/);
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
