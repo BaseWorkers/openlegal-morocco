@@ -81,6 +81,24 @@ const resourcePages = {
           "heading": "Integration boundary",
           "text": "External adapters can consume exported JSON and map generic controls to their own capabilities. Integrations must preserve verification status and cannot approve legal findings or change security policy."
         }
+      ],
+      "references": [
+        {
+          "path": "docs/DEVELOPER_TOOLS.md",
+          "label": "Developer tools guide"
+        },
+        {
+          "path": "docs/INTEROPERABILITY.md",
+          "label": "Findings interoperability specification"
+        },
+        {
+          "path": "mcp/README.md",
+          "label": "MCP setup and tool reference"
+        },
+        {
+          "path": "examples/findings-adapter/consume.mjs",
+          "label": "Independent adapter example"
+        }
       ]
     },
     "reviewers": {
@@ -98,6 +116,16 @@ const resourcePages = {
         {
           "heading": "No recorded approval",
           "text": "The current catalog shows recorded status as stored. Do not infer legal accuracy, reviewer qualifications, or approval from a citation, automated check, signature verification, or publication."
+        }
+      ],
+      "references": [
+        {
+          "path": "REVIEWING.md",
+          "label": "Review and feedback policy"
+        },
+        {
+          "path": "docs/content-model.md",
+          "label": "Content model and evidence records"
         }
       ]
     },
@@ -117,6 +145,20 @@ const resourcePages = {
           "heading": "Review independence",
           "text": "Only authorized qualified humans can approve legal content under the project governance. A code review or automated check cannot substitute for legal or language review."
         }
+      ],
+      "references": [
+        {
+          "path": "CONTRIBUTING.md",
+          "label": "Contribution guide"
+        },
+        {
+          "path": "LICENSES/README.md",
+          "label": "License and rights policy"
+        },
+        {
+          "path": "CODE_OF_CONDUCT.md",
+          "label": "Code of Conduct"
+        }
       ]
     },
     "updates": {
@@ -135,6 +177,12 @@ const resourcePages = {
           "heading": "Retrieval is not enabled",
           "text": "Scheduled retrieval remains disabled until source terms, reliable official feeds, and authorization for automated requests are verified."
         }
+      ],
+      "references": [
+        {
+          "path": "docs/CHANGE_TRACKER.md",
+          "label": "Source change candidate workflow"
+        }
       ]
     },
     "about": {
@@ -152,6 +200,16 @@ const resourcePages = {
         {
           "heading": "Status",
           "text": "Draft and review states are displayed as recorded. Engineering milestones do not guarantee legal review, current-law status, or suitability for a particular organization."
+        }
+      ],
+      "references": [
+        {
+          "path": "README.md",
+          "label": "Project overview"
+        },
+        {
+          "path": "GOVERNANCE.md",
+          "label": "Governance and review authority"
         }
       ]
     }
@@ -174,6 +232,24 @@ const resourcePages = {
           "heading": "Limites d’intégration",
           "text": "Les adaptateurs indépendants peuvent lire le JSON exporté et associer les contrôles génériques à leurs propres capacités. Ils doivent préserver les états de vérification et ne peuvent ni approuver des constats juridiques ni modifier une politique de sécurité."
         }
+      ],
+      "references": [
+        {
+          "path": "docs/DEVELOPER_TOOLS.md",
+          "label": "Guide des outils développeur (en anglais)"
+        },
+        {
+          "path": "docs/INTEROPERABILITY.md",
+          "label": "Spécification d’interopérabilité (en anglais)"
+        },
+        {
+          "path": "mcp/README.md",
+          "label": "Configuration et outils MCP (en anglais)"
+        },
+        {
+          "path": "examples/findings-adapter/consume.mjs",
+          "label": "Exemple d’adaptateur indépendant"
+        }
       ]
     },
     "reviewers": {
@@ -191,6 +267,16 @@ const resourcePages = {
         {
           "heading": "Aucune approbation enregistrée",
           "text": "Le catalogue affiche l’état enregistré. Une citation, un contrôle automatisé, une vérification de signature ou une publication ne prouve ni l’exactitude juridique, ni les qualifications du réviseur, ni l’approbation."
+        }
+      ],
+      "references": [
+        {
+          "path": "REVIEWING.md",
+          "label": "Politique de révision et commentaires (en anglais)"
+        },
+        {
+          "path": "docs/content-model.md",
+          "label": "Modèle de contenu et éléments de preuve (en anglais)"
         }
       ]
     },
@@ -210,6 +296,20 @@ const resourcePages = {
           "heading": "Indépendance de la révision",
           "text": "Seules des personnes qualifiées et autorisées peuvent approuver le contenu juridique selon la gouvernance du projet. Une revue de code ou un contrôle automatisé ne remplace pas une révision juridique ou linguistique."
         }
+      ],
+      "references": [
+        {
+          "path": "CONTRIBUTING.md",
+          "label": "Guide de contribution (en anglais)"
+        },
+        {
+          "path": "LICENSES/README.md",
+          "label": "Licences et droits (en anglais)"
+        },
+        {
+          "path": "CODE_OF_CONDUCT.md",
+          "label": "Code de conduite (en anglais)"
+        }
       ]
     },
     "updates": {
@@ -228,6 +328,12 @@ const resourcePages = {
           "heading": "Récupération automatisée désactivée",
           "text": "La récupération planifiée reste désactivée jusqu’à la vérification des conditions des sources, des flux officiels fiables et de l’autorisation des requêtes automatisées."
         }
+      ],
+      "references": [
+        {
+          "path": "docs/CHANGE_TRACKER.md",
+          "label": "Processus de suivi des sources (en anglais)"
+        }
       ]
     },
     "about": {
@@ -245,6 +351,16 @@ const resourcePages = {
         {
           "heading": "Statut",
           "text": "Les états de projet et de révision sont affichés tels qu’enregistrés. Les jalons techniques ne garantissent pas une révision juridique, l’état actuel du droit ou l’adéquation à une organisation particulière."
+        }
+      ],
+      "references": [
+        {
+          "path": "README.md",
+          "label": "Présentation du projet (en anglais)"
+        },
+        {
+          "path": "GOVERNANCE.md",
+          "label": "Gouvernance et autorité de révision (en anglais)"
         }
       ]
     }
@@ -267,6 +383,24 @@ const resourcePages = {
           "heading": "حدود التكامل",
           "text": "يمكن للمحوّلات المستقلة استهلاك JSON المُصدّر وربط الضوابط العامة بقدراتها. يجب أن تحافظ على حالات التحقق، ولا يمكنها اعتماد النتائج القانونية أو تغيير سياسات الأمان."
         }
+      ],
+      "references": [
+        {
+          "path": "docs/DEVELOPER_TOOLS.md",
+          "label": "دليل أدوات المطورين بالإنجليزية"
+        },
+        {
+          "path": "docs/INTEROPERABILITY.md",
+          "label": "مواصفة التشغيل البيني بالإنجليزية"
+        },
+        {
+          "path": "mcp/README.md",
+          "label": "إعداد MCP ومرجع الأدوات بالإنجليزية"
+        },
+        {
+          "path": "examples/findings-adapter/consume.mjs",
+          "label": "مثال محوّل مستقل"
+        }
       ]
     },
     "reviewers": {
@@ -284,6 +418,16 @@ const resourcePages = {
         {
           "heading": "لا توجد موافقة مسجلة",
           "text": "يعرض الكتالوج الحالة المسجلة. ولا يثبت الاستشهاد أو الفحص الآلي أو التحقق من التوقيع أو النشر الدقة القانونية أو مؤهلات المراجع أو الموافقة."
+        }
+      ],
+      "references": [
+        {
+          "path": "REVIEWING.md",
+          "label": "سياسة المراجعة والتعليقات بالإنجليزية"
+        },
+        {
+          "path": "docs/content-model.md",
+          "label": "نموذج المحتوى وسجلات الأدلة بالإنجليزية"
         }
       ]
     },
@@ -303,6 +447,20 @@ const resourcePages = {
           "heading": "استقلال المراجعة",
           "text": "لا يعتمد المحتوى القانوني وفق حوكمة المشروع إلا أشخاص مؤهلون ومخوّلون. ولا تحل مراجعة الشيفرة أو الفحوص الآلية محل المراجعة القانونية أو اللغوية."
         }
+      ],
+      "references": [
+        {
+          "path": "CONTRIBUTING.md",
+          "label": "دليل المساهمة بالإنجليزية"
+        },
+        {
+          "path": "LICENSES/README.md",
+          "label": "سياسة الترخيص والحقوق بالإنجليزية"
+        },
+        {
+          "path": "CODE_OF_CONDUCT.md",
+          "label": "مدونة السلوك بالإنجليزية"
+        }
       ]
     },
     "updates": {
@@ -320,6 +478,12 @@ const resourcePages = {
         {
           "heading": "الجلب الآلي غير مفعّل",
           "text": "يبقى الجلب المجدول معطلاً إلى أن تُراجع شروط المصادر وتُتحقق التدفقات الرسمية الموثوقة ويُصرح بالطلبات الآلية."
+        }
+      ],
+      "references": [
+        {
+          "path": "docs/CHANGE_TRACKER.md",
+          "label": "مسار مرشحات تغيّر المصادر بالإنجليزية"
         }
       ]
     },
@@ -339,10 +503,20 @@ const resourcePages = {
           "heading": "الحالة",
           "text": "تُعرض حالات المسودة والمراجعة كما هي مسجلة. ولا تضمن المراحل التقنية مراجعة قانونية أو حداثة الوضع القانوني أو ملاءمة المحتوى لمنظمة معينة."
         }
+      ],
+      "references": [
+        {
+          "path": "README.md",
+          "label": "نظرة عامة على المشروع بالإنجليزية"
+        },
+        {
+          "path": "GOVERNANCE.md",
+          "label": "الحوكمة وصلاحية المراجعة بالإنجليزية"
+        }
       ]
     }
   }
-};
+}
 
 function reviewValue(value) {
   if (!value) return 'not recorded';
@@ -410,7 +584,7 @@ function resourceNav(lang, depth) {
   return '<nav class="resource-links" aria-label="' + escapeHtml(pages.navLabel) + '"><h2>' + escapeHtml(pages.navLabel) + '</h2><ul>' + links + '</ul></nav>';
 }
 
-function resourceBody(lang, slug) {
+function resourceBody(lang, slug, repositoryRef) {
   const page = resourcePages[lang][slug];
   const sections = page.sections.map((section) =>
     '<section><h2>' + escapeHtml(section.heading) + '</h2><p>' + escapeHtml(section.text) + '</p></section>'
@@ -418,7 +592,13 @@ function resourceBody(lang, slug) {
   const t = languageFor(lang);
   const backLabel = lang === 'ar' ? 'العودة إلى النماذج' : lang === 'fr' ? 'Retour aux modèles' : 'Back to templates';
   const notice = '<div class="notice" role="note"><strong>' + escapeHtml(t.warning) + '</strong>' + escapeHtml(t.warningBody) + '</div>';
-  return '<div class="legal-content"><p class="breadcrumb"><a href="../../index.html">' + escapeHtml(backLabel) + '</a></p><p class="eyebrow">Open Legal Morocco</p><h1>' + escapeHtml(page.title) + '</h1><p class="lead">' + escapeHtml(page.description) + '</p>' + notice + sections + '</div>';
+  const reference = /^[a-f0-9]{40}$/i.test(repositoryRef) ? repositoryRef : 'siprate';
+  const references = (page.references ?? []).map(({ path, label }) =>
+    '<li><a href="https://github.com/BaseWorkers/openlegal-morocco/blob/' + reference + '/' + escapeHtml(path) + '" rel="noreferrer noopener">' + escapeHtml(label) + '</a></li>'
+  ).join('');
+  const resourcesLabel = lang === 'ar' ? 'مراجع المشروع' : lang === 'fr' ? 'Références du projet' : 'Project references';
+  const referenceList = references ? '<section><h2>' + escapeHtml(resourcesLabel) + '</h2><ul>' + references + '</ul></section>' : '';
+  return '<div class="legal-content"><p class="breadcrumb"><a href="../../index.html">' + escapeHtml(backLabel) + '</a></p><p class="eyebrow">Open Legal Morocco</p><h1>' + escapeHtml(page.title) + '</h1><p class="lead">' + escapeHtml(page.description) + '</p>' + notice + sections + referenceList + '</div>';
 }
 
 export async function buildStaticSite({ outputDirectory = resolve(root, 'dist/site'), repositoryRef = process.env.GITHUB_SHA || 'working-tree', baseUrl: rawBaseUrl = process.env.OLM_SITE_BASE_URL } = {}) {
@@ -462,7 +642,7 @@ export async function buildStaticSite({ outputDirectory = resolve(root, 'dist/si
       await mkdir(dirname(resourcePath), { recursive: true });
       await writeFile(resourcePath, shell({
         lang, title: page.title, description: page.description,
-        body: resourceBody(lang, slug) + resourceNav(lang, 3),
+        body: resourceBody(lang, slug, repositoryRef) + resourceNav(lang, 3),
         depth: 3, baseUrl, canonicalPath: route,
       }));
     }
