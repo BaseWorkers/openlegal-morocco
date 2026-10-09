@@ -27,6 +27,8 @@ async function readJson(path, label) {
 function validateAdapterInputs(document, taxonomy, controlMapping) {
   if (!document || typeof document !== 'object' || Array.isArray(document)) throw new Error('Findings export must be a JSON object');
   assertNoSensitiveText(document);
+  assertNoSensitiveText(taxonomy, '$.taxonomy');
+  assertNoSensitiveText(controlMapping, '$.control_mapping');
   if (document.schema_version !== '1.0.0') throw new Error(`Unsupported findings schema version: ${document.schema_version ?? 'missing'}`);
   if (typeof document.generated_at !== 'string' || !document.generated_at.trim()) throw new Error('Findings export must include a generation timestamp');
   if (!document.source || typeof document.source.tool !== 'string' || !document.source.tool.trim() || typeof document.source.version !== 'string' || !document.source.version.trim()) throw new Error('Findings export must identify its source tool and version');
