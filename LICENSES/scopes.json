@@ -53,20 +53,26 @@
         "tests/**",
         ".github/workflows/**",
         "package.json",
-        ".gitignore"
+        ".gitignore",
+        ".github/CODEOWNERS"
       ],
       "exceptions": "More specific path rules override this rule."
     },
     {
       "id": "synthetic-template-fixture",
       "spdx": "CC0-1.0",
-      "patterns": ["tests/fixtures/template-package/**"],
+      "patterns": [
+        "tests/fixtures/template-package/**"
+      ],
       "exceptions": "Synthetic test-only package declared CC0-1.0 by its fixture metadata; not a released legal template."
     },
     {
       "id": "upstream-license-texts",
       "spdx": null,
-      "patterns": ["LICENSES/CC0-1.0.txt", "LICENSES/MIT.txt"],
+      "patterns": [
+        "LICENSES/CC0-1.0.txt",
+        "LICENSES/MIT.txt"
+      ],
       "exceptions": "Keep upstream license text, copyright, and notices intact; do not apply the project license to these files."
     }
   ]
