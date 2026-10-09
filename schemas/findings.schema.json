@@ -28,8 +28,11 @@
         "finding_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$", "description": "Unique within one findings export; CLI and MCP semantic validation reject duplicate identifiers." },
         "finding_type": { "enum": ["technical_observation", "potential_legal_question"] },
         "category": { "type": "string", "minLength": 1 },
-        "priority": { "enum": ["informational", "low", "medium", "high", "critical"] },
-        "priority_basis": { "const": "technical_remediation" },
+        "priority": {
+          "enum": ["informational", "low", "medium", "high", "critical"],
+          "description": "Technical remediation urgency only: informational records context without requiring remediation; low is non-urgent work suitable for a normal maintenance cycle; medium should be planned into a near-term remediation cycle; high warrants prompt remediation or mitigation; critical warrants urgent containment or remediation based on severe, well-supported technical impact. Consider observed impact, scope, exploitability, and evidence confidence. These labels do not assess legal risk, establish a legal duty, or indicate legal non-compliance."
+        },
+        "priority_basis": { "const": "technical_remediation", "description": "Required to make clear that priority is technical remediation sequencing and not legal-risk assessment." },
         "description": { "type": "string", "minLength": 1, "description": "Concise, sanitized statement. Do not include personal data, credentials, or confidential payloads." },
         "legal_question": { "type": ["string", "null"], "description": "Required as a non-empty string for potential_legal_question; null for technical_observation. An unresolved question, never a legal conclusion." },
         "evidence": {
