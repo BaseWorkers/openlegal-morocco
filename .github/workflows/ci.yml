@@ -32,6 +32,12 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: npm run audit:review-transitions
+      - name: Verify DCO sign-offs
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: node scripts/check-dco.mjs "$BASE_SHA" "$HEAD_SHA"
       - name: Audit external source links on trusted pushes
         if: github.event_name == 'push'
         run: npm run audit:links

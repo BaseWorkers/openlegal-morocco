@@ -10,7 +10,19 @@ When adapting a template, identify your changes, sources, intended jurisdiction,
 
 ## Contribution rights are provisional
 
-The project has not finalized the legal terms for accepting contributor submissions, and it has no contributor license agreement or ownership-assignment process. The path-to-license map describes intended scopes only; it does not grant rights in submitted material. Before proposing content for inclusion, check the applicable notice and contribute only material whose rights you control and that you are willing to offer under the stated intended license. Do not submit third-party material, restricted content, or work made for an employer or client unless you have clear authority to do so. A pull request does not itself establish ownership, clear third-party rights, or authorize legal or language review status. Maintainers must resolve contribution terms and verify rights before merging contributed content.
+The project has not finalized all legal terms for accepting contributor submissions, and it has no contributor license agreement (CLA) or ownership-assignment process. The path-to-license map describes intended scopes only; it does not grant rights in submitted material. Before proposing content for inclusion, check the applicable notice and contribute only material whose rights you control and that you are willing to offer under the stated intended license. Do not submit third-party material, restricted content, or work made for an employer or client unless you have clear authority to do so. A pull request does not itself establish ownership, clear third-party rights, or authorize legal or language review status. Maintainers must resolve contribution terms and verify rights before merging contributed content.
+
+## DCO sign-off
+
+For commits submitted to a target branch that already contains [`DCO.md`](DCO.md), sign off every commit with the Developer Certificate of Origin (DCO) version 1.1:
+
+```sh
+git commit -s -m "type: explain the contribution"
+```
+
+Git adds a `Signed-off-by: Name <email>` trailer. Use your own name and an email address you are comfortable making public in the repository's permanent commit history. The sign-off records the certification in [`DCO.md`](DCO.md); it is not a CLA, does not assign copyright, and does not change the license that applies to any file.
+
+The DCO check applies to new pull requests once their target branch contains `DCO.md`. Existing commits are not rewritten to add sign-offs. DCO sign-off does not resolve the project's provisional license-scope mapping, clear third-party rights, or replace maintainer review. If the applicable license or your authority to contribute is unclear, do not submit that material until it is resolved.
 
 ## Source, rights, and accuracy
 
