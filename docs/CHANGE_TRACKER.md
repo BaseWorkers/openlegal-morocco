@@ -15,6 +15,15 @@ The current copy is read only to calculate its digest. The JSON record is writte
 
 Only IDs listed in `change-tracker/allowlist.json` are accepted. The list enables manual local comparison for triage; it is not permission to crawl, republish, or automatically fetch those URLs. Existing source registry reuse terms and verification states continue to apply.
 
+## Source qualification snapshot
+
+Checked 2026-10-09 for the initial pilot:
+
+- The [CNDP conditions of use](https://www.cndp.ma/conditions-dutilisation/) state in section 4 that CNDP owns the site content and that commercial use is prohibited. This record does not determine how those terms apply to local checksum comparison, metadata, automated requests, or this project's maintainer context. No CNDP automated retrieval is enabled.
+- The [SGG homepage](https://www.sgg.gov.ma/Accueil.aspx) displays current Official Bulletin publication information, and the [Official Printing Directorate page](https://www.sgg.gov.ma/imprimerieofficielle.aspx) describes its role in publishing the Bulletin. No official machine-readable feed or terms authorizing scheduled retrieval were verified in this review. No SGG polling is enabled.
+
+These are dated source-discovery notes, not legal advice or a conclusion that a feed does or does not exist. Recheck the source's published terms and available feed before enabling retrieval. The allowlist authorizes manual local-file hashing only.
+
 ## Review sequence
 
 1. A maintainer confirms the local copy came from the cited source and records the retrieval evidence.
