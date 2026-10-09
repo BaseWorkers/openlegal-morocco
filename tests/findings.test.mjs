@@ -30,7 +30,7 @@ test('findings export validates against the published schema and renders the dis
   const markdown = renderFindingsMarkdown(document);
   assert.match(markdown, /Technical priority describes remediation sequencing only/);
   assert.match(markdown, /technical\\_observation/);
-  assert.match(markdown, /src\/handler\.js:42/);
+  assert.match(markdown, /src\/handler\\\.js:42/);
 });
 
 test('Markdown rendering keeps caller-supplied findings text inert', () => {
