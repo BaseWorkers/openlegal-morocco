@@ -328,6 +328,37 @@ console.log(JSON.stringify(digests));
         }
         self.assertEqual(server.validate_findings(document), [])
         self.assertEqual(server.call("export_findings", {"document": document}), document)
+        session = {}
+        initialized = server.response({
+            "method": "initialize",
+            "params": {"protocolVersion": "2025-06-18"},
+        }, session)
+        self.assertEqual(initialized["protocolVersion"], "2025-06-18")
+        listed = server.response({"method": "tools/list"}, session)
+        export_tool = next(tool for tool in listed["tools"] if tool["name"] == "export_findings")
+        self.assertEqual(export_tool["outputSchema"]["$id"], spec["schema"]["$id"])
+        structured = server.response({
+            "method": "tools/call",
+            "params": {"name": "export_findings", "arguments": {"document": document}},
+        }, session)
+        self.assertEqual(structured["structuredContent"], document)
+        self.assertEqual(json.loads(structured["content"][0]["text"]), document)
+        legacy_session = {}
+        self.assertEqual(server.response({
+            "method": "initialize",
+            "params": {"protocolVersion": "2024-11-05"},
+        }, legacy_session)["protocolVersion"], "2024-11-05")
+        legacy_tool = next(
+            tool for tool in server.response({"method": "tools/list"}, legacy_session)["tools"]
+            if tool["name"] == "export_findings"
+        )
+        self.assertNotIn("outputSchema", legacy_tool)
+        legacy_result = server.response({
+            "method": "tools/call",
+            "params": {"name": "export_findings", "arguments": {"document": document}},
+        }, legacy_session)
+        self.assertNotIn("structuredContent", legacy_result)
+        self.assertEqual(json.loads(legacy_result["content"][0]["text"]), document)
         duplicate = json.loads(json.dumps(document))
         duplicate["findings"].append({**duplicate["findings"][0], "description": "A distinct observation with the same identifier."})
         duplicate_errors = server.validate_findings(duplicate)
