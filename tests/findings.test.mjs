@@ -162,6 +162,18 @@ test('standalone adapter consumes exports using only caller-supplied JSON files'
     await assert.rejects(adapter.consumeFindings(
       join(directory, 'missing-provenance.json'), join(directory, 'control-taxonomy.json'), join(directory, 'mapping.json'),
     ), /source tool and version/);
+
+    for (const [name, sensitiveText] of [
+      ['email', 'Contact person@example.invalid for details.'],
+      ['token', 'Authorization: Bearer synthetic-test-token-value'],
+    ]) {
+      const sensitive = structuredClone(document);
+      sensitive.findings[0].description = sensitiveText;
+      await writeFile(join(directory, `sensitive-${name}.json`), JSON.stringify(sensitive));
+      await assert.rejects(adapter.consumeFindings(
+        join(directory, `sensitive-${name}.json`), join(directory, 'control-taxonomy.json'), join(directory, 'mapping.json'),
+      ), /credential, token, or direct email identifier/);
+    }
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
