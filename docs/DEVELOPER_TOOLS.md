@@ -4,6 +4,10 @@ These tools read the repository's local template packages and do not make networ
 
 See [the content model](content-model.md) for the canonical package, source, claim, and review-record boundaries shared by these tools.
 
+## Repository secret-pattern check
+
+Run `npm run audit:secrets` to check Git-tracked and unignored repository files for a small set of high-signal credential formats. CI runs the same check. The audit has no external service or package dependency, does not print matched values, and fails closed on oversized files or symbolic links. It skips binary files and does not detect every credential, personal-data value, or confidential payload; it supplements careful review and does not make a repository safe to share automatically.
+
 ## CLI
 
 Use Node.js 22 or later:
