@@ -32,6 +32,19 @@ test('findings export validates against the published schema and renders the dis
   assert.match(markdown, /src\/handler\.js:42/);
 });
 
+test('priority values have shared technical-urgency meanings and disclaim legal-risk interpretation', async () => {
+  const schema = JSON.parse(await readFile(new URL('../schemas/findings.schema.json', import.meta.url), 'utf8'));
+  const properties = schema.$defs.finding.properties;
+  assert.deepEqual(properties.priority.enum, ['informational', 'low', 'medium', 'high', 'critical']);
+  assert.match(properties.priority.description, /informational records context/);
+  assert.match(properties.priority.description, /low is non-urgent/);
+  assert.match(properties.priority.description, /medium should be planned/);
+  assert.match(properties.priority.description, /high warrants prompt/);
+  assert.match(properties.priority.description, /critical warrants urgent containment/);
+  assert.match(properties.priority.description, /do not assess legal risk/);
+  assert.match(properties.priority_basis.description, /not legal-risk assessment/);
+});
+
 test('findings reject unknown controls, incorrect legal priority framing, and sensitive patterns', async () => {
   const invalid = structuredClone(document);
   invalid.findings[0].priority_basis = 'legal_risk';
