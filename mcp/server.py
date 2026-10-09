@@ -2,11 +2,15 @@
 """Read-only local MCP server for Open Legal Morocco (JSON-RPC over stdio)."""
 
 import json
+import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TEMPLATES = ROOT / "templates"
+FINDINGS_SCHEMA = ROOT / "schemas" / "findings.schema.json"
+CONTROL_TAXONOMY = ROOT / "schemas" / "control-taxonomy.json"
 DISCLAIMER = (
     "Open Legal Morocco materials are unverified discussion drafts, not legal advice. "
     "Automated results do not certify Moroccan legal compliance. "
@@ -74,6 +78,79 @@ def read_source_declarations(folder):
         return {"unavailable": True}
     except (OSError, UnicodeError, ValueError):
         return {"unavailable": True, "reason": "invalid structured source declarations"}
+
+
+def _matches_type(value, expected):
+    choices = expected if isinstance(expected, list) else [expected]
+    return any({
+        "object": lambda: isinstance(value, dict),
+        "array": lambda: isinstance(value, list),
+        "string": lambda: isinstance(value, str),
+        "integer": lambda: isinstance(value, int) and not isinstance(value, bool),
+        "number": lambda: isinstance(value, (int, float)) and not isinstance(value, bool),
+        "boolean": lambda: isinstance(value, bool),
+        "null": lambda: value is None,
+    }[choice]() for choice in choices)
+
+
+def _validate_schema_node(value, schema, root_schema, path, errors):
+    if "$ref" in schema:
+        target = root_schema
+        for part in schema["$ref"].removeprefix("#/ ").replace("#/", "").split("/"):
+            if part:
+                target = target.get(part.replace("~1", "/").replace("~0", "~"), {})
+        _validate_schema_node(value, target, root_schema, path, errors)
+        return
+    if "type" in schema and not _matches_type(value, schema["type"]):
+        errors.append(f"{path} has an invalid type")
+        return
+    if "const" in schema and value != schema["const"]:
+        errors.append(f"{path} must equal {schema['const']!r}")
+    if "enum" in schema and value not in schema["enum"]:
+        errors.append(f"{path} must be one of the allowed values")
+    if isinstance(value, str):
+        if len(value) < schema.get("minLength", 0): errors.append(f"{path} is too short")
+        if "pattern" in schema and re.search(schema["pattern"], value) is None: errors.append(f"{path} has an invalid format")
+        if schema.get("format") == "date-time":
+            try:
+                if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})", value): raise ValueError("invalid RFC 3339")
+                datetime.fromisoformat(value.replace("Z", "+00:00"))
+            except ValueError: errors.append(f"{path} must be a date-time")
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        if "minimum" in schema and value < schema["minimum"]: errors.append(f"{path} is below minimum")
+        if "maximum" in schema and value > schema["maximum"]: errors.append(f"{path} is above maximum")
+    if isinstance(value, list):
+        if schema.get("uniqueItems") and len({json.dumps(item, sort_keys=True) for item in value}) != len(value): errors.append(f"{path} contains duplicates")
+        if "items" in schema:
+            for index, item in enumerate(value): _validate_schema_node(item, schema["items"], root_schema, f"{path}[{index}]", errors)
+    if isinstance(value, dict):
+        for required in schema.get("required", []):
+            if required not in value: errors.append(f"{path}.{required} is required")
+        properties = schema.get("properties", {})
+        for key, child in value.items():
+            if key in properties: _validate_schema_node(child, properties[key], root_schema, f"{path}.{key}", errors)
+            elif schema.get("additionalProperties") is False: errors.append(f"{path}.{key} is not allowed")
+
+
+def validate_findings(document):
+    schema = json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8"))
+    taxonomy = json.loads(CONTROL_TAXONOMY.read_text(encoding="utf-8"))
+    errors = []
+    _validate_schema_node(document, schema, schema, "$", errors)
+    known_controls = {control["id"] for control in taxonomy["controls"]}
+    if isinstance(document, dict):
+        for index, finding in enumerate(document.get("findings", [])):
+            if not isinstance(finding, dict): continue
+            if finding.get("finding_type") == "potential_legal_question" and (not isinstance(finding.get("legal_question"), str) or not finding["legal_question"].strip()): errors.append(f"$.findings[{index}].legal_question is required for a potential legal question")
+            if finding.get("finding_type") == "technical_observation" and finding.get("legal_question") is not None: errors.append(f"$.findings[{index}].legal_question must be null for a technical observation")
+            for control in finding.get("suggested_controls", []):
+                if control not in known_controls: errors.append(f"$.findings[{index}] uses unknown control: {control}")
+            texts = [finding.get("description"), finding.get("legal_question")]
+            texts.extend(item.get("summary") for item in finding.get("evidence", []) if isinstance(item, dict))
+            sensitive = re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
+            if any(isinstance(text, str) and sensitive.search(text) for text in texts):
+                errors.append(f"$.findings[{index}] appears to contain a credential, token, or direct email identifier")
+    return errors
 
 
 def call(name, args):
@@ -150,10 +227,35 @@ def call(name, args):
             "disclaimer": DISCLAIMER,
         }
 
+    if name == "get_findings_spec":
+        if args: raise ValueError("Unsupported get_findings_spec argument")
+        return {
+            "schema": json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8")),
+            "taxonomy": json.loads(CONTROL_TAXONOMY.read_text(encoding="utf-8")),
+            "disclaimer": "Technical priority is not a legal-risk rating. The specification does not certify legal compliance.",
+        }
+
+    if name == "export_findings":
+        if set(args) != {"document"}: raise ValueError("export_findings requires only a document")
+        document = args["document"]
+        errors = validate_findings(document)
+        if errors: raise ValueError("Invalid findings document: " + "; ".join(errors[:8]))
+        return document
+
     raise ValueError("Unknown tool")
 
 
 TOOLS = [
+    {
+        "name": "get_findings_spec",
+        "description": "Read the versioned findings JSON Schema and vendor-neutral control taxonomy.",
+        "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
+    },
+    {
+        "name": "export_findings",
+        "description": "Validate and return a sanitized findings document unchanged. Does not approve legal findings or alter external systems.",
+        "inputSchema": {"type": "object", "properties": {"document": {"type": "object"}}, "required": ["document"], "additionalProperties": False},
+    },
     {
         "name": "list_templates",
         "description": "List discussion drafts and their recorded review statuses. This never infers approval.",

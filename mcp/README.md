@@ -37,3 +37,6 @@ The server exposes `list_templates` (optional category and language filters), `g
 ## Tests and troubleshooting
 
 Run `python3 -m unittest discover -s mcp -p 'test_*.py'`. If the client does not show the tools, confirm that the command and absolute script path are correct, that Python is on `PATH`, and that the client was restarted. Diagnostics for malformed package metadata go to stderr; stdout is reserved for JSON-RPC messages.
+# Structured findings
+
+The MCP server also exposes `get_findings_spec` (the shared v1 JSON Schema and generic controls) and `export_findings` (validate and echo a supplied sanitized document unchanged). These tools do not scan caller repositories, contact external services, change human review states, or modify security policies. See [`docs/INTEROPERABILITY.md`](../docs/INTEROPERABILITY.md) for the export contract, privacy boundary, and versioning policy.

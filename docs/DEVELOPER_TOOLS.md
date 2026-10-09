@@ -28,3 +28,5 @@ npm run build:api
 The output is written under ignored `dist/api/v1/` and includes `manifest.json`, `templates.json`, `templates/{id}.json`, and `templates/{id}/sources.json`. Set `GITHUB_SHA` in a release build to bind provenance to that repository revision. Every response carries the recorded review state, `verified: false`, and a disclaimer; source references and draft states are not converted into legal conclusions. The repository does not host these files.
 
 The artifacts are local build outputs. Hosting, public endpoints, and legal approval are separate decisions and are not implied by generating them.
+
+See [Interoperability and structured findings](INTEROPERABILITY.md) for the versioned findings schema, vendor-neutral control taxonomy, CLI/MCP export and validation, privacy boundaries, and compatibility policy. The static API build publishes the v1 schema and taxonomy alongside catalogue artifacts.

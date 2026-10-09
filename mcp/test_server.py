@@ -117,9 +117,52 @@ class MCPTests(unittest.TestCase):
         self.assertEqual(len(lines), 4)
         output = [json.loads(line) for line in lines]
         self.assertEqual(output[0]["result"]["serverInfo"]["name"], "open-legal-morocco")
-        self.assertEqual(len(output[1]["result"]["tools"]), 3)
+        self.assertEqual(len(output[1]["result"]["tools"]), 5)
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)
+
+    def test_findings_spec_and_validation_use_published_contract(self):
+        spec = server.call("get_findings_spec", {})
+        self.assertEqual(spec["schema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0")
+        self.assertEqual(len(spec["taxonomy"]["controls"]), 10)
+        document = {
+            "schema_version": "1.0.0", "generated_at": "2026-10-09T10:00:00Z",
+            "source": {"tool": "test", "version": "1"}, "repository": {"revision": None},
+            "verification_limitations": ["No legal review performed."], "findings": [{
+                "finding_id": "mcp-001", "finding_type": "technical_observation", "category": "data-handling",
+                "priority": "low", "priority_basis": "technical_remediation", "description": "A component emits a diagnostic event.",
+                "legal_question": None, "evidence": [{
+                    "summary": "The handler emits the event.",
+                    "source_reference": {"kind": "repository_file", "path": "src/handler.py", "line_start": 10, "line_end": 10, "content_digest": None},
+                    "verification_status": "verified",
+                }],
+                "affected_resources": [{"type": "file", "identifier": "src/handler.py"}], "legal_references": [],
+                "suggested_controls": ["audit_logging"],
+                "review_status": {"verification": "verified", "human_review": "not_requested"},
+                "confidence": None, "schema_version": "1.0.0",
+            }],
+        }
+        self.assertEqual(server.validate_findings(document), [])
+        self.assertEqual(server.call("export_findings", {"document": document}), document)
+        bad = {**document, "findings": [{"finding_id": "x", "suggested_controls": ["vendor_product"]}]}
+        with self.assertRaisesRegex(ValueError, "Invalid findings document"):
+            server.call("export_findings", {"document": bad})
+
+    def test_findings_export_rejects_sensitive_text_and_wrong_priority_basis(self):
+        document = {
+            "schema_version": "1.0.0", "generated_at": "2026-10-09T10:00:00Z",
+            "source": {"tool": "test", "version": "1"}, "repository": {"revision": None},
+            "verification_limitations": [], "findings": [{
+                "finding_id": "f-1", "finding_type": "technical_observation", "category": "privacy",
+                "priority": "high", "priority_basis": "legal_risk", "description": "Contact alice@example.org",
+                "legal_question": None, "evidence": [], "affected_resources": [], "legal_references": [],
+                "suggested_controls": ["pii_detection"], "review_status": {"verification": "unverified", "human_review": "pending"},
+                "confidence": None, "schema_version": "1.0.0",
+            }],
+        }
+        errors = server.validate_findings(document)
+        self.assertTrue(any("priority_basis" in error for error in errors))
+        self.assertTrue(any("credential, token, or direct email" in error for error in errors))
 
 
 if __name__ == "__main__":

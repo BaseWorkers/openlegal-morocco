@@ -26,11 +26,15 @@ test('static API generation is traceable and never asserts verification', async 
     const result = await buildStaticApi({ outputDirectory, repositoryRef: 'test-revision' });
     assert.equal(result.templateCount, 14);
     const manifest = JSON.parse(await readFile(join(outputDirectory, 'manifest.json'), 'utf8'));
+    const findingsSchema = JSON.parse(await readFile(join(outputDirectory, 'findings.schema.json'), 'utf8'));
+    const controlTaxonomy = JSON.parse(await readFile(join(outputDirectory, 'control-taxonomy.json'), 'utf8'));
     const catalog = JSON.parse(await readFile(join(outputDirectory, 'templates.json'), 'utf8'));
     const template = JSON.parse(await readFile(join(outputDirectory, 'templates/privacy-policy.json'), 'utf8'));
     const sources = JSON.parse(await readFile(join(outputDirectory, 'templates/privacy-policy/sources.json'), 'utf8'));
     assert.equal(manifest.repository_ref, 'test-revision');
     assert.equal(manifest.verified, false);
+    assert.equal(findingsSchema.$id, 'https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0');
+    assert.equal(controlTaxonomy.controls.length, 10);
     assert.equal(catalog.provenance.repository_ref, 'test-revision');
     assert.equal(template.review.status, 'DRAFT');
     assert.equal(template.review.verified, false);

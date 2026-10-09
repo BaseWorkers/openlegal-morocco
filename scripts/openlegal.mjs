@@ -5,6 +5,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCatalog, loadTemplateContent, recordedReview, draftDisclaimer } from './catalog.mjs';
 import { validateTemplatePackages } from './validate-template-packages.mjs';
+import { renderFindingsMarkdown, validateFindings } from './findings.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const usage = `Usage:
@@ -14,6 +15,7 @@ const usage = `Usage:
   node scripts/openlegal.mjs status TEMPLATE_ID
   node scripts/openlegal.mjs export TEMPLATE_ID [--language en|fr|ar] [--format md|json]
   node scripts/openlegal.mjs check`;
+const findingsUsage = `Usage:\n  node scripts/openlegal.mjs findings validate <file|->\n  node scripts/openlegal.mjs findings render <file|-> [--format json|md]`;
 
 function parseOptions(tokens) {
   const options = {};
@@ -39,6 +41,26 @@ function findTemplate(catalog, id) {
 async function main(args) {
   const [command, ...rest] = args;
   if (!command) throw new Error(usage);
+  if (command === 'findings') {
+    const [action, inputPath, ...optionsTokens] = rest;
+    if (!['validate', 'render'].includes(action) || !inputPath || inputPath.startsWith('--')) throw new Error(findingsUsage);
+    const options = parseOptions(optionsTokens);
+    if (Object.keys(options).some((key) => key !== 'format')) throw new Error(findingsUsage);
+    if (action === 'validate' && options.format) throw new Error(findingsUsage);
+    const input = inputPath === '-' ? await new Promise((resolveInput, reject) => {
+      let data = ''; process.stdin.setEncoding('utf8'); process.stdin.on('data', (chunk) => { data += chunk; });
+      process.stdin.on('end', () => resolveInput(data)); process.stdin.on('error', reject);
+    }) : await readFile(resolve(inputPath), 'utf8');
+    let document;
+    try { document = JSON.parse(input); } catch { throw new Error('Findings input must be valid JSON'); }
+    const errors = await validateFindings(document);
+    if (errors.length) throw new Error(`Findings schema validation failed:\n${errors.map((error) => `- ${error}`).join('\n')}`);
+    if (action === 'validate') process.stdout.write(`${JSON.stringify({ valid: true, schema_version: document.schema_version }, null, 2)}\n`);
+    else if ((options.format || 'json') === 'md') process.stdout.write(renderFindingsMarkdown(document));
+    else if ((options.format || 'json') === 'json') process.stdout.write(`${JSON.stringify(document, null, 2)}\n`);
+    else throw new Error('Findings format must be json or md');
+    return;
+  }
   if (command === 'check') {
     if (rest.length) throw new Error(usage);
     const count = await validateTemplatePackages();

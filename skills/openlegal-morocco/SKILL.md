@@ -32,6 +32,8 @@ For each observation, include a file path and line or a quoted non-sensitive sni
 
 ## Counsel packet format
 
+When a caller requests machine-readable findings, use the versioned contract in `schemas/findings.schema.json` and the control identifiers in `schemas/control-taxonomy.json`. Include the export envelope metadata and verification limitations. Label each item `technical_observation` or `potential_legal_question`; technical priority uses `technical_remediation` and must never be presented as legal risk. Do not include raw excerpts, personal data, credentials, or confidential payloads. Keep verification and human-review status explicit; never mark a legal question approved.
+
 ```markdown
 # Open Legal Morocco — Preliminary Developer Review
 
