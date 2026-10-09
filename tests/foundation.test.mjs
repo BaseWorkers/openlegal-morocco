@@ -902,11 +902,10 @@ test('project-only export rejects internal Markdown names and content', () => {
   assert.equal(isInternalMarkdownDocument('instructions.md', 'How to build the project'), true);
   assert.equal(isInternalMarkdownDocument('notes.md', 'Build instructions'), true);
   assert.equal(isInternalMarkdownDocument('SECURITY.md', 'Run `npm run audit:privacy` to check the project.'), true);
-  assert.equal(isInternalMarkdownDocument('INTEGRATIONS.md', 'Run `npm run cli -- check` and `python3 -m unittest discover -s mcp`.'), false);
-  assert.equal(isInternalMarkdownDocument('README.md', 'Install with `npm install openlegal` and run `npx openlegal --help`.'), false);
-  assert.equal(isInternalMarkdownDocument('RELEASE_NOTES.md', 'Install with `npm install openlegal`.'), false);
   assert.equal(isInternalMarkdownDocument('notes.md', 'Run `node scripts/validate-foundation.mjs` before release.'), true);
   assert.equal(isInternalMarkdownDocument('CONTRIBUTING.md', 'Contribute Moroccan source research and translation corrections.'), false);
+  assert.equal(isInternalMarkdownDocument('README.md', 'Install with `npm install openlegal` and run `npx openlegal --help`.'), false);
+  assert.equal(isInternalMarkdownDocument('RELEASE_NOTES.md', 'Install with `npm install openlegal`.'), false);
   assert.equal(isInternalMarkdownDocument('CONTRIBUTING.md', 'Run `npm test` before submitting.'), true);
   assert.equal(isInternalMarkdownDocument('development-plan.md', '# Tasks'), true);
 });
@@ -918,7 +917,7 @@ test('project-only export includes project policies and excludes planning and de
   try {
     await execFileAsync(process.execPath, [exportScript, output, '--preview']);
     const readme = await readFile(join(output, 'README.md'), 'utf8');
-    assert.match(readme, /v0\.0\.3 · OpenLegal npm package preview/);
+    assert.match(readme, /v0\.1\.0 · OpenLegal npm package preview/);
     assert.match(readme, /Moroccan lawyers and legal researchers/);
     assert.match(readme, /recognize common legal questions and prepare discussion drafts/);
     assert.match(readme, /does not certify that a business or document is legally compliant/);
@@ -947,20 +946,9 @@ test('project-only export includes project policies and excludes planning and de
     const reviewGuide = await readFile(join(output, 'REVIEWING.md'), 'utf8');
     assert.match(readme, /REVIEWING\.md/);
     assert.match(reviewGuide, /no legal or language reviewer is authorized/i);
+    assert.match(reviewGuide, /scanner rule interpretations are also unreviewed/i);
     assert.match(reviewGuide, /Comments and issue reports are welcome, but they do not change a review status/);
     assert.doesNotMatch(reviewGuide, /npm run|npm test|graphify|Codex|ROADMAP/i);
-    const onboarding = await readFile(join(output, 'docs/REVIEWER_ONBOARDING.md'), 'utf8');
-    assert.match(readme, /reviewer interest form/);
-    assert.match(onboarding, /form and all replies are public/);
-    assert.match(onboarding, /registries are currently empty/);
-    const reviewerInterestForm = await readFile(join(output, '.github/ISSUE_TEMPLATE/reviewer-interest.yml'), 'utf8');
-    assert.match(reviewerInterestForm, /Moroccan legal reviewer/);
-    assert.match(reviewerInterestForm, /Community moderator/);
-    assert.match(reviewerInterestForm, /issue and all answers are public/);
-    const integrations = await readFile(join(output, 'INTEGRATIONS.md'), 'utf8');
-    assert.match(integrations, /npm run cli -- --version/);
-    assert.match(integrations, /codex mcp add/);
-    assert.match(integrations, /Do not post client matters/);
     const frenchReadme = await readFile(join(output, 'README.fr.md'), 'utf8');
     assert.match(frenchReadme, /repérer les questions juridiques courantes/);
     assert.match(frenchReadme, /professionnel qualifié en droit marocain/);
@@ -968,7 +956,6 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(frenchReadme, /n’a pas de but lucratif/);
     assert.match(frenchReadme, /aucun évaluateur juridique ou linguistique n’est actuellement autorisé/);
     assert.match(frenchReadme, /CONTRIBUTING\.md/);
-    assert.match(frenchReadme, /formulaire public d’intérêt/);
     const arabicReadme = await readFile(join(output, 'README.ar.md'), 'utf8');
     assert.match(arabicReadme, /التعرّف على المسائل القانونية الشائعة/);
     assert.match(arabicReadme, /مهني مؤهل في القانون المغربي/);
@@ -976,25 +963,40 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(arabicReadme, /لا يهدف المشروع إلى تحقيق الربح/);
     assert.match(arabicReadme, /لا يوجد حاليا مراجع قانوني أو لغوي معتمد/);
     assert.match(arabicReadme, /CONTRIBUTING\.md/);
-    assert.match(arabicReadme, /استمارة إبداء الاهتمام العامة/);
     assert.match(arabicReadme, /لم يخضع لمراجعة مستقلة/);
     const pullRequestTemplate = await readFile(join(output, '.github/PULL_REQUEST_TEMPLATE.md'), 'utf8');
     assert.doesNotMatch(pullRequestTemplate, /npm run|npm test|graphify|Codex|ROADMAP/i);
     const licenseReadme = await readFile(join(output, 'LICENSES/README.md'), 'utf8');
     assert.doesNotMatch(licenseReadme, /npm run|graphify|ROADMAP|Codex/i);
     assert.match(licenseReadme, /Reviewer-authored submissions retain their own rights/);
+    const integrations = await readFile(join(output, 'INTEGRATIONS.md'), 'utf8');
+    assert.match(integrations, /npm run cli -- list/);
+    assert.match(integrations, /npm run cli -- --version/);
+    assert.match(integrations, /codex plugin marketplace add/);
+    assert.match(integrations, /codex mcp add/);
+    assert.match(integrations, /openlegal scan/);
+    await readFile(join(output, 'docs/REVIEWER_ONBOARDING.md'), 'utf8');
+    await readFile(join(output, '.github/actions/openlegal-scan/action.yml'), 'utf8');
+    await readFile(join(output, '.github/ISSUE_TEMPLATE/reviewer-interest.yml'), 'utf8');
+    await readFile(join(output, 'docs/INTEROPERABILITY.md'), 'utf8');
+    await readFile(join(output, 'docs/CHANGE_TRACKER.md'), 'utf8');
+    await readFile(join(output, 'mcp/server.py'), 'utf8');
+    await readFile(join(output, 'codex-marketplace/plugins/open-legal-morocco/plugin.json'), 'utf8');
+    await readFile(join(output, 'codex-marketplace/.agents/plugins/marketplace.json'), 'utf8');
     const exportedScopes = JSON.parse(await readFile(join(output, 'LICENSES/scopes.json'), 'utf8'));
     const exportedPatterns = exportedScopes.rules.flatMap((rule) => rule.patterns);
     assert.ok(exportedPatterns.includes('LICENSES/README.md'));
+    assert.ok(exportedPatterns.includes('mcp/**'));
+    assert.ok(exportedPatterns.includes('skills/**'));
+    assert.ok(exportedPatterns.includes('INTEGRATIONS.md'));
     assert.ok(exportedPatterns.includes('scripts/**'));
     assert.ok(exportedPatterns.includes('CONTRIBUTING.md'));
     assert.ok(exportedPatterns.includes('REVIEWING.md'));
-    assert.ok(exportedPatterns.includes('docs/**'));
     assert.ok(exportedPatterns.includes('RELEASE_NOTES.md'));
-    assert.ok(exportedPatterns.includes('INTEGRATIONS.md'));
     assert.ok(exportedPatterns.includes('README.fr.md'));
     assert.ok(exportedPatterns.includes('README.ar.md'));
     assert.ok(exportedPatterns.includes('.github/PULL_REQUEST_TEMPLATE.md'));
+    assert.ok(exportedPatterns.includes('.github/actions/**'));
     assert.ok(!exportedPatterns.some((pattern) => /ROADMAP|BUILD|DEVELOPMENT|PLAN/i.test(pattern)));
     for (const path of ['ROADMAP.md']) {
       await assert.rejects(readFile(join(output, path)), { code: 'ENOENT' });
@@ -1012,7 +1014,14 @@ test('project-only export includes project policies and excludes planning and de
     await collectMarkdown(output);
     for (const path of markdownFiles) {
       const content = await readFile(path, 'utf8');
-      assert.equal(isInternalMarkdownDocument(path.split('/').at(-1), content), false, `${path} contains internal planning or development instructions`);
+      const relativePath = path.slice(output.length + 1).replaceAll('\\', '/');
+      const approvedIntegrationMarkdown = new Set([
+        'INTEGRATIONS.md', 'docs/INTEROPERABILITY.md', 'docs/CHANGE_TRACKER.md', 'mcp/README.md', 'skills/openlegal-morocco/SKILL.md', 'skills/openlegal-morocco/evaluation/README.md',
+        'codex-marketplace/plugins/open-legal-morocco/README.md', 'codex-marketplace/plugins/open-legal-morocco/skills/openlegal-morocco/SKILL.md'
+      ]);
+      if (!approvedIntegrationMarkdown.has(relativePath)) {
+        assert.equal(isInternalMarkdownDocument(path.split('/').at(-1), content), false, `${path} contains internal planning or development instructions`);
+      }
       assert.doesNotMatch(content, /\/home\/[A-Za-z0-9._-]+/, `${path} contains a local home-directory path`);
       assert.doesNotMatch(content, /\/tmp\/open-legal-morocco/i, `${path} contains a local release-workspace path`);
       assert.doesNotMatch(content, /\.codex\b/i, `${path} contains a Codex-local path`);

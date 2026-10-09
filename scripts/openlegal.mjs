@@ -6,18 +6,24 @@ import { fileURLToPath } from 'node:url';
 import { loadCatalog, loadTemplateContent, recordedReview, draftDisclaimer } from './catalog.mjs';
 import { validateTemplatePackages } from './validate-template-packages.mjs';
 import { renderFindingsMarkdown, validateFindings } from './findings.mjs';
+import { renderScanMarkdown, scanRepository } from './scanner.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const usage = `Usage:
-  node scripts/openlegal.mjs --help
-  node scripts/openlegal.mjs --version
-  node scripts/openlegal.mjs list [--category CATEGORY] [--language en|fr|ar]
-  node scripts/openlegal.mjs show TEMPLATE_ID [--language en|fr|ar]
-  node scripts/openlegal.mjs sources TEMPLATE_ID
-  node scripts/openlegal.mjs status TEMPLATE_ID
-  node scripts/openlegal.mjs export TEMPLATE_ID [--language en|fr|ar] [--format md|json]
-  node scripts/openlegal.mjs check
-  node scripts/openlegal.mjs changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]`;
+  openlegal --help
+  openlegal --version
+  openlegal list [--category CATEGORY] [--language en|fr|ar]
+  openlegal show TEMPLATE_ID [--language en|fr|ar]
+  openlegal sources TEMPLATE_ID
+  openlegal status TEMPLATE_ID
+  openlegal export TEMPLATE_ID [--language en|fr|ar] [--format md|json]
+  openlegal check
+  openlegal scan [path] [--format json|md] [--language en|fr|ar]
+  openlegal findings validate <file|->
+  openlegal findings render <file|-> [--format json|md]
+  openlegal changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]
+
+Run openlegal --help to show this message.`;
 const findingsUsage = `Usage:\n  node scripts/openlegal.mjs findings validate <file|->\n  node scripts/openlegal.mjs findings render <file|-> [--format json|md]`;
 const changesUsage = `Usage:\n  node scripts/openlegal.mjs changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]`;
 
@@ -47,7 +53,7 @@ async function main(args) {
   if (!command) throw new Error(usage);
   if (command === '--help' || command === '-h' || command === 'help') {
     if (rest.length) throw new Error('help accepts no arguments');
-    process.stdout.write(`${usage}\\n`);
+    process.stdout.write(`${usage}\n`);
     return;
   }
   if (command === '--version' || command === 'version') {
@@ -74,6 +80,26 @@ async function main(args) {
     else if ((options.format || 'json') === 'md') process.stdout.write(renderFindingsMarkdown(document));
     else if ((options.format || 'json') === 'json') process.stdout.write(`${JSON.stringify(document, null, 2)}\n`);
     else throw new Error('Findings format must be json or md');
+    return;
+  }
+  if (command === 'scan') {
+    let path = '.';
+    let pathSeen = false;
+    const optionTokens = [];
+    for (let index = 0; index < rest.length; index += 1) {
+      const token = rest[index];
+      if (token.startsWith('--')) optionTokens.push(token, rest[++index]);
+      else if (!pathSeen) { path = token; pathSeen = true; }
+      else throw new Error('scan accepts at most one repository path');
+    }
+    const options = parseOptions(optionTokens);
+    if (Object.keys(options).some((key) => !['format', 'language'].includes(key))) throw new Error('scan accepts only --format and --language');
+    const format = options.format || 'md';
+    if (!['md', 'json'].includes(format)) throw new Error('Scan format must be json or md');
+    const { document, messages } = await scanRepository(path, { language: options.language || 'en' });
+    const errors = await validateFindings(document);
+    if (errors.length) throw new Error(`Findings schema validation failed:\n${errors.map((error) => `- ${error}`).join('\n')}`);
+    process.stdout.write(format === 'json' ? `${JSON.stringify(document, null, 2)}\n` : `${renderScanMarkdown(document, messages)}\n`);
     return;
   }
   if (command === 'changes') {

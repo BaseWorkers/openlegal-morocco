@@ -1,6 +1,6 @@
 # Reusable template source candidates
 
-This is a research inventory of potential comparative sources. A repository or catalogue license signal is not an authorization to copy any individual document. No wording from the candidates below has been incorporated into Open Legal Morocco.
+This is a research inventory of potential comparative sources. A repository or catalogue license signal is not an authorization to copy any individual document. No wording from the candidates below has been incorporated into OpenLegal.
 
 ## Candidate status
 
@@ -15,7 +15,7 @@ The [Mutual NDA Standard Terms Version 1.0](https://commonpaper.com/standards/mu
 
 The source registry records a narrow reuse authorization for the Standard Terms text on that exact version page, subject to preserving attribution and the license/link, linking the source, indicating changes, and not implying publisher endorsement or imposing additional restrictions. The authorization excludes the cover page, annotations, explanatory material, benchmark data, and other page content. Any resulting third-party wording must retain separate attribution and must not be presented as CC0 project content.
 
-The publisher describes the agreement as U.S.-law-oriented and says its agreements were created with U.S. law in mind. No Moroccan legal suitability is inferred. No wording has been copied into Open Legal Morocco; this record establishes the reviewed source scope and license terms only.
+The publisher describes the agreement as U.S.-law-oriented and says its agreements were created with U.S. law in mind. No Moroccan legal suitability is inferred. No wording has been copied into OpenLegal; this record establishes the reviewed source scope and license terms only.
 
 ## Exact-file review: DINAcon standard-software draft
 

@@ -1,6 +1,6 @@
 # Code of Conduct
 
-Open Legal Morocco is intended to be a respectful, useful space for people with different professional backgrounds, languages, and levels of legal knowledge.
+OpenLegal is intended to be a respectful, useful space for people with different professional backgrounds, languages, and levels of legal knowledge.
 
 ## Expected conduct
 
@@ -17,6 +17,6 @@ Harassment, discrimination, threats, doxxing, unwanted sexual attention, intimid
 
 ## Reporting and enforcement
 
-Base Workers is the founding project owner and technical maintainer. No confidential conduct-reporting channel is published or staffed. Do not put sensitive details in a public issue or pull request; this repository currently offers no confidential route for conduct reports. If a staffed route is established, reports should be handled promptly with reporter privacy protected where possible and proportionate action taken.
+No project maintainers or confidential conduct-reporting channel have been appointed. Do not put sensitive details in a public issue or pull request. This repository does not currently offer a confidential route for conduct reports. Once appointed, maintainers should review reports promptly, protect reporter privacy where possible, and take proportionate action, including a warning, contribution restriction, or removal from the project.
 
-This v0.0.1 contribution preview has no confidential conduct-reporting route. Use public issues only for non-sensitive discussion. Before the project accepts sensitive reports or represents itself as a staffed service, a confidential reporting route must be published and staffed.
+This v0.0.2 tooling preview has no confidential conduct-reporting route. Use public issues only for non-sensitive discussion. Before the project accepts sensitive reports or represents itself as a staffed service, maintainers must be named and a confidential reporting route must be published and staffed.

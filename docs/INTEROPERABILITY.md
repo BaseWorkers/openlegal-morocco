@@ -1,17 +1,20 @@
 # Interoperability and structured findings
 
-Open Legal Morocco publishes a vendor-neutral findings contract for independent developer tools, privacy infrastructure, security platforms, and agents. It identifies and documents technical observations and unresolved legal questions. It does not choose products, certify compliance, or approve legal conclusions.
+OpenLegal publishes a vendor-neutral findings contract for independent developer tools, privacy infrastructure, security platforms, and agents. It identifies and documents technical observations and unresolved legal questions. It does not choose products, certify compliance, or approve legal conclusions.
 
-## Version 1.0.0
+## Version 2.0.0
 
 - JSON Schema: [`schemas/findings.schema.json`](../schemas/findings.schema.json)
+- Backward-compatible v1 JSON Schema: [`schemas/findings-v1.schema.json`](../schemas/findings-v1.schema.json)
 - Control taxonomy: [`schemas/control-taxonomy.json`](../schemas/control-taxonomy.json)
-- Static API build copies both files to `dist/api/v1/`.
+- Static API build publishes the current schema and taxonomy under `dist/api/v2/` and retains v1 under `dist/api/v1/`.
+- Every v2 finding includes a stable `rule_id` and `jurisdiction: "MA"`; v1 exports remain accepted by CLI and MCP validators.
+- CLI scan: `npx openlegal scan [path] [--format json|md] [--language en|fr|ar]` (Markdown by default).
 - CLI: `npm run cli -- findings validate findings.json` and `npm run cli -- findings render findings.json --format md|json` (`-` reads JSON from standard input).
-- MCP: `get_findings_spec` returns the same schema and taxonomy; `export_findings` validates a supplied document and returns it unchanged. Clients negotiating protocol `2025-06-18` also receive the schema as `outputSchema` and the document in `structuredContent`; older supported clients receive the JSON text form. It does not inspect arbitrary repositories or mutate findings.
+- MCP: `scan_repository` requires an explicit local path and returns the same v2 result as the CLI; `get_findings_spec` returns v2, the v1 compatibility schema, and taxonomy; `export_findings` validates and returns supplied documents unchanged. Clients negotiating protocol `2025-06-18` receive a version-aware `outputSchema` and structured output; older supported clients receive JSON text.
 - Agent skill: use the same schema and taxonomy when preparing structured observations.
 
-The export envelope contains `schema_version`, `generated_at`, `source`, `repository.revision`, `verification_limitations`, and `findings`. Each finding repeats the schema version, has an explicit `finding_type`, and separates its technical remediation `priority_basis` from legal review. Every finding must include at least one supporting evidence item with a sanitized summary and source reference. `technical_observation` records evidence-backed facts and requires `legal_question: null`. `potential_legal_question` requires a non-empty unresolved question; it is not a conclusion. The published JSON Schema enforces this distinction with standard conditional keywords so independent consumers can validate it without project-specific code. Legal reference verification and human review are separate states. `confidence` may be null when it cannot be meaningfully measured.
+The export envelope contains `schema_version`, `generated_at`, `source`, `repository.revision`, `verification_limitations`, and `findings`. Each finding repeats the schema version, has an explicit `finding_type`, and separates its technical remediation `priority_basis` from legal review. Every finding must include at least one supporting evidence item with a sanitized summary and source reference. `technical_observation` records evidence-backed facts. `potential_legal_question` states an unresolved question; it is not a conclusion. Legal reference verification and human review are separate states. `confidence` may be null when it cannot be meaningfully measured.
 
 The shared technical urgency scale is: `informational` records context without requiring remediation; `low` is non-urgent work suitable for normal maintenance; `medium` should be planned into a near-term remediation cycle; `high` calls for prompt technical remediation or mitigation; `critical` calls for urgent containment or remediation based on severe, well-supported technical impact. Consumers should consider observed impact, scope, exploitability, and evidence confidence. These values describe technical remediation sequencing only; they do not assess legal risk, establish a legal duty, or indicate legal non-compliance.
 
@@ -19,13 +22,13 @@ The initial generic control identifiers are `pii_detection`, `data_minimization`
 
 ## Privacy and integration boundary
 
-Interfaces are read-only by default. MCP exports validate and return the supplied document; they do not set review states. The CLI reads only the specified findings file (or standard input). Neither interface inspects private repositories or exchanges data with external services. Use explicit authorization before reviewing a private repository or sharing findings with an external adapter. No interface can automatically change legal-review states, approve findings, or modify production security policy.
+Interfaces are read-only by default. The scanner runs locally with deterministic patterns and no network, API, or AI calls. It reads only allowlisted source, markup, documentation, and `package.json` files, has depth/file/byte caps, ignores secrets, dependencies, and build output, and skips symbolic links. MCP requires an explicit repository path. The scanner never embeds raw source excerpts. Findings do not set review states or certify compliance. No interface automatically approves legal review or modifies production security policy.
 
-Do not include raw personal data, credentials, or confidential payloads. Evidence uses sanitized summaries, file/source references, line ranges, and optional content digests rather than excerpts. CLI, MCP, and the independent adapter example scan every string field for several high-signal patterns (private-key headers, bearer tokens, common cloud key IDs, JWT-like values, and direct email addresses); this check is intentionally not described as complete PII or secret detection. Review output before sharing and keep exports local unless a user explicitly authorizes disclosure. Markdown rendering treats caller-supplied strings as plain text: it escapes Markdown and HTML syntax and flattens embedded line breaks to prevent imported findings from adding headings, links, or raw HTML to a report.
+Do not include raw personal data, credentials, or confidential payloads. Evidence uses sanitized summaries, file/source references, line ranges, and optional content digests rather than excerpts. CLI and MCP validation scan every string field for several high-signal patterns (private-key headers, bearer tokens, common cloud key IDs, JWT-like values, and direct email addresses); this check is intentionally not described as complete PII or secret detection. Review output before sharing and keep exports local unless a user explicitly authorizes disclosure.
 
 ## Compatibility policy
 
-The 1.0.0 contract on this unmerged branch is a pre-release draft and may be revised before its first release. At release, its schema and meanings will be frozen. After release, compatible optional additions receive a new minor schema version and versioned API artifact; removals, changed meanings, or newly required fields require a major version and migration note. Consumers validate against the schema version declared by the document; they should reject unsupported major versions and never infer approval from schema validity. Taxonomy identifiers are stable; proposed removals or semantic changes require a documented deprecation period and a versioned migration map.
+The 2.0.0 contract on this development branch is a pre-release draft and may be revised before publication. After release, compatible optional additions receive a new minor schema version and versioned API artifact; removals, changed meanings, or newly required fields require a major version and migration note. Consumers validate against the schema version declared by the document and never infer approval from schema validity. Taxonomy identifiers are stable; proposed removals or semantic changes require a documented deprecation period and a versioned migration map.
 
 ## Example
 
@@ -63,9 +66,9 @@ The 1.0.0 contract on this unmerged branch is a pre-release draft and may be rev
 
 The example describes a technical observation only. Its priority is not a legal-risk score and the presence of a suggested control is not a compliance determination.
 
-`finding_id` is an opaque producer-assigned identifier: keep it stable when the same finding is carried into later exports, and keep it unique within each export. Do not encode secrets or personal data in identifiers. JSON Schema validates the individual identifier shape; the CLI and MCP validators enforce cross-finding uniqueness as a semantic constraint. Consumers can use the stable ID with producer/source context to track remediation across repository revisions; do not infer identity from descriptions or content hashes.
+`finding_id` values must be unique within each export. JSON Schema validates the individual identifier shape; the CLI and MCP validators enforce cross-finding uniqueness as a semantic constraint.
 
-The same conformance corpus at [`tests/fixtures/findings-contract.json`](../tests/fixtures/findings-contract.json) is exercised by both CLI and MCP validator tests. It covers valid technical observations, potential legal questions, and rejection cases for missing evidence or required legal-question semantics, legal-risk priority framing, non-taxonomy controls, duplicate identifiers, and unsafe source paths. A focused test also runs the published schema directly against mismatched observation/question combinations.
+The same conformance corpus at [`tests/fixtures/findings-contract.json`](../tests/fixtures/findings-contract.json) is exercised by both CLI and MCP validator tests. It covers valid technical observations, potential legal questions, and rejection cases for missing evidence or legal-question text, legal-risk priority framing, non-taxonomy controls, and duplicate identifiers.
 
 For local, hash-only source comparison, see [Legal source change candidates](CHANGE_TRACKER.md). Candidate records remain unverified and do not represent a legal change.
 
@@ -79,8 +82,10 @@ For local, hash-only source comparison, see [Legal source change candidates](CHA
 | `GET /api/v1/templates.json` | `dist/api/v1/templates.json` | Catalogue index |
 | `GET /api/v1/templates/{id}.json` | `dist/api/v1/templates/{id}.json` | Template metadata, language content, source declarations, per-language SHA-256 digests, and review status |
 | `GET /api/v1/templates/{id}/sources.json` | `dist/api/v1/templates/{id}/sources.json` | Source declarations and available source records |
-| `GET /api/v1/findings.schema.json` | `dist/api/v1/findings.schema.json` | Findings export schema v1.0.0 |
+| `GET /api/v1/findings.schema.json` | `dist/api/v1/findings.schema.json` | Backward-compatible findings schema v1.0.0 |
 | `GET /api/v1/control-taxonomy.json` | `dist/api/v1/control-taxonomy.json` | Vendor-neutral control identifiers |
+| `GET /api/v2/findings.schema.json` | `dist/api/v2/findings.schema.json` | Current findings export schema v2.0.0 |
+| `GET /api/v2/control-taxonomy.json` | `dist/api/v2/control-taxonomy.json` | Vendor-neutral control identifiers |
 
 For a local smoke check without a hosted service, build and serve the generated directory with Python's standard library:
 

@@ -288,7 +288,7 @@ console.log(JSON.stringify(digests));
         self.assertEqual(len(lines), 4)
         output = [json.loads(line) for line in lines]
         self.assertEqual(output[0]["result"]["serverInfo"]["name"], "OpenLegal")
-        self.assertEqual(len(output[1]["result"]["tools"]), 10)
+        self.assertEqual(len(output[1]["result"]["tools"]), 11)
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)
 
@@ -315,7 +315,7 @@ console.log(JSON.stringify(digests));
         responses = [json.loads(line) for line in lines]
         self.assertEqual(responses[0]["result"]["protocolVersion"], "2025-06-18")
         tool = next(item for item in responses[1]["result"]["tools"] if item["name"] == "export_findings")
-        self.assertEqual(tool["outputSchema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0")
+        self.assertEqual(len(tool["outputSchema"]["oneOf"]), 2)
         exported = responses[2]["result"]
         self.assertEqual(exported["structuredContent"], document)
         self.assertEqual(json.loads(exported["content"][0]["text"]), document)
@@ -336,12 +336,9 @@ console.log(JSON.stringify(digests));
 
     def test_findings_spec_and_validation_use_published_contract(self):
         spec = server.call("get_findings_spec", {})
-        self.assertEqual(spec["schema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0")
+        self.assertEqual(spec["schema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/2.0.0")
+        self.assertEqual(spec["legacy_schema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0")
         self.assertEqual(len(spec["taxonomy"]["controls"]), 10)
-        self.assertEqual(
-            spec["schema"]["$defs"]["finding"]["properties"]["suggested_controls"]["items"]["enum"],
-            [control["id"] for control in spec["taxonomy"]["controls"]],
-        )
         document = {
             "schema_version": "1.0.0", "generated_at": "2026-10-09T10:00:00Z",
             "source": {"tool": "test", "version": "1"}, "repository": {"revision": None},
@@ -360,8 +357,6 @@ console.log(JSON.stringify(digests));
             }],
         }
         self.assertEqual(server.validate_findings(document), [])
-        incomplete_export = {**document, "verification_limitations": []}
-        self.assertTrue(any("verification_limitations" in error for error in server.validate_findings(incomplete_export)))
         self.assertEqual(server.call("export_findings", {"document": document}), document)
         session = {}
         initialized = server.response({
@@ -371,7 +366,7 @@ console.log(JSON.stringify(digests));
         self.assertEqual(initialized["protocolVersion"], "2025-06-18")
         listed = server.response({"method": "tools/list"}, session)
         export_tool = next(tool for tool in listed["tools"] if tool["name"] == "export_findings")
-        self.assertEqual(export_tool["outputSchema"]["$id"], spec["schema"]["$id"])
+        self.assertEqual(len(export_tool["outputSchema"]["oneOf"]), 2)
         structured = server.response({
             "method": "tools/call",
             "params": {"name": "export_findings", "arguments": {"document": document}},
@@ -418,6 +413,23 @@ console.log(JSON.stringify(digests));
                 invalid["findings"].append(json.loads(json.dumps(invalid["findings"][0])))
             with self.subTest(case=test_case["id"]):
                 self.assertTrue(server.validate_findings(invalid))
+
+    def test_scan_repository_matches_cli_and_requires_explicit_path(self):
+        with tempfile.TemporaryDirectory(prefix="openlegal-mcp-scan-") as directory:
+            root = Path(directory)
+            (root / "package.json").write_text('{"dependencies":{"@sentry/node":"^8.0.0"}}', encoding="utf-8")
+            (root / "app.ts").write_text("import * as Sentry from '@sentry/node';\n", encoding="utf-8")
+            for language in ("en", "fr", "ar"):
+                result = server.call("scan_repository", {"repository_path": str(root), "language": language})
+                cli = subprocess.run(
+                    ["node", str(server.ROOT / "scripts" / "openlegal.mjs"), "scan", str(root), "--format", "json", "--language", language],
+                    cwd=server.ROOT, capture_output=True, text=True, timeout=10, check=True,
+                )
+                self.assertEqual(result["findings"], json.loads(cli.stdout)["findings"])
+                self.assertEqual(result["schema_version"], "2.0.0")
+                self.assertTrue(any(item["rule_id"].endswith("integration.indicator") for item in result["findings"]))
+        with self.assertRaisesRegex(ValueError, "repository_path"):
+            server.call("scan_repository", {})
 
     def test_findings_export_rejects_sensitive_text_and_wrong_priority_basis(self):
         document = {

@@ -1,6 +1,6 @@
 # Review and feedback
 
-Open Legal Morocco is an early contribution preview. All 14 template packages are `DRAFT`; no legal or language reviewer is authorized, and no template is approved for reliance. Comments and issue reports are welcome, but they do not change a review status.
+OpenLegal is an early contribution preview. All 14 template packages are `DRAFT`; no legal or language reviewer is authorized, and no template is approved for reliance. Comments and issue reports are welcome, but they do not change a review status.
 
 ## Ways to help
 
@@ -9,7 +9,7 @@ Open Legal Morocco is an early contribution preview. All 14 template packages ar
 - **Language review:** identify the language and version reviewed, compare it with the other language versions, and report changes to rights, obligations, defined terms, dates, or legal effect.
 - **General feedback:** report unclear assumptions, missing use cases, accessibility issues, or adaptation concerns.
 
-To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml). Read the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md) first. The form and all replies are public; do not post private documents or contact details. For other contributions, use **Issues → New issue → Offer a contribution**. Use the legal-research or template-defect issue form for a specific finding. Never post credentials, client information, confidential advice, or completed agreements in public issues.
+Use **Issues → New issue → Offer a contribution** to offer help. Use the legal-research or template-defect issue form for a specific finding. Please do not post identity documents, credentials, personal contact details, client information, confidential advice, or completed agreements in public issues.
 
 ## Get the exact review materials
 
@@ -17,7 +17,7 @@ The Foundation CI workflow prepares template and research-claim review packets a
 
 ## Formal review status
 
-At v0.0.1, formal legal and language review is not staffed: the reviewer registries are empty. Base Workers is the founding project owner and technical maintainer, but that role does not authorize legal or language approval. An issue, pull request, or reviewer statement does not authorize `LEGAL_REVIEWED`, `LANGUAGE_REVIEWED`, or `RELEASED` status.
+At the v0.1.0 scanner pre-release, formal review is not staffed: the reviewer registries are empty and no maintainers have been appointed. Scanner rule interpretations are also unreviewed. An issue, pull request, or reviewer statement does not authorize `LEGAL_REVIEWED`, `LANGUAGE_REVIEWED`, or `RELEASED` status. See the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md) to express interest.
 
 If maintainers establish the review program, formal approvals must cover the exact version and content digest, identify the review scope and outcome, and be authenticated under the project governance rules. A later content change may invalidate an approval. An adapted copy does not inherit this project's review status. See [Governance](GOVERNANCE.md) for the status and authorization rules.
 

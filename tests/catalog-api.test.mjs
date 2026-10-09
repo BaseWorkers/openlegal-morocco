@@ -29,16 +29,14 @@ test('static API generation is traceable and never asserts verification', async 
     const manifest = JSON.parse(await readFile(join(outputDirectory, 'manifest.json'), 'utf8'));
     const findingsSchema = JSON.parse(await readFile(join(outputDirectory, 'findings.schema.json'), 'utf8'));
     const controlTaxonomy = JSON.parse(await readFile(join(outputDirectory, 'control-taxonomy.json'), 'utf8'));
-    const sourceFindingsSchema = JSON.parse(await readFile(join(root, 'schemas/findings.schema.json'), 'utf8'));
-    const sourceControlTaxonomy = JSON.parse(await readFile(join(root, 'schemas/control-taxonomy.json'), 'utf8'));
-    assert.deepEqual(findingsSchema, sourceFindingsSchema);
-    assert.deepEqual(controlTaxonomy, sourceControlTaxonomy);
     const catalog = JSON.parse(await readFile(join(outputDirectory, 'templates.json'), 'utf8'));
     const template = JSON.parse(await readFile(join(outputDirectory, 'templates/privacy-policy.json'), 'utf8'));
     const sources = JSON.parse(await readFile(join(outputDirectory, 'templates/privacy-policy/sources.json'), 'utf8'));
     assert.equal(manifest.repository_ref, 'test-revision');
     assert.equal(manifest.verified, false);
     assert.equal(findingsSchema.$id, 'https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0');
+    const currentSchema = JSON.parse(await readFile(join(outputDirectory, '..', 'v2', 'findings.schema.json'), 'utf8'));
+    assert.equal(currentSchema.$id, 'https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/2.0.0');
     assert.equal(controlTaxonomy.controls.length, 10);
     assert.equal(catalog.provenance.repository_ref, 'test-revision');
     assert.equal(template.review.status, 'DRAFT');

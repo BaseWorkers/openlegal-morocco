@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { lstat, readFile } from 'node:fs/promises';
+import { lstat, readFile, readdir } from 'node:fs/promises';
 import { dirname, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -21,19 +21,36 @@ export function findCredentialRuleIds(text) {
 }
 
 function repositoryFiles() {
-  const output = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], {
-    cwd: root,
-    encoding: 'buffer',
-    maxBuffer: 10 * 1024 * 1024,
-    stdio: ['ignore', 'pipe', 'pipe'],
-  });
-  return output.toString('utf8').split('\0').filter(Boolean);
+  try {
+    const output = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], {
+      cwd: root,
+      encoding: 'buffer',
+      maxBuffer: 10 * 1024 * 1024,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    return output.toString('utf8').split('\0').filter(Boolean);
+  } catch (error) {
+    if (!String(error.stderr || '').includes('not a git repository')) throw error;
+    return walkExportTree(root);
+  }
+}
+
+async function walkExportTree(directory, relativeDirectory = '') {
+  const paths = [];
+  const ignoredDirectories = new Set(['.git', 'node_modules', 'dist', 'coverage', '.next', 'graphify-out', '__pycache__']);
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    if (entry.isDirectory() && ignoredDirectories.has(entry.name)) continue;
+    const relativePath = relativeDirectory ? `${relativeDirectory}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) paths.push(...await walkExportTree(resolve(directory, entry.name), relativePath));
+    else if (entry.isFile() && entry.name !== '.DS_Store' && !entry.name.endsWith('.log') && !/\.py[cod]$/.test(entry.name)) paths.push(relativePath);
+  }
+  return paths.sort();
 }
 
 export async function auditRepositorySecrets() {
   const findings = [];
   let scanned = 0;
-  for (const repositoryPath of repositoryFiles()) {
+  for (const repositoryPath of await repositoryFiles()) {
     const absolutePath = resolve(root, repositoryPath);
     const info = await lstat(absolutePath);
     if (info.isSymbolicLink()) throw new Error(`Refusing to follow symbolic link during secrets audit: ${repositoryPath}`);
@@ -57,7 +74,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       process.stderr.write(`Secrets audit found ${result.findings.length} high-signal credential pattern(s) across ${result.scanned} text files.\n`);
       process.exitCode = 1;
     } else {
-      process.stdout.write(`Secrets audit passed: ${result.scanned} Git-tracked or unignored text files checked for high-signal credential patterns. This is not a complete secrets or personal-data detector.\n`);
+      process.stdout.write(`Secrets audit passed: ${result.scanned} tracked project files checked for high-signal credential patterns. This is not a complete secrets or personal-data detector.\n`);
     }
   } catch (error) {
     process.stderr.write(`Secrets audit could not complete: ${error.message}\n`);
