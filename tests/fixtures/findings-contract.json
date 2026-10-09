@@ -1,0 +1,87 @@
+{
+  "valid_documents": [
+    {
+      "schema_version": "1.0.0",
+      "generated_at": "2026-10-09T10:00:00Z",
+      "source": { "tool": "contract-fixture", "version": "1.0.0" },
+      "repository": { "revision": "fixture-revision" },
+      "verification_limitations": ["No legal review was performed."],
+      "findings": [
+        {
+          "finding_id": "contract-technical-001",
+          "finding_type": "technical_observation",
+          "category": "data-handling",
+          "priority": "medium",
+          "priority_basis": "technical_remediation",
+          "description": "A handler sends a user-controlled field to a diagnostic logger.",
+          "legal_question": null,
+          "evidence": [
+            {
+              "summary": "The handler passes the field to the logger.",
+              "source_reference": {
+                "kind": "repository_file",
+                "path": "src/handler.js",
+                "line_start": 42,
+                "line_end": 42,
+                "content_digest": null
+              },
+              "verification_status": "verified"
+            }
+          ],
+          "affected_resources": [{ "type": "file", "identifier": "src/handler.js" }],
+          "legal_references": [],
+          "suggested_controls": ["data_minimization", "redaction"],
+          "review_status": { "verification": "verified", "human_review": "not_requested" },
+          "confidence": null,
+          "schema_version": "1.0.0"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "generated_at": "2026-10-09T10:00:00Z",
+      "source": { "tool": "contract-fixture", "version": "1.0.0" },
+      "repository": { "revision": null },
+      "verification_limitations": ["The potential legal question is unresolved."],
+      "findings": [
+        {
+          "finding_id": "contract-legal-question-001",
+          "finding_type": "potential_legal_question",
+          "category": "data-handling",
+          "priority": "informational",
+          "priority_basis": "technical_remediation",
+          "description": "The observed integration routes account data to an external provider.",
+          "legal_question": "What roles and contractual terms should qualified counsel assess for this data flow?",
+          "evidence": [
+            {
+              "summary": "A configured integration sends account data to the provider.",
+              "source_reference": {
+                "kind": "repository_file",
+                "path": "src/integrations/provider.js",
+                "line_start": 18,
+                "line_end": 22,
+                "content_digest": null
+              },
+              "verification_status": "verified"
+            }
+          ],
+          "affected_resources": [{ "type": "component", "identifier": "provider-integration" }],
+          "legal_references": [
+            { "title": "Source requires qualified review", "uri": null, "pinpoint": null, "verification_status": "unverified" }
+          ],
+          "suggested_controls": ["data_flow_mapping", "third_party_disclosure"],
+          "review_status": { "verification": "partially_verified", "human_review": "pending" },
+          "confidence": 0.6,
+          "schema_version": "1.0.0"
+        }
+      ]
+    }
+  ],
+  "invalid_cases": [
+    { "id": "legal-question-requires-text", "finding_patch": { "finding_type": "potential_legal_question", "legal_question": null } },
+    { "id": "technical-observation-has-no-legal-question", "finding_patch": { "finding_type": "technical_observation", "legal_question": "This must remain a separate question." } },
+    { "id": "technical-priority-is-not-legal-risk", "finding_patch": { "priority_basis": "legal_risk" } },
+    { "id": "controls-are-vendor-neutral", "finding_patch": { "suggested_controls": ["vendor_product"] } },
+    { "id": "duplicate-finding-identifiers-are-rejected", "duplicate_first_finding": true }
+  ]
+}
