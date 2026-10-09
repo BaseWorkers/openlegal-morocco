@@ -45,6 +45,7 @@
       "spdx": "MIT",
       "patterns": [
         "scripts/**",
+        "change-tracker/**",
         "site/**",
         "mcp/**",
         "schemas/**",

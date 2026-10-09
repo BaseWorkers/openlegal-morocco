@@ -60,3 +60,5 @@ The schema uses semantic versioning. Version 1.0.0 is frozen; compatible optiona
 ```
 
 The example describes a technical observation only. Its priority is not a legal-risk score and the presence of a suggested control is not a compliance determination.
+
+For local, hash-only source comparison, see [Legal source change candidates](CHANGE_TRACKER.md). Candidate records remain unverified and do not represent a legal change.

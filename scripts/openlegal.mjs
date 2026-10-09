@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,8 +14,10 @@ const usage = `Usage:
   node scripts/openlegal.mjs sources TEMPLATE_ID
   node scripts/openlegal.mjs status TEMPLATE_ID
   node scripts/openlegal.mjs export TEMPLATE_ID [--language en|fr|ar] [--format md|json]
-  node scripts/openlegal.mjs check`;
+  node scripts/openlegal.mjs check
+  node scripts/openlegal.mjs changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]`;
 const findingsUsage = `Usage:\n  node scripts/openlegal.mjs findings validate <file|->\n  node scripts/openlegal.mjs findings render <file|-> [--format json|md]`;
+const changesUsage = `Usage:\n  node scripts/openlegal.mjs changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]`;
 
 function parseOptions(tokens) {
   const options = {};
@@ -59,6 +61,30 @@ async function main(args) {
     else if ((options.format || 'json') === 'md') process.stdout.write(renderFindingsMarkdown(document));
     else if ((options.format || 'json') === 'json') process.stdout.write(`${JSON.stringify(document, null, 2)}\n`);
     else throw new Error('Findings format must be json or md');
+    return;
+  }
+  if (command === 'changes') {
+    const { compareSourceChange } = await import('./change-tracker.mjs');
+    const [action, sourceId, ...tokens] = rest;
+    if (action !== 'compare' || !sourceId || sourceId.startsWith('--')) throw new Error(changesUsage);
+    const options = {};
+    for (let index = 0; index < tokens.length; index += 1) {
+      const key = tokens[index];
+      if (!['--previous-sha', '--current', '--retrieved-at'].includes(key) || !tokens[index + 1] || tokens[index + 1].startsWith('--') || options[key]) throw new Error(changesUsage);
+      options[key] = tokens[++index];
+    }
+    if (!options['--previous-sha'] || !options['--current']) throw new Error(changesUsage);
+    const currentPath = resolve(options['--current']);
+    const fileInfo = await stat(currentPath);
+    if (!fileInfo.isFile() || fileInfo.size > 50 * 1024 * 1024) throw new Error('Current source copy must be a regular file no larger than 50 MiB');
+    const content = await readFile(currentPath);
+    const record = await compareSourceChange({
+      sourceId,
+      previousSha256: options['--previous-sha'],
+      currentBytes: content,
+      retrievedAt: options['--retrieved-at'],
+    });
+    process.stdout.write(`${JSON.stringify(record, null, 2)}\n`);
     return;
   }
   if (command === 'check') {

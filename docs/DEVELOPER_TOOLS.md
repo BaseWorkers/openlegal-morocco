@@ -31,6 +31,8 @@ The artifacts are local build outputs. Hosting, public endpoints, and legal appr
 
 See [Interoperability and structured findings](INTEROPERABILITY.md) for the versioned findings schema, vendor-neutral control taxonomy, CLI/MCP export and validation, privacy boundaries, and compatibility policy. The static API build publishes the v1 schema and taxonomy alongside catalogue artifacts.
 
+For a local, hash-only source change candidate workflow, see [Legal source change candidates](CHANGE_TRACKER.md). It does not fetch sources or make legal-status changes.
+
 ## Static catalog preview
 
 Build and serve the local multilingual read-only catalog with `npm run build:site` and `python3 -m http.server 8000 --directory dist/site`. See [the site build and publishing boundary](SITE.md) for language routes, accessibility scope, and owner-confirmed canonical URL requirements.
