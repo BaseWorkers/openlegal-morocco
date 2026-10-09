@@ -26,6 +26,7 @@ jobs:
       - run: python -m unittest discover -s mcp -p 'test_*.py'
       - run: npm run check:syntax
       - run: npm run validate
+      - run: npm run audit:secrets
       - name: Enforce review status transitions
         if: github.event_name == 'pull_request'
         env:
