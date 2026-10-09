@@ -408,6 +408,8 @@ def _validate_schema_node(value, schema, root_schema, path, errors):
         if "minimum" in schema and value < schema["minimum"]: errors.append(f"{path} is below minimum")
         if "maximum" in schema and value > schema["maximum"]: errors.append(f"{path} is above maximum")
     if isinstance(value, list):
+        if len(value) < schema.get("minItems", 0): errors.append(f"{path} must contain at least {schema['minItems']} items")
+        if len(value) > schema.get("maxItems", len(value)): errors.append(f"{path} must contain at most {schema['maxItems']} items")
         if schema.get("uniqueItems") and len({json.dumps(item, sort_keys=True) for item in value}) != len(value): errors.append(f"{path} contains duplicates")
         if "items" in schema:
             for index, item in enumerate(value): _validate_schema_node(item, schema["items"], root_schema, f"{path}[{index}]", errors)
