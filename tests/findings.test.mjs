@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { test } from 'node:test';
 import { renderFindingsMarkdown, validateFindings } from '../scripts/findings.mjs';
+
+const conformance = JSON.parse(await readFile(new URL('./fixtures/findings-contract.json', import.meta.url), 'utf8'));
 
 const finding = {
   finding_id: 'scan-001', finding_type: 'technical_observation', category: 'data-handling',
@@ -55,4 +58,14 @@ test('findings reject sensitive identifiers in references and metadata fields', 
   unsafe.findings[0].evidence[0].source_reference.path = 'private/alice@example.org.log';
   const errors = await validateFindings(unsafe);
   assert.ok(errors.some((item) => item.includes('$.findings[0].evidence[0].source_reference.path')));
+});
+
+test('CLI validator conforms to the shared cross-runtime findings contract cases', async () => {
+  for (const document of conformance.valid_documents) assert.deepEqual(await validateFindings(document), []);
+  for (const testCase of conformance.invalid_cases) {
+    const invalid = structuredClone(conformance.valid_documents[0]);
+    Object.assign(invalid.findings[0], testCase.finding_patch ?? {});
+    if (testCase.duplicate_first_finding) invalid.findings.push(structuredClone(invalid.findings[0]));
+    assert.ok((await validateFindings(invalid)).length > 0, testCase.id);
+  }
 });
