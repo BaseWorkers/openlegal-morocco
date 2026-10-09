@@ -1,8 +1,7 @@
 {
-  "name": "open-legal-morocco",
-  "version": "0.0.2",
-  "private": true,
-  "description": "Independent open legal-template infrastructure for Morocco",
+  "name": "openlegal",
+  "version": "0.0.3",
+  "description": "OpenLegal CLI and local MCP tools for Morocco-focused legal discussion drafts",
   "engines": {
     "node": ">=22"
   },
@@ -23,6 +22,45 @@
     "audit:accessibility": "node scripts/audit-markdown-accessibility.mjs",
     "audit:review-transitions": "node scripts/audit-review-transitions.mjs",
     "test": "node --test",
-    "audit:links": "node scripts/audit-source-links.mjs"
-  }
+    "audit:links": "node scripts/audit-source-links.mjs",
+    "prepublishOnly": "npm run validate && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BaseWorkers/openlegal-morocco.git"
+  },
+  "homepage": "https://github.com/BaseWorkers/openlegal-morocco#readme",
+  "bugs": {
+    "url": "https://github.com/BaseWorkers/openlegal-morocco/issues"
+  },
+  "keywords": [
+    "openlegal",
+    "legal-templates",
+    "morocco",
+    "cli",
+    "mcp"
+  ],
+  "bin": {
+    "openlegal": "scripts/openlegal.mjs",
+    "openlegal-mcp": "scripts/openlegal-mcp.mjs"
+  },
+  "files": [
+    "scripts/*.mjs",
+    "templates/**",
+    "clauses/**",
+    "sources/**",
+    "research/morocco/**",
+    "reviews/**",
+    "schemas/**",
+    "mcp/server.py",
+    "LICENSES/*.txt",
+    "LICENSES/README.md",
+    "LICENSES/scopes.json",
+    "README.md",
+    "README.fr.md",
+    "README.ar.md",
+    "DISCLAIMER.md",
+    "INTEGRATIONS.md",
+    "RELEASE_NOTES.md"
+  ]
 }

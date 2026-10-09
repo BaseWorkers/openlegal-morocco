@@ -1,13 +1,24 @@
-# Local CLI and MCP testing
+# OpenLegal CLI and MCP testing
 
 This release provides a local, read-only CLI and a stdio MCP server. The tools read this checkout's catalogue; they do not connect to a tester's private repository, make network requests, change files, or approve legal content.
 
-## Get the release
+## Install from npm
+
+Requires Node.js 22 or newer.
+
+```sh
+npm install openlegal
+npx openlegal --help
+```
+
+To install globally, run `npm install --global openlegal`. For MCP, configure the client to launch `openlegal-mcp`; it requires Python 3.10 or newer. The package contains Morocco-focused materials only, and all 14 templates remain drafts.
+
+## Get the source release
 
 ```sh
 git clone https://github.com/BaseWorkers/openlegal-morocco.git
 cd openlegal-morocco
-git checkout v0.0.2
+git checkout v0.0.3
 ```
 
 ## CLI smoke test
@@ -22,14 +33,14 @@ npm run cli -- status privacy-policy
 npm run cli -- sources privacy-policy
 ```
 
-Expected: version `0.0.2`, a valid catalogue containing 14 packages, and `DRAFT` recorded review status.
+Expected: version `0.0.3`, a valid catalogue containing 14 packages, and `DRAFT` recorded review status.
 
 ## MCP smoke test
 
 Requires Python 3.10 or newer. No pip installation is needed. Configure Codex with the local checkout path:
 
 ```sh
-codex mcp add open_legal_morocco -- python3 "$(pwd)/mcp/server.py"
+codex mcp add openlegal -- openlegal-mcp "$(pwd)/mcp/server.py"
 codex mcp list
 ```
 

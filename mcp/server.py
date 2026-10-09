@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only local MCP server for Open Legal Morocco (JSON-RPC over stdio)."""
+"""Read-only local MCP server for OpenLegal (JSON-RPC over stdio)."""
 
 import base64
 import hashlib
@@ -24,7 +24,7 @@ AUTHORIZED_REVIEWERS = ROOT / "reviews" / "authorized-reviewers.yaml"
 REVIEW_RECORD_SCHEMA = ROOT / "schemas" / "review.schema.json"
 AUTHORIZED_REVIEWERS_SCHEMA = ROOT / "schemas" / "authorized-reviewers.schema.json"
 DISCLAIMER = (
-    "Open Legal Morocco materials are unverified discussion drafts, not legal advice. "
+    "OpenLegal's Morocco-focused materials are unverified discussion drafts, not legal advice. "
     "Automated results do not certify Moroccan legal compliance. "
     "Seek qualified Moroccan legal counsel before relying on a document."
 )
@@ -842,7 +842,7 @@ def response(request, session=None):
         return {
             "protocolVersion": negotiated,
             "capabilities": {"tools": {}},
-            "serverInfo": {"name": "open-legal-morocco", "version": PROJECT_VERSION},
+            "serverInfo": {"name": "OpenLegal", "version": PROJECT_VERSION},
         }
     if method == "ping":
         return {}

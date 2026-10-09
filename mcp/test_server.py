@@ -287,7 +287,7 @@ console.log(JSON.stringify(digests));
         lines = stdout.getvalue().splitlines()
         self.assertEqual(len(lines), 4)
         output = [json.loads(line) for line in lines]
-        self.assertEqual(output[0]["result"]["serverInfo"]["name"], "open-legal-morocco")
+        self.assertEqual(output[0]["result"]["serverInfo"]["name"], "OpenLegal")
         self.assertEqual(len(output[1]["result"]["tools"]), 10)
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)

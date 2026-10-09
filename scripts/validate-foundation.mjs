@@ -11,7 +11,12 @@ import { validateClauseCatalogReferences } from './clause-catalog-policy.mjs';
 
 const readJson = async (path) => JSON.parse(await readFile(new URL(path, import.meta.url), 'utf8'));
 const packageManifest = await readJson('../package.json');
-assert.equal(packageManifest.private, true, 'the repository tooling package must not be published accidentally');
+assert.equal(packageManifest.name, 'openlegal', 'the public package must use the OpenLegal brand');
+assert.equal(packageManifest.private, undefined, 'the npm CLI package must be publishable');
+assert.deepEqual(packageManifest.bin, { openlegal: 'scripts/openlegal.mjs', 'openlegal-mcp': 'scripts/openlegal-mcp.mjs' });
+for (const requiredPackagePath of ['scripts/*.mjs', 'templates/**', 'schemas/**', 'mcp/server.py', 'LICENSES/README.md']) {
+  assert.ok(packageManifest.files.includes(requiredPackagePath), `npm package files must include ${requiredPackagePath}`);
+}
 assert.equal(packageManifest.license, undefined, 'the repository has separate software and legal-content license scopes; do not label the whole package with one license');
 const templateSchema = await readJson('../schemas/template.schema.json');
 const variablesSchema = await readJson('../schemas/variables.schema.json');

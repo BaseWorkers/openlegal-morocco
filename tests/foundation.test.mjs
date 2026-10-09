@@ -825,7 +825,7 @@ test('DOCX export packages document structure, numbering, version footer, and Ar
   assert.match(englishParts['word/footer1.xml'], /reviewed-fixture · v1\.0\.0 · en/);
   const plainText = createPlainText(template, 'en', `${markdown}\n\n[Source](https://example.com/source)`);
   assert.match(plainText, /1\. First duty\.\n\n2\. Second duty\./);
-  assert.match(plainText, /Open Legal Morocco · reviewed-fixture · v1\.0\.0 · en/);
+  assert.match(plainText, /OpenLegal · reviewed-fixture · v1\.0\.0 · en/);
   assert.match(plainText, /Source \(https:\/\/example\.com\/source\)/);
   assert.doesNotMatch(plainText, /\*\*|\\\./);
   const arabicParts = createDocxXmlParts(template, 'ar', '## اتفاق\n\nتوقيع الطرفين.');
@@ -894,8 +894,8 @@ test('offline export CLI keeps released-template gates, source notices, and self
 });
 
 test('project-only export rejects internal Markdown names and content', () => {
-  assert.equal(isInternalMarkdownDocument('README.md', '# Open Legal Morocco\n\nProject status and template catalog.'), false);
-  assert.equal(isInternalMarkdownDocument('ROADMAP.md', '# Open Legal Morocco'), true);
+  assert.equal(isInternalMarkdownDocument('README.md', '# OpenLegal\n\nProject status and template catalog.'), false);
+  assert.equal(isInternalMarkdownDocument('ROADMAP.md', '# OpenLegal'), true);
   assert.equal(isInternalMarkdownDocument('how-to.md', '# Overview'), true);
   assert.equal(isInternalMarkdownDocument('project-notes.md', '# Current direction'), false);
   assert.equal(isInternalMarkdownDocument('notes.md', 'Codex implementation plan'), true);
@@ -903,6 +903,8 @@ test('project-only export rejects internal Markdown names and content', () => {
   assert.equal(isInternalMarkdownDocument('notes.md', 'Build instructions'), true);
   assert.equal(isInternalMarkdownDocument('SECURITY.md', 'Run `npm run audit:privacy` to check the project.'), true);
   assert.equal(isInternalMarkdownDocument('INTEGRATIONS.md', 'Run `npm run cli -- check` and `python3 -m unittest discover -s mcp`.'), false);
+  assert.equal(isInternalMarkdownDocument('README.md', 'Install with `npm install openlegal` and run `npx openlegal --help`.'), false);
+  assert.equal(isInternalMarkdownDocument('RELEASE_NOTES.md', 'Install with `npm install openlegal`.'), false);
   assert.equal(isInternalMarkdownDocument('notes.md', 'Run `node scripts/validate-foundation.mjs` before release.'), true);
   assert.equal(isInternalMarkdownDocument('CONTRIBUTING.md', 'Contribute Moroccan source research and translation corrections.'), false);
   assert.equal(isInternalMarkdownDocument('CONTRIBUTING.md', 'Run `npm test` before submitting.'), true);
@@ -916,7 +918,7 @@ test('project-only export includes project policies and excludes planning and de
   try {
     await execFileAsync(process.execPath, [exportScript, output, '--preview']);
     const readme = await readFile(join(output, 'README.md'), 'utf8');
-    assert.match(readme, /v0\.0\.2 · Local tooling test preview/);
+    assert.match(readme, /v0\.0\.3 · OpenLegal npm package preview/);
     assert.match(readme, /Moroccan lawyers and legal researchers/);
     assert.match(readme, /recognize common legal questions and prepare discussion drafts/);
     assert.match(readme, /does not certify that a business or document is legally compliant/);

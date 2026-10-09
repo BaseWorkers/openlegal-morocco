@@ -1,6 +1,10 @@
-# Open Legal Morocco MCP (local and read-only)
+# OpenLegal MCP (local and read-only)
 
 This experimental MCP server exposes the repository's existing template catalogue to compatible agents. It does not conduct legal research, evaluate deployed websites, monitor legal changes, or verify compliance.
+
+## Install from npm
+
+Install the public package with `npm install openlegal`. Run the MCP server as `openlegal-mcp`; Python 3.10 or newer is required. The installed server reads the package's local Morocco-focused catalogue and makes no network requests.
 
 ## Requirements
 
@@ -19,18 +23,18 @@ Configure an MCP client to start the Python server with an absolute script path.
 
 ```sh
 # macOS / Linux
-codex mcp add open_legal_morocco -- python3 "/absolute/path/to/open-legal-morocco/mcp/server.py"
+codex mcp add openlegal -- python3 "/absolute/path/to/openlegal-morocco/mcp/server.py"
 
 # Windows PowerShell, with the Python launcher installed
-codex mcp add open_legal_morocco -- py -3 "C:\absolute\path\to\open-legal-morocco\mcp\server.py"
+codex mcp add openlegal -- py -3 "C:\absolute\path\to\openlegal-morocco\mcp\server.py"
 ```
 
 If the `py` launcher is unavailable on Windows, use `python` in its place. These commands store local paths in the Codex user configuration. For a manual setup, add this TOML to `~/.codex/config.toml` (macOS/Linux) or `%USERPROFILE%\\.codex\\config.toml` (Windows):
 
 ```toml
-[mcp_servers.open_legal_morocco]
+[mcp_servers.openlegal]
 command = "python3" # use "py" on Windows
-args = ["/absolute/path/to/open-legal-morocco/mcp/server.py"] # Windows: "C:\\absolute\\path\\to\\open-legal-morocco\\mcp\\server.py"
+args = ["/absolute/path/to/openlegal-morocco/mcp/server.py"] # Windows: "C:\\absolute\\path\\to\\openlegal-morocco\\mcp\\server.py"
 ```
 
 Use the absolute checkout path that exists on your machine; do not copy the sample path literally. Confirm registration with `codex mcp list`, then restart Codex if the tools do not appear. The MCP configuration format and command are documented in the [Codex MCP guide](https://developers.openai.com/learn/docs-mcp); `codex mcp add --help` shows the local stdio command form.

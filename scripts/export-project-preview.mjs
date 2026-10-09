@@ -107,11 +107,11 @@ function makeReadme(packages) {
   }
 
   const lines = [
-    '# Open Legal Morocco',
+    '# OpenLegal',
     '',
     '[English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)',
     '',
-    `**v${projectVersion} · Local tooling test preview**`,
+    `**v${projectVersion} · OpenLegal npm package preview**`,
     '',
     'An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.',
     '',
@@ -120,6 +120,17 @@ function makeReadme(packages) {
     '## Local tools',
     '',
     'Try the [CLI and MCP smoke tests](INTEGRATIONS.md) against this local checkout. Both tools are read-only; their output does not count as professional review.',
+    '',
+    '## Install the public CLI',
+    '',
+    'Requires Node.js 22 or later.',
+    '',
+    '```sh',
+    'npm install openlegal',
+    'npx openlegal --help',
+    '```',
+    '',
+    'For the MCP server, install the package and launch `openlegal-mcp`; Python 3.10 or later is required. This release contains Morocco-focused materials only.',
     '',
     '## Current status',
     '',
@@ -170,7 +181,7 @@ function makeReadme(packages) {
 
 function makeFrenchReadme(packages) {
   return [
-    '# Open Legal Morocco — Français',
+    '# OpenLegal — Français',
     '',
     '[English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)',
     '',
@@ -193,7 +204,7 @@ function makeFrenchReadme(packages) {
 
 function makeArabicReadme(packages) {
   return [
-    '# Open Legal Morocco — العربية',
+    '# OpenLegal — العربية',
     '',
     '[English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)',
     '',
@@ -340,7 +351,7 @@ async function main() {
   await writeFile(join(canonicalOutputPath, 'DISCLAIMER.md'), [
     '# Disclaimer',
     '',
-    'Open Legal Morocco provides informational materials and discussion drafts, not legal advice. The project does not create an attorney-client relationship and does not guarantee that any document is valid, enforceable, current, suitable, or compliant for a particular transaction.',
+    'OpenLegal provides informational materials and discussion drafts, not legal advice. The project does not create an attorney-client relationship and does not guarantee that any document is valid, enforceable, current, suitable, or compliant for a particular transaction.',
     '',
     'Moroccan law and its interpretation can change. Review the sources, assumptions, version, and review status for the exact document. Consult a qualified Moroccan legal professional before relying on, adapting, or signing a template.',
     '',

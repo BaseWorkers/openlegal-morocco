@@ -1,16 +1,27 @@
-# Open Legal Morocco
+# OpenLegal
 
 [English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)
 
-**v0.0.2 · Local tooling test preview**
+**v0.0.3 · OpenLegal npm package preview**
 
-An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
+OpenLegal is an independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
 
 We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [release notes](RELEASE_NOTES.md).
 
+## Install the public CLI
+
+Requires Node.js 22 or later.
+
+```sh
+npm install openlegal
+npx openlegal --help
+```
+
+For a global command, use `npm install --global openlegal`. The optional `openlegal-mcp` command requires Python 3.10 or later. This release contains Morocco-focused materials only.
+
 ## Current status
 
-This v0.0.2 preview contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
+This v0.0.3 preview contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
 
 The files are working drafts. They may be incomplete, outdated, or unsuitable for a specific person, transaction, or business. The project does not certify that a business or document is legally compliant. Do not sign or rely on them without qualified Moroccan legal advice.
 
