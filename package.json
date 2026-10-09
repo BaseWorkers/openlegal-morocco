@@ -1,16 +1,47 @@
 {
-  "name": "open-legal-morocco",
-  "version": "0.0.2",
-  "private": true,
-  "description": "Independent open legal-template infrastructure for Morocco",
+  "name": "openlegal",
+  "version": "0.0.3",
+  "description": "OpenLegal CLI and read-only MCP tools for legal information and document drafts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BaseWorkers/openlegal-morocco.git"
+  },
+  "homepage": "https://github.com/BaseWorkers/openlegal-morocco#readme",
+  "bugs": {
+    "url": "https://github.com/BaseWorkers/openlegal-morocco/issues"
+  },
+  "keywords": ["openlegal", "legal", "morocco", "mcp", "cli", "templates"],
+  "bin": {
+    "openlegal": "scripts/openlegal.mjs",
+    "openlegal-mcp": "scripts/openlegal-mcp.mjs"
+  },
+  "files": [
+    "scripts/*.mjs",
+    "templates/**",
+    "clauses/**",
+    "sources/**",
+    "research/morocco/**",
+    "reviews/**",
+    "schemas/**",
+    "mcp/server.py",
+    "LICENSES/*.txt",
+    "LICENSES/README.md",
+    "LICENSES/scopes.json",
+    "README.md",
+    "DISCLAIMER.md",
+    "INTEGRATIONS.md",
+    "RELEASE_NOTES.md"
+  ],
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "validate": "node scripts/validate-license-scopes.mjs && node scripts/validate-foundation.mjs && node scripts/validate-template-packages.mjs",
+    "prepublishOnly": "npm run validate && npm test",
+    "validate": "node scripts/validate-license-scopes.mjs && node scripts/validate-foundation.mjs && node scripts/validate-template-packages.mjs && node scripts/validate-codex-plugin.mjs",
     "validate:license-scopes": "node scripts/validate-license-scopes.mjs",
     "check:syntax": "node scripts/check-syntax.mjs",
     "validate:templates": "node scripts/validate-template-packages.mjs",
+    "validate:codex-plugin": "node scripts/validate-codex-plugin.mjs",
     "build:review-packets": "node scripts/build-review-packets.mjs",
     "export:project-preview": "node scripts/export-project-preview.mjs",
     "cli": "node scripts/openlegal.mjs",

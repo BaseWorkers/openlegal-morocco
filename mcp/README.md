@@ -1,4 +1,4 @@
-# Open Legal Morocco MCP (local and read-only)
+# OpenLegal MCP (local and read-only)
 
 This experimental MCP server exposes the repository's existing template catalogue to compatible agents. It does not conduct legal research, evaluate deployed websites, monitor legal changes, or verify compliance.
 
@@ -10,6 +10,15 @@ This experimental MCP server exposes the repository's existing template catalogu
 - OpenSSL is optional; when linked review records exist, the server uses the local `openssl` executable for Ed25519 verification and reports `verification_unavailable` if it is absent
 
 ## Run
+
+For the npm package, install OpenLegal and launch its MCP entry point:
+
+```sh
+npm install --global openlegal
+codex mcp add openlegal -- openlegal-mcp
+```
+
+The launcher uses `python3` (or `python` on Windows) and requires Python 3.10 or later. Set the `PYTHON` environment variable if your Python executable has another path. For source-checkout use, run `python3 mcp/server.py` as below.
 
 ```sh
 python3 mcp/server.py
@@ -25,15 +34,9 @@ codex mcp add open_legal_morocco -- python3 "/absolute/path/to/open-legal-morocc
 codex mcp add open_legal_morocco -- py -3 "C:\absolute\path\to\open-legal-morocco\mcp\server.py"
 ```
 
-If the `py` launcher is unavailable on Windows, use `python` in its place. These commands store local paths in the Codex user configuration. For a manual setup, add this TOML to `~/.codex/config.toml` (macOS/Linux) or `%USERPROFILE%\\.codex\\config.toml` (Windows):
+If the `py` launcher is unavailable on Windows, use `python` in its place. For manual setup, configure the MCP client with the same local stdio command and the absolute script path.
 
-```toml
-[mcp_servers.open_legal_morocco]
-command = "python3" # use "py" on Windows
-args = ["/absolute/path/to/open-legal-morocco/mcp/server.py"] # Windows: "C:\\absolute\\path\\to\\open-legal-morocco\\mcp\\server.py"
-```
-
-Use the absolute checkout path that exists on your machine; do not copy the sample path literally. Confirm registration with `codex mcp list`, then restart Codex if the tools do not appear. The MCP configuration format and command are documented in the [Codex MCP guide](https://developers.openai.com/learn/docs-mcp); `codex mcp add --help` shows the local stdio command form.
+Use the absolute checkout path that exists on your machine; do not copy the sample path literally. Confirm registration with `codex mcp list`, then restart Codex if the tools do not appear. For manual configuration, use your MCP client's local stdio server settings with the same Python command and absolute script path. The format and command are documented in the [Codex MCP guide](https://developers.openai.com/learn/docs-mcp); `codex mcp add --help` shows the CLI form.
 
 The server exposes `list_templates` (optional category and language filters), `get_template` (template ID and optional language), `get_template_sources` (template ID), `get_review_status` (recorded status and verified review evidence where possible), `get_change_history` (local package changelog), `search_legal_sources` (local text/topic/type filters), `list_legal_topics` (topic IDs and local source counts), and `get_checklist` (preliminary fact-gathering questions selected by a coarse application type). The checklist is not complete legal advice, a compliance score, or a conclusion about applicable law. Responses preserve any recorded review status and state their limitations. Source declarations and search results are discovery aids, not proof that a rule is current or applies to a particular user.
 
@@ -62,8 +65,3 @@ Run `python3 -m unittest discover -s mcp -p 'test_*.py'`. If the client does not
 The MCP server also exposes `get_findings_spec` (the shared v1 JSON Schema and generic controls) and `export_findings` (validate and echo a supplied sanitized document unchanged). These tools do not scan caller repositories, contact external services, change human review states, or modify security policies. See [`docs/INTEROPERABILITY.md`](../docs/INTEROPERABILITY.md) for the export contract, privacy boundary, and versioning policy.
 
 For clients negotiating MCP protocol `2025-06-18`, `export_findings` advertises the published findings JSON Schema as its `outputSchema` and returns the validated document in `structuredContent`, alongside JSON text for compatibility with text-oriented clients. Clients negotiating older supported protocol revisions receive the same validated JSON in text content without structured output fields. The server negotiates the protocol per MCP session and never claims an output schema that it does not return.
-
-
-## Quick test
-
-From the checked-out release, run `python3 -m unittest discover -s mcp -p 'test_*.py'`. In an MCP client, confirm that `list_templates` appears, call it with `language: en`, then call `get_review_status` with `template_id: privacy-policy`. The results should include draft status and a disclaimer. Do not pass personal, client, confidential, or secret data.

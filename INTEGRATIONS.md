@@ -1,42 +1,68 @@
-# Local CLI and MCP testing
+# Local CLI, MCP, and Codex plugin
 
-This release provides a local, read-only CLI and a stdio MCP server. The tools read this checkout's catalogue; they do not connect to a tester's private repository, make network requests, change files, or approve legal content.
+OpenLegal includes read-only tools for its Morocco-focused discussion drafts. They do not provide legal advice, make network requests, change review statuses, or certify compliance.
 
-## Get the release
+## Install the public CLI
+
+Requires Node.js 22 or later. To add OpenLegal to a project and run the command with `npx`:
 
 ```sh
-git clone https://github.com/BaseWorkers/openlegal-morocco.git
-cd openlegal-morocco
-git checkout v0.0.2
+npm install openlegal
+npx openlegal --version
+npx openlegal check
+npx openlegal list --language en
 ```
 
-## CLI smoke test
+To install the command globally instead:
 
-Requires Node.js 22 or newer. No dependency install is needed.
+```sh
+npm install --global openlegal
+openlegal --version
+openlegal check
+```
+
+Expected: `OpenLegal 0.0.3`, `valid: true`, and 14 template packages. These are Morocco-focused discussion drafts and remain unreviewed. The package has no JavaScript runtime dependencies.
+
+To run the MCP server from an installed package, configure a client to launch `openlegal-mcp`. For Codex CLI, use `codex mcp add openlegal -- openlegal-mcp`, then restart Codex if the server tools do not appear. Python 3.10 or later is required. Set `PYTHON` to the Python executable path if your system does not use `python3` (or `python` on Windows).
+
+## Command-line interface
+
+Node.js 22 or later is required; there are no runtime package dependencies. From the repository root, use the CLI to list drafts, inspect a package, read its declared sources or review status, and validate a supplied findings document:
 
 ```sh
 npm run cli -- --version
 npm run cli -- check
 npm run cli -- list --language en
+npm run cli -- show privacy-policy --language fr
 npm run cli -- status privacy-policy
 npm run cli -- sources privacy-policy
+npm run cli -- findings validate findings.json
 ```
 
-Expected: version `0.0.2`, a valid catalogue containing 14 packages, and `DRAFT` recorded review status.
+Expected smoke-check results: `--version` prints `OpenLegal 0.0.3`; `check` returns `valid: true` and `template_packages: 14`; `list` returns template IDs and recorded draft statuses. The CLI reads files only from this local checkout and reports recorded statuses as they are. A valid findings export or passing check does not imply legal approval.
 
-## MCP smoke test
+For testers using the source checkout, share the public `BaseWorkers/openlegal-morocco` repository and an exact release tag. Ask them to report the command, OS, runtime versions, expected result, and actual result in a public GitHub issue, using only synthetic or public data.
 
-Requires Python 3.10 or newer. No pip installation is needed. Configure Codex with the local checkout path:
+## Feedback and reviewer applications
+
+Use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) to volunteer as a legal reviewer, language reviewer, research reviewer, or community moderator. Read the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md) first. The issue form and replies are public; do not include private contact details, client information, or confidential documents. Tool testing and community feedback do not count as professional approval.
+
+## Codex CLI plugin and MCP server
+
+The Codex plugin packages the OpenLegal skill. The MCP server is a separate local stdio process that reads the installed package's catalogue; the plugin's skill uses it when configured.
+
+From the repository root, the optional Codex plugin can be installed with:
 
 ```sh
-codex mcp add open_legal_morocco -- python3 "$(pwd)/mcp/server.py"
+codex plugin marketplace add ./codex-marketplace
+codex plugin add open-legal-morocco --marketplace open-legal-morocco
+```
+
+Register the MCP server using the absolute path to this checkout's `mcp/server.py`:
+
+```sh
+codex mcp add openlegal -- openlegal-mcp
 codex mcp list
 ```
 
-Restart Codex if its tools do not appear. In the client, list the server tools, call `list_templates` with `language: en`, then call `get_review_status` with `template_id: privacy-policy`. Expect draft status and a disclaimer. If the server name is already registered, keep that entry instead of adding a duplicate.
-
-For protocol tests, run `python3 -m unittest discover -s mcp -p 'test_*.py'`.
-
-## Bug reports
-
-Report the operating system, Node.js/Python versions, command or MCP tool used, expected result, and actual result in a public GitHub issue. Include only synthetic or public data. Do not post client matters, personal information, credentials, or confidential files. Passing tools or positive feedback is not legal or language approval.
+If `openlegal` is already listed, keep the existing entry. Verify MCP by listing the server's tools, calling `list_templates` with `language: en`, then `get_review_status` with `template_id: privacy-policy`; expect draft status and a disclaimer. For source-checkout protocol tests, run `python3 -m unittest discover -s mcp -p 'test_*.py'`. See [MCP setup and safety limits](mcp/README.md) and [Codex plugin details](codex-marketplace/plugins/open-legal-morocco/README.md).
