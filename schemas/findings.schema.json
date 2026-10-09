@@ -25,7 +25,7 @@
       "type": "object", "additionalProperties": false,
       "required": ["finding_id", "finding_type", "category", "priority", "priority_basis", "description", "evidence", "affected_resources", "legal_references", "suggested_controls", "review_status", "confidence", "schema_version"],
       "properties": {
-        "finding_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$" },
+        "finding_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$", "description": "Unique within one findings export; CLI and MCP semantic validation reject duplicate identifiers." },
         "finding_type": { "enum": ["technical_observation", "potential_legal_question"] },
         "category": { "type": "string", "minLength": 1 },
         "priority": { "enum": ["informational", "low", "medium", "high", "critical"] },

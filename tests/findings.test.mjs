@@ -36,3 +36,15 @@ test('findings reject unknown controls, incorrect legal priority framing, and se
   assert.ok(errors.some((item) => item.includes('unknown control')));
   assert.ok(errors.some((item) => item.includes('direct email')));
 });
+
+test('findings reject duplicate identifiers even when the finding objects differ', async () => {
+  const duplicate = structuredClone(document);
+  duplicate.findings.push({ ...structuredClone(finding), description: 'A distinct observation using the same identifier.' });
+  const errors = await validateFindings(duplicate);
+  assert.ok(errors.some((item) => item.includes('duplicate finding_id')));
+});
+
+test('findings validator returns schema errors for a non-array findings field', async () => {
+  const errors = await validateFindings({ ...document, findings: null });
+  assert.ok(errors.some((item) => item.includes('must be array')));
+});

@@ -20,7 +20,14 @@ export async function validateFindings(value) {
   const { schema, taxonomy } = await findingsSpecification();
   const errors = validateJsonSchemaValue(value, schema);
   const knownControls = new Set(taxonomy.controls.map(({ id }) => id));
-  value?.findings?.forEach((finding, index) => {
+  const findingIds = new Set();
+  if (!Array.isArray(value?.findings)) return errors;
+  value.findings.forEach((finding, index) => {
+    if (!finding || typeof finding !== 'object' || Array.isArray(finding)) return;
+    if (typeof finding.finding_id === 'string') {
+      if (findingIds.has(finding.finding_id)) errors.push(`$.findings[${index}].finding_id is a duplicate finding_id`);
+      findingIds.add(finding.finding_id);
+    }
     if (finding.finding_type === 'potential_legal_question' && (typeof finding.legal_question !== 'string' || !finding.legal_question.trim())) errors.push(`$.findings[${index}].legal_question is required for a potential legal question`);
     if (finding.finding_type === 'technical_observation' && finding.legal_question !== null) errors.push(`$.findings[${index}].legal_question must be null for a technical observation`);
     for (const control of finding.suggested_controls ?? []) {

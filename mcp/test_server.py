@@ -144,6 +144,13 @@ class MCPTests(unittest.TestCase):
         }
         self.assertEqual(server.validate_findings(document), [])
         self.assertEqual(server.call("export_findings", {"document": document}), document)
+        duplicate = json.loads(json.dumps(document))
+        duplicate["findings"].append({**duplicate["findings"][0], "description": "A distinct observation with the same identifier."})
+        duplicate_errors = server.validate_findings(duplicate)
+        self.assertTrue(any("duplicate finding_id" in error for error in duplicate_errors))
+        malformed = {**document, "findings": None}
+        with self.assertRaisesRegex(ValueError, "Invalid findings document"):
+            server.call("export_findings", {"document": malformed})
         bad = {**document, "findings": [{"finding_id": "x", "suggested_controls": ["vendor_product"]}]}
         with self.assertRaisesRegex(ValueError, "Invalid findings document"):
             server.call("export_findings", {"document": bad})
