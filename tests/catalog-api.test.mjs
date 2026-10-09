@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { mkdtemp, readFile, rm, symlink, writeFile, mkdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
@@ -7,7 +8,7 @@ import { promisify } from 'node:util';
 import { execFile } from 'node:child_process';
 import { test } from 'node:test';
 import { buildStaticApi } from '../scripts/build-static-api.mjs';
-import { loadCatalog, recordedReview } from '../scripts/catalog.mjs';
+import { loadCatalog, loadTemplateContent, recordedReview } from '../scripts/catalog.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const execFileAsync = promisify(execFile);
@@ -41,6 +42,30 @@ test('static API generation is traceable and never asserts verification', async 
     assert.ok(template.provenance.content_sha256.en);
     assert.ok(sources.data.sources.length);
     assert.match(template.disclaimer, /not legal advice/);
+
+    const sourceRegistry = JSON.parse(await readFile(join(root, 'sources/registry.yaml'), 'utf8'));
+    const sourceIds = new Set(sourceRegistry.sources.map(({ id }) => id));
+    const templateIds = new Set();
+    for (const packageInfo of await loadCatalog(root)) {
+      assert.ok(!templateIds.has(packageInfo.id), `duplicate public API template id: ${packageInfo.id}`);
+      templateIds.add(packageInfo.id);
+      const record = JSON.parse(await readFile(join(outputDirectory, 'templates', `${packageInfo.id}.json`), 'utf8'));
+      const sourceRecord = JSON.parse(await readFile(join(outputDirectory, 'templates', packageInfo.id, 'sources.json'), 'utf8'));
+      assert.equal(record.provenance.repository_ref, 'test-revision');
+      assert.equal(record.review.status, packageInfo.metadata.status);
+      assert.deepEqual(record.data.metadata, packageInfo.metadata);
+      assert.deepEqual(record.data.sources, packageInfo.sources);
+      for (const language of packageInfo.metadata.languages) {
+        const content = await loadTemplateContent(packageInfo, language);
+        assert.equal(record.data.contents[language], content, `${packageInfo.id}/${language} API content must match the source package`);
+        assert.equal(record.provenance.content_sha256[language], createHash('sha256').update(content).digest('hex'));
+      }
+      assert.deepEqual(sourceRecord.data.declarations, packageInfo.sources);
+      assert.deepEqual(sourceRecord.data.sources.map(({ id }) => id), packageInfo.sources.source_ids);
+      assert.ok(sourceRecord.data.sources.every(({ id }) => sourceIds.has(id)), `${packageInfo.id} API sources must resolve to the registry`);
+      assert.equal(sourceRecord.provenance.repository_ref, 'test-revision');
+    }
+    assert.equal(templateIds.size, catalog.data.length);
   } finally {
     await rm(outputDirectory, { recursive: true, force: true });
   }
