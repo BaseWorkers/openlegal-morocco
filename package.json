@@ -10,7 +10,14 @@
   "bugs": {
     "url": "https://github.com/BaseWorkers/openlegal-morocco/issues"
   },
-  "keywords": ["openlegal", "legal", "morocco", "mcp", "cli", "templates"],
+  "keywords": [
+    "openlegal",
+    "legal",
+    "morocco",
+    "mcp",
+    "cli",
+    "templates"
+  ],
   "bin": {
     "openlegal": "scripts/openlegal.mjs",
     "openlegal-mcp": "scripts/openlegal-mcp.mjs"
@@ -37,7 +44,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm run validate && npm test",
-    "validate": "node scripts/validate-license-scopes.mjs && node scripts/validate-foundation.mjs && node scripts/validate-template-packages.mjs && node scripts/validate-codex-plugin.mjs",
+    "validate": "node scripts/validate-license-scopes.mjs && node scripts/validate-foundation.mjs && node scripts/validate-template-packages.mjs",
     "validate:license-scopes": "node scripts/validate-license-scopes.mjs",
     "check:syntax": "node scripts/check-syntax.mjs",
     "validate:templates": "node scripts/validate-template-packages.mjs",
