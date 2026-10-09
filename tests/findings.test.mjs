@@ -141,6 +141,7 @@ test('standalone adapter consumes exports using only caller-supplied JSON files'
     assert.equal(imported.findings[1].review_status.human_review, 'pending');
     assert.match(imported.disclaimer, /does not approve legal findings/);
     assert.match(imported.validation_note, /full contract validation/);
+    assert.match(imported.validation_note, /not complete PII or secret detection/);
 
     const invalid = structuredClone(document);
     invalid.findings[0].suggested_controls = ['vendor_product'];
