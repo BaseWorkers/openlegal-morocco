@@ -453,8 +453,6 @@ export async function buildStaticSite({ outputDirectory = resolve(root, 'dist/si
       const content = await loadTemplateContent(template, lang);
       await writeFile(detailPath, shell({ lang, title: template.metadata.title?.[lang] ?? template.id, description: t.warningBody, body: detailBody(lang, { ...template, content }, registryById, repositoryRef) + resourceNav(lang, 3), depth: 3, template, baseUrl, canonicalPath: route }));
     }
-  }
-
 
     for (const [slug, page] of Object.entries(resourcePages[lang])) {
       if (slug === 'navLabel') continue;
@@ -468,6 +466,8 @@ export async function buildStaticSite({ outputDirectory = resolve(root, 'dist/si
         depth: 3, baseUrl, canonicalPath: route,
       }));
     }
+  }
+
 
   await writeFile(resolve(outputDirectory, 'robots.txt'), `User-agent: *\nAllow: /\n${baseUrl ? `Sitemap: ${new URL('sitemap.xml', baseUrl).href}\n` : ''}`);
   if (baseUrl) {
