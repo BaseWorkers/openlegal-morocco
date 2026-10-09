@@ -404,7 +404,7 @@ function landingBody() {
 function resourceNav(lang, depth) {
   const pages = resourcePages[lang];
   const prefix = '../'.repeat(depth - 1);
-  const links = Object.entries(pages).map(([slug, page]) =>
+  const links = Object.entries(pages).filter(([slug]) => slug !== 'navLabel').map(([slug, page]) =>
     '<li><a href="' + prefix + 'resources/' + slug + '/index.html">' + escapeHtml(page.title) + '</a></li>'
   ).join('');
   return '<nav class="resource-links" aria-label="' + escapeHtml(pages.navLabel) + '"><h2>' + escapeHtml(pages.navLabel) + '</h2><ul>' + links + '</ul></nav>';
