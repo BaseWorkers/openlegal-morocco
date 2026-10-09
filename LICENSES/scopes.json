@@ -71,9 +71,10 @@
       "spdx": null,
       "patterns": [
         "LICENSES/CC0-1.0.txt",
-        "LICENSES/MIT.txt"
+        "LICENSES/MIT.txt",
+        "DCO.md"
       ],
-      "exceptions": "Keep upstream license text, copyright, and notices intact; do not apply the project license to these files."
+      "exceptions": "Keep upstream license text, copyright, and notices intact; do not apply the project license to these files. DCO.md is the verbatim DCO 1.1 text and its notice must remain intact."
     }
   ]
 }
