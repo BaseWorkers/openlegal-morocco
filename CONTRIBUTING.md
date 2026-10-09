@@ -14,13 +14,13 @@ The project has no contributor license agreement or ownership-assignment process
 
 ## DCO sign-off
 
-For commits submitted to a target branch that already contains [`DCO.md`](DCO.md), sign off every commit with the Developer Certificate of Origin (DCO) version 1.1:
+For commits submitted to a target branch that already contains `DCO.md`, sign off every commit with the Developer Certificate of Origin (DCO) version 1.1:
 
 ```sh
 git commit -s -m "type: explain the contribution"
 ```
 
-Git adds a `Signed-off-by: Name <email>` trailer. Use your own name and an email address you are comfortable making public in the repository's permanent commit history. The sign-off records the certification in [`DCO.md`](DCO.md); it is not a CLA, does not assign copyright, and does not change the license that applies to any file.
+Git adds a `Signed-off-by: Name <email>` trailer. Use your own name and an email address you are comfortable making public in the repository's permanent commit history. The sign-off records the certification in `DCO.md`; it is not a CLA, does not assign copyright, and does not change the license that applies to any file.
 
 The DCO check applies to new pull requests once their target branch contains `DCO.md`. Existing commits are not rewritten to add sign-offs. DCO sign-off does not resolve the project's provisional license-scope mapping, clear third-party rights, or replace maintainer review. If the applicable license or your authority to contribute is unclear, do not submit that material until it is resolved.
 
