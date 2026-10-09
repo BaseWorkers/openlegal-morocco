@@ -291,6 +291,20 @@ console.log(JSON.stringify(digests));
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)
 
+    def test_protocol_rejects_oversized_message_and_continues(self):
+        oversized = '{"jsonrpc":"2.0","id":1,"method":"ping","padding":"' + ("x" * (server.MAX_MESSAGE_CHARS + 10)) + '"}'
+        next_request = {"jsonrpc": "2.0", "id": 2, "method": "ping"}
+        stdout = io.StringIO()
+        with mock.patch.object(server.sys, "stdin", io.StringIO(oversized + "\n" + json.dumps(next_request) + "\n")), \
+             mock.patch.object(server.sys, "stdout", stdout), \
+             contextlib.redirect_stderr(io.StringIO()):
+            server.main()
+        output = [json.loads(line) for line in stdout.getvalue().splitlines()]
+        self.assertEqual(len(output), 2)
+        self.assertEqual(output[0]["error"]["code"], -32700)
+        self.assertIn("exceeds", output[0]["error"]["message"])
+        self.assertEqual(output[1], {"jsonrpc": "2.0", "id": 2, "result": {}})
+
     def test_findings_spec_and_validation_use_published_contract(self):
         spec = server.call("get_findings_spec", {})
         self.assertEqual(spec["schema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0")
