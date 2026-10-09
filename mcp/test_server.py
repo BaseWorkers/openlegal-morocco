@@ -338,6 +338,10 @@ console.log(JSON.stringify(digests));
         spec = server.call("get_findings_spec", {})
         self.assertEqual(spec["schema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0")
         self.assertEqual(len(spec["taxonomy"]["controls"]), 10)
+        self.assertEqual(
+            spec["schema"]["$defs"]["finding"]["properties"]["suggested_controls"]["items"]["enum"],
+            [control["id"] for control in spec["taxonomy"]["controls"]],
+        )
         document = {
             "schema_version": "1.0.0", "generated_at": "2026-10-09T10:00:00Z",
             "source": {"tool": "test", "version": "1"}, "repository": {"revision": None},
