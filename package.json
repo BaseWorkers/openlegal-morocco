@@ -18,6 +18,7 @@
     "build:site": "node scripts/build-site.mjs",
     "export": "node scripts/export-template.mjs",
     "audit:privacy": "node scripts/audit-generator-privacy.mjs",
+    "audit:secrets": "node scripts/audit-secrets.mjs",
     "audit:internal-links": "node scripts/audit-internal-links.mjs",
     "audit:accessibility": "node scripts/audit-markdown-accessibility.mjs",
     "audit:review-transitions": "node scripts/audit-review-transitions.mjs",
