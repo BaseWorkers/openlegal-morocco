@@ -928,7 +928,7 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(releaseNotes, /does not add a non-commercial restriction/);
     assert.match(releaseNotes, /fourteen structured legal-template discussion drafts/i);
     assert.match(releaseNotes, /no authorized human legal or language review is recorded/i);
-    for (const path of ['README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'GOVERNANCE.md', 'SECURITY.md', 'DISCLAIMER.md', 'LICENSES/README.md', '.github/PULL_REQUEST_TEMPLATE.md', '.github/ISSUE_TEMPLATE/contribution.yml', '.github/ISSUE_TEMPLATE/legal-research.yml', '.github/ISSUE_TEMPLATE/template-defect.yml']) {
+    for (const path of ['README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md', 'GOVERNANCE.md', 'SECURITY.md', 'DISCLAIMER.md', 'LICENSES/README.md', '.github/PULL_REQUEST_TEMPLATE.md', '.github/ISSUE_TEMPLATE/contribution.yml', '.github/ISSUE_TEMPLATE/legal-research.yml', '.github/ISSUE_TEMPLATE/template-defect.yml', '.github/ISSUE_TEMPLATE/reviewer-interest.yml']) {
       await readFile(join(output, path), 'utf8');
       if (path.endsWith('.md') && !path.startsWith('.github/')) assert.match(readme, new RegExp(path.replaceAll('.', '\\.')));
     }
@@ -946,6 +946,14 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(reviewGuide, /no legal or language reviewer is authorized/i);
     assert.match(reviewGuide, /Comments and issue reports are welcome, but they do not change a review status/);
     assert.doesNotMatch(reviewGuide, /npm run|npm test|graphify|Codex|ROADMAP/i);
+    const onboarding = await readFile(join(output, 'docs/REVIEWER_ONBOARDING.md'), 'utf8');
+    assert.match(readme, /reviewer interest form/);
+    assert.match(onboarding, /form and all replies are public/);
+    assert.match(onboarding, /registries are currently empty/);
+    const reviewerInterestForm = await readFile(join(output, '.github/ISSUE_TEMPLATE/reviewer-interest.yml'), 'utf8');
+    assert.match(reviewerInterestForm, /Moroccan legal reviewer/);
+    assert.match(reviewerInterestForm, /Community moderator/);
+    assert.match(reviewerInterestForm, /issue and all answers are public/);
     const frenchReadme = await readFile(join(output, 'README.fr.md'), 'utf8');
     assert.match(frenchReadme, /repérer les questions juridiques courantes/);
     assert.match(frenchReadme, /professionnel qualifié en droit marocain/);
@@ -953,6 +961,7 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(frenchReadme, /n’a pas de but lucratif/);
     assert.match(frenchReadme, /aucun évaluateur juridique ou linguistique n’est actuellement autorisé/);
     assert.match(frenchReadme, /CONTRIBUTING\.md/);
+    assert.match(frenchReadme, /formulaire public d’intérêt/);
     const arabicReadme = await readFile(join(output, 'README.ar.md'), 'utf8');
     assert.match(arabicReadme, /التعرّف على المسائل القانونية الشائعة/);
     assert.match(arabicReadme, /مهني مؤهل في القانون المغربي/);
@@ -960,6 +969,7 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(arabicReadme, /لا يهدف المشروع إلى تحقيق الربح/);
     assert.match(arabicReadme, /لا يوجد حاليا مراجع قانوني أو لغوي معتمد/);
     assert.match(arabicReadme, /CONTRIBUTING\.md/);
+    assert.match(arabicReadme, /استمارة إبداء الاهتمام العامة/);
     assert.match(arabicReadme, /لم يخضع لمراجعة مستقلة/);
     const pullRequestTemplate = await readFile(join(output, '.github/PULL_REQUEST_TEMPLATE.md'), 'utf8');
     assert.doesNotMatch(pullRequestTemplate, /npm run|npm test|graphify|Codex|ROADMAP/i);
@@ -972,6 +982,7 @@ test('project-only export includes project policies and excludes planning and de
     assert.ok(exportedPatterns.includes('scripts/**'));
     assert.ok(exportedPatterns.includes('CONTRIBUTING.md'));
     assert.ok(exportedPatterns.includes('REVIEWING.md'));
+    assert.ok(exportedPatterns.includes('docs/**'));
     assert.ok(exportedPatterns.includes('RELEASE_NOTES.md'));
     assert.ok(exportedPatterns.includes('README.fr.md'));
     assert.ok(exportedPatterns.includes('README.ar.md'));

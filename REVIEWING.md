@@ -9,7 +9,7 @@ Open Legal Morocco is an early contribution preview. All 14 template packages ar
 - **Language review:** identify the language and version reviewed, compare it with the other language versions, and report changes to rights, obligations, defined terms, dates, or legal effect.
 - **General feedback:** report unclear assumptions, missing use cases, accessibility issues, or adaptation concerns.
 
-Use **Issues → New issue → Offer a contribution** to offer help. Use the legal-research or template-defect issue form for a specific finding. Please do not post identity documents, credentials, personal contact details, client information, confidential advice, or completed agreements in public issues.
+To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml). Read the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md) first. The form and all replies are public; do not post private documents or contact details. For other contributions, use **Issues → New issue → Offer a contribution**. Use the legal-research or template-defect issue form for a specific finding. Never post credentials, client information, confidential advice, or completed agreements in public issues.
 
 ## Get the exact review materials
 

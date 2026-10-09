@@ -1,0 +1,72 @@
+name: Join the reviewer or moderator program
+description: Apply in English, French, or Arabic. This issue and all answers are public.
+title: "[Reviewer interest]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a public expression of interest, not confidential intake or automatic authorization. The issue and your answers will be visible to everyone. You may answer in English, French, or Arabic.
+
+        Do not include CVs, identity documents, private contact details, client names, confidential work, or sensitive personal data. Share only experience and links you are comfortable making public. A maintainer may ask for public clarifications. No role or review authority is granted until qualification, scope, conflicts, and governance requirements are checked.
+
+        Cette demande est publique et les réponses sont visibles par tous. Vous pouvez répondre en anglais, français ou arabe. Ne publiez pas de CV, pièce d'identité, coordonnées privées, nom de client, document confidentiel ou donnée personnelle sensible. Le formulaire ne confère aucune autorisation de révision ou d'approbation.
+
+        هذا الطلب علني، وستكون الإجابات مرئية للجميع. يمكنك الإجابة بالعربية أو الفرنسية أو الإنجليزية. لا تنشر سيرة ذاتية أو وثائق هوية أو بيانات اتصال خاصة أو أسماء عملاء أو معلومات سرية أو بيانات شخصية حساسة. تقديم الطلب لا يمنح صلاحية مراجعة المحتوى أو اعتماده.
+  - type: dropdown
+    id: roles
+    attributes:
+      label: Role(s) you are interested in
+      multiple: true
+      options:
+        - Moroccan legal reviewer
+        - Arabic, French, or English language reviewer
+        - Moroccan legal research reviewer
+        - Community moderator
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope you can support
+      description: For legal work, name the Moroccan law area. For language work, name the language and direction (for example, French to Arabic). For moderation, state the community tasks you can handle.
+      placeholder: Keep this suitable for a public issue.
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Relevant public experience
+      description: Summarize relevant experience you are comfortable sharing publicly. Do not provide confidential or sensitive details.
+      placeholder: A short summary is enough.
+    validations:
+      required: true
+  - type: textarea
+    id: public_references
+    attributes:
+      label: Public professional references (optional)
+      description: Add links to public professional profiles or publications only. Do not upload certificates, IDs, CVs, or private records.
+      placeholder: https://...
+    validations:
+      required: false
+  - type: textarea
+    id: availability
+    attributes:
+      label: Availability and preferred workload (optional)
+      placeholder: For example, one review per month.
+    validations:
+      required: false
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: General conflicts or limits (optional)
+      description: Describe only general limits. Do not name clients, employers, counterparties, or confidential matters.
+    validations:
+      required: false
+  - type: dropdown
+    id: public_acknowledgment
+    attributes:
+      label: Public submission acknowledgment
+      options:
+        - I understand that this issue is public and I will share only information I am comfortable publishing.
+    validations:
+      required: true

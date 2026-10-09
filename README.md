@@ -6,7 +6,7 @@
 
 An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
 
-We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To offer help, open **Issues → New issue → Offer a contribution** after creating the public repository. See [Contributing](CONTRIBUTING.md) and [v0.0.1 release notes](RELEASE_NOTES.md).
+We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [v0.0.1 release notes](RELEASE_NOTES.md).
 
 ## Current status
 
