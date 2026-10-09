@@ -816,25 +816,43 @@ TOOLS = [
 ]
 
 
-def response(request):
+STRUCTURED_OUTPUT_PROTOCOL = "2025-06-18"
+SUPPORTED_PROTOCOLS = ("2024-11-05", "2025-03-26", STRUCTURED_OUTPUT_PROTOCOL)
+
+
+def response(request, session=None):
+    if session is None:
+        session = {}
     method = request.get("method")
     if method == "initialize":
+        params = request.get("params")
+        requested = params.get("protocolVersion") if isinstance(params, dict) else None
+        negotiated = requested if requested in SUPPORTED_PROTOCOLS else STRUCTURED_OUTPUT_PROTOCOL
+        session["protocolVersion"] = negotiated
         return {
-            "protocolVersion": "2024-11-05",
+            "protocolVersion": negotiated,
             "capabilities": {"tools": {}},
             "serverInfo": {"name": "open-legal-morocco", "version": "0.1.0"},
         }
     if method == "ping":
         return {}
     if method == "tools/list":
-        return {"tools": TOOLS}
+        tools = json.loads(json.dumps(TOOLS))
+        if session.get("protocolVersion") == STRUCTURED_OUTPUT_PROTOCOL:
+            for tool in tools:
+                if tool["name"] == "export_findings":
+                    tool["outputSchema"] = json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8"))
+        return {"tools": tools}
     if method == "tools/call":
         params = request.get("params")
         if not isinstance(params, dict) or not isinstance(params.get("name"), str):
             return {"content": [{"type": "text", "text": "Invalid tool call parameters"}], "isError": True}
         try:
             result = call(params["name"], params.get("arguments", {}))
-            return {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False)}]}
+            tool_result = {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False)}]}
+            if params["name"] == "export_findings" and session.get("protocolVersion") == STRUCTURED_OUTPUT_PROTOCOL:
+                tool_result["structuredContent"] = result
+            return tool_result
         except (ValueError, OSError) as exc:
             return {"content": [{"type": "text", "text": str(exc)}], "isError": True}
     raise KeyError("Method not found")
@@ -871,6 +889,7 @@ def bounded_input_lines(stream):
 
 
 def main():
+    session = {}
     for line in bounded_input_lines(sys.stdin):
         if line is None:
             print(json.dumps({"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": f"Request exceeds {MAX_MESSAGE_CHARS} characters"}}), flush=True)
@@ -890,7 +909,7 @@ def main():
             # MCP notifications, including notifications/initialized, never receive a response.
             continue
         try:
-            result = response(request)
+            result = response(request, session)
             output = {"jsonrpc": "2.0", "id": request["id"], "result": result}
         except KeyError:
             output = {"jsonrpc": "2.0", "id": request["id"], "error": {"code": -32601, "message": "Method not found"}}
