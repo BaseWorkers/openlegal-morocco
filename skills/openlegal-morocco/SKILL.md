@@ -88,3 +88,5 @@ This preliminary technical review is not legal advice or compliance certificatio
 ```
 
 Do not fill gaps with assumed Moroccan laws, article numbers, deadlines, CNDP procedures, or regulator interpretations. If a source is unavailable or conflicting, state that and leave the legal question unresolved.
+
+For model-agnostic manual safety evaluation scenarios covering prompt injection, source conflicts, review-state tampering, sensitive-data output, and fabricated legal claims, see [`evaluation/README.md`](evaluation/README.md). The fixtures require execution against the actual target agent/runtime; their presence and structural tests alone do not establish model safety or integration readiness.
