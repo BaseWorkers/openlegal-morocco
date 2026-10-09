@@ -63,4 +63,6 @@ The example describes a technical observation only. Its priority is not a legal-
 
 `finding_id` values must be unique within each export. JSON Schema validates the individual identifier shape; the CLI and MCP validators enforce cross-finding uniqueness as a semantic constraint.
 
+The same conformance corpus at [`tests/fixtures/findings-contract.json`](../tests/fixtures/findings-contract.json) is exercised by both CLI and MCP validator tests. It covers valid technical observations, potential legal questions, and rejection cases for missing legal-question text, legal-risk priority framing, non-taxonomy controls, and duplicate identifiers.
+
 For local, hash-only source comparison, see [Legal source change candidates](CHANGE_TRACKER.md). Candidate records remain unverified and do not represent a legal change.
