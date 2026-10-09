@@ -50,35 +50,45 @@ export async function validateFindings(value) {
   return errors;
 }
 
+function escapeMarkdownText(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replace(/[\\r\\n\\u2028\\u2029]+/g, ' ')
+    .replace(/([\\\\\\x60*_{}\\[\\]()#+.!|~])/g, '\\\\$1');
+}
+
 export function renderFindingsMarkdown(document) {
+  const safe = escapeMarkdownText;
   const lines = [
     '# Structured Findings', '',
-    `Schema version: ${document.schema_version}`,
-    `Generated: ${document.generated_at}`,
-    `Source: ${document.source.tool} ${document.source.version}`,
-    `Repository revision: ${document.repository.revision ?? 'unavailable'}`,
+    `Schema version: ${safe(document.schema_version)}`,
+    `Generated: ${safe(document.generated_at)}`,
+    `Source: ${safe(document.source.tool)} ${safe(document.source.version)}`,
+    `Repository revision: ${safe(document.repository.revision ?? 'unavailable')}`,
     '',
     '> Technical priority describes remediation sequencing only. It is not a legal-risk assessment or legal conclusion.',
     '> Evidence summaries must be sanitized; this export does not contain raw evidence payloads.', '',
   ];
   for (const finding of document.findings) {
-    lines.push(`## ${finding.finding_id} — ${finding.finding_type}`, '',
-      `- Category: ${finding.category}`,
-      `- Technical priority: ${finding.priority}`,
-      `- Review: verification=${finding.review_status.verification}; human=${finding.review_status.human_review}`,
-      `- Confidence: ${finding.confidence ?? 'not measured'}`,
-      `- Description: ${finding.description}`);
-    if (finding.legal_question) lines.push(`- Potential legal question: ${finding.legal_question}`);
+    lines.push(`## ${safe(finding.finding_id)} — ${safe(finding.finding_type)}`, '',
+      `- Category: ${safe(finding.category)}`,
+      `- Technical priority: ${safe(finding.priority)}`,
+      `- Review: verification=${safe(finding.review_status.verification)}; human=${safe(finding.review_status.human_review)}`,
+      `- Confidence: ${safe(finding.confidence ?? 'not measured')}`,
+      `- Description: ${safe(finding.description)}`);
+    if (finding.legal_question) lines.push(`- Potential legal question: ${safe(finding.legal_question)}`);
     for (const evidence of finding.evidence) {
       const ref = evidence.source_reference;
       const location = ref.path ? `${ref.path}${ref.line_start ? `:${ref.line_start}${ref.line_end && ref.line_end !== ref.line_start ? `-${ref.line_end}` : ''}` : ''}` : ref.kind;
-      lines.push(`- Evidence (${evidence.verification_status}): ${evidence.summary} [${location}]`);
+      lines.push(`- Evidence (${safe(evidence.verification_status)}): ${safe(evidence.summary)} [${safe(location)}]`);
     }
-    for (const ref of finding.legal_references) lines.push(`- Legal reference (${ref.verification_status}): ${ref.title}${ref.pinpoint ? `, ${ref.pinpoint}` : ''}${ref.uri ? ` — ${ref.uri}` : ''}`);
-    if (finding.affected_resources.length) lines.push(`- Affected resources: ${finding.affected_resources.map(({ identifier }) => identifier).join(', ')}`);
-    if (finding.suggested_controls.length) lines.push(`- Suggested vendor-neutral controls: ${finding.suggested_controls.join(', ')}`);
+    for (const ref of finding.legal_references) lines.push(`- Legal reference (${safe(ref.verification_status)}): ${safe(ref.title)}${ref.pinpoint ? `, ${safe(ref.pinpoint)}` : ''}${ref.uri ? ` — ${safe(ref.uri)}` : ''}`);
+    if (finding.affected_resources.length) lines.push(`- Affected resources: ${finding.affected_resources.map(({ identifier }) => safe(identifier)).join(', ')}`);
+    if (finding.suggested_controls.length) lines.push(`- Suggested vendor-neutral controls: ${finding.suggested_controls.map(safe).join(', ')}`);
     lines.push('');
   }
-  lines.push('## Verification limitations', '', ...(document.verification_limitations.map((item) => `- ${item}`)), '');
-  return `${lines.join('\n')}\n`;
+  lines.push('## Verification limitations', '', ...(document.verification_limitations.map((item) => `- ${safe(item)}`)), '');
+  return `${lines.join('\\n')}\\n`;
 }
