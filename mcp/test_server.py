@@ -179,6 +179,18 @@ console.log(JSON.stringify(digests));
         self.assertGreater(topics["topics"][0]["source_count"], 0)
         self.assertIn("not a complete", topics["disclaimer"])
 
+    def test_get_checklist_returns_only_preliminary_counsel_questions(self):
+        result = server.call("get_checklist", {"app_type": "saas"})
+        self.assertEqual(result["app_type"], "saas")
+        self.assertEqual(result["questions"][0]["id"], "operator-and-customer")
+        self.assertTrue(all(set(item) == {"id", "topic", "question"} for item in result["questions"]))
+        self.assertIn("not a complete checklist", result["disclaimer"])
+        self.assertIn("compliance score", result["disclaimer"])
+        with self.assertRaisesRegex(ValueError, "app_type must be one of"):
+            server.call("get_checklist", {"app_type": "legal_compliance"})
+        with self.assertRaisesRegex(ValueError, "requires only app_type"):
+            server.call("get_checklist", {"app_type": "website", "company_name": "Example"})
+
         result = server.call("search_legal_sources", {"query": "CNDP", "topic": "personal-data", "limit": 3})
         self.assertTrue(result["sources"])
         self.assertLessEqual(len(result["sources"]), 3)
@@ -275,7 +287,7 @@ console.log(JSON.stringify(digests));
         self.assertEqual(len(lines), 4)
         output = [json.loads(line) for line in lines]
         self.assertEqual(output[0]["result"]["serverInfo"]["name"], "open-legal-morocco")
-        self.assertEqual(len(output[1]["result"]["tools"]), 9)
+        self.assertEqual(len(output[1]["result"]["tools"]), 10)
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)
 
