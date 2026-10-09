@@ -1,0 +1,48 @@
+name: Software bug report
+description: Report a reproducible issue in the repository tools or documentation
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include credentials, personal data, client material, completed agreements, or confidential repository content. Use synthetic examples. A bug report does not authorize changes to legal-review states.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - CLI
+        - MCP server
+        - Findings schema or export
+        - Static API
+        - Catalog site
+        - Validation or CI
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Provide a software version or commit SHA, if available.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include only steps and synthetic input needed to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Sanitize output before posting; do not include tokens, personal data, or raw payloads.
+    validations:
+      required: true

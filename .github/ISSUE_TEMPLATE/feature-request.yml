@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose an open, vendor-neutral improvement
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe a project capability, not a legal conclusion. Do not include confidential, client, or personal data. Features must preserve read-only defaults and human control over legal review.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Project area
+      options:
+        - Legal content discovery
+        - CLI or MCP
+        - Findings or API schema
+        - Documentation or catalog site
+        - Accessibility or localization
+        - Governance or contribution workflow
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: What task is difficult today, and for whom?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable behavior and any safeguards needed.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or limitations
+      description: Note existing workarounds, dependencies, or unresolved questions.

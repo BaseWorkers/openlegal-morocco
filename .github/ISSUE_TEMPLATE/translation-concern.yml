@@ -1,0 +1,41 @@
+name: Translation concern
+description: Report a language alignment or terminology question
+title: "[Translation]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form records a translation question; it does not approve a language version or legal meaning. Do not include completed agreements, client text, personal data, or confidential material.
+  - type: input
+    id: template
+    attributes:
+      label: Template ID and version
+      placeholder: privacy-policy 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language under review
+      options: [English, French, Arabic]
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Section or term
+      description: Name a heading, paragraph, or term without pasting private filled-in text.
+    validations:
+      required: true
+  - type: textarea
+    id: concern
+    attributes:
+      label: What may be misaligned?
+      description: Describe the question and the other language version, if relevant. Keep legal interpretation unresolved unless supported by authorized review evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting reference
+      description: Add a repository path or public source reference; avoid raw confidential excerpts.
