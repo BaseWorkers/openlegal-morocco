@@ -29,7 +29,7 @@ test('findings export validates against the published schema and renders the dis
   assert.deepEqual(await validateFindings(document), []);
   const markdown = renderFindingsMarkdown(document);
   assert.match(markdown, /Technical priority describes remediation sequencing only/);
-  assert.match(markdown, /technical_observation/);
+  assert.match(markdown, /technical\\_observation/);
   assert.match(markdown, /src\/handler\.js:42/);
 });
 
