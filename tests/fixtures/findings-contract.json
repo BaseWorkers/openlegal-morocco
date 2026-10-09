@@ -79,6 +79,7 @@
   ],
   "invalid_cases": [
     { "id": "legal-question-requires-text", "finding_patch": { "finding_type": "potential_legal_question", "legal_question": null } },
+    { "id": "every-finding-requires-evidence", "finding_patch": { "evidence": [] } },
     { "id": "technical-observation-has-no-legal-question", "finding_patch": { "finding_type": "technical_observation", "legal_question": "This must remain a separate question." } },
     { "id": "technical-priority-is-not-legal-risk", "finding_patch": { "priority_basis": "legal_risk" } },
     { "id": "controls-are-vendor-neutral", "finding_patch": { "suggested_controls": ["vendor_product"] } },
