@@ -192,6 +192,13 @@
           }
         ]
       }
+    },
+    {
+      "id": "whitespace-only-legal-question-is-rejected",
+      "finding_patch": {
+        "finding_type": "potential_legal_question",
+        "legal_question": "   "
+      }
     }
   ]
 }
