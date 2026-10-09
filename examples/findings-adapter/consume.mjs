@@ -6,7 +6,16 @@ import { pathToFileURL } from 'node:url';
 
 const sensitiveText = /(?:-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}\b|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b)/i;
 
-function assertNoSensitiveText(value, path = '
+function assertNoSensitiveText(value, path = '$') {
+  if (typeof value === 'string') {
+    if (sensitiveText.test(value)) throw new Error(path + ' appears to contain a credential, token, or direct email identifier');
+  } else if (Array.isArray(value)) {
+    value.forEach((item, index) => assertNoSensitiveText(item, path + '[' + index + ']'));
+  } else if (value && typeof value === 'object') {
+    for (const [key, item] of Object.entries(value)) assertNoSensitiveText(item, path + '.' + key);
+  }
+}
+
 async function readJson(path, label) {
   try {
     return JSON.parse(await readFile(resolve(path), 'utf8'));
