@@ -77,7 +77,7 @@ export async function consumeFindings(findingsPath, taxonomyPath, mappingPath) {
     generated_at: document.generated_at,
     schema_version: document.schema_version,
     disclaimer: 'Technical priority is remediation sequencing, not legal risk. Potential legal questions remain unresolved; this adapter does not approve legal findings.',
-    validation_note: 'This example checks version, identifier, finding-type, priority-basis, and control consistency. Use an independent JSON Schema 2020-12 validator with the published schema for full contract validation.',
+    validation_note: 'This example checks basic contract consistency and rejects several high-signal sensitive-text patterns; this is not complete PII or secret detection. Use an independent JSON Schema 2020-12 validator with the published schema for full contract validation.',
     verification_limitations: document.verification_limitations,
     findings: document.findings.map((finding) => ({
       finding_id: finding.finding_id,
