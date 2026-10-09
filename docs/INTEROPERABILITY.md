@@ -8,7 +8,7 @@ Open Legal Morocco publishes a vendor-neutral findings contract for independent 
 - Control taxonomy: [`schemas/control-taxonomy.json`](../schemas/control-taxonomy.json)
 - Static API build copies both files to `dist/api/v1/`.
 - CLI: `npm run cli -- findings validate findings.json` and `npm run cli -- findings render findings.json --format md|json` (`-` reads JSON from standard input).
-- MCP: `get_findings_spec` returns the same schema and taxonomy; `export_findings` validates a supplied document and returns it unchanged. It does not inspect arbitrary repositories or mutate findings.
+- MCP: `get_findings_spec` returns the same schema and taxonomy; `export_findings` validates a supplied document and returns it unchanged. Clients negotiating protocol `2025-06-18` also receive the schema as `outputSchema` and the document in `structuredContent`; older supported clients receive the JSON text form. It does not inspect arbitrary repositories or mutate findings.
 - Agent skill: use the same schema and taxonomy when preparing structured observations.
 
 The export envelope contains `schema_version`, `generated_at`, `source`, `repository.revision`, `verification_limitations`, and `findings`. Each finding repeats the schema version, has an explicit `finding_type`, and separates its technical remediation `priority_basis` from legal review. Every finding must include at least one supporting evidence item with a sanitized summary and source reference. `technical_observation` records evidence-backed facts. `potential_legal_question` states an unresolved question; it is not a conclusion. Legal reference verification and human review are separate states. `confidence` may be null when it cannot be meaningfully measured.
