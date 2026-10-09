@@ -40,8 +40,8 @@ test('static catalog builds one detail route per template language with visible 
 
     }
     const developerPage = await readFile(join(outputDirectory, 'en/resources/developers/index.html'), 'utf8');
-    assert.match(developerPage, new RegExp('blob/' + 'a'.repeat(40) + '/docs/INTEROPERABILITY\\\\.md'));
-    assert.match(developerPage, new RegExp('blob/' + 'a'.repeat(40) + '/mcp/README\\\\.md'));
+    assert.match(developerPage, new RegExp('blob/' + 'a'.repeat(40) + '/docs/INTEROPERABILITY\\.md'));
+    assert.match(developerPage, new RegExp('blob/' + 'a'.repeat(40) + '/mcp/README\\.md'));
     const detail = await readFile(join(outputDirectory, 'en/templates/privacy-policy/index.html'), 'utf8');
     assert.match(detail, /DRAFT/);
     assert.match(detail, /pending/);
