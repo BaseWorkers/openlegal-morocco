@@ -360,6 +360,8 @@ console.log(JSON.stringify(digests));
             }],
         }
         self.assertEqual(server.validate_findings(document), [])
+        incomplete_export = {**document, "verification_limitations": []}
+        self.assertTrue(any("verification_limitations" in error for error in server.validate_findings(incomplete_export)))
         self.assertEqual(server.call("export_findings", {"document": document}), document)
         session = {}
         initialized = server.response({
