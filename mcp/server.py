@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Read-only local MCP server for Open Legal Morocco (JSON-RPC over stdio)."""
 
+import base64
+import hashlib
 import json
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 
@@ -14,6 +19,9 @@ CONTROL_TAXONOMY = ROOT / "schemas" / "control-taxonomy.json"
 SOURCE_REGISTRY = ROOT / "sources" / "registry.yaml"
 OFFICIAL_SOURCE_MAP = ROOT / "sources" / "official-morocco.yaml"
 REVIEW_RECORDS = ROOT / "reviews" / "records.json"
+AUTHORIZED_REVIEWERS = ROOT / "reviews" / "authorized-reviewers.yaml"
+REVIEW_RECORD_SCHEMA = ROOT / "schemas" / "review.schema.json"
+AUTHORIZED_REVIEWERS_SCHEMA = ROOT / "schemas" / "authorized-reviewers.schema.json"
 DISCLAIMER = (
     "Open Legal Morocco materials are unverified discussion drafts, not legal advice. "
     "Automated results do not certify Moroccan legal compliance. "
@@ -95,27 +103,205 @@ def _source_index():
     return registry.get("sources", []), source_topics
 
 
-def _review_evidence(record_ids):
-    """Return narrow summaries of linked records without treating them as verified."""
-    if not REVIEW_RECORDS.exists():
-        return []
-    if REVIEW_RECORDS.is_symlink():
-        raise ValueError("Review records cannot be a symbolic link")
+def _read_repository_json(path, label):
+    if path.is_symlink():
+        raise ValueError(f"{label} cannot be a symbolic link")
     try:
-        REVIEW_RECORDS.resolve().relative_to(ROOT.resolve())
-        document = json.loads(REVIEW_RECORDS.read_text(encoding="utf-8"))
+        path.resolve().relative_to(ROOT.resolve())
+        if path.stat().st_size > 1_048_576:
+            raise ValueError(f"{label} exceeds the 1 MiB limit")
+        return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, ValueError) as exc:
-        raise ValueError("Review records are unavailable or invalid") from exc
+        raise ValueError(f"{label} is unavailable or invalid") from exc
+
+
+def _read_package_text(folder, name):
+    path = folder / name
+    if path.is_symlink():
+        raise ValueError(f"Template review input {name} cannot be a symbolic link")
+    try:
+        path.resolve().relative_to(folder.resolve())
+        if path.stat().st_size > 1_048_576:
+            raise ValueError(f"Template review input {name} exceeds the 1 MiB limit")
+        return path.read_text(encoding="utf-8")
+    except FileNotFoundError as exc:
+        raise ValueError(f"Template review input {name} is missing") from exc
+    except (OSError, UnicodeError) as exc:
+        raise ValueError(f"Template review input {name} is unavailable") from exc
+
+
+def _reviewable_content_digest(folder, metadata):
+    """Mirror the repository's canonical digest inputs from validate-template-packages.mjs."""
+    sources = json.loads(_read_package_text(folder, "sources.yaml"))
+    if not isinstance(sources, dict) or not isinstance(sources.get("source_ids"), list):
+        raise ValueError("Template source declarations are invalid")
+    registry = _read_repository_json(SOURCE_REGISTRY, "Source registry")
+    source_by_id = {item.get("id"): item for item in registry.get("sources", []) if isinstance(item, dict)}
+    source_records = []
+    for source_id in sorted(sources["source_ids"]):
+        if not isinstance(source_id, str) or source_id not in source_by_id:
+            raise ValueError("Template source declaration cannot be resolved")
+        source_records.append(source_by_id[source_id])
+
+    files = {}
+    for language in metadata.get("languages", []):
+        if language not in LANGUAGES:
+            raise ValueError("Template declares an unsupported review language")
+        files[f"{language}.md"] = _read_package_text(folder, f"{language}.md")
+    variables = _read_package_text(folder, "variables.schema.json")
+    source_declarations = _read_package_text(folder, "sources.yaml")
+    notes = _read_package_text(folder, "notes.md")
+    changelog = _read_package_text(folder, "CHANGELOG.md")
+    reviewable_metadata = {
+        key: value for key, value in metadata.items()
+        if key not in {"status", "legal_review", "language_review", "language_review_records"}
+    }
+    files["variables.schema.json"] = variables
+    files["sources.yaml"] = source_declarations
+    files["source-records.json"] = json.dumps(source_records, ensure_ascii=False, indent=2) + "\n"
+    files["notes.md"] = notes
+    files["metadata.json"] = json.dumps(reviewable_metadata, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    files["CHANGELOG.md"] = changelog
+    canonical = "\0".join(f"{path}\0{contents}" for path, contents in sorted(files.items()))
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
+def _signing_payload(record):
+    def without_signatures(value):
+        if isinstance(value, list):
+            return [without_signatures(item) for item in value]
+        if isinstance(value, dict):
+            return {key: without_signatures(value[key]) for key in sorted(value) if key != "signature"}
+        return value
+    return json.dumps(without_signatures(record), ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+
+
+def _verify_ed25519_signature(record, reviewer):
+    signature = record.get("signature")
+    if not isinstance(signature, dict) or signature.get("algorithm") != "Ed25519":
+        return "invalid"
+    key_id = signature.get("key_id")
+    signature_text = signature.get("value")
+    if not isinstance(key_id, str) or not isinstance(signature_text, str):
+        return "invalid"
+    keys = reviewer.get("signing_keys", []) if isinstance(reviewer, dict) else []
+    key = next((item for item in keys if isinstance(item, dict) and item.get("id") == key_id and item.get("active") is True), None)
+    public_key = key.get("public_key_pem") if key else None
+    if not isinstance(public_key, str) or len(public_key) > 8192:
+        return "invalid"
+    try:
+        signature_bytes = base64.b64decode(signature_text, validate=True)
+    except (ValueError, TypeError):
+        return "invalid"
+    if not signature_bytes or base64.b64encode(signature_bytes).decode("ascii") != signature_text:
+        return "invalid"
+    if len(signature_bytes) != 64:
+        return "invalid"
+    openssl = shutil.which("openssl")
+    if openssl is None:
+        return "unavailable"
+    try:
+        with tempfile.TemporaryDirectory(prefix="openlegal-review-") as temporary:
+            directory = Path(temporary)
+            key_path = directory / "reviewer-public.pem"
+            payload_path = directory / "record.json"
+            signature_path = directory / "record.sig"
+            key_path.write_text(public_key, encoding="utf-8")
+            payload_path.write_bytes(_signing_payload(record))
+            signature_path.write_bytes(signature_bytes)
+            result = subprocess.run(
+                [openssl, "pkeyutl", "-verify", "-pubin", "-inkey", str(key_path), "-rawin", "-in", str(payload_path), "-sigfile", str(signature_path)],
+                capture_output=True, timeout=5, check=False,
+            )
+            return "verified" if result.returncode == 0 else "invalid"
+    except (OSError, subprocess.TimeoutExpired):
+        return "unavailable"
+
+
+def _review_evidence(record_ids, metadata, folder):
+    """Authenticate linked review records, reviewer authorization, and current-content binding."""
+    if not record_ids:
+        return [], "no_linked_records"
+    document = _read_repository_json(REVIEW_RECORDS, "Review records")
+    authorized = _read_repository_json(AUTHORIZED_REVIEWERS, "Authorized reviewer registry")
     if not isinstance(document, dict) or not isinstance(document.get("reviews"), list):
         raise ValueError("Review records are unavailable or invalid")
+    if not isinstance(authorized, dict):
+        raise ValueError("Authorized reviewer registry is unavailable or invalid")
+    review_schema = _read_repository_json(REVIEW_RECORD_SCHEMA, "Review record schema")
+    authorized_schema = _read_repository_json(AUTHORIZED_REVIEWERS_SCHEMA, "Authorized reviewer schema")
+    authorized_errors = []
+    _validate_schema_node(authorized, authorized_schema, authorized_schema, "authorized_reviewers", authorized_errors)
+    if authorized_errors:
+        raise ValueError("Authorized reviewer registry is invalid")
+    legal_reviewers = authorized.get("authorized_legal_reviewers", [])
+    language_reviewers = authorized.get("authorized_language_reviewers", [])
+    if not isinstance(legal_reviewers, list) or not isinstance(language_reviewers, list):
+        raise ValueError("Authorized reviewer registry is unavailable or invalid")
+    records_by_id = {}
+    for record in document["reviews"]:
+        if isinstance(record, dict) and isinstance(record.get("id"), str):
+            records_by_id.setdefault(record["id"], record)
+    try:
+        current_digest = _reviewable_content_digest(folder, metadata)
+    except (OSError, UnicodeError, ValueError, TypeError):
+        current_digest = None
     wanted = set(record_ids)
     summaries = []
-    for record in document["reviews"]:
-        if not isinstance(record, dict):
+    overall = "verified"
+    for record_id in sorted(wanted):
+        record = records_by_id.get(record_id)
+        if not record:
+            summaries.append({"id": record_id, "verification_status": "failed_or_incomplete", "verification_limits": ["linked_record_missing"]})
+            overall = "failed_or_incomplete"
             continue
-        record_id = record.get("id")
-        if not isinstance(record_id, str) or record_id not in wanted:
-            continue
+        record_errors = []
+        _validate_schema_node(record, review_schema, review_schema, "review_record", record_errors)
+        review_type = record.get("review_type")
+        reviewer_pool = legal_reviewers if review_type == "legal" else language_reviewers if review_type == "language" else []
+        reviewer = next((item for item in reviewer_pool if isinstance(item, dict) and item.get("id") == record.get("reviewer_id") and item.get("active") is True), None)
+        failures = []
+        if record_errors:
+            failures.append("review_record_schema_invalid")
+        if not reviewer:
+            failures.append("reviewer_not_authorized")
+        elif reviewer.get("authorized_at", "9999-99-99") > record.get("reviewed_at", ""):
+            failures.append("reviewer_not_yet_authorized")
+        signature_status = _verify_ed25519_signature(record, reviewer) if reviewer else "invalid"
+        if signature_status != "verified":
+            failures.append("signature_" + signature_status)
+        if not current_digest:
+            failures.append("current_digest_unavailable")
+        elif record.get("content_digest") != current_digest:
+            failures.append("content_digest_mismatch")
+        if record.get("template_id") != metadata.get("id") or record.get("template_version") != metadata.get("version"):
+            failures.append("template_scope_mismatch")
+        if review_type == "legal":
+            linked = metadata.get("legal_review")
+            if not isinstance(linked, dict) or linked.get("status") != "reviewed" or linked.get("review_record_id") != record_id:
+                failures.append("legal_review_metadata_link_mismatch")
+            elif any(linked.get(field) != record.get(record_field) for field, record_field in (
+                ("reviewer", "reviewer_id"), ("reviewed_at", "reviewed_at"), ("version", "template_version"),
+            )):
+                failures.append("legal_review_metadata_scope_mismatch")
+            if record.get("outcome") != "approved":
+                failures.append("legal_record_not_approved")
+        elif review_type == "language":
+            language_links = metadata.get("language_review_records", {})
+            language_states = metadata.get("language_review", {})
+            linked_languages = [code for code in metadata.get("languages", []) if isinstance(language_links, dict) and language_links.get(code) == record_id]
+            if not linked_languages or any(not isinstance(language_states, dict) or language_states.get(code) != "reviewed" for code in linked_languages):
+                failures.append("language_review_metadata_link_mismatch")
+            if not set(linked_languages).issubset(set(record.get("languages", []))):
+                failures.append("language_review_scope_mismatch")
+            if record.get("outcome") != "approved":
+                failures.append("language_record_not_approved")
+        else:
+            failures.append("unsupported_review_type")
+        verification_status = "verified" if not failures else "failed_or_incomplete"
+        if failures:
+            if overall == "verified":
+                overall = "verification_unavailable" if any(item.endswith("unavailable") for item in failures) else "failed_or_incomplete"
         summaries.append({
             "id": record.get("id"), "review_type": record.get("review_type"),
             "template_id": record.get("template_id"), "template_version": record.get("template_version"),
@@ -123,9 +309,12 @@ def _review_evidence(record_ids):
             "languages": record.get("languages"), "scope": record.get("scope"),
             "outcome": record.get("outcome"), "content_digest": record.get("content_digest"),
             "signature_present": isinstance(record.get("signature"), dict),
-            "signature_verification": "not_performed",
+            "signature_verification": signature_status,
+            "current_content_digest_match": bool(current_digest and record.get("content_digest") == current_digest),
+            "verification_status": verification_status,
+            "verification_limits": failures,
         })
-    return summaries
+    return summaries, overall
 
 
 def _matches_type(value, expected):
@@ -164,6 +353,11 @@ def _validate_schema_node(value, schema, root_schema, path, errors):
                 if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})", value): raise ValueError("invalid RFC 3339")
                 datetime.fromisoformat(value.replace("Z", "+00:00"))
             except ValueError: errors.append(f"{path} must be a date-time")
+        if schema.get("format") == "date":
+            try:
+                if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value): raise ValueError("invalid date")
+                datetime.strptime(value, "%Y-%m-%d")
+            except ValueError: errors.append(f"{path} must be a date")
     if isinstance(value, (int, float)) and not isinstance(value, bool):
         if "minimum" in schema and value < schema["minimum"]: errors.append(f"{path} is below minimum")
         if "maximum" in schema and value > schema["maximum"]: errors.append(f"{path} is above maximum")
@@ -318,6 +512,11 @@ def call(name, args):
         record_ids = [legal_review.get("review_record_id")]
         record_ids.extend(language_record_ids.get(code) for code in selected_languages)
         record_ids = [record_id for record_id in record_ids if isinstance(record_id, str) and record_id]
+        evidence_records, evidence_verification = _review_evidence(record_ids, metadata, folder)
+        if legal_review.get("status") == "reviewed" and not legal_review.get("review_record_id"):
+            evidence_verification = "failed_or_incomplete"
+        if any(language_review.get(code) == "reviewed" and not language_record_ids.get(code) for code in selected_languages):
+            evidence_verification = "failed_or_incomplete"
         return {
             "template_id": template_id,
             "template_version": metadata.get("version"),
@@ -336,12 +535,14 @@ def call(name, args):
                 }
                 for code in selected_languages
             },
-            "evidence_records": _review_evidence(record_ids),
-            "evidence_verification": "not_performed",
+            "evidence_records": evidence_records,
+            "evidence_verification": evidence_verification,
             "disclaimer": (
-                "This reports repository-recorded review fields only. The MCP does not verify reviewer authorization, "
-                "cryptographic signatures, or current-content digest binding; recorded metadata does not authenticate "
-                "a review or establish legal accuracy. It does not change review status."
+                "This reports recorded review fields and verifies linked records against the active repository reviewer "
+                "registry, Ed25519 signature, exact template version, and current content digest when possible. A verified "
+                "record proves integrity and control of an authorized signing key, not reviewer qualifications or legal "
+                "accuracy. Verification can be unavailable when OpenSSL is absent or package inputs cannot be read. "
+                "This tool does not change review status."
             ),
         }
 

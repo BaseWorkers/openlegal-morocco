@@ -6,7 +6,8 @@ This experimental MCP server exposes the repository's existing template catalogu
 
 - Python 3.10 or later
 - A local checkout containing the template packages
-- No Python dependencies or network access
+- No Python package dependencies or network access
+- OpenSSL is optional; when linked review records exist, the server uses the local `openssl` executable for Ed25519 verification and reports `verification_unavailable` if it is absent
 
 ## Run
 
@@ -34,19 +35,19 @@ args = ["/absolute/path/to/open-legal-morocco/mcp/server.py"] # Windows: "C:\\ab
 
 Use the absolute checkout path that exists on your machine; do not copy the sample path literally. Confirm registration with `codex mcp list`, then restart Codex if the tools do not appear. The MCP configuration format and command are documented in the [Codex MCP guide](https://developers.openai.com/learn/docs-mcp); `codex mcp add --help` shows the local stdio command form.
 
-The server exposes `list_templates` (optional category and language filters), `get_template` (template ID and optional language), `get_template_sources` (template ID), `search_legal_sources` (local text/topic/type filters), and `list_legal_topics` (topic IDs and local source counts). All calls return recorded status and clear limitations. Source declarations and search results are discovery aids, not proof that a rule is current or applies to a particular user.
+The server exposes `list_templates` (optional category and language filters), `get_template` (template ID and optional language), `get_template_sources` (template ID), `get_review_status` (recorded status and verified review evidence where possible), `get_change_history` (local package changelog), `search_legal_sources` (local text/topic/type filters), and `list_legal_topics` (topic IDs and local source counts). All calls return recorded status and clear limitations. Source declarations and search results are discovery aids, not proof that a rule is current or applies to a particular user.
 
 ## Safety boundaries
 
 - Stdio only; it opens no network listener and makes no external requests.
-- The tools read files under this repository's `templates/` directory. They do not write files, invoke shell commands, or accept arbitrary paths.
+- The tools read fixed catalogue, source, schema, changelog, and review files under this repository. They do not write files, execute a shell, or accept arbitrary paths. Review verification uses a fixed local OpenSSL argument list without shell evaluation.
 - Symbolic-link package directories, content files, and source files are rejected.
 - Responses do not grant or infer legal or language approval, and never certify compliance.
 - Never include personal, client, or confidential data in tool arguments.
 
 ## Recorded review status
 
-`get_review_status` reads the template's recorded legal and language review fields, optionally for one language, and includes narrow summaries of linked records. It does not authenticate reviewer authorization or Ed25519 signatures, verify that a record's digest still matches current package content, or change any status. Treat the response as repository-recorded metadata, not authenticated approval or legal accuracy. The current repository has no signed review records.
+`get_review_status` reads the template's recorded legal and language review fields, optionally for one language, and includes narrow summaries of linked records. When linked records exist, it validates their schema, checks the active reviewer/key registry, verifies Ed25519 signatures with the local `openssl` executable, and compares the recorded digest with the current reviewable package content. It reports unavailable verification explicitly if OpenSSL or package inputs are unavailable. A verified signature and digest establish record integrity and control of an authorized key, not reviewer qualifications or legal accuracy. The tool does not alter any status. The current repository has no signed review records.
 
 `get_change_history` reads only the selected package's `CHANGELOG.md` (with a 64 KiB limit). It reports maintainer-recorded history as written and does not independently reconstruct Git history, validate legal meaning, or imply review approval.
 

@@ -1,9 +1,12 @@
 """Regression tests for the local read-only MCP server."""
 
+import base64
 import contextlib
 import importlib.util
 import io
 import json
+import shutil
+import subprocess
 from pathlib import Path
 import tempfile
 import unittest
@@ -46,12 +49,103 @@ class MCPTests(unittest.TestCase):
         self.assertEqual(result["recorded_status"], "DRAFT")
         self.assertEqual(result["legal_review"]["status"], "pending")
         self.assertEqual(result["language_reviews"]["fr"]["status"], "pending")
-        self.assertEqual(result["evidence_verification"], "not_performed")
-        self.assertIn("does not authenticate", result["disclaimer"])
+        self.assertEqual(result["evidence_verification"], "no_linked_records")
+        self.assertIn("not reviewer qualifications", result["disclaimer"])
         with self.assertRaisesRegex(ValueError, "Unsupported language"):
             server.call("get_review_status", {"template_id": "privacy-policy", "language": "es"})
         with self.assertRaisesRegex(ValueError, "Unknown or ambiguous"):
             server.call("get_review_status", {"template_id": "missing-template"})
+
+    def test_review_status_authenticates_signature_authorization_and_current_digest(self):
+        openssl = shutil.which("openssl")
+        if openssl is None:
+            self.skipTest("OpenSSL is required to test Ed25519 review verification")
+        folder, original = server.choose("privacy-policy")
+        metadata = json.loads(json.dumps(original))
+        digest = server._reviewable_content_digest(folder, metadata)
+        record = {
+            "id": "synthetic-legal-review", "template_id": metadata["id"],
+            "template_version": metadata["version"], "review_type": "legal",
+            "reviewer_id": "synthetic-reviewer", "reviewed_at": "2026-10-09",
+            "languages": ["en", "fr", "ar"], "scope": "Synthetic test only",
+            "outcome": "approved", "content_digest": digest,
+            "signature": {"algorithm": "Ed25519", "key_id": "synthetic-key", "value": ""},
+        }
+        metadata["legal_review"] = {
+            "status": "reviewed", "reviewer": "synthetic-reviewer",
+            "reviewed_at": record["reviewed_at"], "version": metadata["version"],
+            "review_record_id": record["id"],
+        }
+        with tempfile.TemporaryDirectory(dir=server.ROOT) as tmp:
+            directory = Path(tmp)
+            private_key = directory / "private.pem"
+            public_key = directory / "public.pem"
+            payload_path = directory / "payload.json"
+            signature_path = directory / "signature.bin"
+            subprocess.run([openssl, "genpkey", "-algorithm", "Ed25519", "-out", str(private_key)], check=True, capture_output=True)
+            subprocess.run([openssl, "pkey", "-in", str(private_key), "-pubout", "-out", str(public_key)], check=True, capture_output=True)
+            payload_path.write_bytes(server._signing_payload(record))
+            subprocess.run([openssl, "pkeyutl", "-sign", "-rawin", "-inkey", str(private_key), "-in", str(payload_path), "-out", str(signature_path)], check=True, capture_output=True)
+            record["signature"]["value"] = base64.b64encode(signature_path.read_bytes()).decode("ascii")
+            records_file = directory / "records.json"
+            reviewers_file = directory / "reviewers.json"
+            records_file.write_text(json.dumps({"reviews": [record]}), encoding="utf-8")
+            reviewers_file.write_text(json.dumps({"schema_version": 1, "authorized_legal_reviewers": [{
+                "id": "synthetic-reviewer", "display_name": "Synthetic Reviewer", "active": True,
+                "authorized_at": "2026-01-01", "authorization_record": "synthetic test fixture",
+                "signing_keys": [{"id": "synthetic-key", "active": True, "public_key_pem": public_key.read_text(encoding="utf-8")}],
+            }], "authorized_language_reviewers": []}), encoding="utf-8")
+            with mock.patch.object(server, "REVIEW_RECORDS", records_file), \
+                 mock.patch.object(server, "AUTHORIZED_REVIEWERS", reviewers_file), \
+                 mock.patch.object(server, "packages", side_effect=lambda: iter([(folder, metadata)])):
+                result = server.call("get_review_status", {"template_id": metadata["id"]})
+                self.assertEqual(result["evidence_verification"], "verified")
+                self.assertEqual(result["evidence_records"][0]["signature_verification"], "verified")
+                self.assertTrue(result["evidence_records"][0]["current_content_digest_match"])
+                with mock.patch.object(server.shutil, "which", return_value=None):
+                    unavailable = server.call("get_review_status", {"template_id": metadata["id"]})
+                self.assertEqual(unavailable["evidence_verification"], "verification_unavailable")
+                self.assertEqual(unavailable["evidence_records"][0]["signature_verification"], "unavailable")
+
+                original_title = metadata["title"]["en"]
+                metadata["title"]["en"] = original_title + " changed"
+                stale = server.call("get_review_status", {"template_id": metadata["id"]})
+                self.assertEqual(stale["evidence_records"][0]["signature_verification"], "verified")
+                self.assertFalse(stale["evidence_records"][0]["current_content_digest_match"])
+                self.assertIn("content_digest_mismatch", stale["evidence_records"][0]["verification_limits"])
+                metadata["title"]["en"] = original_title
+
+                record["scope"] = "Tampered after signing"
+                records_file.write_text(json.dumps({"reviews": [record]}), encoding="utf-8")
+                tampered = server.call("get_review_status", {"template_id": metadata["id"]})
+                self.assertEqual(tampered["evidence_verification"], "failed_or_incomplete")
+                self.assertEqual(tampered["evidence_records"][0]["signature_verification"], "invalid")
+
+    def test_python_review_digest_matches_repository_validator(self):
+        node = shutil.which("node")
+        if node is None:
+            self.skipTest("Node is required for cross-language review digest parity")
+        script = r"""
+import { readFileSync } from 'node:fs';
+import { digestReviewableContent, resolveReviewSourceRecords } from './scripts/review-policy.mjs';
+import { reviewableMetadata } from './scripts/template-package-utils.mjs';
+const folder = 'templates/privacy/privacy-policy';
+const metadata = JSON.parse(readFileSync(folder + '/metadata.yaml', 'utf8'));
+const declarations = JSON.parse(readFileSync(folder + '/sources.yaml', 'utf8'));
+const registry = JSON.parse(readFileSync('sources/registry.yaml', 'utf8'));
+const files = {};
+for (const language of metadata.languages) files[language + '.md'] = readFileSync(folder + '/' + language + '.md', 'utf8');
+files['variables.schema.json'] = readFileSync(folder + '/variables.schema.json', 'utf8');
+files['sources.yaml'] = readFileSync(folder + '/sources.yaml', 'utf8');
+files['source-records.json'] = JSON.stringify(resolveReviewSourceRecords(declarations.source_ids, registry.sources), null, 2) + '\n';
+files['notes.md'] = readFileSync(folder + '/notes.md', 'utf8');
+files['metadata.json'] = reviewableMetadata(metadata);
+files['CHANGELOG.md'] = readFileSync(folder + '/CHANGELOG.md', 'utf8');
+console.log(digestReviewableContent(files));
+"""
+        result = subprocess.run([node, "--input-type=module", "-e", script], cwd=server.ROOT, capture_output=True, text=True, timeout=10, check=True)
+        folder, metadata = server.choose("privacy-policy")
+        self.assertEqual(server._reviewable_content_digest(folder, metadata), result.stdout.strip())
 
     def test_change_history_reads_the_package_changelog_only(self):
         result = server.call("get_change_history", {"template_id": "privacy-policy"})
