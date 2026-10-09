@@ -4,7 +4,7 @@ const supportedKeywords = new Set([
   '$schema', '$id', '$ref', '$defs', 'title', 'description', 'default', 'examples', 'deprecated',
   'type', 'const', 'enum', 'properties', 'required', 'additionalProperties', 'items',
   'minLength', 'maxLength', 'pattern', 'format', 'minItems', 'maxItems', 'uniqueItems',
-  'minProperties', 'minimum', 'maximum'
+  'minProperties', 'minimum', 'maximum', 'allOf', 'if', 'then'
 ]);
 const supportedFormats = new Set(['date', 'date-time', 'uri']);
 
@@ -23,6 +23,8 @@ function assertSupportedSchema(schema, path = '$schema') {
   for (const [key, child] of Object.entries(schema.properties ?? {})) assertSupportedSchema(child, `${path}.properties.${key}`);
   for (const [key, child] of Object.entries(schema.$defs ?? {})) assertSupportedSchema(child, `${path}.$defs.${key}`);
   if (schema.items) assertSupportedSchema(schema.items, `${path}.items`);
+  for (const [index, child] of (schema.allOf ?? []).entries()) assertSupportedSchema(child, `${path}.allOf[${index}]`);
+  for (const key of ['if', 'then']) if (schema[key]) assertSupportedSchema(schema[key], `${path}.${key}`);
   if (isPlainObject(schema.additionalProperties)) assertSupportedSchema(schema.additionalProperties, `${path}.additionalProperties`);
 }
 
@@ -47,6 +49,12 @@ function resolveRef(rootSchema, ref) {
 }
 
 function validateNode(value, schema, rootSchema, path, errors) {
+  if (schema.allOf) for (const child of schema.allOf) validateNode(value, child, rootSchema, path, errors);
+  if (schema.if) {
+    const conditionErrors = [];
+    validateNode(value, schema.if, rootSchema, path, conditionErrors);
+    if (conditionErrors.length === 0 && schema.then) validateNode(value, schema.then, rootSchema, path, errors);
+  }
   if (schema.$ref) {
     const target = resolveRef(rootSchema, schema.$ref);
     if (!target) throw new Error(`Unresolved JSON Schema reference: ${schema.$ref}`);
