@@ -139,6 +139,20 @@ test('standalone adapter consumes exports using only caller-supplied JSON files'
     await assert.rejects(adapter.consumeFindings(
       join(directory, 'invalid.json'), join(directory, 'control-taxonomy.json'), join(directory, 'mapping.json'),
     ), /unknown control/);
+
+    const incomplete = structuredClone(document);
+    incomplete.verification_limitations = [];
+    await writeFile(join(directory, 'incomplete.json'), JSON.stringify(incomplete));
+    await assert.rejects(adapter.consumeFindings(
+      join(directory, 'incomplete.json'), join(directory, 'control-taxonomy.json'), join(directory, 'mapping.json'),
+    ), /explicit verification limitations/);
+
+    const missingProvenance = structuredClone(document);
+    delete missingProvenance.source;
+    await writeFile(join(directory, 'missing-provenance.json'), JSON.stringify(missingProvenance));
+    await assert.rejects(adapter.consumeFindings(
+      join(directory, 'missing-provenance.json'), join(directory, 'control-taxonomy.json'), join(directory, 'mapping.json'),
+    ), /source tool and version/);
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
