@@ -15,6 +15,10 @@ async function readJson(path, label) {
 function validateAdapterInputs(document, taxonomy, controlMapping) {
   if (!document || typeof document !== 'object' || Array.isArray(document)) throw new Error('Findings export must be a JSON object');
   if (document.schema_version !== '1.0.0') throw new Error(`Unsupported findings schema version: ${document.schema_version ?? 'missing'}`);
+  if (typeof document.generated_at !== 'string' || !document.generated_at.trim()) throw new Error('Findings export must include a generation timestamp');
+  if (!document.source || typeof document.source.tool !== 'string' || !document.source.tool.trim() || typeof document.source.version !== 'string' || !document.source.version.trim()) throw new Error('Findings export must identify its source tool and version');
+  if (!document.repository || !(document.repository.revision === null || (typeof document.repository.revision === 'string' && document.repository.revision.trim()))) throw new Error('Findings export must include its repository revision or null');
+  if (!Array.isArray(document.verification_limitations) || document.verification_limitations.length === 0 || !document.verification_limitations.every((item) => typeof item === 'string' && item.trim())) throw new Error('Findings export must include explicit verification limitations');
   if (!Array.isArray(document.findings)) throw new Error('Findings export must contain a findings array');
   if (!taxonomy || taxonomy.taxonomy_version !== '1.0.0' || !Array.isArray(taxonomy.controls)) throw new Error('Unsupported or invalid control taxonomy');
   if (!controlMapping || typeof controlMapping !== 'object' || Array.isArray(controlMapping)) throw new Error('Control mapping must be a JSON object');
