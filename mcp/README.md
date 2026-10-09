@@ -44,6 +44,12 @@ The server exposes `list_templates` (optional category and language filters), `g
 - Responses do not grant or infer legal or language approval, and never certify compliance.
 - Never include personal, client, or confidential data in tool arguments.
 
+## Recorded review status
+
+`get_review_status` reads the template's recorded legal and language review fields, optionally for one language, and includes narrow summaries of linked records. It does not authenticate reviewer authorization or Ed25519 signatures, verify that a record's digest still matches current package content, or change any status. Treat the response as repository-recorded metadata, not authenticated approval or legal accuracy. The current repository has no signed review records.
+
+The catalog and templates remain the content source of truth; this tool does not create an independent review store.
+
 ## Tests and troubleshooting
 
 Run `python3 -m unittest discover -s mcp -p 'test_*.py'`. If the client does not show the tools, confirm that the command and absolute script path are correct, that Python is on `PATH`, and that the client was restarted. Diagnostics for malformed package metadata go to stderr; stdout is reserved for JSON-RPC messages.

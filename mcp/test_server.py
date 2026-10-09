@@ -39,6 +39,20 @@ class MCPTests(unittest.TestCase):
         self.assertTrue(result["content"])
         self.assertIn("not legal advice", result["disclaimer"])
 
+    def test_review_status_reports_only_recorded_evidence_and_limits(self):
+        result = server.call("get_review_status", {"template_id": "privacy-policy", "language": "fr"})
+        self.assertEqual(result["template_id"], "privacy-policy")
+        self.assertEqual(result["template_version"], "0.1.3")
+        self.assertEqual(result["recorded_status"], "DRAFT")
+        self.assertEqual(result["legal_review"]["status"], "pending")
+        self.assertEqual(result["language_reviews"]["fr"]["status"], "pending")
+        self.assertEqual(result["evidence_verification"], "not_performed")
+        self.assertIn("does not authenticate", result["disclaimer"])
+        with self.assertRaisesRegex(ValueError, "Unsupported language"):
+            server.call("get_review_status", {"template_id": "privacy-policy", "language": "es"})
+        with self.assertRaisesRegex(ValueError, "Unknown or ambiguous"):
+            server.call("get_review_status", {"template_id": "missing-template"})
+
     def test_source_search_and_topic_index_are_local_and_non_certifying(self):
         topics = server.call("list_legal_topics", {})
         self.assertIn("personal-data", [item["id"] for item in topics["topics"]])
@@ -141,7 +155,7 @@ class MCPTests(unittest.TestCase):
         self.assertEqual(len(lines), 4)
         output = [json.loads(line) for line in lines]
         self.assertEqual(output[0]["result"]["serverInfo"]["name"], "open-legal-morocco")
-        self.assertEqual(len(output[1]["result"]["tools"]), 7)
+        self.assertEqual(len(output[1]["result"]["tools"]), 8)
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)
 

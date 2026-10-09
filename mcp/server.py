@@ -13,6 +13,7 @@ FINDINGS_SCHEMA = ROOT / "schemas" / "findings.schema.json"
 CONTROL_TAXONOMY = ROOT / "schemas" / "control-taxonomy.json"
 SOURCE_REGISTRY = ROOT / "sources" / "registry.yaml"
 OFFICIAL_SOURCE_MAP = ROOT / "sources" / "official-morocco.yaml"
+REVIEW_RECORDS = ROOT / "reviews" / "records.json"
 DISCLAIMER = (
     "Open Legal Morocco materials are unverified discussion drafts, not legal advice. "
     "Automated results do not certify Moroccan legal compliance. "
@@ -92,6 +93,39 @@ def _source_index():
         if isinstance(source_id, str) and isinstance(topic, str):
             source_topics.setdefault(source_id, set()).add(topic)
     return registry.get("sources", []), source_topics
+
+
+def _review_evidence(record_ids):
+    """Return narrow summaries of linked records without treating them as verified."""
+    if not REVIEW_RECORDS.exists():
+        return []
+    if REVIEW_RECORDS.is_symlink():
+        raise ValueError("Review records cannot be a symbolic link")
+    try:
+        REVIEW_RECORDS.resolve().relative_to(ROOT.resolve())
+        document = json.loads(REVIEW_RECORDS.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, ValueError) as exc:
+        raise ValueError("Review records are unavailable or invalid") from exc
+    if not isinstance(document, dict) or not isinstance(document.get("reviews"), list):
+        raise ValueError("Review records are unavailable or invalid")
+    wanted = set(record_ids)
+    summaries = []
+    for record in document["reviews"]:
+        if not isinstance(record, dict):
+            continue
+        record_id = record.get("id")
+        if not isinstance(record_id, str) or record_id not in wanted:
+            continue
+        summaries.append({
+            "id": record.get("id"), "review_type": record.get("review_type"),
+            "template_id": record.get("template_id"), "template_version": record.get("template_version"),
+            "reviewer_id": record.get("reviewer_id"), "reviewed_at": record.get("reviewed_at"),
+            "languages": record.get("languages"), "scope": record.get("scope"),
+            "outcome": record.get("outcome"), "content_digest": record.get("content_digest"),
+            "signature_present": isinstance(record.get("signature"), dict),
+            "signature_verification": "not_performed",
+        })
+    return summaries
 
 
 def _matches_type(value, expected):
@@ -262,6 +296,55 @@ def call(name, args):
             "disclaimer": DISCLAIMER,
         }
 
+    if name == "get_review_status":
+        if set(args) - {"template_id", "language"}:
+            raise ValueError("Unsupported get_review_status argument")
+        template_id = args.get("template_id")
+        if not isinstance(template_id, str) or not template_id:
+            raise ValueError("template_id is required")
+        folder, metadata = choose(template_id)
+        language = args.get("language")
+        languages = metadata.get("languages", [])
+        if language is not None and (language not in LANGUAGES or language not in languages):
+            raise ValueError("Unsupported language")
+        selected_languages = [language] if language else languages
+        legal_review = metadata.get("legal_review")
+        if not isinstance(legal_review, dict):
+            legal_review = {"status": "unavailable"}
+        language_review = metadata.get("language_review")
+        language_review = language_review if isinstance(language_review, dict) else {}
+        language_record_ids = metadata.get("language_review_records")
+        language_record_ids = language_record_ids if isinstance(language_record_ids, dict) else {}
+        record_ids = [legal_review.get("review_record_id")]
+        record_ids.extend(language_record_ids.get(code) for code in selected_languages)
+        record_ids = [record_id for record_id in record_ids if isinstance(record_id, str) and record_id]
+        return {
+            "template_id": template_id,
+            "template_version": metadata.get("version"),
+            "recorded_status": metadata.get("status"),
+            "legal_review": {
+                "status": legal_review.get("status", "unavailable"),
+                "reviewer_id": legal_review.get("reviewer"),
+                "reviewed_at": legal_review.get("reviewed_at"),
+                "reviewed_version": legal_review.get("version"),
+                "record_id": legal_review.get("review_record_id"),
+            },
+            "language_reviews": {
+                code: {
+                    "status": language_review.get(code, "unavailable"),
+                    "record_id": language_record_ids.get(code),
+                }
+                for code in selected_languages
+            },
+            "evidence_records": _review_evidence(record_ids),
+            "evidence_verification": "not_performed",
+            "disclaimer": (
+                "This reports repository-recorded review fields only. The MCP does not verify reviewer authorization, "
+                "cryptographic signatures, or current-content digest binding; recorded metadata does not authenticate "
+                "a review or establish legal accuracy. It does not change review status."
+            ),
+        }
+
     if name == "get_findings_spec":
         if args: raise ValueError("Unsupported get_findings_spec argument")
         return {
@@ -398,6 +481,19 @@ TOOLS = [
         "inputSchema": {
             "type": "object",
             "properties": {"template_id": {"type": "string"}},
+            "required": ["template_id"],
+            "additionalProperties": False,
+        },
+    },
+    {
+        "name": "get_review_status",
+        "description": "Read recorded legal and language review fields and linked record summaries. This tool does not authenticate signatures or change review state.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "template_id": {"type": "string"},
+                "language": {"type": "string", "enum": list(LANGUAGES)},
+            },
             "required": ["template_id"],
             "additionalProperties": False,
         },
