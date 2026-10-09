@@ -17,7 +17,7 @@ The Foundation CI workflow prepares template and research-claim review packets a
 
 ## Formal review status
 
-At v0.0.1, formal review is not staffed: the reviewer registries are empty and no maintainers have been appointed. An issue, pull request, or reviewer statement does not authorize `LEGAL_REVIEWED`, `LANGUAGE_REVIEWED`, or `RELEASED` status.
+At v0.0.1, formal legal and language review is not staffed: the reviewer registries are empty. Base Workers is the founding project owner and technical maintainer, but that role does not authorize legal or language approval. An issue, pull request, or reviewer statement does not authorize `LEGAL_REVIEWED`, `LANGUAGE_REVIEWED`, or `RELEASED` status.
 
 If maintainers establish the review program, formal approvals must cover the exact version and content digest, identify the review scope and outcome, and be authenticated under the project governance rules. A later content change may invalidate an approval. An adapted copy does not inherit this project's review status. See [Governance](GOVERNANCE.md) for the status and authorization rules.
 
