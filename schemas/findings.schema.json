@@ -29,7 +29,7 @@
         "finding_type": { "enum": ["technical_observation", "potential_legal_question"] },
         "category": { "type": "string", "minLength": 1 },
         "priority": {
-          "enum": ["informational", "low", "medium", "high", "critical"],
+          "enum": ["informational", "low", "medium", "high", "critical]",
           "description": "Technical remediation urgency only: informational records context without requiring remediation; low is non-urgent work suitable for a normal maintenance cycle; medium should be planned into a near-term remediation cycle; high warrants prompt remediation or mitigation; critical warrants urgent containment or remediation based on severe, well-supported technical impact. Consider observed impact, scope, exploitability, and evidence confidence. These labels do not assess legal risk, establish a legal duty, or indicate legal non-compliance."
         },
         "priority_basis": { "const": "technical_remediation", "description": "Required to make clear that priority is technical remediation sequencing and not legal-risk assessment." },
@@ -72,7 +72,7 @@
       "type": "object", "additionalProperties": false, "required": ["kind", "path", "line_start", "line_end", "content_digest"],
       "properties": {
         "kind": { "enum": ["repository_file", "external_source", "tool_output", "other"] },
-        "path": { "type": ["string", "null"], "pattern": "^(?!/)(?![A-Za-z]:\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).*$", "description": "Repository-relative path only; never include machine-local absolute paths." }, "line_start": { "type": ["integer", "null"], "minimum": 1 },
+        "path": { "type": ["string", "null"], "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).*$", "description": "Repository-relative path using forward slashes only; absolute paths, backslashes, and parent-directory traversal are forbidden." }, "line_start": { "type": ["integer", "null"], "minimum": 1 },
         "line_end": { "type": ["integer", "null"], "minimum": 1 },
         "content_digest": { "type": ["string", "null"], "pattern": "^(sha256:)?[a-fA-F0-9]{64}$" }
       }
