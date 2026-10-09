@@ -7,6 +7,7 @@ import io
 import json
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 import tempfile
 import unittest
@@ -290,6 +291,34 @@ console.log(JSON.stringify(digests));
         self.assertEqual(len(output[1]["result"]["tools"]), 10)
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)
+
+    def test_stdio_process_negotiates_and_returns_structured_findings(self):
+        document = json.loads((server.ROOT / "tests" / "fixtures" / "findings-contract.json").read_text(encoding="utf-8"))["valid_documents"][0]
+        requests = [
+            {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-06-18"}},
+            {"jsonrpc": "2.0", "method": "notifications/initialized"},
+            {"jsonrpc": "2.0", "id": 2, "method": "tools/list"},
+            {"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {"name": "export_findings", "arguments": {"document": document}}},
+        ]
+        result = subprocess.run(
+            [sys.executable, str(SERVER)],
+            input="\n".join(json.dumps(item) for item in requests) + "\n",
+            cwd=server.ROOT,
+            capture_output=True,
+            text=True,
+            timeout=10,
+            check=True,
+        )
+        self.assertEqual(result.stderr, "")
+        lines = result.stdout.splitlines()
+        self.assertEqual(len(lines), 3, "notifications must not emit protocol responses")
+        responses = [json.loads(line) for line in lines]
+        self.assertEqual(responses[0]["result"]["protocolVersion"], "2025-06-18")
+        tool = next(item for item in responses[1]["result"]["tools"] if item["name"] == "export_findings")
+        self.assertEqual(tool["outputSchema"]["$id"], "https://github.com/BaseWorkers/openlegal-morocco/schemas/findings/1.0.0")
+        exported = responses[2]["result"]
+        self.assertEqual(exported["structuredContent"], document)
+        self.assertEqual(json.loads(exported["content"][0]["text"]), document)
 
     def test_protocol_rejects_oversized_message_and_continues(self):
         oversized = '{"jsonrpc":"2.0","id":1,"method":"ping","padding":"' + ("x" * (server.MAX_MESSAGE_CHARS + 10)) + '"}'
