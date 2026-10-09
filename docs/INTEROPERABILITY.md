@@ -23,7 +23,7 @@ Do not include raw personal data, credentials, or confidential payloads. Evidenc
 
 ## Compatibility policy
 
-The schema uses semantic versioning. Version 1.0.0 is frozen; compatible optional additions receive a new minor schema version and versioned API artifact. Removals, changed meanings, or newly required fields require a major version and migration note. Consumers validate against the schema version declared by the document; they should reject unsupported major versions and never infer approval from schema validity. Taxonomy identifiers are stable; proposed removals or semantic changes require a documented deprecation period and a versioned migration map.
+The 1.0.0 contract on this unmerged branch is a pre-release draft and may be revised before its first release. At release, its schema and meanings will be frozen. After release, compatible optional additions receive a new minor schema version and versioned API artifact; removals, changed meanings, or newly required fields require a major version and migration note. Consumers validate against the schema version declared by the document; they should reject unsupported major versions and never infer approval from schema validity. Taxonomy identifiers are stable; proposed removals or semantic changes require a documented deprecation period and a versioned migration map.
 
 ## Example
 
