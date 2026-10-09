@@ -21,7 +21,7 @@ test('static catalog builds one detail route per template language with visible 
   const outputDirectory = await mkdtemp(join(tmpdir(), 'olm-site-test-'));
   try {
     const catalog = await loadCatalog();
-    const expectedPages = 1 + 3 + catalog.reduce((count, template) => count + template.metadata.languages.length, 0);
+    const expectedPages = 1 + 3 + (5 * 3) + catalog.reduce((count, template) => count + template.metadata.languages.length, 0);
     const result = await buildStaticSite({ outputDirectory, repositoryRef: 'a'.repeat(40) });
     assert.equal(result.pageCount, expectedPages);
     const root = await readFile(join(outputDirectory, 'index.html'), 'utf8');
@@ -31,6 +31,13 @@ test('static catalog builds one detail route per template language with visible 
       const index = await readFile(join(outputDirectory, lang, 'index.html'), 'utf8');
       assert.match(index, new RegExp(`<html lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">`));
       assert.equal((index.match(/data-template(?:\s|>)/g) ?? []).length, catalog.length);
+      for (const slug of ['developers', 'reviewers', 'contribute', 'updates', 'about']) {
+        const page = await readFile(join(outputDirectory, lang, 'resources', slug, 'index.html'), 'utf8');
+        assert.match(page, new RegExp('<html lang="' + lang + '"'));
+        assert.match(page, /Project resources|Ressources du projet|موارد المشروع/);
+        assert.match(page, /DRAFT|PROJET|مسودة/);
+      }
+
     }
     const detail = await readFile(join(outputDirectory, 'en/templates/privacy-policy/index.html'), 'utf8');
     assert.match(detail, /DRAFT/);
