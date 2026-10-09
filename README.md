@@ -2,15 +2,15 @@
 
 [English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)
 
-**v0.0.1 · Early public contribution release**
+**v0.0.2 · Local tooling test preview**
 
 An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
 
-We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [v0.0.1 release notes](RELEASE_NOTES.md).
+We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [release notes](RELEASE_NOTES.md).
 
 ## Current status
 
-This v0.0.1 release contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
+This v0.0.2 preview contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
 
 The files are working drafts. They may be incomplete, outdated, or unsuitable for a specific person, transaction, or business. The project does not certify that a business or document is legally compliant. Do not sign or rely on them without qualified Moroccan legal advice.
 
@@ -60,6 +60,10 @@ This repository also includes the project validation and export tools, automated
 - [License policy](LICENSES/README.md)
 
 Read [DISCLAIMER.md](DISCLAIMER.md) before using any material. Original legal content, research prose, and template packages are intended for CC0-1.0 ([license text](LICENSES/CC0-1.0.txt)); included schemas and tooling are intended for MIT ([license text](LICENSES/MIT.txt)). The scope map is provisional and does not clear third-party material or reviewer submissions, which remain subject to their own rights and notices. Only contribute material you have the right to share under the applicable license.
+
+## Local tools
+
+Try the [CLI and MCP smoke tests](INTEGRATIONS.md) against this checkout. Both tools are read-only; their output does not count as professional review.
 
 ## Developer interoperability
 

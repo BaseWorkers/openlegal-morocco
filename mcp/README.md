@@ -62,3 +62,8 @@ Run `python3 -m unittest discover -s mcp -p 'test_*.py'`. If the client does not
 The MCP server also exposes `get_findings_spec` (the shared v1 JSON Schema and generic controls) and `export_findings` (validate and echo a supplied sanitized document unchanged). These tools do not scan caller repositories, contact external services, change human review states, or modify security policies. See [`docs/INTEROPERABILITY.md`](../docs/INTEROPERABILITY.md) for the export contract, privacy boundary, and versioning policy.
 
 For clients negotiating MCP protocol `2025-06-18`, `export_findings` advertises the published findings JSON Schema as its `outputSchema` and returns the validated document in `structuredContent`, alongside JSON text for compatibility with text-oriented clients. Clients negotiating older supported protocol revisions receive the same validated JSON in text content without structured output fields. The server negotiates the protocol per MCP session and never claims an output schema that it does not return.
+
+
+## Quick test
+
+From the checked-out release, run `python3 -m unittest discover -s mcp -p 'test_*.py'`. In an MCP client, confirm that `list_templates` appears, call it with `language: en`, then call `get_review_status` with `template_id: privacy-policy`. The results should include draft status and a disclaimer. Do not pass personal, client, confidential, or secret data.

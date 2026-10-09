@@ -1,3 +1,21 @@
+# v0.0.2 — Local tooling test preview
+
+This preview makes the local CLI and read-only MCP server easier to configure, test, and report feedback on. It is for technical evaluation and community feedback; it does not represent legal or language approval.
+
+## Test the tools
+
+Follow [Local CLI and MCP testing](INTEGRATIONS.md). The CLI requires Node.js 22 or newer. The MCP server requires Python 3.10 or newer; neither tool needs third-party runtime packages. Automated checks are run on this release candidate before publication.
+
+The tools read the repository's local catalogue only. They do not inspect a tester's private repositories, make network requests, write files, or approve content. Use synthetic or public inputs only. Report the command, operating system, runtime versions, expected result, and actual result in a public issue; do not include personal, client, confidential, or secret data.
+
+## Content and review status
+
+All 14 template packages remain `DRAFT`. No authorized legal or language reviewer has been recorded. The review-status and reviewer-interest workflows remain available, but tool checks and community feedback do not count as professional review.
+
+The source-rights and license-scope limitations described in v0.0.1 remain in force. This tooling preview does not clear third-party rights or settle contributor terms.
+
+---
+
 # v0.0.1 — Early public contribution release
 
 Open Legal Morocco is an independent, public-interest project intended to help Moroccan startups and other teams operating online recognize common legal questions and prepare document drafts to discuss with qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. Its goal is to make useful, reusable starting points easier to find, discuss, review, and adapt. It does not certify legal compliance.

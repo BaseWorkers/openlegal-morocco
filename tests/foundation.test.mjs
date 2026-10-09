@@ -902,6 +902,7 @@ test('project-only export rejects internal Markdown names and content', () => {
   assert.equal(isInternalMarkdownDocument('instructions.md', 'How to build the project'), true);
   assert.equal(isInternalMarkdownDocument('notes.md', 'Build instructions'), true);
   assert.equal(isInternalMarkdownDocument('SECURITY.md', 'Run `npm run audit:privacy` to check the project.'), true);
+  assert.equal(isInternalMarkdownDocument('INTEGRATIONS.md', 'Run `npm run cli -- check` and `python3 -m unittest discover -s mcp`.'), false);
   assert.equal(isInternalMarkdownDocument('notes.md', 'Run `node scripts/validate-foundation.mjs` before release.'), true);
   assert.equal(isInternalMarkdownDocument('CONTRIBUTING.md', 'Contribute Moroccan source research and translation corrections.'), false);
   assert.equal(isInternalMarkdownDocument('CONTRIBUTING.md', 'Run `npm test` before submitting.'), true);
@@ -915,7 +916,7 @@ test('project-only export includes project policies and excludes planning and de
   try {
     await execFileAsync(process.execPath, [exportScript, output, '--preview']);
     const readme = await readFile(join(output, 'README.md'), 'utf8');
-    assert.match(readme, /v0\.0\.1 · Early public contribution release/);
+    assert.match(readme, /v0\.0\.2 · Local tooling test preview/);
     assert.match(readme, /Moroccan lawyers and legal researchers/);
     assert.match(readme, /recognize common legal questions and prepare discussion drafts/);
     assert.match(readme, /does not certify that a business or document is legally compliant/);
@@ -928,7 +929,7 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(releaseNotes, /does not add a non-commercial restriction/);
     assert.match(releaseNotes, /fourteen structured legal-template discussion drafts/i);
     assert.match(releaseNotes, /no authorized human legal or language review is recorded/i);
-    for (const path of ['README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md', 'GOVERNANCE.md', 'SECURITY.md', 'DISCLAIMER.md', 'LICENSES/README.md', '.github/PULL_REQUEST_TEMPLATE.md', '.github/ISSUE_TEMPLATE/contribution.yml', '.github/ISSUE_TEMPLATE/legal-research.yml', '.github/ISSUE_TEMPLATE/template-defect.yml', '.github/ISSUE_TEMPLATE/reviewer-interest.yml']) {
+    for (const path of ['README.fr.md', 'README.ar.md', 'INTEGRATIONS.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md', 'GOVERNANCE.md', 'SECURITY.md', 'DISCLAIMER.md', 'LICENSES/README.md', '.github/PULL_REQUEST_TEMPLATE.md', '.github/ISSUE_TEMPLATE/contribution.yml', '.github/ISSUE_TEMPLATE/legal-research.yml', '.github/ISSUE_TEMPLATE/template-defect.yml', '.github/ISSUE_TEMPLATE/reviewer-interest.yml']) {
       await readFile(join(output, path), 'utf8');
       if (path.endsWith('.md') && !path.startsWith('.github/')) assert.match(readme, new RegExp(path.replaceAll('.', '\\.')));
     }
@@ -954,6 +955,10 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(reviewerInterestForm, /Moroccan legal reviewer/);
     assert.match(reviewerInterestForm, /Community moderator/);
     assert.match(reviewerInterestForm, /issue and all answers are public/);
+    const integrations = await readFile(join(output, 'INTEGRATIONS.md'), 'utf8');
+    assert.match(integrations, /npm run cli -- --version/);
+    assert.match(integrations, /codex mcp add/);
+    assert.match(integrations, /Do not post client matters/);
     const frenchReadme = await readFile(join(output, 'README.fr.md'), 'utf8');
     assert.match(frenchReadme, /repérer les questions juridiques courantes/);
     assert.match(frenchReadme, /professionnel qualifié en droit marocain/);
@@ -984,6 +989,7 @@ test('project-only export includes project policies and excludes planning and de
     assert.ok(exportedPatterns.includes('REVIEWING.md'));
     assert.ok(exportedPatterns.includes('docs/**'));
     assert.ok(exportedPatterns.includes('RELEASE_NOTES.md'));
+    assert.ok(exportedPatterns.includes('INTEGRATIONS.md'));
     assert.ok(exportedPatterns.includes('README.fr.md'));
     assert.ok(exportedPatterns.includes('README.ar.md'));
     assert.ok(exportedPatterns.includes('.github/PULL_REQUEST_TEMPLATE.md'));

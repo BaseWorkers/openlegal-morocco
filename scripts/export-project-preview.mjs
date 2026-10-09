@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { isInternalMarkdownDocument } from './project-export-policy.mjs';
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const projectVersion = JSON.parse(await readFile(join(repositoryRoot, 'package.json'), 'utf8')).version;
 const outputArgument = process.argv[2];
 const previewFlag = process.argv.includes('--preview');
 
@@ -48,7 +49,7 @@ async function assertNoInternalMarkdown(sources) {
     if (info.isFile() && source.toLowerCase().endsWith('.md')) {
       const filename = source.split(sep).at(-1);
       const contents = await readFile(source, 'utf8');
-      if (isInternalMarkdownDocument(filename, contents)) {
+      if (isInternalMarkdownDocument(filename, contents) && relative(repositoryRoot, source).split(sep).join('/') !== 'INTEGRATIONS.md') {
         throw new Error(`Refusing project-only export because Markdown content contains an internal planning or build reference: ${source}`);
       }
     }
@@ -64,7 +65,7 @@ async function writeProjectLicenseFiles(outputPath) {
   const sourceScopes = JSON.parse(await readFile(join(repositoryRoot, 'LICENSES/scopes.json'), 'utf8'));
   const allowedPatterns = new Set([
     'templates/**', 'clauses/**', 'research/**', 'sources/**', 'reviews/**',
-    'README.md', 'README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'DISCLAIMER.md', 'GOVERNANCE.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md',
+    'README.md', 'README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'INTEGRATIONS.md', 'CODE_OF_CONDUCT.md', 'DISCLAIMER.md', 'GOVERNANCE.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md',
     'SECURITY.md', 'CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/**',
     '.github/PULL_REQUEST_TEMPLATE.md', 'LICENSES/README.md', 'LICENSES/scopes.json',
     'scripts/**', 'schemas/**', 'tests/**', 'docs/**', '.github/workflows/**',
@@ -90,7 +91,7 @@ async function writeProjectLicenseFiles(outputPath) {
     '',
     'The path map in [`scopes.json`](scopes.json) describes intended scope only. It does not establish ownership, clear third-party rights, or apply the project license to material with separate rights or notices. Reviewer-authored submissions retain their own rights unless an authorized agreement states otherwise. Template source declarations and attribution requirements remain in effect.',
     '',
-    'This v0.0.1 community preview publishes the stated license targets to invite review and contribution. The path map and ownership review remain provisional; this notice does not establish ownership or clear third-party rights. Please do not contribute material unless you have the right to share it under the applicable project license.',
+    `This v${projectVersion} tooling preview publishes the stated license targets to invite review and contribution. The path map and ownership review remain provisional; this notice does not establish ownership or clear third-party rights. Please do not contribute material unless you have the right to share it under the applicable project license.`,
     '',
     'See [`CC0-1.0.txt`](CC0-1.0.txt) and [`MIT.txt`](MIT.txt) for license texts. Canonical sources: [Creative Commons CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en) and [Open Source Initiative MIT License](https://opensource.org/license/mit).',
     ''
@@ -110,15 +111,19 @@ function makeReadme(packages) {
     '',
     '[English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)',
     '',
-    '**v0.0.1 · Early public contribution release**',
+    `**v${projectVersion} · Local tooling test preview**`,
     '',
     'An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.',
     '',
-    'We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [v0.0.1 release notes](RELEASE_NOTES.md).',
+    'We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [release notes](RELEASE_NOTES.md).',
+    '',
+    '## Local tools',
+    '',
+    'Try the [CLI and MCP smoke tests](INTEGRATIONS.md) against this local checkout. Both tools are read-only; their output does not count as professional review.',
     '',
     '## Current status',
     '',
-    `This v0.0.1 release contains ${packages.length} structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked \`LEGAL_REVIEWED\` or \`RELEASED\`, and no authorized human legal or language review is recorded.`,
+    `This v${projectVersion} preview contains ${packages.length} structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked \`LEGAL_REVIEWED\` or \`RELEASED\`, and no authorized human legal or language review is recorded.`,
     '',
     'The files are working drafts. They may be incomplete, outdated, or unsuitable for a specific person, transaction, or business. The project does not certify that a business or document is legally compliant. Do not sign or rely on them without qualified Moroccan legal advice.',
     '',
@@ -155,6 +160,7 @@ function makeReadme(packages) {
     '- [Code of Conduct](CODE_OF_CONDUCT.md)',
     '- [Security policy](SECURITY.md)',
     '- [License policy](LICENSES/README.md)',
+    '- [CLI and MCP testing](INTEGRATIONS.md)',
     '',
     'Read [DISCLAIMER.md](DISCLAIMER.md) before using any material. Original legal content, research prose, and template packages are intended for CC0-1.0 ([license text](LICENSES/CC0-1.0.txt)); included schemas and tooling are intended for MIT ([license text](LICENSES/MIT.txt)). The scope map is provisional and does not clear third-party material or reviewer submissions, which remain subject to their own rights and notices. Only contribute material you have the right to share under the applicable license.',
     ''
@@ -168,7 +174,7 @@ function makeFrenchReadme(packages) {
     '',
     '[English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)',
     '',
-    '**v0.0.1 · Aperçu de contribution**',
+    `**v${projectVersion} · Aperçu de test des outils locaux**`,
     '',
     'Projet open source indépendant, d’intérêt public, qui aide les startups marocaines et les autres équipes opérant en ligne à repérer les questions juridiques courantes et à préparer des projets de documents à discuter avec un professionnel qualifié en droit marocain. Le projet n’a pas de but lucratif ; cela décrit son objectif sans affirmer qu’il possède un statut juridique enregistré d’organisme sans but lucratif. Les licences prévues autorisent la réutilisation, y compris commerciale, selon leurs conditions.',
     '',
@@ -191,7 +197,7 @@ function makeArabicReadme(packages) {
     '',
     '[English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)',
     '',
-    '**v0.0.1 · معاينة للمساهمة**',
+    `**v${projectVersion} · معاينة لاختبار الأدوات المحلية**`,
     '',
     'مشروع مستقل ومفتوح المصدر ذو غاية ذات نفع عام، يهدف إلى مساعدة الشركات الناشئة المغربية والفرق الأخرى التي تعمل عبر الإنترنت على التعرّف على المسائل القانونية الشائعة وإعداد مسودات للنقاش مع مهني مؤهل في القانون المغربي. لا يهدف المشروع إلى تحقيق الربح؛ وهذا يصف غايته ولا يعني أنه مسجل كجمعية أو يتمتع بصفة قانونية غير ربحية. وتسمح التراخيص المستهدفة بإعادة الاستخدام، بما في ذلك الاستخدام التجاري، وفق شروط كل ترخيص.',
     '',
@@ -278,7 +284,7 @@ async function main() {
       'scripts',
       'tests',
       'CODE_OF_CONDUCT.md',
-      'RELEASE_NOTES.md',
+      'RELEASE_NOTES.md', 'INTEGRATIONS.md',
       'CONTRIBUTING.md',
       'REVIEWING.md',
       'docs/REVIEWER_ONBOARDING.md',
@@ -309,7 +315,7 @@ async function main() {
   ]) {
     await copyTree(join(repositoryRoot, path), join(canonicalOutputPath, path), { skipReadmes: path === 'research/morocco' || path === 'schemas' });
   }
-  for (const path of ['package.json', '.gitignore', 'scripts', 'tests', 'CODE_OF_CONDUCT.md', 'RELEASE_NOTES.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md', 'GOVERNANCE.md', 'SECURITY.md', '.github/ISSUE_TEMPLATE', '.github/PULL_REQUEST_TEMPLATE.md', '.github/workflows/ci.yml']) {
+  for (const path of ['package.json', '.gitignore', 'scripts', 'tests', 'CODE_OF_CONDUCT.md', 'RELEASE_NOTES.md', 'INTEGRATIONS.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md', 'GOVERNANCE.md', 'SECURITY.md', '.github/ISSUE_TEMPLATE', '.github/PULL_REQUEST_TEMPLATE.md', '.github/workflows/ci.yml']) {
     await copyTree(join(repositoryRoot, path), join(canonicalOutputPath, path));
   }
   await writeProjectLicenseFiles(canonicalOutputPath);

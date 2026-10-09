@@ -13,6 +13,7 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+PROJECT_VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]
 TEMPLATES = ROOT / "templates"
 FINDINGS_SCHEMA = ROOT / "schemas" / "findings.schema.json"
 CONTROL_TAXONOMY = ROOT / "schemas" / "control-taxonomy.json"
@@ -841,7 +842,7 @@ def response(request, session=None):
         return {
             "protocolVersion": negotiated,
             "capabilities": {"tools": {}},
-            "serverInfo": {"name": "open-legal-morocco", "version": "0.1.0"},
+            "serverInfo": {"name": "open-legal-morocco", "version": PROJECT_VERSION},
         }
     if method == "ping":
         return {}
