@@ -62,6 +62,288 @@ function shell({ lang, title, description, body, depth, template, baseUrl, canon
 `;
 }
 
+const resourcePages = {
+  "en": {
+    "navLabel": "Project resources",
+    "developers": {
+      "title": "For developers",
+      "description": "Local, read-only developer tools and versioned data contracts for Open Legal Morocco.",
+      "sections": [
+        {
+          "heading": "Local tools",
+          "text": "The command-line interface, local MCP server, and static JSON catalog read repository content without a hosted service. The MCP server uses stdio and does not open a network listener."
+        },
+        {
+          "heading": "Structured findings",
+          "text": "Findings use a versioned JSON Schema and generic control identifiers. Technical observations remain separate from unresolved legal questions; priority describes technical remediation only."
+        },
+        {
+          "heading": "Integration boundary",
+          "text": "External adapters can consume exported JSON and map generic controls to their own capabilities. Integrations must preserve verification status and cannot approve legal findings or change security policy."
+        }
+      ]
+    },
+    "reviewers": {
+      "title": "For legal and language reviewers",
+      "description": "How Open Legal Morocco records source, legal, language, and template review states.",
+      "sections": [
+        {
+          "heading": "Review evidence",
+          "text": "A recorded status is not itself proof of review. Where evidence exists, it is bound to a specific template version, content digest, language, scope, reviewer authorization, and signed record."
+        },
+        {
+          "heading": "Review packets",
+          "text": "Review packets collect the exact draft, source declarations, unresolved claims, and review questions. Packet generation prepares material for review; it does not approve a template."
+        },
+        {
+          "heading": "No recorded approval",
+          "text": "The current catalog shows recorded status as stored. Do not infer legal accuracy, reviewer qualifications, or approval from a citation, automated check, signature verification, or publication."
+        }
+      ]
+    },
+    "contribute": {
+      "title": "Contribute",
+      "description": "Contribution paths for software, legal research, and language review.",
+      "sections": [
+        {
+          "heading": "Software and documentation",
+          "text": "Use the repository contribution guide and issue templates. Keep changes scoped, include evidence for technical claims, and do not include credentials, personal data, or confidential client material."
+        },
+        {
+          "heading": "Research and translations",
+          "text": "Separate source text from interpretation, provide exact source references, and state uncertainty. Rights and attribution must be clear before external legal wording or translations are reused."
+        },
+        {
+          "heading": "Review independence",
+          "text": "Only authorized qualified humans can approve legal content under the project governance. A code review or automated check cannot substitute for legal or language review."
+        }
+      ]
+    },
+    "updates": {
+      "title": "Updates and change candidates",
+      "description": "How source changes are recorded without turning them into legal conclusions.",
+      "sections": [
+        {
+          "heading": "Candidate only",
+          "text": "The current change tracker compares a locally supplied source copy with a prior SHA-256 digest for a small allowlist. It does not fetch sources, retain their text, or declare that legislation changed."
+        },
+        {
+          "heading": "Human triage",
+          "text": "A maintainer verifies the source and the nature of a difference. A qualified legal reviewer determines whether any claim or template is affected. Legal content and review states follow their normal approval process."
+        },
+        {
+          "heading": "Retrieval is not enabled",
+          "text": "Scheduled retrieval remains disabled until source terms, reliable official feeds, and authorization for automated requests are verified."
+        }
+      ]
+    },
+    "about": {
+      "title": "About Open Legal Morocco",
+      "description": "An independent public-interest open-source initiative for Moroccan legal-document research and developer infrastructure.",
+      "sections": [
+        {
+          "heading": "Purpose",
+          "text": "Open Legal Morocco publishes source-linked research and legal-document discussion drafts for developers, researchers, and qualified reviewers. It is not a law firm and does not provide legal advice or compliance certification."
+        },
+        {
+          "heading": "Independence",
+          "text": "The project is maintained by Base Workers and is open to community contributions under the repository's rights and review policies. No government partnership or professional endorsement is claimed."
+        },
+        {
+          "heading": "Status",
+          "text": "Draft and review states are displayed as recorded. Engineering milestones do not guarantee legal review, current-law status, or suitability for a particular organization."
+        }
+      ]
+    }
+  },
+  "fr": {
+    "navLabel": "Ressources du projet",
+    "developers": {
+      "title": "Pour les développeurs",
+      "description": "Outils locaux en lecture seule et contrats de données versionnés d’Open Legal Morocco.",
+      "sections": [
+        {
+          "heading": "Outils locaux",
+          "text": "L’interface en ligne de commande, le serveur MCP local et le catalogue JSON statique lisent le contenu du dépôt sans service hébergé. Le serveur MCP utilise stdio et n’ouvre pas de service réseau."
+        },
+        {
+          "heading": "Constats structurés",
+          "text": "Les constats utilisent un schéma JSON versionné et des identifiants de contrôle génériques. Les observations techniques restent distinctes des questions juridiques non résolues ; la priorité décrit uniquement la remédiation technique."
+        },
+        {
+          "heading": "Limites d’intégration",
+          "text": "Les adaptateurs indépendants peuvent lire le JSON exporté et associer les contrôles génériques à leurs propres capacités. Ils doivent préserver les états de vérification et ne peuvent ni approuver des constats juridiques ni modifier une politique de sécurité."
+        }
+      ]
+    },
+    "reviewers": {
+      "title": "Pour les juristes et réviseurs linguistiques",
+      "description": "Comment Open Legal Morocco enregistre les états de vérification des sources, du droit, des langues et des modèles.",
+      "sections": [
+        {
+          "heading": "Éléments de vérification",
+          "text": "Un état enregistré ne constitue pas à lui seul une preuve de vérification. Les éléments disponibles sont liés à une version précise, une empreinte du contenu, une langue, un périmètre, une autorisation du réviseur et un enregistrement signé."
+        },
+        {
+          "heading": "Dossiers de révision",
+          "text": "Les dossiers réunissent le projet exact, les sources déclarées, les affirmations non résolues et les questions de révision. Leur génération prépare le travail et n’approuve pas un modèle."
+        },
+        {
+          "heading": "Aucune approbation enregistrée",
+          "text": "Le catalogue affiche l’état enregistré. Une citation, un contrôle automatisé, une vérification de signature ou une publication ne prouve ni l’exactitude juridique, ni les qualifications du réviseur, ni l’approbation."
+        }
+      ]
+    },
+    "contribute": {
+      "title": "Contribuer",
+      "description": "Parcours de contribution au logiciel, à la recherche juridique et à la révision linguistique.",
+      "sections": [
+        {
+          "heading": "Logiciel et documentation",
+          "text": "Suivez le guide de contribution et utilisez les modèles de tickets. Limitez la portée des changements, étayez les affirmations techniques et n’ajoutez ni identifiants secrets, ni données personnelles, ni dossiers clients confidentiels."
+        },
+        {
+          "heading": "Recherche et traductions",
+          "text": "Distinguez le texte de la source de son interprétation, fournissez des références précises et signalez l’incertitude. Les droits et l’attribution doivent être clairs avant de réutiliser des textes juridiques ou des traductions externes."
+        },
+        {
+          "heading": "Indépendance de la révision",
+          "text": "Seules des personnes qualifiées et autorisées peuvent approuver le contenu juridique selon la gouvernance du projet. Une revue de code ou un contrôle automatisé ne remplace pas une révision juridique ou linguistique."
+        }
+      ]
+    },
+    "updates": {
+      "title": "Mises à jour et changements candidats",
+      "description": "Comment enregistrer les changements de sources sans les transformer en conclusions juridiques.",
+      "sections": [
+        {
+          "heading": "Candidat uniquement",
+          "text": "Le suivi actuel compare une copie locale fournie avec une empreinte SHA-256 antérieure pour une courte liste. Il ne récupère pas les sources, ne conserve pas leur texte et ne déclare pas qu’une loi a changé."
+        },
+        {
+          "heading": "Triage humain",
+          "text": "Un mainteneur vérifie la source et la nature de la différence. Un juriste qualifié détermine si une affirmation ou un modèle est concerné. Le contenu juridique et ses états de révision suivent leur processus normal d’approbation."
+        },
+        {
+          "heading": "Récupération automatisée désactivée",
+          "text": "La récupération planifiée reste désactivée jusqu’à la vérification des conditions des sources, des flux officiels fiables et de l’autorisation des requêtes automatisées."
+        }
+      ]
+    },
+    "about": {
+      "title": "À propos d’Open Legal Morocco",
+      "description": "Une initiative open source indépendante d’intérêt public pour la recherche juridique marocaine et les outils destinés aux développeurs.",
+      "sections": [
+        {
+          "heading": "Objectif",
+          "text": "Open Legal Morocco publie des recherches référencées et des projets de documents de discussion destinés aux développeurs, chercheurs et réviseurs qualifiés. Le projet n’est pas un cabinet d’avocats et ne fournit ni conseil juridique ni certification de conformité."
+        },
+        {
+          "heading": "Indépendance",
+          "text": "Le projet est maintenu par Base Workers et accueille les contributions selon les politiques de droits et de révision du dépôt. Aucun partenariat gouvernemental ni soutien professionnel n’est revendiqué."
+        },
+        {
+          "heading": "Statut",
+          "text": "Les états de projet et de révision sont affichés tels qu’enregistrés. Les jalons techniques ne garantissent pas une révision juridique, l’état actuel du droit ou l’adéquation à une organisation particulière."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "navLabel": "موارد المشروع",
+    "developers": {
+      "title": "للمطورين",
+      "description": "أدوات محلية للقراءة فقط وعقود بيانات ذات إصدارات واضحة في Open Legal Morocco.",
+      "sections": [
+        {
+          "heading": "الأدوات المحلية",
+          "text": "تقرأ واجهة سطر الأوامر وخادم MCP المحلي والكتالوج الثابت بصيغة JSON محتوى المستودع دون خدمة مستضافة. يستخدم خادم MCP قناة stdio ولا يفتح منفذاً شبكياً."
+        },
+        {
+          "heading": "النتائج المنظّمة",
+          "text": "تستخدم النتائج مخطط JSON ذا إصدار ومعرّفات عامة للضوابط. تبقى الملاحظات التقنية منفصلة عن الأسئلة القانونية غير المحسومة؛ والأولوية تصف ترتيب المعالجة التقنية فقط."
+        },
+        {
+          "heading": "حدود التكامل",
+          "text": "يمكن للمحوّلات المستقلة استهلاك JSON المُصدّر وربط الضوابط العامة بقدراتها. يجب أن تحافظ على حالات التحقق، ولا يمكنها اعتماد النتائج القانونية أو تغيير سياسات الأمان."
+        }
+      ]
+    },
+    "reviewers": {
+      "title": "للمراجعين القانونيين واللغويين",
+      "description": "كيفية تسجيل حالات مراجعة المصادر والقانون واللغة والنماذج في Open Legal Morocco.",
+      "sections": [
+        {
+          "heading": "أدلة المراجعة",
+          "text": "الحالة المسجلة وحدها ليست دليلاً على المراجعة. ترتبط الأدلة المتاحة بإصدار محدد وبصمة المحتوى واللغة والنطاق وتفويض المراجع وسجل موقّع."
+        },
+        {
+          "heading": "حزم المراجعة",
+          "text": "تجمع حزم المراجعة المسودة المحددة ومصادرها المعلنة والادعاءات غير المحسومة وأسئلة المراجعة. إعداد الحزمة يهيئ المواد للمراجعة ولا يعتمد النموذج."
+        },
+        {
+          "heading": "لا توجد موافقة مسجلة",
+          "text": "يعرض الكتالوج الحالة المسجلة. ولا يثبت الاستشهاد أو الفحص الآلي أو التحقق من التوقيع أو النشر الدقة القانونية أو مؤهلات المراجع أو الموافقة."
+        }
+      ]
+    },
+    "contribute": {
+      "title": "ساهم",
+      "description": "طرق المساهمة في البرمجيات والبحث القانوني والمراجعة اللغوية.",
+      "sections": [
+        {
+          "heading": "البرمجيات والتوثيق",
+          "text": "اتبع دليل المساهمة واستخدم قوالب البلاغات. اجعل التغييرات محددة وادعم الادعاءات التقنية بالأدلة، ولا تضف بيانات اعتماد أو بيانات شخصية أو معلومات سرية للعملاء."
+        },
+        {
+          "heading": "البحث والترجمة",
+          "text": "افصل نص المصدر عن تفسيره، وقدّم مراجع دقيقة واذكر مواطن عدم اليقين. يجب توضيح الحقوق ونسب العمل قبل إعادة استخدام نصوص قانونية أو ترجمات خارجية."
+        },
+        {
+          "heading": "استقلال المراجعة",
+          "text": "لا يعتمد المحتوى القانوني وفق حوكمة المشروع إلا أشخاص مؤهلون ومخوّلون. ولا تحل مراجعة الشيفرة أو الفحوص الآلية محل المراجعة القانونية أو اللغوية."
+        }
+      ]
+    },
+    "updates": {
+      "title": "التحديثات والتغييرات المرشحة",
+      "description": "كيفية تسجيل تغييرات المصادر دون تحويلها إلى استنتاجات قانونية.",
+      "sections": [
+        {
+          "heading": "مرشح فقط",
+          "text": "تقارن أداة التتبع الحالية نسخة محلية يقدّمها المستخدم ببصمة SHA-256 سابقة لمصادر محددة. ولا تجلب المصادر عبر الشبكة أو تحتفظ بنصوصها أو تقرر أن تشريعاً قد تغير."
+        },
+        {
+          "heading": "فرز بشري",
+          "text": "يتحقق المشرف من المصدر وطبيعة الفرق. ويحدد مراجع قانوني مؤهل ما إذا كان ادعاء أو نموذج متأثراً. ويظل تحديث المحتوى وحالات مراجعته خاضعاً لمسار الاعتماد المعتاد."
+        },
+        {
+          "heading": "الجلب الآلي غير مفعّل",
+          "text": "يبقى الجلب المجدول معطلاً إلى أن تُراجع شروط المصادر وتُتحقق التدفقات الرسمية الموثوقة ويُصرح بالطلبات الآلية."
+        }
+      ]
+    },
+    "about": {
+      "title": "عن Open Legal Morocco",
+      "description": "مبادرة مستقلة مفتوحة المصدر ذات منفعة عامة للبحث القانوني المغربي وبنية أدوات المطورين.",
+      "sections": [
+        {
+          "heading": "الهدف",
+          "text": "ينشر Open Legal Morocco أبحاثاً مرتبطة بمصادر ومسودات وثائق للنقاش للمطورين والباحثين والمراجعين المؤهلين. المشروع ليس مكتب محاماة ولا يقدم استشارات قانونية أو شهادات امتثال."
+        },
+        {
+          "heading": "الاستقلال",
+          "text": "تدير Base Workers المشروع وتُرحب المساهمة وفق سياسات الحقوق والمراجعة في المستودع. لا يدّعي المشروع شراكة حكومية أو تأييداً مهنياً."
+        },
+        {
+          "heading": "الحالة",
+          "text": "تُعرض حالات المسودة والمراجعة كما هي مسجلة. ولا تضمن المراحل التقنية مراجعة قانونية أو حداثة الوضع القانوني أو ملاءمة المحتوى لمنظمة معينة."
+        }
+      ]
+    }
+  }
+};
+
 function reviewValue(value) {
   if (!value) return 'not recorded';
   return typeof value === 'string' ? value : value.status ?? 'not recorded';
@@ -119,6 +401,24 @@ function landingBody() {
   return `<div class="legal-content"><p class="eyebrow">Open Legal Morocco</p><h1>Choose a language · Choisir une langue · اختر اللغة</h1><p class="lead">Independent, public-interest legal-document discussion drafts for Morocco. The project does not provide legal advice or certify compliance.</p><div class="notice" role="note"><strong>DRAFT — NOT LEGALLY REVIEWED</strong>Do not publish or rely on these materials without review by qualified Moroccan counsel.</div><ul class="language-choice"><li><a href="en/index.html" lang="en">English catalog</a></li><li><a href="fr/index.html" lang="fr">Catalogue français</a></li><li><a href="ar/index.html" lang="ar" dir="rtl">الفهرس العربي</a></li></ul><p>Maintained by Base Workers. No government or professional endorsement is claimed.</p></div>`;
 }
 
+function resourceNav(lang, depth) {
+  const pages = resourcePages[lang];
+  const prefix = '../'.repeat(depth - 1);
+  const links = Object.entries(pages).map(([slug, page]) =>
+    '<li><a href="' + prefix + 'resources/' + slug + '/index.html">' + escapeHtml(page.title) + '</a></li>'
+  ).join('');
+  return '<nav class="resource-links" aria-label="' + escapeHtml(pages.navLabel) + '"><h2>' + escapeHtml(pages.navLabel) + '</h2><ul>' + links + '</ul></nav>';
+}
+
+function resourceBody(lang, slug) {
+  const page = resourcePages[lang][slug];
+  const sections = page.sections.map((section) =>
+    '<section><h2>' + escapeHtml(section.heading) + '</h2><p>' + escapeHtml(section.text) + '</p></section>'
+  ).join('');
+  const backLabel = lang === 'ar' ? 'العودة إلى النماذج' : lang === 'fr' ? 'Retour aux modèles' : 'Back to templates';
+  return '<div class="legal-content"><p class="breadcrumb"><a href="../../index.html">' + backLabel + '</a></p><p class="eyebrow">Open Legal Morocco</p><h1>' + escapeHtml(page.title) + '</h1><p class="lead">' + escapeHtml(page.description) + '</p>' + sections + '</div>';
+}
+
 export async function buildStaticSite({ outputDirectory = resolve(root, 'dist/site'), repositoryRef = process.env.GITHUB_SHA || 'working-tree', baseUrl: rawBaseUrl = process.env.OLM_SITE_BASE_URL } = {}) {
   const baseUrl = safeBaseUrl(rawBaseUrl);
   const catalog = await loadCatalog(root);
@@ -141,7 +441,7 @@ export async function buildStaticSite({ outputDirectory = resolve(root, 'dist/si
     routes.push(indexRoute);
     const indexPath = resolve(outputDirectory, indexRoute.slice(1));
     await mkdir(dirname(indexPath), { recursive: true });
-    await writeFile(indexPath, shell({ lang, title: t.catalog, description: t.intro, body: catalogBody(lang, catalog), depth: 1, baseUrl, canonicalPath: indexRoute, script: true }));
+    await writeFile(indexPath, shell({ lang, title: t.catalog, description: t.intro, body: catalogBody(lang, catalog) + resourceNav(lang, 1), depth: 1, baseUrl, canonicalPath: indexRoute, script: true }));
     for (const template of catalog) {
       if (!template.metadata.languages.includes(lang)) continue;
       const route = routeFor(lang, template.id);
@@ -149,9 +449,23 @@ export async function buildStaticSite({ outputDirectory = resolve(root, 'dist/si
       const detailPath = resolve(outputDirectory, route.slice(1));
       await mkdir(dirname(detailPath), { recursive: true });
       const content = await loadTemplateContent(template, lang);
-      await writeFile(detailPath, shell({ lang, title: template.metadata.title?.[lang] ?? template.id, description: t.warningBody, body: detailBody(lang, { ...template, content }, registryById, repositoryRef), depth: 3, template, baseUrl, canonicalPath: route }));
+      await writeFile(detailPath, shell({ lang, title: template.metadata.title?.[lang] ?? template.id, description: t.warningBody, body: detailBody(lang, { ...template, content }, registryById, repositoryRef) + resourceNav(lang, 3), depth: 3, template, baseUrl, canonicalPath: route }));
     }
   }
+
+
+    for (const [slug, page] of Object.entries(resourcePages[lang])) {
+      if (slug === 'navLabel') continue;
+      const route = '/' + lang + '/resources/' + slug + '/index.html';
+      routes.push(route);
+      const resourcePath = resolve(outputDirectory, route.slice(1));
+      await mkdir(dirname(resourcePath), { recursive: true });
+      await writeFile(resourcePath, shell({
+        lang, title: page.title, description: page.description,
+        body: resourceBody(lang, slug) + resourceNav(lang, 3),
+        depth: 3, baseUrl, canonicalPath: route,
+      }));
+    }
 
   await writeFile(resolve(outputDirectory, 'robots.txt'), `User-agent: *\nAllow: /\n${baseUrl ? `Sitemap: ${new URL('sitemap.xml', baseUrl).href}\n` : ''}`);
   if (baseUrl) {
