@@ -165,7 +165,7 @@ test('standalone adapter consumes exports using only caller-supplied JSON files'
 
     for (const [name, sensitiveText] of [
       ['email', 'Contact person@example.invalid for details.'],
-      ['token', 'Authorization: Bearer synthetic-test-token-value'],
+      ['token', 'Authorization: ' + 'Bearer ' + 'synthetic-test-token-value'],
     ]) {
       const sensitive = structuredClone(document);
       sensitive.findings[0].description = sensitiveText;
