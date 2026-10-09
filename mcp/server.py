@@ -259,15 +259,15 @@ def _review_evidence(record_ids, metadata, folder):
         _validate_schema_node(record, review_schema, review_schema, "review_record", record_errors)
         review_type = record.get("review_type")
         reviewer_pool = legal_reviewers if review_type == "legal" else language_reviewers if review_type == "language" else []
-        reviewer = next((item for item in reviewer_pool if isinstance(item, dict) and item.get("id") == record.get("reviewer_id") and item.get("active") is True), None)
+        reviewer = next((item for item in reviewer_pool if isinstance(item, dict) and item.get("id") == record.get("reviewer_id") and item.get("active") is True), None) if not record_errors else None
         failures = []
         if record_errors:
             failures.append("review_record_schema_invalid")
-        if not reviewer:
+        if not record_errors and not reviewer:
             failures.append("reviewer_not_authorized")
-        elif reviewer.get("authorized_at", "9999-99-99") > record.get("reviewed_at", ""):
+        elif not record_errors and reviewer.get("authorized_at", "9999-99-99") > record.get("reviewed_at", ""):
             failures.append("reviewer_not_yet_authorized")
-        signature_status = _verify_ed25519_signature(record, reviewer) if reviewer else "invalid"
+        signature_status = _verify_ed25519_signature(record, reviewer) if reviewer and not record_errors else "invalid"
         if signature_status != "verified":
             failures.append("signature_" + signature_status)
         if not current_digest:
@@ -292,7 +292,7 @@ def _review_evidence(record_ids, metadata, folder):
             linked_languages = [code for code in metadata.get("languages", []) if isinstance(language_links, dict) and language_links.get(code) == record_id]
             if not linked_languages or any(not isinstance(language_states, dict) or language_states.get(code) != "reviewed" for code in linked_languages):
                 failures.append("language_review_metadata_link_mismatch")
-            if not set(linked_languages).issubset(set(record.get("languages", []))):
+            if not record_errors and not set(linked_languages).issubset(set(record.get("languages", []))):
                 failures.append("language_review_scope_mismatch")
             if record.get("outcome") != "approved":
                 failures.append("language_record_not_approved")
@@ -499,6 +499,8 @@ def call(name, args):
         folder, metadata = choose(template_id)
         language = args.get("language")
         languages = metadata.get("languages", [])
+        if not isinstance(languages, list) or not languages or any(not isinstance(code, str) or code not in LANGUAGES for code in languages):
+            raise ValueError("Template review language metadata is invalid")
         if language is not None and (language not in LANGUAGES or language not in languages):
             raise ValueError("Unsupported language")
         selected_languages = [language] if language else languages

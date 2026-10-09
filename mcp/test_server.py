@@ -121,31 +121,46 @@ class MCPTests(unittest.TestCase):
                 self.assertEqual(tampered["evidence_verification"], "failed_or_incomplete")
                 self.assertEqual(tampered["evidence_records"][0]["signature_verification"], "invalid")
 
-    def test_python_review_digest_matches_repository_validator(self):
+                record["reviewed_at"] = []
+                records_file.write_text(json.dumps({"reviews": [record]}), encoding="utf-8")
+                malformed = server.call("get_review_status", {"template_id": metadata["id"]})
+                self.assertEqual(malformed["evidence_verification"], "failed_or_incomplete")
+                self.assertIn("review_record_schema_invalid", malformed["evidence_records"][0]["verification_limits"])
+
+    def test_python_review_digest_matches_repository_validator_for_all_templates(self):
         node = shutil.which("node")
         if node is None:
             self.skipTest("Node is required for cross-language review digest parity")
         script = r"""
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { digestReviewableContent, resolveReviewSourceRecords } from './scripts/review-policy.mjs';
 import { reviewableMetadata } from './scripts/template-package-utils.mjs';
-const folder = 'templates/privacy/privacy-policy';
-const metadata = JSON.parse(readFileSync(folder + '/metadata.yaml', 'utf8'));
-const declarations = JSON.parse(readFileSync(folder + '/sources.yaml', 'utf8'));
 const registry = JSON.parse(readFileSync('sources/registry.yaml', 'utf8'));
-const files = {};
-for (const language of metadata.languages) files[language + '.md'] = readFileSync(folder + '/' + language + '.md', 'utf8');
-files['variables.schema.json'] = readFileSync(folder + '/variables.schema.json', 'utf8');
-files['sources.yaml'] = readFileSync(folder + '/sources.yaml', 'utf8');
-files['source-records.json'] = JSON.stringify(resolveReviewSourceRecords(declarations.source_ids, registry.sources), null, 2) + '\n';
-files['notes.md'] = readFileSync(folder + '/notes.md', 'utf8');
-files['metadata.json'] = reviewableMetadata(metadata);
-files['CHANGELOG.md'] = readFileSync(folder + '/CHANGELOG.md', 'utf8');
-console.log(digestReviewableContent(files));
+const digests = {};
+for (const category of readdirSync('templates', { withFileTypes: true }).filter((item) => item.isDirectory()).sort((a, b) => a.name.localeCompare(b.name))) {
+  const categoryPath = 'templates/' + category.name;
+  for (const entry of readdirSync(categoryPath, { withFileTypes: true }).filter((item) => item.isDirectory()).sort((a, b) => a.name.localeCompare(b.name))) {
+    const folder = categoryPath + '/' + entry.name;
+    const metadata = JSON.parse(readFileSync(folder + '/metadata.yaml', 'utf8'));
+    const declarations = JSON.parse(readFileSync(folder + '/sources.yaml', 'utf8'));
+    const files = {};
+    for (const language of metadata.languages) files[language + '.md'] = readFileSync(folder + '/' + language + '.md', 'utf8');
+    files['variables.schema.json'] = readFileSync(folder + '/variables.schema.json', 'utf8');
+    files['sources.yaml'] = readFileSync(folder + '/sources.yaml', 'utf8');
+    files['source-records.json'] = JSON.stringify(resolveReviewSourceRecords(declarations.source_ids, registry.sources), null, 2) + '\n';
+    files['notes.md'] = readFileSync(folder + '/notes.md', 'utf8');
+    files['metadata.json'] = reviewableMetadata(metadata);
+    files['CHANGELOG.md'] = readFileSync(folder + '/CHANGELOG.md', 'utf8');
+    digests[metadata.id] = digestReviewableContent(files);
+  }
+}
+console.log(JSON.stringify(digests));
 """
         result = subprocess.run([node, "--input-type=module", "-e", script], cwd=server.ROOT, capture_output=True, text=True, timeout=10, check=True)
-        folder, metadata = server.choose("privacy-policy")
-        self.assertEqual(server._reviewable_content_digest(folder, metadata), result.stdout.strip())
+        expected = {}
+        for folder, metadata in server.packages():
+            expected[metadata["id"]] = server._reviewable_content_digest(folder, metadata)
+        self.assertEqual(expected, json.loads(result.stdout))
 
     def test_change_history_reads_the_package_changelog_only(self):
         result = server.call("get_change_history", {"template_id": "privacy-policy"})
