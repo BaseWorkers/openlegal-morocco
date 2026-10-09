@@ -11,7 +11,7 @@ Open Legal Morocco publishes a vendor-neutral findings contract for independent 
 - MCP: `get_findings_spec` returns the same schema and taxonomy; `export_findings` validates a supplied document and returns it unchanged. It does not inspect arbitrary repositories or mutate findings.
 - Agent skill: use the same schema and taxonomy when preparing structured observations.
 
-The export envelope contains `schema_version`, `generated_at`, `source`, `repository.revision`, `verification_limitations`, and `findings`. Each finding repeats the schema version, has an explicit `finding_type`, and separates its technical remediation `priority_basis` from legal review. `technical_observation` records evidence-backed facts. `potential_legal_question` states an unresolved question; it is not a conclusion. Legal reference verification and human review are separate states. `confidence` may be null when it cannot be meaningfully measured.
+The export envelope contains `schema_version`, `generated_at`, `source`, `repository.revision`, `verification_limitations`, and `findings`. Each finding repeats the schema version, has an explicit `finding_type`, and separates its technical remediation `priority_basis` from legal review. Every finding must include at least one supporting evidence item with a sanitized summary and source reference. `technical_observation` records evidence-backed facts. `potential_legal_question` states an unresolved question; it is not a conclusion. Legal reference verification and human review are separate states. `confidence` may be null when it cannot be meaningfully measured.
 
 The initial generic control identifiers are `pii_detection`, `data_minimization`, `redaction`, `tokenization`, `encryption`, `access_control`, `audit_logging`, `retention_management`, `data_flow_mapping`, and `third_party_disclosure`. Identifiers describe control objectives; independent tools may map them to their own capabilities without changing this project or adding a vendor dependency.
 
@@ -63,6 +63,6 @@ The example describes a technical observation only. Its priority is not a legal-
 
 `finding_id` values must be unique within each export. JSON Schema validates the individual identifier shape; the CLI and MCP validators enforce cross-finding uniqueness as a semantic constraint.
 
-The same conformance corpus at [`tests/fixtures/findings-contract.json`](../tests/fixtures/findings-contract.json) is exercised by both CLI and MCP validator tests. It covers valid technical observations, potential legal questions, and rejection cases for missing legal-question text, legal-risk priority framing, non-taxonomy controls, and duplicate identifiers.
+The same conformance corpus at [`tests/fixtures/findings-contract.json`](../tests/fixtures/findings-contract.json) is exercised by both CLI and MCP validator tests. It covers valid technical observations, potential legal questions, and rejection cases for missing evidence or legal-question text, legal-risk priority framing, non-taxonomy controls, and duplicate identifiers.
 
 For local, hash-only source comparison, see [Legal source change candidates](CHANGE_TRACKER.md). Candidate records remain unverified and do not represent a legal change.
