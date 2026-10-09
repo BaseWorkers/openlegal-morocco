@@ -1,0 +1,15 @@
+{
+  "taxonomy_version": "1.0.0",
+  "controls": [
+    { "id": "pii_detection", "description": "Identify possible personal information in data or systems." },
+    { "id": "data_minimization", "description": "Limit collection, access, and processing to what is needed." },
+    { "id": "redaction", "description": "Remove or obscure sensitive values before disclosure or use." },
+    { "id": "tokenization", "description": "Replace sensitive values with non-sensitive tokens where appropriate." },
+    { "id": "encryption", "description": "Protect data confidentiality in storage or transit using cryptographic controls." },
+    { "id": "access_control", "description": "Restrict access according to authorized roles and needs." },
+    { "id": "audit_logging", "description": "Record security-relevant actions with suitable integrity and access safeguards." },
+    { "id": "retention_management", "description": "Define and enforce retention and deletion practices." },
+    { "id": "data_flow_mapping", "description": "Document data sources, transformations, destinations, and responsible systems." },
+    { "id": "third_party_disclosure", "description": "Review and govern disclosures to external parties." }
+  ]
+}

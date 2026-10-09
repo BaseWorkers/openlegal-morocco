@@ -64,10 +64,10 @@ async function writeProjectLicenseFiles(outputPath) {
   const sourceScopes = JSON.parse(await readFile(join(repositoryRoot, 'LICENSES/scopes.json'), 'utf8'));
   const allowedPatterns = new Set([
     'templates/**', 'clauses/**', 'research/**', 'sources/**', 'reviews/**',
-    'README.md', 'README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'DISCLAIMER.md', 'GOVERNANCE.md', 'REVIEWING.md',
+    'README.md', 'README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'DISCLAIMER.md', 'GOVERNANCE.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md',
     'SECURITY.md', 'CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/**',
     '.github/PULL_REQUEST_TEMPLATE.md', 'LICENSES/README.md', 'LICENSES/scopes.json',
-    'scripts/**', 'schemas/**', 'tests/**', '.github/workflows/**',
+    'scripts/**', 'schemas/**', 'tests/**', 'docs/**', '.github/workflows/**',
     'package.json', '.gitignore', 'tests/fixtures/template-package/**',
     'LICENSES/CC0-1.0.txt', 'LICENSES/MIT.txt'
   ]);
@@ -114,7 +114,7 @@ function makeReadme(packages) {
     '',
     'An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.',
     '',
-    'We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To offer help, open **Issues → New issue → Offer a contribution** after creating the public repository. See [Contributing](CONTRIBUTING.md) and [v0.0.1 release notes](RELEASE_NOTES.md).',
+    'We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [v0.0.1 release notes](RELEASE_NOTES.md).',
     '',
     '## Current status',
     '',
@@ -176,7 +176,7 @@ function makeFrenchReadme(packages) {
     '',
     'Les documents peuvent être incomplets, dépassés ou inadaptés à une situation donnée. Le projet ne certifie pas la conformité juridique d’une entreprise ou d’un document. Ces textes ne constituent pas un conseil juridique ; consultez un professionnel qualifié en droit marocain avant de vous y fier ou de les signer.',
     '',
-    'Les contributions sont les bienvenues en recherche juridique, vérification des sources, révision linguistique, accessibilité, adaptation et logiciel. Pour proposer votre aide, ouvrez **Issues → New issue → Offer a contribution** dans le dépôt. Consultez [Contribuer](CONTRIBUTING.md), [Révision et retours](REVIEWING.md) et les [notes de version](RELEASE_NOTES.md).',
+    'Les contributions sont les bienvenues en recherche juridique, vérification des sources, révision linguistique, accessibilité, adaptation et logiciel. Pour demander à rejoindre l’équipe de révision ou de modération, utilisez le formulaire public d’intérêt ([reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml)) et consultez le [guide d’intégration](docs/REVIEWER_ONBOARDING.md). Le formulaire et les réponses sont publics ; ne publiez pas de documents privés ni de coordonnées personnelles. Pour les autres contributions, ouvrez **Issues → New issue → Offer a contribution**. Consultez [Contribuer](CONTRIBUTING.md), [Révision et retours](REVIEWING.md) et les [notes de version](RELEASE_NOTES.md).',
     '',
     'La carte des licences et l’examen des droits restent provisoires. Les droits et avis propres aux tiers restent applicables. Consultez la [politique de licence](LICENSES/README.md), la [gouvernance](GOVERNANCE.md) et l’[avertissement](DISCLAIMER.md).',
     '',
@@ -199,7 +199,7 @@ function makeArabicReadme(packages) {
     '',
     'قد تكون الوثائق ناقصة أو غير محدثة أو غير مناسبة لحالة معينة. ولا يشهد المشروع بأن أي شركة أو وثيقة متوافقة مع القانون. هذه النصوص لا تشكل استشارة قانونية؛ استشر مهنيا مؤهلا في القانون المغربي قبل الاعتماد عليها أو توقيعها.',
     '',
-    'نرحب بالمساهمات في البحث القانوني والتحقق من المصادر والمراجعة اللغوية وإمكانية الوصول والتكييف والبرمجيات. لعرض المساعدة، افتح **Issues → New issue → Offer a contribution** في المستودع. راجع أدلة [المساهمة](CONTRIBUTING.md) و[المراجعة وإبداء الملاحظات](REVIEWING.md) و[ملاحظات الإصدار](RELEASE_NOTES.md).',
+    'نرحب بالمساهمات في البحث القانوني والتحقق من المصادر والمراجعة اللغوية وإمكانية الوصول والتكييف والبرمجيات. للتقدم كمراجع قانوني أو لغوي أو مشرف مجتمعي، استخدم [استمارة إبداء الاهتمام العامة](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) واطلع على [دليل الانضمام](docs/REVIEWER_ONBOARDING.md). الاستمارة والردود علنية؛ لا تنشر وثائق خاصة أو بيانات اتصال شخصية. للمساهمات الأخرى، افتح **Issues → New issue → Offer a contribution**. راجع أدلة [المساهمة](CONTRIBUTING.md) و[المراجعة وإبداء الملاحظات](REVIEWING.md) و[ملاحظات الإصدار](RELEASE_NOTES.md).',
     '',
     'ما زال توزيع التراخيص ومراجعة الحقوق مؤقتين. وتظل الحقوق والإشعارات الخاصة بمواد الغير سارية. راجع [سياسة الترخيص](LICENSES/README.md) و[الحوكمة](GOVERNANCE.md) و[إخلاء المسؤولية](DISCLAIMER.md).',
     '',
@@ -281,6 +281,7 @@ async function main() {
       'RELEASE_NOTES.md',
       'CONTRIBUTING.md',
       'REVIEWING.md',
+      'docs/REVIEWER_ONBOARDING.md',
       'GOVERNANCE.md',
       'SECURITY.md',
       '.github/ISSUE_TEMPLATE',
@@ -308,7 +309,7 @@ async function main() {
   ]) {
     await copyTree(join(repositoryRoot, path), join(canonicalOutputPath, path), { skipReadmes: path === 'research/morocco' || path === 'schemas' });
   }
-  for (const path of ['package.json', '.gitignore', 'scripts', 'tests', 'CODE_OF_CONDUCT.md', 'RELEASE_NOTES.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'GOVERNANCE.md', 'SECURITY.md', '.github/ISSUE_TEMPLATE', '.github/PULL_REQUEST_TEMPLATE.md', '.github/workflows/ci.yml']) {
+  for (const path of ['package.json', '.gitignore', 'scripts', 'tests', 'CODE_OF_CONDUCT.md', 'RELEASE_NOTES.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md', 'GOVERNANCE.md', 'SECURITY.md', '.github/ISSUE_TEMPLATE', '.github/PULL_REQUEST_TEMPLATE.md', '.github/workflows/ci.yml']) {
     await copyTree(join(repositoryRoot, path), join(canonicalOutputPath, path));
   }
   await writeProjectLicenseFiles(canonicalOutputPath);

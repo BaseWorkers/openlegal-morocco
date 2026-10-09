@@ -1,6 +1,6 @@
 # Governance
 
-This project is shared as a v0.0.1 public contribution preview. Maintainers, decision rights, and reviewer authorization have not yet been appointed. Until governance is established, no contributor is implicitly authorized to mark material `LEGAL_REVIEWED`.
+This project is a v0.0.1 public contribution preview. Base Workers is the founding project owner and technical maintainer, responsible for software, workflow, policy, and release stewardship. This role does not authorize legal or language review. Repository code ownership assigns technical review coverage for software paths only and does not grant legal or language review authority. No legal or language reviewers are currently authorized; no contributor or agent may mark material `LEGAL_REVIEWED` or `LANGUAGE_REVIEWED`.
 
 ## Review authority
 
@@ -10,8 +10,8 @@ Substantive changes to legally reviewed content must clear or downgrade the revi
 
 ## Decisions and conflicts
 
-Project maintainers should document material policy and architecture decisions in the repository. Source rights, legal provenance, and truthful review status take priority over release speed. Governance must be established before any template is represented as professionally reviewed or released for reliance.
+Base Workers should document material policy and architecture decisions in the repository. Technical maintainership covers project stewardship only; it does not substitute for qualified legal or language review. Source rights, legal provenance, and truthful review status take priority over release speed. No template may be represented as professionally reviewed or released for reliance without authorized, version-bound evidence.
 
 ## Maintainers and confidential reporting
 
-No maintainers or staffed confidential reporting channels have been appointed. The Code of Conduct and security policy disclose this limitation; neither provides a private submission route today. Before ongoing community operations, maintainers must be named, decision and enforcement responsibilities assigned, and confidential conduct and security reporting channels published and staffed.
+Base Workers is named as founding project owner and technical maintainer. No confidential conduct or security reporting channels are currently published or staffed, and neither policy provides a private submission route. Before the project accepts confidential reports or offers ongoing community support, those routes must be published and staffed.

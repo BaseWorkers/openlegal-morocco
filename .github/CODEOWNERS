@@ -1,0 +1,13 @@
+# Technical ownership and software review only.
+# CODEOWNERS does not grant legal or language review authority.
+# Legal research, sources, template content, and signed review records use the
+# separate human authorization and evidence process described in GOVERNANCE.md.
+
+/scripts/ @Jawadbenhammoupro
+/mcp/ @Jawadbenhammoupro
+/schemas/ @Jawadbenhammoupro
+/site/ @Jawadbenhammoupro
+/skills/ @Jawadbenhammoupro
+/examples/ @Jawadbenhammoupro
+/tests/ @Jawadbenhammoupro
+/.github/workflows/ @Jawadbenhammoupro

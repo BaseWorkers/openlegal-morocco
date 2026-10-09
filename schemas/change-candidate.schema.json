@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/BaseWorkers/openlegal-morocco/schemas/change-candidate/1.0.0",
+  "title": "Open Legal Morocco Source Change Candidate",
+  "description": "A hash-only signal that a locally supplied source copy differs from a prior digest. It is not a legal conclusion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_id", "source_url", "issuing_authority", "retrieved_at", "previous_sha256", "current_sha256", "change_type", "status", "evidence_url", "affected_claim_ids", "reviewer_notes", "limitations"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "source_id": { "type": "string", "minLength": 1 },
+    "source_url": { "type": "string", "format": "uri" },
+    "issuing_authority": { "type": ["string", "null"] },
+    "retrieved_at": { "type": "string", "format": "date-time" },
+    "previous_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "current_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "change_type": { "enum": ["source_copy_changed", "no_change"] },
+    "status": { "const": "candidate_unverified" },
+    "evidence_url": { "type": "string", "format": "uri" },
+    "affected_claim_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "reviewer_notes": { "type": "null" },
+    "limitations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+  }
+}

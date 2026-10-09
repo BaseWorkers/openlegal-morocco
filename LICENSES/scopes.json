@@ -22,12 +22,16 @@
         "README.md",
         "README.fr.md",
         "README.ar.md",
+        "skills/**",
+        "docs/**",
         "RELEASE_NOTES.md",
+        "CHANGELOG.md",
         "CODE_OF_CONDUCT.md",
         "CONTRIBUTING.md",
         "REVIEWING.md",
         "DISCLAIMER.md",
         "GOVERNANCE.md",
+        "ROADMAP.md",
         "SECURITY.md",
         "LICENSES/README.md",
         "LICENSES/scopes.json",
@@ -41,11 +45,16 @@
       "spdx": "MIT",
       "patterns": [
         "scripts/**",
+        "examples/**",
+        "change-tracker/**",
+        "site/**",
+        "mcp/**",
         "schemas/**",
         "tests/**",
         ".github/workflows/**",
         "package.json",
-        ".gitignore"
+        ".gitignore",
+        ".github/CODEOWNERS"
       ],
       "exceptions": "More specific path rules override this rule."
     },
@@ -62,9 +71,10 @@
       "spdx": null,
       "patterns": [
         "LICENSES/CC0-1.0.txt",
-        "LICENSES/MIT.txt"
+        "LICENSES/MIT.txt",
+        "DCO.md"
       ],
-      "exceptions": "Keep upstream license text, copyright, and notices intact; do not apply the project license to these files."
+      "exceptions": "Keep upstream license text, copyright, and notices intact; do not apply the project license to these files. DCO.md is the verbatim DCO 1.1 text and its notice must remain intact."
     }
   ]
 }

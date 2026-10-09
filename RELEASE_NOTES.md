@@ -25,4 +25,4 @@ The project has not finalized legal terms for accepting contributor submissions 
 
 Contributions are welcome in legal research, source verification, template review, translation, accessibility, and software. Start with [CONTRIBUTING.md](CONTRIBUTING.md), review the [governance policy](GOVERNANCE.md), and use the repository issue forms to suggest corrections or areas where help is needed. Do not submit personal data, confidential client material, or completed agreements.
 
-The project has not yet appointed maintainers or authorized reviewers. Public contributions can help establish those roles and review processes; no contribution or issue changes a template's review status by itself.
+Base Workers is the founding project owner and technical maintainer. No authorized legal or language reviewers have been appointed. Public contributions may help establish review capacity; no contribution or issue changes a template's review status by itself.

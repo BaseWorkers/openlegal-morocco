@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0.0",
+  "retrieval_mode": "manual_local_file_only",
+  "notice": "This allowlist permits checksum comparison of a locally supplied copy. It does not authorize automated fetching, republication, legal interpretation, or a claim that a source change changes the law. Source records and reuse limitations remain authoritative.",
+  "source_ids": ["cndp-loi-09-08", "cndp-loi-09-08-page", "sgg-bo-5714-2009", "sgg-imprimerie-officielle-catalogue"]
+}

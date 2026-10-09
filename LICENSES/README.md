@@ -3,7 +3,8 @@
 The project uses separate intended licenses for original legal content and software:
 
 - Project-authored templates, clauses, research prose, source records, and review metadata: CC0-1.0.
-- Project-authored scripts, schemas, tests, workflow files, package metadata, and repository configuration: MIT.
+- Project-authored scripts, local read-only MCP implementation, schemas, tests, workflow files, package metadata, and repository configuration: MIT.
+- Project-authored agent and developer tool guidance: CC0-1.0.
 - The included CC0-1.0 and MIT license texts retain their own notices.
 
 The path map in [`scopes.json`](scopes.json) describes intended scope only. It does not establish ownership, clear third-party rights, or apply the project license to material with separate rights or notices. Reviewer-authored submissions retain their own rights unless an authorized agreement states otherwise. Template source declarations and attribution requirements remain in effect.

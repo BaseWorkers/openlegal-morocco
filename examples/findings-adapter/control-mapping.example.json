@@ -1,0 +1,5 @@
+{
+  "data_minimization": ["organization.data_inventory", "organization.collection_review"],
+  "redaction": "organization.safe_output_filter",
+  "audit_logging": ["organization.audit_events"]
+}
