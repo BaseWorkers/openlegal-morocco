@@ -592,7 +592,7 @@ function resourceBody(lang, slug, repositoryRef) {
   const t = languageFor(lang);
   const backLabel = lang === 'ar' ? 'العودة إلى النماذج' : lang === 'fr' ? 'Retour aux modèles' : 'Back to templates';
   const notice = '<div class="notice" role="note"><strong>' + escapeHtml(t.warning) + '</strong>' + escapeHtml(t.warningBody) + '</div>';
-  const reference = /^[a-f0-9]{40}$/i.test(repositoryRef) ? repositoryRef : 'siprate';
+  const reference = /^[a-f0-9]{40}$/i.test(repositoryRef) ? repositoryRef : 'preview';
   const references = (page.references ?? []).map(({ path, label }) =>
     '<li><a href="https://github.com/BaseWorkers/openlegal-morocco/blob/' + reference + '/' + escapeHtml(path) + '" rel="noreferrer noopener">' + escapeHtml(label) + '</a></li>'
   ).join('');
