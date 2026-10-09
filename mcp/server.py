@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 TEMPLATES = ROOT / "templates"
 FINDINGS_SCHEMA = ROOT / "schemas" / "findings.schema.json"
 CONTROL_TAXONOMY = ROOT / "schemas" / "control-taxonomy.json"
+SOURCE_REGISTRY = ROOT / "sources" / "registry.yaml"
+OFFICIAL_SOURCE_MAP = ROOT / "sources" / "official-morocco.yaml"
 DISCLAIMER = (
     "Open Legal Morocco materials are unverified discussion drafts, not legal advice. "
     "Automated results do not certify Moroccan legal compliance. "
@@ -78,6 +80,18 @@ def read_source_declarations(folder):
         return {"unavailable": True}
     except (OSError, UnicodeError, ValueError):
         return {"unavailable": True, "reason": "invalid structured source declarations"}
+
+
+def _source_index():
+    registry = json.loads(SOURCE_REGISTRY.read_text(encoding="utf-8"))
+    source_map = json.loads(OFFICIAL_SOURCE_MAP.read_text(encoding="utf-8"))
+    source_topics = {}
+    for entry in source_map.get("entries", []):
+        source_id = entry.get("source_id")
+        topic = entry.get("topic")
+        if isinstance(source_id, str) and isinstance(topic, str):
+            source_topics.setdefault(source_id, set()).add(topic)
+    return registry.get("sources", []), source_topics
 
 
 def _matches_type(value, expected):
@@ -256,6 +270,63 @@ def call(name, args):
             "disclaimer": "Technical priority is not a legal-risk rating. The specification does not certify legal compliance.",
         }
 
+    if name == "search_legal_sources":
+        if set(args) - {"query", "topic", "source_type", "limit"}:
+            raise ValueError("Unsupported search_legal_sources argument")
+        query = args.get("query", "")
+        topic = args.get("topic")
+        source_type = args.get("source_type")
+        limit = args.get("limit", 20)
+        source_types = {"official", "legislation", "regulatory-guidance", "reusable-template", "secondary-commentary", "project-policy", "license-text"}
+        if not isinstance(query, str) or len(query) > 120:
+            raise ValueError("query must be a string of at most 120 characters")
+        if topic is not None and (not isinstance(topic, str) or not topic):
+            raise ValueError("topic must be a non-empty string")
+        if source_type is not None and (not isinstance(source_type, str) or source_type not in source_types):
+            raise ValueError("Unsupported source_type")
+        if not isinstance(limit, int) or isinstance(limit, bool) or not 1 <= limit <= 50:
+            raise ValueError("limit must be an integer between 1 and 50")
+        sources, source_topics = _source_index()
+        needle = query.casefold()
+        matches = []
+        for source in sources:
+            topics = sorted(source_topics.get(source.get("id"), set()))
+            if topic and topic not in topics:
+                continue
+            if source_type and source.get("source_type") != source_type:
+                continue
+            searchable = " ".join(str(value) for value in (
+                source.get("id", ""), source.get("title", ""), source.get("publisher", ""),
+                source.get("jurisdiction", ""), source.get("source_type", ""), *source.get("used_for", []),
+            )).casefold()
+            if needle and needle not in searchable:
+                continue
+            matches.append({
+                "id": source.get("id"), "title": source.get("title"),
+                "publisher": source.get("publisher"), "jurisdiction": source.get("jurisdiction"),
+                "source_type": source.get("source_type"), "url": source.get("url"),
+                "verification_status": source.get("verification_status"),
+                "verification_date": source.get("verification_date"),
+                "reuse_status": source.get("reuse_status"), "topics": topics,
+            })
+        return {
+            "sources": matches[:limit], "count": len(matches),
+            "disclaimer": "Local source-index matches are discovery aids, not a complete source inventory or current-law verification and not a legal conclusion.",
+        }
+
+    if name == "list_legal_topics":
+        if args:
+            raise ValueError("Unsupported list_legal_topics argument")
+        _, source_topics = _source_index()
+        topic_sources = {}
+        for source_id, topics in source_topics.items():
+            for topic in topics:
+                topic_sources.setdefault(topic, set()).add(source_id)
+        return {
+            "topics": [{"id": topic, "source_count": len(source_ids)} for topic, source_ids in sorted(topic_sources.items())],
+            "disclaimer": "Topics reflect the current local source map and are not a complete taxonomy or statement of legal coverage.",
+        }
+
     if name == "export_findings":
         if set(args) != {"document"}: raise ValueError("export_findings requires only a document")
         document = args["document"]
@@ -276,6 +347,25 @@ TOOLS = [
         "name": "export_findings",
         "description": "Validate and return a sanitized findings document unchanged. Does not approve legal findings or alter external systems.",
         "inputSchema": {"type": "object", "properties": {"document": {"type": "object"}}, "required": ["document"], "additionalProperties": False},
+    },
+    {
+        "name": "search_legal_sources",
+        "description": "Search the local curated source index by a short text query, topic, or source type. Results expose recorded verification and reuse states but do not determine current law.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "maxLength": 120},
+                "topic": {"type": "string"},
+                "source_type": {"type": "string", "enum": ["official", "legislation", "regulatory-guidance", "reusable-template", "secondary-commentary", "project-policy", "license-text"]},
+                "limit": {"type": "integer", "minimum": 1, "maximum": 50},
+            },
+            "additionalProperties": False,
+        },
+    },
+    {
+        "name": "list_legal_topics",
+        "description": "List topic IDs in the local source map and their source-record counts. The taxonomy is not complete and does not imply legal coverage.",
+        "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
     },
     {
         "name": "list_templates",

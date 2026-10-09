@@ -39,6 +39,30 @@ class MCPTests(unittest.TestCase):
         self.assertTrue(result["content"])
         self.assertIn("not legal advice", result["disclaimer"])
 
+    def test_source_search_and_topic_index_are_local_and_non_certifying(self):
+        topics = server.call("list_legal_topics", {})
+        self.assertIn("personal-data", [item["id"] for item in topics["topics"]])
+        self.assertGreater(topics["topics"][0]["source_count"], 0)
+        self.assertIn("not a complete", topics["disclaimer"])
+
+        result = server.call("search_legal_sources", {"query": "CNDP", "topic": "personal-data", "limit": 3})
+        self.assertTrue(result["sources"])
+        self.assertLessEqual(len(result["sources"]), 3)
+        self.assertTrue(all(item["verification_status"] for item in result["sources"]))
+        self.assertIn("not a legal conclusion", result["disclaimer"])
+
+    def test_source_search_rejects_invalid_arguments(self):
+        for arguments in [
+            {"unsupported": "value"},
+            {"query": "x" * 121},
+            {"limit": True},
+            {"limit": 51},
+            {"source_type": "unknown"},
+            {"source_type": []},
+        ]:
+            with self.subTest(arguments=arguments), self.assertRaises(ValueError):
+                server.call("search_legal_sources", arguments)
+
     def test_unknown_ids_languages_and_arguments_fail_cleanly(self):
         cases = [
             ("get_template", {"template_id": "../../README.md"}),
@@ -117,7 +141,7 @@ class MCPTests(unittest.TestCase):
         self.assertEqual(len(lines), 4)
         output = [json.loads(line) for line in lines]
         self.assertEqual(output[0]["result"]["serverInfo"]["name"], "open-legal-morocco")
-        self.assertEqual(len(output[1]["result"]["tools"]), 5)
+        self.assertEqual(len(output[1]["result"]["tools"]), 7)
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)
 
