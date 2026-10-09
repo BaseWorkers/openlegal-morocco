@@ -53,6 +53,17 @@ class MCPTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Unknown or ambiguous"):
             server.call("get_review_status", {"template_id": "missing-template"})
 
+    def test_change_history_reads_the_package_changelog_only(self):
+        result = server.call("get_change_history", {"template_id": "privacy-policy"})
+        self.assertEqual(result["template_version"], "0.1.3")
+        self.assertEqual(result["history_source"], "template_changelog")
+        self.assertIn("## 0.1.3", result["history"])
+        self.assertIn("not independently verified", result["disclaimer"])
+        with self.assertRaisesRegex(ValueError, "Unknown or ambiguous"):
+            server.call("get_change_history", {"template_id": "missing-template"})
+        with self.assertRaisesRegex(ValueError, "requires only"):
+            server.call("get_change_history", {"template_id": "privacy-policy", "path": "../../README.md"})
+
     def test_source_search_and_topic_index_are_local_and_non_certifying(self):
         topics = server.call("list_legal_topics", {})
         self.assertIn("personal-data", [item["id"] for item in topics["topics"]])
@@ -155,7 +166,7 @@ class MCPTests(unittest.TestCase):
         self.assertEqual(len(lines), 4)
         output = [json.loads(line) for line in lines]
         self.assertEqual(output[0]["result"]["serverInfo"]["name"], "open-legal-morocco")
-        self.assertEqual(len(output[1]["result"]["tools"]), 8)
+        self.assertEqual(len(output[1]["result"]["tools"]), 9)
         self.assertTrue(output[2]["result"]["isError"])
         self.assertEqual(output[3]["error"]["code"], -32601)
 

@@ -48,6 +48,8 @@ The server exposes `list_templates` (optional category and language filters), `g
 
 `get_review_status` reads the template's recorded legal and language review fields, optionally for one language, and includes narrow summaries of linked records. It does not authenticate reviewer authorization or Ed25519 signatures, verify that a record's digest still matches current package content, or change any status. Treat the response as repository-recorded metadata, not authenticated approval or legal accuracy. The current repository has no signed review records.
 
+`get_change_history` reads only the selected package's `CHANGELOG.md` (with a 64 KiB limit). It reports maintainer-recorded history as written and does not independently reconstruct Git history, validate legal meaning, or imply review approval.
+
 The catalog and templates remain the content source of truth; this tool does not create an independent review store.
 
 ## Tests and troubleshooting

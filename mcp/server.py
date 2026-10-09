@@ -345,6 +345,36 @@ def call(name, args):
             ),
         }
 
+    if name == "get_change_history":
+        if set(args) != {"template_id"}:
+            raise ValueError("get_change_history requires only template_id")
+        template_id = args.get("template_id")
+        if not isinstance(template_id, str) or not template_id:
+            raise ValueError("template_id is required")
+        folder, metadata = choose(template_id)
+        changelog = folder / "CHANGELOG.md"
+        if changelog.is_symlink():
+            raise ValueError("Template changelog cannot be a symbolic link")
+        try:
+            changelog.resolve().relative_to(folder.resolve())
+            if changelog.stat().st_size > 65536:
+                raise ValueError("Template changelog exceeds the 64 KiB limit")
+            history = changelog.read_text(encoding="utf-8")
+        except FileNotFoundError as exc:
+            raise ValueError("Template changelog is unavailable") from exc
+        except (OSError, UnicodeError) as exc:
+            raise ValueError("Template changelog is unavailable") from exc
+        return {
+            "template_id": template_id,
+            "template_version": metadata.get("version"),
+            "history_source": "template_changelog",
+            "history": history,
+            "disclaimer": (
+                "This is maintainer-recorded changelog text from the local package. It is not independently verified, "
+                "may not enumerate every source or content change, and does not establish legal meaning or approval."
+            ),
+        }
+
     if name == "get_findings_spec":
         if args: raise ValueError("Unsupported get_findings_spec argument")
         return {
@@ -494,6 +524,16 @@ TOOLS = [
                 "template_id": {"type": "string"},
                 "language": {"type": "string", "enum": list(LANGUAGES)},
             },
+            "required": ["template_id"],
+            "additionalProperties": False,
+        },
+    },
+    {
+        "name": "get_change_history",
+        "description": "Read a template package's local CHANGELOG.md. History is maintainer-recorded and does not establish legal meaning or approval.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {"template_id": {"type": "string"}},
             "required": ["template_id"],
             "additionalProperties": False,
         },
