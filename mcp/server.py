@@ -1,1 +1,354 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíç­5N‹Z–‹­¦ëeŠw¬ÔŒ„½ÕÍÈ½‰¥¸½•¹ØÁåÑ¡½¸Ì(ˆˆ‰I•…µ½¹±ä±½…°5@Í•ÉÙ•È™½È=Á•¸1•…°5½É½¼€¡)M=8µIA½Ù•ÈÍÑ‘¥¼¤¸ˆˆˆ()¥µÁ½ÉĞ©Í½¸)¥µÁ½ÉĞÉ”)¥µÁ½ÉĞÍåÌ)™É½´‘…Ñ•Ñ¥µ”¥µÁ½ÉĞ‘…Ñ•Ñ¥µ”)™É½´Á…Ñ¡±¥ˆ¥µÁ½ÉĞA…Ñ ()I==P€ôA…Ñ ¡}}™¥±•}|¤¹É•Í½±Ù” ¤¹Á…É•¹ÑÍlÅt)Q5A1QL€ôI==P€¼€‰Ñ•µÁ±…Ñ•Ìˆ)%9%9M}M!5€ôI==P€¼€‰Í¡•µ…Ìˆ€¼€‰™¥¹‘¥¹Ì¹Í¡•µ„¹©Í½¸ˆ)=9QI=1}Qa=9=5d€ôI==P€¼€‰Í¡•µ…Ìˆ€¼€‰½¹ÑÉ½°µÑ…á½¹½µä¹©Í½¸ˆ)%M1%5H€ô€ (€€€€‰=Á•¸1•…°5½É½¼µ…Ñ•É¥…±Ì…É”Õ¹Ù•É¥™¥•‘¥ÍÕÍÍ¥½¸‘É…™ÑÌ°¹½Ğ±•…°…‘Ù¥”¸€ˆ(€€€€‰ÕÑ½µ…Ñ•É•ÍÕ±ÑÌ‘¼¹½Ğ•ÉÑ¥™ä5½É½…¸±•…°½µÁ±¥…¹”¸€ˆ(€€€€‰M••¬ÅÕ…±¥™¥•5½É½…¸±•…°½Õ¹Í•°‰•™½É”É•±å¥¹œ½¸„‘½Õµ•¹Ğ¸ˆ(¤)19UL€ô€ ‰•¸ˆ°€‰™Èˆ°€‰…Èˆ¤(()‘•˜Á…­…•Ì ¤è(€€€€ˆˆ‰e¥•±Ù…±¥Á…­…•Ì¥¸‘•Ñ•Éµ¥¹¥ÍÑ¥Œ½É‘•ÈìÉ•Á½ÉĞµ…±™½Éµ•É•½É‘ÌÑ¼ÍÑ‘•ÉÈ¸ˆˆˆ(€€€™½Èµ•Ñ…‘…Ñ…}Á…Ñ ¥¸Í½ÉÑ•¡Q5A1QL¹±½ˆ ˆ¨¼¨½µ•Ñ…‘…Ñ„¹å…µ°ˆ¤¤è(€€€€€€€Á…­…•}Á…Ñ €ôµ•Ñ…‘…Ñ…}Á…Ñ ¹Á…É•¹Ğ(€€€€€€€ÑÉäè(€€€€€€€€€€€Á…­…•}Á…Ñ ¹É•Í½±Ù” ¤¹É•±…Ñ¥Ù•}Ñ¼¡Q5A1QL¹É•Í½±Ù” ¤¤(€€€€€€€•á•ÁĞ€¡=MÉÉ½È°Y…±Õ•ÉÉ½È¤è(€€€€€€€€€€€ÁÉ¥¹Ğ¡˜‰M­¥ÁÁ¥¹œÑ•µÁ±…Ñ”½ÕÑÍ¥‘”É•Á½Í¥Ñ½Éäèíµ•Ñ…‘…Ñ…}Á…Ñ¡ôˆ°™¥±”õÍåÌ¹ÍÑ‘•ÉÈ¤(€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€ÕÉÉ•¹Ğ€ôÁ…­…•}Á…Ñ (€€€€€€€¥˜µ•Ñ…‘…Ñ…}Á…Ñ ¹¥Í}Íåµ±¥¹¬ ¤è(€€€€€€€€€€€ÁÉ¥¹Ğ¡˜‰M­¥ÁÁ¥¹œÍåµ±¥¹­•Ñ•µÁ±…Ñ”µ•Ñ…‘…Ñ„èíµ•Ñ…‘…Ñ…}Á…Ñ¡ôˆ°™¥±”õÍåÌ¹ÍÑ‘•ÉÈ¤(€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€İ¡¥±”ÕÉÉ•¹Ğ€„ôQ5A1QLè(€€€€€€€€€€€¥˜ÕÉÉ•¹Ğ¹¥Í}Íåµ±¥¹¬ ¤è(€€€€€€€€€€€€€€€ÁÉ¥¹Ğ¡˜‰M­¥ÁÁ¥¹œÍåµ±¥¹­•Ñ•µÁ±…Ñ”Á…­…”èíµ•Ñ…‘…Ñ…}Á…Ñ¡ôˆ°™¥±”õÍåÌ¹ÍÑ‘•ÉÈ¤(€€€€€€€€€€€€€€€‰É•…¬(€€€€€€€€€€€ÕÉÉ•¹Ğ€ôÕÉÉ•¹Ğ¹Á…É•¹Ğ(€€€€€€€•±Í”è(€€€€€€€€€€€ÕÉÉ•¹Ğ€ô9½¹”(€€€€€€€¥˜ÕÉÉ•¹Ğ¥Ì¹½Ğ9½¹”è(€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€ÑÉäè(€€€€€€€€€€€µ•Ñ…‘…Ñ„€ô©Í½¸¹±½…‘Ì¡µ•Ñ…‘…Ñ…}Á…Ñ ¹É•…‘}Ñ•áĞ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤(€€€€€€€•á•ÁĞ€¡=MÉÉ½È°U¹¥½‘•ÉÉ½È°Y…±Õ•ÉÉ½È¤…Ì•áŒè(€€€€€€€€€€€ÁÉ¥¹Ğ¡˜‰M­¥ÁÁ¥¹œÕ¹É•…‘…‰±”Ñ•µÁ±…Ñ”µ•Ñ…‘…Ñ„íµ•Ñ…‘…Ñ…}Á…Ñ¡ôèí•áôˆ°™¥±”õÍåÌ¹ÍÑ‘•ÉÈ¤(€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€¥˜¹½Ğ¥Í¥¹ÍÑ…¹”¡µ•Ñ…‘…Ñ„°‘¥Ğ¤½È¹½Ğ¥Í¥¹ÍÑ…¹”¡µ•Ñ…‘…Ñ„¹•Ğ ‰¥ˆ¤°ÍÑÈ¤è(€€€€€€€€€€€ÁÉ¥¹Ğ¡˜‰M­¥ÁÁ¥¹œÑ•µÁ±…Ñ”µ•Ñ…‘…Ñ„İ¥Ñ¡½ÕĞ„ÍÑÉ¥¹œ¥èíµ•Ñ…‘…Ñ…}Á…Ñ¡ôˆ°™¥±”õÍåÌ¹ÍÑ‘•ÉÈ¤(€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€å¥•±µ•Ñ…‘…Ñ…}Á…Ñ ¹Á…É•¹Ğ°µ•Ñ…‘…Ñ„(()‘•˜¡½½Í”¡Ñ•µÁ±…Ñ•}¥¤è(€€€µ…Ñ¡•Ì€ôl¡™½±‘•È°µ•Ñ…‘…Ñ„¤™½È™½±‘•È°µ•Ñ…‘…Ñ„¥¸Á…­…•Ì ¤¥˜µ•Ñ…‘…Ñ…l‰¥‰t€ôôÑ•µÁ±…Ñ•}¥‘t(€€€¥˜±•¸¡µ…Ñ¡•Ì¤€„ô€Äè(€€€€€€€É…¥Í”Y…±Õ•ÉÉ½È ‰U¹­¹½İ¸½È…µ‰¥Õ½ÕÌÑ•µÁ±…Ñ”¥ˆ¤(€€€™½±‘•È°µ•Ñ…‘…Ñ„€ôµ…Ñ¡•ÍlÁt(€€€ÑÉäè(€€€€€€€™½±‘•È¹É•Í½±Ù” ¤¹É•±…Ñ¥Ù•}Ñ¼¡Q5A1QL¹É•Í½±Ù” ¤¤(€€€•á•ÁĞ€¡=MÉÉ½È°Y…±Õ•ÉÉ½È¤…Ì•áŒè(€€€€€€€É…¥Í”Y…±Õ•ÉÉ½È ‰Q•µÁ±…Ñ”Á…Ñ ¥Ì½ÕÑÍ¥‘”Ñ¡”É•Á½Í¥Ñ½Éäˆ¤™É½´•áŒ(€€€É•ÑÕÉ¸™½±‘•È°µ•Ñ…‘…Ñ„(()‘•˜É•…‘}Í½ÕÉ•}‘•±…É…Ñ¥½¹Ì¡™½±‘•È¤è(€€€Á…Ñ €ô™½±‘•È€¼€‰Í½ÕÉ•Ì¹å…µ°ˆ(€€€¥˜Á…Ñ ¹¥Í}Íåµ±¥¹¬ ¤è(€€€€€€€É…¥Í”Y…±Õ•ÉÉ½È ‰Q•µÁ±…Ñ”Í½ÕÉ”‘•±…É…Ñ¥½¹Ì…¹¹½Ğ‰”„Íåµ‰½±¥Œ±¥¹¬ˆ¤(€€€ÑÉäè(€€€€€€€Á…Ñ ¹É•Í½±Ù” ¤¹É•±…Ñ¥Ù•}Ñ¼¡™½±‘•È¹É•Í½±Ù” ¤¤(€€€•á•ÁĞ€¡=MÉÉ½È°Y…±Õ•ÉÉ½È¤…Ì•áŒè(€€€€€€€É…¥Í”Y…±Õ•ÉÉ½È ‰Q•µÁ±…Ñ”Í½ÕÉ”Á…Ñ ¥Ì½ÕÑÍ¥‘”¥ÑÌÁ…­…”ˆ¤™É½´•áŒ(€€€ÑÉäè(€€€€€€€É•ÑÕÉ¸©Í½¸¹±½…‘Ì¡Á…Ñ ¹É•…‘}Ñ•áĞ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤(€€€•á•ÁĞ¥±•9½Ñ½Õ¹‘ÉÉ½Èè(€€€€€€€É•ÑÕÉ¸ì‰Õ¹…Ù…¥±…‰±”ˆèQÉÕ•ô(€€€•á•ÁĞ€¡=MÉÉ½È°U¹¥½‘•ÉÉ½È°Y…±Õ•ÉÉ½È¤è(€€€€€€€É•ÑÕÉ¸ì‰Õ¹…Ù…¥±…‰±”ˆèQÉÕ”°€‰É•…Í½¸ˆè€‰¥¹Ù…±¥ÍÑÉÕÑÕÉ•Í½ÕÉ”‘•±…É…Ñ¥½¹Ì‰ô(()‘•˜}µ…Ñ¡•Í}ÑåÁ”¡Ù…±Õ”°•áÁ•Ñ•¤è(€€€¡½¥•Ì€ô•áÁ•Ñ•¥˜¥Í¥¹ÍÑ…¹”¡•áÁ•Ñ•°±¥ÍĞ¤•±Í”m•áÁ•Ñ•‘t(€€€É•ÑÕÉ¸…¹ä¡ì(€€€€€€€€‰½‰©•Ğˆè±…µ‰‘„è¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°‘¥Ğ¤°(€€€€€€€€‰…ÉÉ…äˆè±…µ‰‘„è¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°±¥ÍĞ¤°(€€€€€€€€‰ÍÑÉ¥¹œˆè±…µ‰‘„è¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°ÍÑÈ¤°(€€€€€€€€‰¥¹Ñ••Èˆè±…µ‰‘„è¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°¥¹Ğ¤…¹¹½Ğ¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°‰½½°¤°(€€€€€€€€‰¹Õµ‰•Èˆè±…µ‰‘„è¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°€¡¥¹Ğ°™±½…Ğ¤¤…¹¹½Ğ¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°‰½½°¤°(€€€€€€€€‰‰½½±•…¸ˆè±…µ‰‘„è¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°‰½½°¤°(€€€€€€€€‰¹Õ±°ˆè±…µ‰‘„èÙ…±Õ”¥Ì9½¹”°(€€€õm¡½¥•t ¤™½È¡½¥”¥¸¡½¥•Ì¤(()‘•˜}Ù…±¥‘…Ñ•}Í¡•µ…}¹½‘”¡Ù…±Õ”°Í¡•µ„°É½½Ñ}Í¡•µ„°Á…Ñ °•ÉÉ½ÉÌ¤è(€€€¥˜€ˆ‘É•˜ˆ¥¸Í¡•µ„è(€€€€€€€Ñ…É•Ğ€ôÉ½½Ñ}Í¡•µ„(€€€€€€€™½ÈÁ…ÉĞ¥¸Í¡•µ…lˆ‘É•˜‰t¹É•µ½Ù•ÁÉ•™¥à ˆŒ¼€ˆ¤¹É•Á±…” ˆŒ¼ˆ°€ˆˆ¤¹ÍÁ±¥Ğ ˆ¼ˆ¤è(€€€€€€€€€€€¥˜Á…ÉĞè(€€€€€€€€€€€€€€€Ñ…É•Ğ€ôÑ…É•Ğ¹•Ğ¡Á…ÉĞ¹É•Á±…” ‰øÄˆ°€ˆ¼ˆ¤¹É•Á±…” ‰øÀˆ°€‰øˆ¤°íô¤(€€€€€€€}Ù…±¥‘…Ñ•}Í¡•µ…}¹½‘”¡Ù…±Õ”°Ñ…É•Ğ°É½½Ñ}Í¡•µ„°Á…Ñ °•ÉÉ½ÉÌ¤(€€€€€€€É•ÑÕÉ¸(€€€¥˜€‰ÑåÁ”ˆ¥¸Í¡•µ„…¹¹½Ğ}µ…Ñ¡•Í}ÑåÁ”¡Ù…±Õ”°Í¡•µ…l‰ÑåÁ”‰t¤è(€€€€€€€•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ô¡…Ì…¸¥¹Ù…±¥ÑåÁ”ˆ¤(€€€€€€€É•ÑÕÉ¸(€€€¥˜€‰½¹ÍĞˆ¥¸Í¡•µ„…¹Ù…±Õ”€„ôÍ¡•µ…l‰½¹ÍĞ‰tè(€€€€€€€•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ôµÕÍĞ•ÅÕ…°íÍ¡•µ…l½¹ÍĞt…Éôˆ¤(€€€¥˜€‰•¹Õ´ˆ¥¸Í¡•µ„…¹Ù…±Õ”¹½Ğ¥¸Í¡•µ…l‰•¹Õ´‰tè(€€€€€€€•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ôµÕÍĞ‰”½¹”½˜Ñ¡”…±±½İ•Ù…±Õ•Ìˆ¤(€€€¥˜¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°ÍÑÈ¤è(€€€€€€€¥˜±•¸¡Ù…±Õ”¤€ğÍ¡•µ„¹•Ğ ‰µ¥¹1•¹Ñ ˆ°€À¤è•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ô¥ÌÑ½¼Í¡½ÉĞˆ¤(€€€€€€€¥˜€‰Á…ÑÑ•É¸ˆ¥¸Í¡•µ„…¹É”¹Í•…É ¡Í¡•µ…l‰Á…ÑÑ•É¸‰t°Ù…±Õ”¤¥Ì9½¹”è•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ô¡…Ì…¸¥¹Ù…±¥™½Éµ…Ğˆ¤(€€€€€€€¥˜Í¡•µ„¹•Ğ ‰™½Éµ…Ğˆ¤€ôô€‰‘…Ñ”µÑ¥µ”ˆè(€€€€€€€€€€€ÑÉäè(€€€€€€€€€€€€€€€¥˜¹½ĞÉ”¹™Õ±±µ…Ñ ¡È‰q‘ìÑôµq‘ìÉôµq‘ìÉõQq‘ìÉôéq‘ìÉôéq‘ìÉô üép¹q¬¤ü üéiñl¬µuq‘ìÉôéq‘ìÉô¤ˆ°Ù…±Õ”¤èÉ…¥Í”Y…±Õ•ÉÉ½È ‰¥¹Ù…±¥I€ÌÌÌäˆ¤(€€€€€€€€€€€€€€€‘…Ñ•Ñ¥µ”¹™É½µ¥Í½™½Éµ…Ğ¡Ù…±Õ”¹É•Á±…” ‰hˆ°€ˆ¬ÀÀèÀÀˆ¤¤(€€€€€€€€€€€•á•ÁĞY…±Õ•ÉÉ½Èè•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ôµÕÍĞ‰”„‘…Ñ”µÑ¥µ”ˆ¤(€€€¥˜¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°€¡¥¹Ğ°™±½…Ğ¤¤…¹¹½Ğ¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°‰½½°¤è(€€€€€€€¥˜€‰µ¥¹¥µÕ´ˆ¥¸Í¡•µ„…¹Ù…±Õ”€ğÍ¡•µ…l‰µ¥¹¥µÕ´‰tè•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ô¥Ì‰•±½Üµ¥¹¥µÕ´ˆ¤(€€€€€€€¥˜€‰µ…á¥µÕ´ˆ¥¸Í¡•µ„…¹Ù…±Õ”€øÍ¡•µ…l‰µ…á¥µÕ´‰tè•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ô¥Ì…‰½Ù”µ…á¥µÕ´ˆ¤(€€€¥˜¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°±¥ÍĞ¤è(€€€€€€€¥˜Í¡•µ„¹•Ğ ‰Õ¹¥ÅÕ•%Ñ•µÌˆ¤…¹±•¸¡í©Í½¸¹‘ÕµÁÌ¡¥Ñ•´°Í½ÉÑ}­•åÌõQÉÕ”¤™½È¥Ñ•´¥¸Ù…±Õ•ô¤€„ô±•¸¡Ù…±Õ”¤è•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ô½¹Ñ…¥¹Ì‘ÕÁ±¥…Ñ•Ìˆ¤(€€€€€€€¥˜€‰¥Ñ•µÌˆ¥¸Í¡•µ„è(€€€€€€€€€€€™½È¥¹‘•à°¥Ñ•´¥¸•¹Õµ•É…Ñ”¡Ù…±Õ”¤è}Ù…±¥‘…Ñ•}Í¡•µ…}¹½‘”¡¥Ñ•´°Í¡•µ…l‰¥Ñ•µÌ‰t°É½½Ñ}Í¡•µ„°˜‰íÁ…Ñ¡õmí¥¹‘•áõtˆ°•ÉÉ½ÉÌ¤(€€€¥˜¥Í¥¹ÍÑ…¹”¡Ù…±Õ”°‘¥Ğ¤è(€€€€€€€™½ÈÉ•ÅÕ¥É•¥¸Í¡•µ„¹•Ğ ‰É•ÅÕ¥É•ˆ°mt¤è(€€€€€€€€€€€¥˜É•ÅÕ¥É•¹½Ğ¥¸Ù…±Õ”è•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ô¹íÉ•ÅÕ¥É•‘ô¥ÌÉ•ÅÕ¥É•ˆ¤(€€€€€€€ÁÉ½Á•ÉÑ¥•Ì€ôÍ¡•µ„¹•Ğ ‰ÁÉ½Á•ÉÑ¥•Ìˆ°íô¤(€€€€€€€™½È­•ä°¡¥±¥¸Ù…±Õ”¹¥Ñ•µÌ ¤è(€€€€€€€€€€€¥˜­•ä¥¸ÁÉ½Á•ÉÑ¥•Ìè}Ù…±¥‘…Ñ•}Í¡•µ…}¹½‘”¡¡¥±°ÁÉ½Á•ÉÑ¥•Ím­•åt°É½½Ñ}Í¡•µ„°˜‰íÁ…Ñ¡ô¹í­•åôˆ°•ÉÉ½ÉÌ¤(€€€€€€€€€€€•±¥˜Í¡•µ„¹•Ğ ‰…‘‘¥Ñ¥½¹…±AÉ½Á•ÉÑ¥•Ìˆ¤¥Ì…±Í”è•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜‰íÁ…Ñ¡ô¹í­•åô¥Ì¹½Ğ…±±½İ•ˆ¤(()‘•˜Ù…±¥‘…Ñ•}™¥¹‘¥¹Ì¡‘½Õµ•¹Ğ¤è(€€€Í¡•µ„€ô©Í½¸¹±½…‘Ì¡%9%9M}M!5¹É•…‘}Ñ•áĞ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤(€€€Ñ…á½¹½µä€ô©Í½¸¹±½…‘Ì¡=9QI=1}Qa=9=5d¹É•…‘}Ñ•áĞ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤(€€€•ÉÉ½ÉÌ€ômt(€€€}Ù…±¥‘…Ñ•}Í¡•µ…}¹½‘”¡‘½Õµ•¹Ğ°Í¡•µ„°Í¡•µ„°€ˆˆ°•ÉÉ½ÉÌ¤(€€€­¹½İ¹}½¹ÑÉ½±Ì€ôí½¹ÑÉ½±l‰¥‰t™½È½¹ÑÉ½°¥¸Ñ…á½¹½µål‰½¹ÑÉ½±Ì‰uô(€€€¥˜¥Í¥¹ÍÑ…¹”¡‘½Õµ•¹Ğ°‘¥Ğ¤è(€€€€€€€™¥¹‘¥¹}¥‘Ì€ôÍ•Ğ ¤(€€€€€€€™¥¹‘¥¹Ì€ô‘½Õµ•¹Ğ¹•Ğ ‰™¥¹‘¥¹Ìˆ°mt¤(€€€€€€€¥˜¹½Ğ¥Í¥¹ÍÑ…¹”¡™¥¹‘¥¹Ì°±¥ÍĞ¤è(€€€€€€€€€€€É•ÑÕÉ¸•ÉÉ½ÉÌ(€€€€€€€™½È¥¹‘•à°™¥¹‘¥¹œ¥¸•¹Õµ•É…Ñ”¡™¥¹‘¥¹Ì¤è(€€€€€€€€€€€¥˜¹½Ğ¥Í¥¹ÍÑ…¹”¡™¥¹‘¥¹œ°‘¥Ğ¤è½¹Ñ¥¹Õ”(€€€€€€€€€€€™¥¹‘¥¹}¥€ô™¥¹‘¥¹œ¹•Ğ ‰™¥¹‘¥¹}¥ˆ¤(€€€€€€€€€€€¥˜¥Í¥¹ÍÑ…¹”¡™¥¹‘¥¹}¥°ÍÑÈ¤è(€€€€€€€€€€€€€€€¥˜™¥¹‘¥¹}¥¥¸™¥¹‘¥¹}¥‘Ìè•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜ˆ¹™¥¹‘¥¹Ímí¥¹‘•áõt¹™¥¹‘¥¹}¥¥Ì„‘ÕÁ±¥…Ñ”™¥¹‘¥¹}¥ˆ¤(€€€€€€€€€€€€€€€™¥¹‘¥¹}¥‘Ì¹…‘¡™¥¹‘¥¹}¥¤(€€€€€€€€€€€¥˜™¥¹‘¥¹œ¹•Ğ ‰™¥¹‘¥¹}ÑåÁ”ˆ¤€ôô€‰Á½Ñ•¹Ñ¥…±}±•…±}ÅÕ•ÍÑ¥½¸ˆ…¹€¡¹½Ğ¥Í¥¹ÍÑ…¹”¡™¥¹‘¥¹œ¹•Ğ ‰±•…±}ÅÕ•ÍÑ¥½¸ˆ¤°ÍÑÈ¤½È¹½Ğ™¥¹‘¥¹l‰±•…±}ÅÕ•ÍÑ¥½¸‰t¹ÍÑÉ¥À ¤¤è•ÉÉ½ÉÌ¹…ÁÁ•¹¡˜ˆ¹™¥¹‘¥¹Ímí¥¹‘•áõt¹±•…±}ÅÕ•ÍÑ¥½¸¥ÌÉ•ÅÕ¥É•™½È„Á½Ñ•¹Ñ¥…°±•…°ÅÕ•ÍÑ¥½¸ˆ¤(€€€ƒ­5¶‰ËkºwµçbÆæwVvW2ÒÖWFFFævWB‚&ÆæwVvW2"ÂµÒ¢–bæ÷B—6–ç7Fæ6R†6FVv÷&–W2ÂÆ—7B’÷"æ÷B—6–ç7Fæ6R†ÆæwVvW2ÂÆ—7B“ ¢6öçF–çVP¢–b6FVv÷'’æB6FVv÷'’æ÷B–â6FVv÷&–W3 ¢6öçF–çVP¢–bÆæwVvRæBÆæwVvRæ÷B–âÆæwVvW3 ¢6öçF–çVP¢FV×ÆFW2æVæB‡°¢&–B#¢ÖWFFF²&–B%ÒÀ¢'F—FÆR#¢ÖWFFFævWB‚'F—FÆR"Â·Ò’À¢&6FVv÷&–W2#¢6FVv÷&–W2À¢&ÆæwVvW2#¢ÆæwVvW2À¢'fW'6–öâ#¢ÖWFFFævWB‚'fW'6–öâ"’À¢'7FGW2#¢ÖWFFFævWB‚'7FGW2"’À¢&ÆVvÅ÷&Wf–Wr#¢ÖWFFFævWB‚&ÆVvÅ÷&Wf–Wr"’À¢Ò¢–G2Ò¶—FVÕ²&–B%Òf÷"—FVÒ–âFV×ÆFW5Ğ¢–bÆVâ†–G2’ÒÆVâ‡6WB†–G2’“ ¢&—6RfÇVTW'&÷"‚$GWÆ–6FRFV×ÆFR–G2f÷VæB"¢&WGW&â²'FV×ÆFW2#¢FV×ÆFW2Â&F—66Æ–ÖW"#¢D•44Ä”ÔU'Ğ ¢–bæÖR–â‚&vWE÷FV×ÆFR"Â&vWE÷FV×ÆFU÷6÷W&6W2"“ ¢ÆÆ÷vVBÒ²'FV×ÆFUö–B'Ò–bæÖRÓÒ&vWE÷FV×ÆFU÷6÷W&6W2"VÇ6R²'FV×ÆFUö–B"Â&ÆæwVvR'Ğ¢–b6WB†&w2’ÒÆÆ÷vVC ¢&—6RfÇVTW'&÷"‚%Vç7W÷'FVBFööÂ&wVÖVçB"¢FV×ÆFUö–BÒ&w2ævWB‚'FV×ÆFUö–B"¢–bæ÷B—6–ç7Fæ6R‡FV×ÆFUö–BÂ7G"’÷"æ÷BFV×ÆFUö–C ¢&—6RfÇVTW'&÷"‚'FV×ÆFUö–B—2&WV—&VB"¢föÆFW"ÂÖWFFFÒ6†ö÷6R‡FV×ÆFUö–B¢–bæÖRÓÒ&vWE÷FV×ÆFU÷6÷W&6W2# ¢&WGW&â°¢'FV×ÆFUö–B#¢FV×ÆFUö–BÀ¢&ÖWFFF#¢ÖWFFFÀ¢'6÷W&6W2#¢&VE÷6÷W&6UöFV6Æ&F–öç2†föÆFW"’À¢&F—66Æ–ÖW"#¢D•44Ä”ÔU"À¢Ğ ¢ÆæwVvRÒ&w2ævWB‚&ÆæwVvR"Â&Vâ"¢–bÆæwVvRæ÷B–âÄäuTtU2÷"ÆæwVvRæ÷B–âÖWFFFævWB‚&ÆæwVvW2"ÂµÒ“ ¢&—6RfÇVTW'&÷"‚%Vç7W÷'FVBÆæwVvR"¢6öçFVçE÷F‚ÒföÆFW"òb'¶ÆæwVvWÒæÖB ¢–b6öçFVçE÷F‚æ—5÷7–ÖÆ–æ²‚“ ¢&—6RfÇVTW'&÷"‚%FV×ÆFR6öçFVçB6ææ÷B&R7–Ö&öÆ–2Æ–æ²"¢G'“ ¢6öçFVçE÷F‚ç&W6öÇfR‚’ç&VÆF—fU÷Fò†föÆFW"ç&W6öÇfR‚’¢6öçFVçBÒ6öçFVçE÷F‚ç&VE÷FW‡B†Væ6öF–æsÒ'WFbÓ‚"¢W†6WBf–ÆTæ÷Df÷VæDW'&÷"2W†3 ¢&—6RfÇVTW'&÷"‚%FV×ÆFR6öçFVçBÖ—76–ær"’g&öÒW†0¢W†6WB„õ4W'&÷"ÂVæ–6öFTW'&÷"ÂfÇVTW'&÷"’2W†3 ¢&—6RfÇVTW'&÷"‚%FV×ÆFR6öçFVçB—2Væf–Æ&ÆR"’g&öÒW†0¢&WGW&â°¢&ÖWFFF#¢ÖWFFFÀ¢&ÆæwVvR#¢ÆæwVvRÀ¢&6öçFVçB#¢6öçFVçBÀ¢&F—66Æ–ÖW"#¢D•44Ä”ÔU"À¢Ğ ¢–bæÖRÓÒ&vWEöf–æF–æw5÷7V2# ¢–b&w3¢&—6RfÇVTW'&÷"‚%Vç7W÷'FVBvWEöf–æF–æw5÷7V2&wVÖVçB"¢&WGW&â°¢'66†VÖ#¢§6öâæÆöG2„d”äD”äu5õ44„TÔç&VE÷FW‡B†Væ6öF–æsÒ'WFbÓ‚"’’À¢'F†öæö×’#¢§6öâæÆöG2„4ôåE$ôÅõD„ôäôÕ’ç&VE÷FW‡B†Væ6öF–æsÒ'WFbÓ‚"’’À¢&F—66Æ–ÖW"#¢%FV6†æ–6Â&–÷&—G’—2æ÷BÆVvÂ×&—6²&F–ærâF†R7V6–f–6F–öâFöW2æ÷B6W'F–g’ÆVvÂ6ö×Æ–æ6Râ"À¢Ğ ¢–bæÖRÓÒ&W‡÷'Eöf–æF–æw2# ¢–b6WB†&w2’Ò²&Fö7VÖVçB'Ó¢&—6RfÇVTW'&÷"‚&W‡÷'Eöf–æF–æw2&WV—&W2öæÇ’Fö7VÖVçB"¢Fö7VÖVçBÒ&w5²&Fö7VÖVçB%Ğ¢W'&÷'2ÒfÆ–FFUöf–æF–æw2†Fö7VÖVçB¢–bW'&÷'3¢&—6RfÇVTW'&÷"‚$–çfÆ–Bf–æF–æw2Fö7VÖVçC¢"²#²"æ¦ö–â†W'&÷'5³£…Ò’¢&WGW&âFö7VÖVç@ ¢&—6RfÇVTW'&÷"‚%Væ¶æ÷vâFööÂ"  ¥DôôÅ2Ò°¢°¢&æÖR#¢&vWEöf–æF–æw5÷7V2"À¢&FW67&—F–öâ#¢%&VBF†RfW'6–öæVBf–æF–æw2¥4ôâ66†VÖæBfVæF÷"ÖæWWG&Â6öçG&öÂF†öæö×’â"À¢&–çWE66†VÖ#¢²'G—R#¢&ö&¦V7B"Â'&÷W'F–W2#¢·ÒÂ&FF—F–öæÅ&÷W'F–W2#¢fÇ6WÒÀ¢ÒÀ¢°¢&æÖR#¢&W‡÷'Eöf–æF–æw2"À¢&FW67&—F–öâ#¢%fÆ–FFRæB&WGW&â6æ—F—¦VBf–æF–æw2Fö7VÖVçBVæ6†ævVBâFöW2æ÷B&÷fRÆVvÂf–æF–æw2÷"ÇFW"W‡FW&æÂ7—7FV×2â"À¢&–çWE66†VÖ#¢²'G—R#¢&ö&¦V7B"Â'&÷W'F–W2#¢²&Fö7VÖVçB#¢²'G—R#¢&ö&¦V7B'×ÒÂ'&WV—&VB#¢²&Fö7VÖVçB%ÒÂ&FF—F–öæÅ&÷W'F–W2#¢fÇ6WÒÀ¢ÒÀ¢°¢&æÖR#¢&Æ—7E÷FV×ÆFW2"À¢&FW67&—F–öâ#¢$Æ—7BF—67W76–öâG&gG2æBF†V—"&V6÷&FVB&Wf–Wr7FGW6W2âF†—2æWfW"–æfW'2&÷fÂâ"À¢&–çWE66†VÖ#¢°¢'G—R#¢&ö&¦V7B"À¢'&÷W'F–W2#¢°¢&6FVv÷'’#¢²'G—R#¢'7G&–ær'ÒÀ¢&ÆæwVvR#¢²'G—R#¢'7G&–ær"Â&VçVÒ#¢Æ—7B„ÄäuTtU2—ÒÀ¢ÒÀ¢&FF—F–öæÅ&÷W'F–W2#¢fÇ6RÀ¢ÒÀ¢ÒÀ¢°¢&æÖR#¢&vWE÷FV×ÆFR"À¢&FW67&—F–öâ#¢%&VBF—67W76–öâG&gB–âöæRÆæwVvRv—F‚—G2&V6÷&FVBÖWFFFæBÆ–Ö—FF–öç2â"À¢&–çWE66†VÖ#¢°¢'G—R#¢&ö&¦V7B"À¢'&÷W'F–W2#¢°¢'FV×ÆFUö–B#¢²'G—R#¢'7G&–ær'ÒÀ¢&ÆæwVvR#¢²'G—R#¢'7G&–ær"Â&VçVÒ#¢Æ—7B„ÄäuTtU2—ÒÀ¢ÒÀ¢'&WV—&VB#¢²'FV×ÆFUö–B%ÒÀ¢&FF—F–öæÅ&÷W'F–W2#¢fÇ6RÀ¢ÒÀ¢ÒÀ¢°¢&æÖR#¢&vWE÷FV×ÆFU÷6÷W&6W2"À¢&FW67&—F–öâ#¢%&VBG&gBw2FV6Æ&VB6÷W&6R&VfW&Væ6W3²FV6Æ&F–öç2Fòæ÷B&÷fR7W'&VçBÆr÷"&÷fÂâ"À¢&–çWE66†VÖ#¢°¢'G—R#¢&ö&¦V7B"À¢'&÷W'F–W2#¢²'FV×ÆFUö–B#¢²'G—R#¢'7G&–ær'×ÒÀ¢'&WV—&VB#¢²'FV×ÆFUö–B%ÒÀ¢&FF—F–öæÅ&÷W'F–W2#¢fÇ6RÀ¢ÒÀ¢ÒÀ¥Ğ  ¦FVb&W7öç6R‡&WVW7B“ ¢ÖWF†öBÒ&WVW7BævWB‚&ÖWF†öB"¢–bÖWF†öBÓÒ&–æ—F–Æ—¦R# ¢&WGW&â°¢'&÷Fö6öÅfW'6–öâ#¢###BÓÓR"À¢&6&–Æ—F–W2#¢²'FööÇ2#¢·×ÒÀ¢'6W'fW$–æfò#¢²&æÖR#¢&÷VâÖÆVvÂÖÖ÷&ö66ò"Â'fW'6–öâ#¢#ãã'ÒÀ¢Ğ¢–bÖWF†öBÓÒ'–ær# ¢&WGW&â·Ğ¢–bÖWF†öBÓÒ'FööÇ2öÆ—7B# ¢&WGW&â²'FööÇ2#¢DôôÅ7Ğ¢–bÖWF†öBÓÒ'FööÇ2ö6ÆÂ# ¢&×2Ò&WVW7BævWB‚'&×2"¢–bæ÷B—6–ç7Fæ6R‡&×2ÂF–7B’÷"æ÷B—6–ç7Fæ6R‡&×2ævWB‚&æÖR"’Â7G"“ ¢&WGW&â²&6öçFVçB#¢·²'G—R#¢'FW‡B"Â'FW‡B#¢$–çfÆ–BFööÂ6ÆÂ&ÖWFW'2'ÕÒÂ&—4W'&÷"#¢G'VWĞ¢G'“ ¢&W7VÇBÒ6ÆÂ‡&×5²&æÖR%ÒÂ&×2ævWB‚&&wVÖVçG2"Â·Ò’¢&WGW&â²&6öçFVçB#¢·²'G—R#¢'FW‡B"Â'FW‡B#¢§6öâæGV×2‡&W7VÇBÂVç7W&Uö66–“ÔfÇ6R—Õ×Ğ¢W†6WB…fÇVTW'&÷"Âõ4W'&÷"’2W†3 ¢&WGW&â²&6öçFVçB#¢·²'G—R#¢'FW‡B"Â'FW‡B#¢7G"†W†2—ÕÒÂ&—4W'&÷"#¢G'VWĞ¢&—6R¶W”W'&÷"‚$ÖWF†öBæ÷Bf÷VæB"  ¦FVbÖ–â‚“ ¢f÷"Æ–æR–â7—2ç7FF–ã ¢G'“ ¢&WVW7BÒ§6öâæÆöG2†Æ–æR¢W†6WB…fÇVTW'&÷"ÂG—TW'&÷"“ ¢&–çB†§6öâæGV×2‡²&§6öç'2#¢#"ã"Â&–B#¢æöæRÂ&W'&÷"#¢²&6öFR#¢Ó3#sÂ&ÖW76vR#¢%'6RW'&÷"'×Ò’ÂfÇW6ƒÕG'VR¢6öçF–çVP¢–bæ÷B—6–ç7Fæ6R‡&WVW7BÂF–7B’÷"&WVW7BævWB‚&§6öç'2"’Ò#"ã"÷"æ÷B—6–ç7Fæ6R‡&WVW7BævWB‚&ÖWF†öB"’Â7G"“ ¢–b—6–ç7Fæ6R‡&WVW7BÂF–7B’æB&–B"æ÷B–â&WVW7C ¢6öçF–çVP¢&WVW7Eö–BÒ&WVW7BævWB‚&–B"’–b—6–ç7Fæ6R‡&WVW7BÂF–7B’VÇ6RæöæP¢&–çB†§6öâæGV×2‡²&§6öç'2#¢#"ã"Â&–B#¢&WVW7Eö–BÂ&W'&÷"#¢²&6öFR#¢Ó3#cÂ&ÖW76vR#¢$–çfÆ–B&WVW7B'×Ò’ÂfÇW6ƒÕG'VR¢6öçF–çVP¢–b&–B"æ÷B–â&WVW7C ¢2Ô5æ÷F–f–6F–öç2Â–æ6ÇVF–æræ÷F–f–6F–öç2ö–æ—F–Æ—¦VBÂæWfW"&V6V—fR&W7öç6Rà¢6öçF–çVP¢G'“ ¢&W7VÇBÒ&W7öç6R‡&WVW7B¢÷WGWBÒ²&§6öç'2#¢#"ã"Â&–B#¢&WVW7E²&–B%ÒÂ'&W7VÇB#¢&W7VÇGĞ¢W†6WB¶W”W'&÷# ¢÷WGWBÒ²&§6öç'2#¢#"ã"Â&–B#¢&WVW7E²&–B%ÒÂ&W'&÷"#¢²&6öFR#¢Ó3#cÂ&ÖW76vR#¢$ÖWF†öBæ÷Bf÷VæB'×Ğ¢&–çB†§6öâæGV×2†÷WGWBÂVç7W&Uö66–“ÔfÇ6R’ÂfÇW6ƒÕG'VR  ¦–bõöæÖUõòÓÒ%õöÖ–åõò# ¢Ö–â‚
+#!/usr/bin/env python3
+"""Read-only local MCP server for Open Legal Morocco (JSON-RPC over stdio)."""
+
+import json
+import re
+import sys
+from datetime import datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+TEMPLATES = ROOT / "templates"
+FINDINGS_SCHEMA = ROOT / "schemas" / "findings.schema.json"
+CONTROL_TAXONOMY = ROOT / "schemas" / "control-taxonomy.json"
+DISCLAIMER = (
+    "Open Legal Morocco materials are unverified discussion drafts, not legal advice. "
+    "Automated results do not certify Moroccan legal compliance. "
+    "Seek qualified Moroccan legal counsel before relying on a document."
+)
+LANGUAGES = ("en", "fr", "ar")
+
+
+def packages():
+    """Yield valid packages in deterministic order; report malformed records to stderr."""
+    for metadata_path in sorted(TEMPLATES.glob("*/*/metadata.yaml")):
+        package_path = metadata_path.parent
+        try:
+            package_path.resolve().relative_to(TEMPLATES.resolve())
+        except (OSError, ValueError):
+            print(f"Skipping template outside repository: {metadata_path}", file=sys.stderr)
+            continue
+        current = package_path
+        if metadata_path.is_symlink():
+            print(f"Skipping symlinked template metadata: {metadata_path}", file=sys.stderr)
+            continue
+        while current != TEMPLATES:
+            if current.is_symlink():
+                print(f"Skipping symlinked template package: {metadata_path}", file=sys.stderr)
+                break
+            current = current.parent
+        else:
+            current = None
+        if current is not None:
+            continue
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, ValueError) as exc:
+            print(f"Skipping unreadable template metadata {metadata_path}: {exc}", file=sys.stderr)
+            continue
+        if not isinstance(metadata, dict) or not isinstance(metadata.get("id"), str):
+            print(f"Skipping template metadata without a string id: {metadata_path}", file=sys.stderr)
+            continue
+        yield metadata_path.parent, metadata
+
+
+def choose(template_id):
+    matches = [(folder, metadata) for folder, metadata in packages() if metadata["id"] == template_id]
+    if len(matches) != 1:
+        raise ValueError("Unknown or ambiguous template id")
+    folder, metadata = matches[0]
+    try:
+        folder.resolve().relative_to(TEMPLATES.resolve())
+    except (OSError, ValueError) as exc:
+        raise ValueError("Template path is outside the repository") from exc
+    return folder, metadata
+
+
+def read_source_declarations(folder):
+    path = folder / "sources.yaml"
+    if path.is_symlink():
+        raise ValueError("Template source declarations cannot be a symbolic link")
+    try:
+        path.resolve().relative_to(folder.resolve())
+    except (OSError, ValueError) as exc:
+        raise ValueError("Template source path is outside its package") from exc
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {"unavailable": True}
+    except (OSError, UnicodeError, ValueError):
+        return {"unavailable": True, "reason": "invalid structured source declarations"}
+
+
+def _matches_type(value, expected):
+    choices = expected if isinstance(expected, list) else [expected]
+    return any({
+        "object": lambda: isinstance(value, dict),
+        "array": lambda: isinstance(value, list),
+        "string": lambda: isinstance(value, str),
+        "integer": lambda: isinstance(value, int) and not isinstance(value, bool),
+        "number": lambda: isinstance(value, (int, float)) and not isinstance(value, bool),
+        "boolean": lambda: isinstance(value, bool),
+        "null": lambda: value is None,
+    }[choice]() for choice in choices)
+
+
+def _validate_schema_node(value, schema, root_schema, path, errors):
+    if "$ref" in schema:
+        target = root_schema
+        for part in schema["$ref"].removeprefix("#/ ").replace("#/", "").split("/"):
+            if part:
+                target = target.get(part.replace("~1", "/").replace("~0", "~"), {})
+        _validate_schema_node(value, target, root_schema, path, errors)
+        return
+    if "type" in schema and not _matches_type(value, schema["type"]):
+        errors.append(f"{path} has an invalid type")
+        return
+    if "const" in schema and value != schema["const"]:
+        errors.append(f"{path} must equal {schema['const']!r}")
+    if "enum" in schema and value not in schema["enum"]:
+        errors.append(f"{path} must be one of the allowed values")
+    if isinstance(value, str):
+        if len(value) < schema.get("minLength", 0): errors.append(f"{path} is too short")
+        if "pattern" in schema and re.search(schema["pattern"], value) is None: errors.append(f"{path} has an invalid format")
+        if schema.get("format") == "date-time":
+            try:
+                if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})", value): raise ValueError("invalid RFC 3339")
+                datetime.fromisoformat(value.replace("Z", "+00:00"))
+            except ValueError: errors.append(f"{path} must be a date-time")
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        if "minimum" in schema and value < schema["minimum"]: errors.append(f"{path} is below minimum")
+        if "maximum" in schema and value > schema["maximum"]: errors.append(f"{path} is above maximum")
+    if isinstance(value, list):
+        if schema.get("uniqueItems") and len({json.dumps(item, sort_keys=True) for item in value}) != len(value): errors.append(f"{path} contains duplicates")
+        if "items" in schema:
+            for index, item in enumerate(value): _validate_schema_node(item, schema["items"], root_schema, f"{path}[{index}]", errors)
+    if isinstance(value, dict):
+        for required in schema.get("required", []):
+            if required not in value: errors.append(f"{path}.{required} is required")
+        properties = schema.get("properties", {})
+        for key, child in value.items():
+            if key in properties: _validate_schema_node(child, properties[key], root_schema, f"{path}.{key}", errors)
+            elif schema.get("additionalProperties") is False: errors.append(f"{path}.{key} is not allowed")
+
+
+def validate_findings(document):
+    schema = json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8"))
+    taxonomy = json.loads(CONTROL_TAXONOMY.read_text(encoding="utf-8"))
+    errors = []
+    _validate_schema_node(document, schema, schema, "$", errors)
+    known_controls = {control["id"] for control in taxonomy["controls"]}
+    if isinstance(document, dict):
+        finding_ids = set()
+        findings = document.get("findings", [])
+        if not isinstance(findings, list):
+            return errors
+        for index, finding in enumerate(findings):
+            if not isinstance(finding, dict): continue
+            finding_id = finding.get("finding_id")
+            if isinstance(finding_id, str):
+                if finding_id in finding_ids: errors.append(f"$.findings[{index}].finding_id is a duplicate finding_id")
+                finding_ids.add(finding_id)
+            if finding.get("finding_type") == "potential_legal_question" and (not isinstance(finding.get("legal_question"), str) or not finding["legal_question"].strip()): errors.append(f"$.findings[{index}].legal_question is required for a potential legal question")
+            if finding.get("finding_type") == "technical_observation" and finding.get("legal_question") is not None: errors.append(f"$.findings[{index}].legal_question must be null for a technical observation")
+            for control in finding.get("suggested_controls", []):
+                if control not in known_controls: errors.append(f"$.findings[{index}] uses unknown control: {control}")
+            texts = [finding.get("description"), finding.get("legal_question")]
+            texts.extend(item.get("summary") for item in finding.get("evidence", []) if isinstance(item, dict))
+            sensitive = re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
+            if any(isinstance(text, str) and sensitive.search(text) for text in texts):
+                errors.append(f"$.findings[{index}] appears to contain a credential, token, or direct email identifier")
+    return errors
+
+
+def call(name, args):
+    if not isinstance(args, dict):
+        raise ValueError("Tool arguments must be an object")
+
+    if name == "list_templates":
+        extra = set(args) - {"category", "language"}
+        if extra:
+            raise ValueError("Unsupported list_templates argument")
+        category = args.get("category")
+        language = args.get("language")
+        if category is not None and (not isinstance(category, str) or not category):
+            raise ValueError("Invalid category")
+        if language is not None and language not in LANGUAGES:
+            raise ValueError("Invalid language")
+        templates = []
+        for _, metadata in packages():
+            categories = metadata.get("category", [])
+            languages = metadata.get("languages", [])
+            if not isinstance(categories, list) or not isinstance(languages, list):
+                continue
+            if category and category not in categories:
+                continue
+            if language and language not in languages:
+                continue
+            templates.append({
+                "id": metadata["id"],
+                "title": metadata.get("title", {}),
+                "categories": categories,
+                "languages": languages,
+                "version": metadata.get("version"),
+                "status": metadata.get("status"),
+                "legal_review": metadata.get("legal_review"),
+            })
+        ids = [item["id"] for item in templates]
+        if len(ids) != len(set(ids)):
+            raise ValueError("Duplicate template ids found")
+        return {"templates": templates, "disclaimer": DISCLAIMER}
+
+    if name in ("get_template", "get_template_sources"):
+        allowed = {"template_id"} if name == "get_template_sources" else {"template_id", "language"}
+        if set(args) - allowed:
+            raise ValueError("Unsupported tool argument")
+        template_id = args.get("template_id")
+        if not isinstance(template_id, str) or not template_id:
+            raise ValueError("template_id is required")
+        folder, metadata = choose(template_id)
+        if name == "get_template_sources":
+            return {
+                "template_id": template_id,
+                "metadata": metadata,
+                "sources": read_source_declarations(folder),
+                "disclaimer": DISCLAIMER,
+            }
+
+        language = args.get("language", "en")
+        if language not in LANGUAGES or language not in metadata.get("languages", []):
+            raise ValueError("Unsupported language")
+        content_path = folder / f"{language}.md"
+        if content_path.is_symlink():
+            raise ValueError("Template content cannot be a symbolic link")
+        try:
+            content_path.resolve().relative_to(folder.resolve())
+            content = content_path.read_text(encoding="utf-8")
+        except FileNotFoundError as exc:
+            raise ValueError("Template content missing") from exc
+        except (OSError, UnicodeError, ValueError) as exc:
+            raise ValueError("Template content is unavailable") from exc
+        return {
+            "metadata": metadata,
+            "language": language,
+            "content": content,
+            "disclaimer": DISCLAIMER,
+        }
+
+    if name == "get_findings_spec":
+        if args: raise ValueError("Unsupported get_findings_spec argument")
+        return {
+            "schema": json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8")),
+            "taxonomy": json.loads(CONTROL_TAXONOMY.read_text(encoding="utf-8")),
+            "disclaimer": "Technical priority is not a legal-risk rating. The specification does not certify legal compliance.",
+        }
+
+    if name == "export_findings":
+        if set(args) != {"document"}: raise ValueError("export_findings requires only a document")
+        document = args["document"]
+        errors = validate_findings(document)
+        if errors: raise ValueError("Invalid findings document: " + "; ".join(errors[:8]))
+        return document
+
+    raise ValueError("Unknown tool")
+
+
+TOOLS = [
+    {
+        "name": "get_findings_spec",
+        "description": "Read the versioned findings JSON Schema and vendor-neutral control taxonomy.",
+        "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
+    },
+    {
+        "name": "export_findings",
+        "description": "Validate and return a sanitized findings document unchanged. Does not approve legal findings or alter external systems.",
+        "inputSchema": {"type": "object", "properties": {"document": {"type": "object"}}, "required": ["document"], "additionalProperties": False},
+    },
+    {
+        "name": "list_templates",
+        "description": "List discussion drafts and their recorded review statuses. This never infers approval.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "category": {"type": "string"},
+                "language": {"type": "string", "enum": list(LANGUAGES)},
+            },
+            "additionalProperties": False,
+        },
+    },
+    {
+        "name": "get_template",
+        "description": "Read a discussion draft in one language with its recorded metadata and limitations.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "template_id": {"type": "string"},
+                "language": {"type": "string", "enum": list(LANGUAGES)},
+            },
+            "required": ["template_id"],
+            "additionalProperties": False,
+        },
+    },
+    {
+        "name": "get_template_sources",
+        "description": "Read a draft's declared source references; declarations do not prove current law or approval.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {"template_id": {"type": "string"}},
+            "required": ["template_id"],
+            "additionalProperties": False,
+        },
+    },
+]
+
+
+def response(request):
+    method = request.get("method")
+    if method == "initialize":
+        return {
+            "protocolVersion": "2024-11-05",
+            "capabilities": {"tools": {}},
+            "serverInfo": {"name": "open-legal-morocco", "version": "0.1.0"},
+        }
+    if method == "ping":
+        return {}
+    if method == "tools/list":
+        return {"tools": TOOLS}
+    if method == "tools/call":
+        params = request.get("params")
+        if not isinstance(params, dict) or not isinstance(params.get("name"), str):
+            return {"content": [{"type": "text", "text": "Invalid tool call parameters"}], "isError": True}
+        try:
+            result = call(params["name"], params.get("arguments", {}))
+            return {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False)}]}
+        except (ValueError, OSError) as exc:
+            return {"content": [{"type": "text", "text": str(exc)}], "isError": True}
+    raise KeyError("Method not found")
+
+
+def main():
+    for line in sys.stdin:
+        try:
+            request = json.loads(line)
+        except (ValueError, TypeError):
+            print(json.dumps({"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": "Parse error"}}), flush=True)
+            continue
+        if not isinstance(request, dict) or request.get("jsonrpc") != "2.0" or not isinstance(request.get("method"), str):
+            if isinstance(request, dict) and "id" not in request:
+                continue
+            request_id = request.get("id") if isinstance(request, dict) else None
+            print(json.dumps({"jsonrpc": "2.0", "id": request_id, "error": {"code": -32600, "message": "Invalid Request"}}), flush=True)
+            continue
+        if "id" not in request:
+            # MCP notifications, including notifications/initialized, never receive a response.
+            continue
+        try:
+            result = response(request)
+            output = {"jsonrpc": "2.0", "id": request["id"], "result": result}
+        except KeyError:
+            output = {"jsonrpc": "2.0", "id": request["id"], "error": {"code": -32601, "message": "Method not found"}}
+        print(json.dumps(output, ensure_ascii=False), flush=True)
+
+
+if __name__ == "__main__":
+    main()
