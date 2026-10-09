@@ -35,12 +35,12 @@ test('findings export validates against the published schema and renders the dis
 
 test('Markdown rendering keeps caller-supplied findings text inert', () => {
   const unsafe = structuredClone(document);
-  unsafe.findings[0].description = 'Observed text\\n\\n## Injected heading\\n<script>alert(1)</script> [click](https://example.invalid)';
+  unsafe.findings[0].description = 'Observed text\n\n## Injected heading\n<script>alert(1)</script> [click](https://example.invalid)';
   const markdown = renderFindingsMarkdown(unsafe);
-  assert.doesNotMatch(markdown, /\\n## Injected heading/);
+  assert.doesNotMatch(markdown, /\n## Injected heading/);
   assert.doesNotMatch(markdown, /<script>/);
   assert.match(markdown, /&lt;script&gt;/);
-  assert.match(markdown, /\\\\\\[click\\\\\\]\\\\\\(https:\/\/example\\\\.invalid\\\\\\)/);
+  assert.ok(markdown.includes('\\[click\\]\\(https://example\\.invalid\\)'));
 });
 
 test('published JSON Schema enforces finding type and legal-question semantics for independent consumers', async () => {
