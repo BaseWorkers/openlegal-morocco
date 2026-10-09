@@ -17,7 +17,7 @@
       "type": "object", "additionalProperties": false, "required": ["revision"],
       "properties": { "revision": { "type": ["string", "null"], "description": "Commit/revision identifier when known; null otherwise." } }
     },
-    "verification_limitations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "verification_limitations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
     "findings": { "type": "array", "items": { "$ref": "#/$defs/finding" } }
   },
   "$defs": {
