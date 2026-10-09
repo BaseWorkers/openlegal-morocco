@@ -217,6 +217,28 @@
           }
         ]
       }
+    },
+    {
+      "id": "absolute-affected-file-paths-are-rejected",
+      "finding_patch": {
+        "affected_resources": [
+          {
+            "type": "file",
+            "identifier": "/home/person/private/workspace/src/handler.js"
+          }
+        ]
+      }
+    },
+    {
+      "id": "parent-traversal-affected-file-paths-are-rejected",
+      "finding_patch": {
+        "affected_resources": [
+          {
+            "type": "file",
+            "identifier": "src/../../private/secret.js"
+          }
+        ]
+      }
     }
   ]
 }
