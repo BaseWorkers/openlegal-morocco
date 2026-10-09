@@ -106,7 +106,7 @@ export function createDocxXmlParts(template, language, markdown) {
   const listAlignment = rtl ? 'right' : 'left';
   const listIndent = rtl ? '<w:ind w:right="720" w:hanging="360"/>' : '<w:ind w:left="720" w:hanging="360"/>';
   const numberingXml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:numbering xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:abstractNum w:abstractNumId="0"><w:multiLevelType w:val="singleLevel"/><w:lvl w:ilvl="0"><w:start w:val="1"/><w:numFmt w:val="bullet"/><w:lvlText w:val="•"/><w:lvlJc w:val="${listAlignment}"/><w:pPr>${listIndent}</w:pPr><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/></w:rPr></w:lvl></w:abstractNum><w:abstractNum w:abstractNumId="1"><w:multiLevelType w:val="singleLevel"/><w:lvl w:ilvl="0"><w:start w:val="1"/><w:numFmt w:val="decimal"/><w:lvlText w:val="%1."/><w:lvlJc w:val="${listAlignment}"/><w:pPr>${listIndent}</w:pPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId w:val="0"/></w:num><w:num w:numId="2"><w:abstractNumId w:val="1"/></w:num></w:numbering>`;
-  const footerXml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:ftr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:p><w:pPr><w:pStyle w:val="Footer"/>${rtl ? '<w:bidi/>' : ''}</w:pPr><w:r><w:rPr>${rtl ? '<w:rtl/>' : ''}<w:color w:val="526474"/><w:sz w:val="18"/><w:szCs w:val="18"/></w:rPr><w:t>${xmlEscape(`Open Legal Morocco · ${template.metadata.id} · v${template.metadata.version} · ${language}`)}</w:t></w:r></w:p></w:ftr>`;
+  const footerXml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:ftr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:p><w:pPr><w:pStyle w:val="Footer"/>${rtl ? '<w:bidi/>' : ''}</w:pPr><w:r><w:rPr>${rtl ? '<w:rtl/>' : ''}<w:color w:val="526474"/><w:sz w:val="18"/><w:szCs w:val="18"/></w:rPr><w:t>${xmlEscape(`OpenLegal · ${template.metadata.id} · v${template.metadata.version} · ${language}`)}</w:t></w:r></w:p></w:ftr>`;
   const footerStyle = '<w:style w:type="paragraph" w:styleId="Footer"><w:name w:val="footer"/><w:basedOn w:val="Normal"/></w:style>';
   const finalStylesXml = stylesXml.replace('</w:styles>', `${footerStyle}</w:styles>`);
   const contentTypesXml = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/><Override PartName="/word/footer1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml"/><Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/></Types>';
@@ -120,7 +120,7 @@ export function createDocxXmlParts(template, language, markdown) {
     'word/numbering.xml': numberingXml,
     'word/footer1.xml': footerXml,
     'word/_rels/document.xml.rels': documentRelsXml,
-    'docProps/core.xml': `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${xmlEscape(title)}</dc:title><dc:creator>Open Legal Morocco</dc:creator></cp:coreProperties>`
+    'docProps/core.xml': `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${xmlEscape(title)}</dc:title><dc:creator>OpenLegal</dc:creator></cp:coreProperties>`
   };
 }
 
@@ -191,5 +191,5 @@ export function createPlainText(template, language, markdown) {
     orderedIndex += 1;
     return `${block.ordered ? `${orderedIndex}.` : '•'} ${plainInlineText(block.text)}`;
   }).filter(Boolean).join('\n\n');
-  return `${text}\n\nOpen Legal Morocco · ${template.metadata.id} · v${template.metadata.version} · ${language}\n`;
+  return `${text}\n\nOpenLegal · ${template.metadata.id} · v${template.metadata.version} · ${language}\n`;
 }
