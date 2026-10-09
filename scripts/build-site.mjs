@@ -415,8 +415,10 @@ function resourceBody(lang, slug) {
   const sections = page.sections.map((section) =>
     '<section><h2>' + escapeHtml(section.heading) + '</h2><p>' + escapeHtml(section.text) + '</p></section>'
   ).join('');
+  const t = languageFor(lang);
   const backLabel = lang === 'ar' ? 'العودة إلى النماذج' : lang === 'fr' ? 'Retour aux modèles' : 'Back to templates';
-  return '<div class="legal-content"><p class="breadcrumb"><a href="../../index.html">' + backLabel + '</a></p><p class="eyebrow">Open Legal Morocco</p><h1>' + escapeHtml(page.title) + '</h1><p class="lead">' + escapeHtml(page.description) + '</p>' + sections + '</div>';
+  const notice = '<div class="notice" role="note"><strong>' + escapeHtml(t.warning) + '</strong>' + escapeHtml(t.warningBody) + '</div>';
+  return '<div class="legal-content"><p class="breadcrumb"><a href="../../index.html">' + escapeHtml(backLabel) + '</a></p><p class="eyebrow">Open Legal Morocco</p><h1>' + escapeHtml(page.title) + '</h1><p class="lead">' + escapeHtml(page.description) + '</p>' + notice + sections + '</div>';
 }
 
 export async function buildStaticSite({ outputDirectory = resolve(root, 'dist/site'), repositoryRef = process.env.GITHUB_SHA || 'working-tree', baseUrl: rawBaseUrl = process.env.OLM_SITE_BASE_URL } = {}) {
