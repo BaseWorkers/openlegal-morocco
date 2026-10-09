@@ -28,6 +28,51 @@ DISCLAIMER = (
     "Seek qualified Moroccan legal counsel before relying on a document."
 )
 LANGUAGES = ("en", "fr", "ar")
+CHECKLIST_QUESTIONS = {
+    "website": [
+        {"id": "operator-and-audience", "topic": "business-context", "question": "Which entity operates the site, and where are the operator and intended users located?"},
+        {"id": "data-and-purpose", "topic": "data-handling", "question": "What information is collected, for what purposes, and which systems or people can access it?"},
+        {"id": "cookies-and-analytics", "topic": "tracking", "question": "Which cookies, analytics, advertising, or other tracking functions are enabled?"},
+        {"id": "external-providers", "topic": "third-parties", "question": "Which hosting, payment, communication, analytics, or support providers may receive or access information?"},
+        {"id": "customer-terms", "topic": "contracts", "question": "What is offered, and which price, cancellation, support, or other customer terms are shown?"},
+    ],
+    "mobile_app": [
+        {"id": "operator-and-audience", "topic": "business-context", "question": "Which entity operates the app, and where are the operator and intended users located?"},
+        {"id": "data-and-purpose", "topic": "data-handling", "question": "What information is collected, for what purposes, and which systems or people can access it?"},
+        {"id": "device-permissions", "topic": "device-access", "question": "Which device permissions and sensors does the app request, and which features use them?"},
+        {"id": "tracking-and-analytics", "topic": "tracking", "question": "Which analytics, advertising, crash-reporting, or attribution libraries are included?"},
+        {"id": "external-providers", "topic": "third-parties", "question": "Which hosting, messaging, payment, or other providers may receive or access information?"},
+    ],
+    "saas": [
+        {"id": "operator-and-customer", "topic": "business-context", "question": "Which entity operates the service, who are its customer types, and where are they located?"},
+        {"id": "customer-data-and-roles", "topic": "data-handling", "question": "What customer and end-user information is stored, and who determines its purposes and uses?"},
+        {"id": "provider-chain", "topic": "third-parties", "question": "Which hosting, support, analytics, or other providers can access customer information?"},
+        {"id": "retention-and-exit", "topic": "retention", "question": "How are customer data, backups, and account records handled during service use and after termination?"},
+        {"id": "security-operations", "topic": "security", "question": "How are access, security events, incident handling, and customer communications managed?"},
+    ],
+    "marketplace": [
+        {"id": "platform-roles", "topic": "business-context", "question": "What roles do the platform, sellers, buyers, and payment providers each perform?"},
+        {"id": "onboarding-and-data", "topic": "data-handling", "question": "What seller and buyer information is collected during onboarding and transactions?"},
+        {"id": "fees-and-refunds", "topic": "commercial-terms", "question": "How are prices, platform fees, cancellations, refunds, and payouts presented and handled?"},
+        {"id": "content-and-disputes", "topic": "content-and-disputes", "question": "How are listings, user submissions, complaints, and transaction disputes handled?"},
+        {"id": "external-providers", "topic": "third-parties", "question": "Which payment, identity, hosting, messaging, or support providers receive platform information?"},
+    ],
+    "employer": [
+        {"id": "workforce-and-locations", "topic": "employment-context", "question": "Which worker and contractor groups are involved, and where do they work?"},
+        {"id": "worker-records", "topic": "data-handling", "question": "What worker information is collected, for which operational purposes, and who can access it?"},
+        {"id": "workplace-systems", "topic": "systems-and-monitoring", "question": "Which HR, payroll, scheduling, access-control, or workplace-monitoring systems are used?"},
+        {"id": "retention-and-providers", "topic": "retention", "question": "How are worker records retained, deleted, and shared with payroll or other service providers?"},
+        {"id": "work-arrangements", "topic": "contracts", "question": "Which work arrangements, policies, and compensation terms need review for the intended roles?"},
+    ],
+    "other": [
+        {"id": "operator-and-audience", "topic": "business-context", "question": "Which entity operates the product, and where are the operator and intended users located?"},
+        {"id": "data-and-purpose", "topic": "data-handling", "question": "What information is collected, for what purposes, and which systems or people can access it?"},
+        {"id": "external-providers", "topic": "third-parties", "question": "Which external providers receive information or perform services for the product?"},
+        {"id": "contracts-and-content", "topic": "contracts", "question": "What products, services, user submissions, or commercial terms should counsel understand?"},
+        {"id": "security-and-retention", "topic": "security", "question": "How are access, retention, deletion, and security events handled?"},
+    ],
+}
+APP_TYPES = tuple(CHECKLIST_QUESTIONS)
 
 
 def packages():
@@ -643,6 +688,20 @@ def call(name, args):
             "disclaimer": "Topics reflect the current local source map and are not a complete taxonomy or statement of legal coverage.",
         }
 
+    if name == "get_checklist":
+        if set(args) != {"app_type"}: raise ValueError("get_checklist requires only app_type")
+        app_type = args["app_type"]
+        if not isinstance(app_type, str) or app_type not in CHECKLIST_QUESTIONS:
+            raise ValueError(f"app_type must be one of: {', '.join(APP_TYPES)}")
+        return {
+            "app_type": app_type,
+            "questions": CHECKLIST_QUESTIONS[app_type],
+            "disclaimer": (
+                "These are preliminary fact-gathering questions for discussion with qualified Moroccan counsel. "
+                "They are not a complete checklist, legal advice, a compliance score, or a conclusion about applicable law."
+            ),
+        }
+
     if name == "export_findings":
         if set(args) != {"document"}: raise ValueError("export_findings requires only a document")
         document = args["document"]
@@ -682,6 +741,16 @@ TOOLS = [
         "name": "list_legal_topics",
         "description": "List topic IDs in the local source map and their source-record counts. The taxonomy is not complete and does not imply legal coverage.",
         "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
+    },
+    {
+        "name": "get_checklist",
+        "description": "Return preliminary fact-gathering questions for counsel based on a coarse application type. This is not legal advice, a compliance score, or a conclusion about applicable law.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {"app_type": {"type": "string", "enum": list(APP_TYPES)}},
+            "required": ["app_type"],
+            "additionalProperties": False,
+        },
     },
     {
         "name": "list_templates",
