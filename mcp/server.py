@@ -138,6 +138,24 @@ def validate_findings(document):
     errors = []
     _validate_schema_node(document, schema, schema, "$", errors)
     known_controls = {control["id"] for control in taxonomy["controls"]}
+    sensitive = re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
+
+    def text_values(value, path="$", found=None):
+        if found is None:
+            found = []
+        if isinstance(value, str):
+            found.append((path, value))
+        elif isinstance(value, list):
+            for index, item in enumerate(value):
+                text_values(item, f"{path}[{index}]", found)
+        elif isinstance(value, dict):
+            for key, item in value.items():
+                text_values(item, f"{path}.{key}", found)
+        return found
+
+    for path, text in text_values(document):
+        if sensitive.search(text):
+            errors.append(f"{path} appears to contain a credential, token, or direct email identifier")
     if isinstance(document, dict):
         finding_ids = set()
         findings = document.get("findings", [])
@@ -153,11 +171,6 @@ def validate_findings(document):
             if finding.get("finding_type") == "technical_observation" and finding.get("legal_question") is not None: errors.append(f"$.findings[{index}].legal_question must be null for a technical observation")
             for control in finding.get("suggested_controls", []):
                 if control not in known_controls: errors.append(f"$.findings[{index}] uses unknown control: {control}")
-            texts = [finding.get("description"), finding.get("legal_question")]
-            texts.extend(item.get("summary") for item in finding.get("evidence", []) if isinstance(item, dict))
-            sensitive = re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
-            if any(isinstance(text, str) and sensitive.search(text) for text in texts):
-                errors.append(f"$.findings[{index}] appears to contain a credential, token, or direct email identifier")
     return errors
 
 

@@ -170,6 +170,16 @@ class MCPTests(unittest.TestCase):
         errors = server.validate_findings(document)
         self.assertTrue(any("priority_basis" in error for error in errors))
         self.assertTrue(any("credential, token, or direct email" in error for error in errors))
+        sensitive_path = json.loads(json.dumps(document))
+        sensitive_path["findings"][0]["description"] = "A handler writes a field to a log."
+        sensitive_path["findings"][0]["evidence"] = [{
+            "summary": "The handler writes the field.",
+            "source_reference": {"kind": "repository_file", "path": "src/handler.py", "line_start": 1, "line_end": 1, "content_digest": None},
+            "verification_status": "verified",
+        }]
+        sensitive_path["findings"][0]["evidence"][0]["source_reference"]["path"] = "private/alice@example.org.log"
+        path_errors = server.validate_findings(sensitive_path)
+        self.assertTrue(any("$.findings[0].evidence[0].source_reference.path" in error for error in path_errors))
 
 
 if __name__ == "__main__":

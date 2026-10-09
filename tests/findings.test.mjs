@@ -48,3 +48,11 @@ test('findings validator returns schema errors for a non-array findings field', 
   const errors = await validateFindings({ ...document, findings: null });
   assert.ok(errors.some((item) => item.includes('must be array')));
 });
+
+test('findings reject sensitive identifiers in references and metadata fields', async () => {
+  const unsafe = structuredClone(document);
+  unsafe.findings[0].description = 'A handler writes a field to a log.';
+  unsafe.findings[0].evidence[0].source_reference.path = 'private/alice@example.org.log';
+  const errors = await validateFindings(unsafe);
+  assert.ok(errors.some((item) => item.includes('$.findings[0].evidence[0].source_reference.path')));
+});

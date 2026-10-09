@@ -6,6 +6,16 @@ import { validateJsonSchemaValue } from './schema-validator.mjs';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const schemaPath = resolve(root, 'schemas/findings.schema.json');
 const taxonomyPath = resolve(root, 'schemas/control-taxonomy.json');
+const sensitiveText = /(?:-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b)/i;
+
+function textValues(value, path = '$', values = []) {
+  if (typeof value === 'string') values.push([path, value]);
+  else if (Array.isArray(value)) value.forEach((item, index) => textValues(item, `${path}[${index}]`, values));
+  else if (value && typeof value === 'object') {
+    for (const [key, item] of Object.entries(value)) textValues(item, `${path}.${key}`, values);
+  }
+  return values;
+}
 
 export async function findingsSpecification() {
   const schema = JSON.parse(await readFile(schemaPath, 'utf8'));
@@ -20,6 +30,9 @@ export async function validateFindings(value) {
   const { schema, taxonomy } = await findingsSpecification();
   const errors = validateJsonSchemaValue(value, schema);
   const knownControls = new Set(taxonomy.controls.map(({ id }) => id));
+  for (const [path, text] of textValues(value)) {
+    if (sensitiveText.test(text)) errors.push(`${path} appears to contain a credential, token, or direct email identifier`);
+  }
   const findingIds = new Set();
   if (!Array.isArray(value?.findings)) return errors;
   value.findings.forEach((finding, index) => {
@@ -32,12 +45,6 @@ export async function validateFindings(value) {
     if (finding.finding_type === 'technical_observation' && finding.legal_question !== null) errors.push(`$.findings[${index}].legal_question must be null for a technical observation`);
     for (const control of finding.suggested_controls ?? []) {
       if (!knownControls.has(control)) errors.push(`$.findings[${index}].suggested_controls contains unknown control: ${control}`);
-    }
-    for (const [field, text] of [['description', finding.description], ['legal_question', finding.legal_question], ...((finding.evidence ?? []).map((item, itemIndex) => [`evidence[${itemIndex}].summary`, item.summary]))]) {
-      if (typeof text !== 'string') continue;
-      if (/(?:-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b)/i.test(text)) {
-        errors.push(`$.findings[${index}].${field} appears to contain a credential, token, or direct email identifier`);
-      }
     }
   });
   return errors;
