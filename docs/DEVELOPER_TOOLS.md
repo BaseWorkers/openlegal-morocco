@@ -2,6 +2,8 @@
 
 These tools read the repository's local template packages and do not make network requests.
 
+See [the content model](content-model.md) for the canonical package, source, claim, and review-record boundaries shared by these tools.
+
 ## CLI
 
 Use Node.js 22 or later:
