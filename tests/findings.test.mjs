@@ -77,6 +77,11 @@ test('findings reject duplicate identifiers even when the finding objects differ
   assert.ok(errors.some((item) => item.includes('duplicate finding_id')));
 });
 
+test('findings export requires explicit verification limitations', async () => {
+  const errors = await validateFindings({ ...document, verification_limitations: [] });
+  assert.ok(errors.some((item) => item.includes('verification_limitations')));
+});
+
 test('findings validator returns schema errors for a non-array findings field', async () => {
   const errors = await validateFindings({ ...document, findings: null });
   assert.ok(errors.some((item) => item.includes('must be array')));
