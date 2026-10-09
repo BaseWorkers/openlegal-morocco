@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "open-legal-morocco",
+  "version": "0.0.3",
+  "description": "Explore Moroccan legal-document discussion drafts and prepare evidence-linked questions for qualified counsel.",
+  "author": {
+    "name": "OpenLegal contributors"
+  },
+  "skills": "./skills/",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "OpenLegal",
+        "shortDescription": "Explore Moroccan legal drafts",
+        "longDescription": "Discover the project's Moroccan legal-document discussion drafts, recorded sources, review status, and safe counsel-preparation workflows. It does not provide legal advice or certify compliance.",
+        "developerName": "OpenLegal contributors",
+        "category": "Legal",
+        "capabilities": ["Read"],
+        "defaultPrompt": [
+          "Find a Moroccan legal-document discussion draft for this topic.",
+          "Prepare evidence-linked questions for qualified Moroccan counsel."
+        ]
+      }
+    }
+  }
+}

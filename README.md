@@ -2,26 +2,19 @@
 
 [English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)
 
-**v0.0.3 · OpenLegal npm package preview**
+**v0.1.0 · OpenLegal npm package preview**
 
-OpenLegal is an independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
+An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
 
-We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [release notes](RELEASE_NOTES.md).
+We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To offer help, open **Issues → New issue → Offer a contribution** after creating the public repository. Legal, language, research, and moderation volunteers can use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) after reading the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md). See [Contributing](CONTRIBUTING.md) and [release notes](RELEASE_NOTES.md).
 
-## Install the public CLI
+Local read-only tools are available through the [CLI, MCP server, and agent plugin](INTEGRATIONS.md).
 
-Requires Node.js 22 or later.
-
-```sh
-npm install openlegal
-npx openlegal --help
-```
-
-For a global command, use `npm install --global openlegal`. The optional `openlegal-mcp` command requires Python 3.10 or later. This release contains Morocco-focused materials only.
+Install the CLI with `npm install openlegal` and run `npx openlegal --help`. The package currently includes Morocco-focused materials only.
 
 ## Current status
 
-This v0.0.3 preview contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
+This v0.1.0 preview contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
 
 The files are working drafts. They may be incomplete, outdated, or unsuitable for a specific person, transaction, or business. The project does not certify that a business or document is legally compliant. Do not sign or rely on them without qualified Moroccan legal advice.
 
@@ -71,15 +64,3 @@ This repository also includes the project validation and export tools, automated
 - [License policy](LICENSES/README.md)
 
 Read [DISCLAIMER.md](DISCLAIMER.md) before using any material. Original legal content, research prose, and template packages are intended for CC0-1.0 ([license text](LICENSES/CC0-1.0.txt)); included schemas and tooling are intended for MIT ([license text](LICENSES/MIT.txt)). The scope map is provisional and does not clear third-party material or reviewer submissions, which remain subject to their own rights and notices. Only contribute material you have the right to share under the applicable license.
-
-## Local tools
-
-Try the [CLI and MCP smoke tests](INTEGRATIONS.md) against this checkout. Both tools are read-only; their output does not count as professional review.
-
-## Developer interoperability
-
-The project publishes a vendor-neutral, versioned findings schema and read-only export interfaces. See [the interoperability specification](docs/INTEROPERABILITY.md) for JSON and Markdown CLI exports, MCP validation, the generic control taxonomy, privacy limits, and compatibility policy.
-
-## Static catalog preview
-
-Build the local multilingual, read-only catalog with `npm run build:site`. See [site documentation](docs/SITE.md) for preview instructions and the owner-confirmed public URL requirement.

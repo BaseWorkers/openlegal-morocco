@@ -5,6 +5,7 @@ import { validateJsonSchemaValue } from './schema-validator.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const schemaPath = resolve(root, 'schemas/findings.schema.json');
+const legacySchemaPath = resolve(root, 'schemas/findings-v1.schema.json');
 const taxonomyPath = resolve(root, 'schemas/control-taxonomy.json');
 const sensitiveText = /(?:-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b)/i;
 
@@ -19,16 +20,18 @@ function textValues(value, path = '$', values = []) {
 
 export async function findingsSpecification() {
   const schema = JSON.parse(await readFile(schemaPath, 'utf8'));
+  const legacySchema = JSON.parse(await readFile(legacySchemaPath, 'utf8'));
   const taxonomy = JSON.parse(await readFile(taxonomyPath, 'utf8'));
   const schemaControls = schema.$defs.finding.properties.suggested_controls.items.enum;
   const taxonomyControls = taxonomy.controls.map(({ id }) => id);
   if (JSON.stringify(schemaControls) !== JSON.stringify(taxonomyControls)) throw new Error('Findings schema control identifiers do not match the published taxonomy');
-  return { schema, taxonomy };
+  return { schema, legacySchema, taxonomy };
 }
 
 export async function validateFindings(value) {
-  const { schema, taxonomy } = await findingsSpecification();
-  const errors = validateJsonSchemaValue(value, schema);
+  const { schema, legacySchema, taxonomy } = await findingsSpecification();
+  const selectedSchema = value?.schema_version === '1.0.0' ? legacySchema : schema;
+  const errors = validateJsonSchemaValue(value, selectedSchema);
   const knownControls = new Set(taxonomy.controls.map(({ id }) => id));
   for (const [path, text] of textValues(value)) {
     if (sensitiveText.test(text)) errors.push(`${path} appears to contain a credential, token, or direct email identifier`);
@@ -50,45 +53,35 @@ export async function validateFindings(value) {
   return errors;
 }
 
-function escapeMarkdownText(value) {
-  return String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replace(/[\r\n\u2028\u2029]+/g, ' ')
-    .replace(/([\\\x60*_{}\[\]()#+.!|~])/g, '\\$1');
-}
-
 export function renderFindingsMarkdown(document) {
-  const safe = escapeMarkdownText;
   const lines = [
     '# Structured Findings', '',
-    'Schema version: ' + safe(document.schema_version),
-    'Generated: ' + safe(document.generated_at),
-    'Source: ' + safe(document.source.tool) + ' ' + safe(document.source.version),
-    'Repository revision: ' + safe(document.repository.revision ?? 'unavailable'),
+    `Schema version: ${document.schema_version}`,
+    `Generated: ${document.generated_at}`,
+    `Source: ${document.source.tool} ${document.source.version}`,
+    `Repository revision: ${document.repository.revision ?? 'unavailable'}`,
     '',
     '> Technical priority describes remediation sequencing only. It is not a legal-risk assessment or legal conclusion.',
     '> Evidence summaries must be sanitized; this export does not contain raw evidence payloads.', '',
   ];
   for (const finding of document.findings) {
-    lines.push('## ' + safe(finding.finding_id) + ' — ' + safe(finding.finding_type), '',
-      '- Category: ' + safe(finding.category),
-      '- Technical priority: ' + safe(finding.priority),
-      '- Review: verification=' + safe(finding.review_status.verification) + '; human=' + safe(finding.review_status.human_review),
-      '- Confidence: ' + safe(finding.confidence ?? 'not measured'),
-      '- Description: ' + safe(finding.description));
-    if (finding.legal_question) lines.push('- Potential legal question: ' + safe(finding.legal_question));
+    lines.push(`## ${finding.finding_id} — ${finding.finding_type}`, '',
+      `- Category: ${finding.category}`,
+      `- Technical priority: ${finding.priority}`,
+      `- Review: verification=${finding.review_status.verification}; human=${finding.review_status.human_review}`,
+      `- Confidence: ${finding.confidence ?? 'not measured'}`,
+      `- Description: ${finding.description}`);
+    if (finding.legal_question) lines.push(`- Potential legal question: ${finding.legal_question}`);
     for (const evidence of finding.evidence) {
       const ref = evidence.source_reference;
-      const location = ref.path ? ref.path + (ref.line_start ? ':' + ref.line_start + (ref.line_end && ref.line_end !== ref.line_start ? '-' + ref.line_end : '') : '') : ref.kind;
-      lines.push('- Evidence (' + safe(evidence.verification_status) + '): ' + safe(evidence.summary) + ' [' + safe(location) + ']');
+      const location = ref.path ? `${ref.path}${ref.line_start ? `:${ref.line_start}${ref.line_end && ref.line_end !== ref.line_start ? `-${ref.line_end}` : ''}` : ''}` : ref.kind;
+      lines.push(`- Evidence (${evidence.verification_status}): ${evidence.summary} [${location}]`);
     }
-    for (const ref of finding.legal_references) lines.push('- Legal reference (' + safe(ref.verification_status) + '): ' + safe(ref.title) + (ref.pinpoint ? ', ' + safe(ref.pinpoint) : '') + (ref.uri ? ' — ' + safe(ref.uri) : ''));
-    if (finding.affected_resources.length) lines.push('- Affected resources: ' + finding.affected_resources.map(({ identifier }) => safe(identifier)).join(', '));
-    if (finding.suggested_controls.length) lines.push('- Suggested vendor-neutral controls: ' + finding.suggested_controls.map(safe).join(', '));
+    for (const ref of finding.legal_references) lines.push(`- Legal reference (${ref.verification_status}): ${ref.title}${ref.pinpoint ? `, ${ref.pinpoint}` : ''}${ref.uri ? ` — ${ref.uri}` : ''}`);
+    if (finding.affected_resources.length) lines.push(`- Affected resources: ${finding.affected_resources.map(({ identifier }) => identifier).join(', ')}`);
+    if (finding.suggested_controls.length) lines.push(`- Suggested vendor-neutral controls: ${finding.suggested_controls.join(', ')}`);
     lines.push('');
   }
-  lines.push('## Verification limitations', '', ...document.verification_limitations.map((item) => '- ' + safe(item)), '');
-  return lines.join('\n') + '\n';
+  lines.push('## Verification limitations', '', ...(document.verification_limitations.map((item) => `- ${item}`)), '');
+  return `${lines.join('\n')}\n`;
 }

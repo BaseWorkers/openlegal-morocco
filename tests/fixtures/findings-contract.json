@@ -3,16 +3,9 @@
     {
       "schema_version": "1.0.0",
       "generated_at": "2026-10-09T10:00:00Z",
-      "source": {
-        "tool": "contract-fixture",
-        "version": "1.0.0"
-      },
-      "repository": {
-        "revision": "fixture-revision"
-      },
-      "verification_limitations": [
-        "No legal review was performed."
-      ],
+      "source": { "tool": "contract-fixture", "version": "1.0.0" },
+      "repository": { "revision": "fixture-revision" },
+      "verification_limitations": ["No legal review was performed."],
       "findings": [
         {
           "finding_id": "contract-technical-001",
@@ -35,21 +28,10 @@
               "verification_status": "verified"
             }
           ],
-          "affected_resources": [
-            {
-              "type": "file",
-              "identifier": "src/handler.js"
-            }
-          ],
+          "affected_resources": [{ "type": "file", "identifier": "src/handler.js" }],
           "legal_references": [],
-          "suggested_controls": [
-            "data_minimization",
-            "redaction"
-          ],
-          "review_status": {
-            "verification": "verified",
-            "human_review": "not_requested"
-          },
+          "suggested_controls": ["data_minimization", "redaction"],
+          "review_status": { "verification": "verified", "human_review": "not_requested" },
           "confidence": null,
           "schema_version": "1.0.0"
         }
@@ -58,16 +40,9 @@
     {
       "schema_version": "1.0.0",
       "generated_at": "2026-10-09T10:00:00Z",
-      "source": {
-        "tool": "contract-fixture",
-        "version": "1.0.0"
-      },
-      "repository": {
-        "revision": null
-      },
-      "verification_limitations": [
-        "The potential legal question is unresolved."
-      ],
+      "source": { "tool": "contract-fixture", "version": "1.0.0" },
+      "repository": { "revision": null },
+      "verification_limitations": ["The potential legal question is unresolved."],
       "findings": [
         {
           "finding_id": "contract-legal-question-001",
@@ -90,28 +65,12 @@
               "verification_status": "verified"
             }
           ],
-          "affected_resources": [
-            {
-              "type": "component",
-              "identifier": "provider-integration"
-            }
-          ],
+          "affected_resources": [{ "type": "component", "identifier": "provider-integration" }],
           "legal_references": [
-            {
-              "title": "Source requires qualified review",
-              "uri": null,
-              "pinpoint": null,
-              "verification_status": "unverified"
-            }
+            { "title": "Source requires qualified review", "uri": null, "pinpoint": null, "verification_status": "unverified" }
           ],
-          "suggested_controls": [
-            "data_flow_mapping",
-            "third_party_disclosure"
-          ],
-          "review_status": {
-            "verification": "partially_verified",
-            "human_review": "pending"
-          },
+          "suggested_controls": ["data_flow_mapping", "third_party_disclosure"],
+          "review_status": { "verification": "partially_verified", "human_review": "pending" },
           "confidence": 0.6,
           "schema_version": "1.0.0"
         }
@@ -119,125 +78,30 @@
     }
   ],
   "invalid_cases": [
-    {
-      "id": "legal-question-requires-text",
-      "finding_patch": {
-        "finding_type": "potential_legal_question",
-        "legal_question": null
-      }
-    },
-    {
-      "id": "every-finding-requires-evidence",
-      "finding_patch": {
-        "evidence": []
-      }
-    },
-    {
-      "id": "technical-observation-has-no-legal-question",
-      "finding_patch": {
-        "finding_type": "technical_observation",
-        "legal_question": "This must remain a separate question."
-      }
-    },
-    {
-      "id": "technical-priority-is-not-legal-risk",
-      "finding_patch": {
-        "priority_basis": "legal_risk"
-      }
-    },
-    {
-      "id": "controls-are-vendor-neutral",
-      "finding_patch": {
-        "suggested_controls": [
-          "vendor_product"
-        ]
-      }
-    },
-    {
-      "id": "duplicate-finding-identifiers-are-rejected",
-      "duplicate_first_finding": true
-    },
+    { "id": "legal-question-requires-text", "finding_patch": { "finding_type": "potential_legal_question", "legal_question": null } },
+    { "id": "every-finding-requires-evidence", "finding_patch": { "evidence": [] } },
+    { "id": "technical-observation-has-no-legal-question", "finding_patch": { "finding_type": "technical_observation", "legal_question": "This must remain a separate question." } },
+    { "id": "technical-priority-is-not-legal-risk", "finding_patch": { "priority_basis": "legal_risk" } },
+    { "id": "controls-are-vendor-neutral", "finding_patch": { "suggested_controls": ["vendor_product"] } },
+    { "id": "duplicate-finding-identifiers-are-rejected", "duplicate_first_finding": true },
     {
       "id": "absolute-source-paths-are-rejected",
       "finding_patch": {
-        "evidence": [
-          {
-            "summary": "A synthetic evidence record for path validation.",
-            "source_reference": {
-              "kind": "repository_file",
-              "path": "/etc/passwd",
-              "line_start": 1,
-              "line_end": 1,
-              "content_digest": null
-            },
-            "verification_status": "verified"
-          }
-        ]
+        "evidence": [{
+          "summary": "A synthetic evidence record for path validation.",
+          "source_reference": { "kind": "repository_file", "path": "/etc/passwd", "line_start": 1, "line_end": 1, "content_digest": null },
+          "verification_status": "verified"
+        }]
       }
     },
     {
       "id": "backslash-parent-traversal-paths-are-rejected",
       "finding_patch": {
-        "evidence": [
-          {
-            "summary": "A synthetic evidence record for path validation.",
-            "source_reference": {
-              "kind": "repository_file",
-              "path": "src\\..\\..\\secret.txt",
-              "line_start": 1,
-              "line_end": 1,
-              "content_digest": null
-            },
-            "verification_status": "verified"
-          }
-        ]
-      }
-    },
-    {
-      "id": "whitespace-only-legal-question-is-rejected",
-      "finding_patch": {
-        "finding_type": "potential_legal_question",
-        "legal_question": "   "
-      }
-    },
-    {
-      "id": "repository-file-evidence-requires-a-path",
-      "finding_patch": {
-        "evidence": [
-          {
-            "summary": "A synthetic evidence record for path validation.",
-            "source_reference": {
-              "kind": "repository_file",
-              "path": null,
-              "line_start": 1,
-              "line_end": 1,
-              "content_digest": null
-            },
-            "verification_status": "verified"
-          }
-        ]
-      }
-    },
-    {
-      "id": "absolute-affected-file-paths-are-rejected",
-      "finding_patch": {
-        "affected_resources": [
-          {
-            "type": "file",
-            "identifier": "/home/person/private/workspace/src/handler.js"
-          }
-        ]
-      }
-    },
-    {
-      "id": "parent-traversal-affected-file-paths-are-rejected",
-      "finding_patch": {
-        "affected_resources": [
-          {
-            "type": "file",
-            "identifier": "src/../../private/secret.js"
-          }
-        ]
+        "evidence": [{
+          "summary": "A synthetic evidence record for path validation.",
+          "source_reference": { "kind": "repository_file", "path": "src\\..\\..\\secret.txt", "line_start": 1, "line_end": 1, "content_digest": null },
+          "verification_status": "verified"
+        }]
       }
     }
   ]

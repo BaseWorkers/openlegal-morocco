@@ -1,0 +1,6 @@
+{
+  "name": "open-legal-morocco",
+  "version": "0.0.3",
+  "description": "Discover Moroccan legal-document discussion drafts and prepare evidence-linked questions for qualified counsel.",
+  "skills": "./skills/"
+}

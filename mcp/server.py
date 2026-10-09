@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PROJECT_VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]
 TEMPLATES = ROOT / "templates"
 FINDINGS_SCHEMA = ROOT / "schemas" / "findings.schema.json"
+FINDINGS_V1_SCHEMA = ROOT / "schemas" / "findings-v1.schema.json"
 CONTROL_TAXONOMY = ROOT / "schemas" / "control-taxonomy.json"
 SOURCE_REGISTRY = ROOT / "sources" / "registry.yaml"
 OFFICIAL_SOURCE_MAP = ROOT / "sources" / "official-morocco.yaml"
@@ -24,7 +25,7 @@ AUTHORIZED_REVIEWERS = ROOT / "reviews" / "authorized-reviewers.yaml"
 REVIEW_RECORD_SCHEMA = ROOT / "schemas" / "review.schema.json"
 AUTHORIZED_REVIEWERS_SCHEMA = ROOT / "schemas" / "authorized-reviewers.schema.json"
 DISCLAIMER = (
-    "OpenLegal's Morocco-focused materials are unverified discussion drafts, not legal advice. "
+    "OpenLegal materials in this package are Morocco-focused, unverified discussion drafts, not legal advice. "
     "Automated results do not certify Moroccan legal compliance. "
     "Seek qualified Moroccan legal counsel before relying on a document."
 )
@@ -378,13 +379,6 @@ def _matches_type(value, expected):
 
 
 def _validate_schema_node(value, schema, root_schema, path, errors):
-    for branch in schema.get("allOf", []):
-        _validate_schema_node(value, branch, root_schema, path, errors)
-    if "if" in schema:
-        condition_errors = []
-        _validate_schema_node(value, schema["if"], root_schema, path, condition_errors)
-        if not condition_errors and "then" in schema:
-            _validate_schema_node(value, schema["then"], root_schema, path, errors)
     if "$ref" in schema:
         target = root_schema
         for part in schema["$ref"].removeprefix("#/ ").replace("#/", "").split("/"):
@@ -431,13 +425,10 @@ def _validate_schema_node(value, schema, root_schema, path, errors):
 
 
 def validate_findings(document):
-    schema = json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8"))
+    schema_path = FINDINGS_V1_SCHEMA if isinstance(document, dict) and document.get("schema_version") == "1.0.0" else FINDINGS_SCHEMA
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
     taxonomy = json.loads(CONTROL_TAXONOMY.read_text(encoding="utf-8"))
     errors = []
-    schema_controls = schema.get("$defs", {}).get("finding", {}).get("properties", {}).get("suggested_controls", {}).get("items", {}).get("enum", [])
-    taxonomy_controls = [control.get("id") for control in taxonomy.get("controls", []) if isinstance(control, dict)]
-    if schema_controls != taxonomy_controls:
-        errors.append("Findings schema control identifiers do not match the published taxonomy")
     _validate_schema_node(document, schema, schema, "$", errors)
     known_controls = {control["id"] for control in taxonomy["controls"]}
     sensitive = re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I)
@@ -469,6 +460,8 @@ def validate_findings(document):
             if isinstance(finding_id, str):
                 if finding_id in finding_ids: errors.append(f"$.findings[{index}].finding_id is a duplicate finding_id")
                 finding_ids.add(finding_id)
+            if finding.get("finding_type") == "potential_legal_question" and (not isinstance(finding.get("legal_question"), str) or not finding["legal_question"].strip()): errors.append(f"$.findings[{index}].legal_question is required for a potential legal question")
+            if finding.get("finding_type") == "technical_observation" and finding.get("legal_question") is not None: errors.append(f"$.findings[{index}].legal_question must be null for a technical observation")
             for control in finding.get("suggested_controls", []):
                 if control not in known_controls: errors.append(f"$.findings[{index}] uses unknown control: {control}")
     return errors
@@ -640,9 +633,42 @@ def call(name, args):
         if args: raise ValueError("Unsupported get_findings_spec argument")
         return {
             "schema": json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8")),
+            "legacy_schema": json.loads(FINDINGS_V1_SCHEMA.read_text(encoding="utf-8")),
             "taxonomy": json.loads(CONTROL_TAXONOMY.read_text(encoding="utf-8")),
             "disclaimer": "Technical priority is not a legal-risk rating. The specification does not certify legal compliance.",
         }
+
+    if name == "scan_repository":
+        if set(args) - {"repository_path", "language"} or "repository_path" not in args:
+            raise ValueError("scan_repository requires repository_path and accepts optional language")
+        repository_path = args["repository_path"]
+        language = args.get("language", "en")
+        if not isinstance(repository_path, str) or not repository_path.strip() or len(repository_path) > 4096:
+            raise ValueError("repository_path must be a non-empty path of at most 4096 characters")
+        if language not in LANGUAGES:
+            raise ValueError("language must be en, fr, or ar")
+        supplied_path = Path(repository_path).expanduser()
+        if supplied_path.is_symlink():
+            raise ValueError("repository_path must not be a symbolic link")
+        resolved_path = supplied_path.resolve(strict=True)
+        if not resolved_path.is_dir():
+            raise ValueError("repository_path must be an existing directory")
+        node = shutil.which("node")
+        if not node:
+            raise ValueError("Node.js is required to run the local repository scanner")
+        try:
+            completed = subprocess.run(
+                [node, str(ROOT / "scripts" / "openlegal.mjs"), "scan", str(resolved_path), "--format", "json", "--language", language],
+                cwd=ROOT, capture_output=True, text=True, timeout=90, check=False,
+            )
+        except subprocess.TimeoutExpired as exc:
+            raise ValueError("Repository scan exceeded the 90 second limit") from exc
+        if completed.returncode:
+            raise ValueError("Repository scan failed: " + completed.stderr.strip()[:500])
+        try:
+            return json.loads(completed.stdout)
+        except json.JSONDecodeError as exc:
+            raise ValueError("Repository scanner returned invalid JSON") from exc
 
     if name == "search_legal_sources":
         if set(args) - {"query", "topic", "source_type", "limit"}:
@@ -726,6 +752,15 @@ def call(name, args):
 
 
 TOOLS = [
+    {
+        "name": "scan_repository",
+        "description": "Run the bounded, local-only Node.js/TypeScript static scan. Requires an explicit repository path. Returns technical indicators and discussion questions, never legal advice or a compliance decision.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {"repository_path": {"type": "string", "minLength": 1, "maxLength": 4096}, "language": {"type": "string", "enum": list(LANGUAGES)}},
+            "required": ["repository_path"], "additionalProperties": False,
+        },
+    },
     {
         "name": "get_findings_spec",
         "description": "Read the versioned findings JSON Schema and vendor-neutral control taxonomy.",
@@ -851,7 +886,12 @@ def response(request, session=None):
         if session.get("protocolVersion") == STRUCTURED_OUTPUT_PROTOCOL:
             for tool in tools:
                 if tool["name"] == "export_findings":
-                    tool["outputSchema"] = json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8"))
+                    tool["outputSchema"] = {
+                        "oneOf": [
+                            json.loads(FINDINGS_SCHEMA.read_text(encoding="utf-8")),
+                            json.loads(FINDINGS_V1_SCHEMA.read_text(encoding="utf-8")),
+                        ]
+                    }
         return {"tools": tools}
     if method == "tools/call":
         params = request.get("params")

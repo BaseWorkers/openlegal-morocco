@@ -15,7 +15,8 @@ async function writeJson(path, value) {
   await writeFile(path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
-export async function buildStaticApi({ outputDirectory = resolve(root, 'dist/api/v1'), repositoryRef = process.env.GITHUB_SHA || 'working-tree' } = {}) {
+export async function buildStaticApi({ outputDirectory = resolve(root, 'dist/api/v1'), versionedSchemaDirectory, repositoryRef = process.env.GITHUB_SHA || 'working-tree' } = {}) {
+  versionedSchemaDirectory ??= resolve(dirname(outputDirectory), 'v2');
   const catalog = await loadCatalog(root);
   const registry = JSON.parse(await readFile(resolve(root, 'sources/registry.yaml'), 'utf8'));
   const registryById = new Map(registry.sources.map((source) => [source.id, source]));
@@ -36,8 +37,10 @@ export async function buildStaticApi({ outputDirectory = resolve(root, 'dist/api
     template_sha256: Object.fromEntries(await Promise.all(template.metadata.languages.map(async (language) => [language, sha256(await loadTemplateContent(template, language))]))),
   })));
   await writeJson(resolve(outputDirectory, 'manifest.json'), manifest);
-  await writeJson(resolve(outputDirectory, 'findings.schema.json'), JSON.parse(await readFile(resolve(root, 'schemas/findings.schema.json'), 'utf8')));
+  await writeJson(resolve(outputDirectory, 'findings.schema.json'), JSON.parse(await readFile(resolve(root, 'schemas/findings-v1.schema.json'), 'utf8')));
   await writeJson(resolve(outputDirectory, 'control-taxonomy.json'), JSON.parse(await readFile(resolve(root, 'schemas/control-taxonomy.json'), 'utf8')));
+  await writeJson(resolve(versionedSchemaDirectory, 'findings.schema.json'), JSON.parse(await readFile(resolve(root, 'schemas/findings.schema.json'), 'utf8')));
+  await writeJson(resolve(versionedSchemaDirectory, 'control-taxonomy.json'), JSON.parse(await readFile(resolve(root, 'schemas/control-taxonomy.json'), 'utf8')));
   await writeJson(resolve(outputDirectory, 'templates.json'), { data: index, provenance: { repository_ref: repositoryRef }, disclaimer: draftDisclaimer });
 
   for (const template of catalog) {

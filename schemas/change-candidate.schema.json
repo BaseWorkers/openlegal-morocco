@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/BaseWorkers/openlegal-morocco/schemas/change-candidate/1.0.0",
-  "title": "Open Legal Morocco Source Change Candidate",
+  "title": "OpenLegal Source Change Candidate",
   "description": "A hash-only signal that a locally supplied source copy differs from a prior digest. It is not a legal conclusion.",
   "type": "object",
   "additionalProperties": false,

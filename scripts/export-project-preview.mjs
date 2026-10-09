@@ -1,4 +1,4 @@
-import { access, lstat, mkdir, readFile, readdir, realpath, writeFile } from 'node:fs/promises';
+import { access, lstat, mkdir, readFile, readdir, realpath, rm, writeFile } from 'node:fs/promises';
 import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isInternalMarkdownDocument } from './project-export-policy.mjs';
@@ -7,6 +7,17 @@ const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const projectVersion = JSON.parse(await readFile(join(repositoryRoot, 'package.json'), 'utf8')).version;
 const outputArgument = process.argv[2];
 const previewFlag = process.argv.includes('--preview');
+const approvedIntegrationMarkdown = new Set([
+  'INTEGRATIONS.md',
+  'docs/REVIEWER_ONBOARDING.md',
+  'docs/INTEROPERABILITY.md',
+  'docs/CHANGE_TRACKER.md',
+  'mcp/README.md',
+  'skills/openlegal-morocco/SKILL.md',
+  'skills/openlegal-morocco/evaluation/README.md',
+  'codex-marketplace/plugins/open-legal-morocco/README.md',
+  'codex-marketplace/plugins/open-legal-morocco/skills/openlegal-morocco/SKILL.md'
+]);
 
 function usage() {
   throw new Error('Usage: npm run export:project-preview -- <new-output-directory> --preview');
@@ -49,7 +60,8 @@ async function assertNoInternalMarkdown(sources) {
     if (info.isFile() && source.toLowerCase().endsWith('.md')) {
       const filename = source.split(sep).at(-1);
       const contents = await readFile(source, 'utf8');
-      if (isInternalMarkdownDocument(filename, contents) && relative(repositoryRoot, source).split(sep).join('/') !== 'INTEGRATIONS.md') {
+      const relativePath = relative(repositoryRoot, source).split(sep).join('/');
+      if (!approvedIntegrationMarkdown.has(relativePath) && isInternalMarkdownDocument(filename, contents)) {
         throw new Error(`Refusing project-only export because Markdown content contains an internal planning or build reference: ${source}`);
       }
     }
@@ -65,10 +77,14 @@ async function writeProjectLicenseFiles(outputPath) {
   const sourceScopes = JSON.parse(await readFile(join(repositoryRoot, 'LICENSES/scopes.json'), 'utf8'));
   const allowedPatterns = new Set([
     'templates/**', 'clauses/**', 'research/**', 'sources/**', 'reviews/**',
-    'README.md', 'README.fr.md', 'README.ar.md', 'RELEASE_NOTES.md', 'INTEGRATIONS.md', 'CODE_OF_CONDUCT.md', 'DISCLAIMER.md', 'GOVERNANCE.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md',
-    'SECURITY.md', 'CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/**',
+    'README.md', 'README.fr.md', 'README.ar.md', 'INTEGRATIONS.md', 'RELEASE_NOTES.md', 'CODE_OF_CONDUCT.md', 'DISCLAIMER.md', 'GOVERNANCE.md', 'REVIEWING.md',
+    'SECURITY.md', 'CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/**', '.github/actions/**',
     '.github/PULL_REQUEST_TEMPLATE.md', 'LICENSES/README.md', 'LICENSES/scopes.json',
-    'scripts/**', 'schemas/**', 'tests/**', 'docs/**', '.github/workflows/**',
+    'scripts/**', 'schemas/**', 'tests/**', '.github/workflows/**', 'examples/**', 'change-tracker/**', 'mcp/**', 'skills/**', 'docs/**',
+    'codex-marketplace/.agents/plugins/marketplace.json',
+    'codex-marketplace/plugins/open-legal-morocco/README.md', 'codex-marketplace/plugins/open-legal-morocco/plugin.json',
+    'codex-marketplace/plugins/open-legal-morocco/.codex-plugin/plugin.json',
+    'codex-marketplace/plugins/open-legal-morocco/skills/**', 'codex-marketplace/plugins/open-legal-morocco/schemas/**',
     'package.json', '.gitignore', 'tests/fixtures/template-package/**',
     'LICENSES/CC0-1.0.txt', 'LICENSES/MIT.txt'
   ]);
@@ -86,7 +102,7 @@ async function writeProjectLicenseFiles(outputPath) {
     'The project uses separate intended licenses for original legal content and software:',
     '',
     '- Project-authored templates, clauses, research prose, source records, and review metadata: CC0-1.0.',
-    '- Project-authored scripts, schemas, tests, workflow files, package metadata, and repository configuration: MIT.',
+    '- Project-authored scripts, schemas, tests, examples, MCP server, agent-plugin manifests, local source-change tracking tools, workflow files, package metadata, and repository configuration: MIT.',
     '- The included CC0-1.0 and MIT license texts retain their own notices.',
     '',
     'The path map in [`scopes.json`](scopes.json) describes intended scope only. It does not establish ownership, clear third-party rights, or apply the project license to material with separate rights or notices. Reviewer-authored submissions retain their own rights unless an authorized agreement states otherwise. Template source declarations and attribution requirements remain in effect.',
@@ -115,22 +131,11 @@ function makeReadme(packages) {
     '',
     'An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.',
     '',
-    'We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To apply as a legal reviewer, language reviewer, research reviewer, or community moderator, use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) and read the [onboarding guide](docs/REVIEWER_ONBOARDING.md). The form and replies are public; do not submit private documents or contact details. For other contributions, open **Issues → New issue → Offer a contribution**. See [Contributing](CONTRIBUTING.md) and [release notes](RELEASE_NOTES.md).',
+    'We welcome Moroccan lawyers and legal researchers, Arabic/French/English translators, founders, and software contributors to help review, improve, translate, or adapt the project. To offer help, open **Issues → New issue → Offer a contribution** after creating the public repository. Legal, language, research, and moderation volunteers can use the [reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) after reading the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md). See [Contributing](CONTRIBUTING.md) and [release notes](RELEASE_NOTES.md).',
     '',
-    '## Local tools',
+    'Local read-only tools are available through the [CLI, MCP server, and agent plugin](INTEGRATIONS.md).',
     '',
-    'Try the [CLI and MCP smoke tests](INTEGRATIONS.md) against this local checkout. Both tools are read-only; their output does not count as professional review.',
-    '',
-    '## Install the public CLI',
-    '',
-    'Requires Node.js 22 or later.',
-    '',
-    '```sh',
-    'npm install openlegal',
-    'npx openlegal --help',
-    '```',
-    '',
-    'For the MCP server, install the package and launch `openlegal-mcp`; Python 3.10 or later is required. This release contains Morocco-focused materials only.',
+    'Install the CLI with `npm install openlegal` and run `npx openlegal --help`. The package currently includes Morocco-focused materials only.',
     '',
     '## Current status',
     '',
@@ -171,7 +176,6 @@ function makeReadme(packages) {
     '- [Code of Conduct](CODE_OF_CONDUCT.md)',
     '- [Security policy](SECURITY.md)',
     '- [License policy](LICENSES/README.md)',
-    '- [CLI and MCP testing](INTEGRATIONS.md)',
     '',
     'Read [DISCLAIMER.md](DISCLAIMER.md) before using any material. Original legal content, research prose, and template packages are intended for CC0-1.0 ([license text](LICENSES/CC0-1.0.txt)); included schemas and tooling are intended for MIT ([license text](LICENSES/MIT.txt)). The scope map is provisional and does not clear third-party material or reviewer submissions, which remain subject to their own rights and notices. Only contribute material you have the right to share under the applicable license.',
     ''
@@ -193,7 +197,7 @@ function makeFrenchReadme(packages) {
     '',
     'Les documents peuvent être incomplets, dépassés ou inadaptés à une situation donnée. Le projet ne certifie pas la conformité juridique d’une entreprise ou d’un document. Ces textes ne constituent pas un conseil juridique ; consultez un professionnel qualifié en droit marocain avant de vous y fier ou de les signer.',
     '',
-    'Les contributions sont les bienvenues en recherche juridique, vérification des sources, révision linguistique, accessibilité, adaptation et logiciel. Pour demander à rejoindre l’équipe de révision ou de modération, utilisez le formulaire public d’intérêt ([reviewer interest form](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml)) et consultez le [guide d’intégration](docs/REVIEWER_ONBOARDING.md). Le formulaire et les réponses sont publics ; ne publiez pas de documents privés ni de coordonnées personnelles. Pour les autres contributions, ouvrez **Issues → New issue → Offer a contribution**. Consultez [Contribuer](CONTRIBUTING.md), [Révision et retours](REVIEWING.md) et les [notes de version](RELEASE_NOTES.md).',
+    'Les contributions sont les bienvenues en recherche juridique, vérification des sources, révision linguistique, accessibilité, adaptation et logiciel. Pour proposer votre aide, ouvrez **Issues → New issue → Offer a contribution** dans le dépôt. Consultez [Contribuer](CONTRIBUTING.md), [Révision et retours](REVIEWING.md) et les [notes de version](RELEASE_NOTES.md).',
     '',
     'La carte des licences et l’examen des droits restent provisoires. Les droits et avis propres aux tiers restent applicables. Consultez la [politique de licence](LICENSES/README.md), la [gouvernance](GOVERNANCE.md) et l’[avertissement](DISCLAIMER.md).',
     '',
@@ -216,7 +220,7 @@ function makeArabicReadme(packages) {
     '',
     'قد تكون الوثائق ناقصة أو غير محدثة أو غير مناسبة لحالة معينة. ولا يشهد المشروع بأن أي شركة أو وثيقة متوافقة مع القانون. هذه النصوص لا تشكل استشارة قانونية؛ استشر مهنيا مؤهلا في القانون المغربي قبل الاعتماد عليها أو توقيعها.',
     '',
-    'نرحب بالمساهمات في البحث القانوني والتحقق من المصادر والمراجعة اللغوية وإمكانية الوصول والتكييف والبرمجيات. للتقدم كمراجع قانوني أو لغوي أو مشرف مجتمعي، استخدم [استمارة إبداء الاهتمام العامة](https://github.com/BaseWorkers/openlegal-morocco/issues/new?template=reviewer-interest.yml) واطلع على [دليل الانضمام](docs/REVIEWER_ONBOARDING.md). الاستمارة والردود علنية؛ لا تنشر وثائق خاصة أو بيانات اتصال شخصية. للمساهمات الأخرى، افتح **Issues → New issue → Offer a contribution**. راجع أدلة [المساهمة](CONTRIBUTING.md) و[المراجعة وإبداء الملاحظات](REVIEWING.md) و[ملاحظات الإصدار](RELEASE_NOTES.md).',
+    'نرحب بالمساهمات في البحث القانوني والتحقق من المصادر والمراجعة اللغوية وإمكانية الوصول والتكييف والبرمجيات. لعرض المساعدة، افتح **Issues → New issue → Offer a contribution** في المستودع. راجع أدلة [المساهمة](CONTRIBUTING.md) و[المراجعة وإبداء الملاحظات](REVIEWING.md) و[ملاحظات الإصدار](RELEASE_NOTES.md).',
     '',
     'ما زال توزيع التراخيص ومراجعة الحقوق مؤقتين. وتظل الحقوق والإشعارات الخاصة بمواد الغير سارية. راجع [سياسة الترخيص](LICENSES/README.md) و[الحوكمة](GOVERNANCE.md) و[إخلاء المسؤولية](DISCLAIMER.md).',
     '',
@@ -291,14 +295,23 @@ async function main() {
       'LICENSES/CC0-1.0.txt',
       'LICENSES/MIT.txt',
       'package.json',
+      'INTEGRATIONS.md',
       '.gitignore',
       'scripts',
+      'change-tracker',
+      'examples',
+      'docs/INTEROPERABILITY.md',
+      'docs/CHANGE_TRACKER.md',
+      'docs/REVIEWER_ONBOARDING.md',
+      '.github/actions/openlegal-scan',
+      'mcp',
+      'skills',
+      'codex-marketplace',
       'tests',
       'CODE_OF_CONDUCT.md',
-      'RELEASE_NOTES.md', 'INTEGRATIONS.md',
+      'RELEASE_NOTES.md',
       'CONTRIBUTING.md',
       'REVIEWING.md',
-      'docs/REVIEWER_ONBOARDING.md',
       'GOVERNANCE.md',
       'SECURITY.md',
       '.github/ISSUE_TEMPLATE',
@@ -326,9 +339,19 @@ async function main() {
   ]) {
     await copyTree(join(repositoryRoot, path), join(canonicalOutputPath, path), { skipReadmes: path === 'research/morocco' || path === 'schemas' });
   }
-  for (const path of ['package.json', '.gitignore', 'scripts', 'tests', 'CODE_OF_CONDUCT.md', 'RELEASE_NOTES.md', 'INTEGRATIONS.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'docs/REVIEWER_ONBOARDING.md', 'GOVERNANCE.md', 'SECURITY.md', '.github/ISSUE_TEMPLATE', '.github/PULL_REQUEST_TEMPLATE.md', '.github/workflows/ci.yml']) {
+  for (const path of ['.gitignore', 'INTEGRATIONS.md', 'scripts', 'change-tracker', 'examples', 'mcp', 'skills', 'codex-marketplace', 'tests', 'CODE_OF_CONDUCT.md', 'RELEASE_NOTES.md', 'CONTRIBUTING.md', 'REVIEWING.md', 'GOVERNANCE.md', 'SECURITY.md', '.github/ISSUE_TEMPLATE', '.github/actions/openlegal-scan', '.github/PULL_REQUEST_TEMPLATE.md', '.github/workflows/ci.yml']) {
     await copyTree(join(repositoryRoot, path), join(canonicalOutputPath, path));
   }
+  await copyTree(join(repositoryRoot, 'docs/INTEROPERABILITY.md'), join(canonicalOutputPath, 'docs/INTEROPERABILITY.md'));
+  await copyTree(join(repositoryRoot, 'docs/CHANGE_TRACKER.md'), join(canonicalOutputPath, 'docs/CHANGE_TRACKER.md'));
+  await copyTree(join(repositoryRoot, 'docs/REVIEWER_ONBOARDING.md'), join(canonicalOutputPath, 'docs/REVIEWER_ONBOARDING.md'));
+  const exportedPackage = JSON.parse(await readFile(join(repositoryRoot, 'package.json'), 'utf8'));
+  delete exportedPackage.scripts['build:site'];
+  delete exportedPackage.scripts['export:project-preview'];
+  await writeFile(join(canonicalOutputPath, 'package.json'), `${JSON.stringify(exportedPackage, null, 2)}\n`, { flag: 'wx' });
+  await rm(join(canonicalOutputPath, 'tests/site.test.mjs'), { force: true });
+  const exportedWorkflow = await readFile(join(canonicalOutputPath, '.github/workflows/ci.yml'), 'utf8');
+  await writeFile(join(canonicalOutputPath, '.github/workflows/ci.yml'), exportedWorkflow.replace(/^\s*- run: npm run build:site\n/gm, ''), { flag: 'w' });
   await writeProjectLicenseFiles(canonicalOutputPath);
   const intellectualPropertyNote = join(canonicalOutputPath, 'research/morocco/intellectual-property.md');
   const intellectualPropertyText = await readFile(intellectualPropertyNote, 'utf8');

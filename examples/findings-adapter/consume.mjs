@@ -4,18 +4,6 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-const sensitiveText = /(?:-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bBearer\s+[A-Za-z0-9._~+/-]{12,}|\bAKIA[0-9A-Z]{16}\b|eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b)/i;
-
-function assertNoSensitiveText(value, path = '$') {
-  if (typeof value === 'string') {
-    if (sensitiveText.test(value)) throw new Error(path + ' appears to contain a credential, token, or direct email identifier');
-  } else if (Array.isArray(value)) {
-    value.forEach((item, index) => assertNoSensitiveText(item, path + '[' + index + ']'));
-  } else if (value && typeof value === 'object') {
-    for (const [key, item] of Object.entries(value)) assertNoSensitiveText(item, path + '.' + key);
-  }
-}
-
 async function readJson(path, label) {
   try {
     return JSON.parse(await readFile(resolve(path), 'utf8'));
@@ -26,14 +14,7 @@ async function readJson(path, label) {
 
 function validateAdapterInputs(document, taxonomy, controlMapping) {
   if (!document || typeof document !== 'object' || Array.isArray(document)) throw new Error('Findings export must be a JSON object');
-  assertNoSensitiveText(document);
-  assertNoSensitiveText(taxonomy, '$.taxonomy');
-  assertNoSensitiveText(controlMapping, '$.control_mapping');
   if (document.schema_version !== '1.0.0') throw new Error(`Unsupported findings schema version: ${document.schema_version ?? 'missing'}`);
-  if (typeof document.generated_at !== 'string' || !document.generated_at.trim()) throw new Error('Findings export must include a generation timestamp');
-  if (!document.source || typeof document.source.tool !== 'string' || !document.source.tool.trim() || typeof document.source.version !== 'string' || !document.source.version.trim()) throw new Error('Findings export must identify its source tool and version');
-  if (!document.repository || !(document.repository.revision === null || (typeof document.repository.revision === 'string' && document.repository.revision.trim()))) throw new Error('Findings export must include its repository revision or null');
-  if (!Array.isArray(document.verification_limitations) || document.verification_limitations.length === 0 || !document.verification_limitations.every((item) => typeof item === 'string' && item.trim())) throw new Error('Findings export must include explicit verification limitations');
   if (!Array.isArray(document.findings)) throw new Error('Findings export must contain a findings array');
   if (!taxonomy || taxonomy.taxonomy_version !== '1.0.0' || !Array.isArray(taxonomy.controls)) throw new Error('Unsupported or invalid control taxonomy');
   if (!controlMapping || typeof controlMapping !== 'object' || Array.isArray(controlMapping)) throw new Error('Control mapping must be a JSON object');
@@ -77,7 +58,7 @@ export async function consumeFindings(findingsPath, taxonomyPath, mappingPath) {
     generated_at: document.generated_at,
     schema_version: document.schema_version,
     disclaimer: 'Technical priority is remediation sequencing, not legal risk. Potential legal questions remain unresolved; this adapter does not approve legal findings.',
-    validation_note: 'This example checks basic contract consistency and rejects several high-signal sensitive-text patterns; this is not complete PII or secret detection. Use an independent JSON Schema 2020-12 validator with the published schema for full contract validation.',
+    validation_note: 'This example checks version, identifier, finding-type, priority-basis, and control consistency. Use an independent JSON Schema 2020-12 validator with the published schema for full contract validation.',
     verification_limitations: document.verification_limitations,
     findings: document.findings.map((finding) => ({
       finding_id: finding.finding_id,

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://open-legal-morocco.example/schemas/template.schema.json",
-  "title": "Open Legal Morocco template metadata",
+  "title": "OpenLegal template metadata",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "slug", "title", "jurisdiction", "category", "discovery", "languages", "version", "status", "legal_review", "language_review", "language_review_records", "generator_enabled", "license", "last_updated"],

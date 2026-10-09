@@ -1,0 +1,22 @@
+{
+  "name": "open-legal-morocco",
+  "interface": {
+    "displayName": "OpenLegal"
+  },
+  "plugins": [
+    {
+      "name": "open-legal-morocco",
+      "version": "0.0.3",
+      "description": "Explore Moroccan legal-document discussion drafts and prepare evidence-linked questions for qualified counsel.",
+      "source": {
+        "source": "local",
+        "path": "./plugins/open-legal-morocco"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Legal"
+    }
+  ]
+}
