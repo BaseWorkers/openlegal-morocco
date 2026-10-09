@@ -84,9 +84,6 @@
         { "if": { "properties": { "kind": { "const": "repository_file" } }, "required": ["kind"] }, "then": { "properties": { "path": { "type": "string", "minLength": 1 } } } }
       ]
     },
-    "resource": {
-      "type": "object", "additionalProperties": false, "required": ["type", "identifier"],
-      "properties": { "type": { "enum": ["file", "service", "component", "repository"] }, "identifier": { "type": "string", "minLength": 1 } }
-    }
+    "resource": {"type":"object","additionalProperties":false,"required":["type","identifier"],"properties":{"type":{"enum":["file","service","component","repository"]},"identifier":{"type":"string","minLength":1,"description":"For file resources, use a repository-relative path. Absolute paths, backslashes, and parent-directory traversal are forbidden to avoid exporting workstation details."}},"allOf":[{"if":{"properties":{"type":{"const":"file"}},"required":["type"]},"then":{"properties":{"identifier":{"pattern":"^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).*$"}}}}]}
   }
 }
