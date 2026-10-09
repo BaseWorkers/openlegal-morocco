@@ -66,3 +66,34 @@ The example describes a technical observation only. Its priority is not a legal-
 The same conformance corpus at [`tests/fixtures/findings-contract.json`](../tests/fixtures/findings-contract.json) is exercised by both CLI and MCP validator tests. It covers valid technical observations, potential legal questions, and rejection cases for missing evidence or legal-question text, legal-risk priority framing, non-taxonomy controls, and duplicate identifiers.
 
 For local, hash-only source comparison, see [Legal source change candidates](CHANGE_TRACKER.md). Candidate records remain unverified and do not represent a legal change.
+
+## Read-only static API
+
+`npm run build:api` generates these files from the same template catalogue and source registry used by the CLI and MCP server:
+
+| Request path | Generated file | Contents |
+| --- | --- | --- |
+| `GET /api/v1/manifest.json` | `dist/api/v1/manifest.json` | API version, repository revision, template versions and recorded statuses |
+| `GET /api/v1/templates.json` | `dist/api/v1/templates.json` | Catalogue index |
+| `GET /api/v1/templates/{id}.json` | `dist/api/v1/templates/{id}.json` | Template metadata, language content, source declarations, per-language SHA-256 digests, and review status |
+| `GET /api/v1/templates/{id}/sources.json` | `dist/api/v1/templates/{id}/sources.json` | Source declarations and available source records |
+| `GET /api/v1/findings.schema.json` | `dist/api/v1/findings.schema.json` | Findings export schema v1.0.0 |
+| `GET /api/v1/control-taxonomy.json` | `dist/api/v1/control-taxonomy.json` | Vendor-neutral control identifiers |
+
+For a local smoke check without a hosted service, build and serve the generated directory with Python's standard library:
+
+```sh
+npm run build:api
+python3 -m http.server 8000 --directory dist
+```
+
+In another terminal, request the manifest, catalogue, a template, and its sources:
+
+```sh
+curl --fail --silent --show-error http://127.0.0.1:8000/api/v1/manifest.json
+curl --fail --silent --show-error http://127.0.0.1:8000/api/v1/templates.json
+curl --fail --silent --show-error http://127.0.0.1:8000/api/v1/templates/privacy-policy.json
+curl --fail --silent --show-error http://127.0.0.1:8000/api/v1/templates/privacy-policy/sources.json
+```
+
+The generator embeds the source repository revision and content digests so clients can associate records with a build and detect language-content changes. Static hosts may provide HTTP caching and validators such as ETags; the project does not require a specific host or claim a production API is deployed. Public artifacts retain their source licensing and attribution notices, report recorded review states without elevating them, and contain no private reviewer records. Consumers should cache by URL and content digest, check the API/schema version, and treat missing or unverified legal source information as unresolved.
