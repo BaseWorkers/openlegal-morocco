@@ -339,6 +339,20 @@ console.log(JSON.stringify(digests));
         with self.assertRaisesRegex(ValueError, "Invalid findings document"):
             server.call("export_findings", {"document": bad})
 
+    def test_mcp_validator_conforms_to_shared_cli_findings_contract_cases(self):
+        fixture_path = server.ROOT / "tests" / "fixtures" / "findings-contract.json"
+        corpus = json.loads(fixture_path.read_text(encoding="utf-8"))
+        for document in corpus["valid_documents"]:
+            self.assertEqual(server.validate_findings(document), [])
+            self.assertEqual(server.call("export_findings", {"document": document}), document)
+        for test_case in corpus["invalid_cases"]:
+            invalid = json.loads(json.dumps(corpus["valid_documents"][0]))
+            invalid["findings"][0].update(test_case.get("finding_patch", {}))
+            if test_case.get("duplicate_first_finding"):
+                invalid["findings"].append(json.loads(json.dumps(invalid["findings"][0])))
+            with self.subTest(case=test_case["id"]):
+                self.assertTrue(server.validate_findings(invalid))
+
     def test_findings_export_rejects_sensitive_text_and_wrong_priority_basis(self):
         document = {
             "schema_version": "1.0.0", "generated_at": "2026-10-09T10:00:00Z",
