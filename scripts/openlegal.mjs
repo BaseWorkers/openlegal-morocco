@@ -9,6 +9,7 @@ import { renderFindingsMarkdown, validateFindings } from './findings.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const usage = `Usage:
+  node scripts/openlegal.mjs --version
   node scripts/openlegal.mjs list [--category CATEGORY] [--language en|fr|ar]
   node scripts/openlegal.mjs show TEMPLATE_ID [--language en|fr|ar]
   node scripts/openlegal.mjs sources TEMPLATE_ID
@@ -43,6 +44,12 @@ function findTemplate(catalog, id) {
 async function main(args) {
   const [command, ...rest] = args;
   if (!command) throw new Error(usage);
+  if (command === '--version' || command === 'version') {
+    if (rest.length) throw new Error('version accepts no arguments');
+    const { version } = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
+    process.stdout.write(`open-legal-morocco ${version}\n`);
+    return;
+  }
   if (command === 'findings') {
     const [action, inputPath, ...optionsTokens] = rest;
     if (!['validate', 'render'].includes(action) || !inputPath || inputPath.startsWith('--')) throw new Error(findingsUsage);

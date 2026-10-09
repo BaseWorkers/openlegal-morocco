@@ -2,7 +2,7 @@
 
 [English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)
 
-**v0.0.1 · Aperçu de contribution**
+**v0.0.2 · Aperçu de contribution**
 
 Projet open source indépendant, d’intérêt public, qui aide les startups marocaines et les autres équipes opérant en ligne à repérer les questions juridiques courantes et à préparer des projets de documents à discuter avec un professionnel qualifié en droit marocain. Le projet n’a pas de but lucratif ; cela décrit son objectif sans affirmer qu’il possède un statut juridique enregistré d’organisme sans but lucratif. Les licences prévues autorisent la réutilisation, y compris commerciale, selon leurs conditions.
 
