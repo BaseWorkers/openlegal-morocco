@@ -63,7 +63,7 @@ The 1.0.0 contract on this unmerged branch is a pre-release draft and may be rev
 
 The example describes a technical observation only. Its priority is not a legal-risk score and the presence of a suggested control is not a compliance determination.
 
-`finding_id` values must be unique within each export. JSON Schema validates the individual identifier shape; the CLI and MCP validators enforce cross-finding uniqueness as a semantic constraint.
+`finding_id` is an opaque producer-assigned identifier: keep it stable when the same finding is carried into later exports, and keep it unique within each export. Do not encode secrets or personal data in identifiers. JSON Schema validates the individual identifier shape; the CLI and MCP validators enforce cross-finding uniqueness as a semantic constraint. Consumers can use the stable ID with producer/source context to track remediation across repository revisions; do not infer identity from descriptions or content hashes.
 
 The same conformance corpus at [`tests/fixtures/findings-contract.json`](../tests/fixtures/findings-contract.json) is exercised by both CLI and MCP validator tests. It covers valid technical observations, potential legal questions, and rejection cases for missing evidence or required legal-question semantics, legal-risk priority framing, non-taxonomy controls, duplicate identifiers, and unsafe source paths. A focused test also runs the published schema directly against mismatched observation/question combinations.
 
