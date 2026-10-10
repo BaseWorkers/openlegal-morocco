@@ -1,5 +1,9 @@
 name: OpenLegal advisory scan
 description: Run the local OpenLegal Node.js and TypeScript indicator scan and add an advisory report to the job summary.
+outputs:
+  report_written:
+    description: Whether a valid Markdown report was appended to this step summary.
+    value: ${{ steps.scan.outputs.report_written }}
 inputs:
   path:
     description: Repository directory to scan, relative to the workspace.
@@ -17,6 +21,7 @@ runs:
   using: composite
   steps:
     - name: Generate advisory scan report
+      id: scan
       shell: bash
       env:
         OPENLEGAL_SCAN_PATH: ${{ inputs.path }}
@@ -33,13 +38,18 @@ runs:
         fi
         node "$GITHUB_ACTION_PATH/../../../scripts/openlegal.mjs" "${args[@]}" >"$report" 2>"$error_file"
         status=$?
-        if [ "$status" -eq 0 ]; then
-          cat "$report" >> "$GITHUB_STEP_SUMMARY"
+        if [ "$status" -eq 0 ] && grep -q '^# ' "$report"; then
+          if cat "$report" >> "$GITHUB_STEP_SUMMARY"; then
+            echo 'report_written=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'report_written=false' >> "$GITHUB_OUTPUT"
+          fi
         else
           {
             echo '## OpenLegal advisory scan'
             echo
             echo 'The scan could not produce a report. This advisory action does not block the workflow.'
           } >> "$GITHUB_STEP_SUMMARY"
+          echo 'report_written=false' >> "$GITHUB_OUTPUT"
         fi
         exit 0

@@ -53,12 +53,15 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.sha }}
       - name: Exercise advisory OpenLegal Action
+        id: openlegal_scan
         uses: ./.github/actions/openlegal-scan
         with:
           path: tests/fixtures
           language: en
       - name: Verify advisory report was added to the job summary
-        run: grep -Eq '^# OpenLegal ' "$GITHUB_STEP_SUMMARY"
+        env:
+          REPORT_WRITTEN: ${{ steps.openlegal_scan.outputs.report_written }}
+        run: test "$REPORT_WRITTEN" = true
       - name: Upload prepared review packets
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
