@@ -5,7 +5,7 @@ export const ALLOWED_SOURCE_LINK_HOSTS = new Set([
   'adala.justice.gov.ma', 'anfanews.com', 'anrt.ma', 'archive.gazettes.africa',
   'bdj.mmsp.gov.ma', 'commonpaper.com', 'creativecommons.org', 'democraticac.de',
   'documentationjuridiquemarocaine.gov.ma', 'github.com', 'groups.google.com',
-  'justice.gov.ma', 'lexmaghreb.com', 'natlex.ilo.org', 'nc.directentreprise.ma',
+  'eur-lex.europa.eu', 'justice.gov.ma', 'lexmaghreb.com', 'natlex.ilo.org', 'nc.directentreprise.ma',
   'osb-alliance.de', 'propertynews.africa', 'rnesm.justice.gov.ma', 'spdx.org',
   'www.acaps.ma', 'www.chambredesconseillers.ma', 'www.chambredesrepresentants.ma',
   'www.cndp.ma', 'www.cnea.ma', 'www.cour-constitutionnelle.ma', 'www.dgssi.gov.ma',

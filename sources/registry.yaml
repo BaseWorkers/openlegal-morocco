@@ -226,6 +226,26 @@
       "reuse_scope": null
     },
     {
+      "id": "gdpr-regulation-2016-679",
+      "title": "Regulation (EU) 2016/679 (General Data Protection Regulation)",
+      "publisher": "European Union — EUR-Lex",
+      "jurisdiction": "EU",
+      "source_type": "legislation",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679",
+      "license_basis": "Official EUR-Lex legislation record used as a legal research reference; no text reproduced",
+      "date_accessed": "2026-10-10",
+      "verification_date": "2026-10-10",
+      "used_for": [
+        "Locating GDPR Article 3 for a user-confirmed territorial-scope review question"
+      ],
+      "notes": "The official EUR-Lex ELI record identifies Regulation (EU) 2016/679. This source locator does not determine whether GDPR applies to a particular organization or processing activity; Article 3 analysis and all other legal interpretations remain subject to qualified human review.",
+      "verification_status": "verified",
+      "reuse_status": "research-only",
+      "reuse_license": null,
+      "reuse_review_date": null,
+      "reuse_scope": null
+    },
+    {
       "id": "adala-law-09-08-pdf-2024",
       "title": "Loi n° 09-08 — Ministry of Justice (Adala) portal PDF",
       "publisher": "Ministry of Justice, Kingdom of Morocco",

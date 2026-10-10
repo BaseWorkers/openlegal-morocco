@@ -1,3 +1,31 @@
+# v0.1.1-next.1 — Scanner report and URL-scope fixes
+
+- Separate a heuristic technical review-readiness score from evidence-scope coverage, show the formula and deductions, and mark unrequested website scans as unscanned rather than passed.
+- Keep critical findings in a prominent report section, independent of the overall score.
+- Classify `document.cookie` and `cookieStore` as cookie-storage indicators, not as tracking by themselves; preserve specific analytics and tracker indicators.
+- Restrict homepage link discovery to same-origin privacy routes so assets such as Next.js `parse-cookie` chunks are not requested as privacy pages.
+- Include sanitized route and response reason when an actual privacy page cannot be inspected.
+- Add regression coverage for Titrit AI's sidebar cookie use, the public `/privacy` route shape, inaccessible privacy pages, score separation, and critical findings.
+
+Install the updated pre-release with `npm install openlegal@next`.
+
+---
+
+# v0.1.1-next.0 — Next.js and public-page scanner pre-release
+
+- Add local Next.js project detection and bounded scans for recognizable privacy notices, tracking indicators, and third-party integrations.
+- Add an optional HTTPS website scan for the homepage and up to four same-origin privacy-related HTML pages. Private/reserved addresses and cross-origin redirects are blocked; no JavaScript is executed and no forms or consent controls are used.
+- Add a 0–100 score for completed evidence-collection scopes. It is not a legal-risk or compliance score; no automated compliance verdict is produced.
+- Add an unresolved GDPR Article 3 scope question with an official EUR-Lex source reference; no GDPR applicability determination or reviewed rule pack is claimed.
+- Extend Findings v2 with optional assessment metadata and MA/EU finding jurisdictions; preserve v1 validation.
+- Extend MCP `scan_repository` with an optional public URL and keep CLI/MCP on the same scan engine and Findings output.
+- Allow the advisory GitHub Action to scan an explicitly supplied public HTTPS URL, write to the job summary, and never block because findings are present. CI exercises the action and checks its summary output.
+- Findings are technical indicators and questions for qualified review, not legal conclusions or compliance certification. No scanner rules have independent legal interpretation review.
+
+Install the pre-release with `npm install openlegal@next`. All fourteen template packages remain drafts; no authorized legal or language reviewers are recorded.
+
+---
+
 # v0.0.3 — OpenLegal npm package preview
 
 This release establishes OpenLegal as the public product brand and publishes an installable CLI package named `openlegal`. It adds `openlegal` and `openlegal-mcp` commands for local, read-only use. The package contains the Morocco jurisdiction pack only; additional jurisdictions are not included or implied.
@@ -53,10 +81,3 @@ The project has not finalized legal terms for accepting contributor submissions 
 Contributions are welcome in legal research, source verification, template review, translation, accessibility, and software. Start with [CONTRIBUTING.md](CONTRIBUTING.md), review the [governance policy](GOVERNANCE.md), and use the repository issue forms to suggest corrections or areas where help is needed. Do not submit personal data, confidential client material, or completed agreements.
 
 Base Workers is the founding project owner and technical maintainer. No authorized legal or language reviewers have been appointed. Public contributions may help establish review capacity; no contribution or issue changes a template's review status by itself.
-# v0.1.0 (pre-release, not yet published)
-
-- Add `openlegal scan` for bounded, local-only Node.js and TypeScript repository indicators, with Markdown/JSON output and English, French, and Arabic report text.
-- Add Findings contract v2.0.0 with explicit rule IDs and Moroccan jurisdiction; keep v1 exports valid and publish both schema versions in the static API build.
-- Add MCP `scan_repository`, which requires an explicit path and invokes the same CLI scanner.
-- Add an advisory GitHub composite Action that writes a report to the job summary and does not block CI for findings.
-- Findings are technical indicators and questions for qualified review, not legal conclusions or compliance certification. No scanner rules have independent legal review.

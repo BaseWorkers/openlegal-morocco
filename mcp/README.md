@@ -1,6 +1,6 @@
 # OpenLegal MCP (local and read-only)
 
-This experimental MCP server exposes the template catalogue and a local Node.js/TypeScript repository scanner to compatible agents. It does not conduct legal research, evaluate deployed websites or traffic, monitor legal changes, or verify compliance.
+This experimental MCP server exposes the template catalogue, a local Next.js repository scanner, and an optional bounded public-HTML scan to compatible agents. It does not monitor legal changes or determine compliance.
 
 ## Requirements
 
@@ -38,17 +38,17 @@ If the `py` launcher is unavailable on Windows, use `python` in its place. For m
 
 Use the absolute checkout path that exists on your machine; do not copy the sample path literally. Confirm registration with `codex mcp list`, then restart Codex if the tools do not appear. For manual configuration, use your MCP client's local stdio server settings with the same Python command and absolute script path. The format and command are documented in the [Codex MCP guide](https://developers.openai.com/learn/docs-mcp); `codex mcp add --help` shows the CLI form.
 
-The server also exposes `scan_repository`, which requires an explicit `repository_path` and optional `language` (`en`, `fr`, or `ar`). It invokes the same local scanner as the CLI and returns the same Findings v2 document. It does not execute inspected code or send files or results to a network service.
+The server also exposes `scan_repository`, which requires an explicit `repository_path` and accepts optional `language` (`en`, `fr`, or `ar`) and public HTTPS `url`. It invokes the same scanner as the CLI and returns the same Findings v2 document. The assessment separates a heuristic technical review-readiness signal from evidence coverage; neither is a legal-risk or compliance score. Cookie-storage API indicators are distinct from analytics/tracking indicators, and unrequested website scans are marked unscanned rather than passed. Repository mode does not execute inspected code or send source files to a network service. URL mode makes bounded HTML GET requests only when the caller explicitly supplies a URL.
 
 Other tools include `list_templates` (optional category and language filters), `get_template` (template ID and optional language), `get_template_sources` (template ID), `get_review_status` (recorded status and verified review evidence where possible), `get_change_history` (local package changelog), `search_legal_sources` (local text/topic/type filters), `list_legal_topics` (topic IDs and local source counts), and `get_checklist` (preliminary fact-gathering questions selected by a coarse application type). The checklist is not complete legal advice, a compliance score, or a conclusion about applicable law. Responses preserve any recorded review status and state their limitations. Source declarations and search results are discovery aids, not proof that a rule is current or applies to a particular user.
 
 ## Safety boundaries
 
-- Stdio only; it opens no network listener and makes no external requests.
+- Stdio only; it opens no network listener. No external request is made unless `scan_repository` receives an explicit public HTTPS URL.
 - JSON-RPC input is newline-delimited and each message is limited to 1 Mi characters; oversized messages receive a parse error without buffering the remainder as one string.
 - Catalogue tools read fixed catalogue, source, schema, changelog, and review files under this repository. `scan_repository` is the sole tool that accepts a local path, and it requires that path explicitly; it passes arguments without shell evaluation to the shared CLI scanner.
 - The scanner reads allowlisted JavaScript/TypeScript, HTML, Markdown, and `package.json` files. It skips hidden files, secrets, dependencies, build output, lockfiles, and symbolic links; it enforces file-count, depth, and byte limits.
-- Scan reports contain sanitized summaries and file/line references, not source excerpts. No network access or application execution is used.
+- Scan reports contain sanitized summaries and file/line or public-page references, not source excerpts. URL checks fetch HTML only, reject private/reserved addresses and cross-origin redirects, and never execute application JavaScript or interact with forms/consent.
 - Responses do not grant or infer legal or language approval, and never certify compliance.
 - Never include personal, client, or confidential data in tool arguments.
 

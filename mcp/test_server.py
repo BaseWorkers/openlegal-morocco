@@ -430,6 +430,10 @@ console.log(JSON.stringify(digests));
                 self.assertTrue(any(item["rule_id"].endswith("integration.indicator") for item in result["findings"]))
         with self.assertRaisesRegex(ValueError, "repository_path"):
             server.call("scan_repository", {})
+        with tempfile.TemporaryDirectory(prefix="openlegal-mcp-url-") as directory:
+            self.assertIn("url", next(tool for tool in server.TOOLS if tool["name"] == "scan_repository")["inputSchema"]["properties"])
+            with self.assertRaisesRegex(ValueError, "Repository scan failed"):
+                server.call("scan_repository", {"repository_path": directory, "url": "https://127.0.0.1/"})
 
     def test_findings_export_rejects_sensitive_text_and_wrong_priority_basis(self):
         document = {
