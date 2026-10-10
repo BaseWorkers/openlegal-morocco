@@ -77,14 +77,14 @@ npx openlegal scan ./my-app --format json --language ar
 npx openlegal scan . --url https://example.com --language ar --output openlegal-report.md
 ```
 
-Markdown is the default format and Arabic is the default language. The report's 0–100 score measures only whether selected evidence-collection scopes completed; it is not a legal-risk or compliance score. `--output` creates a new file and refuses to overwrite an existing path. The repository scanner detects Next.js and checks allowlisted source, markup, documentation, and `package.json` for privacy notices, tracking, and third-party indicators. It skips hidden files, secrets, dependency/build directories, lockfiles, and symbolic links.
+Markdown is the default format and Arabic is the default language. The report separates an estimated technical review-readiness signal from evidence coverage. Readiness starts at 100 and subtracts one priority-weighted penalty per distinct finding rule and 10 points per incomplete requested scope (informational 10, low 15, medium 25, high 40, critical 60); coverage reports completed selected scopes. Optional scopes that were not requested are listed as unscanned, not passed. Neither number measures legal risk or compliance. Critical findings are repeated near the top of the report and remain visible at any score. `--output` creates a new file and refuses to overwrite an existing path. The repository scanner detects Next.js and checks allowlisted source, markup, documentation, and `package.json` for privacy notices, cookie-storage APIs, tracking, and third-party indicators. Cookie storage alone is not classified as tracking. It skips hidden files, secrets, dependency/build directories, lockfiles, and symbolic links.
 
-URL mode makes bounded HTTPS GET requests to the URL explicitly supplied by the developer. It checks the homepage and up to four same-origin privacy-related links. It rejects private/reserved DNS destinations and cross-origin redirects, caps each page at 2 MiB and each request at 10 seconds, and fetches HTML only. It does not execute JavaScript, submit forms, log in, or select consent options. Local repository scanning makes no network requests and never sends source files to OpenLegal. Findings do not prove that data is transmitted, that consent is absent, that a law applies, or that a project is compliant; legal interpretations remain pending qualified review.
+URL mode makes bounded HTTPS GET requests to the URL explicitly supplied by the developer. It checks the homepage and up to four same-origin privacy-route links, ignoring asset paths and query-bearing links; inaccessible page reports include the route and response reason. It rejects private/reserved DNS destinations and cross-origin redirects, caps each page at 2 MiB and each request at 10 seconds, and fetches HTML only. It does not execute JavaScript, submit forms, log in, or select consent options. Local repository scanning makes no network requests and never sends source files to OpenLegal. Findings do not prove that data is transmitted, that consent is absent, that a law applies, or that a project is compliant; legal interpretations remain pending qualified review.
 
 The pre-release advisory action accepts the optional public URL only when supplied explicitly:
 
 ```yaml
-- uses: BaseWorkers/openlegal-morocco/.github/actions/openlegal-scan@v0.1.1-next.0
+- uses: BaseWorkers/openlegal-morocco/.github/actions/openlegal-scan@v0.1.1-next.1
   with:
     language: en
     url: https://example.com

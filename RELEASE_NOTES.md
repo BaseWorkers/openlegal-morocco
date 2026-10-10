@@ -1,3 +1,16 @@
+# v0.1.1-next.1 — Scanner report and URL-scope fixes
+
+- Separate a heuristic technical review-readiness score from evidence-scope coverage, show the formula and deductions, and mark unrequested website scans as unscanned rather than passed.
+- Keep critical findings in a prominent report section, independent of the overall score.
+- Classify `document.cookie` and `cookieStore` as cookie-storage indicators, not as tracking by themselves; preserve specific analytics and tracker indicators.
+- Restrict homepage link discovery to same-origin privacy routes so assets such as Next.js `parse-cookie` chunks are not requested as privacy pages.
+- Include sanitized route and response reason when an actual privacy page cannot be inspected.
+- Add regression coverage for Titrit AI's sidebar cookie use, the public `/privacy` route shape, inaccessible privacy pages, score separation, and critical findings.
+
+Install the updated pre-release with `npm install openlegal@next`.
+
+---
+
 # v0.1.1-next.0 — Next.js and public-page scanner pre-release
 
 - Add local Next.js project detection and bounded scans for recognizable privacy notices, tracking indicators, and third-party integrations.

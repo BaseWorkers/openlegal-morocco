@@ -46,12 +46,18 @@ const MESSAGES = {
     findings: 'Findings',
     none: 'No tracking or external-service indicators matched the built-in patterns.',
     count: (count) => `Inspected ${count} files.`,
-    score: 'Evidence coverage score', coverage: 'Scan coverage', scoreLimit: 'This score measures evidence collection coverage only; it is not a legal-risk or compliance score.',
+    score: 'Technical review readiness', coverage: 'Evidence coverage', scoreLimit: 'The readiness signal summarizes scanner findings and incomplete requested scopes; it is not a legal-risk or compliance score.',
+    scoreFormula: (findings, scopes, deduction) => `Formula: 100 minus ${findings} finding-rule penalty points and ${scopes} incomplete-scope penalty points (${deduction} total deducted). Informational: 10; low: 15; medium: 25; high: 40; critical: 60 per distinct rule ID. Incomplete requested scope: 10 each. Capped at 0.`,
+    optionalScope: 'Optional scope not scanned: public website (not included in coverage or treated as passed).',
+    critical: 'Critical findings requiring attention',
+    cookieStorage: 'A cookie-storage API indicator was detected; the scanner cannot determine the cookie purpose, persistence, or whether it is used for tracking.',
+    cookieStorageQuestion: 'Review the purpose, lifetime, and value stored by this cookie API; distinguish application state from analytics or cross-site tracking.',
+    cookieStorageAction: 'Trace the call site and the value stored, then confirm whether it is necessary for the feature and whether any user-facing controls or notice should describe it.',
     nextjs: 'Detected framework', nextjsDetected: 'Next.js detected', nextjsUnknown: 'Next.js was not identified; framework-specific coverage is limited.',
     urlFound: 'Public-page scan', urlMissing: 'No public-page URL was supplied; deployed behavior was not inspected.',
     urlLimit: 'The public-page scan fetched HTML only. It did not execute JavaScript, submit forms, log in, follow consent choices, or inspect authenticated pages.',
     urlError: (message) => `The public-page scan could not complete: ${message}`,
-    urlPartial: (count) => `Could not inspect ${count} privacy-related URL(s) linked from the homepage.`,
+    urlPartial: (details) => `Could not inspect these privacy-related page link(s): ${details.join('; ')}.`,
     gdprMessage: 'GDPR territorial applicability cannot be determined from source code or public pages alone.',
     gdprQuestion: 'Confirm whether the organization is established in the EU, offers goods or services to people in the EU, or monitors their behavior there; consult qualified counsel about GDPR scope.',
     humanReviewRequired: 'Human review required',
@@ -84,12 +90,18 @@ const MESSAGES = {
     findings: 'Constats',
     none: 'Aucun indicateur de suivi ou de service tiers ne correspond aux motifs intégrés.',
     count: (count) => `${count} fichiers examinés.`,
-    score: 'Couverture des éléments recueillis', coverage: 'Couverture de l’analyse', scoreLimit: 'Cette note mesure uniquement la couverture de collecte des éléments ; elle ne mesure ni le risque juridique ni la conformité.',
+    score: 'Préparation à la revue technique', coverage: 'Couverture des éléments recueillis', scoreLimit: 'Ce signal résume les constats à examiner et les périmètres demandés incomplets ; il ne mesure ni le risque juridique ni la conformité.',
+    scoreFormula: (findings, scopes, deduction) => `Calcul : 100 moins ${findings} points de règles de constat et ${scopes} points de périmètres incomplets (${deduction} points au total). Informationnel : 10 ; faible : 15 ; moyen : 25 ; élevé : 40 ; critique : 60 par règle distincte. Périmètre demandé incomplet : 10 chacun. Minimum : 0.`,
+    optionalScope: 'Périmètre facultatif non analysé : site public (non inclus dans la couverture et non considéré comme validé).',
+    critical: 'Constats critiques à examiner',
+    cookieStorage: 'Un indicateur d’API de stockage de cookies a été détecté ; le scanner ne peut déterminer ni son objectif, ni sa durée, ni s’il sert au suivi.',
+    cookieStorageQuestion: 'Examiner l’objectif, la durée et la valeur stockée ; distinguer l’état de l’application des analyses ou du suivi intersites.',
+    cookieStorageAction: 'Suivre l’appel et la valeur stockée, puis confirmer si elle est nécessaire à la fonctionnalité et si des contrôles ou une information utilisateur doivent la décrire.',
     nextjs: 'Framework détecté', nextjsDetected: 'Next.js détecté', nextjsUnknown: 'Next.js n’a pas été identifié ; la couverture spécifique au framework est limitée.',
     urlFound: 'Analyse des pages publiques', urlMissing: 'Aucune URL publique fournie ; le comportement du site déployé n’a pas été inspecté.',
     urlLimit: 'L’analyse de la page publique a uniquement récupéré le HTML. Elle n’a pas exécuté JavaScript, soumis de formulaires, ouvert de session, choisi un consentement ni inspecté de pages authentifiées.',
     urlError: (message) => `L’analyse de la page publique n’a pas abouti : ${message}`,
-    urlPartial: (count) => `${count} URL(s) de confidentialité liées depuis la page d’accueil n’ont pas pu être examinées.`,
+    urlPartial: (details) => `Ces liens vers des pages de confidentialité n’ont pas pu être examinés : ${details.join(' ; ')}.`,
     gdprMessage: 'Le champ territorial du RGPD ne peut pas être déterminé à partir du code source ou des pages publiques seuls.',
     gdprQuestion: 'Confirmer si l’organisation est établie dans l’UE, propose des biens ou services aux personnes qui s’y trouvent, ou y suit leur comportement ; consulter un conseil qualifié sur l’applicabilité du RGPD.',
     humanReviewRequired: 'Revue humaine requise',
@@ -122,12 +134,18 @@ const MESSAGES = {
     findings: 'النتائج',
     none: 'لم تطابق مؤشرات التتبع أو الخدمات الخارجية الأنماط المضمنة.',
     count: (count) => `عدد الملفات التي فُحصت: ${count}.`,
-    score: 'نقطة تغطية جمع الأدلة', coverage: 'تغطية الفحص', scoreLimit: 'هذه النقطة تقيس تغطية جمع الأدلة فقط؛ وليست تقييماً للمخاطر القانونية أو الامتثال.',
+    score: 'الاستعداد للمراجعة التقنية', coverage: 'تغطية جمع الأدلة', scoreLimit: 'تلخص هذه الإشارة النتائج التي تحتاج إلى مراجعة ونطاقات الفحص المطلوبة غير المكتملة؛ وليست تقييماً للمخاطر القانونية أو الامتثال.',
+    scoreFormula: (findings, scopes, deduction) => `طريقة الحساب: 100 ناقص ${findings} نقطة لقواعد النتائج و${scopes} نقطة لنطاقات الفحص غير المكتملة (${deduction} نقطة إجمالاً). معلوماتي: 10؛ منخفض: 15؛ متوسط: 25؛ مرتفع: 40؛ حرج: 60 لكل قاعدة مختلفة. النطاق المطلوب غير المكتمل: 10 لكل نطاق. الحد الأدنى 0.`,
+    optionalScope: 'نطاق اختياري لم يُفحص: الموقع العام (غير داخل في التغطية ولا يُعتبر ناجحاً).',
+    critical: 'نتائج حرجة تتطلب الانتباه',
+    cookieStorage: 'تم العثور على مؤشر لواجهة تخزين ملفات تعريف الارتباط؛ لا يستطيع الفحص تحديد الغرض منها أو مدة حفظها أو ما إذا كانت للتتبع.',
+    cookieStorageQuestion: 'راجع غرض واجهة ملفات تعريف الارتباط ومدة حفظها والقيمة المخزنة؛ وميّز بين حالة التطبيق والتحليلات أو التتبع بين المواقع.',
+    cookieStorageAction: 'تتبّع موضع الاستدعاء والقيمة المخزنة، ثم تحقق من ضرورتها للميزة وما إذا كان ينبغي وصفها ضمن أدوات تحكم أو إشعار للمستخدم.',
     nextjs: 'إطار العمل المكتشف', nextjsDetected: 'تم اكتشاف Next.js', nextjsUnknown: 'لم يتم التعرف على Next.js؛ لذلك فالتغطية الخاصة به محدودة.',
     urlFound: 'فحص الصفحات العامة', urlMissing: 'لم يُقدَّم رابط عام؛ لم يُفحص سلوك الموقع المنشور.',
     urlLimit: 'استرجع فحص الصفحة العامة HTML فقط. لم يشغّل JavaScript، ولم يرسل نماذج أو يسجل الدخول أو يختَر الموافقة أو يفحص صفحات تتطلب تسجيل الدخول.',
     urlError: (message) => `تعذر إكمال فحص الصفحة العامة: ${message}`,
-    urlPartial: (count) => `تعذر فحص ${count} رابطاً للخصوصية مرتبطاً بالصفحة الرئيسية.`,
+    urlPartial: (details) => `تعذر فحص روابط صفحات الخصوصية التالية: ${details.join('؛ ')}.`,
     gdprMessage: 'لا يمكن تحديد النطاق الإقليمي للائحة GDPR من الشيفرة أو الصفحات العامة وحدها.',
     gdprQuestion: 'تحقق مما إذا كانت المؤسسة موجودة في الاتحاد الأوروبي، أو تعرض خدمات لأشخاص فيه، أو تراقب سلوكهم داخله؛ واستشر مختصاً لتحديد انطباق GDPR.',
     humanReviewRequired: 'المراجعة البشرية مطلوبة',
@@ -141,6 +159,7 @@ const MESSAGES = {
 
 const RULES = {
   notice: 'openlegal.privacy.notice.presence',
+  cookieStorage: 'openlegal.privacy.cookie-storage.indicator',
   tracking: 'openlegal.privacy.tracking.indicator',
   provider: 'openlegal.third_party.integration.indicator',
   gdpr: 'openlegal.gdpr.territorial-scope.question',
@@ -211,7 +230,9 @@ function isCommentOnlyLine(path, line) {
 
 const NOTICE_PATH = /^(?:privacy(?:[-_ ]?(?:policy|notice))?|cookies?(?:[-_ ]?(?:policy|notice))?|data[-_ ]?protection|politique[-_ ]confidentialit[eé]|سياسة[-_ ]الخصوصية|إشعار[-_ ]الخصوصية)(?:\.[a-z0-9]+)?$/i;
 const NOTICE_HEADING = /^\s*(?:#{1,3}\s+|<h[1-3][^>]*>|<title[^>]*>)(?:privacy\s+(?:policy|notice)|data\s+protection\s+(?:notice|policy)|politique\s+de\s+confidentialit[eé]|protection\s+des\s+donn[eé]es|سياسة\s+الخصوصية|إشعار\s+الخصوصية|حماية\s+المعطيات)/i;
-const TRACKING = /(?:document\.cookie|cookieStore\b|gtag\s*\(|GoogleTagManager|googletagmanager|google-analytics|analytics\.track\s*\(|posthog-js|posthog\.init\s*\(|mixpanel(?:-browser)?|fbq\s*\(|segment\.analytics|@segment\/analytics)/i;
+const PRIVACY_LINK_PATH = /(?:^|\/)(?:privacy(?:[-_](?:policy|notice|center))?|cookies?(?:[-_](?:policy|notice))?|data[-_]?protection|politique[-_]confidentialit[eé]|سياسة[-_]الخصوصية|إشعار[-_]الخصوصية)(?:\/|$)/i;
+const COOKIE_STORAGE = /(?:document\.cookie|cookieStore\b)/i;
+const TRACKING = /(?:gtag\s*\(|GoogleTagManager|googletagmanager|google-analytics|analytics\.track\s*\(|posthog-js|posthog\.init\s*\(|mixpanel(?:-browser)?|fbq\s*\(|segment\.analytics|@segment\/analytics)/i;
 const PROVIDER = /(?:api\.openai\.com|api\.anthropic\.com|generativelanguage\.googleapis\.com|googleapis\.com|google-analytics\.com|googletagmanager\.com|sentry\.io|posthog\.com|segment\.io|mixpanel\.com|@openai\/|@anthropic-ai\/sdk|@google\/generative-ai|@sentry\/|posthog-js|mixpanel-browser|@segment\/analytics)/i;
 
 function evidenceFor(file, line, summary, sourceKind = 'repository_file', digest = null) {
@@ -407,10 +428,10 @@ function privacyLinks(html, pageUrl) {
   const href = /\bhref\s*=\s*(["'])(.*?)\1/gi;
   for (const match of html.matchAll(href)) {
     const target = match[2].replaceAll('&amp;', '&');
-    if (!/(?:privacy|confidential|cookie|cookies|data[-_ ]?protection|الخصوصية|المعطيات)/i.test(target)) continue;
     try {
       const url = new URL(target, pageUrl);
-      if (url.origin === pageUrl.origin && ['http:', 'https:'].includes(url.protocol)) candidates.push(url.href);
+      if (url.origin !== pageUrl.origin || !['http:', 'https:'].includes(url.protocol) || url.search) continue;
+      if (PRIVACY_LINK_PATH.test(url.pathname)) candidates.push(url.href);
     } catch { /* Ignore malformed links from untrusted HTML. */ }
   }
   return [...new Set(candidates)].slice(0, 4);
@@ -430,7 +451,10 @@ export async function scanUrl(startUrl, { language = 'ar', allowPrivateHosts = f
     if (pages.length >= 5) break;
     try {
       pages.push(await fetchPublicPage(candidate, requestOptions));
-    } catch { inaccessiblePages.push(candidate); }
+    } catch (error) {
+      const candidateUrl = new URL(candidate);
+      inaccessiblePages.push({ path: candidateUrl.pathname, reason: error.message });
+    }
   }
   const messages = MESSAGES[language];
   const sourceRefs = (await legalReference()).filter(({ uri }) => !uri?.includes('eur-lex.europa.eu'));
@@ -469,6 +493,19 @@ export async function scanUrl(startUrl, { language = 'ar', allowPrivateHosts = f
     resourceIdentifier: `${firstPage.url.origin}${firstPage.url.pathname}`,
     findingIdSuffix: 'website',
   }));
+  const cookieStoragePages = pages.filter(({ html }) => COOKIE_STORAGE.test(html));
+  if (cookieStoragePages.length) findings.push(finding({
+    ruleId: RULES.cookieStorage,
+    message: messages.cookieStorage,
+    question: messages.cookieStorageQuestion,
+    suggestedActions: [messages.cookieStorageAction],
+    evidence: cookieStoragePages.map((page) => pageEvidence(page, messages.evidence)),
+    sourceRefs,
+    confidence: 0.62,
+    resourceType: 'website',
+    resourceIdentifier: `${firstPage.url.origin}${firstPage.url.pathname}`,
+    findingIdSuffix: 'website',
+  }));
   if (providerPages.length) findings.push(finding({
     ruleId: RULES.provider,
     message: messages.provider,
@@ -485,7 +522,7 @@ export async function scanUrl(startUrl, { language = 'ar', allowPrivateHosts = f
     findings,
     pages: pages.map(({ url }) => `${url.origin}${url.pathname}`),
     inaccessible_pages: inaccessiblePages,
-    limitations: [messages.urlLimit, ...(inaccessiblePages.length ? [messages.urlPartial(inaccessiblePages.length)] : [])],
+    limitations: [messages.urlLimit, ...(inaccessiblePages.length ? [messages.urlPartial(inaccessiblePages.map(({ path, reason }) => `${path}: ${reason}`))] : [])],
   };
 }
 
@@ -501,18 +538,39 @@ function nextJsDetected(files) {
     || /(?:^|\/)next\.config\.(?:js|mjs|cjs|ts)$/.test(path));
 }
 
-function assessmentFor({ localScanComplete, framework, websiteRequested, websiteComplete }) {
+const FINDING_PENALTIES = { informational: 10, low: 15, medium: 25, high: 40, critical: 60 };
+const INCOMPLETE_SCOPE_PENALTY = 10;
+
+function assessmentFor({ localScanComplete, framework, websiteRequested, websiteComplete, findings }) {
   const checks = [
     { id: 'repository', complete: localScanComplete },
     { id: 'nextjs_framework', complete: framework === 'Next.js' },
     ...(websiteRequested ? [{ id: 'public_website', complete: websiteComplete }] : []),
   ];
   const completed = checks.filter(({ complete }) => complete).length;
+  const unresolvedRules = new Map();
+  for (const item of findings) {
+    const penalty = FINDING_PENALTIES[item.priority] ?? FINDING_PENALTIES.informational;
+    unresolvedRules.set(item.rule_id, Math.max(unresolvedRules.get(item.rule_id) ?? 0, penalty));
+  }
+  const findingPenalty = [...unresolvedRules.values()].reduce((total, penalty) => total + penalty, 0);
+  const incompleteScopes = checks.filter(({ complete }) => !complete).length;
+  const incompleteScopePenalty = incompleteScopes * INCOMPLETE_SCOPE_PENALTY;
   return {
     score: Math.round((completed / checks.length) * 100),
     score_basis: 'evidence_collection_coverage',
+    readiness_score: Math.max(0, 100 - findingPenalty - incompleteScopePenalty),
+    readiness_basis: 'open_review_work',
+    readiness_penalties: {
+      finding_rules: unresolvedRules.size,
+      finding_points: findingPenalty,
+      incomplete_requested_scopes: incompleteScopes,
+      incomplete_scope_points: incompleteScopePenalty,
+    },
+    readiness_formula: 'Start at 100; subtract one priority-weighted penalty per distinct finding rule ID and 10 points per incomplete requested scan scope; floor at 0. Informational 10, low 15, medium 25, high 40, critical 60.',
     completed_scopes: checks.filter(({ complete }) => complete).map(({ id }) => id),
     incomplete_scopes: checks.filter(({ complete }) => !complete).map(({ id }) => id),
+    unscanned_optional_scopes: websiteRequested ? [] : ['public_website'],
     status: 'human_review_required',
   };
 }
@@ -551,12 +609,14 @@ export async function scanRepository(repositoryPath, { language = 'ar', version 
   }));
 
   const trackingMatches = [];
+  const cookieStorageMatches = [];
   const providerMatches = [];
   for (const file of files.filter(({ path }) => !/\.mdx?$/i.test(path))) {
     const lines = file.text.split(/\r?\n/);
     for (let index = 0; index < lines.length; index += 1) {
       if (isCommentOnlyLine(file.path, lines[index])) continue;
       if (TRACKING.test(lines[index])) trackingMatches.push({ file, line: index + 1 });
+      if (COOKIE_STORAGE.test(lines[index])) cookieStorageMatches.push({ file, line: index + 1 });
       if (PROVIDER.test(lines[index])) providerMatches.push({ file, line: index + 1 });
       TRACKING.lastIndex = 0;
       PROVIDER.lastIndex = 0;
@@ -570,6 +630,15 @@ export async function scanRepository(repositoryPath, { language = 'ar', version 
     evidence: trackingMatches.slice(0, 20).map(({ file, line }) => evidenceFor(file, line, messages.evidence)),
     sourceRefs,
     confidence: 0.7,
+  }));
+  if (cookieStorageMatches.length) findings.push(finding({
+    ruleId: RULES.cookieStorage,
+    message: messages.cookieStorage,
+    question: messages.cookieStorageQuestion,
+    suggestedActions: [messages.cookieStorageAction],
+    evidence: cookieStorageMatches.slice(0, 20).map(({ file, line }) => evidenceFor(file, line, messages.evidence)),
+    sourceRefs,
+    confidence: 0.62,
   }));
   if (providerMatches.length) findings.push(finding({
     ruleId: RULES.provider,
@@ -616,7 +685,7 @@ export async function scanRepository(repositoryPath, { language = 'ar', version 
     source: { tool: 'openlegal', version },
     repository: { revision },
     assessment: (() => {
-      const assessment = assessmentFor({ localScanComplete: limits.length === 0, framework, websiteRequested: Boolean(url), websiteComplete: Boolean(websiteScan && !websiteScan.error && websiteScan.inaccessible_pages.length === 0) });
+      const assessment = assessmentFor({ localScanComplete: limits.length === 0, framework, websiteRequested: Boolean(url), websiteComplete: Boolean(websiteScan && !websiteScan.error && websiteScan.inaccessible_pages.length === 0), findings });
       return { ...assessment, coverage_percent: assessment.score, framework };
     })(),
     verification_limitations: [...limitations, messages.count(files.length), ...(framework === 'Next.js' ? [] : [messages.nextjsUnknown]), messages.scoreLimit],
@@ -626,23 +695,31 @@ export async function scanRepository(repositoryPath, { language = 'ar', version 
 }
 
 export function renderScanMarkdown(document, messages) {
+  const severityOrder = { critical: 0, high: 1, medium: 2, low: 3, informational: 4 };
+  const sortedFindings = [...document.findings].sort((left, right) => (severityOrder[left.priority] ?? 5) - (severityOrder[right.priority] ?? 5));
+  const criticalFindings = sortedFindings.filter(({ priority }) => priority === 'critical');
   const lines = [
     `# ${messages.title}`, '',
     `${messages.schema}: ${document.schema_version}`,
     `${messages.generated}: ${document.generated_at}`,
     `${messages.revision}: ${document.repository.revision ?? 'unavailable'}`,
     '',
-    `## ${messages.score}: ${document.assessment.score}/100`,
+    `## ${messages.score}: ${document.assessment.readiness_score}/100`,
     `- ${messages.coverage}: ${document.assessment.coverage_percent}% (${document.assessment.completed_scopes.join(', ') || 'none'})`,
+    `- ${messages.scoreFormula(document.assessment.readiness_penalties.finding_points, document.assessment.readiness_penalties.incomplete_scope_points, document.assessment.readiness_penalties.finding_points + document.assessment.readiness_penalties.incomplete_scope_points)}`,
+    ...(document.assessment.unscanned_optional_scopes.length ? [`- ${messages.optionalScope}`] : []),
     `- ${messages.nextjs}: ${document.assessment.framework === 'Next.js' ? messages.nextjsDetected : messages.nextjsUnknown}`,
     `- ${messages.review}: ${messages.humanReviewRequired}`,
     '',
     `> ${messages.disclaimer}`, '',
-    `## ${messages.findings}`, '',
   ];
+  if (criticalFindings.length) {
+    lines.push(`## ${messages.critical}`, '', ...criticalFindings.map(({ rule_id, description }) => `- **${rule_id}:** ${escapeMarkdown(description)}`), '');
+  }
+  lines.push(`## ${messages.findings}`, '');
   if (!document.findings.length) lines.push(messages.none, '');
-  for (const item of document.findings) {
-    lines.push(`### ${item.rule_id}`, '',
+  for (const item of sortedFindings) {
+    lines.push(`### ${item.priority === 'critical' ? 'CRITICAL — ' : ''}${item.rule_id}`, '',
       `- ${messages.jurisdiction}: ${item.jurisdiction}`,
       `- ${messages.type}: ${item.finding_type}`,
       `- ${messages.priority}: ${item.priority}`,

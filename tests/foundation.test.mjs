@@ -921,7 +921,7 @@ test('project-only export includes project policies and excludes planning and de
   try {
     await execFileAsync(process.execPath, [exportScript, output, '--preview']);
     const readme = await readFile(join(output, 'README.md'), 'utf8');
-    assert.match(readme, /v0\.1\.[01](?:-next\.0)? · OpenLegal npm package preview/);
+    assert.match(readme, /v0\.1\.[01](?:-next\.\d+)? · OpenLegal npm package preview/);
     assert.match(readme, /Moroccan lawyers and legal researchers/);
     assert.match(readme, /recognize common legal questions and prepare discussion drafts/);
     assert.match(readme, /does not certify that a business or document is legally compliant/);
