@@ -141,6 +141,22 @@ test('public URL scan fetches only same-origin HTML pages and returns sanitized 
   assert.deepEqual(result.inaccessible_pages, []);
 });
 
+test('public URL scan inspects the exact /privacy route and ignores cookie-named JavaScript assets', async () => {
+  const requested = [];
+  const requestImpl = async (url) => {
+    requested.push(url.pathname);
+    const body = url.pathname === '/'
+      ? '<html><a href="/privacy">Privacy</a><a href="/_next/static/chunks/parse-cookie.js">chunk</a></html>'
+      : '<html><h1>Privacy Policy</h1></html>';
+    return { status: 200, headers: { 'content-type': 'text/html' }, body };
+  };
+  const result = await scanUrl('https://example.test/', { language: 'en', requestImpl });
+  assert.deepEqual(requested, ['/', '/privacy']);
+  assert.deepEqual(result.pages, ['https://example.test/', 'https://example.test/privacy']);
+  assert.deepEqual(result.inaccessible_pages, []);
+  assert.ok(result.findings.some(({ rule_id }) => rule_id.endsWith('notice.presence') && JSON.stringify(result).includes('example.test/privacy')));
+});
+
 test('cookie storage by itself is not classified as tracking', async (t) => {
   const root = await fixture(t);
   await writeFile(join(root, 'package.json'), JSON.stringify({ dependencies: { next: '^15.0.0' } }));
