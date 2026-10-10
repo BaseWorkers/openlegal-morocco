@@ -9,6 +9,10 @@ inputs:
     description: Report language (en, fr, or ar).
     required: false
     default: en
+  url:
+    description: Optional public HTTPS URL for bounded HTML inspection.
+    required: false
+    default: ''
 runs:
   using: composite
   steps:
@@ -17,12 +21,17 @@ runs:
       env:
         OPENLEGAL_SCAN_PATH: ${{ inputs.path }}
         OPENLEGAL_SCAN_LANGUAGE: ${{ inputs.language }}
+        OPENLEGAL_SCAN_URL: ${{ inputs.url }}
       run: |
         set +e
         report="$(mktemp)"
         error_file="$(mktemp)"
         trap 'rm -f "$report" "$error_file"' EXIT
-        node "$GITHUB_ACTION_PATH/../../../scripts/openlegal.mjs" scan "$OPENLEGAL_SCAN_PATH" --language "$OPENLEGAL_SCAN_LANGUAGE" >"$report" 2>"$error_file"
+        args=(scan "$OPENLEGAL_SCAN_PATH" --language "$OPENLEGAL_SCAN_LANGUAGE")
+        if [ -n "$OPENLEGAL_SCAN_URL" ]; then
+          args+=(--url "$OPENLEGAL_SCAN_URL")
+        fi
+        node "$GITHUB_ACTION_PATH/../../../scripts/openlegal.mjs" "${args[@]}" >"$report" 2>"$error_file"
         status=$?
         if [ "$status" -eq 0 ]; then
           cat "$report" >> "$GITHUB_STEP_SUMMARY"

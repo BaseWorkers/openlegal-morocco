@@ -50,6 +50,8 @@ Prepare a dated Markdown report using the counsel packet format below. Include t
 
 Before inspecting project files, confirm that the user's request authorizes that scope. Inspect only files needed for the requested preliminary review. Avoid secrets, personal data, customer records, and unrelated directories; ask the user to provide a safe sample if those are necessary.
 
+For the automated Next.js scan, call `scan_repository` with the explicit repository path. Supply its optional HTTPS URL only when the user has asked for the public-site scan. URL mode fetches a bounded set of public HTML pages; it does not execute JavaScript, log in, submit forms, or choose consent. Explain that the 0–100 score measures evidence-scope coverage only, not legal risk or compliance. Treat GDPR territorial scope as an unresolved question requiring operator facts and qualified review.
+
 For each observation, include a file path and line or a quoted non-sensitive snippet. Distinguish observed implementation facts from tentative legal questions. Do not infer user consent, deployment configuration, vendor terms, retention practices, or operational behavior from code alone.
 
 ## Counsel packet format

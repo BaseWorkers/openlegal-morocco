@@ -639,14 +639,17 @@ def call(name, args):
         }
 
     if name == "scan_repository":
-        if set(args) - {"repository_path", "language"} or "repository_path" not in args:
-            raise ValueError("scan_repository requires repository_path and accepts optional language")
+        if set(args) - {"repository_path", "language", "url"} or "repository_path" not in args:
+            raise ValueError("scan_repository requires repository_path and accepts optional language and url")
         repository_path = args["repository_path"]
-        language = args.get("language", "en")
+        language = args.get("language", "ar")
+        url = args.get("url")
         if not isinstance(repository_path, str) or not repository_path.strip() or len(repository_path) > 4096:
             raise ValueError("repository_path must be a non-empty path of at most 4096 characters")
         if language not in LANGUAGES:
             raise ValueError("language must be en, fr, or ar")
+        if url is not None and (not isinstance(url, str) or not url.strip() or len(url) > 2048):
+            raise ValueError("url must be an HTTPS URL of at most 2048 characters")
         supplied_path = Path(repository_path).expanduser()
         if supplied_path.is_symlink():
             raise ValueError("repository_path must not be a symbolic link")
@@ -656,9 +659,12 @@ def call(name, args):
         node = shutil.which("node")
         if not node:
             raise ValueError("Node.js is required to run the local repository scanner")
+        command = [node, str(ROOT / "scripts" / "openlegal.mjs"), "scan", str(resolved_path), "--format", "json", "--language", language]
+        if url is not None:
+            command.extend(["--url", url])
         try:
             completed = subprocess.run(
-                [node, str(ROOT / "scripts" / "openlegal.mjs"), "scan", str(resolved_path), "--format", "json", "--language", language],
+                command,
                 cwd=ROOT, capture_output=True, text=True, timeout=90, check=False,
             )
         except subprocess.TimeoutExpired as exc:
@@ -754,10 +760,10 @@ def call(name, args):
 TOOLS = [
     {
         "name": "scan_repository",
-        "description": "Run the bounded, local-only Node.js/TypeScript static scan. Requires an explicit repository path. Returns technical indicators and discussion questions, never legal advice or a compliance decision.",
+        "description": "Run the bounded local repository scan and, only when an HTTPS URL is explicitly supplied, a bounded public HTML scan. Requires an explicit repository path. Returns sanitized evidence, technical indicators, and unresolved legal questions, never legal advice or a compliance score.",
         "inputSchema": {
             "type": "object",
-            "properties": {"repository_path": {"type": "string", "minLength": 1, "maxLength": 4096}, "language": {"type": "string", "enum": list(LANGUAGES)}},
+            "properties": {"repository_path": {"type": "string", "minLength": 1, "maxLength": 4096}, "language": {"type": "string", "enum": list(LANGUAGES)}, "url": {"type": "string", "format": "uri", "maxLength": 2048, "description": "Optional public HTTPS site. The scanner fetches limited HTML only; it does not execute scripts, submit forms, log in, or choose consent."}},
             "required": ["repository_path"], "additionalProperties": False,
         },
     },

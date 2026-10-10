@@ -312,6 +312,10 @@ test('CI uses a supported Node runtime and immutable GitHub Action references', 
   const actionReferences = [...workflow.matchAll(/^[ \t]*uses:[ \t]*([^\s#]+)(?:[ \t]+#[ \t]*(\S+))?[ \t]*$/gm)];
   assert.ok(actionReferences.length > 0, 'CI must declare its third-party actions');
   for (const [, reference, version] of actionReferences) {
+    if (reference.startsWith('./')) {
+      assert.match(reference, /^\.\/\.github\/actions\/[A-Za-z0-9_.-]+$/, `Local actions must stay under .github/actions: ${reference}`);
+      continue;
+    }
     assert.match(reference, /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+@[a-f0-9]{40}$/, `Action must use an immutable commit SHA: ${reference}`);
     assert.match(version ?? '', /^v\d/, `Pinned action must retain a human-readable version comment: ${reference}`);
   }
@@ -917,7 +921,7 @@ test('project-only export includes project policies and excludes planning and de
   try {
     await execFileAsync(process.execPath, [exportScript, output, '--preview']);
     const readme = await readFile(join(output, 'README.md'), 'utf8');
-    assert.match(readme, /v0\.1\.0 · OpenLegal npm package preview/);
+    assert.match(readme, /v0\.1\.[01](?:-next\.0)? · OpenLegal npm package preview/);
     assert.match(readme, /Moroccan lawyers and legal researchers/);
     assert.match(readme, /recognize common legal questions and prepare discussion drafts/);
     assert.match(readme, /does not certify that a business or document is legally compliant/);
