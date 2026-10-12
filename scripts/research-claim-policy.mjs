@@ -36,6 +36,12 @@ export function validateResearchClaimReviewPolicy(claim, { reviewRecords, author
   if (status === 'review-pending' && approved) errors.push('approved research review must be reflected in claim review status');
   const reviewer = authorizedReviewers.find((entry) => entry.id === record.reviewer_id && entry.active);
   if (!reviewer) errors.push(`research reviewer ${record.reviewer_id} is not authorized`);
+  if (reviewer && !reviewer.authorized_scopes?.includes(`claim:${claim.id}`)) {
+    errors.push(`research reviewer ${reviewer.id} is not authorized for claim ${claim.id}`);
+  }
+  if (reviewer && !reviewer.authorized_scopes?.includes(`jurisdiction:${claim.jurisdiction}`)) {
+    errors.push(`research reviewer ${reviewer.id} is not authorized for jurisdiction ${claim.jurisdiction}`);
+  }
   if (reviewer && reviewer.authorized_at > record.reviewed_at) errors.push('research reviewer must have been authorized on or before the review date');
   if (reviewer) {
     const signatureError = verifyReviewSignature(record, reviewer);
