@@ -1,3 +1,11 @@
+# v0.1.2 — Scanner metadata correction
+
+Fix the scanner report's source version so it follows the installed OpenLegal package version. This does not alter scanner rules or review status; the scanner remains a technical indicator tool, not legal advice or a compliance certification.
+
+All fourteen template packages remain discussion drafts pending independent legal and language review.
+
+---
+
 # v0.1.1 — Stable scanner release
 
 This stable software release includes the bounded Next.js repository and optional public-page scanner, Findings v2 reports, and the scanner fixes described below. Repository scans stay local and read-only; public-page scans make bounded HTTPS requests only when a URL is explicitly supplied. Findings remain technical observations, not legal conclusions or compliance certification.

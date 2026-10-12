@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, rm, symlink, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fetchPublicPage, renderScanMarkdown, scanRepository, scanUrl } from '../scripts/scanner.mjs';
@@ -18,6 +18,8 @@ async function fixture(t) {
 test('scanner emits v2 findings with rule identifiers, Morocco jurisdiction, and no source excerpts', async (t) => {
   const root = await fixture(t);
   const { document } = await scanRepository(root);
+  const packageMetadata = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.equal(document.source.version, packageMetadata.version);
   assert.equal(document.schema_version, '2.0.0');
   assert.deepEqual(await validateFindings(document), []);
   assert.equal(document.assessment.score_basis, 'evidence_collection_coverage');

@@ -8,6 +8,7 @@ import { extname, isAbsolute, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
+const PACKAGE_VERSION = JSON.parse(await readFile(resolve(ROOT, 'package.json'), 'utf8')).version;
 const LANGUAGES = new Set(['en', 'fr', 'ar']);
 const ALLOWED_EXTENSIONS = new Set(['.js', '.jsx', '.ts', '.tsx', '.mjs', '.cjs', '.html', '.htm', '.md', '.mdx']);
 const IGNORED_DIRECTORIES = new Set([
@@ -575,7 +576,7 @@ function assessmentFor({ localScanComplete, framework, websiteRequested, website
   };
 }
 
-export async function scanRepository(repositoryPath, { language = 'ar', version = '0.1.0', url = null, requestImpl } = {}) {
+export async function scanRepository(repositoryPath, { language = 'ar', version = PACKAGE_VERSION, url = null, requestImpl } = {}) {
   if (!LANGUAGES.has(language)) throw new Error('Language must be en, fr, or ar');
   if (typeof repositoryPath !== 'string' || !repositoryPath.trim()) throw new Error('A repository path is required');
   const requestedRoot = resolve(repositoryPath);

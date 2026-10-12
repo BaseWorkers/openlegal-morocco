@@ -2,7 +2,7 @@
 
 [English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)
 
-**v0.1.1 · OpenLegal scanner release**
+**v0.1.2 · OpenLegal scanner release**
 
 An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
 
@@ -14,7 +14,7 @@ Install the CLI with `npm install openlegal` and run `npx openlegal --help`. The
 
 ## Current status
 
-This v0.1.0 preview contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
+This v0.1.2 preview contains 14 structured template packages shared for community review and contribution. They are not ready for public reliance. No template is marked `LEGAL_REVIEWED` or `RELEASED`, and no authorized human legal or language review is recorded.
 
 The files are working drafts. They may be incomplete, outdated, or unsuitable for a specific person, transaction, or business. The project does not certify that a business or document is legally compliant. Do not sign or rely on them without qualified Moroccan legal advice.
 
