@@ -324,7 +324,12 @@ def _review_evidence(record_ids, metadata, folder):
             failures.append("content_digest_mismatch")
         if record.get("template_id") != metadata.get("id") or record.get("template_version") != metadata.get("version"):
             failures.append("template_scope_mismatch")
+        reviewer_scopes = reviewer.get("authorized_scopes", []) if isinstance(reviewer, dict) else []
         if review_type == "legal":
+            if reviewer and f"template:{metadata.get('id')}" not in reviewer_scopes:
+                failures.append("reviewer_scope_mismatch")
+            if reviewer and any(f"jurisdiction:{jurisdiction}" not in reviewer_scopes for jurisdiction in metadata.get("jurisdiction", [])):
+                failures.append("reviewer_jurisdiction_mismatch")
             linked = metadata.get("legal_review")
             if not isinstance(linked, dict) or linked.get("status") != "reviewed" or linked.get("review_record_id") != record_id:
                 failures.append("legal_review_metadata_link_mismatch")
@@ -340,6 +345,8 @@ def _review_evidence(record_ids, metadata, folder):
             linked_languages = [code for code in metadata.get("languages", []) if isinstance(language_links, dict) and language_links.get(code) == record_id]
             if not linked_languages or any(not isinstance(language_states, dict) or language_states.get(code) != "reviewed" for code in linked_languages):
                 failures.append("language_review_metadata_link_mismatch")
+            if reviewer and any(f"template:{metadata.get('id')}:{code}" not in reviewer_scopes for code in linked_languages):
+                failures.append("reviewer_scope_mismatch")
             if not record_errors and not set(linked_languages).issubset(set(record.get("languages", []))):
                 failures.append("language_review_scope_mismatch")
             if record.get("outcome") != "approved":

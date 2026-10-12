@@ -94,6 +94,10 @@ class MCPTests(unittest.TestCase):
             reviewers_file.write_text(json.dumps({"schema_version": 1, "authorized_legal_reviewers": [{
                 "id": "synthetic-reviewer", "display_name": "Synthetic Reviewer", "active": True,
                 "authorized_at": "2026-01-01", "authorization_record": "synthetic test fixture",
+                "qualification_summary": "Synthetic test reviewer; no real qualification is asserted",
+                "qualification_evidence": ["https://example.test/synthetic-reviewer"],
+                "qualification_verified_at": "2026-01-01", "conflicts_checked_at": "2026-01-01",
+                "authorized_scopes": [f"template:{metadata['id']}", "jurisdiction:MA"],
                 "signing_keys": [{"id": "synthetic-key", "active": True, "public_key_pem": public_key.read_text(encoding="utf-8")}],
             }], "authorized_language_reviewers": []}), encoding="utf-8")
             with mock.patch.object(server, "REVIEW_RECORDS", records_file), \
@@ -103,6 +107,20 @@ class MCPTests(unittest.TestCase):
                 self.assertEqual(result["evidence_verification"], "verified")
                 self.assertEqual(result["evidence_records"][0]["signature_verification"], "verified")
                 self.assertTrue(result["evidence_records"][0]["current_content_digest_match"])
+
+                reviewers = json.loads(reviewers_file.read_text(encoding="utf-8"))
+                reviewers["authorized_legal_reviewers"][0]["authorized_scopes"] = [f"template:{metadata['id']}"]
+                reviewers_file.write_text(json.dumps(reviewers), encoding="utf-8")
+                out_of_jurisdiction = server.call("get_review_status", {"template_id": metadata["id"]})
+                self.assertIn("reviewer_jurisdiction_mismatch", out_of_jurisdiction["evidence_records"][0]["verification_limits"])
+
+                reviewers["authorized_legal_reviewers"][0]["authorized_scopes"] = ["jurisdiction:MA"]
+                reviewers_file.write_text(json.dumps(reviewers), encoding="utf-8")
+                out_of_template = server.call("get_review_status", {"template_id": metadata["id"]})
+                self.assertIn("reviewer_scope_mismatch", out_of_template["evidence_records"][0]["verification_limits"])
+                reviewers["authorized_legal_reviewers"][0]["authorized_scopes"] = [f"template:{metadata['id']}", "jurisdiction:MA"]
+                reviewers_file.write_text(json.dumps(reviewers), encoding="utf-8")
+
                 with mock.patch.object(server.shutil, "which", return_value=None):
                     unavailable = server.call("get_review_status", {"template_id": metadata["id"]})
                 self.assertEqual(unavailable["evidence_verification"], "verification_unavailable")
