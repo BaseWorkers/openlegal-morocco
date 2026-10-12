@@ -21,7 +21,7 @@ openlegal --version
 openlegal check
 ```
 
-Expected: `OpenLegal 0.1.0`, `valid: true`, and 14 template packages. These are discussion drafts and remain unreviewed. The package has no JavaScript runtime dependencies.
+For the v0.1.1 package, expected: `OpenLegal 0.1.1`, `valid: true`, and 14 template packages. These are discussion drafts and remain unreviewed. The package has no JavaScript runtime dependencies.
 
 To run the MCP server from an installed package, configure a client to launch `openlegal-mcp`. For Codex CLI, use `codex mcp add openlegal -- openlegal-mcp`, then restart Codex if the server tools do not appear. Python 3.10 or later is required. Set `PYTHON` to the Python executable path if your system does not use `python3` (or `python` on Windows).
 
