@@ -62,5 +62,8 @@
     "audit:review-transitions": "node scripts/audit-review-transitions.mjs",
     "test": "node --test",
     "audit:links": "node scripts/audit-source-links.mjs"
+  },
+  "dependencies": {
+    "openlegal": "^0.1.1-next.1"
   }
 }
