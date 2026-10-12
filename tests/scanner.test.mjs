@@ -157,6 +157,18 @@ test('public URL scan inspects the exact /privacy route and ignores cookie-named
   assert.ok(result.findings.some(({ rule_id }) => rule_id.endsWith('notice.presence') && JSON.stringify(result).includes('example.test/privacy')));
 });
 
+test('public URL scan detects a privacy heading inside a complete HTML document', async () => {
+  const requestImpl = async () => ({
+    status: 200,
+    headers: { 'content-type': 'text/html' },
+    body: '<!doctype html><html><head><title>Example</title></head><body><main><h1>Privacy Policy</h1></main></body></html>',
+  });
+  const result = await scanUrl('https://example.test/', { language: 'en', requestImpl });
+  const notice = result.findings.find(({ rule_id }) => rule_id.endsWith('notice.presence'));
+  assert.match(notice.description, /matching a privacy-notice pattern was detected/);
+  assert.match(notice.evidence[0].summary, /privacy-notice pattern was detected/);
+});
+
 test('cookie storage by itself is not classified as tracking', async (t) => {
   const root = await fixture(t);
   await writeFile(join(root, 'package.json'), JSON.stringify({ dependencies: { next: '^15.0.0' } }));

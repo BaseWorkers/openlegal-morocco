@@ -1,4 +1,12 @@
-# v0.1.1-next.1 — Scanner report and URL-scope fixes
+# v0.1.1 — Stable scanner release
+
+This stable software release includes the bounded Next.js repository and optional public-page scanner, Findings v2 reports, and the scanner fixes described below. Repository scans stay local and read-only; public-page scans make bounded HTTPS requests only when a URL is explicitly supplied. Findings remain technical observations, not legal conclusions or compliance certification.
+
+This release does not change the status of the legal materials: all fourteen template packages remain discussion drafts, with no authorized legal or language approvals recorded.
+
+Install with `npm install openlegal@latest`.
+
+## Scanner report and URL-scope fixes
 
 - Separate a heuristic technical review-readiness score from evidence-scope coverage, show the formula and deductions, and mark unrequested website scans as unscanned rather than passed.
 - Keep critical findings in a prominent report section, independent of the overall score.

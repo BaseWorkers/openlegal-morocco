@@ -229,7 +229,7 @@ function isCommentOnlyLine(path, line) {
 }
 
 const NOTICE_PATH = /^(?:privacy(?:[-_ ]?(?:policy|notice))?|cookies?(?:[-_ ]?(?:policy|notice))?|data[-_ ]?protection|politique[-_ ]confidentialit[eé]|سياسة[-_ ]الخصوصية|إشعار[-_ ]الخصوصية)(?:\.[a-z0-9]+)?$/i;
-const NOTICE_HEADING = /^\s*(?:#{1,3}\s+|<h[1-3][^>]*>|<title[^>]*>)(?:privacy\s+(?:policy|notice)|data\s+protection\s+(?:notice|policy)|politique\s+de\s+confidentialit[eé]|protection\s+des\s+donn[eé]es|سياسة\s+الخصوصية|إشعار\s+الخصوصية|حماية\s+المعطيات)/i;
+const NOTICE_HEADING = /^\s*#{1,3}\s+(?:privacy\s+(?:policy|notice)|data\s+protection\s+(?:notice|policy)|politique\s+de\s+confidentialit[eé]|protection\s+des\s+donn[eé]es|سياسة\s+الخصوصية|إشعار\s+الخصوصية|حماية\s+المعطيات)|<(?:h[1-3]|title)\b[^>]*>(?:\s|<[^>]+>)*(?:privacy\s+(?:policy|notice)|data\s+protection\s+(?:notice|policy)|politique\s+de\s+confidentialit[eé]|protection\s+des\s+donn[eé]es|سياسة\s+الخصوصية|إشعار\s+الخصوصية|حماية\s+المعطيات)/i;
 const PRIVACY_LINK_PATH = /(?:^|\/)(?:privacy(?:[-_](?:policy|notice|center))?|cookies?(?:[-_](?:policy|notice))?|data[-_]?protection|politique[-_]confidentialit[eé]|سياسة[-_]الخصوصية|إشعار[-_]الخصوصية)(?:\/|$)/i;
 const COOKIE_STORAGE = /(?:document\.cookie|cookieStore\b)/i;
 const TRACKING = /(?:gtag\s*\(|GoogleTagManager|googletagmanager|google-analytics|analytics\.track\s*\(|posthog-js|posthog\.init\s*\(|mixpanel(?:-browser)?|fbq\s*\(|segment\.analytics|@segment\/analytics)/i;
