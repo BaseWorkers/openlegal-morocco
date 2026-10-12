@@ -4,7 +4,7 @@
 
 **Code baseline for review:** scanner release changes were prepared from `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204` and carried in `BaseWorkers/openlegal-morocco` PR #16 (`release/v0.1.1-stable`). The currently checked-out and last remotely verified PR head is `eecd24dd35be89f2fca2e264082cdd77f6e0ab2e`; CI and CodeQL passed on that commit. These are documentation-only commits after scanner source preparation. The scanner source itself and its review evidence must be checked by SHA-256 before a reviewer starts; do not rely on a branch name alone. This is not a privacy-specialist approval.
 
-### Review file identity at PR head `eecd24dd35be89f2fca2e264082cdd77f6e0ab2e`
+## Review file identity at PR head `eecd24dd35be89f2fca2e264082cdd77f6e0ab2e`
 
 Recompute these digests at review time; a mismatch means the review target has changed.
 
