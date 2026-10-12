@@ -1,6 +1,10 @@
 # Governance
 
-This project is a public repository/CLI/MCP preview; it has no public hosted service. No maintainer or reviewer has been appointed. GitHub repository permission, code ownership, authorship, or DCO sign-off does not by itself appoint someone to a project role. Until governance is established, no contributor is authorized to mark material `LEGAL_REVIEWED` or `LANGUAGE_REVIEWED`.
+This project is a public repository/CLI/MCP preview; it has no public hosted service. On 2026-10-12, Jawad Benhammou (`@Jawadbenhammoupro`) accepted appointment as technical maintainer and security-response owner. No legal or language reviewers have been appointed; no contributor is authorized to mark material `LEGAL_REVIEWED` or `LANGUAGE_REVIEWED` without the independent reviewer authorization and signed evidence described below. GitHub repository permission, code ownership, authorship, or DCO sign-off alone does not confer a reviewer role.
+
+## Maintainer responsibility
+
+The technical maintainer owns repository operations, release coordination, reviewer qualification records, and protecting review-state changes. As security-response owner, Jawad Benhammou receives and reviews private vulnerability reports submitted through the GitHub Security Advisories private-reporting route described in [`SECURITY.md`](SECURITY.md). No response-time commitment or conduct-reporting service has been established. The project remains a local repository, CLI, and MCP; this appointment does not create hosted support or service operations.
 
 ## Review authority
 

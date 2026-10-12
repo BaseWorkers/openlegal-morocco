@@ -2,7 +2,7 @@
 
 [English](README.md) · [Français](README.fr.md) · [العربية](README.ar.md)
 
-**v0.1.0 · OpenLegal npm package preview**
+**v0.1.1 · OpenLegal scanner release**
 
 An independent, public-interest project building reusable legal-document resources to help Moroccan startups and other teams operating online recognize common legal questions and prepare discussion drafts for qualified Moroccan counsel. The project has no profit-making aim; this describes its purpose, not a registered legal status. The project is open to community contribution and adaptation, and its license terms allow reuse, including commercial reuse.
 

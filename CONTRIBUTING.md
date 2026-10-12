@@ -8,9 +8,11 @@ You may adapt or reuse project material under the license that applies to that m
 
 When adapting a template, identify your changes, sources, intended jurisdiction, and version. Do not carry a review or release status over to an adapted version; legal and language review applies only to the exact content and language reviewed. An adaptation does not imply endorsement by OpenLegal. The project's public-interest purpose does not restrict reuse to non-commercial use; follow the applicable license terms.
 
-## Contribution rights are provisional
+## Contribution terms and rights
 
-The project has not finalized the legal terms for accepting contributor submissions, and it has no contributor license agreement or ownership-assignment process. The path-to-license map describes intended scopes only; it does not grant rights in submitted material. Before proposing content for inclusion, check the applicable notice and contribute only material whose rights you control and that you are willing to offer under the stated intended license. Do not submit third-party material, restricted content, or work made for an employer or client unless you have clear authority to do so. A pull request does not itself establish ownership, clear third-party rights, or authorize legal or language review status. Maintainers must resolve contribution terms and verify rights before merging contributed content.
+Contributions are accepted under the Developer Certificate of Origin (DCO) 1.1 sign-off below. The project does not require a contributor license agreement or ownership assignment: contributors keep their copyright and certify that they have the right to submit each contribution under the license applicable to that material. The intended path-to-license map is in [`LICENSES/scopes.json`](LICENSES/scopes.json), with the project license split explained in [`LICENSES/README.md`](LICENSES/README.md). The map is not itself a grant, and a DCO sign-off does not clear third-party rights.
+
+Submit only material you created or are authorized to contribute under its applicable license. Identify source, license, attribution, and any retained-rights conditions for third-party or reviewer-authored material. A pull request does not itself establish ownership or clear third-party rights. The maintainer must verify the file-level scope and permission before merging; when rights or terms are unclear, the material stays out until resolved. Do not submit restricted content or work made for an employer or client without clear authority. A pull request or DCO sign-off does not authorize legal or language review status.
 
 ## DCO sign-off
 
@@ -22,7 +24,7 @@ git commit -s -m "type: explain the contribution"
 
 Git adds a `Signed-off-by: Name <email>` trailer. Use your own name and an email address you are comfortable making public in the repository's permanent commit history. The sign-off records the certification in `DCO.md`; it is not a CLA, does not assign copyright, and does not change the license that applies to any file.
 
-The DCO check applies to new pull requests once their target branch contains `DCO.md`. Existing commits are not rewritten to add sign-offs. DCO sign-off does not resolve the project's provisional license-scope mapping, clear third-party rights, or replace maintainer review. If the applicable license or your authority to contribute is unclear, do not submit that material until it is resolved.
+The DCO check applies to new pull requests once their target branch contains `DCO.md`. Existing commits are not rewritten to add sign-offs. Here, DCO sign-off is the contribution certification; it is not a CLA, does not assign copyright, and grants no broader rights than the applicable file license. It does not resolve the project's provisional license-scope mapping, clear third-party rights, or replace maintainer review. If the applicable license or your authority to contribute is unclear, do not submit that material until it is resolved.
 
 ## Source, rights, and accuracy
 

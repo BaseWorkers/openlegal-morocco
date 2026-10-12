@@ -2,7 +2,21 @@
 
 **Status:** preparation for specialist review only. This document is not legal advice, a privacy assessment, or approval of the scanner. Do not treat automated validation or this brief as a professional review.
 
-**Code baseline for review:** `BaseWorkers/openlegal-morocco` PR #16, branch `release/v0.1.1-stable`, commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf` (parent `2c2edebfd774d1ce23acd360254e58d086fd7a80`). This is not yet `main`. Confirm this exact SHA and regenerate any packet inputs from it before recording a review. PR validation, DCO, and CodeQL checks passed on this SHA; those checks do not substitute for privacy-specialist review.
+**Code baseline for review:** scanner release changes were prepared from `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204` and carried in `BaseWorkers/openlegal-morocco` PR #16 (`release/v0.1.1-stable`). At preparation time, PR head `c8e54ce10ed0d3638b51a5a86b62331336157353` was remotely verified; CI and CodeQL passed on that commit. The intervening commits update review documentation only; the scanner source hashes below remain unchanged. Recompute them before review; do not rely on a branch name alone. This is not a privacy-specialist approval.
+
+## Review file identity at scanner source baseline, carried through PR head `c8e54ce10ed0d3638b51a5a86b62331336157353`
+
+Recompute these digests at review time; a mismatch means the review target has changed.
+
+| File | SHA-256 |
+| --- | --- |
+| `scripts/scanner.mjs` | `2561f14498f43a7c71225b278df1f653d031e61805a1695b3838fa0a4ca42ed8` |
+| `scripts/findings.mjs` | `21d0b97811b7ecb68c0a81389e4d7c8f9f3427af06188ab158ac470898a09d1a` |
+| `schemas/findings.schema.json` | `fa9b9fb08d839d58c42852f637184bdd67e7ab5d5fc4fca41f84bb74f4b35a7c` |
+| `tests/scanner.test.mjs` | `257b843845e89c00dd4d67b5b1a40a62ef257531021b199d7361c6c95974202c` |
+| `sources/registry.yaml` | `3ab95d57c7785f9707eb4d87a83e5015eb5fe7796360ec7986f1b383e44d8ed8` |
+| `research/morocco/privacy-data-protection.md` | `447b0516cb7ffb53f85af787760ff59b610d31187b802eedc8b6ce7a2b40fb63` |
+| `research/morocco/claims.json` | `12e3f0b395967e292333713694686936d0b1e035318ab993ff600f9f2b997e53` |
 
 ## Requested reviewer decision
 
@@ -46,11 +60,21 @@ These are review prompts inferred from the implementation, not validated error r
 
 ## Engineering issue found during preparation
 
-URL notice detection applied an anchored heading expression to the entire HTML document. A normal document beginning with `<!doctype html><html>...` therefore did not match a later `<h1>Privacy Policy</h1>`, even though the same title in the recognized path could match. Commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf` changes the expression so Markdown headings stay line-anchored while HTML `<h1>`–`<h3>` and `<title>` tags may match anywhere in the document, including simple nested inline tags. A regression case covers a complete HTML document. The PR's `validate` and CodeQL checks passed for this exact commit. Ask the privacy reviewer to assess the revised rule's scope and residual false positives/negatives.
+URL notice detection previously applied an anchored heading expression to the entire HTML document. A normal document beginning with `<!doctype html><html>...` therefore did not match a later `<h1>Privacy Policy</h1>`, even though the same title in the recognized path could match. The current candidate keeps Markdown headings line-anchored while HTML `<h1>`–`<h3>` and `<title>` tags may match anywhere in the document, including simple nested inline tags. A regression case covers a complete HTML document. Ask the privacy reviewer to assess the revised rule's scope and residual false positives/negatives.
 
 ## Existing automated examples and review gaps
 
-`tests/scanner.test.mjs` currently exercises output schema and no source excerpts; skipped secrets/dependencies/build output/lockfiles/symlinks; repository notice detection and a documentation-example non-match; localized output structure; Next.js detection; combined URL/repository coverage; same-origin HTML/privacy links and sanitized evidence; cookie storage without tracking classification; inaccessible-link reporting; critical-finding presentation; and rejection of private IP and cross-origin redirects. Commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf` adds a regression case for a notice heading later in a complete HTML document.
+`tests/scanner.test.mjs` exercises these representative rule-to-test links:
+
+| Rule | Positive examples | Negative / boundary examples |
+| --- | --- | --- |
+| `openlegal.privacy.notice.presence` | `notice paths are detected...`; `public URL scan detects a privacy heading inside a complete HTML document`; same-origin URL tests | Unrelated README example; inaccessible privacy page; bounded same-origin link behavior |
+| `openlegal.privacy.cookie-storage.indicator` | Repository fixture and `public URL scan fetches only same-origin HTML pages...` | `cookie storage by itself is not classified as tracking`; cookie-named JavaScript asset is ignored |
+| `openlegal.privacy.tracking.indicator` | Repository fixture (`posthog-js`, `gtag`) and URL scan with Google Analytics | Unrelated Markdown example; skipped dependencies/build output; cookie API alone |
+| `openlegal.third_party.integration.indicator` | URL scan with Google Analytics host; repository fixture includes a PostHog dependency | No broad provider inventory or runtime network-use validation |
+| `openlegal.gdpr.territorial-scope.question` | Output-contract test checks EU jurisdiction and the question; localized structure checked for Arabic/French | No code test can determine the underlying organization-specific territorial facts |
+
+This matrix is a map of selected automated examples, not a quality or accuracy study. Tests do not cover every alternative literal in the regular expressions, representative real applications, or professional translation equivalence.
 
 These are selected regression examples, not a representative accuracy study. They do not establish recall/precision on real applications, completeness of provider/tracker inventories, correctness of legal interpretation, current-law status, adequacy across all deployment patterns, or professional translation equivalence. The reviewer should decide whether a labeled corpus, representative real-world samples, or additional adversarial cases are needed before making any accuracy claim.
 

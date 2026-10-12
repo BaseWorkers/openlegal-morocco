@@ -17,7 +17,7 @@ The Foundation CI workflow prepares template and research-claim review packets a
 
 ## Formal review status
 
-At the v0.1.0 scanner pre-release, formal review is not staffed: the reviewer registries are empty and no maintainers have been appointed. Scanner rule interpretations are also unreviewed. An issue, pull request, or reviewer statement does not authorize `LEGAL_REVIEWED`, `LANGUAGE_REVIEWED`, or `RELEASED` status. See the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md) to express interest.
+At the v0.1.0 scanner pre-release, independent professional review is not staffed: the legal, language, and scanner-specialist reviewer registries are empty. Jawad Benhammou (`@Jawadbenhammoupro`) is the technical maintainer and security-response owner. Scanner rule interpretations remain unreviewed. An issue, pull request, or maintainer statement does not authorize `LEGAL_REVIEWED`, `LANGUAGE_REVIEWED`, or `RELEASED` status. See the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md) to express interest.
 
 If maintainers establish the review program, formal approvals must cover the exact version and content digest, identify the review scope and outcome, and be authenticated under the project governance rules. A later content change may invalidate an approval. An adapted copy does not inherit this project's review status. See [Governance](GOVERNANCE.md) for the status and authorization rules.
 

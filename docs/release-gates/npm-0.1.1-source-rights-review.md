@@ -2,10 +2,9 @@
 
 **Preparation only.** This packet is a file inventory and review aid. It is not a rights determination, legal review, authorship record, or publication approval.
 
-- Exact source: BaseWorkers/openlegal-morocco PR #16 commit 7ee3103e6b7045ae66e21ff25bb502bb078860bf.
-- Package: openlegal@0.1.1; dry-run tarball openlegal-0.1.1.tgz; 196 files; 1301241 unpacked bytes.
-- Package integrity: sha512-bUhpdFIuFReKwitX/KT04sIJi/7fLnFjDLlqDIhjtP8nv1aiSM4h0Ha3Zi/ibq3RokF+K9XZo4P90tmkLuVhjQ==
-- package.json license field: not set; the package combines different intended licenses.
+- Original PR #16 inventory: commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf`; `openlegal@0.1.1`, 196 files, 1301241 unpacked bytes; integrity `sha512-bUhpdFIuFReKwitX/KT04sIJi/7fLnFjDLlqDIhjtP8nv1aiSM4h0Ha3Zi/ibq3RokF+K9XZo4P90tmkLuVhjQ==`.
+- Candidate recheck (2026-10-12): base `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204`. `npm pack --dry-run --json --ignore-scripts` reports `openlegal@0.1.1`, 196 files, 1305323 unpacked bytes, 112 template files across 14 template packages, `license: SEE LICENSE IN LICENSES/README.md`, included `package.json` and license notice, SHA-1 `fbc03b4daa0357e01ebe900f03189cf45d58a4c4`, and integrity `sha512-qiesSc0VTHV9jK7JWzJ22MZ9mNMrDtI01prb8oJaeZKKq3q36e6Ze4aac6aLzRo2NqGmQoREoBn+CEK3FWUjTg==`. This local dry run is not a publish or rights approval; re-run for the final release PR head before publication.
+- Package metadata action: `package.json` now uses npm's `SEE LICENSE IN LICENSES/README.md` pointer because this package carries multiple intended licenses; the referenced top-level notice explains the split and retains the provisional-rights caveat.
 - Scope-map status: provisional; scope-map validator covers the repository, but explicitly says human ownership, source-rights, and license review remain required.
 - Shipped paths: 196; covered by intended-scope rules: 196; unmapped: 0.
 - Scope counts in this tarball: project-documentation: 8; upstream-license-texts: 2; original-content: 126; software-and-tooling: 60.
@@ -13,13 +12,30 @@
 - Declared template sources: 39; reuse-status counts: research-only: 38; file-level-review-required: 1.
 - Declared source IDs absent from registry: none.
 
-## Decision required under issue #5
+## Evidence against issue #5 acceptance criteria
 
-1. Confirm ownership/authorship or contributor permissions for every shipped file, especially all template text, research prose, clauses, and source metadata.
-2. Confirm the intended license for every shipped path and whether the mixed-license package metadata and notices communicate it accurately.
-3. Review upstream terms and source-to-template similarities for every third-party source; record required attribution and compatibility with this package and redistribution.
-4. Exclude or clearly mark material whose rights are unclear or incompatible before stable publication.
-5. Verify contributor agreement language and named maintainer responsibility. DCO sign-off alone does not establish copyright ownership, assignment, or permission to license the material.
+1. **Owner rights representation:** the user confirmed authority for the original text of all 14 templates and package-wide authority for the other original package contents under the stated licenses; the user also confirmed included third-party material is authorized with its notices retained. This is the owner’s representation, not an independent legal opinion.
+2. **Path scope and package notice:** all 196 dry-run files are covered by `LICENSES/scopes.json`; the package manifest points to the mixed-license notice using npm's `SEE LICENSE IN LICENSES/README.md` form. The path map remains explicitly provisional and is not itself a grant.
+3. **Third-party sources and use:** 38 declared template sources are research-only. The remaining General Legal template source is used only for comparative issue spotting; the five package source records and notes state no wording or structure was copied/adapted. The pinned repository license and README record CC0 and its request to retain a credit footnote. No upstream template text is shipped. Its `file-level-review-required` status continues to prohibit future direct reuse without file-specific review and authorization.
+4. **Unclear material:** source-specific rights and reviewer-authored material remain separately protected; unclear content is not represented as project-owned or cleared by the path map. No unresolved third-party template wording is included in this tarball.
+5. **Contribution and responsibility:** `CONTRIBUTING.md` defines DCO 1.1 as the contribution certification, without a CLA or copyright assignment, and requires file-level permission checks. `GOVERNANCE.md` names Jawad Benhammou as technical maintainer and security-response owner. DCO alone is not treated as ownership or reuse clearance.
+
+## Additional provenance finding (2026-10-12)
+
+- Inspection of the paired private repository history found the initial foundation commit `552766e844b052c859730827b1b83990b7f8cf7f` added the multilingual template packages in one large snapshot. Its Git author is `Jawadbenhammoupro <jawadbenhammou.pro@gmail.com>`; that records the commit author field, not proof that every line was personally written or that all third-party rights were clear.
+- That initial commit has no `Signed-off-by` trailer, and `DCO.md` was not present in that commit. The repository's later DCO process therefore does not retroactively certify the initial template snapshot. A current DCO sign-off on a later documentation commit is not a substitute for an explicit rights/provenance attestation covering the original content.
+- The private-history evidence does not identify per-file authors, external assistance, employer/client contributions, or source-specific adaptations. The selected General Legal source audit checked the pinned repository license, README, and one mutual-NDA source file only; it did not compare the other four source files associated with five packages. The template notes assert no wording was copied or adapted, but that assertion is not a completed clause-by-clause comparison.
+- Disposition: the owner's rights representation, package path inventory, source-use limits, package license pointer, and contribution/maintainer terms now address issue #5's stated acceptance criteria for this candidate. This closes the package-level rights gate by owner attestation; it is not an independent legal or license-scope opinion. Keep the General Legal source marked unavailable for direct file reuse until separately cleared. This decision does not authorize changing any template review state: all 14 packages remain `DRAFT` pending independent legal and language review.
+
+## Rights-holder provenance attestation (2026-10-12)
+
+The user confirmed in this task that they own, or have authority to license under CC0-1.0, the original text of all 14 template packages, and that those original texts contain no client, contributor, or third-party material without permission. This is a rights-holder representation recorded with the user's authorization; it is not an independent legal opinion, file-by-file authorship history, third-party clearance, or approval of the license map. It does not clear other shipped files or replace review of source declarations, notices, upstream terms, and package-level presentation. The 14 templates remain `DRAFT` and no legal review is implied.
+
+**Effect on decision list:** item 1 has the package-wide owner attestation described above. Item 2 has a mixed-license pointer and a complete path inventory, while the map's provisional caveat remains explicit. Item 3 records every source's use; General Legal remains excluded from direct wording reuse and its file-level status remains pending. Item 4 excludes upstream template text. Item 5 now documents DCO contribution terms and the named maintainer. Issue #5's acceptance criteria are met for this candidate by the owner's representation and recorded limits; none of these points is a professional review of the 14 legal templates or translations.
+
+## Package-wide rights-holder attestation (2026-10-12)
+
+The user additionally confirmed in this task that all other original contents of the package (code, documentation, research, metadata, and project license materials) belong to them or may be published under the stated licenses, and that included third-party materials are authorized with their notices retained. This records the user's representation for the reviewed package inventory; it is not independent legal review and does not replace professional review of license interpretation or source records. The General Legal source remains marked for file-level clearance before any direct text reuse; no wording from it is claimed in the current package.
 
 ## Source records used by the 14 template packages
 

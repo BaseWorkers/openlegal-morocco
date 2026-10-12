@@ -13,7 +13,8 @@ const readJson = async (path) => JSON.parse(await readFile(new URL(path, import.
 const packageManifest = await readJson('../package.json');
 assert.equal(packageManifest.name, 'openlegal', 'the public package must use the OpenLegal brand');
 assert.equal(packageManifest.private, undefined, 'the npm CLI package must be publishable');
-assert.equal(packageManifest.license, undefined, 'the repository has separate software and legal-content license scopes; do not label the whole package with one license');
+assert.equal(packageManifest.license, 'SEE LICENSE IN LICENSES/README.md', 'the mixed-license package must point to its top-level license notice');
+assert.ok((await readFile(new URL('../LICENSES/README.md', import.meta.url), 'utf8')).includes('separate intended licenses'), 'the package license pointer must resolve to the mixed-license notice');
 assert.deepEqual(packageManifest.bin, { openlegal: 'scripts/openlegal.mjs', 'openlegal-mcp': 'scripts/openlegal-mcp.mjs' });
 for (const requiredPackagePath of ['scripts/*.mjs', 'templates/**', 'schemas/**', 'mcp/server.py', 'LICENSES/README.md']) {
   assert.ok(packageManifest.files.includes(requiredPackagePath), `npm package files must include ${requiredPackagePath}`);
