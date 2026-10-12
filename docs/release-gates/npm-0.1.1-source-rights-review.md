@@ -27,6 +27,12 @@
 - The private-history evidence does not identify per-file authors, external assistance, employer/client contributions, or source-specific adaptations. The selected General Legal source audit checked the pinned repository license, README, and one mutual-NDA source file only; it did not compare the other four source files associated with five packages. The template notes assert no wording was copied or adapted, but that assertion is not a completed clause-by-clause comparison.
 - Disposition: rights clearance remains **unresolved**. Do not close issue #5 or publish the template-inclusive stable tarball until ownership/authority and the remaining source-to-template comparison are documented and independently accepted.
 
+## Rights-holder provenance attestation (2026-10-12)
+
+The user confirmed in this task that they own, or have authority to license under CC0-1.0, the original text of all 14 template packages, and that those original texts contain no client, contributor, or third-party material without permission. This is a rights-holder representation recorded with the user's authorization; it is not an independent legal opinion, file-by-file authorship history, third-party clearance, or approval of the license map. It does not clear other shipped files or replace review of source declarations, notices, upstream terms, and package-level presentation. The 14 templates remain `DRAFT` and no legal review is implied.
+
+**Effect on decision list:** item 1 is rights-holder-attested for the original text of the 14 templates only. The original-content and software/docs inventory, source-to-template comparisons, exact package notices, contributor terms, and independent license-scope acceptance remain open. Keep issue #5 open until those remaining points are independently reviewed and recorded.
+
 ## Source records used by the 14 template packages
 
 | Source ID | Verification | Reuse status | Recorded license / signal | Used by |
