@@ -2,9 +2,9 @@
 
 **Status:** preparation for specialist review only. This document is not legal advice, a privacy assessment, or approval of the scanner. Do not treat automated validation or this brief as a professional review.
 
-**Code baseline for review:** scanner release changes were prepared from `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204` and carried in `BaseWorkers/openlegal-morocco` PR #16 (`release/v0.1.1-stable`). The currently checked-out and last remotely verified PR head is `eecd24dd35be89f2fca2e264082cdd77f6e0ab2e`; CI and CodeQL passed on that commit. These are documentation-only commits after scanner source preparation. The scanner source itself and its review evidence must be checked by SHA-256 before a reviewer starts; do not rely on a branch name alone. This is not a privacy-specialist approval.
+**Code baseline for review:** scanner release changes were prepared from `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204` and carried in `BaseWorkers/openlegal-morocco` PR #16 (`release/v0.1.1-stable`). At preparation time, PR head `c8e54ce10ed0d3638b51a5a86b62331336157353` was remotely verified; CI and CodeQL passed on that commit. The intervening commits update review documentation only; the scanner source hashes below remain unchanged. Recompute them before review; do not rely on a branch name alone. This is not a privacy-specialist approval.
 
-## Review file identity at PR head `eecd24dd35be89f2fca2e264082cdd77f6e0ab2e`
+## Review file identity at scanner source baseline, carried through PR head `c8e54ce10ed0d3638b51a5a86b62331336157353`
 
 Recompute these digests at review time; a mismatch means the review target has changed.
 
