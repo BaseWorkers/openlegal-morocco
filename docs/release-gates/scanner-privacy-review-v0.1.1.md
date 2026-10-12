@@ -2,7 +2,21 @@
 
 **Status:** preparation for specialist review only. This document is not legal advice, a privacy assessment, or approval of the scanner. Do not treat automated validation or this brief as a professional review.
 
-**Code baseline for review:** scanner release changes prepared in commit `5bb2d22`, based on `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204`, carried in `BaseWorkers/openlegal-morocco` PR #16 (`release/v0.1.1-stable`). Later PR commits refresh review documentation; fetch the PR head and record the exact SHA and scanner-file digests at the time of review. CI and CodeQL passed on PR head `159d818aba87944b696c477437cb5898f976e1e0`; subsequent documentation-only PR commits require their own checks. This is not a privacy-specialist approval.
+**Code baseline for review:** scanner release changes were prepared from `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204` and carried in `BaseWorkers/openlegal-morocco` PR #16 (`release/v0.1.1-stable`). The currently checked-out and last remotely verified PR head is `eecd24dd35be89f2fca2e264082cdd77f6e0ab2e`; CI and CodeQL passed on that commit. These are documentation-only commits after scanner source preparation. The scanner source itself and its review evidence must be checked by SHA-256 before a reviewer starts; do not rely on a branch name alone. This is not a privacy-specialist approval.
+
+### Review file identity at PR head `eecd24dd35be89f2fca2e264082cdd77f6e0ab2e`
+
+Recompute these digests at review time; a mismatch means the review target has changed.
+
+| File | SHA-256 |
+| --- | --- |
+| `scripts/scanner.mjs` | `2561f14498f43a7c71225b278df1f653d031e61805a1695b3838fa0a4ca42ed8` |
+| `scripts/findings.mjs` | `21d0b97811b7ecb68c0a81389e4d7c8f9f3427af06188ab158ac470898a09d1a` |
+| `schemas/findings.schema.json` | `fa9b9fb08d839d58c42852f637184bdd67e7ab5d5fc4fca41f84bb74f4b35a7c` |
+| `tests/scanner.test.mjs` | `257b843845e89c00dd4d67b5b1a40a62ef257531021b199d7361c6c95974202c` |
+| `sources/registry.yaml` | `3ab95d57c7785f9707eb4d87a83e5015eb5fe7796360ec7986f1b383e44d8ed8` |
+| `research/morocco/privacy-data-protection.md` | `447b0516cb7ffb53f85af787760ff59b610d31187b802eedc8b6ce7a2b40fb63` |
+| `research/morocco/claims.json` | `12e3f0b395967e292333713694686936d0b1e035318ab993ff600f9f2b997e53` |
 
 ## Requested reviewer decision
 
