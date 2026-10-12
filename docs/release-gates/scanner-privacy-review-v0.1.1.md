@@ -2,7 +2,7 @@
 
 **Status:** preparation for specialist review only. This document is not legal advice, a privacy assessment, or approval of the scanner. Do not treat automated validation or this brief as a professional review.
 
-**Code baseline for review:** `BaseWorkers/openlegal-morocco` PR #16, branch `release/v0.1.1-stable`, current head `159d818aba87944b696c477437cb5898f976e1e0`, based on `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204`. The scanner release changes were prepared in `5bb2d22` and the review packets were refreshed in the current PR head. As of 2026-10-12, PR validation and CodeQL pass on this head, but the PR remains open and this is not a privacy-specialist approval. Regenerate packet inputs and confirm the exact head before recording a review.
+**Code baseline for review:** scanner release changes prepared in commit `5bb2d22`, based on `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204`, carried in `BaseWorkers/openlegal-morocco` PR #16 (`release/v0.1.1-stable`). Later PR commits refresh review documentation; fetch the PR head and record the exact SHA and scanner-file digests at the time of review. CI and CodeQL passed on PR head `159d818aba87944b696c477437cb5898f976e1e0`; subsequent documentation-only PR commits require their own checks. This is not a privacy-specialist approval.
 
 ## Requested reviewer decision
 
