@@ -62,6 +62,35 @@
         "minLength": 1
       }
     },
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "score_basis", "completed_scopes", "incomplete_scopes", "status", "coverage_percent", "framework"],
+      "properties": {
+        "score": { "type": "integer", "minimum": 0, "maximum": 100, "description": "Deprecated alias for evidence coverage; use coverage_percent. Never a legal-risk or compliance score." },
+        "score_basis": { "const": "evidence_collection_coverage" },
+        "readiness_score": { "type": "integer", "minimum": 0, "maximum": 100, "description": "Heuristic technical review-readiness signal based on scanner finding rules and incomplete requested scan scopes. Not a legal-risk or compliance score." },
+        "readiness_basis": { "const": "open_review_work" },
+        "readiness_penalties": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["finding_rules", "finding_points", "incomplete_requested_scopes", "incomplete_scope_points"],
+          "properties": {
+            "finding_rules": { "type": "integer", "minimum": 0 },
+            "finding_points": { "type": "integer", "minimum": 0 },
+            "incomplete_requested_scopes": { "type": "integer", "minimum": 0 },
+            "incomplete_scope_points": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "readiness_formula": { "type": "string", "minLength": 1 },
+        "completed_scopes": { "type": "array", "uniqueItems": true, "items": { "enum": ["repository", "nextjs_framework", "public_website"] } },
+        "incomplete_scopes": { "type": "array", "uniqueItems": true, "items": { "enum": ["repository", "nextjs_framework", "public_website"] } },
+        "unscanned_optional_scopes": { "type": "array", "uniqueItems": true, "items": { "enum": ["public_website"] } },
+        "status": { "const": "human_review_required" },
+        "coverage_percent": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "framework": { "enum": ["Next.js", "unknown"] }
+      }
+    },
     "findings": {
       "type": "array",
       "items": {
@@ -229,6 +258,11 @@
             ]
           }
         },
+        "suggested_actions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Evidence-oriented technical or fact-gathering next steps. These are not legal conclusions or mandatory remediation instructions."
+        },
         "review_status": {
           "type": "object",
           "additionalProperties": false,
@@ -272,7 +306,7 @@
           "pattern": "^openlegal\\.[a-z0-9][a-z0-9._-]{0,127}$"
         },
         "jurisdiction": {
-          "const": "MA"
+          "enum": ["MA", "EU"]
         }
       }
     },
@@ -339,7 +373,8 @@
             "file",
             "service",
             "component",
-            "repository"
+            "repository",
+            "website"
           ]
         },
         "identifier": {

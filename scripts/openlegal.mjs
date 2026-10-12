@@ -18,7 +18,7 @@ const usage = `Usage:
   openlegal status TEMPLATE_ID
   openlegal export TEMPLATE_ID [--language en|fr|ar] [--format md|json]
   openlegal check
-  openlegal scan [path] [--format json|md] [--language en|fr|ar]
+  openlegal scan [path] [--url HTTPS_URL] [--format json|md] [--language en|fr|ar] [--output FILE]
   openlegal findings validate <file|->
   openlegal findings render <file|-> [--format json|md]
   openlegal changes compare SOURCE_ID --previous-sha SHA256 --current FILE [--retrieved-at ISO_TIMESTAMP]
@@ -31,7 +31,7 @@ function parseOptions(tokens) {
   const options = {};
   for (let index = 0; index < tokens.length; index += 1) {
     const key = tokens[index];
-    if (!['--category', '--language', '--format'].includes(key) || !tokens[index + 1] || tokens[index + 1].startsWith('--')) {
+    if (!['--category', '--language', '--format', '--url', '--output'].includes(key) || !tokens[index + 1] || tokens[index + 1].startsWith('--')) {
       throw new Error(`Invalid option: ${key}`);
     }
     if (options[key.slice(2)]) throw new Error(`Duplicate option: ${key}`);
@@ -88,18 +88,26 @@ async function main(args) {
     const optionTokens = [];
     for (let index = 0; index < rest.length; index += 1) {
       const token = rest[index];
-      if (token.startsWith('--')) optionTokens.push(token, rest[++index]);
+      if (token.startsWith('--')) {
+        if (!rest[index + 1]) throw new Error(`Missing value for ${token}`);
+        optionTokens.push(token, rest[++index]);
+      }
       else if (!pathSeen) { path = token; pathSeen = true; }
       else throw new Error('scan accepts at most one repository path');
     }
     const options = parseOptions(optionTokens);
-    if (Object.keys(options).some((key) => !['format', 'language'].includes(key))) throw new Error('scan accepts only --format and --language');
+    if (Object.keys(options).some((key) => !['format', 'language', 'url', 'output'].includes(key))) throw new Error('scan accepts only --format, --language, --url, and --output');
     const format = options.format || 'md';
     if (!['md', 'json'].includes(format)) throw new Error('Scan format must be json or md');
-    const { document, messages } = await scanRepository(path, { language: options.language || 'en' });
+    const { document, messages } = await scanRepository(path, { language: options.language || 'ar', url: options.url || null });
     const errors = await validateFindings(document);
     if (errors.length) throw new Error(`Findings schema validation failed:\n${errors.map((error) => `- ${error}`).join('\n')}`);
-    process.stdout.write(format === 'json' ? `${JSON.stringify(document, null, 2)}\n` : `${renderScanMarkdown(document, messages)}\n`);
+    const output = format === 'json' ? `${JSON.stringify(document, null, 2)}\n` : `${renderScanMarkdown(document, messages)}\n`;
+    if (options.output) {
+      const outputPath = resolve(options.output);
+      await writeFile(outputPath, output, { flag: 'wx' });
+      process.stdout.write(`OpenLegal report written to ${outputPath}\n`);
+    } else process.stdout.write(output);
     return;
   }
   if (command === 'changes') {
@@ -136,6 +144,14 @@ async function main(args) {
   const id = command === 'list' ? null : rest.shift();
   if (command !== 'list' && (!id || id.startsWith('--'))) throw new Error(usage);
   const options = parseOptions(rest);
+  const allowedByCommand = {
+    list: ['category', 'language'],
+    show: ['language'],
+    sources: [],
+    status: [],
+    export: ['language', 'format'],
+  };
+  if (Object.keys(options).some((key) => !allowedByCommand[command]?.includes(key))) throw new Error(`${command} received an unsupported option`);
   if (command === 'sources' && Object.keys(options).length) throw new Error('sources accepts only a template ID');
   if (command === 'status' && Object.keys(options).length) throw new Error('status accepts only a template ID');
   if (command === 'list' && options.format) throw new Error('list does not accept --format');

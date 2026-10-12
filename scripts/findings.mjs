@@ -72,6 +72,9 @@ export function renderFindingsMarkdown(document) {
       `- Confidence: ${finding.confidence ?? 'not measured'}`,
       `- Description: ${finding.description}`);
     if (finding.legal_question) lines.push(`- Potential legal question: ${finding.legal_question}`);
+    if (finding.suggested_actions?.length) {
+      lines.push('- Suggested next steps:', ...finding.suggested_actions.map((action) => `  - ${action}`));
+    }
     for (const evidence of finding.evidence) {
       const ref = evidence.source_reference;
       const location = ref.path ? `${ref.path}${ref.line_start ? `:${ref.line_start}${ref.line_end && ref.line_end !== ref.line_start ? `-${ref.line_end}` : ''}` : ''}` : ref.kind;
