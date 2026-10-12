@@ -31,7 +31,7 @@
 
 The user confirmed in this task that they own, or have authority to license under CC0-1.0, the original text of all 14 template packages, and that those original texts contain no client, contributor, or third-party material without permission. This is a rights-holder representation recorded with the user's authorization; it is not an independent legal opinion, file-by-file authorship history, third-party clearance, or approval of the license map. It does not clear other shipped files or replace review of source declarations, notices, upstream terms, and package-level presentation. The 14 templates remain `DRAFT` and no legal review is implied.
 
-**Effect on decision list:** item 1 is rights-holder-attested for the original text of the 14 templates only. The original-content and software/docs inventory, source-to-template comparisons, exact package notices, contributor terms, and independent license-scope acceptance remain open. Keep issue #5 open until those remaining points are independently reviewed and recorded.
+**Effect on decision list:** item 1 now has a package-wide rights-holder representation, including the original text of all 14 templates. This remains a user attestation, not independent file-by-file clearance. Item 2 has improved package-level signaling through npm's license-file pointer, while independent acceptance of the provisional path map remains open. Source-to-template comparison, third-party term and notice verification, unresolved-source disposition, contributor terms, and named maintainer responsibility remain open. Keep issue #5 open until those remaining points are independently reviewed and recorded.
 
 ## Package-wide rights-holder attestation (2026-10-12)
 
