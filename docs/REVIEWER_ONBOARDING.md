@@ -25,6 +25,8 @@ Before authorization, a maintainer checks and records identity, relevant credent
 
 An authorization covers only its recorded topic, jurisdiction, language, and review type. A reviewer may take several scopes only when each is separately checked and authorized.
 
+The registry stores public qualification summaries/references and check dates; it must not contain identity documents or private contact details. Legal scope tokens identify a jurisdiction and exact template or research claim (for example, `jurisdiction:MA`, `template:privacy-policy`, or `claim:cndp-index-lists-law-and-decree`). Language scope tokens identify both the exact template and language (for example, `template:privacy-policy:ar`). Validation rejects an approval outside those recorded tokens. The current registries remain empty.
+
 ## Review process
 
 1. A maintainer acknowledges the public expression of interest and clarifies the proposed role, scope, and availability.

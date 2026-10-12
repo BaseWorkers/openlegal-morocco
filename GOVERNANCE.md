@@ -17,6 +17,8 @@ Before adding a reviewer to the registry, a maintainer must document identity ve
 
 Each reviewer assignment must identify its package or rule set, version, language or jurisdiction, exact repository commit, content digest, and review date. One person may cover multiple scopes only if each scope is separately evidenced and authorized. A review in one language does not approve another language.
 
+The reviewer registry records a public qualification summary and evidence reference, the dates qualifications and conflicts were checked, and exact scope tokens. Legal tokens include `jurisdiction:MA`, `template:<template-id>`, and `claim:<claim-id>`; language tokens use `template:<template-id>:<language>` where language is `en`, `fr`, or `ar`. Validation rejects template, claim, jurisdiction, or language approvals outside the reviewer's recorded scopes. Do not put identity documents or private contact details in the public registry.
+
 ## Maintainer appointment and responsibilities
 
 A named human must accept the maintainer role before being added to governance records. Record their public account, role, decision scope, start date, and an alternate for continuity. Maintainers verify reviewer qualifications and conflicts, protect signing-key registry changes, keep review records accurate, and handle release decisions. They must not claim legal or language competence solely from the maintainer role.
