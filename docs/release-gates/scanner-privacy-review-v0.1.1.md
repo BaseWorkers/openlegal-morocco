@@ -2,7 +2,7 @@
 
 **Status:** preparation for specialist review only. This document is not legal advice, a privacy assessment, or approval of the scanner. Do not treat automated validation or this brief as a professional review.
 
-**Code baseline for review:** `BaseWorkers/openlegal-morocco` PR #16, branch `release/v0.1.1-stable`, commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf` (parent `2c2edebfd774d1ce23acd360254e58d086fd7a80`). This is not yet `main`. Confirm this exact SHA and regenerate any packet inputs from it before recording a review. PR validation, DCO, and CodeQL checks passed on this SHA; those checks do not substitute for privacy-specialist review.
+**Code baseline for review:** `BaseWorkers/openlegal-morocco` PR #16, branch `release/v0.1.1-stable`, current head `159d818aba87944b696c477437cb5898f976e1e0`, based on `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204`. The scanner release changes were prepared in `5bb2d22` and the review packets were refreshed in the current PR head. As of 2026-10-12, PR validation and CodeQL pass on this head, but the PR remains open and this is not a privacy-specialist approval. Regenerate packet inputs and confirm the exact head before recording a review.
 
 ## Requested reviewer decision
 
@@ -46,11 +46,21 @@ These are review prompts inferred from the implementation, not validated error r
 
 ## Engineering issue found during preparation
 
-URL notice detection applied an anchored heading expression to the entire HTML document. A normal document beginning with `<!doctype html><html>...` therefore did not match a later `<h1>Privacy Policy</h1>`, even though the same title in the recognized path could match. Commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf` changes the expression so Markdown headings stay line-anchored while HTML `<h1>`–`<h3>` and `<title>` tags may match anywhere in the document, including simple nested inline tags. A regression case covers a complete HTML document. The PR's `validate` and CodeQL checks passed for this exact commit. Ask the privacy reviewer to assess the revised rule's scope and residual false positives/negatives.
+URL notice detection previously applied an anchored heading expression to the entire HTML document. A normal document beginning with `<!doctype html><html>...` therefore did not match a later `<h1>Privacy Policy</h1>`, even though the same title in the recognized path could match. The current candidate keeps Markdown headings line-anchored while HTML `<h1>`–`<h3>` and `<title>` tags may match anywhere in the document, including simple nested inline tags. A regression case covers a complete HTML document. Ask the privacy reviewer to assess the revised rule's scope and residual false positives/negatives.
 
 ## Existing automated examples and review gaps
 
-`tests/scanner.test.mjs` currently exercises output schema and no source excerpts; skipped secrets/dependencies/build output/lockfiles/symlinks; repository notice detection and a documentation-example non-match; localized output structure; Next.js detection; combined URL/repository coverage; same-origin HTML/privacy links and sanitized evidence; cookie storage without tracking classification; inaccessible-link reporting; critical-finding presentation; and rejection of private IP and cross-origin redirects. Commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf` adds a regression case for a notice heading later in a complete HTML document.
+`tests/scanner.test.mjs` exercises these representative rule-to-test links:
+
+| Rule | Positive examples | Negative / boundary examples |
+| --- | --- | --- |
+| `openlegal.privacy.notice.presence` | `notice paths are detected...`; `public URL scan detects a privacy heading inside a complete HTML document`; same-origin URL tests | Unrelated README example; inaccessible privacy page; bounded same-origin link behavior |
+| `openlegal.privacy.cookie-storage.indicator` | Repository fixture and `public URL scan fetches only same-origin HTML pages...` | `cookie storage by itself is not classified as tracking`; cookie-named JavaScript asset is ignored |
+| `openlegal.privacy.tracking.indicator` | Repository fixture (`posthog-js`, `gtag`) and URL scan with Google Analytics | Unrelated Markdown example; skipped dependencies/build output; cookie API alone |
+| `openlegal.third_party.integration.indicator` | URL scan with Google Analytics host; repository fixture includes a PostHog dependency | No broad provider inventory or runtime network-use validation |
+| `openlegal.gdpr.territorial-scope.question` | Output-contract test checks EU jurisdiction and the question; localized structure checked for Arabic/French | No code test can determine the underlying organization-specific territorial facts |
+
+This matrix is a map of selected automated examples, not a quality or accuracy study. Tests do not cover every alternative literal in the regular expressions, representative real applications, or professional translation equivalence.
 
 These are selected regression examples, not a representative accuracy study. They do not establish recall/precision on real applications, completeness of provider/tracker inventories, correctness of legal interpretation, current-law status, adequacy across all deployment patterns, or professional translation equivalence. The reviewer should decide whether a labeled corpus, representative real-world samples, or additional adversarial cases are needed before making any accuracy claim.
 
