@@ -50,6 +50,15 @@ for (const reviewer of reviewerRegistry.authorized_language_reviewers) {
   languageReviewerIds.add(reviewer.id);
 }
 const publicKeyOwners = new Map();
+for (const reviewer of reviewerRegistry.authorized_legal_reviewers) {
+  if (reviewer.active) {
+    assert.ok(reviewer.authorized_scopes.some((scope) => scope.startsWith('jurisdiction:')), `active legal reviewer ${reviewer.id} must have an authorized jurisdiction scope`);
+    assert.ok(reviewer.authorized_scopes.some((scope) => /^template:[a-z0-9]+(?:-[a-z0-9]+)*$/.test(scope) || scope.startsWith('claim:')), `active legal reviewer ${reviewer.id} must have an exact template or research-claim scope`);
+  }
+}
+for (const reviewer of reviewerRegistry.authorized_language_reviewers) {
+  if (reviewer.active) assert.ok(reviewer.authorized_scopes.some((scope) => /^template:[a-z0-9]+(?:-[a-z0-9]+)*:(?:en|fr|ar)$/.test(scope)), `active language reviewer ${reviewer.id} must have an exact template-language scope`);
+}
 for (const reviewer of [...reviewerRegistry.authorized_legal_reviewers, ...reviewerRegistry.authorized_language_reviewers]) {
   if (reviewer.active) assert.ok(reviewer.signing_keys.some((key) => key.active), `active reviewer ${reviewer.id} must have an active Ed25519 signing key`);
   const keyIds = new Set();

@@ -42,8 +42,15 @@ function makeSigningReviewer(id = 'reviewer-1', keyId = 'reviewer-key-1') {
     privateKey,
     reviewer: {
       id,
+      display_name: 'Synthetic reviewer',
       active: true,
       authorized_at: '2026-10-01',
+      authorization_record: 'https://example.test/authorization',
+      qualification_summary: 'Synthetic reviewer used only for authorization tests',
+      qualification_evidence: ['https://example.test/reviewer-qualification'],
+      qualification_verified_at: '2026-10-01',
+      conflicts_checked_at: '2026-10-01',
+      authorized_scopes: ['jurisdiction:MA', 'template:mutual-nda', 'template:mutual-nda:en', 'claim:sample-claim'],
       signing_keys: [{ id: keyId, active: true, public_key_pem: publicKey.export({ type: 'spki', format: 'pem' }) }]
     }
   };
@@ -515,7 +522,7 @@ test('LEGAL_REVIEWED requires an approved, version-matched review record and aut
   const { privateKey, reviewer } = makeSigningReviewer();
   const contentDigest = digestReviewableContent({ 'en.md': 'Reviewed wording', 'fr.md': 'Texte vérifié' });
   const metadata = {
-    id: 'mutual-nda', status: 'LEGAL_REVIEWED', version: '1.0.0',
+    id: 'mutual-nda', status: 'LEGAL_REVIEWED', version: '1.0.0', jurisdiction: ['MA'],
     legal_review: { status: 'pending', reviewer: null, reviewed_at: null, version: null, review_record_id: null }
   };
   const emptyContext = { authorizedReviewers: [], reviewRecords: [], currentContentDigest: contentDigest };
@@ -532,10 +539,21 @@ test('LEGAL_REVIEWED requires an approved, version-matched review record and aut
   const context = { authorizedReviewers: [reviewer], reviewRecords: [record], currentContentDigest: contentDigest };
   assert.ok(validateTemplateReviewPolicy(reviewCandidate, { ...context, authorizedReviewers: [] }).some((error) => error.includes('not authorized')));
   assert.deepEqual(validateTemplateReviewPolicy(reviewCandidate, context), []);
+  assert.ok(validateTemplateReviewPolicy(reviewCandidate, { ...context, authorizedReviewers: [{ ...reviewer, authorized_scopes: ['jurisdiction:MA'] }] }).some((error) => error.includes('not authorized for template mutual-nda')));
+  assert.ok(validateTemplateReviewPolicy(reviewCandidate, { ...context, authorizedReviewers: [{ ...reviewer, authorized_scopes: ['template:mutual-nda'] }] }).some((error) => error.includes('not authorized for jurisdiction MA')));
   assert.ok(validateTemplateReviewPolicy({ ...reviewCandidate, version: '1.0.1' }, context).some((error) => error.includes('version')));
   assert.ok(validateTemplateReviewPolicy(reviewCandidate, { ...context, currentContentDigest: '0'.repeat(64) }).some((error) => error.includes('content has changed')));
   const reviewSchema = JSON.parse(await readFile(new URL('../schemas/review.schema.json', import.meta.url), 'utf8'));
   assert.deepEqual(validateJsonSchemaValue(record, reviewSchema), []);
+});
+
+test('reviewer registry entries require qualification evidence, conflict-check dates, and exact scope tokens', async () => {
+  const { reviewer } = makeSigningReviewer();
+  const schema = await readJson('../schemas/authorized-reviewers.schema.json');
+  const registry = { schema_version: 1, authorized_legal_reviewers: [reviewer], authorized_language_reviewers: [] };
+  assert.deepEqual(validateJsonSchemaValue(registry, schema), []);
+  assert.ok(validateJsonSchemaValue({ ...registry, authorized_legal_reviewers: [{ ...reviewer, authorized_scopes: ['template:mutual-nda:english'] }] }, schema).some((error) => error.includes('does not match')));
+  assert.ok(validateJsonSchemaValue({ ...registry, authorized_legal_reviewers: [{ ...reviewer, qualification_evidence: [] }] }, schema).some((error) => error.includes('at least 1')));
 });
 
 test('language review requires an authorized reviewer and approved digest-bound record for each reviewed language', () => {
@@ -557,6 +575,7 @@ test('language review requires an authorized reviewer and approved digest-bound 
   };
   assert.deepEqual(validateTemplateReviewPolicy(metadata, context), []);
   assert.ok(validateTemplateReviewPolicy(metadata, { ...context, authorizedLanguageReviewers: [] }).some((error) => error.includes('not authorized for language review')));
+  assert.ok(validateTemplateReviewPolicy(metadata, { ...context, authorizedLanguageReviewers: [{ ...reviewer, authorized_scopes: ['template:mutual-nda:fr'] }] }).some((error) => error.includes('not authorized for template-language scope mutual-nda:en')));
   assert.ok(validateTemplateReviewPolicy(metadata, { ...context, currentContentDigest: 'b'.repeat(64) }).some((error) => error.includes('content has changed')));
   assert.ok(validateTemplateReviewPolicy({ ...metadata, language_review_records: { en: null } }, context).some((error) => error.includes('requires a linked language review record')));
   assert.ok(validateTemplateReviewPolicy({ ...metadata, language_review: { en: 'pending' } }, context).some((error) => error.includes('pending language review must not link')));
@@ -611,6 +630,8 @@ test('research approvals bind the claim and resolved source records and gate ver
   const context = { reviewRecords: [record], authorizedReviewers: [reviewer], sourceRegistry };
   assert.deepEqual(validateResearchClaimReviewPolicy(claim, context), []);
   assert.ok(validateResearchClaimReviewPolicy({ ...claim, text: 'Changed after review.' }, context).some((error) => /claim or referenced source records changed/.test(error)));
+  assert.ok(validateResearchClaimReviewPolicy(claim, { ...context, authorizedReviewers: [{ ...reviewer, authorized_scopes: ['jurisdiction:MA'] }] }).some((error) => error.includes('not authorized for claim sample-claim')));
+  assert.ok(validateResearchClaimReviewPolicy(claim, { ...context, authorizedReviewers: [{ ...reviewer, authorized_scopes: ['claim:sample-claim'] }] }).some((error) => error.includes('not authorized for jurisdiction MA')));
   const changedSourceRegistry = [{ ...sourceRegistry[0], notes: 'Changed source record.' }];
   assert.ok(validateResearchClaimReviewPolicy(claim, { ...context, sourceRegistry: changedSourceRegistry }).some((error) => /claim or referenced source records changed/.test(error)));
   assert.ok(validateResearchClaimReviewPolicy(claim, { ...context, authorizedReviewers: [] }).some((error) => /not authorized/.test(error)));

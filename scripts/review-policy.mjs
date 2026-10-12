@@ -35,6 +35,14 @@ export function validateTemplateReviewPolicy(metadata, { authorizedReviewers, au
     if (review.version && review.version !== metadata.version) errors.push('the reviewed version must match template metadata.version');
     const reviewer = authorizedReviewers.find((entry) => entry.id === review.reviewer && entry.active);
     if (review.reviewer && !reviewer) errors.push(`reviewer ${review.reviewer} is not authorized`);
+    if (reviewer && !reviewer.authorized_scopes?.includes(`template:${metadata.id}`)) {
+      errors.push(`reviewer ${reviewer.id} is not authorized for template ${metadata.id}`);
+    }
+    for (const jurisdiction of metadata.jurisdiction ?? []) {
+      if (reviewer && !reviewer.authorized_scopes?.includes(`jurisdiction:${jurisdiction}`)) {
+        errors.push(`reviewer ${reviewer.id} is not authorized for jurisdiction ${jurisdiction}`);
+      }
+    }
     const record = reviewRecords.find((entry) => entry.id === review.review_record_id);
     if (!review.review_record_id || !record) errors.push('a reviewed template requires a linked review record');
     if (record) {
@@ -74,6 +82,9 @@ export function validateTemplateReviewPolicy(metadata, { authorizedReviewers, au
     if (!record.languages?.includes(language)) errors.push(`${language} review record does not include this language`);
     const reviewer = authorizedLanguageReviewers.find((entry) => entry.id === record.reviewer_id && entry.active);
     if (!reviewer) errors.push(`${language} reviewer ${record.reviewer_id} is not authorized for language review`);
+    if (reviewer && !reviewer.authorized_scopes?.includes(`template:${metadata.id}:${language}`)) {
+      errors.push(`${language} reviewer ${reviewer.id} is not authorized for template-language scope ${metadata.id}:${language}`);
+    }
     if (reviewer && reviewer.authorized_at > record.reviewed_at) errors.push(`${language} reviewer must have been authorized on or before the review date`);
     if (reviewer) {
       const signatureError = verifyReviewSignature(record, reviewer);
