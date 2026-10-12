@@ -2,9 +2,8 @@
 
 **Preparation only.** This packet is a file inventory and review aid. It is not a rights determination, legal review, authorship record, or publication approval.
 
-- Exact source: BaseWorkers/openlegal-morocco PR #16 commit 7ee3103e6b7045ae66e21ff25bb502bb078860bf.
-- Package: openlegal@0.1.1; dry-run tarball openlegal-0.1.1.tgz; 196 files; 1301241 unpacked bytes.
-- Package integrity: sha512-bUhpdFIuFReKwitX/KT04sIJi/7fLnFjDLlqDIhjtP8nv1aiSM4h0Ha3Zi/ibq3RokF+K9XZo4P90tmkLuVhjQ==
+- Original PR #16 inventory: commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf`; `openlegal@0.1.1`, 196 files, 1301241 unpacked bytes; integrity `sha512-bUhpdFIuFReKwitX/KT04sIJi/7fLnFjDLlqDIhjtP8nv1aiSM4h0Ha3Zi/ibq3RokF+K9XZo4P90tmkLuVhjQ==`.
+- Current-main candidate recheck (2026-10-12): base `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204`; release-preparation commit `5bb2d22` (`codex/v0.1.1-candidate-current-main`). `npm pack --dry-run --json --ignore-scripts` reports `openlegal@0.1.1`, 196 files, 1305025 unpacked bytes, 112 template files across 14 template packages, no package-level `license` field, and integrity `sha512-SGrrhs3E0dfFMAbwLFy0RS4EH9iuFkSG4CirKHY5HRypMxW453tJHKHqvpKwR2QRtpEOffs5NwkUerKbZTRW8w==`. This is a local dry run, not a publish or rights approval.
 - package.json license field: not set; the package combines different intended licenses.
 - Scope-map status: provisional; scope-map validator covers the repository, but explicitly says human ownership, source-rights, and license review remain required.
 - Shipped paths: 196; covered by intended-scope rules: 196; unmapped: 0.
