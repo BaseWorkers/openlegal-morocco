@@ -20,6 +20,13 @@
 4. Exclude or clearly mark material whose rights are unclear or incompatible before stable publication.
 5. Verify contributor agreement language and named maintainer responsibility. DCO sign-off alone does not establish copyright ownership, assignment, or permission to license the material.
 
+## Additional provenance finding (2026-10-12)
+
+- Inspection of the paired private repository history found the initial foundation commit `552766e844b052c859730827b1b83990b7f8cf7f` added the multilingual template packages in one large snapshot. Its Git author is `Jawadbenhammoupro <jawadbenhammou.pro@gmail.com>`; that records the commit author field, not proof that every line was personally written or that all third-party rights were clear.
+- That initial commit has no `Signed-off-by` trailer, and `DCO.md` was not present in that commit. The repository's later DCO process therefore does not retroactively certify the initial template snapshot. A current DCO sign-off on a later documentation commit is not a substitute for an explicit rights/provenance attestation covering the original content.
+- The private-history evidence does not identify per-file authors, external assistance, employer/client contributions, or source-specific adaptations. The selected General Legal source audit checked the pinned repository license, README, and one mutual-NDA source file only; it did not compare the other four source files associated with five packages. The template notes assert no wording was copied or adapted, but that assertion is not a completed clause-by-clause comparison.
+- Disposition: rights clearance remains **unresolved**. Do not close issue #5 or publish the template-inclusive stable tarball until ownership/authority and the remaining source-to-template comparison are documented and independently accepted.
+
 ## Source records used by the 14 template packages
 
 | Source ID | Verification | Reuse status | Recorded license / signal | Used by |
