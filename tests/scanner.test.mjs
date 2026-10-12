@@ -193,6 +193,7 @@ test('critical findings stay prominent in the report regardless of readiness sco
 test('public URL scan rejects private destinations and cross-origin redirects before another request', async () => {
   let requests = 0;
   await assert.rejects(scanUrl('https://127.0.0.1/', { language: 'en', requestImpl: async () => { requests += 1; } }), /private or reserved/);
+  await assert.rejects(scanUrl('https://240.0.0.1/', { language: 'en', requestImpl: async () => { requests += 1; } }), /private or reserved/);
   assert.equal(requests, 0);
   await assert.rejects(fetchPublicPage('https://example.test/', {
     requestImpl: async () => ({ status: 302, headers: { location: 'https://other.example/' }, body: '' }),
