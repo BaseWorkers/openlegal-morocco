@@ -1,19 +1,20 @@
-# OpenLegal scanner rules — independent privacy review brief
+# OpenLegal scanner rules — independent privacy review brief (v0.1.2)
 
 **Status:** preparation for specialist review only. This document is not legal advice, a privacy assessment, or approval of the scanner. Do not treat automated validation or this brief as a professional review.
 
-**Code baseline for review:** scanner release changes were prepared from `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204` and carried in `BaseWorkers/openlegal-morocco` PR #16 (`release/v0.1.1-stable`). At preparation time, PR head `c8e54ce10ed0d3638b51a5a86b62331336157353` was remotely verified; CI and CodeQL passed on that commit. The intervening commits update review documentation only; the scanner source hashes below remain unchanged. Recompute them before review; do not rely on a branch name alone. This is not a privacy-specialist approval.
+**Code baseline for review:** OpenLegal `0.1.2` at `main` commit `68d3cd921b79e341ed88fe30ee590c004bc8deb2`, merged from PR #23. Validation, the full test suite, and CodeQL passed on PR head `b5dbdc2829d2821164cf77f44d420a150eb78e21`; the merge commit contains the same reviewed tree. The scanner now reports the package version read from `package.json`; scanner rules and their review status are otherwise unchanged. Recompute hashes before review; do not rely on a branch name alone. This is not a privacy-specialist approval.
 
-## Review file identity at scanner source baseline, carried through PR head `c8e54ce10ed0d3638b51a5a86b62331336157353`
+## Review file identity at main commit `68d3cd921b79e341ed88fe30ee590c004bc8deb2`
 
 Recompute these digests at review time; a mismatch means the review target has changed.
 
 | File | SHA-256 |
 | --- | --- |
-| `scripts/scanner.mjs` | `2561f14498f43a7c71225b278df1f653d031e61805a1695b3838fa0a4ca42ed8` |
+| `scripts/scanner.mjs` | `45c173c866a668a29f8c9851d1b2319b41c0ae91954d224fe82281c475960ccf` |
+| `scripts/openlegal.mjs` | `5bab5580e72b2a567e660002fffad50d8f52fb55769a80fbc1821a0ed82cba8a` |
 | `scripts/findings.mjs` | `21d0b97811b7ecb68c0a81389e4d7c8f9f3427af06188ab158ac470898a09d1a` |
 | `schemas/findings.schema.json` | `fa9b9fb08d839d58c42852f637184bdd67e7ab5d5fc4fca41f84bb74f4b35a7c` |
-| `tests/scanner.test.mjs` | `257b843845e89c00dd4d67b5b1a40a62ef257531021b199d7361c6c95974202c` |
+| `tests/scanner.test.mjs` | `c97ed2dc536a9aeb40428738ddaa801f075c816a28070523744025cae086b097` |
 | `sources/registry.yaml` | `3ab95d57c7785f9707eb4d87a83e5015eb5fe7796360ec7986f1b383e44d8ed8` |
 | `research/morocco/privacy-data-protection.md` | `447b0516cb7ffb53f85af787760ff59b610d31187b802eedc8b6ce7a2b40fb63` |
 | `research/morocco/claims.json` | `12e3f0b395967e292333713694686936d0b1e035318ab993ff600f9f2b997e53` |
@@ -85,6 +86,7 @@ The scanner source registry references CNDP materials and GDPR Article 3, but th
 ## Files to review
 
 - `scripts/scanner.mjs` — patterns, collection limits, URL fetching, findings, confidence, assessment and localized caveats.
+- `scripts/openlegal.mjs` — CLI scan invocation, output validation and rendering.
 - `scripts/findings.mjs` and the finding schema — validation contract and status fields.
 - `tests/scanner.test.mjs` — tested examples and limits of current automated coverage.
 - `sources/registry.yaml` — source metadata used by reports.
