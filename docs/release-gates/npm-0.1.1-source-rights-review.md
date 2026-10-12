@@ -3,8 +3,8 @@
 **Preparation only.** This packet is a file inventory and review aid. It is not a rights determination, legal review, authorship record, or publication approval.
 
 - Original PR #16 inventory: commit `7ee3103e6b7045ae66e21ff25bb502bb078860bf`; `openlegal@0.1.1`, 196 files, 1301241 unpacked bytes; integrity `sha512-bUhpdFIuFReKwitX/KT04sIJi/7fLnFjDLlqDIhjtP8nv1aiSM4h0Ha3Zi/ibq3RokF+K9XZo4P90tmkLuVhjQ==`.
-- Current-main candidate recheck (2026-10-12): base `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204`; latest release PR head verified before this dry run was `66526b04e2a3329556a48d9fed7887af65d77293`. `npm pack --dry-run --json --ignore-scripts` reports `openlegal@0.1.1`, 196 files, 1305049 unpacked bytes, 112 template files across 14 template packages, no package-level `license` field, SHA-1 `6a53147c8f5b2e8c051e0b1231f60c10cb20abf4`, and integrity `sha512-tTHEwahk9b1UFldPS+kx9v+8qRr+HejvTFAvGr37BzS/fd44/CvvgryPSBGbcCKzL/Qcay46QPBxwXucsEiihg==`. This local dry run is not a publish or rights approval; rerun and record the new release PR head before publication.
-- package.json license field: not set; the package combines different intended licenses.
+- Candidate recheck (2026-10-12): base `main` commit `0684959816cbcd7402f27ae00be28ad6eccba204`. `npm pack --dry-run --json --ignore-scripts` reports `openlegal@0.1.1`, 196 files, 1305092 unpacked bytes, 112 template files across 14 template packages, `license: SEE LICENSE IN LICENSES/README.md`, included `package.json` and license notice, SHA-1 `3045077e8b716ccdb88000da7c0745d0f6ca9346`, and integrity `sha512-g5wtnaAskfn8w7CZMIEFbajwXoIiRGR1zxifwExogNvRw4NcJIqB2obLraeajPUdyCr5aVzxLTp+krRGF98Gjg==`. This local dry run is not a publish or rights approval; re-run for the final release PR head before publication.
+- Package metadata action: `package.json` now uses npm's `SEE LICENSE IN LICENSES/README.md` pointer because this package carries multiple intended licenses; the referenced top-level notice explains the split and retains the provisional-rights caveat.
 - Scope-map status: provisional; scope-map validator covers the repository, but explicitly says human ownership, source-rights, and license review remain required.
 - Shipped paths: 196; covered by intended-scope rules: 196; unmapped: 0.
 - Scope counts in this tarball: project-documentation: 8; upstream-license-texts: 2; original-content: 126; software-and-tooling: 60.
@@ -32,6 +32,10 @@
 The user confirmed in this task that they own, or have authority to license under CC0-1.0, the original text of all 14 template packages, and that those original texts contain no client, contributor, or third-party material without permission. This is a rights-holder representation recorded with the user's authorization; it is not an independent legal opinion, file-by-file authorship history, third-party clearance, or approval of the license map. It does not clear other shipped files or replace review of source declarations, notices, upstream terms, and package-level presentation. The 14 templates remain `DRAFT` and no legal review is implied.
 
 **Effect on decision list:** item 1 is rights-holder-attested for the original text of the 14 templates only. The original-content and software/docs inventory, source-to-template comparisons, exact package notices, contributor terms, and independent license-scope acceptance remain open. Keep issue #5 open until those remaining points are independently reviewed and recorded.
+
+## Package-wide rights-holder attestation (2026-10-12)
+
+The user additionally confirmed in this task that all other original contents of the package (code, documentation, research, metadata, and project license materials) belong to them or may be published under the stated licenses, and that included third-party materials are authorized with their notices retained. This records the user's representation for the reviewed package inventory; it is not independent legal review, does not verify each third-party license or notice, and does not replace professional review of the source register and license-scope map. The General Legal source comparison gap noted above remains a documented review item; no reused wording is claimed by this attestation.
 
 ## Source records used by the 14 template packages
 

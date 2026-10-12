@@ -1,6 +1,7 @@
 {
   "name": "openlegal",
   "version": "0.1.1",
+  "license": "SEE LICENSE IN LICENSES/README.md",
   "description": "Local Next.js privacy evidence scanner, CLI, and MCP tools for Morocco and GDPR review workflows",
   "repository": {
     "type": "git",
