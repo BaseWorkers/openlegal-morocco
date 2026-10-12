@@ -970,8 +970,8 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(contributionGuide, /authorized human reviewer/);
     const reviewGuide = await readFile(join(output, 'REVIEWING.md'), 'utf8');
     assert.match(readme, /REVIEWING\.md/);
-    assert.match(reviewGuide, /no legal or language reviewer is authorized/i);
-    assert.match(reviewGuide, /scanner rule interpretations are also unreviewed/i);
+    assert.match(reviewGuide, /legal, language, and scanner-specialist reviewer registries are empty/i);
+    assert.match(reviewGuide, /scanner rule interpretations remain unreviewed/i);
     assert.match(reviewGuide, /Comments and issue reports are welcome, but they do not change a review status/);
     assert.doesNotMatch(reviewGuide, /npm run|npm test|graphify|Codex|ROADMAP/i);
     const frenchReadme = await readFile(join(output, 'README.fr.md'), 'utf8');

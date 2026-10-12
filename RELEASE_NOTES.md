@@ -57,7 +57,7 @@ The CLI and MCP server read only the local checkout. They do not access a tester
 
 ## Content and review status
 
-All fourteen template packages remain `DRAFT`. The legal and language reviewer registries remain empty, and no maintainers have been appointed. The tooling does not turn source records, passing checks, or tester feedback into professional review.
+All fourteen template packages remain `DRAFT`. The legal and language reviewer registries remain empty. Jawad Benhammou (`@Jawadbenhammoupro`) is the technical maintainer and security-response owner; the tooling does not turn source records, passing checks, or tester feedback into professional review.
 
 The public contribution, license-scope, and source-rights limitations stated in v0.0.1 remain in force. This tooling preview does not clear third-party rights, settle contribution terms, or establish a staffed confidential reporting service.
 

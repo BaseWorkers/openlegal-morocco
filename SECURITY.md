@@ -1,8 +1,8 @@
 # Security policy
 
-This project has no public deployment. GitHub private vulnerability reporting is enabled for the public repository: use the repository's **Security** tab, open **Advisories**, and select **Report a vulnerability**. GitHub describes this as a private report to repository maintainers. Do not include real personal data, generated contracts, credentials, or other sensitive information in public issues or pull requests.
+This project has no public deployment. GitHub private vulnerability reporting is the project's confidential security-reporting route: use the repository's **Security** tab, open **Advisories**, and select **Report a vulnerability**. The named security-response owner is Jawad Benhammou (`@Jawadbenhammoupro`), who is responsible for receiving and reviewing those reports privately. Do not include real personal data, generated contracts, credentials, or other sensitive information in public issues or pull requests.
 
-The repository has not yet named a security-response owner or committed to a response time. Enabling the GitHub form does not by itself establish a staffed or managed security-support service. Reports about conduct or other non-vulnerability concerns do not have a confidential channel yet; do not put sensitive details in public issues or pull requests. The project must appoint responsible maintainers and establish a staffed conduct-reporting route before offering ongoing security or conduct support.
+No response-time commitment has been made. Reports about conduct or other non-vulnerability concerns do not have a confidential channel yet; do not put sensitive details in public issues or pull requests. The private vulnerability route is for security vulnerabilities only and does not create a hosted support service.
 
 The offline export command reads document values from standard input. It does not transmit or retain those inputs separately; generated documents are written only to the explicit output path. PDF conversion uses temporary files and an isolated LibreOffice profile that are removed when conversion ends.
 

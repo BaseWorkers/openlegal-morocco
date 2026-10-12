@@ -1,6 +1,6 @@
 # Reviewer and moderator onboarding
 
-OpenLegal is seeking independent Moroccan legal reviewers, Arabic/French/English language reviewers, privacy-scanner specialists, legal researchers, and community moderators. This page explains the volunteer process; it does not appoint anyone, verify qualifications, create a professional relationship, or authorize review status. No maintainers or reviewers are currently appointed.
+OpenLegal is seeking independent Moroccan legal reviewers, Arabic/French/English language reviewers, privacy-scanner specialists, legal researchers, and community moderators. This page explains the volunteer process; it does not appoint anyone, verify qualifications, create a professional relationship, or authorize review status. Jawad Benhammou (`@Jawadbenhammoupro`) is the technical maintainer and security-response owner. No legal, language, or scanner-specialist reviewers are currently authorized.
 
 ## Apply
 
