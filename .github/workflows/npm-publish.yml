@@ -1,0 +1,65 @@
+name: Publish OpenLegal to npm
+
+on:
+  workflow_run:
+    workflows:
+      - Foundation CI
+    types:
+      - completed
+    branches:
+      - main
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: npm-publish-main
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      ${{ github.event.workflow_run.conclusion == 'success' &&
+          github.event.workflow_run.head_branch == 'main' &&
+          github.event.workflow_run.head_repository.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42b06d7cce8891d2061fc7a4c06a7b2b0f3a # v7.0.1
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - name: Use npm with trusted publishing support
+        run: npm install --global npm@11.5.1
+      - name: Check whether this version is already published
+        id: version
+        shell: bash
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          if npm view "openlegal@${version}" version --silent --fetch-retries=0 --fetch-timeout=10000 >/dev/null 2>&1; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "openlegal@${version} is already on npm; skipping."
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+            echo "openlegal@${version} is not published; preparing release."
+          fi
+      - name: Install package dependencies
+        if: steps.version.outputs.publish == 'true'
+        run: npm ci
+      - name: Publish new stable or prerelease version
+        if: steps.version.outputs.publish == 'true'
+        shell: bash
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          if [[ "$version" == *-* ]]; then
+            tag=next
+          else
+            tag=latest
+          fi
+          npm publish --access public --tag "$tag"
