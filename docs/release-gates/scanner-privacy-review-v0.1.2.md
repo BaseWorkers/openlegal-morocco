@@ -2,9 +2,9 @@
 
 **Status:** preparation for specialist review only. This document is not legal advice, a privacy assessment, or approval of the scanner. Do not treat automated validation or this brief as a professional review.
 
-**Code baseline for review:** OpenLegal `0.1.2` at `main` commit `68d3cd921b79e341ed88fe30ee590c004bc8deb2`, merged from PR #23. Validation, the full test suite, and CodeQL passed on PR head `b5dbdc2829d2821164cf77f44d420a150eb78e21`; the merge commit contains the same reviewed tree. The scanner now reports the package version read from `package.json`; scanner rules and their review status are otherwise unchanged. Recompute hashes before review; do not rely on a branch name alone. This is not a privacy-specialist approval.
+**Code baseline for review:** OpenLegal `0.1.2` at current `main` commit `b1faf276d458f846a2a5f9d3316a30f13fb8c73f`. On 2026-10-13, the eight file digests below were recomputed against this commit; each matches the digest previously recorded against `68d3cd921b79e341ed88fe30ee590c004bc8deb2`. The listed scanner implementation and its review dependencies are therefore byte-identical across those two commits. Validation, the full test suite, and CodeQL passed on the scanner change in PR #23. Recompute hashes before review; do not rely on a branch name alone. This is not a privacy-specialist approval.
 
-## Review file identity at main commit `68d3cd921b79e341ed88fe30ee590c004bc8deb2`
+## Review file identity at current main commit `b1faf276d458f846a2a5f9d3316a30f13fb8c73f`
 
 Recompute these digests at review time; a mismatch means the review target has changed.
 
