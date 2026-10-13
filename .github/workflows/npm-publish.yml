@@ -62,7 +62,7 @@ jobs:
         run: |
           version="$(node -p "require('./package.json').version")"
           set +e
-          result="$(npm view "openlegal@${version}" version --silent --fetch-retries=0 --fetch-timeout=10000 2>&1)"
+          result="$(npm view "openlegal@${version}" version --fetch-retries=0 --fetch-timeout=10000 2>&1)"
           status=$?
           set -e
           if [ "$status" -eq 0 ]; then
