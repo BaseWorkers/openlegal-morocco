@@ -76,9 +76,6 @@ jobs:
             echo "Could not safely determine whether openlegal@${version} is published." >&2
             exit 1
           fi
-      - name: Install package dependencies
-        if: steps.version.outputs.publish == 'true'
-        run: npm ci
       - name: Publish new stable or prerelease version
         if: steps.version.outputs.publish == 'true'
         shell: bash
