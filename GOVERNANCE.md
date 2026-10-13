@@ -25,7 +25,7 @@ The reviewer registry records a public qualification summary and evidence refere
 
 ## Maintainer appointment and responsibilities
 
-A named human must accept the maintainer role before being added to governance records. Record their public account, role, decision scope, start date, and an alternate for continuity. Maintainers verify reviewer qualifications and conflicts, protect signing-key registry changes, keep review records accurate, and handle release decisions. They must not claim legal or language competence solely from the maintainer role.
+A named human must accept the maintainer role before being added to governance records. Record their public account, role, decision scope, start date, and an alternate for continuity, or document why no alternate is available. Maintainers verify reviewer qualifications and conflicts, protect signing-key registry changes, keep review records accurate, and handle release decisions. They must not claim legal or language competence solely from the maintainer role.
 
 For ongoing operations, Jawad Benhammou is the named security-response owner who monitors private vulnerability reports through GitHub's private reporting route described in [`SECURITY.md`](SECURITY.md). The notification path still needs an operational test, and no response-time commitment or alternate responder has been established. There is no confidential conduct-reporting route yet; do not send conduct reports containing sensitive details through public issues or pull requests. See [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
