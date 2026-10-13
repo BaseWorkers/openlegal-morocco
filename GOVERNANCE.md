@@ -4,7 +4,7 @@ This project is a public repository/CLI/MCP preview; it has no public hosted ser
 
 ## Maintainer responsibility
 
-The technical maintainer owns repository operations, release coordination, reviewer qualification records, and protecting review-state changes. As security-response owner, Jawad Benhammou receives and reviews private vulnerability reports submitted through the GitHub Security Advisories private-reporting route described in [`SECURITY.md`](SECURITY.md). No response-time commitment or conduct-reporting service has been established. The project remains a local repository, CLI, and MCP; this appointment does not create hosted support or service operations.
+The technical maintainer owns repository operations, release coordination, reviewer qualification records, and protecting review-state changes. As security-response owner, Jawad Benhammou receives and reviews private vulnerability reports submitted through the GitHub Security Advisories private-reporting route described in [`SECURITY.md`](SECURITY.md). Responses are best-effort when the maintainer is available; there is no response-time guarantee or alternate because this is a one-maintainer local repository/CLI/MCP project without staffed on-call coverage and no second responder has accepted continuity duties. No confidential conduct-reporting service is offered because there is no separate conduct responder or managed intake channel.
 
 ## Review authority
 
