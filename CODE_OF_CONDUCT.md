@@ -17,6 +17,6 @@ Harassment, discrimination, threats, doxxing, unwanted sexual attention, intimid
 
 ## Reporting and enforcement
 
-The project has a named technical maintainer and security-response owner; see [GOVERNANCE.md](GOVERNANCE.md). No conduct-specific responder or confidential conduct-reporting channel has been appointed. GitHub's private vulnerability-reporting route in [SECURITY.md](SECURITY.md) is for security vulnerabilities, not conduct-only reports.
+The project has a named technical maintainer and security-response owner; see [GOVERNANCE.md](GOVERNANCE.md). Security reports receive best-effort attention when the maintainer is available; there is no response-time guarantee or alternate because this is a one-maintainer repository/CLI/MCP project without staffed on-call coverage and no second responder has accepted continuity duties.
 
-Do not post sensitive conduct details in public issues or pull requests. No confidential conduct-reporting route or response-time commitment is currently offered. This repository does not provide a hosted service.
+The project does not offer a confidential conduct-reporting route because it has no separate conduct responder or managed intake channel. Do not post sensitive conduct details in public issues or pull requests. GitHub's private vulnerability-reporting route in [SECURITY.md](SECURITY.md) is for security vulnerabilities, not conduct-only reports. This repository does not provide a hosted service.
