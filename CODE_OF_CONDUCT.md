@@ -17,6 +17,6 @@ Harassment, discrimination, threats, doxxing, unwanted sexual attention, intimid
 
 ## Reporting and enforcement
 
-No project maintainers or confidential conduct-reporting channel have been appointed. Do not put sensitive details in a public issue or pull request. This repository does not currently offer a confidential route for conduct reports. Once appointed, maintainers should review reports promptly, protect reporter privacy where possible, and take proportionate action, including a warning, contribution restriction, or removal from the project.
+The project has a named technical maintainer and security-response owner; see [GOVERNANCE.md](GOVERNANCE.md). No conduct-specific responder or confidential conduct-reporting channel has been appointed. GitHub's private vulnerability-reporting route in [SECURITY.md](SECURITY.md) is for security vulnerabilities, not conduct-only reports.
 
-This v0.0.2 tooling preview has no confidential conduct-reporting route. Use public issues only for non-sensitive discussion. Before the project accepts sensitive reports or represents itself as a staffed service, maintainers must be named and a confidential reporting route must be published and staffed.
+Do not post sensitive conduct details in public issues or pull requests. No confidential conduct-reporting route or response-time commitment is currently offered. This repository does not provide a hosted service.
