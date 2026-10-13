@@ -17,9 +17,10 @@ The workflow uses Node.js 24 and npm 11.5.1 or later. npm requires the first suc
 
 1. Update `version` in `package.json` to a version that has never been published.
 2. Commit the change and merge it to `main`.
-3. Wait for `Foundation CI` to pass. The publish workflow then checks npm and skips a version that already exists.
-4. Stable versions publish to the `latest` tag. Versions containing a prerelease suffix (for example, `0.2.0-next.1`) publish to `next`.
-5. Verify the result with `npm view openlegal dist-tags --json` and install the intended tag in a clean directory before announcing the release.
+3. Wait for `Foundation CI` to pass. The publish workflow proceeds only if that successful run tested the current `main` commit; stale runs are skipped.
+4. The workflow checks npm and skips a version that already exists.
+5. Stable versions publish to the `latest` tag. Versions containing a prerelease suffix (for example, `0.2.0-next.1`) publish to `next`.
+6. Verify the result with `npm view openlegal dist-tags --json` and install the intended tag in a clean directory before announcing the release.
 
 npm versions are immutable: a published name/version pair cannot be published again. Bump `package.json` for every new release. A failed registry lookup stops the workflow rather than treating the version as unpublished.
 
