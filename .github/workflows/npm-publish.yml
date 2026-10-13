@@ -30,15 +30,34 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
           persist-credentials: false
+      - name: Confirm the successful CI run is still current main
+        id: current_main
+        shell: bash
+        env:
+          TESTED_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          current_sha="$(git ls-remote origin refs/heads/main | cut -f1)"
+          if [[ ! "$current_sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Could not safely read current main SHA." >&2
+            exit 1
+          fi
+          if [[ "$current_sha" != "$TESTED_SHA" ]]; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping stale CI run for $TESTED_SHA; main is now $current_sha."
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
       - name: Use npm with trusted publishing support
+        if: steps.current_main.outputs.publish == 'true'
         run: npm install --global npm@11.5.1
       - name: Check whether this version is already published
         id: version
+        if: steps.current_main.outputs.publish == 'true'
         shell: bash
         run: |
           version="$(node -p "require('./package.json').version")"
