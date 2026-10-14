@@ -1,6 +1,6 @@
 # Reviewer and moderator onboarding
 
-OpenLegal is seeking independent Moroccan legal reviewers, Arabic/French/English language reviewers, privacy-scanner specialists, legal researchers, and community moderators. This page explains the volunteer process; it does not appoint anyone, verify qualifications, create a professional relationship, or authorize review status. Jawad Benhammou (`@Jawadbenhammoupro`) is the technical maintainer and security-response owner. No legal, language, or scanner-specialist reviewers are currently authorized.
+OpenLegal permits qualified, authorized authors and maintainers to review their own material; such reviews are explicitly non-independent. Independent external review is welcome but is not a release gate. This page explains the review and volunteer process; it does not appoint anyone, verify qualifications, create a professional relationship, or authorize review status. Jawad Benhammou (`@Jawadbenhammoupro`) is the technical maintainer and security-response owner. No legal, language, or scanner-specialist reviewers are currently authorized.
 
 ## Apply
 
@@ -21,7 +21,7 @@ Before authorization, a maintainer checks and records identity, relevant credent
 - **Moroccan-law scope:** current Moroccan bar membership relevant to the assigned subject, or a law-academic/research appointment with recent subject-specific work. The registry must list the subject scope (such as privacy, employment, commercial contracts, or intellectual property); qualifications are not generalized to other areas.
 - **Language scope:** professional-level command of the specific language plus legal translation, legal editing, or comparable legal-language experience. English, French, and Arabic are separately authorized. Language review checks fidelity and terminology; it does not decide legal correctness.
 - **Scanner privacy scope:** documented privacy/security expertise relevant to code scanning, tracking technologies, or privacy engineering. Authorization names the rule IDs, scan modes, jurisdictions, and languages reviewed.
-- **Independence:** disclose authorship, financial interests, professional relationships, and other material conflicts. A material conflict must be resolved or disclosed as a limitation; an author cannot be called independent for their own material.
+- **Authorship and conflicts:** disclose authorship, financial interests, professional relationships, and other material conflicts. Authorship does not disqualify a reviewer, but an author or maintainer reviewing their own material must classify the review as `non-independent`. Do not describe a self-review as independent corroboration. Record a high-level conflict summary in the signed record without including private or privileged details.
 
 An authorization covers only its recorded topic, jurisdiction, language, and review type. A reviewer may take several scopes only when each is separately checked and authorized.
 
@@ -30,13 +30,13 @@ The registry stores public qualification summaries/references and check dates; i
 ## Review process
 
 1. A maintainer acknowledges the public expression of interest and clarifies the proposed role, scope, and availability.
-2. Before an assignment, an appointed maintainer checks relevant experience and conflicts against the minimum evidence above and records the authorized scope. A volunteer may decline or narrow an assignment.
+2. Before a review, an authorized maintainer records the reviewer's relevant experience, qualification evidence, conflicts, and exact scope. A reviewer may be the author or maintainer. When the reviewer and sole maintainer are the same person, qualification evidence must be documentary or independently verifiable; self-attestation alone is not verification.
 3. The reviewer receives a packet for an exact repository revision, package version, and content digest. Do not review a moving branch or assume a previous review covers changed content.
-4. The reviewer submits itemized findings and sources through the agreed project workflow. A maintainer records the outcome and any follow-up; the reviewer should not mark their own work approved.
-5. Review status changes only after the repository's authorization, evidence, and signature checks pass. An issue, profile, qualification, or review packet is not itself approval. The reviewer record must bind the exact commit, package/rule version, language or jurisdiction, and content digest.
+4. The reviewer submits itemized findings and sources through the agreed project workflow. The signed record discloses the reviewer’s relationship to the material, independence classification, and any relevant conflicts; an author-reviewer may not call their own review independent.
+5. Review status changes only after the repository's authorization, evidence, and signature checks pass. An issue, profile, qualification, or review packet is not itself approval. The reviewer record must bind the exact commit, package/rule version, language or jurisdiction, content digest, relationship to the material, independence classification, and a high-level conflict summary.
 
 All template packages and scanner rule interpretations currently remain unreviewed unless their specific records say otherwise. Legal review, language review, source verification, and community moderation are separate responsibilities. Reviewers should identify the exact scope and language they covered.
 
-## Independence and rights
+## Authorship, conflicts, and rights
 
-Disclose relevant conflicts and whether a review is independent. Do not claim independence where it does not apply. Do not submit client work or material you lack the right to share. Public contributions follow the repository's stated license scope, which is provisional and does not replace rights clearance. Read [Reviewing and feedback](../REVIEWING.md), [Governance](../GOVERNANCE.md), and the [disclaimer](../DISCLAIMER.md).
+Disclose authorship and other relevant conflicts. Independent review is optional, but never claim independence where it does not apply; author/maintainer self-review is recorded as `non-independent`. Do not submit client work or material you lack the right to share. Public contributions follow the repository's stated license scope, which is provisional and does not replace rights clearance. Read [Reviewing and feedback](../REVIEWING.md), [Governance](../GOVERNANCE.md), and the [disclaimer](../DISCLAIMER.md).

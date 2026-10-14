@@ -4,23 +4,83 @@
   "title": "Research claim legal review record",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "claim_id", "reviewer_id", "reviewed_at", "outcome", "content_digest", "signature"],
+  "required": [
+    "id",
+    "claim_id",
+    "reviewer_id",
+    "reviewed_at",
+    "outcome",
+    "content_digest",
+    "signature",
+    "conflict_summary",
+    "review_classification"
+  ],
   "properties": {
-    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-    "claim_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-    "reviewer_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-    "reviewed_at": { "type": "string", "format": "date" },
-    "outcome": { "enum": ["approved", "changes-requested", "informational"] },
-    "content_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "claim_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "reviewer_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "outcome": {
+      "enum": [
+        "approved",
+        "changes-requested",
+        "informational"
+      ]
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
     "signature": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["algorithm", "key_id", "value"],
+      "required": [
+        "algorithm",
+        "key_id",
+        "value"
+      ],
       "properties": {
-        "algorithm": { "const": "Ed25519" },
-        "key_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-        "value": { "type": "string", "pattern": "^[A-Za-z0-9+/]+={0,2}$" }
+        "algorithm": {
+          "const": "Ed25519"
+        },
+        "key_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/]+={0,2}$"
+        }
       }
+    },
+    "conflict_summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "description": "High-level disclosure of authorship and relevant conflicts. Do not include private or privileged details."
+    },
+    "review_classification": {
+      "type": "string",
+      "enum": [
+        "author-maintainer-self-review",
+        "project-contributor-independent",
+        "project-contributor-non-independent",
+        "external-independent",
+        "external-non-independent"
+      ],
+      "description": "Combined project relationship and independence classification. Author/maintainer self-review is always non-independent."
     }
   }
 }

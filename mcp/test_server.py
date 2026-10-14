@@ -70,6 +70,8 @@ class MCPTests(unittest.TestCase):
             "reviewer_id": "synthetic-reviewer", "reviewed_at": "2026-10-09",
             "languages": ["en", "fr", "ar"], "scope": "Synthetic test only",
             "outcome": "approved", "content_digest": digest,
+            "conflict_summary": "Synthetic test fixture only; no real review is represented.",
+            "review_classification": "external-independent",
             "signature": {"algorithm": "Ed25519", "key_id": "synthetic-key", "value": ""},
         }
         metadata["legal_review"] = {
@@ -106,6 +108,7 @@ class MCPTests(unittest.TestCase):
                 result = server.call("get_review_status", {"template_id": metadata["id"]})
                 self.assertEqual(result["evidence_verification"], "verified")
                 self.assertEqual(result["evidence_records"][0]["signature_verification"], "verified")
+                self.assertEqual(result["evidence_records"][0]["review_classification"], "external-independent")
                 self.assertTrue(result["evidence_records"][0]["current_content_digest_match"])
 
                 reviewers = json.loads(reviewers_file.read_text(encoding="utf-8"))

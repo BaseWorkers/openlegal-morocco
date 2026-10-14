@@ -530,7 +530,8 @@ test('LEGAL_REVIEWED requires an approved, version-matched review record and aut
   const record = signReviewRecord({
     id: 'legal-mutual-nda-1-0-0', template_id: 'mutual-nda', template_version: '1.0.0',
     review_type: 'legal', reviewer_id: 'reviewer-1', reviewed_at: '2026-10-07',
-    languages: ['en', 'fr'], scope: 'Legal meaning of EN and FR text', outcome: 'approved', content_digest: contentDigest
+    languages: ['en', 'fr'], scope: 'Legal meaning of EN and FR text', outcome: 'approved', content_digest: contentDigest,
+    conflict_summary: 'Synthetic test fixture only; no real review is represented.', review_classification: 'external-independent'
   }, 'reviewer-key-1', privateKey);
   const reviewCandidate = {
     ...metadata,
@@ -567,7 +568,8 @@ test('language review requires an authorized reviewer and approved digest-bound 
   const record = signReviewRecord({
     id: 'language-mutual-nda-en-1-0-0', template_id: 'mutual-nda', template_version: '1.0.0',
     review_type: 'language', reviewer_id: 'language-reviewer-1', reviewed_at: '2026-10-08',
-    languages: ['en'], scope: 'English language and meaning review', outcome: 'approved', content_digest: contentDigest
+    languages: ['en'], scope: 'English language and meaning review', outcome: 'approved', content_digest: contentDigest,
+    conflict_summary: 'Synthetic test fixture only; no real review is represented.', review_classification: 'external-independent'
   }, 'language-key-1', privateKey);
   const context = {
     authorizedReviewers: [], authorizedLanguageReviewers: [reviewer],
@@ -586,7 +588,8 @@ test('review signatures accept the authorized Ed25519 key and reject tampering, 
   const unsigned = {
     id: 'legal-mutual-nda-1-0-0', template_id: 'mutual-nda', template_version: '1.0.0',
     review_type: 'legal', reviewer_id: reviewer.id, reviewed_at: '2026-10-07',
-    languages: ['en'], scope: 'Legal review', outcome: 'approved', content_digest: 'a'.repeat(64)
+    languages: ['en'], scope: 'Legal review', outcome: 'approved', content_digest: 'a'.repeat(64),
+    conflict_summary: 'Synthetic test fixture only; no real review is represented.', review_classification: 'external-independent'
   };
   const record = signReviewRecord(unsigned, 'reviewer-key-1', privateKey);
   assert.equal(verifyReviewSignature(record, reviewer), null);
@@ -604,7 +607,8 @@ test('review signing command logic signs an unsigned record and refuses to overw
   const unsignedRecord = {
     id: 'legal-mutual-nda-1-0-0', template_id: 'mutual-nda', template_version: '1.0.0',
     review_type: 'legal', reviewer_id: reviewer.id, reviewed_at: '2026-10-08',
-    languages: ['en'], scope: 'Exact English text', outcome: 'approved', content_digest: 'a'.repeat(64)
+    languages: ['en'], scope: 'Exact English text', outcome: 'approved', content_digest: 'a'.repeat(64),
+    conflict_summary: 'Synthetic test fixture only; no real review is represented.', review_classification: 'external-independent'
   };
   const privateKeyPem = privateKey.export({ type: 'pkcs8', format: 'pem' });
   const signedRecord = signReviewRecordWithCli(unsignedRecord, 'reviewer-key-1', privateKeyPem);
@@ -624,7 +628,8 @@ test('research approvals bind the claim and resolved source records and gate ver
   };
   const unsignedRecord = {
     id: 'sample-claim-review', claim_id: claim.id, reviewer_id: reviewer.id,
-    reviewed_at: '2026-10-08', outcome: 'approved', content_digest: digestResearchClaim(claim, sourceRegistry)
+    reviewed_at: '2026-10-08', outcome: 'approved', content_digest: digestResearchClaim(claim, sourceRegistry),
+    conflict_summary: 'Synthetic test fixture only; no real review is represented.', review_classification: 'external-independent'
   };
   const record = signReviewRecord(unsignedRecord, 'research-key-1', privateKey);
   const context = { reviewRecords: [record], authorizedReviewers: [reviewer], sourceRegistry };
@@ -970,7 +975,9 @@ test('project-only export includes project policies and excludes planning and de
     assert.match(contributionGuide, /authorized human reviewer/);
     const reviewGuide = await readFile(join(output, 'REVIEWING.md'), 'utf8');
     assert.match(readme, /REVIEWING\.md/);
-    assert.match(reviewGuide, /legal, language, and scanner-specialist reviewer registries are empty/i);
+    assert.match(reviewGuide, /independent review is optional, not a release gate/i);
+    assert.match(reviewGuide, /author or maintainer may review their own work/i);
+    assert.match(reviewGuide, /classify the review as `non-independent`/i);
     assert.match(reviewGuide, /scanner rule interpretations remain unreviewed/i);
     assert.match(reviewGuide, /Comments and issue reports are welcome, but they do not change a review status/);
     assert.doesNotMatch(reviewGuide, /npm run|npm test|graphify|Codex|ROADMAP/i);

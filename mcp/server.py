@@ -363,6 +363,7 @@ def _review_evidence(record_ids, metadata, folder):
             "reviewer_id": record.get("reviewer_id"), "reviewed_at": record.get("reviewed_at"),
             "languages": record.get("languages"), "scope": record.get("scope"),
             "outcome": record.get("outcome"), "content_digest": record.get("content_digest"),
+            "review_classification": record.get("review_classification"),
             "signature_present": isinstance(record.get("signature"), dict),
             "signature_verification": signature_status,
             "current_content_digest_match": bool(current_digest and record.get("content_digest") == current_digest),

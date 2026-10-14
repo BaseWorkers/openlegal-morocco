@@ -17,9 +17,9 @@ The Foundation CI workflow prepares template and research-claim review packets a
 
 ## Formal review status
 
-At the v0.1.0 scanner pre-release, independent professional review is not staffed: the legal, language, and scanner-specialist reviewer registries are empty. Jawad Benhammou (`@Jawadbenhammoupro`) is the technical maintainer and security-response owner. Scanner rule interpretations remain unreviewed. An issue, pull request, or maintainer statement does not authorize `LEGAL_REVIEWED`, `LANGUAGE_REVIEWED`, or `RELEASED` status. See the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md) to express interest.
+Under the revised governance, independent review is optional, not a release gate. A qualified and authorized author or maintainer may review their own work, but the signed record must disclose authorship and classify the review as `non-independent`. The qualification, scope, exact-version, and signature requirements still apply. Jawad Benhammou (`@Jawadbenhammoupro`) is the technical maintainer and security-response owner. No legal or language approval is currently recorded, and scanner rule interpretations remain unreviewed. An issue, pull request, or maintainer statement does not authorize `LEGAL_REVIEWED`, `LANGUAGE_REVIEWED`, or `RELEASED` status. See the [reviewer onboarding guide](docs/REVIEWER_ONBOARDING.md).
 
-If maintainers establish the review program, formal approvals must cover the exact version and content digest, identify the review scope and outcome, and be authenticated under the project governance rules. A later content change may invalidate an approval. An adapted copy does not inherit this project's review status. See [Governance](GOVERNANCE.md) for the status and authorization rules.
+Formal approvals must cover the exact version and content digest, identify the review scope, outcome, reviewer relationship, independence classification, and disclosed conflicts, and be authenticated under the project governance rules. A later content change may invalidate an approval. An adapted copy does not inherit this project's review status. See [Governance](GOVERNANCE.md) for the status and authorization rules.
 
 ## Safety and limits
 

@@ -1,6 +1,6 @@
 # Data processing agreement: preliminary review packet
 
-**Status: preparation for independent review only.** This packet is not a legal opinion, approval, translation review, or confirmation that the template is fit to sign. The template remains `DRAFT`; generation remains disabled. It records research questions and file identity so qualified reviewers can assess the exact material.
+**Status: preparation for qualified, authorized human review only.** This packet is not a legal opinion, approval, translation review, or confirmation that the template is fit to sign. The template remains `DRAFT`; generation remains disabled. It records research questions and file identity so qualified reviewers can assess the exact material.
 
 ## Review target
 
@@ -34,9 +34,9 @@ Recompute these hashes before review; any difference means the reviewer must ass
 4. Identify all storage, support, backup, analytics, subprocessors, remote access, and onward flows. For each relevant foreign destination, determine the applicable legal route under current rules and what evidence or CNDP process is required. Do not rely on the placeholder or the source-text summary as transfer authorization.
 5. Review assistance, incident notice, audits, retention, deletion, liability, precedence, governing law, dispute resolution, and signatures. In particular, confirm any statutory duties separately: the incident period is expressly a negotiable contractual placeholder, and this draft asserts no statutory deadline or general audit right.
 6. Confirm sensitive/restricted data handling, sector-specific obligations, and any required declaration, authorization, or CNDP filing for the underlying processing. This packet makes no claim that this DPA alone satisfies those separate gates.
-7. Record the legal reviewer's name, qualifications/scope, conflicts or independence declaration, date, exact file hashes reviewed, findings, and approved change list. Do not change the template status without that evidence and an authorized maintainer action.
+7. Record the authorized reviewer's name, relationship and independence classification, qualifications/scope, conflicts, date, exact file hashes reviewed, findings, and approved change list. Disclose author/maintainer self-review as non-independent. Do not change the template status without that evidence and an authorized maintainer action.
 
-## Questions for an independent EN/FR/AR reviewer
+## Questions for qualified, authorized EN/FR/AR reviewers (independence is optional)
 
 - Confirm that each language communicates the same legal propositions, caveats, conditions, and negotiation choices; section identifiers align, but that is only structural parity.
 - Review Moroccan legal terminology, particularly controller/processor role labels, subprocessor terms, cross-border transfers, incident notice, retention/deletion, and dispute clauses.
@@ -51,4 +51,4 @@ Recompute these hashes before review; any difference means the reviewer must ass
 
 ## Disposition
 
-No clause has been approved or changed by this packet. No legal or language review has been completed. Keep the template `DRAFT` and generation disabled until both independent reviews are documented against the exact version and hashes, and an authorized maintainer records the decision.
+No clause has been approved or changed by this packet. No legal or language review has been completed. Keep the template `DRAFT` and generation disabled until the required legal review and each declared-language review are documented against the exact version and hashes, and an authorized maintainer records the decision. An author or maintainer may conduct a review only when qualified and authorized for that scope; the signed record must disclose the relationship and classify it as non-independent.
