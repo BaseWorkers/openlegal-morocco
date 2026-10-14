@@ -25,7 +25,7 @@
 - Inspection of the paired private repository history found the initial foundation commit `552766e844b052c859730827b1b83990b7f8cf7f` added the multilingual template packages in one large snapshot. Its Git author is `Jawadbenhammoupro <jawadbenhammou.pro@gmail.com>`; that records the commit author field, not proof that every line was personally written or that all third-party rights were clear.
 - That initial commit has no `Signed-off-by` trailer, and `DCO.md` was not present in that commit. The repository's later DCO process therefore does not retroactively certify the initial template snapshot. A current DCO sign-off on a later documentation commit is not a substitute for an explicit rights/provenance attestation covering the original content.
 - The private-history evidence does not identify per-file authors, external assistance, employer/client contributions, or source-specific adaptations. The selected General Legal source audit checked the pinned repository license, README, and one mutual-NDA source file only; it did not compare the other four source files associated with five packages. The template notes assert no wording was copied or adapted, but that assertion is not a completed clause-by-clause comparison.
-- Disposition: the owner's rights representation, package path inventory, source-use limits, package license pointer, and contribution/maintainer terms now address issue #5's stated acceptance criteria for this candidate. This closes the package-level rights gate by owner attestation; it is not an independent legal or license-scope opinion. Keep the General Legal source marked unavailable for direct file reuse until separately cleared. This decision does not authorize changing any template review state: all 14 packages remain `DRAFT` pending independent legal and language review.
+- Disposition: the owner's rights representation, package path inventory, source-use limits, package license pointer, and contribution/maintainer terms now address issue #5's stated acceptance criteria for this candidate. This closes the package-level rights gate by owner attestation; it is not an independent legal or license-scope opinion. Keep the General Legal source marked unavailable for direct file reuse until separately cleared. This decision does not authorize changing any template review state: all 14 packages remain `DRAFT` pending qualified, authorized legal and language reviews. A qualified author or maintainer may self-review within an authorized scope, with the signed review classified as non-independent.
 
 ## Rights-holder provenance attestation (2026-10-12)
 
@@ -286,7 +286,7 @@ The user additionally confirmed in this task that all other original contents of
 
 - Reviewer name / authorized ID:
 - Qualifications and relevant rights/licensing experience:
-- Conflict and independence statement:
+- Reviewer relationship, independence classification, and conflict summary:
 - Date and exact package integrity reviewed:
 - Method: ownership/provenance checks, source-term checks, file-level comparison, attribution/notice review:
 - Files or sources requiring exclusion, correction, or additional evidence:

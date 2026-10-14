@@ -40,8 +40,8 @@ body:
   - type: textarea
     id: conflicts
     attributes:
-      label: Independence or potential conflicts
-      description: Note any relevant relationship or conflict for the scope you propose. You may answer "to discuss privately with maintainers"; do not disclose sensitive details here.
+      label: Authorship, relationships, or potential conflicts
+      description: Note authorship, project relationships, and any conflicts for the proposed scope. Authorship does not disqualify a review but requires a non-independent classification. Keep sensitive details private.
     validations:
       required: true
   - type: input

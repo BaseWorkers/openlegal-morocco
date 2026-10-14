@@ -1,6 +1,6 @@
 # Privacy policy template — preliminary review packet
 
-**Purpose and status:** preparation for independent Moroccan legal and EN/FR/AR language review only. This is an AI-assisted source and structure check, not legal advice, a completeness determination, or approval. Do not change the template's `DRAFT` status based on this packet.
+**Purpose and status:** preparation for qualified, authorized Moroccan legal and EN/FR/AR language review only. Authors and maintainers may self-review within their verified scope when the signed record discloses the relationship and marks the review non-independent. This is an AI-assisted source and structure check, not legal advice, a completeness determination, or approval. Do not change the template's `DRAFT` status based on this packet.
 
 ## Exact material reviewed
 
@@ -45,7 +45,7 @@ A mechanical comparison of the three files found the same 12 section markers in 
 ## Reviewer decisions still required
 
 1. Moroccan counsel: verify current and applicable law, all cited source editions, the issues above, and the complete template against specified service facts; identify corrections by section and source pinpoint.
-2. Independent language reviewers: assess meaning and legal-effect parity across EN/FR/AR, including Moroccan legal terminology, Arabic right-to-left layout, numbering, and punctuation.
+2. Qualified, authorized language reviewers: assess meaning and legal-effect parity across EN/FR/AR, including Moroccan legal terminology, Arabic right-to-left layout, numbering, and punctuation. An author or maintainer may review their own language work when qualified and authorized, with a signed non-independent classification.
 3. Rights reviewer: verify authorship/licensing and attribution for this template and every source included in the package; this packet does not clear rights.
 4. After authorization, capture reviewer qualifications, conflicts, scope, review date, exact repository commit, and file digests in the approved signed-record workflow. Until then all review states remain pending.
 

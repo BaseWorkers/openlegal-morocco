@@ -1,6 +1,6 @@
 # Cookie notice template — preliminary review packet
 
-**Purpose and status:** preparation for independent Moroccan legal and EN/FR/AR language review only. This is not legal advice, a current-law determination, or approval. Keep the template in `DRAFT`; do not infer consent or CNDP filing requirements from this packet.
+**Purpose and status:** preparation for qualified, authorized Moroccan legal and EN/FR/AR language review only. Authors and maintainers may self-review within their verified scope when the signed record discloses the relationship and marks the review non-independent. This is not legal advice, a current-law determination, or approval. Keep the template in `DRAFT`; do not infer consent or CNDP filing requirements from this packet.
 
 ## Exact material reviewed
 
@@ -43,7 +43,7 @@ A mechanical comparison found the same seven section markers in the same order a
 ## Required reviewer decisions
 
 1. Moroccan counsel: resolve the D-939 consent wording and F-214/simplified-form mismatch; verify the current CNDP procedure, actual scope, purpose limits, retention, information fields, vendor flows, and transfer conditions.
-2. Independent language reviewers: compare legal meaning and interface terminology in each language against the reviewed legal position; record separate EN, FR, and AR decisions.
+2. Qualified, authorized language reviewers: compare legal meaning and interface terminology in each language against the reviewed legal position; record separate EN, FR, and AR decisions. An author or maintainer may review their own language work when qualified and authorized, with a signed non-independent classification.
 3. Privacy specialist: assess whether the actual technical inventory and controls can support each statement; test consent/refusal/persistence behavior on real desktop/mobile deployments.
 4. Rights reviewer: clear authorship/licensing of the template and every source shipped with the package. This packet does not clear rights.
 5. After reviewer authorization, record qualifications, conflicts, exact scope, review date, repository revision, file digests, and signed decision. Until then every review status remains pending.

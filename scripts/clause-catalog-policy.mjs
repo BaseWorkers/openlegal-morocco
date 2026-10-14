@@ -3,7 +3,7 @@ export function validateClauseCatalogReferences(catalog, { sourceIds, templateId
   const seenClauseIds = new Set();
 
   if (catalog.composition_enabled !== false) {
-    errors.push('clause composition must remain disabled until its independent review gate is implemented');
+    errors.push('clause composition must remain disabled until its human review and authorization gate is implemented');
   }
 
   for (const clause of catalog.clauses ?? []) {
